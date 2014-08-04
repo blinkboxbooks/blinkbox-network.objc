@@ -25,23 +25,30 @@ extern NSString *const kAuthServiceName;
              completion:(void (^)(BBBAuthData *data, NSError *error))completion;
 
 /**
- *  <#Description#>
+ *  Log the user in
  *
- *  @param user       <#user description#>
- *  @param client     optional parameter
- *  @param completion <#completion description#>
+ *  @param user       `BBBUserDetails` describing the login parameters to use
+ *  @param client     optional `BBBClientDetails` object containing client details
+ *  @param completion A block that will be called upon completion of the operation
  */
-- (void) login:(BBBUserDetails *)user
-        client:(BBBClientDetails *)client
-    completion:(void (^)(BBBAuthData *data, NSError *error))completion;
+- (void) loginUser:(BBBUserDetails *)user
+            client:(BBBClientDetails *)client
+        completion:(void (^)(BBBAuthData *data, NSError *error))completion;
 
 - (void) refreshAuthData:(BBBAuthData *)data
               completion:(void (^)(BBBAuthData *refeshedData, NSError *error))completion;
 
-- (void) resetPassword:(BBBUserDetails *)user
-            completion:(void (^)(BOOL success, NSError *error))completion;
+- (void) resetPasswordForUser:(BBBUserDetails *)user
+                   completion:(void (^)(BOOL success, NSError *error))completion;
 
-- (void) revokeRefreshTokenFor:(BBBUserDetails *)user
-                    completion:(void (^)(BOOL succes, NSError *error))completion;
+- (void) revokeRefreshTokenForUser:(BBBUserDetails *)user
+                        completion:(void (^)(BOOL succes, NSError *error))completion;
+
+- (void) getAllClientsForUser:(BBBUserDetails *)user
+                   completion:(void (^)(NSArray *clients, NSError *error))completion;
+
+- (void) deleteClient:(BBBClientDetails *)client
+              forUser:(BBBUserDetails *)user
+           completion:(void (^)(BOOL succes, NSError *error))completion;
 
 @end

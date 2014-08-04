@@ -281,6 +281,8 @@
 		40E242CA1987FCFA00BEB869 /* BBBAPI */ = {
 			isa = PBXGroup;
 			children = (
+				405B65871989556B00AC8A3C /* Authentication */,
+				405B65B919895BAC00AC8A3C /* Library */,
 				40E45406198804D2003650CD /* BBBAPI.h */,
 				40E45404198804D2003650CD /* BBBCatalogueService.h */,
 				40E45405198804D2003650CD /* BBBCatalogueService.m */,
@@ -292,8 +294,6 @@
 				405B65A0198957C200AC8A3C /* BBBBookmarkService.m */,
 				405B65B01989586F00AC8A3C /* BBBClubcardService.h */,
 				405B65B11989586F00AC8A3C /* BBBClubcardService.m */,
-				405B65871989556B00AC8A3C /* Authentication */,
-				405B65B919895BAC00AC8A3C /* Library */,
 				405B6599198957C200AC8A3C /* BBBMarketingService.h */,
 				405B659A198957C200AC8A3C /* BBBMarketingService.m */,
 				405B659B198957C200AC8A3C /* BBBCategoryService.h */,
