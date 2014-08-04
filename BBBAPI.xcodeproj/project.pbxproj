@@ -1,0 +1,597 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		40284CBE1988097F00952666 /* BBBUserDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 40284CBD1988097F00952666 /* BBBUserDetails.m */; };
+		405B658A198955A700AC8A3C /* BBBLibraryService.m in Sources */ = {isa = PBXBuildFile; fileRef = 405B6589198955A700AC8A3C /* BBBLibraryService.m */; };
+		405B65A3198957C200AC8A3C /* BBBMarketingService.m in Sources */ = {isa = PBXBuildFile; fileRef = 405B659A198957C200AC8A3C /* BBBMarketingService.m */; };
+		405B65A4198957C200AC8A3C /* BBBCategoryService.m in Sources */ = {isa = PBXBuildFile; fileRef = 405B659C198957C200AC8A3C /* BBBCategoryService.m */; };
+		405B65A5198957C200AC8A3C /* BBBKeyService.m in Sources */ = {isa = PBXBuildFile; fileRef = 405B659E198957C200AC8A3C /* BBBKeyService.m */; };
+		405B65A6198957C200AC8A3C /* BBBBookmarkService.m in Sources */ = {isa = PBXBuildFile; fileRef = 405B65A0198957C200AC8A3C /* BBBBookmarkService.m */; };
+		405B65AC1989582E00AC8A3C /* BBBPurchasingService.m in Sources */ = {isa = PBXBuildFile; fileRef = 405B65AB1989582E00AC8A3C /* BBBPurchasingService.m */; };
+		405B65B21989586F00AC8A3C /* BBBClubcardService.m in Sources */ = {isa = PBXBuildFile; fileRef = 405B65B11989586F00AC8A3C /* BBBClubcardService.m */; };
+		405B65B5198959F900AC8A3C /* BBBClientDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 405B65B4198959F900AC8A3C /* BBBClientDetails.m */; };
+		405B65B819895BA800AC8A3C /* BBBLibraryItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 405B65B719895BA800AC8A3C /* BBBLibraryItem.m */; };
+		405B65C0198A4E4200AC8A3C /* BBBAuthData.m in Sources */ = {isa = PBXBuildFile; fileRef = 405B65BF198A4E4200AC8A3C /* BBBAuthData.m */; };
+		405B65C3198A538A00AC8A3C /* BBBLibraryItemLink.m in Sources */ = {isa = PBXBuildFile; fileRef = 405B65C2198A538A00AC8A3C /* BBBLibraryItemLink.m */; };
+		405B65C6198A77A200AC8A3C /* BBBAuthConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 405B65C5198A77A200AC8A3C /* BBBAuthConnection.m */; };
+		405B65C9198A77B200AC8A3C /* BBBLibraryConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 405B65C8198A77B200AC8A3C /* BBBLibraryConnection.m */; };
+		405B65D0198A914E00AC8A3C /* BBBRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 405B65CF198A914E00AC8A3C /* BBBRequestFactory.m */; };
+		405B65D3198A933400AC8A3C /* BBBAuthResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 405B65D2198A933400AC8A3C /* BBBAuthResponseMapper.m */; };
+		405B65D6198AA82900AC8A3C /* BBBJSONResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 405B65D5198AA82900AC8A3C /* BBBJSONResponseMapper.m */; };
+		405B65D8198AAD4100AC8A3C /* BBBResponseMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 405B65D7198AAD4100AC8A3C /* BBBResponseMapping.m */; };
+		406031F41981537800C7F6E0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 406031F31981537800C7F6E0 /* Foundation.framework */; };
+		406032021981537900C7F6E0 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 406032011981537900C7F6E0 /* XCTest.framework */; };
+		406032031981537900C7F6E0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 406031F31981537800C7F6E0 /* Foundation.framework */; };
+		406032081981537900C7F6E0 /* libBBBAPI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 406031F01981537800C7F6E0 /* libBBBAPI.a */; };
+		40AB69BA198BD804009257D0 /* BBBLibraryServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 40AB69B8198BD784009257D0 /* BBBLibraryServiceTests.m */; };
+		40E4540B198804D2003650CD /* BBBCatalogueService.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E45405198804D2003650CD /* BBBCatalogueService.m */; };
+		40E4540C198804D2003650CD /* BBBAuthenticationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E45408198804D2003650CD /* BBBAuthenticationService.m */; };
+		40E4540D198804D2003650CD /* BBBSearchService.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E4540A198804D2003650CD /* BBBSearchService.m */; };
+		40E45410198804E8003650CD /* BBBSearchConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E4540F198804E8003650CD /* BBBSearchConnection.m */; };
+		40E45421198804FE003650CD /* BBBRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E45412198804FE003650CD /* BBBRequest.m */; };
+		40E45422198804FE003650CD /* BBBNetworkConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E45414198804FE003650CD /* BBBNetworkConfiguration.m */; };
+		40E45425198804FE003650CD /* BBBConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E4541D198804FE003650CD /* BBBConnection.m */; };
+		40E45426198804FE003650CD /* BBBResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E45420198804FE003650CD /* BBBResponse.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		406032061981537900C7F6E0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 406031E81981537800C7F6E0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 406031EF1981537800C7F6E0;
+			remoteInfo = BBBNetworking;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		406031EE1981537800C7F6E0 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		40284CBC1988097F00952666 /* BBBUserDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBBUserDetails.h; path = BBBAPI/BBBUserDetails.h; sourceTree = "<group>"; };
+		40284CBD1988097F00952666 /* BBBUserDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBBUserDetails.m; path = BBBAPI/BBBUserDetails.m; sourceTree = "<group>"; };
+		405B6588198955A700AC8A3C /* BBBLibraryService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBBLibraryService.h; path = BBBAPI/BBBLibraryService.h; sourceTree = "<group>"; };
+		405B6589198955A700AC8A3C /* BBBLibraryService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBBLibraryService.m; path = BBBAPI/BBBLibraryService.m; sourceTree = "<group>"; };
+		405B6599198957C200AC8A3C /* BBBMarketingService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBBMarketingService.h; path = BBBAPI/BBBMarketingService.h; sourceTree = "<group>"; };
+		405B659A198957C200AC8A3C /* BBBMarketingService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBBMarketingService.m; path = BBBAPI/BBBMarketingService.m; sourceTree = "<group>"; };
+		405B659B198957C200AC8A3C /* BBBCategoryService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBBCategoryService.h; path = BBBAPI/BBBCategoryService.h; sourceTree = "<group>"; };
+		405B659C198957C200AC8A3C /* BBBCategoryService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBBCategoryService.m; path = BBBAPI/BBBCategoryService.m; sourceTree = "<group>"; };
+		405B659D198957C200AC8A3C /* BBBKeyService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBBKeyService.h; path = BBBAPI/BBBKeyService.h; sourceTree = "<group>"; };
+		405B659E198957C200AC8A3C /* BBBKeyService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBBKeyService.m; path = BBBAPI/BBBKeyService.m; sourceTree = "<group>"; };
+		405B659F198957C200AC8A3C /* BBBBookmarkService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBBBookmarkService.h; path = BBBAPI/BBBBookmarkService.h; sourceTree = "<group>"; };
+		405B65A0198957C200AC8A3C /* BBBBookmarkService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBBBookmarkService.m; path = BBBAPI/BBBBookmarkService.m; sourceTree = "<group>"; };
+		405B65AA1989582E00AC8A3C /* BBBPurchasingService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBBPurchasingService.h; path = BBBAPI/BBBPurchasingService.h; sourceTree = "<group>"; };
+		405B65AB1989582E00AC8A3C /* BBBPurchasingService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBBPurchasingService.m; path = BBBAPI/BBBPurchasingService.m; sourceTree = "<group>"; };
+		405B65B01989586F00AC8A3C /* BBBClubcardService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBBClubcardService.h; path = BBBAPI/BBBClubcardService.h; sourceTree = "<group>"; };
+		405B65B11989586F00AC8A3C /* BBBClubcardService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBBClubcardService.m; path = BBBAPI/BBBClubcardService.m; sourceTree = "<group>"; };
+		405B65B3198959F900AC8A3C /* BBBClientDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBBClientDetails.h; path = BBBAPI/BBBClientDetails.h; sourceTree = "<group>"; };
+		405B65B4198959F900AC8A3C /* BBBClientDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBBClientDetails.m; path = BBBAPI/BBBClientDetails.m; sourceTree = "<group>"; };
+		405B65B619895BA800AC8A3C /* BBBLibraryItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBBLibraryItem.h; path = BBBAPI/BBBLibraryItem.h; sourceTree = "<group>"; };
+		405B65B719895BA800AC8A3C /* BBBLibraryItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBBLibraryItem.m; path = BBBAPI/BBBLibraryItem.m; sourceTree = "<group>"; };
+		405B65BA19895C0300AC8A3C /* BBBLibraryTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BBBLibraryTypes.h; path = BBBAPI/BBBLibraryTypes.h; sourceTree = "<group>"; };
+		405B65BE198A4E4200AC8A3C /* BBBAuthData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBBAuthData.h; path = BBBAPI/BBBAuthData.h; sourceTree = "<group>"; };
+		405B65BF198A4E4200AC8A3C /* BBBAuthData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBBAuthData.m; path = BBBAPI/BBBAuthData.m; sourceTree = "<group>"; };
+		405B65C1198A538A00AC8A3C /* BBBLibraryItemLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBBLibraryItemLink.h; path = BBBAPI/BBBLibraryItemLink.h; sourceTree = "<group>"; };
+		405B65C2198A538A00AC8A3C /* BBBLibraryItemLink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBBLibraryItemLink.m; path = BBBAPI/BBBLibraryItemLink.m; sourceTree = "<group>"; };
+		405B65C4198A77A200AC8A3C /* BBBAuthConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBBAuthConnection.h; path = BBBAPI/BBBAuthConnection.h; sourceTree = SOURCE_ROOT; };
+		405B65C5198A77A200AC8A3C /* BBBAuthConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBBAuthConnection.m; path = BBBAPI/BBBAuthConnection.m; sourceTree = SOURCE_ROOT; };
+		405B65C7198A77B200AC8A3C /* BBBLibraryConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBBLibraryConnection.h; path = BBBAPI/BBBLibraryConnection.h; sourceTree = SOURCE_ROOT; };
+		405B65C8198A77B200AC8A3C /* BBBLibraryConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBBLibraryConnection.m; path = BBBAPI/BBBLibraryConnection.m; sourceTree = SOURCE_ROOT; };
+		405B65CE198A914E00AC8A3C /* BBBRequestFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBBRequestFactory.h; path = BBBAPI/BBBRequestFactory.h; sourceTree = SOURCE_ROOT; };
+		405B65CF198A914E00AC8A3C /* BBBRequestFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBBRequestFactory.m; path = BBBAPI/BBBRequestFactory.m; sourceTree = SOURCE_ROOT; };
+		405B65D1198A933400AC8A3C /* BBBAuthResponseMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBBAuthResponseMapper.h; path = BBBAPI/BBBAuthResponseMapper.h; sourceTree = "<group>"; };
+		405B65D2198A933400AC8A3C /* BBBAuthResponseMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBBAuthResponseMapper.m; path = BBBAPI/BBBAuthResponseMapper.m; sourceTree = "<group>"; };
+		405B65D4198AA82900AC8A3C /* BBBJSONResponseMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBBJSONResponseMapper.h; path = BBBAPI/BBBJSONResponseMapper.h; sourceTree = SOURCE_ROOT; };
+		405B65D5198AA82900AC8A3C /* BBBJSONResponseMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBBJSONResponseMapper.m; path = BBBAPI/BBBJSONResponseMapper.m; sourceTree = SOURCE_ROOT; };
+		405B65D7198AAD4100AC8A3C /* BBBResponseMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBBResponseMapping.m; path = BBBAPI/BBBResponseMapping.m; sourceTree = SOURCE_ROOT; };
+		406031F01981537800C7F6E0 /* libBBBAPI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBBBAPI.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		406031F31981537800C7F6E0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		406032001981537900C7F6E0 /* BBBAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BBBAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		406032011981537900C7F6E0 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		40AB69B8198BD784009257D0 /* BBBLibraryServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBBLibraryServiceTests.m; path = BBBAPITests/BBBLibraryServiceTests.m; sourceTree = SOURCE_ROOT; };
+		40E45404198804D2003650CD /* BBBCatalogueService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBBCatalogueService.h; path = BBBAPI/BBBCatalogueService.h; sourceTree = "<group>"; };
+		40E45405198804D2003650CD /* BBBCatalogueService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBBCatalogueService.m; path = BBBAPI/BBBCatalogueService.m; sourceTree = "<group>"; };
+		40E45406198804D2003650CD /* BBBAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBBAPI.h; path = BBBAPI/BBBAPI.h; sourceTree = "<group>"; };
+		40E45407198804D2003650CD /* BBBAuthenticationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBBAuthenticationService.h; path = BBBAPI/BBBAuthenticationService.h; sourceTree = "<group>"; };
+		40E45408198804D2003650CD /* BBBAuthenticationService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBBAuthenticationService.m; path = BBBAPI/BBBAuthenticationService.m; sourceTree = "<group>"; };
+		40E45409198804D2003650CD /* BBBSearchService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBBSearchService.h; path = BBBAPI/BBBSearchService.h; sourceTree = "<group>"; };
+		40E4540A198804D2003650CD /* BBBSearchService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBBSearchService.m; path = BBBAPI/BBBSearchService.m; sourceTree = "<group>"; };
+		40E4540E198804E8003650CD /* BBBSearchConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBBSearchConnection.h; path = BBBAPI/BBBSearchConnection.h; sourceTree = SOURCE_ROOT; };
+		40E4540F198804E8003650CD /* BBBSearchConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBBSearchConnection.m; path = BBBAPI/BBBSearchConnection.m; sourceTree = SOURCE_ROOT; };
+		40E45411198804FE003650CD /* BBBNetworkConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBBNetworkConfiguration.h; path = BBBAPI/BBBNetworkConfiguration.h; sourceTree = SOURCE_ROOT; };
+		40E45412198804FE003650CD /* BBBRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBBRequest.m; path = BBBAPI/BBBRequest.m; sourceTree = SOURCE_ROOT; };
+		40E45413198804FE003650CD /* BBBNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBBNetworking.h; path = BBBAPI/BBBNetworking.h; sourceTree = SOURCE_ROOT; };
+		40E45414198804FE003650CD /* BBBNetworkConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBBNetworkConfiguration.m; path = BBBAPI/BBBNetworkConfiguration.m; sourceTree = SOURCE_ROOT; };
+		40E45415198804FE003650CD /* BBBResponseMapping.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; name = BBBResponseMapping.h; path = BBBAPI/BBBResponseMapping.h; sourceTree = SOURCE_ROOT; };
+		40E45416198804FE003650CD /* BBBConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBBConnection.h; path = BBBAPI/BBBConnection.h; sourceTree = SOURCE_ROOT; };
+		40E45417198804FE003650CD /* BBBRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBBRequest.h; path = BBBAPI/BBBRequest.h; sourceTree = SOURCE_ROOT; };
+		40E45418198804FE003650CD /* BBBAuthenticator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBBAuthenticator.h; path = BBBAPI/BBBAuthenticator.h; sourceTree = SOURCE_ROOT; };
+		40E4541C198804FE003650CD /* BBBAPI-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "BBBAPI-Prefix.pch"; path = "BBBAPI/BBBAPI-Prefix.pch"; sourceTree = SOURCE_ROOT; };
+		40E4541D198804FE003650CD /* BBBConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBBConnection.m; path = BBBAPI/BBBConnection.m; sourceTree = SOURCE_ROOT; };
+		40E4541E198804FE003650CD /* BBBNetworkingConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBBNetworkingConstants.h; path = BBBAPI/BBBNetworkingConstants.h; sourceTree = SOURCE_ROOT; };
+		40E4541F198804FE003650CD /* BBBResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBBResponse.h; path = BBBAPI/BBBResponse.h; sourceTree = SOURCE_ROOT; };
+		40E45420198804FE003650CD /* BBBResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBBResponse.m; path = BBBAPI/BBBResponse.m; sourceTree = SOURCE_ROOT; };
+		40E4542719880527003650CD /* BBBAPITests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "BBBAPITests-Info.plist"; path = "BBBAPITests/BBBAPITests-Info.plist"; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		406031ED1981537800C7F6E0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				406031F41981537800C7F6E0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		406031FD1981537900C7F6E0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				406032021981537900C7F6E0 /* XCTest.framework in Frameworks */,
+				406032081981537900C7F6E0 /* libBBBAPI.a in Frameworks */,
+				406032031981537900C7F6E0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		405B65871989556B00AC8A3C /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				40E45407198804D2003650CD /* BBBAuthenticationService.h */,
+				40E45408198804D2003650CD /* BBBAuthenticationService.m */,
+				40284CBC1988097F00952666 /* BBBUserDetails.h */,
+				40284CBD1988097F00952666 /* BBBUserDetails.m */,
+				405B65B3198959F900AC8A3C /* BBBClientDetails.h */,
+				405B65B4198959F900AC8A3C /* BBBClientDetails.m */,
+				405B65BE198A4E4200AC8A3C /* BBBAuthData.h */,
+				405B65BF198A4E4200AC8A3C /* BBBAuthData.m */,
+				405B65D1198A933400AC8A3C /* BBBAuthResponseMapper.h */,
+				405B65D2198A933400AC8A3C /* BBBAuthResponseMapper.m */,
+			);
+			name = Authentication;
+			sourceTree = "<group>";
+		};
+		405B65B919895BAC00AC8A3C /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				405B65BA19895C0300AC8A3C /* BBBLibraryTypes.h */,
+				405B6588198955A700AC8A3C /* BBBLibraryService.h */,
+				405B6589198955A700AC8A3C /* BBBLibraryService.m */,
+				405B65B619895BA800AC8A3C /* BBBLibraryItem.h */,
+				405B65B719895BA800AC8A3C /* BBBLibraryItem.m */,
+				405B65C1198A538A00AC8A3C /* BBBLibraryItemLink.h */,
+				405B65C2198A538A00AC8A3C /* BBBLibraryItemLink.m */,
+			);
+			name = Library;
+			sourceTree = "<group>";
+		};
+		406031E71981537800C7F6E0 = {
+			isa = PBXGroup;
+			children = (
+				40E242CA1987FCFA00BEB869 /* BBBAPI */,
+				40E242C31987FB8600BEB869 /* Concrete Connections */,
+				406031F51981537800C7F6E0 /* Networking */,
+				406032091981537900C7F6E0 /* BBBAPITests */,
+				406031F21981537800C7F6E0 /* Frameworks */,
+				406031F11981537800C7F6E0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		406031F11981537800C7F6E0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				406031F01981537800C7F6E0 /* libBBBAPI.a */,
+				406032001981537900C7F6E0 /* BBBAPITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		406031F21981537800C7F6E0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				406031F31981537800C7F6E0 /* Foundation.framework */,
+				406032011981537900C7F6E0 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		406031F51981537800C7F6E0 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				40E45418198804FE003650CD /* BBBAuthenticator.h */,
+				40E45413198804FE003650CD /* BBBNetworking.h */,
+				40E4541E198804FE003650CD /* BBBNetworkingConstants.h */,
+				40E45415198804FE003650CD /* BBBResponseMapping.h */,
+				405B65D7198AAD4100AC8A3C /* BBBResponseMapping.m */,
+				405B65D4198AA82900AC8A3C /* BBBJSONResponseMapper.h */,
+				405B65D5198AA82900AC8A3C /* BBBJSONResponseMapper.m */,
+				405B65CE198A914E00AC8A3C /* BBBRequestFactory.h */,
+				405B65CF198A914E00AC8A3C /* BBBRequestFactory.m */,
+				40E45416198804FE003650CD /* BBBConnection.h */,
+				40E4541D198804FE003650CD /* BBBConnection.m */,
+				40E45417198804FE003650CD /* BBBRequest.h */,
+				40E45412198804FE003650CD /* BBBRequest.m */,
+				40E4541F198804FE003650CD /* BBBResponse.h */,
+				40E45420198804FE003650CD /* BBBResponse.m */,
+				40E45411198804FE003650CD /* BBBNetworkConfiguration.h */,
+				40E45414198804FE003650CD /* BBBNetworkConfiguration.m */,
+				406031F61981537800C7F6E0 /* Supporting Files */,
+			);
+			name = Networking;
+			path = BBBNetworking;
+			sourceTree = "<group>";
+		};
+		406031F61981537800C7F6E0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				40E4541C198804FE003650CD /* BBBAPI-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		406032091981537900C7F6E0 /* BBBAPITests */ = {
+			isa = PBXGroup;
+			children = (
+				40AB69B8198BD784009257D0 /* BBBLibraryServiceTests.m */,
+				4060320A1981537900C7F6E0 /* Supporting Files */,
+			);
+			name = BBBAPITests;
+			path = BBBNetworkingTests;
+			sourceTree = "<group>";
+		};
+		4060320A1981537900C7F6E0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				40E4542719880527003650CD /* BBBAPITests-Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		40E242C31987FB8600BEB869 /* Concrete Connections */ = {
+			isa = PBXGroup;
+			children = (
+				40E4540E198804E8003650CD /* BBBSearchConnection.h */,
+				40E4540F198804E8003650CD /* BBBSearchConnection.m */,
+				405B65C4198A77A200AC8A3C /* BBBAuthConnection.h */,
+				405B65C5198A77A200AC8A3C /* BBBAuthConnection.m */,
+				405B65C7198A77B200AC8A3C /* BBBLibraryConnection.h */,
+				405B65C8198A77B200AC8A3C /* BBBLibraryConnection.m */,
+			);
+			name = "Concrete Connections";
+			path = BBBNetworking;
+			sourceTree = "<group>";
+		};
+		40E242CA1987FCFA00BEB869 /* BBBAPI */ = {
+			isa = PBXGroup;
+			children = (
+				40E45406198804D2003650CD /* BBBAPI.h */,
+				40E45404198804D2003650CD /* BBBCatalogueService.h */,
+				40E45405198804D2003650CD /* BBBCatalogueService.m */,
+				40E45409198804D2003650CD /* BBBSearchService.h */,
+				40E4540A198804D2003650CD /* BBBSearchService.m */,
+				405B659D198957C200AC8A3C /* BBBKeyService.h */,
+				405B659E198957C200AC8A3C /* BBBKeyService.m */,
+				405B659F198957C200AC8A3C /* BBBBookmarkService.h */,
+				405B65A0198957C200AC8A3C /* BBBBookmarkService.m */,
+				405B65B01989586F00AC8A3C /* BBBClubcardService.h */,
+				405B65B11989586F00AC8A3C /* BBBClubcardService.m */,
+				405B65871989556B00AC8A3C /* Authentication */,
+				405B65B919895BAC00AC8A3C /* Library */,
+				405B6599198957C200AC8A3C /* BBBMarketingService.h */,
+				405B659A198957C200AC8A3C /* BBBMarketingService.m */,
+				405B659B198957C200AC8A3C /* BBBCategoryService.h */,
+				405B659C198957C200AC8A3C /* BBBCategoryService.m */,
+				405B65AA1989582E00AC8A3C /* BBBPurchasingService.h */,
+				405B65AB1989582E00AC8A3C /* BBBPurchasingService.m */,
+			);
+			name = BBBAPI;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		406031EF1981537800C7F6E0 /* BBBAPI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 406032131981537900C7F6E0 /* Build configuration list for PBXNativeTarget "BBBAPI" */;
+			buildPhases = (
+				406031EC1981537800C7F6E0 /* Sources */,
+				406031ED1981537800C7F6E0 /* Frameworks */,
+				406031EE1981537800C7F6E0 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BBBAPI;
+			productName = BBBNetworking;
+			productReference = 406031F01981537800C7F6E0 /* libBBBAPI.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		406031FF1981537900C7F6E0 /* BBBAPITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 406032161981537900C7F6E0 /* Build configuration list for PBXNativeTarget "BBBAPITests" */;
+			buildPhases = (
+				406031FC1981537900C7F6E0 /* Sources */,
+				406031FD1981537900C7F6E0 /* Frameworks */,
+				406031FE1981537900C7F6E0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				406032071981537900C7F6E0 /* PBXTargetDependency */,
+			);
+			name = BBBAPITests;
+			productName = BBBNetworkingTests;
+			productReference = 406032001981537900C7F6E0 /* BBBAPITests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		406031E81981537800C7F6E0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = BBB;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Blinkbox Books";
+			};
+			buildConfigurationList = 406031EB1981537800C7F6E0 /* Build configuration list for PBXProject "BBBAPI" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 406031E71981537800C7F6E0;
+			productRefGroup = 406031F11981537800C7F6E0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				406031EF1981537800C7F6E0 /* BBBAPI */,
+				406031FF1981537900C7F6E0 /* BBBAPITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		406031FE1981537900C7F6E0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		406031EC1981537800C7F6E0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40E4540C198804D2003650CD /* BBBAuthenticationService.m in Sources */,
+				405B65B5198959F900AC8A3C /* BBBClientDetails.m in Sources */,
+				40284CBE1988097F00952666 /* BBBUserDetails.m in Sources */,
+				405B658A198955A700AC8A3C /* BBBLibraryService.m in Sources */,
+				405B65C6198A77A200AC8A3C /* BBBAuthConnection.m in Sources */,
+				405B65D0198A914E00AC8A3C /* BBBRequestFactory.m in Sources */,
+				40E4540B198804D2003650CD /* BBBCatalogueService.m in Sources */,
+				40E45425198804FE003650CD /* BBBConnection.m in Sources */,
+				405B65AC1989582E00AC8A3C /* BBBPurchasingService.m in Sources */,
+				40E45422198804FE003650CD /* BBBNetworkConfiguration.m in Sources */,
+				40E4540D198804D2003650CD /* BBBSearchService.m in Sources */,
+				405B65D6198AA82900AC8A3C /* BBBJSONResponseMapper.m in Sources */,
+				405B65A6198957C200AC8A3C /* BBBBookmarkService.m in Sources */,
+				405B65B819895BA800AC8A3C /* BBBLibraryItem.m in Sources */,
+				405B65C3198A538A00AC8A3C /* BBBLibraryItemLink.m in Sources */,
+				405B65A5198957C200AC8A3C /* BBBKeyService.m in Sources */,
+				405B65D8198AAD4100AC8A3C /* BBBResponseMapping.m in Sources */,
+				405B65A4198957C200AC8A3C /* BBBCategoryService.m in Sources */,
+				405B65B21989586F00AC8A3C /* BBBClubcardService.m in Sources */,
+				40E45426198804FE003650CD /* BBBResponse.m in Sources */,
+				405B65A3198957C200AC8A3C /* BBBMarketingService.m in Sources */,
+				405B65C9198A77B200AC8A3C /* BBBLibraryConnection.m in Sources */,
+				40E45421198804FE003650CD /* BBBRequest.m in Sources */,
+				40E45410198804E8003650CD /* BBBSearchConnection.m in Sources */,
+				405B65D3198A933400AC8A3C /* BBBAuthResponseMapper.m in Sources */,
+				405B65C0198A4E4200AC8A3C /* BBBAuthData.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		406031FC1981537900C7F6E0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40AB69BA198BD804009257D0 /* BBBLibraryServiceTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		406032071981537900C7F6E0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 406031EF1981537800C7F6E0 /* BBBAPI */;
+			targetProxy = 406032061981537900C7F6E0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		406032111981537900C7F6E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		406032121981537900C7F6E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		406032141981537900C7F6E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/BBBNetworking.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BBBAPI/BBBAPI-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = BBBAPI;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		406032151981537900C7F6E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/BBBNetworking.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BBBAPI/BBBAPI-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = BBBAPI;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		406032171981537900C7F6E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BBBNetworking/BBBNetworking-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "BBBNetworkingTests/BBBAPITests-Info.plist";
+				PRODUCT_NAME = BBBAPITests;
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		406032181981537900C7F6E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BBBNetworking/BBBNetworking-Prefix.pch";
+				INFOPLIST_FILE = "BBBNetworkingTests/BBBAPITests-Info.plist";
+				PRODUCT_NAME = BBBAPITests;
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		406031EB1981537800C7F6E0 /* Build configuration list for PBXProject "BBBAPI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				406032111981537900C7F6E0 /* Debug */,
+				406032121981537900C7F6E0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		406032131981537900C7F6E0 /* Build configuration list for PBXNativeTarget "BBBAPI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				406032141981537900C7F6E0 /* Debug */,
+				406032151981537900C7F6E0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		406032161981537900C7F6E0 /* Build configuration list for PBXNativeTarget "BBBAPITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				406032171981537900C7F6E0 /* Debug */,
+				406032181981537900C7F6E0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 406031E81981537800C7F6E0 /* Project object */;
+}
