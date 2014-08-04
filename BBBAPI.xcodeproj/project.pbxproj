@@ -7,37 +7,38 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		40284CBE1988097F00952666 /* BBBUserDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 40284CBD1988097F00952666 /* BBBUserDetails.m */; };
-		405B658A198955A700AC8A3C /* BBBLibraryService.m in Sources */ = {isa = PBXBuildFile; fileRef = 405B6589198955A700AC8A3C /* BBBLibraryService.m */; };
-		405B65A3198957C200AC8A3C /* BBBMarketingService.m in Sources */ = {isa = PBXBuildFile; fileRef = 405B659A198957C200AC8A3C /* BBBMarketingService.m */; };
-		405B65A4198957C200AC8A3C /* BBBCategoryService.m in Sources */ = {isa = PBXBuildFile; fileRef = 405B659C198957C200AC8A3C /* BBBCategoryService.m */; };
-		405B65A5198957C200AC8A3C /* BBBKeyService.m in Sources */ = {isa = PBXBuildFile; fileRef = 405B659E198957C200AC8A3C /* BBBKeyService.m */; };
-		405B65A6198957C200AC8A3C /* BBBBookmarkService.m in Sources */ = {isa = PBXBuildFile; fileRef = 405B65A0198957C200AC8A3C /* BBBBookmarkService.m */; };
-		405B65AC1989582E00AC8A3C /* BBBPurchasingService.m in Sources */ = {isa = PBXBuildFile; fileRef = 405B65AB1989582E00AC8A3C /* BBBPurchasingService.m */; };
-		405B65B21989586F00AC8A3C /* BBBClubcardService.m in Sources */ = {isa = PBXBuildFile; fileRef = 405B65B11989586F00AC8A3C /* BBBClubcardService.m */; };
-		405B65B5198959F900AC8A3C /* BBBClientDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 405B65B4198959F900AC8A3C /* BBBClientDetails.m */; };
-		405B65B819895BA800AC8A3C /* BBBLibraryItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 405B65B719895BA800AC8A3C /* BBBLibraryItem.m */; };
-		405B65C0198A4E4200AC8A3C /* BBBAuthData.m in Sources */ = {isa = PBXBuildFile; fileRef = 405B65BF198A4E4200AC8A3C /* BBBAuthData.m */; };
-		405B65C3198A538A00AC8A3C /* BBBLibraryItemLink.m in Sources */ = {isa = PBXBuildFile; fileRef = 405B65C2198A538A00AC8A3C /* BBBLibraryItemLink.m */; };
-		405B65C6198A77A200AC8A3C /* BBBAuthConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 405B65C5198A77A200AC8A3C /* BBBAuthConnection.m */; };
-		405B65C9198A77B200AC8A3C /* BBBLibraryConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 405B65C8198A77B200AC8A3C /* BBBLibraryConnection.m */; };
-		405B65D0198A914E00AC8A3C /* BBBRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 405B65CF198A914E00AC8A3C /* BBBRequestFactory.m */; };
-		405B65D3198A933400AC8A3C /* BBBAuthResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 405B65D2198A933400AC8A3C /* BBBAuthResponseMapper.m */; };
-		405B65D6198AA82900AC8A3C /* BBBJSONResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 405B65D5198AA82900AC8A3C /* BBBJSONResponseMapper.m */; };
-		405B65D8198AAD4100AC8A3C /* BBBResponseMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 405B65D7198AAD4100AC8A3C /* BBBResponseMapping.m */; };
 		406031F41981537800C7F6E0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 406031F31981537800C7F6E0 /* Foundation.framework */; };
 		406032021981537900C7F6E0 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 406032011981537900C7F6E0 /* XCTest.framework */; };
 		406032031981537900C7F6E0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 406031F31981537800C7F6E0 /* Foundation.framework */; };
 		406032081981537900C7F6E0 /* libBBBAPI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 406031F01981537800C7F6E0 /* libBBBAPI.a */; };
 		40AB69BA198BD804009257D0 /* BBBLibraryServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 40AB69B8198BD784009257D0 /* BBBLibraryServiceTests.m */; };
-		40E4540B198804D2003650CD /* BBBCatalogueService.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E45405198804D2003650CD /* BBBCatalogueService.m */; };
-		40E4540C198804D2003650CD /* BBBAuthenticationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E45408198804D2003650CD /* BBBAuthenticationService.m */; };
-		40E4540D198804D2003650CD /* BBBSearchService.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E4540A198804D2003650CD /* BBBSearchService.m */; };
-		40E45410198804E8003650CD /* BBBSearchConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E4540F198804E8003650CD /* BBBSearchConnection.m */; };
-		40E45421198804FE003650CD /* BBBRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E45412198804FE003650CD /* BBBRequest.m */; };
-		40E45422198804FE003650CD /* BBBNetworkConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E45414198804FE003650CD /* BBBNetworkConfiguration.m */; };
-		40E45425198804FE003650CD /* BBBConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E4541D198804FE003650CD /* BBBConnection.m */; };
-		40E45426198804FE003650CD /* BBBResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E45420198804FE003650CD /* BBBResponse.m */; };
+		5A8636ED198FCA65003B0DB0 /* BBBAuthenticationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E45408198804D2003650CD /* BBBAuthenticationService.m */; };
+		5A8636EE198FCA65003B0DB0 /* BBBUserDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 40284CBD1988097F00952666 /* BBBUserDetails.m */; };
+		5A8636EF198FCA65003B0DB0 /* BBBClientDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 405B65B4198959F900AC8A3C /* BBBClientDetails.m */; };
+		5A8636F0198FCA65003B0DB0 /* BBBAuthData.m in Sources */ = {isa = PBXBuildFile; fileRef = 405B65BF198A4E4200AC8A3C /* BBBAuthData.m */; };
+		5A8636F1198FCA65003B0DB0 /* BBBAuthResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 405B65D2198A933400AC8A3C /* BBBAuthResponseMapper.m */; };
+		5A8636F2198FCA65003B0DB0 /* BBBLibraryService.m in Sources */ = {isa = PBXBuildFile; fileRef = 405B6589198955A700AC8A3C /* BBBLibraryService.m */; };
+		5A8636F3198FCA65003B0DB0 /* BBBLibraryItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 405B65B719895BA800AC8A3C /* BBBLibraryItem.m */; };
+		5A8636F4198FCA65003B0DB0 /* BBBLibraryItemLink.m in Sources */ = {isa = PBXBuildFile; fileRef = 405B65C2198A538A00AC8A3C /* BBBLibraryItemLink.m */; };
+		5A8636F5198FCA65003B0DB0 /* BBBCatalogueService.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E45405198804D2003650CD /* BBBCatalogueService.m */; };
+		5A8636F6198FCA65003B0DB0 /* BBBSearchService.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E4540A198804D2003650CD /* BBBSearchService.m */; };
+		5A8636F7198FCA65003B0DB0 /* BBBKeyService.m in Sources */ = {isa = PBXBuildFile; fileRef = 405B659E198957C200AC8A3C /* BBBKeyService.m */; };
+		5A8636F8198FCA65003B0DB0 /* BBBBookmarkService.m in Sources */ = {isa = PBXBuildFile; fileRef = 405B65A0198957C200AC8A3C /* BBBBookmarkService.m */; };
+		5A8636F9198FCA65003B0DB0 /* BBBClubcardService.m in Sources */ = {isa = PBXBuildFile; fileRef = 405B65B11989586F00AC8A3C /* BBBClubcardService.m */; };
+		5A8636FA198FCA65003B0DB0 /* BBBMarketingService.m in Sources */ = {isa = PBXBuildFile; fileRef = 405B659A198957C200AC8A3C /* BBBMarketingService.m */; };
+		5A8636FB198FCA65003B0DB0 /* BBBCategoryService.m in Sources */ = {isa = PBXBuildFile; fileRef = 405B659C198957C200AC8A3C /* BBBCategoryService.m */; };
+		5A8636FC198FCA65003B0DB0 /* BBBPurchasingService.m in Sources */ = {isa = PBXBuildFile; fileRef = 405B65AB1989582E00AC8A3C /* BBBPurchasingService.m */; };
+		5A8636FD198FCA65003B0DB0 /* BBBSearchConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E4540F198804E8003650CD /* BBBSearchConnection.m */; };
+		5A8636FE198FCA65003B0DB0 /* BBBAuthConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 405B65C5198A77A200AC8A3C /* BBBAuthConnection.m */; };
+		5A8636FF198FCA65003B0DB0 /* BBBLibraryConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 405B65C8198A77B200AC8A3C /* BBBLibraryConnection.m */; };
+		5A863700198FCA65003B0DB0 /* BBBResponseMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 405B65D7198AAD4100AC8A3C /* BBBResponseMapping.m */; };
+		5A863701198FCA65003B0DB0 /* BBBJSONResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 405B65D5198AA82900AC8A3C /* BBBJSONResponseMapper.m */; };
+		5A863702198FCA65003B0DB0 /* BBBRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 405B65CF198A914E00AC8A3C /* BBBRequestFactory.m */; };
+		5A863703198FCA65003B0DB0 /* BBBConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E4541D198804FE003650CD /* BBBConnection.m */; };
+		5A863704198FCA65003B0DB0 /* BBBRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E45412198804FE003650CD /* BBBRequest.m */; };
+		5A863705198FCA65003B0DB0 /* BBBResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E45420198804FE003650CD /* BBBResponse.m */; };
+		5A863706198FCA65003B0DB0 /* BBBNetworkConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E45414198804FE003650CD /* BBBNetworkConfiguration.m */; };
+		5A86370A198FCAA9003B0DB0 /* BBBAuthenticationServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A863709198FCAA9003B0DB0 /* BBBAuthenticationServiceTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +128,7 @@
 		40E4541F198804FE003650CD /* BBBResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBBResponse.h; path = BBBAPI/BBBResponse.h; sourceTree = SOURCE_ROOT; };
 		40E45420198804FE003650CD /* BBBResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBBResponse.m; path = BBBAPI/BBBResponse.m; sourceTree = SOURCE_ROOT; };
 		40E4542719880527003650CD /* BBBAPITests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "BBBAPITests-Info.plist"; path = "BBBAPITests/BBBAPITests-Info.plist"; sourceTree = SOURCE_ROOT; };
+		5A863709198FCAA9003B0DB0 /* BBBAuthenticationServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBBAuthenticationServiceTests.m; path = BBBAPITests/BBBAuthenticationServiceTests.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,6 +251,7 @@
 		406032091981537900C7F6E0 /* BBBAPITests */ = {
 			isa = PBXGroup;
 			children = (
+				5A863709198FCAA9003B0DB0 /* BBBAuthenticationServiceTests.m */,
 				40AB69B8198BD784009257D0 /* BBBLibraryServiceTests.m */,
 				4060320A1981537900C7F6E0 /* Supporting Files */,
 			);
@@ -385,32 +388,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40E4540C198804D2003650CD /* BBBAuthenticationService.m in Sources */,
-				405B65B5198959F900AC8A3C /* BBBClientDetails.m in Sources */,
-				40284CBE1988097F00952666 /* BBBUserDetails.m in Sources */,
-				405B658A198955A700AC8A3C /* BBBLibraryService.m in Sources */,
-				405B65C6198A77A200AC8A3C /* BBBAuthConnection.m in Sources */,
-				405B65D0198A914E00AC8A3C /* BBBRequestFactory.m in Sources */,
-				40E4540B198804D2003650CD /* BBBCatalogueService.m in Sources */,
-				40E45425198804FE003650CD /* BBBConnection.m in Sources */,
-				405B65AC1989582E00AC8A3C /* BBBPurchasingService.m in Sources */,
-				40E45422198804FE003650CD /* BBBNetworkConfiguration.m in Sources */,
-				40E4540D198804D2003650CD /* BBBSearchService.m in Sources */,
-				405B65D6198AA82900AC8A3C /* BBBJSONResponseMapper.m in Sources */,
-				405B65A6198957C200AC8A3C /* BBBBookmarkService.m in Sources */,
-				405B65B819895BA800AC8A3C /* BBBLibraryItem.m in Sources */,
-				405B65C3198A538A00AC8A3C /* BBBLibraryItemLink.m in Sources */,
-				405B65A5198957C200AC8A3C /* BBBKeyService.m in Sources */,
-				405B65D8198AAD4100AC8A3C /* BBBResponseMapping.m in Sources */,
-				405B65A4198957C200AC8A3C /* BBBCategoryService.m in Sources */,
-				405B65B21989586F00AC8A3C /* BBBClubcardService.m in Sources */,
-				40E45426198804FE003650CD /* BBBResponse.m in Sources */,
-				405B65A3198957C200AC8A3C /* BBBMarketingService.m in Sources */,
-				405B65C9198A77B200AC8A3C /* BBBLibraryConnection.m in Sources */,
-				40E45421198804FE003650CD /* BBBRequest.m in Sources */,
-				40E45410198804E8003650CD /* BBBSearchConnection.m in Sources */,
-				405B65D3198A933400AC8A3C /* BBBAuthResponseMapper.m in Sources */,
-				405B65C0198A4E4200AC8A3C /* BBBAuthData.m in Sources */,
+				5A8636F9198FCA65003B0DB0 /* BBBClubcardService.m in Sources */,
+				5A8636F2198FCA65003B0DB0 /* BBBLibraryService.m in Sources */,
+				5A8636FE198FCA65003B0DB0 /* BBBAuthConnection.m in Sources */,
+				5A863702198FCA65003B0DB0 /* BBBRequestFactory.m in Sources */,
+				5A8636EE198FCA65003B0DB0 /* BBBUserDetails.m in Sources */,
+				5A8636EF198FCA65003B0DB0 /* BBBClientDetails.m in Sources */,
+				5A863704198FCA65003B0DB0 /* BBBRequest.m in Sources */,
+				5A8636F5198FCA65003B0DB0 /* BBBCatalogueService.m in Sources */,
+				5A863703198FCA65003B0DB0 /* BBBConnection.m in Sources */,
+				5A8636F7198FCA65003B0DB0 /* BBBKeyService.m in Sources */,
+				5A8636F0198FCA65003B0DB0 /* BBBAuthData.m in Sources */,
+				5A8636FD198FCA65003B0DB0 /* BBBSearchConnection.m in Sources */,
+				5A863706198FCA65003B0DB0 /* BBBNetworkConfiguration.m in Sources */,
+				5A8636F3198FCA65003B0DB0 /* BBBLibraryItem.m in Sources */,
+				5A8636F6198FCA65003B0DB0 /* BBBSearchService.m in Sources */,
+				5A8636F8198FCA65003B0DB0 /* BBBBookmarkService.m in Sources */,
+				5A863700198FCA65003B0DB0 /* BBBResponseMapping.m in Sources */,
+				5A8636FF198FCA65003B0DB0 /* BBBLibraryConnection.m in Sources */,
+				5A863705198FCA65003B0DB0 /* BBBResponse.m in Sources */,
+				5A8636FB198FCA65003B0DB0 /* BBBCategoryService.m in Sources */,
+				5A863701198FCA65003B0DB0 /* BBBJSONResponseMapper.m in Sources */,
+				5A8636F1198FCA65003B0DB0 /* BBBAuthResponseMapper.m in Sources */,
+				5A8636FC198FCA65003B0DB0 /* BBBPurchasingService.m in Sources */,
+				5A8636FA198FCA65003B0DB0 /* BBBMarketingService.m in Sources */,
+				5A8636ED198FCA65003B0DB0 /* BBBAuthenticationService.m in Sources */,
+				5A8636F4198FCA65003B0DB0 /* BBBLibraryItemLink.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +421,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A86370A198FCAA9003B0DB0 /* BBBAuthenticationServiceTests.m in Sources */,
 				40AB69BA198BD804009257D0 /* BBBLibraryServiceTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
