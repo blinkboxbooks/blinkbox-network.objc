@@ -19,6 +19,12 @@
 @end
 
 @implementation BBBRequest
++ (BBBRequest *)requestWithURLRequest:(NSURLRequest *)request {
+    BBBRequest *bbbRequest = [BBBRequest new];
+    bbbRequest.URLRequest = request;
+
+    return bbbRequest;
+}
 - (id) copyWithZone:(NSZone *)zone{
 #warning IMPLEMENT ME
     return nil;

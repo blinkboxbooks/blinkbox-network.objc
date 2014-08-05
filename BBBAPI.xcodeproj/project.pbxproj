@@ -12,6 +12,7 @@
 		406032031981537900C7F6E0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 406031F31981537800C7F6E0 /* Foundation.framework */; };
 		406032081981537900C7F6E0 /* libBBBAPI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 406031F01981537800C7F6E0 /* libBBBAPI.a */; };
 		40AB69BA198BD804009257D0 /* BBBLibraryServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 40AB69B8198BD784009257D0 /* BBBLibraryServiceTests.m */; };
+		5A4E82CD1990CBC900FD96C3 /* BBBAuthResponseMapperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A4E82CC1990CBC900FD96C3 /* BBBAuthResponseMapperTests.m */; };
 		5A8636ED198FCA65003B0DB0 /* BBBAuthenticationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E45408198804D2003650CD /* BBBAuthenticationService.m */; };
 		5A8636EE198FCA65003B0DB0 /* BBBUserDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 40284CBD1988097F00952666 /* BBBUserDetails.m */; };
 		5A8636EF198FCA65003B0DB0 /* BBBClientDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 405B65B4198959F900AC8A3C /* BBBClientDetails.m */; };
@@ -39,6 +40,8 @@
 		5A863705198FCA65003B0DB0 /* BBBResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E45420198804FE003650CD /* BBBResponse.m */; };
 		5A863706198FCA65003B0DB0 /* BBBNetworkConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E45414198804FE003650CD /* BBBNetworkConfiguration.m */; };
 		5A86370A198FCAA9003B0DB0 /* BBBAuthenticationServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A863709198FCAA9003B0DB0 /* BBBAuthenticationServiceTests.m */; };
+		5A86370D198FE948003B0DB0 /* BBBAuthenticationServiceConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A86370C198FE948003B0DB0 /* BBBAuthenticationServiceConstants.m */; };
+		5A863713198FF381003B0DB0 /* BBBMockAssertionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A863712198FF381003B0DB0 /* BBBMockAssertionHandler.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,7 +131,14 @@
 		40E4541F198804FE003650CD /* BBBResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBBResponse.h; path = BBBAPI/BBBResponse.h; sourceTree = SOURCE_ROOT; };
 		40E45420198804FE003650CD /* BBBResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBBResponse.m; path = BBBAPI/BBBResponse.m; sourceTree = SOURCE_ROOT; };
 		40E4542719880527003650CD /* BBBAPITests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "BBBAPITests-Info.plist"; path = "BBBAPITests/BBBAPITests-Info.plist"; sourceTree = SOURCE_ROOT; };
+		5A4E82CC1990CBC900FD96C3 /* BBBAuthResponseMapperTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBBAuthResponseMapperTests.m; path = BBBAPITests/BBBAuthResponseMapperTests.m; sourceTree = SOURCE_ROOT; };
 		5A863709198FCAA9003B0DB0 /* BBBAuthenticationServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBBAuthenticationServiceTests.m; path = BBBAPITests/BBBAuthenticationServiceTests.m; sourceTree = SOURCE_ROOT; };
+		5A86370B198FE948003B0DB0 /* BBBAuthenticationServiceConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBBAuthenticationServiceConstants.h; path = BBBAPI/BBBAuthenticationServiceConstants.h; sourceTree = "<group>"; };
+		5A86370C198FE948003B0DB0 /* BBBAuthenticationServiceConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBBAuthenticationServiceConstants.m; path = BBBAPI/BBBAuthenticationServiceConstants.m; sourceTree = "<group>"; };
+		5A86370F198FF221003B0DB0 /* BBBTestMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BBBTestMacros.h; path = BBBAPITests/BBBTestMacros.h; sourceTree = SOURCE_ROOT; };
+		5A863710198FF257003B0DB0 /* BBBAPITests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "BBBAPITests-Prefix.pch"; path = "BBBAPITests/BBBAPITests-Prefix.pch"; sourceTree = SOURCE_ROOT; };
+		5A863711198FF381003B0DB0 /* BBBMockAssertionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBBMockAssertionHandler.h; path = BBBAPITests/BBBMockAssertionHandler.h; sourceTree = SOURCE_ROOT; };
+		5A863712198FF381003B0DB0 /* BBBMockAssertionHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBBMockAssertionHandler.m; path = BBBAPITests/BBBMockAssertionHandler.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +176,8 @@
 				405B65BF198A4E4200AC8A3C /* BBBAuthData.m */,
 				405B65D1198A933400AC8A3C /* BBBAuthResponseMapper.h */,
 				405B65D2198A933400AC8A3C /* BBBAuthResponseMapper.m */,
+				5A86370B198FE948003B0DB0 /* BBBAuthenticationServiceConstants.h */,
+				5A86370C198FE948003B0DB0 /* BBBAuthenticationServiceConstants.m */,
 			);
 			name = Authentication;
 			sourceTree = "<group>";
@@ -251,7 +263,9 @@
 		406032091981537900C7F6E0 /* BBBAPITests */ = {
 			isa = PBXGroup;
 			children = (
-				5A863709198FCAA9003B0DB0 /* BBBAuthenticationServiceTests.m */,
+				5A863710198FF257003B0DB0 /* BBBAPITests-Prefix.pch */,
+				5A863714198FF3BD003B0DB0 /* Test Helpers */,
+				5A86370E198FEE62003B0DB0 /* Authentication */,
 				40AB69B8198BD784009257D0 /* BBBLibraryServiceTests.m */,
 				4060320A1981537900C7F6E0 /* Supporting Files */,
 			);
@@ -305,6 +319,25 @@
 				405B65AB1989582E00AC8A3C /* BBBPurchasingService.m */,
 			);
 			name = BBBAPI;
+			sourceTree = "<group>";
+		};
+		5A86370E198FEE62003B0DB0 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				5A863709198FCAA9003B0DB0 /* BBBAuthenticationServiceTests.m */,
+				5A4E82CC1990CBC900FD96C3 /* BBBAuthResponseMapperTests.m */,
+			);
+			name = Authentication;
+			sourceTree = "<group>";
+		};
+		5A863714198FF3BD003B0DB0 /* Test Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				5A863711198FF381003B0DB0 /* BBBMockAssertionHandler.h */,
+				5A863712198FF381003B0DB0 /* BBBMockAssertionHandler.m */,
+				5A86370F198FF221003B0DB0 /* BBBTestMacros.h */,
+			);
+			name = "Test Helpers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -399,6 +432,7 @@
 				5A863703198FCA65003B0DB0 /* BBBConnection.m in Sources */,
 				5A8636F7198FCA65003B0DB0 /* BBBKeyService.m in Sources */,
 				5A8636F0198FCA65003B0DB0 /* BBBAuthData.m in Sources */,
+				5A86370D198FE948003B0DB0 /* BBBAuthenticationServiceConstants.m in Sources */,
 				5A8636FD198FCA65003B0DB0 /* BBBSearchConnection.m in Sources */,
 				5A863706198FCA65003B0DB0 /* BBBNetworkConfiguration.m in Sources */,
 				5A8636F3198FCA65003B0DB0 /* BBBLibraryItem.m in Sources */,
@@ -423,6 +457,8 @@
 			files = (
 				5A86370A198FCAA9003B0DB0 /* BBBAuthenticationServiceTests.m in Sources */,
 				40AB69BA198BD804009257D0 /* BBBLibraryServiceTests.m in Sources */,
+				5A4E82CD1990CBC900FD96C3 /* BBBAuthResponseMapperTests.m in Sources */,
+				5A863713198FF381003B0DB0 /* BBBMockAssertionHandler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -538,12 +574,12 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "BBBNetworking/BBBNetworking-Prefix.pch";
+				GCC_PREFIX_HEADER = "BBBAPITests/BBBAPITests-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "BBBNetworkingTests/BBBAPITests-Info.plist";
+				INFOPLIST_FILE = "BBBAPITests/BBBAPITests-Info.plist";
 				PRODUCT_NAME = BBBAPITests;
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -558,8 +594,8 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "BBBNetworking/BBBNetworking-Prefix.pch";
-				INFOPLIST_FILE = "BBBNetworkingTests/BBBAPITests-Info.plist";
+				GCC_PREFIX_HEADER = "BBBAPITests/BBBAPITests-Prefix.pch";
+				INFOPLIST_FILE = "BBBAPITests/BBBAPITests-Info.plist";
 				PRODUCT_NAME = BBBAPITests;
 				WRAPPER_EXTENSION = xctest;
 			};

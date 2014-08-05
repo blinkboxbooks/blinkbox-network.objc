@@ -12,8 +12,6 @@
 @class BBBClientDetails;
 @class BBBAuthData;
 
-extern NSString *const kAuthServiceName;
-
 @interface BBBAuthenticationService : NSObject
 
 - (void) registerUser:(BBBUserDetails *)user

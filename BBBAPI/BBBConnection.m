@@ -11,8 +11,20 @@
 #import "BBBRequest.h"
 #import "BBBNetworkConfiguration.h"
 
-NSString * BBBContentTypeString(BBBContentType type);
-
+NSString * BBBContentTypeString(BBBContentType type){
+    NSString *contentType = @"";
+    switch (type) {
+        case BBBContentTypeJSON:
+            contentType = @"application/vnd.blinkboxbooks.data.v1+json";
+            break;
+        case BBBContentTypeURLEncodedForm:
+            contentType = @"application/x-www-form-urlencoded";
+        default:
+            break;
+    }
+    return contentType;
+}
+NSString *const kBBBURLConnectionErrorDomain = @"kBBBURLConnectionErrorDomain";
 typedef void(^BBBURLConnectionCompletionCallback)(NSURLResponse *response, NSData *data, NSError *connectionError);
 
 @interface BBBConnection ()
@@ -28,6 +40,8 @@ typedef void(^BBBURLConnectionCompletionCallback)(NSURLResponse *response, NSDat
     self = [super init];
     if (self) {
         self.baseURL = URL;
+        self.parameters = [NSMutableDictionary new];
+        self.headers = [NSMutableDictionary new];
     }
     return self;
 }
@@ -43,11 +57,36 @@ typedef void(^BBBURLConnectionCompletionCallback)(NSURLResponse *response, NSDat
     return self;
 }
 
+- (void) addParameterWithKey:(NSString*)key value:(NSString*)value{
+    NSAssert([self.parameters objectForKey:key] == nil, @"Overwriting parameter %@. Is that intended?", key);
+    [self.parameters setObject:value forKey:key];
+}
+
+- (void) addParameterWithKey:(NSString *)key arrayValue:(NSArray *)value{
+    NSAssert([self.parameters objectForKey:key] == nil, @"Overwriting parameter %@. Is that intended?", key);
+    [self.parameters setObject:value forKey:key];
+}
+
+- (void) removeParameterWithKey:(NSString *)key{
+    [self.parameters removeObjectForKey:key];
+}
+
+- (void) addHeaderFieldWithKey:(NSString*)key value:(NSString*)value{
+    NSAssert([self.headers objectForKey:key] == nil, @"Overwriting header %@. Is that intended?", key);
+    [self.headers setObject:value forKey:key];
+}
+
+- (void) removeHeaderFieldWithKey:(NSString*)key{
+    [self.headers removeObjectForKey:key];
+}
+
 - (void) setContentType:(BBBContentType)contentType{
     [self addHeaderFieldWithKey:@"Content-Type" value:BBBContentTypeString(contentType)];
 }
 
-
+- (void) setHTTPMethod:(BBBHTTPMethod)httpMethod{
+    NSAssert(false, @"This is probably not needed");
+}
 
 - (void)perform:(BBBHTTPMethod)method completion:(void (^)(id, NSError *))completion{
     NSURLSession *s = [NSURLSession sharedSession];
@@ -64,7 +103,8 @@ typedef void(^BBBURLConnectionCompletionCallback)(NSURLResponse *response, NSDat
         return;
     }
     
-    [s dataTaskWithRequest:request.URLRequest
+    NSURLSessionDataTask *dataTask;
+    dataTask = [s dataTaskWithRequest:request.URLRequest
          completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
              
              
@@ -95,5 +135,7 @@ typedef void(^BBBURLConnectionCompletionCallback)(NSURLResponse *response, NSDat
             
              
          }];
+
+    [dataTask resume];
 }
 @end

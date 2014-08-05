@@ -39,7 +39,6 @@ extern NSString *const kBBBURLConnectionErrorDomain;
 
 @property (nonatomic, strong, readonly) NSURL *baseURL;
 
-
 @property (nonatomic, assign) BBBContentType contentType;
 
 /**
@@ -69,7 +68,6 @@ extern NSString *const kBBBURLConnectionErrorDomain;
  *  @param key   The key for this header parameter
  *  @param value The value for this header paramater as an `NSArray`
  */
-
 - (void) addParameterWithKey:(NSString *)key arrayValue:(NSArray *)value;
 
 - (void) removeParameterWithKey:(NSString *)key;
@@ -84,8 +82,6 @@ extern NSString *const kBBBURLConnectionErrorDomain;
 - (void) addHeaderFieldWithKey:(NSString*)key value:(NSString*)value;
 
 - (void) removeHeaderFieldWithKey:(NSString*)key;
-
-
 
 /**
  *  Set the connection method.

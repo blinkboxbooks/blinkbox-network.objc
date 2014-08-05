@@ -8,7 +8,7 @@
 
 #import "BBBNetworkConfiguration.h"
 #import "BBBAuthResponseMapper.h"
-#import "BBBAuthenticationService.h"
+#import "BBBAuthenticationServiceConstants.h"
 
 @implementation BBBNetworkConfiguration
 
@@ -24,4 +24,26 @@
 - (void) assignDefaultMapper{
 //    [self setReponseMapper:[BBBAuthResponseMapper new] forServiceName:kAuthServiceName];
 }
+
++ (id<BBBResponseMapping>)responseMapperForServiceName:(NSString *)name{
+    if ([name isEqualToString:kBBBAuthServiceName]) {
+        return [BBBAuthResponseMapper new];
+    }
+    return nil;
+}
+
++ (NSURL *)baseURLForDomain:(BBBAPIDomain)domain{
+    NSURL *baseURL = nil;
+    switch (domain) {
+        case BBBAPIDomainAuthentication:
+            baseURL = [NSURL URLWithString:@"https://auth.blinkboxbooks.com"];
+            break;
+
+        default:
+            break;
+    }
+    NSAssert(baseURL, @"No baseURL for domain %i", domain);
+    return baseURL;
+}
+
 @end

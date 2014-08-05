@@ -31,7 +31,7 @@ NSString *const BBBRequestFactoryDomain = @"com.bbb.requestFactoryErrorDomain";
         }
         
         NSURL *paramaterURL = [url URLByAppendingPathComponent:[NSURL URLWithString:queryString]];
-        
+        [request setHTTPMethod:@"GET"];
         [request setURL:paramaterURL];
     }
     else {
@@ -40,8 +40,11 @@ NSString *const BBBRequestFactoryDomain = @"com.bbb.requestFactoryErrorDomain";
                                     contentType:contentType
                                           error:&bodyError];
         [request setHTTPBody:body];
+        [request setURL:url];
+        [request setHTTPMethod:@"POST"];
+
     }
-    
+
     [request setAllHTTPHeaderFields:headers];
     
     return [BBBRequest requestWithURLRequest:request];

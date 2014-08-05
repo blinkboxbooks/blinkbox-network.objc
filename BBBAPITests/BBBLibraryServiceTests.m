@@ -7,7 +7,7 @@
 //
 
 #import "BBBLibraryService.h"
-
+#import <XCTest/XCTest.h>
 @interface BBBLibraryServiceTests : XCTestCase{
     BBBLibraryService *libraryService;
 }
