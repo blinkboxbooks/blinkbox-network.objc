@@ -108,12 +108,6 @@
                                  userInfo:nil];
     }
     return nil;
-
-    //can be a post for reg client (json response) (POST)
-    //can be get for get all clients (GET)
-    //can be modify client (PATCH)
-    //can be delete client (DELETE)
-    return nil;
 }
 
 - (BBBClientDetails *)clientDetailsWithJSON:(NSDictionary *)JSON{

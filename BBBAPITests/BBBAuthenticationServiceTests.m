@@ -42,7 +42,8 @@ BBBAuthenticationService *service;
 
 #pragma mark - Tests against live (prod) API
 - (void) testRegisterUserAndClientWithNilClient{
-    BBBUserDetails *user;
+    BBB_DISABLE_ASSERTIONS();
+    BBBUserDetails *user = [self validRegistrationUser];
     BBBClientDetails *client = nil;
     BBB_PREPARE_SEMAPHORE();
     [service registerUser:user client:client completion:^(BBBAuthData *data, NSError *error) {
@@ -50,17 +51,40 @@ BBBAuthenticationService *service;
         BBB_SIGNAL_SEMAPHORE();
     }];
     BBB_WAIT_FOR_SEMAPHORE();
+    BBB_ENABLE_ASSERTIONS();
+}
+
+- (void) testRegisterUserAndClientThrowsWithNilClient{
+    BBBUserDetails *user = [self validRegistrationUser];
+    BBBClientDetails *client = nil;
+    XCTAssertThrows([service registerUser:user client:client completion:^(BBBAuthData *data, NSError *error) {
+    }]);
 }
 
 - (void) testRegisterUserAndClientWithNilUser{
+    BBB_DISABLE_ASSERTIONS();
     BBBUserDetails *user = nil;
-    BBBClientDetails *client;
+    BBBClientDetails *client = [self validRegistrationClient];
     BBB_PREPARE_SEMAPHORE();
     [service registerUser:user client:client completion:^(BBBAuthData *data, NSError *error) {
         BBBAssertAuthResponseErrorCode(data, error, BBBAPIErrorInvalidParameters);
         BBB_SIGNAL_SEMAPHORE();
     }];
     BBB_WAIT_FOR_SEMAPHORE();
+    BBB_ENABLE_ASSERTIONS();
+}
+
+- (void) testRegisterUserAndClientThrowsWithNilUser{
+    BBBUserDetails *user = nil;
+    BBBClientDetails *client = [self validRegistrationClient];
+    XCTAssertThrows([service registerUser:user client:client completion:^(BBBAuthData *data, NSError *error) {
+    }]);
+}
+
+- (void) testRegisterUserAndClientThrowsWithNilCompletion{
+    BBBUserDetails *user = [self validRegistrationUser];
+    BBBClientDetails *client = [self validRegistrationClient];
+    XCTAssertThrows([service registerUser:user client:client completion:nil]);
 }
 
 #if 0
@@ -77,6 +101,51 @@ BBBAuthenticationService *service;
     BBB_WAIT_FOR_SEMAPHORE();
 }
 #endif
+
+- (void) testRegisterClientWithNilClient{
+    BBB_DISABLE_ASSERTIONS();
+    BBBUserDetails *user = [self validUserDetails];
+    BBBClientDetails *client = nil;
+    BBB_PREPARE_SEMAPHORE();
+    [service registerClient:client forUser:user completion:^(BBBClientDetails *data, NSError *error) {
+        BBBAssertAuthResponseErrorCode(data, error, BBBAPIErrorInvalidParameters);
+        BBB_SIGNAL_SEMAPHORE();
+    }];
+    BBB_WAIT_FOR_SEMAPHORE();
+    BBB_ENABLE_ASSERTIONS();
+}
+
+- (void) testRegisterClientWithNilUser{
+    BBB_DISABLE_ASSERTIONS();
+    BBBUserDetails *user = nil;
+    BBBClientDetails *client = [self validRegistrationClient];
+    BBB_PREPARE_SEMAPHORE();
+    [service registerClient:client forUser:user completion:^(BBBClientDetails *data, NSError *error) {
+        BBBAssertAuthResponseErrorCode(data, error, BBBAPIErrorInvalidParameters);
+        BBB_SIGNAL_SEMAPHORE();
+    }];
+    BBB_WAIT_FOR_SEMAPHORE();
+    BBB_ENABLE_ASSERTIONS();
+}
+
+- (void) testRegisterClientThrowsWithNilClient{
+    BBBUserDetails *user = [self validUserDetails];
+    BBBClientDetails *client = nil;
+    XCTAssertThrows([service registerClient:client forUser:user completion:^(BBBClientDetails *data, NSError *error) {
+    }]);
+}
+
+- (void) testRegisterClientThrowsWithNilUser{
+    BBBUserDetails *user = nil;
+    BBBClientDetails *client = [self validRegistrationClient];
+    XCTAssertThrows([service registerClient:client forUser:user completion:^(BBBClientDetails *data, NSError *error) {
+    }]);
+}
+- (void) testRegisterClientThrowsWithNilCompletion{
+    BBBUserDetails *user = [self validUserDetails];
+    BBBClientDetails *client = [self validRegistrationClient];
+    XCTAssertThrows([service registerClient:client forUser:user completion:nil]);
+}
 
 - (void) testRegisterClientAndDeleteClient{
     BBBUserDetails *user = [self validUserDetails];
@@ -127,8 +196,8 @@ BBBAuthenticationService *service;
 }
 
 - (void) testLoginWithNilUserAndClient{
+    BBB_DISABLE_ASSERTIONS();
     BBB_PREPARE_SEMAPHORE();
-
     [service loginUser:nil
                 client:nil
             completion:^(BBBAuthData *data, NSError *error) {
@@ -137,6 +206,19 @@ BBBAuthenticationService *service;
             }];
 
     BBB_WAIT_FOR_SEMAPHORE();
+    BBB_ENABLE_ASSERTIONS();
+}
+
+- (void) testLoginThrowsWithNilUser{
+    BBBUserDetails *user = nil;
+    XCTAssertThrows([service loginUser:user client:nil completion:^(BBBAuthData *data, NSError *error) {
+    }]);
+
+}
+
+- (void) testLoginThrowsWithNilCompletion{
+    BBBUserDetails *user = [self validUserDetails];
+    XCTAssertThrows([service registerClient:nil forUser:user completion:nil]);
 }
 
 - (void) testLoginWithUnregisteredUser{
@@ -200,7 +282,7 @@ BBBAuthenticationService *service;
 
 - (void) testRefreshAuthDataWithNilAuthData{
     BBBAuthData *validAuthData = nil;
-
+    BBB_DISABLE_ASSERTIONS();
     BBB_PREPARE_SEMAPHORE();
     [service refreshAuthData:validAuthData completion:^(BBBAuthData *refreshedData, NSError *error) {
         BBBAssertAuthResponseErrorCode(refreshedData, error, BBBAPIErrorInvalidParameters);
@@ -208,7 +290,19 @@ BBBAuthenticationService *service;
     }];
 
     BBB_WAIT_FOR_SEMAPHORE();
+    BBB_ENABLE_ASSERTIONS();
 }
+
+- (void) testRefreshAuthDataThrowsWithNilAuthData{
+    XCTAssertThrows([service refreshAuthData:nil completion:^(BBBAuthData *refeshedData, NSError *error) {
+    }]);
+}
+
+- (void) testRefreshAuthDataThrowsWithNilAuthCompletion{
+    BBBAuthData *data = [self validUserAuthDataForRefreshing];
+    XCTAssertThrows([service refreshAuthData:data completion:nil]);
+}
+
 
 - (void) testRefreshAuthDataWithInvalidAuthData{
     BBBAuthData *validAuthData = [self invalidAuthDataForRefresh];
@@ -268,6 +362,31 @@ BBBAuthenticationService *service;
     BBB_WAIT_FOR_SEMAPHORE();
 }
 
+- (void) testResetPasswordForNilUser{
+    BBB_DISABLE_ASSERTIONS();
+    BBB_PREPARE_SEMAPHORE();
+    [service resetPasswordForUser:nil completion:^(BOOL success, NSError *error) {
+        XCTAssertFalse(success);
+        XCTAssertEqualObjects(error.domain, kBBBAuthServiceName);
+        XCTAssertEqual(error.code, BBBAPIErrorInvalidParameters);
+
+        BBB_SIGNAL_SEMAPHORE();
+    }];
+    BBB_WAIT_FOR_SEMAPHORE();
+    BBB_ENABLE_ASSERTIONS();
+
+}
+
+- (void) testResetPasswordThrowsForNilUser{
+    XCTAssertThrows([service resetPasswordForUser:nil completion:^(BOOL success, NSError *error) {
+    }]);
+}
+
+- (void) testResetPasswordThrowsForNilCompletion{
+    BBBUserDetails *user = [self validUserDetails];
+    XCTAssertThrows([service resetPasswordForUser:user completion:nil]);
+}
+
 - (void) testRevokeValidRefreshToken{
     BBBAuthData *validAuthData = [self validUserAuthDataForRefreshing];
     XCTAssertNotNil(validAuthData, @"Cannot test revoke with invalid authData");
@@ -303,6 +422,31 @@ BBBAuthenticationService *service;
     BBB_WAIT_FOR_SEMAPHORE();
 }
 
+- (void) testRevokeRefreshTokenWithNilUser{
+    BBB_DISABLE_ASSERTIONS();
+    BBB_PREPARE_SEMAPHORE();
+
+    [service revokeRefreshTokenForUser:nil completion:^(BOOL succes, NSError *error) {
+        XCTAssertFalse(succes);
+        XCTAssertEqualObjects(error.domain, kBBBAuthServiceName);
+        XCTAssertEqual(error.code, BBBAPIErrorInvalidParameters);
+        BBB_SIGNAL_SEMAPHORE();
+    }];
+
+    BBB_WAIT_FOR_SEMAPHORE();
+    BBB_ENABLE_ASSERTIONS();
+}
+
+- (void) testRevokeRefreshTokenThrowsWithNilUser{
+    XCTAssertThrows([service revokeRefreshTokenForUser:nil completion:^(BOOL succes, NSError *error) {
+    }]);
+}
+
+- (void) testRevokeRefreshTokenThrowsWithNilCompletion{
+    BBBUserDetails *user = [self validUserDetails];
+    XCTAssertThrows([service revokeRefreshTokenForUser:user completion:nil]);
+}
+
 - (void) testGetAllClients{
     BBB_PREPARE_SEMAPHORE();
 
@@ -319,6 +463,79 @@ BBBAuthenticationService *service;
     }];
     BBB_WAIT_FOR_SEMAPHORE();
 
+}
+
+- (void) testGetAllClientsForNilUser{
+    BBB_DISABLE_ASSERTIONS();
+    BBB_PREPARE_SEMAPHORE();
+
+    [service getAllClientsForUser:nil completion:^(NSArray *clients, NSError *error) {
+        BBBAssertAuthResponseErrorCode(clients, error, BBBAPIErrorInvalidParameters);
+        BBB_SIGNAL_SEMAPHORE();
+    }];
+
+    BBB_WAIT_FOR_SEMAPHORE();
+    BBB_ENABLE_ASSERTIONS();
+}
+
+- (void) testDeleteClientWithNilUser{
+    BBB_DISABLE_ASSERTIONS();
+    BBB_PREPARE_SEMAPHORE();
+    BBBUserDetails *user = nil;
+    BBBClientDetails *client = [BBBClientDetails new];
+    client.uri = @"1";
+    [service deleteClient:client forUser:user completion:^(BOOL succes, NSError *error) {
+        XCTAssertFalse(succes);
+        XCTAssertEqualObjects(error.domain, kBBBAuthServiceName);
+        XCTAssertEqual(error.code, BBBAPIErrorInvalidParameters);
+        BBB_SIGNAL_SEMAPHORE();
+    }];
+
+    BBB_WAIT_FOR_SEMAPHORE();
+    BBB_ENABLE_ASSERTIONS();
+}
+
+- (void) testDeleteClientWithNilClient{
+    BBB_DISABLE_ASSERTIONS();
+    BBB_PREPARE_SEMAPHORE();
+    BBBClientDetails *client;
+    BBBUserDetails *user = [self validUserDetails];
+
+    [service deleteClient:client forUser:user completion:^(BOOL succes, NSError *error) {
+        XCTAssertFalse(succes);
+        XCTAssertEqualObjects(error.domain, kBBBAuthServiceName);
+        XCTAssertEqual(error.code, BBBAPIErrorInvalidParameters);
+        BBB_SIGNAL_SEMAPHORE();
+    }];
+
+    BBB_WAIT_FOR_SEMAPHORE();
+    BBB_ENABLE_ASSERTIONS();
+}
+
+- (void) testDeleteClientThrowsWithNilUser{
+    BBBUserDetails *user  = nil;
+    BBBClientDetails *client = [BBBClientDetails new];
+    client.uri = @"1";
+    XCTAssertThrows([service deleteClient:client forUser:user completion:^(BOOL succes, NSError *error) {
+        
+    }]);
+}
+
+- (void) testDeleteClientThrowsWithNilCompletion{
+    BBBUserDetails *user  = [self validUserDetails];
+    BBBClientDetails *client = [BBBClientDetails new];
+    client.uri = @"1";
+    XCTAssertThrows([service deleteClient:client forUser:user completion:nil]);
+}
+
+- (void) testGetAllClientsThrowsWithNilUser{
+    XCTAssertThrows([service getAllClientsForUser:nil completion:^(NSArray *clients, NSError *error) {
+
+    }]);
+}
+
+- (void) testGetAllClientsThrowsWithNilCompletion{
+    XCTAssertThrows([service getAllClientsForUser:[self validUserDetails] completion:nil]);
 }
 
 #pragma mark - Helper methods

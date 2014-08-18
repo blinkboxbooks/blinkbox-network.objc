@@ -38,6 +38,19 @@
                client:(BBBClientDetails *)client
            completion:(void (^)(BBBAuthData *, NSError *))completion{
 
+    NSParameterAssert(user);
+    NSParameterAssert(user.firstName);
+    NSParameterAssert(user.lastName);
+    NSParameterAssert(user.email);
+    NSParameterAssert(user.password);
+
+    NSParameterAssert(client);
+    NSParameterAssert(client.name);
+    NSParameterAssert(client.brand);
+    NSParameterAssert(client.operatingSystem);
+    NSParameterAssert(client.model);
+
+    NSParameterAssert(completion);
 
     //Validate parameters
     if (user.firstName == nil || user.lastName == nil || user.email == nil || user.password == nil
@@ -76,6 +89,23 @@
                 forUser:(BBBUserDetails *)user
              completion:(void (^)(BBBClientDetails *, NSError *))completion{
 
+    NSParameterAssert(user);
+
+
+    NSParameterAssert(client);
+    NSParameterAssert(client.name);
+    NSParameterAssert(client.brand);
+    NSParameterAssert(client.operatingSystem);
+    NSParameterAssert(client.model);
+
+    NSParameterAssert(completion);
+    if (!user) {
+        completion(nil,  [NSError errorWithDomain:kBBBAuthServiceName
+                                             code:BBBAPIErrorInvalidParameters
+                                         userInfo:nil]);
+        return;
+    }
+
     if (!client.name || !client.brand || !client.operatingSystem || !client.model) {
         completion(nil,  [NSError errorWithDomain:kBBBAuthServiceName
                                              code:BBBAPIErrorInvalidParameters
@@ -106,6 +136,11 @@
 - (void) loginUser:(BBBUserDetails *)user
             client:(BBBClientDetails *)client
         completion:(void (^)(BBBAuthData *, NSError *))completion{
+
+    NSParameterAssert(user.email);
+    NSParameterAssert(user.password);
+    NSParameterAssert(completion);
+
     if (user.email == nil || user.password == nil) {
         NSError *error =  [NSError errorWithDomain:kBBBAuthServiceName
                                               code:BBBAPIErrorInvalidParameters
@@ -142,6 +177,9 @@
 - (void) refreshAuthData:(BBBAuthData *)data
               completion:(void (^)(BBBAuthData *, NSError *))completion{
 
+    NSParameterAssert(completion);
+    NSParameterAssert(data.refreshToken);
+
     if (data.refreshToken == nil) {
         NSError *error =  [NSError errorWithDomain:kBBBAuthServiceName
                                               code:BBBAPIErrorInvalidParameters
@@ -176,6 +214,8 @@
 
 - (void) resetPasswordForUser:(BBBUserDetails *)user
                    completion:(void (^)(BOOL, NSError *))completion{
+    NSParameterAssert(user.email);
+    NSParameterAssert(completion);
 
     if (user.email == nil) {
         if (completion) {
@@ -204,6 +244,9 @@
 
 - (void) revokeRefreshTokenForUser:(BBBUserDetails *)user
                         completion:(void (^)(BOOL, NSError *))completion{
+    NSParameterAssert(user.refreshToken);
+    NSParameterAssert(completion);
+
     if (user.refreshToken == nil) {
         NSError *error =  [NSError errorWithDomain:kBBBAuthServiceName
                                               code:BBBAPIErrorInvalidParameters
@@ -232,7 +275,14 @@
 - (void) getAllClientsForUser:(BBBUserDetails *)user
                    completion:(void (^)(NSArray *, NSError *))completion{
 
-
+    NSParameterAssert(user);
+    NSParameterAssert(completion);
+    if (user == nil) {
+        completion(nil,  [NSError errorWithDomain:kBBBAuthServiceName
+                                             code:BBBAPIErrorInvalidParameters
+                                         userInfo:nil]);
+        return;
+    }
     BBBAuthConnection *connection = nil;
     connection = [[BBBAuthConnection alloc] initWithDomain:(BBBAPIDomainAuthentication)
                                                relativeURL:kBBBAuthServiceURLClients];
@@ -251,8 +301,10 @@
               forUser:(BBBUserDetails *)user
            completion:(void (^)(BOOL, NSError *))completion{
 
-
-    if (client.uri == nil) {
+    NSParameterAssert(client.uri);
+    NSParameterAssert(user);
+    NSParameterAssert(completion);
+    if (client.uri == nil || user == nil) {
         completion(NO, [NSError errorWithDomain:kBBBAuthServiceName
                                            code:BBBAPIErrorInvalidParameters
                                        userInfo:nil]);
