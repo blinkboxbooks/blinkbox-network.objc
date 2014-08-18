@@ -20,7 +20,7 @@
 
 - (void) registerClient:(BBBClientDetails *)client
                 forUser:(BBBUserDetails *)user
-             completion:(void (^)(BBBAuthData *data, NSError *error))completion;
+             completion:(void (^)(BBBClientDetails *data, NSError *error))completion;
 
 /**
  *  Log the user in

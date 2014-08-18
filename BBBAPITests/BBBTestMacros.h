@@ -106,6 +106,8 @@ while (callbackReceivedArg == NO && [loopUntil timeIntervalSinceNow] > 0) { \
                                      XCTFail(@"timed out waiting for bbb_test_semaphore");\
                                  }}\
 
+#define BBB_RESET_SEMAPHORE() bbb_test_semaphore = dispatch_semaphore_create(0)
+
 
 /**
  *  This macro disables

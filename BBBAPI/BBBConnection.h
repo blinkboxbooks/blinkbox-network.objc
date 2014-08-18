@@ -41,6 +41,7 @@ extern NSString *const kBBBURLConnectionErrorDomain;
 
 @property (nonatomic, assign) BBBContentType contentType;
 
+@property (nonatomic, assign) BOOL requiresAuthentication;
 /**
  *  Create a new connection with the given URL
  *
@@ -93,6 +94,9 @@ extern NSString *const kBBBURLConnectionErrorDomain;
 - (void) perform:(BBBHTTPMethod)method
       completion:(void (^)(id response, NSError *error))completion;
 
+- (void) perform:(BBBHTTPMethod)method
+         forUser:(BBBUserDetails *)user
+      completion:(void (^)(id response, NSError *error))completion;
 @end
 
 

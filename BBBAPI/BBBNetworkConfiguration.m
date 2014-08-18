@@ -8,17 +8,36 @@
 
 #import "BBBNetworkConfiguration.h"
 #import "BBBAuthResponseMapper.h"
+#import "BBBTokensResponseMapper.h"
+#import "BBBClientsResponseMapper.h"
 #import "BBBAuthenticationServiceConstants.h"
+#import "BBBDefaultAuthenticator.h"
 
 @implementation BBBNetworkConfiguration
 
 + (instancetype)shared{
-    return nil;
+
+    static BBBNetworkConfiguration *sharedInstance = nil;
+
+        static dispatch_once_t onceToken;
+        dispatch_once(&onceToken, ^{
+            sharedInstance = [[self alloc] init];
+        });
+        return sharedInstance;
 }
+
 - (id)init{
     self = [super init];
-
+    self.authenticator = [BBBDefaultAuthenticator new];
     return self;
+}
+
++ (id<BBBAuthenticator>) sharedAuthenticator{
+    return [[self shared]authenticator];
+}
+
++ (void) setSharedAuthenticator:(id<BBBAuthenticator>) authenticator{
+    [[self shared]setAuthenticator:authenticator];
 }
 
 - (void) assignDefaultMapper{
@@ -28,6 +47,12 @@
 + (id<BBBResponseMapping>)responseMapperForServiceName:(NSString *)name{
     if ([name isEqualToString:kBBBAuthServiceName]) {
         return [BBBAuthResponseMapper new];
+    }
+    if ([name isEqualToString:kBBBAuthServiceTokensName]) {
+        return [BBBTokensResponseMapper new];
+    }
+    if ([name isEqualToString:kBBBAuthServiceClientsName]) {
+        return [BBBClientsResponseMapper new];
     }
     return nil;
 }

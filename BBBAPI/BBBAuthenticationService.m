@@ -8,13 +8,17 @@
 
 #import "BBBAuthenticationService.h"
 #import "BBBAuthenticationServiceConstants.h"
-#import "BBBConnection.h"
+#import "BBBAPIErrors.h"
+#import "BBBAuthConnection.h"
 #import "BBBUserDetails.h"
 #import "BBBClientDetails.h"
+#import "BBBAuthData.h"
 #import "BBBRequestFactory.h"
 
 @interface BBBAuthenticationService ()
-@property (nonatomic, strong) id<BBBResponseMapping> responseMapper;
+@property (nonatomic, strong) id<BBBResponseMapping> authResponseMapper;
+@property (nonatomic, strong) id<BBBResponseMapping> tokensResponseMapper;
+@property (nonatomic, strong) id<BBBResponseMapping> clientsResponseMapper;
 @end
 
 @implementation BBBAuthenticationService
@@ -22,7 +26,9 @@
 #pragma mark - Init
 - (instancetype) init{
     if (self = [super init]) {
-        self.responseMapper = [BBBNetworkConfiguration responseMapperForServiceName:kBBBAuthServiceName];
+        self.authResponseMapper = [BBBNetworkConfiguration responseMapperForServiceName:kBBBAuthServiceName];
+        self.tokensResponseMapper = [BBBNetworkConfiguration responseMapperForServiceName:kBBBAuthServiceTokensName];
+        self.clientsResponseMapper = [BBBNetworkConfiguration responseMapperForServiceName:kBBBAuthServiceClientsName];
     }
     return self;
 }
@@ -32,98 +38,239 @@
                client:(BBBClientDetails *)client
            completion:(void (^)(BBBAuthData *, NSError *))completion{
 
-    @throw [NSException exceptionWithName:@"Unimplemented method"
-                               reason:@"Not implemented yet"
-                             userInfo:nil];
+
+    //Validate parameters
+    if (user.firstName == nil || user.lastName == nil || user.email == nil || user.password == nil
+        || user.acceptsTermsAndConditions == NO || client.name == nil || client.brand == nil
+        || client.operatingSystem == nil || client.model == nil) {
+        completion(nil,  [NSError errorWithDomain:kBBBAuthServiceName
+                                             code:BBBAPIErrorInvalidParameters
+                                         userInfo:nil]);
+        return;
+    }
+
+
+    BBBAuthConnection *connection = nil;
+    connection = [[BBBAuthConnection alloc] initWithDomain:(BBBAPIDomainAuthentication)
+                                               relativeURL:kBBBAuthServiceURLOAUTH2];
+
+    connection.requestFactory = [BBBRequestFactory new];
+    connection.responseMapper = self.authResponseMapper;
+    connection.requiresAuthentication = NO;
+
+    [connection setUsername:user.email password:user.password firstName:user.firstName
+                   lastName:user.lastName acceptedTerms:user.acceptsTermsAndConditions
+             allowMarketing:user.allowMarketing clientName:client.name clientBrand:client.brand
+                   clientOS:client.operatingSystem clientModel:client.model];
+
+    connection.grantType = BBBGrantTypeRegistration;
+
+    [connection perform:(BBBHTTPMethodPOST)
+             completion:^(BBBAuthData *data, NSError *error) {
+                 completion(data,error);
+             }];
+
 }
 
 - (void) registerClient:(BBBClientDetails *)client
                 forUser:(BBBUserDetails *)user
-             completion:(void (^)(BBBAuthData *, NSError *))completion{
+             completion:(void (^)(BBBClientDetails *, NSError *))completion{
 
-    @throw [NSException exceptionWithName:@"Unimplemented method"
-                                   reason:@"Not implemented yet"
-                                 userInfo:nil];
+    if (!client.name || !client.brand || !client.operatingSystem || !client.model) {
+        completion(nil,  [NSError errorWithDomain:kBBBAuthServiceName
+                                             code:BBBAPIErrorInvalidParameters
+                                         userInfo:nil]);
+        return;
+    }
+
+    BBBAuthConnection *connection = nil;
+    connection = [[BBBAuthConnection alloc] initWithDomain:(BBBAPIDomainAuthentication)
+                                               relativeURL:kBBBAuthServiceURLClients];
+
+    connection.requestFactory = [BBBRequestFactory new];
+    connection.responseMapper = self.clientsResponseMapper;
+
+    [connection setClientName:client.name];
+    [connection setClientBrand:client.brand];
+    [connection setClientModel:client.model];
+    [connection setClientOS:client.operatingSystem];
+
+    [connection perform:(BBBHTTPMethodPOST)
+                forUser:user
+             completion:^(BBBClientDetails *data, NSError *error) {
+                 completion(data,error);
+             }];
+
 }
 
 - (void) loginUser:(BBBUserDetails *)user
             client:(BBBClientDetails *)client
         completion:(void (^)(BBBAuthData *, NSError *))completion{
-    
-    BBBConnection *connection = [[BBBConnection alloc] initWithDomain:(BBBAPIDomainAuthentication)
-                                                          relativeURL:[self oauthURL]];
-    connection.requestFactory = [BBBRequestFactory new];
-#warning Subclassing would simplify setting these parameters\
-we could just do setUserDetails: and setClientDetails\
-This way the set calls are reduced, and we can do the error checking in\
-the subclass
-
     if (user.email == nil || user.password == nil) {
-        completion(nil,nil); //fix
+        NSError *error =  [NSError errorWithDomain:kBBBAuthServiceName
+                                              code:BBBAPIErrorInvalidParameters
+                                          userInfo:nil];
+        completion(nil,error);
         return;
     }
-    [connection addParameterWithKey:kBBBAuthKeyUsername value:user.email];
-    [connection addParameterWithKey:kBBBAuthKeyPassword value:user.password];
+
+    BBBAuthConnection *connection = nil;
+    connection = [[BBBAuthConnection alloc] initWithDomain:(BBBAPIDomainAuthentication)
+                                                          relativeURL:kBBBAuthServiceURLOAUTH2];
+
+    connection.requestFactory = [BBBRequestFactory new];
+    connection.responseMapper = self.authResponseMapper;
+    connection.requiresAuthentication = NO;
+
+    connection.username = user.email;
+    connection.password = user.password;
 
     //Client id and secret are optional parameters
     if (client.identifier != nil && client.secret != nil) {
-        [connection addParameterWithKey:kBBBAuthKeyClientId value:client.identifier];
-        [connection addParameterWithKey:kBBBAuthKeyClientSecret value:client.secret];
+        connection.clientId = client.identifier;
+        connection.clientSecret = client.secret;
     }
 
-    NSString *grantType = [BBBAuthenticationServiceConstants stringGrantType:BBBGrantTypePassword];
-    [connection addParameterWithKey:kBBBAuthKeyGrantType value:grantType];
-    
-    connection.contentType = BBBContentTypeURLEncodedForm;
-
-    connection.responseMapper = self.responseMapper;
+    connection.grantType = BBBGrantTypePassword;
 
     [connection perform:(BBBHTTPMethodPOST)
              completion:^(BBBAuthData *data, NSError *error) {
-                 
                  completion(data,error);
-                 
              }];
 }
 
 - (void) refreshAuthData:(BBBAuthData *)data
               completion:(void (^)(BBBAuthData *, NSError *))completion{
-    @throw [NSException exceptionWithName:@"Unimplemented method"
-                                   reason:@"Not implemented yet"
-                                 userInfo:nil];
+
+    if (data.refreshToken == nil) {
+        NSError *error =  [NSError errorWithDomain:kBBBAuthServiceName
+                                              code:BBBAPIErrorInvalidParameters
+                                          userInfo:nil];
+        completion(nil,error);
+        return;
+    }
+
+    BBBAuthConnection *connection = nil;
+    connection = [[BBBAuthConnection alloc] initWithDomain:(BBBAPIDomainAuthentication)
+                                               relativeURL:kBBBAuthServiceURLOAUTH2];
+
+    connection.requestFactory = [BBBRequestFactory new];
+    connection.responseMapper = self.authResponseMapper;
+    connection.requiresAuthentication = NO;
+
+    connection.grantType = BBBGrantTypeRefreshToken;
+    connection.refreshToken = data.refreshToken;
+
+    //Client id and secret are optional parameters
+    if (data.clientId != nil && data.clientSecret != nil) {
+        connection.clientId = data.clientId;
+        connection.clientSecret = data.clientSecret;
+    }
+
+
+    [connection perform:(BBBHTTPMethodPOST)
+             completion:^(BBBAuthData *data, NSError *error) {
+                 completion(data,error);
+             }];
 }
 
 - (void) resetPasswordForUser:(BBBUserDetails *)user
                    completion:(void (^)(BOOL, NSError *))completion{
-    @throw [NSException exceptionWithName:@"Unimplemented method"
-                                   reason:@"Not implemented yet"
-                                 userInfo:nil];
+
+    if (user.email == nil) {
+        if (completion) {
+            completion(NO,  [NSError errorWithDomain:kBBBAuthServiceName
+                                                code:BBBAPIErrorInvalidParameters
+                                            userInfo:nil]);
+        }
+        return;
+    }
+
+    BBBAuthConnection *connection = nil;
+    connection = [[BBBAuthConnection alloc] initWithDomain:(BBBAPIDomainAuthentication)
+                                               relativeURL:kBBBAuthServiceURLPasswordReset];
+
+    connection.requestFactory = [BBBRequestFactory new];
+    connection.responseMapper = self.tokensResponseMapper;
+    connection.requiresAuthentication = NO;
+
+    [connection setUsername:user.email];
+
+    [connection perform:(BBBHTTPMethodPOST)
+             completion:^(NSNumber *success, NSError *error) {
+                 completion([success boolValue], error);
+             }];
 }
 
 - (void) revokeRefreshTokenForUser:(BBBUserDetails *)user
                         completion:(void (^)(BOOL, NSError *))completion{
-    @throw [NSException exceptionWithName:@"Unimplemented method"
-                                   reason:@"Not implemented yet"
-                                 userInfo:nil];
-}
+    if (user.refreshToken == nil) {
+        NSError *error =  [NSError errorWithDomain:kBBBAuthServiceName
+                                              code:BBBAPIErrorInvalidParameters
+                                          userInfo:nil];
+        completion(NO,error);
+        return;
+    }
+
+    BBBAuthConnection *connection = nil;
+    connection = [[BBBAuthConnection alloc] initWithDomain:(BBBAPIDomainAuthentication)
+                                               relativeURL:kBBBAuthServiceURLTokensRevoke];
+
+    connection.requestFactory = [BBBRequestFactory new];
+    connection.responseMapper = self.tokensResponseMapper;
+    connection.requiresAuthentication = NO;
+
+    connection.refreshToken = user.refreshToken;
+
+    [connection perform:(BBBHTTPMethodPOST)
+             completion:^(NSNumber *success, NSError *error) {
+                 completion([success boolValue], error);
+             }];
+
+} 
 
 - (void) getAllClientsForUser:(BBBUserDetails *)user
                    completion:(void (^)(NSArray *, NSError *))completion{
-    @throw [NSException exceptionWithName:@"Unimplemented method"
-                                   reason:@"Not implemented yet"
-                                 userInfo:nil];
+
+
+    BBBAuthConnection *connection = nil;
+    connection = [[BBBAuthConnection alloc] initWithDomain:(BBBAPIDomainAuthentication)
+                                               relativeURL:kBBBAuthServiceURLClients];
+
+    connection.requestFactory = [BBBRequestFactory new];
+    connection.responseMapper = self.clientsResponseMapper;
+
+    [connection perform:(BBBHTTPMethodGET)
+                forUser:user
+             completion:^(NSArray *clients, NSError *error) {
+                 completion(clients, error);
+             }];
 }
 
 - (void) deleteClient:(BBBClientDetails *)client
               forUser:(BBBUserDetails *)user
            completion:(void (^)(BOOL, NSError *))completion{
-    @throw [NSException exceptionWithName:@"Unimplemented method"
-                                   reason:@"Not implemented yet"
-                                 userInfo:nil];
-}
-#pragma mark - Helper methods
-- (NSString *)oauthURL{
-    return @"oauth2/token";
+
+
+    if (client.uri == nil) {
+        completion(NO, [NSError errorWithDomain:kBBBAuthServiceName
+                                           code:BBBAPIErrorInvalidParameters
+                                       userInfo:nil]);
+        return;
+    }
+
+    BBBAuthConnection *connection = nil;
+
+    connection = [[BBBAuthConnection alloc] initWithDomain:BBBAPIDomainAuthentication
+                                               relativeURL:client.uri];
+
+    connection.requestFactory = [BBBRequestFactory new];
+    connection.responseMapper = self.clientsResponseMapper;
+    [connection perform:(BBBHTTPMethodDELETE)
+                forUser:user
+             completion:^(NSNumber *result, NSError *error) {
+                 completion([result boolValue], error);
+             }];
 }
 
 

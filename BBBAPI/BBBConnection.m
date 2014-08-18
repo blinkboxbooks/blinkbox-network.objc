@@ -42,6 +42,8 @@ typedef void(^BBBURLConnectionCompletionCallback)(NSURLResponse *response, NSDat
         self.baseURL = URL;
         self.parameters = [NSMutableDictionary new];
         self.headers = [NSMutableDictionary new];
+        self.requiresAuthentication = YES;
+        self.authenticator = [BBBNetworkConfiguration sharedAuthenticator];
     }
     return self;
 }
@@ -89,6 +91,13 @@ typedef void(^BBBURLConnectionCompletionCallback)(NSURLResponse *response, NSDat
 }
 
 - (void)perform:(BBBHTTPMethod)method completion:(void (^)(id, NSError *))completion{
+    [self perform:method forUser:nil completion:completion];
+}
+
+- (void) perform:(BBBHTTPMethod)method
+         forUser:(BBBUserDetails *)user
+      completion:(void (^)(id response, NSError *error))completion{
+
     NSURLSession *s = [NSURLSession sharedSession];
     NSError *error;
     BBBRequest *request = [self.requestFactory requestWith:self.baseURL
@@ -97,45 +106,68 @@ typedef void(^BBBURLConnectionCompletionCallback)(NSURLResponse *response, NSDat
                                                     method:method
                                                contentType:self.contentType
                                                      error:&error];
-    
     if (!request) {
         completion(nil, error);
         return;
     }
+
+    NSError *authenticatorError = nil;
+
+
+    void(^taskBlock)(void) = ^(void) {
+
+        NSURLSessionDataTask *dataTask;
+        dataTask = [s dataTaskWithRequest:request.URLRequest
+                        completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+
+
+
+                            if (response) {
+                                NSError *mapperError;
+                                id returnData = [self.responseMapper responseFromData:data
+                                                                             response:response
+                                                                                error:&mapperError];
+
+                                completion(returnData, mapperError);
+                            }
+                            else{
+
+                                NSError *connectionError;
+                                if (error != nil) {
+
+                                    NSDictionary *userInfo = @{NSUnderlyingErrorKey : error};
+
+                                    connectionError = [NSError errorWithDomain:kBBBURLConnectionErrorDomain
+                                                                          code:BBBURLConnectionErrorCodeCannotConnect
+                                                                      userInfo:userInfo];
+                                }
+
+                                completion(nil, connectionError);
+
+                            }
+
+                            
+                        }];
+        
+        [dataTask resume];
+    };
     
-    NSURLSessionDataTask *dataTask;
-    dataTask = [s dataTaskWithRequest:request.URLRequest
-         completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-             
-             
-             
-             if (response) {
-                 NSError *mapperError;
-                 id returnData = [self.responseMapper responseFromData:data
-                                                              response:response
-                                                                 error:&mapperError];
-                 
-                 completion(returnData, mapperError);
-             }
-             else{
-
-                 NSError *connectionError;
-                 if (error != nil) {
-                     
-                     NSDictionary *userInfo = @{NSUnderlyingErrorKey : error};
-                     
-                     connectionError = [NSError errorWithDomain:kBBBURLConnectionErrorDomain
-                                                 code:BBBURLConnectionErrorCodeCannotConnect
-                                             userInfo:userInfo];
-                 }
-                 
-                 completion(nil, connectionError);
-                 
-             }
-            
-             
-         }];
-
-    [dataTask resume];
+    if (self.requiresAuthentication) {
+        if (user) {
+            [self.authenticator authenticateRequest:request
+                                            forUser:user
+                                              error:&authenticatorError
+                                         completion:taskBlock];
+        }
+        else {
+            [self.authenticator authenticateRequest:request
+                                                      error:&authenticatorError
+                                                 completion:taskBlock];
+        }
+        
+    }
+    else{
+        taskBlock();
+    }
 }
 @end

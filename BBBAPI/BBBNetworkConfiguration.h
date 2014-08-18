@@ -8,14 +8,16 @@
 
 #import <Foundation/Foundation.h>
 #import "BBBResponseMapping.h"
-
+#import "BBBAuthenticator.h"
 typedef NS_ENUM(NSInteger, BBBAPIDomain) {
     BBBAPIDomainAuthentication = 0,
     BBBAPIDomainREST = 1
 };
 
 @interface BBBNetworkConfiguration : NSObject
-
+@property (nonatomic, strong) id<BBBAuthenticator> authenticator;
++ (id<BBBAuthenticator>) sharedAuthenticator;
++ (void) setSharedAuthenticator:(id<BBBAuthenticator>) authenticator;
 + (void) setBaseURL:(NSURL *)baseURL forDomain:(BBBAPIDomain)domain;
 + (NSURL *)baseURLForDomain:(BBBAPIDomain)domain;
 

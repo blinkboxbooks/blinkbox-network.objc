@@ -24,15 +24,31 @@ NSString *const BBBRequestFactoryDomain = @"com.bbb.requestFactoryErrorDomain";
     
     //Construct body or url params
     if(method == BBBHTTPMethodGET) {
-        NSString *queryString = @"";
-        
+
         if([parameters count] >0) {
-            queryString = [NSString stringWithFormat:@"?%@",[self constructURLEncodedBodyString:parameters]];
+            NSString *queryString = [NSString stringWithFormat:@"?%@",[self constructURLEncodedBodyString:parameters]];
+            NSURL *paramaterURL = [url URLByAppendingPathComponent:[NSURL URLWithString:queryString]];
+            [request setURL:paramaterURL];
+
+        }
+        else{
+            [request setURL:url];
         }
         
-        NSURL *paramaterURL = [url URLByAppendingPathComponent:[NSURL URLWithString:queryString]];
         [request setHTTPMethod:@"GET"];
-        [request setURL:paramaterURL];
+    }
+    else if(method == BBBHTTPMethodDELETE) {
+        if([parameters count] >0) {
+            NSString *queryString = [NSString stringWithFormat:@"?%@",[self constructURLEncodedBodyString:parameters]];
+            NSURL *paramaterURL = [url URLByAppendingPathComponent:[NSURL URLWithString:queryString]];
+            [request setURL:paramaterURL];
+
+        }
+        else{
+            [request setURL:url];
+        }
+
+        [request setHTTPMethod:@"DELETE"];
     }
     else {
         NSError *bodyError;

@@ -7,12 +7,7 @@
 //
 
 #import "BBBConnection.h"
-
-typedef NS_ENUM(NSInteger, BBBGrantType) {
-    BBBGrantTypePassword = 1,
-    BBBGrantTypeRegistration = 2,
-    BBBGrantTypeRefreshToken = 3,
-};
+#import "BBBAuthenticationServiceConstants.h"
 
 /**
  *  All requests performed by this class have `Content-Type` set to 
@@ -21,9 +16,28 @@ typedef NS_ENUM(NSInteger, BBBGrantType) {
  *  Responses from this connecitons are of the type `application/json`.
  */
 @interface BBBAuthConnection : BBBConnection
-@property (nonatomic, assign) BBBGrantType grantType;
-@property (nonatomic, copy) NSString *username;
-@property (nonatomic, copy) NSString *password;
-@property (nonatomic, copy) NSString *clientId;
-@property (nonatomic, copy) NSString *clientSecret;
+
+- (void) setUsername:(NSString *)username;
+- (void) setPassword:(NSString *)password;
+- (void) setClientId:(NSString *)clientId;
+- (void) setClientSecret:(NSString *)clientSecret;
+- (void) setClientName:(NSString *)clientName;
+- (void) setClientBrand:(NSString *)clientBrand;
+- (void) setClientOS:(NSString *)clientOS;
+- (void) setClientModel:(NSString *)clientModel;
+- (void) setGrantType:(BBBGrantType)grantType;
+- (void) setRefreshToken:(NSString *)refreshToken;
+
+- (void) setUsername:(NSString *)username
+            password:(NSString *)password
+           firstName:(NSString *)firstName
+            lastName:(NSString *)lastName
+       acceptedTerms:(BOOL)acceptedTerms
+      allowMarketing:(BOOL)allowMarketing
+          clientName:(NSString *)clientName
+         clientBrand:(NSString *)clientBrand
+            clientOS:(NSString *)clientOS
+         clientModel:(NSString *)clientModel;
+
+
 @end

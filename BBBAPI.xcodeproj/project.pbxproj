@@ -12,7 +12,11 @@
 		406032031981537900C7F6E0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 406031F31981537800C7F6E0 /* Foundation.framework */; };
 		406032081981537900C7F6E0 /* libBBBAPI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 406031F01981537800C7F6E0 /* libBBBAPI.a */; };
 		40AB69BA198BD804009257D0 /* BBBLibraryServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 40AB69B8198BD784009257D0 /* BBBLibraryServiceTests.m */; };
-		5A4E82CD1990CBC900FD96C3 /* BBBAuthResponseMapperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A4E82CC1990CBC900FD96C3 /* BBBAuthResponseMapperTests.m */; };
+		5A28C5DC199A44DB0017A069 /* BBBAuthDataValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A28C5DB199A44DB0017A069 /* BBBAuthDataValidator.m */; };
+		5A28C5DF199A5A030017A069 /* BBBTokensResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A28C5DE199A5A030017A069 /* BBBTokensResponseMapper.m */; };
+		5A28C5E2199A5FEE0017A069 /* BBBAuthServiceErrorParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A28C5E1199A5FEE0017A069 /* BBBAuthServiceErrorParser.m */; };
+		5A28C5E5199B559E0017A069 /* BBBDefaultAuthenticator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A28C5E4199B559E0017A069 /* BBBDefaultAuthenticator.m */; };
+		5A4E82CD1990CBC900FD96C3 /* BBBAuthServiceResponseMapperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A4E82CC1990CBC900FD96C3 /* BBBAuthServiceResponseMapperTests.m */; };
 		5A8636ED198FCA65003B0DB0 /* BBBAuthenticationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E45408198804D2003650CD /* BBBAuthenticationService.m */; };
 		5A8636EE198FCA65003B0DB0 /* BBBUserDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 40284CBD1988097F00952666 /* BBBUserDetails.m */; };
 		5A8636EF198FCA65003B0DB0 /* BBBClientDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 405B65B4198959F900AC8A3C /* BBBClientDetails.m */; };
@@ -42,6 +46,7 @@
 		5A86370A198FCAA9003B0DB0 /* BBBAuthenticationServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A863709198FCAA9003B0DB0 /* BBBAuthenticationServiceTests.m */; };
 		5A86370D198FE948003B0DB0 /* BBBAuthenticationServiceConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A86370C198FE948003B0DB0 /* BBBAuthenticationServiceConstants.m */; };
 		5A863713198FF381003B0DB0 /* BBBMockAssertionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A863712198FF381003B0DB0 /* BBBMockAssertionHandler.m */; };
+		5AC3EDE7199CA47C00F0C85F /* BBBClientsResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC3EDE6199CA47C00F0C85F /* BBBClientsResponseMapper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,7 +136,16 @@
 		40E4541F198804FE003650CD /* BBBResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBBResponse.h; path = BBBAPI/BBBResponse.h; sourceTree = SOURCE_ROOT; };
 		40E45420198804FE003650CD /* BBBResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBBResponse.m; path = BBBAPI/BBBResponse.m; sourceTree = SOURCE_ROOT; };
 		40E4542719880527003650CD /* BBBAPITests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "BBBAPITests-Info.plist"; path = "BBBAPITests/BBBAPITests-Info.plist"; sourceTree = SOURCE_ROOT; };
-		5A4E82CC1990CBC900FD96C3 /* BBBAuthResponseMapperTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBBAuthResponseMapperTests.m; path = BBBAPITests/BBBAuthResponseMapperTests.m; sourceTree = SOURCE_ROOT; };
+		5A28C5D8199907650017A069 /* BBBAPIErrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBBAPIErrors.h; path = BBBAPI/BBBAPIErrors.h; sourceTree = "<group>"; };
+		5A28C5DA199A44DB0017A069 /* BBBAuthDataValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBBAuthDataValidator.h; path = BBBAPI/BBBAuthDataValidator.h; sourceTree = "<group>"; };
+		5A28C5DB199A44DB0017A069 /* BBBAuthDataValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBBAuthDataValidator.m; path = BBBAPI/BBBAuthDataValidator.m; sourceTree = "<group>"; };
+		5A28C5DD199A5A030017A069 /* BBBTokensResponseMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBBTokensResponseMapper.h; path = BBBAPI/BBBTokensResponseMapper.h; sourceTree = "<group>"; };
+		5A28C5DE199A5A030017A069 /* BBBTokensResponseMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBBTokensResponseMapper.m; path = BBBAPI/BBBTokensResponseMapper.m; sourceTree = "<group>"; };
+		5A28C5E0199A5FEE0017A069 /* BBBAuthServiceErrorParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBBAuthServiceErrorParser.h; path = BBBAPI/BBBAuthServiceErrorParser.h; sourceTree = "<group>"; };
+		5A28C5E1199A5FEE0017A069 /* BBBAuthServiceErrorParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBBAuthServiceErrorParser.m; path = BBBAPI/BBBAuthServiceErrorParser.m; sourceTree = "<group>"; };
+		5A28C5E3199B559E0017A069 /* BBBDefaultAuthenticator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBBDefaultAuthenticator.h; path = BBBAPI/BBBDefaultAuthenticator.h; sourceTree = "<group>"; };
+		5A28C5E4199B559E0017A069 /* BBBDefaultAuthenticator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBBDefaultAuthenticator.m; path = BBBAPI/BBBDefaultAuthenticator.m; sourceTree = "<group>"; };
+		5A4E82CC1990CBC900FD96C3 /* BBBAuthServiceResponseMapperTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBBAuthServiceResponseMapperTests.m; path = BBBAPITests/BBBAuthServiceResponseMapperTests.m; sourceTree = SOURCE_ROOT; };
 		5A863709198FCAA9003B0DB0 /* BBBAuthenticationServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBBAuthenticationServiceTests.m; path = BBBAPITests/BBBAuthenticationServiceTests.m; sourceTree = SOURCE_ROOT; };
 		5A86370B198FE948003B0DB0 /* BBBAuthenticationServiceConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBBAuthenticationServiceConstants.h; path = BBBAPI/BBBAuthenticationServiceConstants.h; sourceTree = "<group>"; };
 		5A86370C198FE948003B0DB0 /* BBBAuthenticationServiceConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBBAuthenticationServiceConstants.m; path = BBBAPI/BBBAuthenticationServiceConstants.m; sourceTree = "<group>"; };
@@ -139,6 +153,8 @@
 		5A863710198FF257003B0DB0 /* BBBAPITests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "BBBAPITests-Prefix.pch"; path = "BBBAPITests/BBBAPITests-Prefix.pch"; sourceTree = SOURCE_ROOT; };
 		5A863711198FF381003B0DB0 /* BBBMockAssertionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBBMockAssertionHandler.h; path = BBBAPITests/BBBMockAssertionHandler.h; sourceTree = SOURCE_ROOT; };
 		5A863712198FF381003B0DB0 /* BBBMockAssertionHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBBMockAssertionHandler.m; path = BBBAPITests/BBBMockAssertionHandler.m; sourceTree = SOURCE_ROOT; };
+		5AC3EDE5199CA47C00F0C85F /* BBBClientsResponseMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBBClientsResponseMapper.h; path = BBBAPI/BBBClientsResponseMapper.h; sourceTree = "<group>"; };
+		5AC3EDE6199CA47C00F0C85F /* BBBClientsResponseMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBBClientsResponseMapper.m; path = BBBAPI/BBBClientsResponseMapper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +194,16 @@
 				405B65D2198A933400AC8A3C /* BBBAuthResponseMapper.m */,
 				5A86370B198FE948003B0DB0 /* BBBAuthenticationServiceConstants.h */,
 				5A86370C198FE948003B0DB0 /* BBBAuthenticationServiceConstants.m */,
+				5A28C5DA199A44DB0017A069 /* BBBAuthDataValidator.h */,
+				5A28C5DB199A44DB0017A069 /* BBBAuthDataValidator.m */,
+				5A28C5DD199A5A030017A069 /* BBBTokensResponseMapper.h */,
+				5A28C5DE199A5A030017A069 /* BBBTokensResponseMapper.m */,
+				5A28C5E0199A5FEE0017A069 /* BBBAuthServiceErrorParser.h */,
+				5A28C5E1199A5FEE0017A069 /* BBBAuthServiceErrorParser.m */,
+				5A28C5E3199B559E0017A069 /* BBBDefaultAuthenticator.h */,
+				5A28C5E4199B559E0017A069 /* BBBDefaultAuthenticator.m */,
+				5AC3EDE5199CA47C00F0C85F /* BBBClientsResponseMapper.h */,
+				5AC3EDE6199CA47C00F0C85F /* BBBClientsResponseMapper.m */,
 			);
 			name = Authentication;
 			sourceTree = "<group>";
@@ -317,6 +343,7 @@
 				405B659C198957C200AC8A3C /* BBBCategoryService.m */,
 				405B65AA1989582E00AC8A3C /* BBBPurchasingService.h */,
 				405B65AB1989582E00AC8A3C /* BBBPurchasingService.m */,
+				5A28C5D8199907650017A069 /* BBBAPIErrors.h */,
 			);
 			name = BBBAPI;
 			sourceTree = "<group>";
@@ -325,7 +352,7 @@
 			isa = PBXGroup;
 			children = (
 				5A863709198FCAA9003B0DB0 /* BBBAuthenticationServiceTests.m */,
-				5A4E82CC1990CBC900FD96C3 /* BBBAuthResponseMapperTests.m */,
+				5A4E82CC1990CBC900FD96C3 /* BBBAuthServiceResponseMapperTests.m */,
 			);
 			name = Authentication;
 			sourceTree = "<group>";
@@ -422,6 +449,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A8636F9198FCA65003B0DB0 /* BBBClubcardService.m in Sources */,
+				5AC3EDE7199CA47C00F0C85F /* BBBClientsResponseMapper.m in Sources */,
 				5A8636F2198FCA65003B0DB0 /* BBBLibraryService.m in Sources */,
 				5A8636FE198FCA65003B0DB0 /* BBBAuthConnection.m in Sources */,
 				5A863702198FCA65003B0DB0 /* BBBRequestFactory.m in Sources */,
@@ -434,16 +462,20 @@
 				5A8636F0198FCA65003B0DB0 /* BBBAuthData.m in Sources */,
 				5A86370D198FE948003B0DB0 /* BBBAuthenticationServiceConstants.m in Sources */,
 				5A8636FD198FCA65003B0DB0 /* BBBSearchConnection.m in Sources */,
+				5A28C5DC199A44DB0017A069 /* BBBAuthDataValidator.m in Sources */,
 				5A863706198FCA65003B0DB0 /* BBBNetworkConfiguration.m in Sources */,
 				5A8636F3198FCA65003B0DB0 /* BBBLibraryItem.m in Sources */,
+				5A28C5E2199A5FEE0017A069 /* BBBAuthServiceErrorParser.m in Sources */,
 				5A8636F6198FCA65003B0DB0 /* BBBSearchService.m in Sources */,
 				5A8636F8198FCA65003B0DB0 /* BBBBookmarkService.m in Sources */,
 				5A863700198FCA65003B0DB0 /* BBBResponseMapping.m in Sources */,
 				5A8636FF198FCA65003B0DB0 /* BBBLibraryConnection.m in Sources */,
 				5A863705198FCA65003B0DB0 /* BBBResponse.m in Sources */,
+				5A28C5E5199B559E0017A069 /* BBBDefaultAuthenticator.m in Sources */,
 				5A8636FB198FCA65003B0DB0 /* BBBCategoryService.m in Sources */,
 				5A863701198FCA65003B0DB0 /* BBBJSONResponseMapper.m in Sources */,
 				5A8636F1198FCA65003B0DB0 /* BBBAuthResponseMapper.m in Sources */,
+				5A28C5DF199A5A030017A069 /* BBBTokensResponseMapper.m in Sources */,
 				5A8636FC198FCA65003B0DB0 /* BBBPurchasingService.m in Sources */,
 				5A8636FA198FCA65003B0DB0 /* BBBMarketingService.m in Sources */,
 				5A8636ED198FCA65003B0DB0 /* BBBAuthenticationService.m in Sources */,
@@ -457,7 +489,7 @@
 			files = (
 				5A86370A198FCAA9003B0DB0 /* BBBAuthenticationServiceTests.m in Sources */,
 				40AB69BA198BD804009257D0 /* BBBLibraryServiceTests.m in Sources */,
-				5A4E82CD1990CBC900FD96C3 /* BBBAuthResponseMapperTests.m in Sources */,
+				5A4E82CD1990CBC900FD96C3 /* BBBAuthServiceResponseMapperTests.m in Sources */,
 				5A863713198FF381003B0DB0 /* BBBMockAssertionHandler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
