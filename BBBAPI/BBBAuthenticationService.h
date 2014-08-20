@@ -20,7 +20,7 @@
  *  @param user       The details of the user to register. Required.
  *  @param client     The details of the client to register. Required.
  *  @param completion Completion handler called with authentication data on success
- *  or an NSError describing the reason for failure.
+ *  or an NSError describing the reason for failure. Required.
  */
 - (void) registerUser:(BBBUserDetails *)user
                client:(BBBClientDetails *)client
@@ -32,7 +32,7 @@
  *  @param client     The details of the client to register.
  *  @param user       The details of the user for whom to register the client.
  *  @param completion Completion handler called with authentication data on success
- *  or an NSError describing the reason for failure.
+ *  or an NSError describing the reason for failure. Required.
  */
 - (void) registerClient:(BBBClientDetails *)client
                 forUser:(BBBUserDetails *)user
@@ -43,7 +43,7 @@
  *
  *  @param user       `BBBUserDetails` describing the login parameters to use
  *  @param client     optional `BBBClientDetails` object containing client details
- *  @param completion A block that will be called upon completion of the operation
+ *  @param completion A block that will be called upon completion of the operation. Required.
  */
 - (void) loginUser:(BBBUserDetails *)user
             client:(BBBClientDetails *)client
@@ -54,7 +54,7 @@
  *
  *  @param data       AuthData to refresh. Required.
  *  @param completion Completion handler called with refreshed authentication data on success
- *  or an NSError describing the reason for failure. 
+ *  or an NSError describing the reason for failure. Required.
  */
 - (void) refreshAuthData:(BBBAuthData *)data
               completion:(void (^)(BBBAuthData *refeshedData, NSError *error))completion;
@@ -63,7 +63,7 @@
  *  Reset the password for this user. An email will be sent to the email address of the user.
  *
  *  @param user       The user for whom we are resetting the password.
- *  @param completion Called on completion of the operation
+ *  @param completion Called on completion of the operation. Required.
  */
 - (void) resetPasswordForUser:(BBBUserDetails *)user
                    completion:(void (^)(BOOL success, NSError *error))completion;
@@ -72,7 +72,7 @@
  *  Revoke the refresh token for this user. Should be called when a user actively logs out.
  *
  *  @param user       The user for whom we are revoking a refresh token.
- *  @param completion Called on completion of the operation.
+ *  @param completion Called on completion of the operation. Required.
  */
 - (void) revokeRefreshTokenForUser:(BBBUserDetails *)user
                         completion:(void (^)(BOOL succes, NSError *error))completion;
@@ -81,7 +81,7 @@
  *  Fetch an array of all registered clients for this user.
  *
  *  @param user       User for whom to fetch client details
- *  @param completion Called on completion.
+ *  @param completion Called on completion. Required.
  */
 - (void) getAllClientsForUser:(BBBUserDetails *)user
                    completion:(void (^)(NSArray *clients, NSError *error))completion;
@@ -91,7 +91,7 @@
  *
  *  @param client     The client to delete (unregister)
  *  @param user       The user that owns the client to be deleted.
- *  @param completion Called on completion.
+ *  @param completion Called on completion. Required.
  */
 - (void) deleteClient:(BBBClientDetails *)client
               forUser:(BBBUserDetails *)user
