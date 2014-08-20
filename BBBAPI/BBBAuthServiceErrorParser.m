@@ -13,6 +13,8 @@
 - (NSError *) errorForResponseJSON:(NSDictionary *)JSON
                         statusCode:(NSInteger)statusCode{
 
+    //Check serverErrorValue for known error types.
+    //If serverErrorValue is nil, we fall through and return `BBBAuthServiceErrorCodeInvalidResponse`
     NSString *serverErrorValue = JSON[kBBBServerKeyError];
 
     NSError *(^error)(BBBAuthServiceErrorCode code) = ^(BBBAuthServiceErrorCode code) {
