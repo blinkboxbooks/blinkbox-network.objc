@@ -28,16 +28,16 @@ XCTAssertEqual(error.code, errorCode);
 
 BBBAuthenticationService *service;
 
-+ (void) setUp{
+- (void) setUp{
+    [super setUp];
     service = [BBBAuthenticationService new];
-}
 
-+ (void) tearDown{
-    service = nil;
-}
 
+}
 - (void) tearDown{
     [self resetDefaultAuthenticatorUserAndClient];
+    service = nil;
+    [super tearDown];
 }
 
 #pragma mark - Tests against live (prod) API
