@@ -46,6 +46,9 @@
 		5A86370A198FCAA9003B0DB0 /* BBBAuthenticationServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A863709198FCAA9003B0DB0 /* BBBAuthenticationServiceTests.m */; };
 		5A86370D198FE948003B0DB0 /* BBBAuthenticationServiceConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A86370C198FE948003B0DB0 /* BBBAuthenticationServiceConstants.m */; };
 		5A863713198FF381003B0DB0 /* BBBMockAssertionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A863712198FF381003B0DB0 /* BBBMockAssertionHandler.m */; };
+		5A91E9D619A4EEC70079247F /* BBBClientsResponseMapperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A91E9D519A4EEC70079247F /* BBBClientsResponseMapperTests.m */; };
+		5A91E9D919A4EF6D0079247F /* BBBAuthServiceResponseMappersTestData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A91E9D819A4EF6D0079247F /* BBBAuthServiceResponseMappersTestData.m */; };
+		5A91E9DB19A4F1300079247F /* BBBTokensResponseMapperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A91E9DA19A4F1300079247F /* BBBTokensResponseMapperTests.m */; };
 		5AC3EDE7199CA47C00F0C85F /* BBBClientsResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC3EDE6199CA47C00F0C85F /* BBBClientsResponseMapper.m */; };
 /* End PBXBuildFile section */
 
@@ -153,6 +156,10 @@
 		5A863710198FF257003B0DB0 /* BBBAPITests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "BBBAPITests-Prefix.pch"; path = "BBBAPITests/BBBAPITests-Prefix.pch"; sourceTree = SOURCE_ROOT; };
 		5A863711198FF381003B0DB0 /* BBBMockAssertionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBBMockAssertionHandler.h; path = BBBAPITests/BBBMockAssertionHandler.h; sourceTree = SOURCE_ROOT; };
 		5A863712198FF381003B0DB0 /* BBBMockAssertionHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBBMockAssertionHandler.m; path = BBBAPITests/BBBMockAssertionHandler.m; sourceTree = SOURCE_ROOT; };
+		5A91E9D519A4EEC70079247F /* BBBClientsResponseMapperTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBBClientsResponseMapperTests.m; path = BBBAPITests/BBBClientsResponseMapperTests.m; sourceTree = SOURCE_ROOT; };
+		5A91E9D719A4EF6D0079247F /* BBBAuthServiceResponseMappersTestData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBBAuthServiceResponseMappersTestData.h; path = BBBAPITests/BBBAuthServiceResponseMappersTestData.h; sourceTree = SOURCE_ROOT; };
+		5A91E9D819A4EF6D0079247F /* BBBAuthServiceResponseMappersTestData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBBAuthServiceResponseMappersTestData.m; path = BBBAPITests/BBBAuthServiceResponseMappersTestData.m; sourceTree = SOURCE_ROOT; };
+		5A91E9DA19A4F1300079247F /* BBBTokensResponseMapperTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBBTokensResponseMapperTests.m; path = BBBAPITests/BBBTokensResponseMapperTests.m; sourceTree = SOURCE_ROOT; };
 		5AC3EDE5199CA47C00F0C85F /* BBBClientsResponseMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBBClientsResponseMapper.h; path = BBBAPI/BBBClientsResponseMapper.h; sourceTree = "<group>"; };
 		5AC3EDE6199CA47C00F0C85F /* BBBClientsResponseMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBBClientsResponseMapper.m; path = BBBAPI/BBBClientsResponseMapper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -351,6 +358,8 @@
 		5A86370E198FEE62003B0DB0 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
+				5A91E9DA19A4F1300079247F /* BBBTokensResponseMapperTests.m */,
+				5A91E9D519A4EEC70079247F /* BBBClientsResponseMapperTests.m */,
 				5A863709198FCAA9003B0DB0 /* BBBAuthenticationServiceTests.m */,
 				5A4E82CC1990CBC900FD96C3 /* BBBAuthServiceResponseMapperTests.m */,
 			);
@@ -363,6 +372,8 @@
 				5A863711198FF381003B0DB0 /* BBBMockAssertionHandler.h */,
 				5A863712198FF381003B0DB0 /* BBBMockAssertionHandler.m */,
 				5A86370F198FF221003B0DB0 /* BBBTestMacros.h */,
+				5A91E9D719A4EF6D0079247F /* BBBAuthServiceResponseMappersTestData.h */,
+				5A91E9D819A4EF6D0079247F /* BBBAuthServiceResponseMappersTestData.m */,
 			);
 			name = "Test Helpers";
 			sourceTree = "<group>";
@@ -456,6 +467,7 @@
 				5A8636EE198FCA65003B0DB0 /* BBBUserDetails.m in Sources */,
 				5A8636EF198FCA65003B0DB0 /* BBBClientDetails.m in Sources */,
 				5A863704198FCA65003B0DB0 /* BBBRequest.m in Sources */,
+				5A91E9D919A4EF6D0079247F /* BBBAuthServiceResponseMappersTestData.m in Sources */,
 				5A8636F5198FCA65003B0DB0 /* BBBCatalogueService.m in Sources */,
 				5A863703198FCA65003B0DB0 /* BBBConnection.m in Sources */,
 				5A8636F7198FCA65003B0DB0 /* BBBKeyService.m in Sources */,
@@ -487,9 +499,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A91E9DB19A4F1300079247F /* BBBTokensResponseMapperTests.m in Sources */,
 				5A86370A198FCAA9003B0DB0 /* BBBAuthenticationServiceTests.m in Sources */,
 				40AB69BA198BD804009257D0 /* BBBLibraryServiceTests.m in Sources */,
 				5A4E82CD1990CBC900FD96C3 /* BBBAuthServiceResponseMapperTests.m in Sources */,
+				5A91E9D619A4EEC70079247F /* BBBClientsResponseMapperTests.m in Sources */,
 				5A863713198FF381003B0DB0 /* BBBMockAssertionHandler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
