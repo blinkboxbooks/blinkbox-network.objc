@@ -28,10 +28,10 @@
     return _errorParser;
 }
 
-- (BBBAuthData *)authDataForResponse:(NSURLResponse *)response
-                                JSON:(NSDictionary *)JSON
-                              statusCode:(NSInteger)statusCode
-                                   error:(NSError **)error{
+- (BBBAuthData *) authDataForResponse:(NSURLResponse *)response
+                                 JSON:(NSDictionary *)JSON
+                           statusCode:(NSInteger)statusCode
+                                error:(NSError **)error{
 
     BBBAuthData *authData = [[BBBAuthData alloc]initWithDictionary:JSON
                                                           response:response];
@@ -49,15 +49,15 @@
     return authData;
 }
 
-- (BBBAuthData *)responseFromData:(NSData *)data
-              response:(NSURLResponse *)response
-                 error:(NSError *__autoreleasing *)error{
+- (BBBAuthData *) responseFromData:(NSData *)data
+                          response:(NSURLResponse *)response
+                             error:(NSError *__autoreleasing *)error{
 
     NSError *JSONError = nil;
     id JSON = [super responseFromData:data response:response error:&JSONError];
-    
+
     NSDictionary *userInfo;
-    
+
     if (!JSON) {
         if (JSONError) {
             userInfo = @{NSUnderlyingErrorKey : JSONError};
@@ -66,11 +66,11 @@
                                      code:BBBResponseMappingErrorUnreadableData
                                  userInfo:userInfo];
         return nil;
-        
+
     }
-    
+
     *error = nil;
-    
+
     if (![JSON isKindOfClass:[NSDictionary class]]) {
         *error = [NSError errorWithDomain:BBBResponseMappingErrorDomain
                                      code:BBBResponseMappingErrorUnexpectedDataFormat
@@ -86,9 +86,9 @@
     //Attempt to parse data as an authdata response.
     NSError *authParseError = nil;
     BBBAuthData *authData = [self authDataForResponse:response
-                                                JSON:tokenResponse
-                                               statusCode:statusCode
-                                                    error:&authParseError];
+                                                 JSON:tokenResponse
+                                           statusCode:statusCode
+                                                error:&authParseError];
 
     //Successful auth data parse
     if (authData) {
@@ -101,7 +101,7 @@
         *error = serviceError;
         return nil;
     }
-    
+
     //Auth data parse returned an error
     if (authData == nil && authParseError != nil) {
         *error = authParseError;
@@ -110,7 +110,7 @@
 
     NSAssert(NO, @"Unhandled error");
     return nil;
-
-
+    
+    
 }
 @end
