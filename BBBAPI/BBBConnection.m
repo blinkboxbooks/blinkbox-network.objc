@@ -86,10 +86,6 @@ typedef void(^BBBURLConnectionCompletionCallback)(NSURLResponse *response, NSDat
     [self addHeaderFieldWithKey:@"Content-Type" value:BBBContentTypeString(contentType)];
 }
 
-- (void) setHTTPMethod:(BBBHTTPMethod)httpMethod{
-    NSAssert(false, @"This is probably not needed");
-}
-
 - (void)perform:(BBBHTTPMethod)method completion:(void (^)(id, NSError *))completion{
     [self perform:method forUser:nil completion:completion];
 }

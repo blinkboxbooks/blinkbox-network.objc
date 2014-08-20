@@ -84,13 +84,6 @@ extern NSString *const kBBBURLConnectionErrorDomain;
 
 - (void) removeHeaderFieldWithKey:(NSString*)key;
 
-/**
- *  Set the connection method.
- *
- *  @param httpMethod a `BBBHTTPMethod` describing the required http method.
- */
-- (void) setHTTPMethod:(BBBHTTPMethod)httpMethod;
-
 - (void) perform:(BBBHTTPMethod)method
       completion:(void (^)(id response, NSError *error))completion;
 
