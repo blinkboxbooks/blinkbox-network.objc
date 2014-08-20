@@ -8,12 +8,17 @@
 
 #import <Foundation/Foundation.h>
 @class BBBRequest;
-@class BBBUser;
+@class BBBUserDetails;
 
 @protocol BBBAuthenticator <NSObject>
 
-- (BOOL) authenticateRequest:(BBBRequest *)request error:(NSError **)error;
+- (BOOL) authenticateRequest:(BBBRequest *)request
+                       error:(NSError **)error
+                  completion:(void (^)(void))completion;
 
-- (BOOL) authenticateRequest:(BBBRequest *)request forUser:(BBBUser *)user error:(NSError **)error;
+- (BOOL) authenticateRequest:(BBBRequest *)request
+                     forUser:(BBBUserDetails *)user
+                       error:(NSError **)error
+                  completion:(void (^)(void))completion;
 
 @end

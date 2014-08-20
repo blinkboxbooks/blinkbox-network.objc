@@ -14,5 +14,7 @@
 @property (nonatomic, copy) NSString *model;
 @property (nonatomic, copy) NSString *operatingSystem;
 @property (nonatomic, copy) NSString *identifier;
+@property (nonatomic, copy) NSString *uri;
 @property (nonatomic, copy) NSString *secret;
+@property (nonatomic, copy) NSString *lastUsedDate;
 @end

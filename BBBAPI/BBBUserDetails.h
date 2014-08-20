@@ -17,6 +17,7 @@
 @property (nonatomic, copy) NSString *identifier;
 @property (nonatomic, assign) BOOL acceptsTermsAndConditions;
 @property (nonatomic, assign) BOOL allowMarketing;
+@property (nonatomic, copy) NSString *refreshToken;
 
 @end
 
