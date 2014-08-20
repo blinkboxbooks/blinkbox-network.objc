@@ -22,27 +22,37 @@
     NSString *URLPath = [[response URL]path];
     NSInteger statusCode = [(NSHTTPURLResponse*)response statusCode];
 
+    BOOL hasSuccessCode = (statusCode == 200);
+
+    if(!hasSuccessCode) {
+        return NO;
+    }
+
+    BOOL hasAuthSuffix = [URLPath hasSuffix:kBBBAuthServiceURLOAUTH2];
+    BOOL hasTokensSuffix = [URLPath hasSuffix:kBBBAuthServiceURLTokensRevoke];
+    BOOL hasNeededFields = NO;
+
     //Register user+client call
-    if ([URLPath hasSuffix:kBBBAuthServiceURLOAUTH2] &&
-        statusCode == 200 && [self data:data hasFields:[self registrationKeys]]) {
+    hasNeededFields = [self data:data hasFields:[self registrationKeys]];
+    if (hasAuthSuffix && hasNeededFields) {
         return YES;
     }
 
     //Login with client, refresh token with client:
-    else if ([URLPath hasSuffix:kBBBAuthServiceURLOAUTH2] &&
-             statusCode == 200 && [self data:data hasFields:[self loginUserAndClientKeys]]) {
+    hasNeededFields = [self data:data hasFields:[self loginUserAndClientKeys]];
+    if (hasAuthSuffix && hasNeededFields) {
         return YES;
     }
 
     //Login without client, refresh without client
-    else if ([URLPath hasSuffix:kBBBAuthServiceURLOAUTH2] &&
-             statusCode == 200 && [self data:data hasFields:[self loginUserKeys]]) {
+    hasNeededFields = [self data:data hasFields:[self loginUserKeys]];
+    if (hasAuthSuffix && hasNeededFields) {
         return YES;
     }
 
     //Revoke Token
-    else if ([URLPath hasSuffix:kBBBAuthServiceURLTokensRevoke] &&
-             data != nil && statusCode == 200) {
+    hasNeededFields = (data != nil);
+    if (hasTokensSuffix && hasNeededFields) {
         return YES;
     }
 
