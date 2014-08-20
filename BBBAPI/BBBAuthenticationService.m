@@ -99,14 +99,10 @@
     NSParameterAssert(client.model);
 
     NSParameterAssert(completion);
-    if (!user) {
-        completion(nil,  [NSError errorWithDomain:kBBBAuthServiceName
-                                             code:BBBAPIErrorInvalidParameters
-                                         userInfo:nil]);
-        return;
-    }
 
-    if (!client.name || !client.brand || !client.operatingSystem || !client.model) {
+    BOOL hasNeededClientData = NO;
+    hasNeededClientData = (client.name && client.brand && client.operatingSystem && client.model);
+    if (!user || !hasNeededClientData) {
         completion(nil,  [NSError errorWithDomain:kBBBAuthServiceName
                                              code:BBBAPIErrorInvalidParameters
                                          userInfo:nil]);
