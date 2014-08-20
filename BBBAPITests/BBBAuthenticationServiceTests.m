@@ -141,6 +141,7 @@ BBBAuthenticationService *service;
     XCTAssertThrows([service registerClient:client forUser:user completion:^(BBBClientDetails *data, NSError *error) {
     }]);
 }
+
 - (void) testRegisterClientThrowsWithNilCompletion{
     BBBUserDetails *user = [self validUserDetails];
     BBBClientDetails *client = [self validRegistrationClient];
@@ -302,7 +303,6 @@ BBBAuthenticationService *service;
     BBBAuthData *data = [self validUserAuthDataForRefreshing];
     XCTAssertThrows([service refreshAuthData:data completion:nil]);
 }
-
 
 - (void) testRefreshAuthDataWithInvalidAuthData{
     BBBAuthData *validAuthData = [self invalidAuthDataForRefresh];
@@ -517,7 +517,7 @@ BBBAuthenticationService *service;
     BBBClientDetails *client = [BBBClientDetails new];
     client.uri = @"1";
     XCTAssertThrows([service deleteClient:client forUser:user completion:^(BOOL succes, NSError *error) {
-        
+
     }]);
 }
 
@@ -580,7 +580,7 @@ BBBAuthenticationService *service;
     return authData;
 }
 
-- (BBBUserDetails *)validRegistrationUser{
+- (BBBUserDetails *) validRegistrationUser{
     BBBUserDetails *details = [BBBUserDetails new];
     details.email = [NSString stringWithFormat:@"xctest_books_%06i@blinkbox.com", arc4random()];
     details.password = @"xctest_sexytest";
@@ -600,7 +600,7 @@ BBBAuthenticationService *service;
     return details;
 }
 
-- (BBBAuthData *)invalidAuthDataForRefresh{
+- (BBBAuthData *) invalidAuthDataForRefresh{
     BBBAuthData *data = [BBBAuthData new];
     data.refreshToken = @"garbage";
     return data;
@@ -632,7 +632,7 @@ BBBAuthenticationService *service;
     BBBUserDetails *validUserDetails = [BBBUserDetails new];
     validUserDetails.email = @"xctest_books_with_client@blinkbox.com";
     validUserDetails.password = @"xctest_sexytest_with_client";
-    
+
     BBBClientDetails *validClientDetails = [BBBClientDetails new];
     validClientDetails.identifier = @"urn:blinkbox:zuul:client:32359";
     validClientDetails.secret = @"9d6pFCSy6kUg8AP3JKZ6uhn-AzBg3c31sGqSPyzBTY0";
