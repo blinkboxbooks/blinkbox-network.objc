@@ -50,7 +50,7 @@
         self.action(arguments);
     }
     else {
-        NSPrint(@"No operation to perform");
+        BBPrint(@"No operation to perform");
     }
 }
 
@@ -64,25 +64,45 @@
     return trimmedArguments;
 }
 
+- (NSArray *)tokeniseArgumentParamaters:(NSArray *)argumentParamaters{
+    NSMutableArray *tokenisedParamaters = [argumentParamaters mutableCopy];
+
+    for (NSString *argument in argumentParamaters) {
+
+        NSRange rangeOfColon = [argument rangeOfString:@":"];
+        //Cant tokenise if there is no value
+        if (rangeOfColon.location == NSNotFound) {
+            [tokenisedParamaters removeObject:argument];
+            continue;
+        }
+
+        //Cant tokenise global args.
+        NSString *argumentName = [argument substringToIndex:rangeOfColon.location];
+        if ([argumentName hasPrefix:@"--"]) {
+            [tokenisedParamaters removeObject:argument];
+            continue;
+        }
+
+        //Cant tokenise, unrecognised paramater name
+        BBBToolOperationArgument *toolArgument = self.arguments[argumentName];
+        if (toolArgument == nil) {
+            [tokenisedParamaters removeObject:argument];
+            continue;
+        }
+
+        //If we get here, we can tokenise this paramater so we leave it in the array
+    }
+
+    return tokenisedParamaters;
+}
+
 - (BOOL) canPerformOperationWithArguments:(NSArray *)arguments{
     if ([arguments count] != [self.arguments count]) {
         return NO;
     }
 
-    for (NSString *argument in arguments) {
-        NSRange rangeOfColon = [argument rangeOfString:@":"];
-        if (rangeOfColon.location == NSNotFound) {
-            NSPrint(@"%@ is a required argument for %@", argument, self.name);
-            return NO;
-        }
+    NSArray *tokenisedParamaters = [self tokeniseArgumentParamaters:arguments];
 
-        NSString *argumentName = [argument substringToIndex:rangeOfColon.location];
-        BBBToolOperationArgument *toolArgument = self.arguments[argumentName];
-        if (toolArgument == nil) {
-            NSPrint(@"Unrecognised argument '%@' for %@", argumentName, self.name);
-            return NO;
-        }
-    }
-    return YES;
+    return [tokenisedParamaters count] == self.arguments.count;
 }
 @end

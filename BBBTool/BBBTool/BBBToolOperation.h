@@ -13,6 +13,8 @@ typedef void(^toolAction)(NSArray *cliArguments);
 @property (nonatomic, copy, readonly) NSString *name;
 @property (nonatomic, copy, readonly) NSString *help;
 @property (nonatomic, copy, readonly) NSDictionary *arguments;
+@property (nonatomic, copy) NSArray *tokenisedParamaters;
+
 - (instancetype) initWithName:(NSString *)name
                          help:(NSString *)help
                     arguments:(NSArray *)arguments
@@ -22,4 +24,6 @@ typedef void(^toolAction)(NSArray *cliArguments);
 - (BOOL) canPerformOperationWithArguments:(NSArray *)array;
 
 - (NSArray *)trimmedArguments:(NSArray *)arguments;
+
+- (NSArray *)tokeniseArgumentParamaters:(NSArray *)argumentParamaters;
 @end

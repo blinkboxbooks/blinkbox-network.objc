@@ -8,7 +8,7 @@
 
 #import "BBBLog.h"
 // print to stdout
-void NSPrint(NSString *format, ...) {
+void BBPrint(NSString *format, ...) {
     va_list args;
     va_start(args, format);
 
@@ -20,7 +20,7 @@ void NSPrint(NSString *format, ...) {
 }
 
 // print to stderr
-void NSPrintErr(NSString *format, ...) {
+void BBPrintErr(NSString *format, ...) {
     va_list args;
     va_start(args, format);
 

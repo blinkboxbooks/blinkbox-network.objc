@@ -143,6 +143,7 @@
 		5AD957A219A2422A00E5A855 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = BBT;
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "blinkbox books";
 			};
@@ -305,6 +306,7 @@
 				5AD957BA19A2422A00E5A855 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

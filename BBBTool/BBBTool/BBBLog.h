@@ -7,5 +7,5 @@
 //
 
 #import <Foundation/Foundation.h>
-extern void NSPrint(NSString *format, ...);
-extern void NSPrintErr(NSString *format, ...);
+extern void BBPrint(NSString *format, ...);
+extern void BBPrintErr(NSString *format, ...);

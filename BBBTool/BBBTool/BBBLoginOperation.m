@@ -39,7 +39,7 @@
     NSString *user = trimmedArguments[0];
     NSString *pass = trimmedArguments[1];
 
-    NSPrint(@"Login with user '%@', password '%@'", user, [@"" stringByPaddingToLength:pass.length
+    BBPrint(@"Login with user '%@', password '%@'", user, [@"" stringByPaddingToLength:pass.length
                                                                           withString:@"*"
                                                                      startingAtIndex:0]);
 
@@ -47,12 +47,12 @@
                  password:pass
                completion:^(BBBAuthData *data, NSError *error) {
 
-                   NSPrint(@"Login result %@", data ? @"Success" : @"Fail");
+                   BBPrint(@"Login result %@", data ? @"Success" : @"Fail");
                    if (data) {
-                       NSPrint(@"Access token:\n%@\n\nRefresh token:\n%@\n\n", data.accessToken, data.refreshToken);
+                       BBPrint(@"Access token:\n%@\n\nRefresh token:\n%@\n\n", data.accessToken, data.refreshToken);
                    }
                    else if (error) {
-                       NSPrint(@"Error domain %@ code %li", error.domain, (long)error.code);
+                       BBPrint(@"Error domain %@ code %li", error.domain, (long)error.code);
                    }
                }];
 }
