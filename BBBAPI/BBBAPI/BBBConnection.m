@@ -11,20 +11,29 @@
 #import "BBBRequest.h"
 #import "BBBNetworkConfiguration.h"
 
-NSString * BBBContentTypeString(BBBContentType type){
-    NSString *contentType = @"";
+NSString * BBBNStringFromBBBContentType(BBBContentType type){
     switch (type) {
-        case BBBContentTypeJSON:
-            contentType = @"application/vnd.blinkboxbooks.data.v1+json";
-            break;
         case BBBContentTypeURLEncodedForm:
-            contentType = @"application/x-www-form-urlencoded";
+        {
+            return @"application/x-www-form-urlencoded";
+            break;
+        }
+        case BBBContentTypeJSON:
+        {
+            return @"application/vnd.blinkboxbooks.data.v1+json";
+            break;
+        }
+            
         default:
+            NSCAssert(NO, @"unexpected content type");
             break;
     }
-    return contentType;
+    return nil;
 }
-NSString *const kBBBURLConnectionErrorDomain = @"kBBBURLConnectionErrorDomain";
+
+NSString *const BBBConnectionErrorDomain = @"BBBURLConnectionErrorDomain";
+NSString *const BBBHTTPVersion11 = @"HTTP/1.1";
+
 typedef void(^BBBURLConnectionCompletionCallback)(NSURLResponse *response, NSData *data, NSError *connectionError);
 
 @interface BBBConnection ()
@@ -39,11 +48,12 @@ typedef void(^BBBURLConnectionCompletionCallback)(NSURLResponse *response, NSDat
 - (id) initWithBaseURL:(NSURL *)URL{
     self = [super init];
     if (self) {
-        self.baseURL = URL;
-        self.parameters = [NSMutableDictionary new];
-        self.headers = [NSMutableDictionary new];
-        self.requiresAuthentication = YES;
-        self.authenticator = [BBBNetworkConfiguration sharedAuthenticator];
+        _contentType = BBBContentTypeUnknown;
+        _baseURL = URL;
+        _parameters = [NSMutableDictionary new];
+        _headers = [NSMutableDictionary new];
+        _requiresAuthentication = YES;
+        _authenticator = [BBBNetworkConfiguration sharedAuthenticator];
     }
     return self;
 }
@@ -83,7 +93,12 @@ typedef void(^BBBURLConnectionCompletionCallback)(NSURLResponse *response, NSDat
 }
 
 - (void) setContentType:(BBBContentType)contentType{
-    [self addHeaderFieldWithKey:@"Content-Type" value:BBBContentTypeString(contentType)];
+    if (_contentType != contentType) {
+        _contentType = contentType;
+        [self addHeaderFieldWithKey:@"Content-Type"
+                              value:BBBNStringFromBBBContentType(contentType)];
+    }
+    
 }
 
 - (void)perform:(BBBHTTPMethod)method completion:(void (^)(id, NSError *))completion{
@@ -93,7 +108,7 @@ typedef void(^BBBURLConnectionCompletionCallback)(NSURLResponse *response, NSDat
 - (void) perform:(BBBHTTPMethod)method
          forUser:(BBBUserDetails *)user
       completion:(void (^)(id response, NSError *error))completion{
-
+    
     NSURLSession *s = [NSURLSession sharedSession];
     NSError *error;
     BBBRequest *request = [self.requestFactory requestWith:self.baseURL
@@ -106,42 +121,41 @@ typedef void(^BBBURLConnectionCompletionCallback)(NSURLResponse *response, NSDat
         completion(nil, error);
         return;
     }
-
+    
     NSError *authenticatorError = nil;
-
-
+    
+    
     void(^taskBlock)(void) = ^(void) {
-
+        
         NSURLSessionDataTask *dataTask;
         dataTask = [s dataTaskWithRequest:request.URLRequest
                         completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-
-
-
+                            
                             if (response) {
                                 NSError *mapperError;
                                 id returnData = [self.responseMapper responseFromData:data
                                                                              response:response
                                                                                 error:&mapperError];
-
+                                
                                 completion(returnData, mapperError);
                             }
                             else{
-
+                                
                                 NSError *connectionError;
+                                NSDictionary *userInfo;
+                                
                                 if (error != nil) {
-
-                                    NSDictionary *userInfo = @{NSUnderlyingErrorKey : error};
-
-                                    connectionError = [NSError errorWithDomain:kBBBURLConnectionErrorDomain
-                                                                          code:BBBURLConnectionErrorCodeCannotConnect
-                                                                      userInfo:userInfo];
+                                    userInfo = @{NSUnderlyingErrorKey : error};
                                 }
-
+                                
+                                connectionError = [NSError errorWithDomain:BBBConnectionErrorDomain
+                                                                      code:BBBConnectionErrorCannotConnect
+                                                                  userInfo:userInfo];
+                                
                                 completion(nil, connectionError);
-
+                                
                             }
-
+                            
                             
                         }];
         
@@ -157,8 +171,8 @@ typedef void(^BBBURLConnectionCompletionCallback)(NSURLResponse *response, NSDat
         }
         else {
             [self.authenticator authenticateRequest:request
-                                                      error:&authenticatorError
-                                                 completion:taskBlock];
+                                              error:&authenticatorError
+                                         completion:taskBlock];
         }
         
     }
