@@ -11,6 +11,9 @@
 
 @class BBBLibraryItemLink;
 
+/**
+ *  Object that represents Library Changes Object in the iOS Domain
+ */
 @interface BBBLibraryItem : NSObject
 
 @property (nonatomic, copy) NSString *isbn;
@@ -28,6 +31,9 @@
 @property (nonatomic, assign) NSInteger maxNumberOfAuthorisedDevices;
 @property (nonatomic, assign) NSInteger numberOfAuthorisedDevices;
 
+/**
+ *  Array of `BBBLibraryItemLink` objects
+ */
 @property (nonatomic, copy) NSArray *links;
 
 @end

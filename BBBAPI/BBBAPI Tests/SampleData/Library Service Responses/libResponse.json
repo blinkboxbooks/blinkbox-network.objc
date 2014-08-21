@@ -1,0 +1,114 @@
+{
+    "type": "urn:blinkboxbooks:schema:librarychanges",
+    "lastSyncDateTime": "2014-08-04T17:31:55.773Z",
+    "libraryChangesList": {
+        "type": "urn:blinkboxbooks:schema:list",
+        "items": [
+                  {
+                  "type": "urn:blinkboxbooks:schema:libraryitem",
+                  "guid": "urn:blinkboxbooks:id:libraryitem:32060+34756",
+                  "id": "32060+34756",
+                  "isbn": "9781472214119",
+                  "purchaseStatus": "PURCHASED",
+                  "visibilityStatus": "CURRENT",
+                  "readingStatus": "READING",
+                  "purchasedDate": "2014-05-06T18:28:28Z",
+                  "maxNumberOfAuthorisedDevices": 5,
+                  "numberOfAuthorisedDevices": 1,
+                  "links": [
+                            {
+                            "rel": "urn:blinkboxbooks:schema:book",
+                            "href": "http://api.blinkboxbooks.com/service/catalogue/books/9781472214119",
+                            "targetGuid": "urn:blinkboxbooks:id:book:9781472214119",
+                            "title": "Book"
+                            },
+                            {
+                            "rel": "urn:blinkboxbooks:schema:fullmedia",
+                            "href": "http://media.blinkboxbooks.com/9781/472/214/119/56786679c969c7c306b171b710d209bd.epub",
+                            "title": "Full Media"
+                            },
+                            {
+                            "rel": "urn:blinkboxbooks:schema:mediakey",
+                            "href": "https://keys.blinkboxbooks.com/9781/472/214/119/56786679c969c7c306b171b710d209bd.epub.9781472214119.key",
+                            "title": "Key server"
+                            },
+                            {
+                            "rel": "urn:blinkboxbooks:schema:purchase-history",
+                            "href": "https://api.blinkboxbooks.com/service/my/payments?book=9781472214119",
+                            "title": "Purchase Item"
+                            }
+                            ]
+                  },
+                  {
+                  "type": "urn:blinkboxbooks:schema:libraryitem",
+                  "guid": "urn:blinkboxbooks:id:libraryitem:33192+35938",
+                  "id": "33192+35938",
+                  "isbn": "9780007587827",
+                  "purchaseStatus": "PURCHASED",
+                  "visibilityStatus": "CURRENT",
+                  "readingStatus": "READING",
+                  "purchasedDate": "2014-05-07T10:17:50Z",
+                  "maxNumberOfAuthorisedDevices": 5,
+                  "numberOfAuthorisedDevices": 0,
+                  "links": [
+                            {
+                            "rel": "urn:blinkboxbooks:schema:book",
+                            "href": "http://api.blinkboxbooks.com/service/catalogue/books/9780007587827",
+                            "targetGuid": "urn:blinkboxbooks:id:book:9780007587827",
+                            "title": "Book"
+                            },
+                            {
+                            "rel": "urn:blinkboxbooks:schema:fullmedia",
+                            "href": "http://media.blinkboxbooks.com/9780/007/587/827/e53e2c8761f18db2dcff7bf444a451a9.epub",
+                            "title": "Full Media"
+                            },
+                            {
+                            "rel": "urn:blinkboxbooks:schema:mediakey",
+                            "href": "https://keys.blinkboxbooks.com/9780/007/587/827/e53e2c8761f18db2dcff7bf444a451a9.epub.9780007587827.key",
+                            "title": "Key server"
+                            },
+                            {
+                            "rel": "urn:blinkboxbooks:schema:purchase-history",
+                            "href": "https://api.blinkboxbooks.com/service/my/payments?book=9780007587827",
+                            "title": "Purchase Item"
+                            }
+                            ]
+                  },
+                  {
+                  "type": "urn:blinkboxbooks:schema:libraryitem",
+                  "guid": "urn:blinkboxbooks:id:libraryitem:33194+35940",
+                  "id": "33194+35940",
+                  "isbn": "9780755399673",
+                  "purchaseStatus": "PURCHASED",
+                  "visibilityStatus": "CURRENT",
+                  "readingStatus": "READING",
+                  "purchasedDate": "2014-05-07T10:18:20Z",
+                  "maxNumberOfAuthorisedDevices": 5,
+                  "numberOfAuthorisedDevices": 0,
+                  "links": [
+                            {
+                            "rel": "urn:blinkboxbooks:schema:book",
+                            "href": "http://api.blinkboxbooks.com/service/catalogue/books/9780755399673",
+                            "targetGuid": "urn:blinkboxbooks:id:book:9780755399673",
+                            "title": "Book"
+                            },
+                            {
+                            "rel": "urn:blinkboxbooks:schema:fullmedia",
+                            "href": "http://media.blinkboxbooks.com/9780/755/399/673/d615f085f20aa5413aeccdac6a917d84.epub",
+                            "title": "Full Media"
+                            },
+                            {
+                            "rel": "urn:blinkboxbooks:schema:mediakey",
+                            "href": "https://keys.blinkboxbooks.com/9780/755/399/673/d615f085f20aa5413aeccdac6a917d84.epub.9780755399673.key",
+                            "title": "Key server"
+                            },
+                            {
+                            "rel": "urn:blinkboxbooks:schema:purchase-history",
+                            "href": "https://api.blinkboxbooks.com/service/my/payments?book=9780755399673",
+                            "title": "Purchase Item"
+                            }
+                            ]
+                  }
+                      ]
+        }
+    }
