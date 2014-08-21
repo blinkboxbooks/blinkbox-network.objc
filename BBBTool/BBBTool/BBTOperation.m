@@ -1,23 +1,23 @@
 //
-//  BBBToolOperation.m
+//  BBTOperation.m
 //  BBBTool
 //
 //  Created by Owen Worley on 18/08/2014.
 //  Copyright (c) 2014 blinkbox books. All rights reserved.
 //
 
-#import "BBBToolOperation.h"
-#import "BBBToolOperationArgument.h"
+#import "BBTOperation.h"
+#import "BBTArgument.h"
 
 
-@interface BBBToolOperation ()
+@interface BBTOperation ()
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *help;
 @property (nonatomic, copy) NSDictionary *arguments;
 @property (nonatomic, copy) toolAction action;
 @end
 
-@implementation BBBToolOperation
+@implementation BBTOperation
 - (instancetype) initWithName:(NSString *)name
                         help:(NSString *)help
                    arguments:(NSArray *)arguments
@@ -27,7 +27,7 @@
         self.name = name;
         self.help = help;
         NSMutableDictionary *operationArguments = [NSMutableDictionary new];
-        for (BBBToolOperationArgument *arg in arguments) {
+        for (BBTArgument *arg in arguments) {
             operationArguments[arg.name] = arg;
         }
         self.arguments = operationArguments;
@@ -39,7 +39,7 @@
 - (NSString *) help{
     NSMutableString *helpMessage = [_help mutableCopy];
     [helpMessage appendFormat:@"\n\tArguments:"];
-    for (BBBToolOperationArgument *argument in [self.arguments allValues]) {
+    for (BBTArgument *argument in [self.arguments allValues]) {
         [helpMessage appendFormat:@"\n\t'%@' - %@", argument.name, argument.help];
     }
     return helpMessage;
@@ -84,7 +84,7 @@
         }
 
         //Cant tokenise, unrecognised paramater name
-        BBBToolOperationArgument *toolArgument = self.arguments[argumentName];
+        BBTArgument *toolArgument = self.arguments[argumentName];
         if (toolArgument == nil) {
             [tokenisedParamaters removeObject:argument];
             continue;

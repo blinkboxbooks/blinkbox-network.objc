@@ -1,12 +1,12 @@
 //
-//  BBBLog.m
+//  BBTLog.m
 //  BBBTool
 //
 //  Created by Owen Worley on 19/08/2014.
 //  Copyright (c) 2014 blinkbox books. All rights reserved.
 //
 
-#import "BBBLog.h"
+#import "BBTLog.h"
 // print to stdout
 void BBPrint(NSString *format, ...) {
     va_list args;

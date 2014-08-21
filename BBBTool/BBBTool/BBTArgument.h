@@ -1,5 +1,5 @@
 //
-//  BBBToolOperationArgument.h
+//  BBTArgument.h
 //  BBBTool
 //
 //  Created by Owen Worley on 18/08/2014.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface BBBToolOperationArgument : NSObject
+@interface BBTArgument : NSObject
 @property (nonatomic, copy, readonly) NSString *name;
 @property (nonatomic, copy, readonly) NSString *help;
 @property (nonatomic, copy) NSString *dataKey;

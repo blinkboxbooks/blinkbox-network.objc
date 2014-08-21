@@ -1,5 +1,5 @@
 //
-//  BBBTool.h
+//  BBTTool.h
 //  BBBTool
 //
 //  Created by Owen Worley on 18/08/2014.
@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface BBBTool : NSObject
+@interface BBTTool : NSObject
 - (void) processArguments;
 @end

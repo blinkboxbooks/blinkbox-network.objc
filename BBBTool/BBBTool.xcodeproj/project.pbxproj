@@ -11,11 +11,11 @@
 		5AD957B119A2422A00E5A855 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD957B019A2422A00E5A855 /* main.m */; };
 		5AD957B519A2422A00E5A855 /* BBBTool.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5AD957B419A2422A00E5A855 /* BBBTool.1 */; };
 		5AD959A719A2637C00E5A855 /* libBBBAPI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AD959A619A2637C00E5A855 /* libBBBAPI.a */; };
-		5AD959B019A26E2000E5A855 /* BBBTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD959AF19A26E2000E5A855 /* BBBTool.m */; };
-		5AD959B319A26EAE00E5A855 /* BBBToolOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD959B219A26EAE00E5A855 /* BBBToolOperation.m */; };
-		5AD959B619A26EE200E5A855 /* BBBToolOperationArgument.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD959B519A26EE200E5A855 /* BBBToolOperationArgument.m */; };
-		5AD959B919A2725600E5A855 /* BBBLoginOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD959B819A2725600E5A855 /* BBBLoginOperation.m */; };
-		5AD959BC19A33E7100E5A855 /* BBBLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD959BB19A33E7100E5A855 /* BBBLog.m */; };
+		5AD959B019A26E2000E5A855 /* BBTTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD959AF19A26E2000E5A855 /* BBTTool.m */; };
+		5AD959B319A26EAE00E5A855 /* BBTOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD959B219A26EAE00E5A855 /* BBTOperation.m */; };
+		5AD959B619A26EE200E5A855 /* BBTArgument.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD959B519A26EE200E5A855 /* BBTArgument.m */; };
+		5AD959B919A2725600E5A855 /* BBTLoginOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD959B819A2725600E5A855 /* BBTLoginOperation.m */; };
+		5AD959BC19A33E7100E5A855 /* BBTLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD959BB19A33E7100E5A855 /* BBTLog.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -38,16 +38,16 @@
 		5AD957B319A2422A00E5A855 /* BBBTool-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BBBTool-Prefix.pch"; sourceTree = "<group>"; };
 		5AD957B419A2422A00E5A855 /* BBBTool.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = BBBTool.1; sourceTree = "<group>"; };
 		5AD959A619A2637C00E5A855 /* libBBBAPI.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libBBBAPI.a; path = "../../../Library/Developer/Xcode/DerivedData/BBBAPI-hjfcglyfknucgdarrkdwpfbkitqs/Build/Products/Debug/libBBBAPI.a"; sourceTree = "<group>"; };
-		5AD959AE19A26E2000E5A855 /* BBBTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBTool.h; sourceTree = "<group>"; };
-		5AD959AF19A26E2000E5A855 /* BBBTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBBTool.m; sourceTree = "<group>"; };
-		5AD959B119A26EAE00E5A855 /* BBBToolOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBToolOperation.h; sourceTree = "<group>"; };
-		5AD959B219A26EAE00E5A855 /* BBBToolOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBBToolOperation.m; sourceTree = "<group>"; };
-		5AD959B419A26EE200E5A855 /* BBBToolOperationArgument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBToolOperationArgument.h; sourceTree = "<group>"; };
-		5AD959B519A26EE200E5A855 /* BBBToolOperationArgument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBBToolOperationArgument.m; sourceTree = "<group>"; };
-		5AD959B719A2725600E5A855 /* BBBLoginOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBLoginOperation.h; sourceTree = "<group>"; };
-		5AD959B819A2725600E5A855 /* BBBLoginOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBBLoginOperation.m; sourceTree = "<group>"; };
-		5AD959BA19A33E7100E5A855 /* BBBLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBLog.h; sourceTree = "<group>"; };
-		5AD959BB19A33E7100E5A855 /* BBBLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBBLog.m; sourceTree = "<group>"; };
+		5AD959AE19A26E2000E5A855 /* BBTTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBTTool.h; sourceTree = "<group>"; };
+		5AD959AF19A26E2000E5A855 /* BBTTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBTTool.m; sourceTree = "<group>"; };
+		5AD959B119A26EAE00E5A855 /* BBTOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBTOperation.h; sourceTree = "<group>"; };
+		5AD959B219A26EAE00E5A855 /* BBTOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBTOperation.m; sourceTree = "<group>"; };
+		5AD959B419A26EE200E5A855 /* BBTArgument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBTArgument.h; sourceTree = "<group>"; };
+		5AD959B519A26EE200E5A855 /* BBTArgument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBTArgument.m; sourceTree = "<group>"; };
+		5AD959B719A2725600E5A855 /* BBTLoginOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBTLoginOperation.h; sourceTree = "<group>"; };
+		5AD959B819A2725600E5A855 /* BBTLoginOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBTLoginOperation.m; sourceTree = "<group>"; };
+		5AD959BA19A33E7100E5A855 /* BBTLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBTLog.h; sourceTree = "<group>"; };
+		5AD959BB19A33E7100E5A855 /* BBTLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBTLog.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,19 +92,19 @@
 		5AD957AF19A2422A00E5A855 /* BBBTool */ = {
 			isa = PBXGroup;
 			children = (
-				5AD959BA19A33E7100E5A855 /* BBBLog.h */,
-				5AD959BB19A33E7100E5A855 /* BBBLog.m */,
+				5AD959BA19A33E7100E5A855 /* BBTLog.h */,
+				5AD959BB19A33E7100E5A855 /* BBTLog.m */,
 				5AD957B019A2422A00E5A855 /* main.m */,
 				5AD957B419A2422A00E5A855 /* BBBTool.1 */,
 				5AD957B219A2422A00E5A855 /* Supporting Files */,
-				5AD959AE19A26E2000E5A855 /* BBBTool.h */,
-				5AD959AF19A26E2000E5A855 /* BBBTool.m */,
-				5AD959B119A26EAE00E5A855 /* BBBToolOperation.h */,
-				5AD959B219A26EAE00E5A855 /* BBBToolOperation.m */,
-				5AD959B419A26EE200E5A855 /* BBBToolOperationArgument.h */,
-				5AD959B519A26EE200E5A855 /* BBBToolOperationArgument.m */,
-				5AD959B719A2725600E5A855 /* BBBLoginOperation.h */,
-				5AD959B819A2725600E5A855 /* BBBLoginOperation.m */,
+				5AD959AE19A26E2000E5A855 /* BBTTool.h */,
+				5AD959AF19A26E2000E5A855 /* BBTTool.m */,
+				5AD959B119A26EAE00E5A855 /* BBTOperation.h */,
+				5AD959B219A26EAE00E5A855 /* BBTOperation.m */,
+				5AD959B419A26EE200E5A855 /* BBTArgument.h */,
+				5AD959B519A26EE200E5A855 /* BBTArgument.m */,
+				5AD959B719A2725600E5A855 /* BBTLoginOperation.h */,
+				5AD959B819A2725600E5A855 /* BBTLoginOperation.m */,
 			);
 			path = BBBTool;
 			sourceTree = "<group>";
@@ -169,12 +169,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5AD959B019A26E2000E5A855 /* BBBTool.m in Sources */,
-				5AD959BC19A33E7100E5A855 /* BBBLog.m in Sources */,
-				5AD959B619A26EE200E5A855 /* BBBToolOperationArgument.m in Sources */,
-				5AD959B919A2725600E5A855 /* BBBLoginOperation.m in Sources */,
+				5AD959B019A26E2000E5A855 /* BBTTool.m in Sources */,
+				5AD959BC19A33E7100E5A855 /* BBTLog.m in Sources */,
+				5AD959B619A26EE200E5A855 /* BBTArgument.m in Sources */,
+				5AD959B919A2725600E5A855 /* BBTLoginOperation.m in Sources */,
 				5AD957B119A2422A00E5A855 /* main.m in Sources */,
-				5AD959B319A26EAE00E5A855 /* BBBToolOperation.m in Sources */,
+				5AD959B319A26EAE00E5A855 /* BBTOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

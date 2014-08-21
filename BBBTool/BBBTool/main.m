@@ -8,14 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import <BBBAPI/BBBAPI.h>
-#import "BBBTool.h"
+#import "BBTTool.h"
 
 
 int main(int argc, const char * argv[])
 {
 
     @autoreleasepool {
-        BBBTool *tool = [BBBTool new];
+        BBTTool *tool = [BBTTool new];
         [tool processArguments];
     }
 

@@ -1,20 +1,20 @@
 //
-//  BBBToolOperationArgument.m
+//  BBTArgument.m
 //  BBBTool
 //
 //  Created by Owen Worley on 18/08/2014.
 //  Copyright (c) 2014 blinkbox books. All rights reserved.
 //
 
-#import "BBBToolOperationArgument.h"
+#import "BBTArgument.h"
 
-@interface BBBToolOperationArgument ()
+@interface BBTArgument ()
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *help;
 @property (nonatomic, assign) Class dataClass;
 @end
 
-@implementation BBBToolOperationArgument
+@implementation BBTArgument
 - (instancetype) initWithName:(NSString *)name
                          help:(NSString *)help
                       dataKey:(NSString *)dataKey

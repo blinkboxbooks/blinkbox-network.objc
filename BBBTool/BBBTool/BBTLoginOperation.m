@@ -1,23 +1,23 @@
 //
-//  BBBLoginOperation.m
+//  BBTLoginOperation.m
 //  BBBTool
 //
 //  Created by Owen Worley on 18/08/2014.
 //  Copyright (c) 2014 blinkbox books. All rights reserved.
 //
 
-#import "BBBLoginOperation.h"
-#import "BBBToolOperationArgument.h"
+#import "BBTLoginOperation.h"
+#import "BBTArgument.h"
 #import <BBBAPI/BBBAPI.h>
 
-@implementation BBBLoginOperation
+@implementation BBTLoginOperation
 + (instancetype) loginOperation{
 
     NSArray *loginOperationArguments =
     @[
-      [[BBBToolOperationArgument alloc]initWithName:@"user"
+      [[BBTArgument alloc]initWithName:@"user"
                                                help:@"username to use for login (email address)"],
-      [[BBBToolOperationArgument alloc]initWithName:@"pass"
+      [[BBTArgument alloc]initWithName:@"pass"
                                                help:@"password to use for login"]
       ];
 
@@ -25,7 +25,7 @@
     [loginHelp appendString:@"Log in a user using email and password.\n"];
     [loginHelp appendString:@"Usage   - login user:'username' pass:'password'\n"];
     [loginHelp appendString:@"Example - login user:xctest_books@blinkbox.com pass:xctest_sexytest"];
-    BBBLoginOperation *loginOperation = [[BBBLoginOperation alloc]initWithName:@"login"
+    BBTLoginOperation *loginOperation = [[BBTLoginOperation alloc]initWithName:@"login"
                                                                           help:loginHelp
                                                                      arguments:loginOperationArguments
                                                                         action:nil];

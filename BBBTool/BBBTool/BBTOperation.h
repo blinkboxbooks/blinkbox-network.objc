@@ -1,5 +1,5 @@
 //
-//  BBBToolOperation.h
+//  BBTOperation.h
 //  BBBTool
 //
 //  Created by Owen Worley on 18/08/2014.
@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 typedef void(^toolAction)(NSArray *cliArguments);
 
-@interface BBBToolOperation : NSObject
+@interface BBTOperation : NSObject
 @property (nonatomic, copy, readonly) NSString *name;
 @property (nonatomic, copy, readonly) NSString *help;
 @property (nonatomic, copy, readonly) NSDictionary *arguments;

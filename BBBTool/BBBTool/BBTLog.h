@@ -1,5 +1,5 @@
 //
-//  BBBLog.h
+//  BBTLog.h
 //  BBBTool
 //
 //  Created by Owen Worley on 19/08/2014.

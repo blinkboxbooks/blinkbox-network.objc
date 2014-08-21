@@ -1,28 +1,28 @@
 //
-//  BBBTool.m
+//  BBTTool.m
 //  BBBTool
 //
 //  Created by Owen Worley on 18/08/2014.
 //  Copyright (c) 2014 blinkbox books. All rights reserved.
 //
 
-#import "BBBTool.h"
-#import "BBBToolOperation.h"
-#import "BBBToolOperationArgument.h"
-#import "BBBLoginOperation.h"
+#import "BBTTool.h"
+#import "BBTOperation.h"
+#import "BBTArgument.h"
+#import "BBTLoginOperation.h"
 
 NSString *const kBBTDataKeyUserName = @"username";
 NSString *const kBBTDataKeyPassword = @"password";
 NSString *const kBBTDataKeyDebug = @"debugVerbose";
 
-@interface BBBTool ()
+@interface BBTTool ()
 @property (nonatomic, copy) NSArray *cliArguments;
 @property (nonatomic, copy) NSDictionary *operations;
 @property (nonatomic, copy) NSDictionary *globalArguments;
 @property (nonatomic, copy) NSDictionary *globalVariables;
 @end
 
-@implementation BBBTool
+@implementation BBTTool
 
 - (instancetype) init{
     self = [super init];
@@ -46,11 +46,11 @@ NSString *const kBBTDataKeyDebug = @"debugVerbose";
 
     NSString *name;
     NSString *help;
-    BBBToolOperationArgument *argument;
+    BBTArgument *argument;
 
     name = @"--with-user";
     help = @"Specify a user to perform this action on";
-    argument = [[BBBToolOperationArgument alloc]initWithName:name
+    argument = [[BBTArgument alloc]initWithName:name
                                                         help:help
                                                      dataKey:kBBTDataKeyUserName
                                                    dataClass:[NSString class]];
@@ -58,7 +58,7 @@ NSString *const kBBTDataKeyDebug = @"debugVerbose";
 
     name = @"--with-password";
     help = @"Specify a password to perform this action on";
-    argument = [[BBBToolOperationArgument alloc]initWithName:name
+    argument = [[BBTArgument alloc]initWithName:name
                                                         help:help
                                                      dataKey:kBBTDataKeyPassword
                                                    dataClass:[NSString class]];
@@ -67,7 +67,7 @@ NSString *const kBBTDataKeyDebug = @"debugVerbose";
 
     name = @"--debug";
     help = @"Enable debug output (very verbose)";
-    argument = [[BBBToolOperationArgument alloc]initWithName:name
+    argument = [[BBTArgument alloc]initWithName:name
                                                         help:help
                                                      dataKey:kBBTDataKeyDebug
                                                    dataClass:nil];
@@ -81,20 +81,20 @@ NSString *const kBBTDataKeyDebug = @"debugVerbose";
 - (void) initOperations{
     NSMutableDictionary *dict = [NSMutableDictionary new];
 
-    BBBLoginOperation *loginOperation = [BBBLoginOperation loginOperation];
+    BBTLoginOperation *loginOperation = [BBTLoginOperation loginOperation];
 
     __weak typeof(self) weakSelf = self;
-    BBBToolOperation *helpOperation = [[BBBToolOperation alloc]initWithName:@"help"
+    BBTOperation *helpOperation = [[BBTOperation alloc]initWithName:@"help"
                                                                        help:@"Print help"
                                                                   arguments:nil
                                                                      action:^(NSArray *cliArguments) {
                                                                          [weakSelf printHelp];
                                                                      }];
 
-    BBBToolOperation *refreshOperation = [[BBBToolOperation alloc]initWithName:@"refreshtoken"
+    BBTOperation *refreshOperation = [[BBTOperation alloc]initWithName:@"refreshtoken"
                                                                           help:@"Refresh an access token with a refresh token"
                                                                      arguments:@[
-                                                                                 [[BBBToolOperationArgument alloc]initWithName:@"token" help:@"the refresh token"]
+                                                                                 [[BBTArgument alloc]initWithName:@"token" help:@"the refresh token"]
                                                                                  ]
                                                                         action:^(NSArray *cliArguments) {
                                                                             BBPrint(@"Not implemented yet");
@@ -110,7 +110,7 @@ NSString *const kBBTDataKeyDebug = @"debugVerbose";
 
 - (void) printHelp{
     BBPrint(@"Valid commands:");
-    for (BBBToolOperation *operation in [self.operations allValues]) {
+    for (BBTOperation *operation in [self.operations allValues]) {
         BBPrint(@"%@ - %@\n", operation.name, operation.help);
     }
 }
@@ -132,7 +132,7 @@ NSString *const kBBTDataKeyDebug = @"debugVerbose";
     for (NSString *arg in *arguments) {
         //If it doesnt have a colon, try to get argument that has nil dataClass
         if ([arg rangeOfString:@":"].location == NSNotFound) {
-            BBBToolOperationArgument *globalArgument = self.globalArguments[arg];
+            BBTArgument *globalArgument = self.globalArguments[arg];
             if (!globalArgument) {
                 continue;
             }
@@ -153,7 +153,7 @@ NSString *const kBBTDataKeyDebug = @"debugVerbose";
             continue;
         }
 
-        BBBToolOperationArgument *globalArgument = self.globalArguments[argName];
+        BBTArgument *globalArgument = self.globalArguments[argName];
         if (!globalArgument) {
             continue;
         }
@@ -193,7 +193,7 @@ NSString *const kBBTDataKeyDebug = @"debugVerbose";
     NSMutableArray *parsedArguments = [*allArguments mutableCopy];
 
     for (NSString *arg in *allArguments) {
-        BBBToolOperation *operation = self.operations[arg];
+        BBTOperation *operation = self.operations[arg];
         if (operation != nil) {
             NSMutableArray *argumentParamaters = [parsedArguments mutableCopy];
             [argumentParamaters removeObject:arg];
@@ -231,7 +231,7 @@ NSString *const kBBTDataKeyDebug = @"debugVerbose";
     //Print help for commands with incorrect arguments
     if ([arguments count]>0) {
         for (NSString *unrecognisedCommand in arguments) {
-            BBBToolOperation *operation = self.operations[unrecognisedCommand];
+            BBTOperation *operation = self.operations[unrecognisedCommand];
             if (operation) {
                 BBPrint(@"Error with command '%@'. See help:", unrecognisedCommand);
                 BBPrint(@"%@", operation.help);
@@ -241,7 +241,7 @@ NSString *const kBBTDataKeyDebug = @"debugVerbose";
     }
 
     //Perform commands
-    for (BBBToolOperation *operation in commands) {
+    for (BBTOperation *operation in commands) {
         [operation performOperationWithArguments:operation.tokenisedParamaters];
     }
 
@@ -327,7 +327,7 @@ NSString *const kBBTDataKeyDebug = @"debugVerbose";
 
 }
 
-- (void) reportDuplicateArgument:(BBBToolOperationArgument *)argument withValue:(NSString *)value{
+- (void) reportDuplicateArgument:(BBTArgument *)argument withValue:(NSString *)value{
     BBPrint(@"Duplicate argument detected trying to set %@.", argument.name);
     NSString *currentValue = self.globalVariables[argument.dataKey];
     BBPrint(@"The old value '%@' would be replaced with '%@'",currentValue, value);
