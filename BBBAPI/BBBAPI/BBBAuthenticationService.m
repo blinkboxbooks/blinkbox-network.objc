@@ -15,8 +15,6 @@
 #import "BBBAuthData.h"
 #import "BBBRequestFactory.h"
 
-NSString *const BBBAuthenticaitonServiceErrorDomain = @"BBBAuthenticaitonServiceErrorDomain";
-
 @interface BBBAuthenticationService ()
 @property (nonatomic, strong) id<BBBResponseMapping> authResponseMapper;
 @property (nonatomic, strong) id<BBBResponseMapping> tokensResponseMapper;

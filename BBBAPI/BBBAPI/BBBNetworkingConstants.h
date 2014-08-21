@@ -11,17 +11,16 @@
 
 /** Supported HTTP methods */
 typedef NS_ENUM(NSUInteger, BBBHTTPMethod) {
-    BBBHTTPMethodGET = 0,
-    BBBHTTPMethodPOST = 1,
-    BBBHTTPMethodDELETE = 2,
-    BBBHTTPMethodPUT = 3,
+    BBBHTTPMethodGET,
+    BBBHTTPMethodPOST,
+    BBBHTTPMethodDELETE,
+    BBBHTTPMethodPUT,
 };
 
 /** Supported content types */
 typedef NS_ENUM(NSUInteger, BBBContentType) {
-    BBBContentTypeUnknown = -1,
-    BBBContentTypeURLEncodedForm = 0,
-    BBBContentTypeJSON = 1,
+    BBBContentTypeURLEncodedForm,
+    BBBContentTypeJSON,
 };
 
 #endif

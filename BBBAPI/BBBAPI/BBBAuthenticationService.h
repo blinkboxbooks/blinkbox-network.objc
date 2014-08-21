@@ -12,15 +12,6 @@
 @class BBBClientDetails;
 @class BBBAuthData;
 
-NS_ENUM(NSInteger, BBBAuthenticationError){
-    /**
-     *  Generic unauthorized error code
-     */
-    BBBAuthenticationServiceErrorUnauthorized = 560
-};
-
-extern NSString *const BBBAuthenticaitonServiceErrorDomain;
-
 @interface BBBAuthenticationService : NSObject
 
 /**
