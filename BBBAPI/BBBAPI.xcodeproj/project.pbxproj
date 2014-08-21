@@ -143,6 +143,7 @@
 		5AD959BD19A34AC000E5A855 /* BBBClientDetails.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5AD9583F19A247B100E5A855 /* BBBClientDetails.h */; };
 		5AD959BE19A34AC400E5A855 /* BBBUserDetails.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5AD9586C19A247B100E5A855 /* BBBUserDetails.h */; };
 		5AD959BF19A34AD200E5A855 /* BBBAuthData.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5AD9582C19A247B100E5A855 /* BBBAuthData.h */; };
+		5AE925A619A680970094CA96 /* BBBAPI-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5AE925A519A680970094CA96 /* BBBAPI-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -279,6 +280,7 @@
 		5AD9592219A2501C00E5A855 /* BBBMockAssertionHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBBMockAssertionHandler.m; path = "BBBAPI Tests/BBBMockAssertionHandler.m"; sourceTree = SOURCE_ROOT; };
 		5AD9592319A2501C00E5A855 /* BBBTestMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBBTestMacros.h; path = "BBBAPI Tests/BBBTestMacros.h"; sourceTree = SOURCE_ROOT; };
 		5AD9594619A2629D00E5A855 /* libBBBAPI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBBBAPI.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		5AE925A519A680970094CA96 /* BBBAPI-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "BBBAPI-Info.plist"; path = "BBBAPI/BBBAPI-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -333,6 +335,7 @@
 		5AD9573819A23C5700E5A855 = {
 			isa = PBXGroup;
 			children = (
+				5AE925A419A6805C0094CA96 /* Supporting Files */,
 				5AD9574B19A23C5700E5A855 /* BBBAPI */,
 				5AD958EB19A24AEB00E5A855 /* BBBAPI Tests */,
 				5AD9574419A23C5700E5A855 /* Frameworks */,
@@ -586,6 +589,14 @@
 			name = Search;
 			sourceTree = "<group>";
 		};
+		5AE925A419A6805C0094CA96 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5AE925A519A680970094CA96 /* BBBAPI-Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -736,6 +747,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AE925A619A680970094CA96 /* BBBAPI-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -962,6 +974,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = macosx;
@@ -995,6 +1008,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = macosx;
@@ -1010,6 +1024,7 @@
 				FRAMEWORK_VERSION = A;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BBBAPI/BBBAPI-Prefix.pch";
+				INFOPLIST_FILE = "BBBAPI/BBBAPI-Info.plist";
 				PRODUCT_NAME = BBBAPI;
 				WRAPPER_EXTENSION = framework;
 			};
@@ -1024,6 +1039,7 @@
 				FRAMEWORK_VERSION = A;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BBBAPI/BBBAPI-Prefix.pch";
+				INFOPLIST_FILE = "BBBAPI/BBBAPI-Info.plist";
 				PRODUCT_NAME = BBBAPI;
 				WRAPPER_EXTENSION = framework;
 			};
