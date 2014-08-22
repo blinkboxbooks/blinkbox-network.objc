@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A1F5A2819A7308900938C3D /* BBBAuthData.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5AD9582C19A247B100E5A855 /* BBBAuthData.h */; };
+		5A1F5A2919A7308C00938C3D /* BBBClientDetails.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5AD9583F19A247B100E5A855 /* BBBClientDetails.h */; };
+		5A1F5A2A19A7309000938C3D /* BBBUserDetails.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5AD9586C19A247B100E5A855 /* BBBUserDetails.h */; };
+		5A1F5A2B19A730A800938C3D /* BBBAPI.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5AD9582719A247B100E5A855 /* BBBAPI.h */; };
+		5A1F5A2C19A730B400938C3D /* BBBNetworkConfiguration.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5AD9585819A247B100E5A855 /* BBBNetworkConfiguration.h */; };
+		5A1F5A2D19A730C700938C3D /* BBBAuthenticationService.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5AD9583019A247B100E5A855 /* BBBAuthenticationService.h */; };
+		5A1F5A2E19A730D000938C3D /* BBBSearchService.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5AD9586819A247B100E5A855 /* BBBSearchService.h */; };
 		5A91E9FA19A4FA410079247F /* BBBClientsResponseMapperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A91E9F619A4FA410079247F /* BBBClientsResponseMapperTests.m */; };
 		5A91E9FB19A4FA410079247F /* BBBClientsResponseMapperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A91E9F619A4FA410079247F /* BBBClientsResponseMapperTests.m */; };
 		5A91E9FC19A4FA410079247F /* BBBTokensResponseMapperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A91E9F719A4FA410079247F /* BBBTokensResponseMapperTests.m */; };
@@ -164,6 +171,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		5A1F5A2119A7301700938C3D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				5A1F5A2B19A730A800938C3D /* BBBAPI.h in CopyFiles */,
+				5A1F5A2A19A7309000938C3D /* BBBUserDetails.h in CopyFiles */,
+				5A1F5A2C19A730B400938C3D /* BBBNetworkConfiguration.h in CopyFiles */,
+				5A1F5A2819A7308900938C3D /* BBBAuthData.h in CopyFiles */,
+				5A1F5A2919A7308C00938C3D /* BBBClientDetails.h in CopyFiles */,
+				5A1F5A2D19A730C700938C3D /* BBBAuthenticationService.h in CopyFiles */,
+				5A1F5A2E19A730D000938C3D /* BBBSearchService.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5AD9577219A23CE400E5A855 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -694,6 +717,7 @@
 			buildPhases = (
 				5AD9594219A2629D00E5A855 /* Sources */,
 				5AD9594319A2629D00E5A855 /* Frameworks */,
+				5A1F5A2119A7301700938C3D /* CopyFiles */,
 			);
 			buildRules = (
 			);
