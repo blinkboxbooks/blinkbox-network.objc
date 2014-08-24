@@ -11,7 +11,7 @@
 #import "BBBRequest.h"
 #import "BBBNetworkConfiguration.h"
 
-NSString * BBBNStringFromBBBContentType(BBBContentType type){
+NSString * BBBNSStringFromBBBContentType(BBBContentType type){
     switch (type) {
         case BBBContentTypeURLEncodedForm:
         {
@@ -96,7 +96,7 @@ typedef void(^BBBURLConnectionCompletionCallback)(NSURLResponse *response, NSDat
     if (_contentType != contentType) {
         _contentType = contentType;
         [self addHeaderFieldWithKey:@"Content-Type"
-                              value:BBBNStringFromBBBContentType(contentType)];
+                              value:BBBNSStringFromBBBContentType(contentType)];
     }
     
 }
