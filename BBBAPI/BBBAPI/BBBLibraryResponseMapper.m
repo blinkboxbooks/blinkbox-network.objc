@@ -11,6 +11,7 @@
 #import "BBBAuthenticationService.h"
 #import "BBBStatusResponseMapper.h"
 #import "BBBLibraryResponse.h"
+#import "BBBAPIErrors.h"
 
 @implementation BBBLibraryResponseMapper
 
@@ -30,8 +31,8 @@
     BBBStatusResponseMapper *mapper = [BBBStatusResponseMapper new];
     
     NSNumber *success = [mapper responseFromData:nil
-                                         response:response
-                                            error:error];
+                                        response:response
+                                           error:error];
     
     if (![success boolValue]) {
         return nil;
@@ -41,6 +42,15 @@
                                    response:response
                                       error:error];
     if (!parsedJSON) {
+        NSError *anError = *error;
+        BOOL dataUnreadableError = (anError.code == NSPropertyListReadCorruptError &&
+                                    [anError.domain isEqualToString:NSCocoaErrorDomain]);
+        if (dataUnreadableError) {
+            
+            *error = [NSError errorWithDomain:BBBConnectionErrorDomain
+                                         code:BBBAPIUnreadableData
+                                     userInfo:nil];
+        }
         return nil;
     }
     

@@ -8,7 +8,7 @@
 
 #import "BBBConnection.h"
 
-extern NSString * BBBNStringFromBBBContentType(BBBContentType type);
+extern NSString * BBBNSStringFromBBBContentType(BBBContentType type);
 
 @interface BBBConnectionTests : XCTestCase
 
@@ -17,16 +17,16 @@ extern NSString * BBBNStringFromBBBContentType(BBBContentType type);
 @implementation BBBConnectionTests
 
 - (void) testContentTypeStringMappingFunctionWorkForProperTypes{
-    XCTAssertEqualObjects(BBBNStringFromBBBContentType(BBBContentTypeJSON),
+    XCTAssertEqualObjects(BBBNSStringFromBBBContentType(BBBContentTypeJSON),
                           @"application/vnd.blinkboxbooks.data.v1+json",
                           @"JSON content type name should be equal");
-    XCTAssertEqualObjects(BBBNStringFromBBBContentType(BBBContentTypeURLEncodedForm),
+    XCTAssertEqualObjects(BBBNSStringFromBBBContentType(BBBContentTypeURLEncodedForm),
                           @"application/x-www-form-urlencoded",
                           @"JSON content type name should be equal");
 }
 
 - (void) testContentTypeStringMappingFunctionThrowsForUnknownType{
-    XCTAssertThrows(BBBNStringFromBBBContentType(-12), @"should throw on wrong encoding type");
+    XCTAssertThrows(BBBNSStringFromBBBContentType(-12), @"should throw on wrong encoding type");
 }
 
 @end

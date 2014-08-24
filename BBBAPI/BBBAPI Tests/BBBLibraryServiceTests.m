@@ -78,7 +78,6 @@
     Method originalMethod = class_getInstanceMethod(class,selector); \
     class_replaceMethod(class, selector, oldImplementation, method_getTypeEncoding(originalMethod));
     initBlock = nil;
-    //    mockConnection = nil;
     
     [super tearDown];
 }

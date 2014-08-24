@@ -6,10 +6,11 @@
 //  Copyright (c) 2014 Blinkbox Books. All rights reserved.
 //
 
-typedef NS_ENUM(NSInteger, BBBAPIErrorCode) {
-    BBBAPIErrorInvalidParameters = 0,
-    BBBAPIErrorCouldNotConnect = 1,
-    BBBAPIErrorUnauthorised = 2,
-    BBBAPIErrorNotFound = 3,
+NS_ENUM(NSInteger, BBBAPIErrorCode) {
+    BBBAPIErrorInvalidParameters = 700,
+    BBBAPIErrorCouldNotConnect = 701,
+    BBBAPIErrorUnauthorised = 702,
+    BBBAPIErrorNotFound = 703,
+    BBBAPIUnreadableData = 704,
 };
 

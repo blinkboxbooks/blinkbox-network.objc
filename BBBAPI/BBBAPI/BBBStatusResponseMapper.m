@@ -9,6 +9,8 @@
 #import "BBBStatusResponseMapper.h"
 #import "BBBConnection.h"
 #import "BBBAuthenticationService.h"
+#import "BBBAuthenticationServiceConstants.h"
+#import "BBBAPIErrors.h"
 
 @implementation BBBStatusResponseMapper
 
@@ -24,8 +26,8 @@
             break;
         }
         case BBBHTTPUnauthorized:{
-            *error = [NSError errorWithDomain:BBBAuthenticaitonServiceErrorDomain
-                                         code:BBBAuthenticationServiceErrorUnauthorized
+            *error = [NSError errorWithDomain:kBBBAuthServiceName
+                                         code:BBBAPIErrorUnauthorised
                                      userInfo:nil];
             break;
         }

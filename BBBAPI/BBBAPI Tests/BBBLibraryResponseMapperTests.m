@@ -12,6 +12,8 @@
 #import "BBBConnection.h"
 #import "BBBTestHelper.h"
 #import "BBBLibraryItem.h"
+#import "BBBAuthenticationServiceConstants.h"
+#import "BBBAPIErrors.h"
 
 /*
  
@@ -66,8 +68,8 @@
                                                       error:&error];
     
     XCTAssertNil(response, @"No response should be returned");
-    XCTAssertEqual(error.code, BBBAuthenticationServiceErrorUnauthorized, @"unauthorized user");
-    XCTAssertEqualObjects(error.domain, BBBAuthenticaitonServiceErrorDomain, @"domain must be equal");
+    XCTAssertEqual(error.code, BBBAPIErrorUnauthorised, @"unauthorized user");
+    XCTAssertEqualObjects(error.domain, kBBBAuthServiceName, @"domain must be equal");
     
 }
 
@@ -105,9 +107,9 @@
                                                    response:[self responseWithHTTPStatus:BBBHTTPSuccess]
                                                       error:&error];
     XCTAssertNil(response, @"respone should be nil");
-    XCTAssertEqualObjects(error.domain, NSCocoaErrorDomain, @"Should be a cocoa error");
-    XCTAssertEqual(error.code, NSPropertyListReadCorruptError, @"Unreadable data");
-#warning CAST TO BBBAPI ERROR DOMAIN?
+    XCTAssertEqualObjects(error.domain, BBBConnectionErrorDomain, @"Should be a connection error");
+    XCTAssertEqual(error.code, BBBAPIUnreadableData, @"Unreadable data");
+
 }
 
 - (void) testDecodingValidJSONProducesCorrectNumberOfLibraryItems{

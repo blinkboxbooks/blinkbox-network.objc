@@ -42,9 +42,9 @@ extern NSString * BBBNSStringFromBBBReadingStatus(BBBReadingStatus status);
 
 
 - (void) testReadingStatusMappingFunction{
-#warning WHAT'S THE USAGE OF RECENTLY PURCHASED?
+
     BBB_DISABLE_ASSERTIONS();
-    XCTAssertEqual(BBBReadingStatusUnknown, BBBReadingStatusFromString(@"SOMETING"));
+    XCTAssertEqual(BBBReadingStatusUnknown, BBBReadingStatusFromString(@"SOMETHING"));
     XCTAssertEqual(BBBReadingStatusRead, BBBReadingStatusFromString(@"FINISHED"));
     XCTAssertEqual(BBBReadingStatusUnread, BBBReadingStatusFromString(@"UNREAD"));
     XCTAssertEqual(BBBReadingStatusReading, BBBReadingStatusFromString(@"READING"));

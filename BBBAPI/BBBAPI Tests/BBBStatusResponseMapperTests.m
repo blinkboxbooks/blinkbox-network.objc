@@ -8,6 +8,8 @@
 
 #import "BBBStatusResponseMapper.h"
 #import "BBBAuthenticationService.h"
+#import "BBBAPIErrors.h"
+#import "BBBAuthenticationServiceConstants.h"
 #import "BBBConnection.h"
 
 @interface BBBSuccessLibraryResponseMapperTests : XCTestCase{
@@ -63,8 +65,8 @@
                                       error:&error] boolValue];
     
     XCTAssertFalse(succes, @"should return @NO");
-    XCTAssertEqual(error.code, BBBAuthenticationServiceErrorUnauthorized, @"unauthorized code");
-    XCTAssertEqualObjects(error.domain, BBBAuthenticaitonServiceErrorDomain, @"auth domain");
+    XCTAssertEqual(error.code, BBBAPIErrorUnauthorised, @"unauthorized code");
+    XCTAssertEqualObjects(error.domain, kBBBAuthServiceName, @"auth domain");
 }
 
 - (void) testNotFoundCode{
