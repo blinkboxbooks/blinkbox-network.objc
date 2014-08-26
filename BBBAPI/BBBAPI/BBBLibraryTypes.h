@@ -10,17 +10,31 @@
 #define BBBAPI_BBBLibraryTypes_h
 
 typedef NS_ENUM(NSInteger, BBBReadingStatus) {
-    BBBReadingStatusUnknown = 1,
+    BBBReadingStatusUnknown = 0,
+    BBBReadingStatusReading = 1,
+    BBBReadingStatusUnread = 2,
+    BBBReadingStatusRead = 3,
 };
 
 typedef NS_ENUM(NSInteger, BBBPurchaseStatus) {
-    BBBPurchaseStatusUnknown = 1,
+    BBBPurchaseStatusNothing = -1,
+    BBBPurchaseStatusSampled = 0,
+    BBBPurchaseStatusPurchased = 1
 };
 
 typedef NS_ENUM(NSInteger, BBBVisiblityStatus) {
-    BBBVisiblityStatusUnknown = 1,
+    BBBVisiblityStatusUnknown = -1,
+    BBBVisiblityStatusCurrent = 0,
+    BBBVisiblityStatusArchived = 1,
+    BBBVisiblityStatusDeleted = 2
 };
 
+typedef NS_ENUM(NSInteger, BBBItemAction) {
+    BBBItemActionNoAction = 0,
+    BBBItemActionDelete = 1,
+    BBBItemActionArchive = 2,
+    BBBItemActionUnarchive = 3,
+};
 
 
 #endif

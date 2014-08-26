@@ -12,6 +12,7 @@
 #import "BBBClientDetails.h"
 #import "BBBAuthenticationServiceConstants.h"
 #import "BBBAPIErrors.h"
+#import "BBBConnection.h"
 
 @interface BBBClientsResponseMapperTests : XCTestCase
 @property (nonatomic, strong) BBBClientsResponseMapper *clientsResponseMapper;
@@ -83,7 +84,7 @@ Class testData;
     NSDictionary *dict = @{};
     [testData authResponseData:&data
                   response:&response
-            withStatusCode:401
+            withStatusCode:BBBHTTPUnauthorized
                    withURL:URL
             withDictionary:dict];
 
@@ -129,7 +130,7 @@ Class testData;
     NSURLResponse *response;
     [testData authResponseData:&data
                   response:&response
-            withStatusCode:401
+            withStatusCode:BBBHTTPUnauthorized
                    withURL:URL
             withDictionary:@{}];
     data = [NSData data];
@@ -153,7 +154,7 @@ Class testData;
     NSURLResponse *response;
     [testData authResponseData:&data
                   response:&response
-            withStatusCode:404
+            withStatusCode:BBBHTTPNotFound
                    withURL:URL
             withDictionary:@{}];
     data = [NSData data];

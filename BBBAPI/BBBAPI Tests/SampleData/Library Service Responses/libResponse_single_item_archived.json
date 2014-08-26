@@ -1,0 +1,45 @@
+{
+    "type": "urn:blinkboxbooks:schema:librarychanges",
+    "lastSyncDateTime": "2014-08-04T17:31:55.773Z",
+    "libraryChangesList": {
+        "type": "urn:blinkboxbooks:schema:list",
+        "items": [
+                  {
+                  "type": "urn:blinkboxbooks:schema:libraryitem",
+                  "guid": "urn:blinkboxbooks:id:libraryitem:32060+34756",
+                  "id": "32060+34756",
+                  "isbn": "9781472214119",
+                  "purchaseStatus": "PURCHASED",
+                  "visibilityStatus": "CURRENT",
+                  "readingStatus": "READING",
+                  "purchasedDate": "2010-05-06T18:28:28Z",
+                  "archivedDate" :"2011-01-01T13:00:00Z",
+                  "maxNumberOfAuthorisedDevices": 5,
+                  "numberOfAuthorisedDevices": 1,
+                  "links": [
+                            {
+                            "rel": "urn:blinkboxbooks:schema:book",
+                            "href": "http://api.blinkboxbooks.com/service/catalogue/books/9781472214119",
+                            "targetGuid": "urn:blinkboxbooks:id:book:9781472214119",
+                            "title": "Book"
+                            },
+                            {
+                            "rel": "urn:blinkboxbooks:schema:fullmedia",
+                            "href": "http://media.blinkboxbooks.com/9781/472/214/119/56786679c969c7c306b171b710d209bd.epub",
+                            "title": "Full Media"
+                            },
+                            {
+                            "rel": "urn:blinkboxbooks:schema:mediakey",
+                            "href": "https://keys.blinkboxbooks.com/9781/472/214/119/56786679c969c7c306b171b710d209bd.epub.9781472214119.key",
+                            "title": "Key server"
+                            },
+                            {
+                            "rel": "urn:blinkboxbooks:schema:purchase-history",
+                            "href": "https://api.blinkboxbooks.com/service/my/payments?book=9781472214119",
+                            "title": "Purchase Item"
+                            }
+                            ]
+                  }
+                      ]
+        }
+    }
