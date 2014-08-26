@@ -33,19 +33,19 @@
         }
         case BBBHTTPNotFound:{
             *error =  [NSError errorWithDomain:BBBConnectionErrorDomain
-                                          code:BBBConnectionErrorNotFound
+                                          code:BBBAPIErrorNotFound
                                       userInfo:nil];
             break;
         }
         case BBBHTTPForbidden:{
             *error =  [NSError errorWithDomain:BBBConnectionErrorDomain
-                                          code:BBBConnectionErrorForbidden
+                                          code:BBBAPIErrorForbidden
                                       userInfo:nil];
             break;
         }
         case BBBHTTPServerError:{
             *error = [NSError errorWithDomain:BBBConnectionErrorDomain
-                                         code:BBBConnectionErrorServerError
+                                         code:BBBAPIServerError
                                      userInfo:nil];
             break;
         }

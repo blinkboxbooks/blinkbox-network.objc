@@ -54,7 +54,7 @@
                                       error:&error] boolValue];
     
     XCTAssertFalse(succes, @"should return @NO");
-    XCTAssertEqual(error.code, BBBConnectionErrorForbidden, @"Forbidden code");
+    XCTAssertEqual(error.code, BBBAPIErrorForbidden, @"Forbidden code");
     XCTAssertEqualObjects(error.domain, BBBConnectionErrorDomain, @"connection domain");
 }
 
@@ -76,7 +76,7 @@
                                       error:&error] boolValue];
     
     XCTAssertFalse(succes, @"should return @NO");
-    XCTAssertEqual(error.code, BBBConnectionErrorNotFound, @"Not found code");
+    XCTAssertEqual(error.code, BBBAPIErrorNotFound, @"Not found code");
     XCTAssertEqualObjects(error.domain, BBBConnectionErrorDomain, @"connection domain");
 }
 
@@ -87,7 +87,7 @@
                                       error:&error] boolValue];
     
     XCTAssertFalse(succes, @"should return @NO");
-    XCTAssertEqual(error.code, BBBConnectionErrorServerError, @"server error code");
+    XCTAssertEqual(error.code, BBBAPIServerError, @"server error code");
     XCTAssertEqualObjects(error.domain, BBBConnectionErrorDomain, @"connection domain");
 }
 

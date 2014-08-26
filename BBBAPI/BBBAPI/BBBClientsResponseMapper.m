@@ -12,6 +12,8 @@
 #import "BBBAuthServiceErrorParser.h"
 #import "BBBClientDetails.h"
 #import "BBBAPIErrors.h"
+#import "BBBConnection.h"
+
 @interface BBBClientsResponseMapper ()
 @property (nonatomic, strong) BBBJSONResponseMapper *jsonMapper;
 @property (nonatomic, strong) BBBAuthServiceErrorParser *errorParser;
@@ -42,7 +44,7 @@
 
     id JSON = [self.jsonMapper responseFromData:data response:response error:nil];
 
-    if (statusCode == 401) {
+    if (statusCode == BBBHTTPUnauthorized) {
         if (error) {
             *error =  [NSError errorWithDomain:kBBBAuthServiceName
                                           code:BBBAPIErrorUnauthorised
@@ -51,7 +53,7 @@
         return nil;
     }
 
-    if (statusCode == 404) {
+    if (statusCode == BBBHTTPNotFound) {
         if (error) {
             *error =  [NSError errorWithDomain:kBBBAuthServiceName
                                           code:BBBAPIErrorNotFound
@@ -60,7 +62,7 @@
         return nil;
     }
 
-    if (statusCode == 200) {
+    if (statusCode == BBBHTTPSuccess) {
         //200 code with empty data is a success
         if (JSON == nil) {
             return @(YES);

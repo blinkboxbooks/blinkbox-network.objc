@@ -11,12 +11,6 @@
 
 extern NSString *const BBBLibraryServiceErrorDomain;
 
-NS_ENUM(NSInteger, BBBLibraryServiceError){
-    BBBLibraryServiceErrorMissingParameters = 190,
-    BBBLibraryServiceErrorWrongParameters = 191,
-};
-
-
 @class BBBLibraryItem;
 @class BBBUserDetails;
 

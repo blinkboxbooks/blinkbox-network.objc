@@ -10,8 +10,7 @@
 #define BBBAPI_BBBLibraryTypes_h
 
 typedef NS_ENUM(NSInteger, BBBReadingStatus) {
-    BBBReadingStatusUnknown = -1,
-    BBBReadingStatusRecentlyPurchased = 0,
+    BBBReadingStatusUnknown = 0,
     BBBReadingStatusReading = 1,
     BBBReadingStatusUnread = 2,
     BBBReadingStatusRead = 3,

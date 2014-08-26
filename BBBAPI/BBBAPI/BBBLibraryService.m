@@ -15,6 +15,7 @@
 #import "BBBLibraryResponse.h"
 #import "BBBStatusResponseMapper.h"
 #import "BBBLibraryResponseMapper.h"
+#import "BBBAPIErrors.h"
 
 NSString *const BBBLibraryServiceErrorDomain = @"bbb.error.libraryServiceDomain";
 
@@ -164,7 +165,7 @@ NSString *const BBBLibraryServiceErrorDomain = @"bbb.error.libraryServiceDomain"
         NSAssert(item.purchaseStatus == BBBPurchaseStatusSampled, @"currently supporting only sample books");
         if (item.purchaseStatus != BBBPurchaseStatusSampled) {
             NSError *error = [NSError errorWithDomain:BBBLibraryServiceErrorDomain
-                                                 code:BBBLibraryServiceErrorWrongParameters
+                                                 code:BBBAPIWrongUsage
                                              userInfo:nil];
             completion(NO, error);
             return;
@@ -300,7 +301,7 @@ NSString *const BBBLibraryServiceErrorDomain = @"bbb.error.libraryServiceDomain"
     NSError *error;
     
     error = [NSError errorWithDomain:BBBLibraryServiceErrorDomain
-                                code:BBBLibraryServiceErrorMissingParameters
+                                code:BBBAPIWrongUsage
                             userInfo:nil];
     return error;
 }

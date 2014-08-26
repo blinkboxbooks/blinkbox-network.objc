@@ -21,17 +21,6 @@ NS_ENUM(NSInteger, BBBHTTPStatus){
     BBBHTTPServerError = 500,
 };
 
-NS_ENUM(NSInteger, BBBConnectionError){
-    /**
-     *  This error is passed up and it means a generic could not connect error
-     */
-    BBBConnectionErrorCannotConnect = 666,
-    BBBConnectionErrorServerError = 667,
-    BBBConnectionErrorNotFound = 668,
-    BBBConnectionErrorForbidden = 669,
-};
-
-
 extern NSString *const BBBConnectionErrorDomain;
 
 extern NSString *const BBBHTTPVersion11;

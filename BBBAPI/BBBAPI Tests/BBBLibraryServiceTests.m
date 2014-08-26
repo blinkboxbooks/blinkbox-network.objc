@@ -13,6 +13,7 @@
 #import "BBBLibraryItem.h"
 #import "BBBSwizzlingHelper.h"
 #import "BBBMockConnection.h"
+#import "BBBAPIErrors.h"
 #import "BBBLibraryResponse.h"
 #import "BBBStatusResponseMapper.h"
 #import "BBBLibraryResponseMapper.h"
@@ -113,7 +114,7 @@
                                  XCTAssertNil(items);
                                  XCTAssertNil(syncDate);
                                  XCTAssertEqualObjects(error.domain, BBBLibraryServiceErrorDomain);
-                                 XCTAssertEqual(error.code, BBBLibraryServiceErrorMissingParameters);
+                                 XCTAssertEqual(error.code, BBBAPIWrongUsage);
                                  callbackWasCalled = YES;
                              }];
     XCTAssertTrue(callbackWasCalled, @"Callback must be called");
@@ -271,7 +272,7 @@
                      XCTAssertNil(libraryItem, @"no library item");
                      XCTAssertEqualObjects(error.domain, BBBLibraryServiceErrorDomain,
                                            @"domain should be service");
-                     XCTAssertEqual(error.code, BBBLibraryServiceErrorMissingParameters,
+                     XCTAssertEqual(error.code, BBBAPIWrongUsage,
                                     @"code should be missing pars");
                      callbackCalled = YES;
                  }];
@@ -288,7 +289,7 @@
                      XCTAssertNil(libraryItem, @"no library item");
                      XCTAssertEqualObjects(error.domain, BBBLibraryServiceErrorDomain,
                                            @"domain should be service");
-                     XCTAssertEqual(error.code, BBBLibraryServiceErrorMissingParameters,
+                     XCTAssertEqual(error.code, BBBAPIWrongUsage,
                                     @"code should be missing pars");
                      callbackCalled = YES;
                  }];
@@ -463,7 +464,7 @@
                               
                               XCTAssertEqualObjects(error.domain, BBBLibraryServiceErrorDomain,
                                                     @"domain should be service");
-                              XCTAssertEqual(error.code, BBBLibraryServiceErrorMissingParameters,
+                              XCTAssertEqual(error.code, BBBAPIWrongUsage,
                                              @"code should be missing pars");
                               callbackCalled = YES;
 #pragma clang diagnostic pop
@@ -488,7 +489,7 @@
                               
                               XCTAssertEqualObjects(error.domain, BBBLibraryServiceErrorDomain,
                                                     @"domain should be service");
-                              XCTAssertEqual(error.code, BBBLibraryServiceErrorMissingParameters,
+                              XCTAssertEqual(error.code, BBBAPIWrongUsage,
                                              @"code should be missing pars");
 #pragma clang diagnostic pop
                               callbackCalled = YES;
@@ -673,7 +674,7 @@
                        completion:^(BOOL s, NSError *e) {
                            wasCompletionCalled = YES;
                            XCTAssertFalse(s, @"false");
-                           XCTAssertEqual(e.code, BBBLibraryServiceErrorMissingParameters,
+                           XCTAssertEqual(e.code, BBBAPIWrongUsage,
                                           @"missing pars code");
                            XCTAssertEqualObjects(e.domain, BBBLibraryServiceErrorDomain,
                                                  @"expects library domain");
@@ -734,7 +735,7 @@
                        completion:^(BOOL success, NSError *error) {
                            wasCallbackCalled = YES;
                            XCTAssertFalse(success, @"must be failure");
-                           XCTAssertEqual(error.code, BBBLibraryServiceErrorWrongParameters,
+                           XCTAssertEqual(error.code, BBBAPIWrongUsage,
                                           @"wrong parameters errror");
                            XCTAssertEqualObjects(error.domain,BBBLibraryServiceErrorDomain,
                                                  @"library error");
@@ -757,7 +758,7 @@
                        completion:^(BOOL success, NSError *error) {
                            wasCallbackCalled = YES;
                            XCTAssertFalse(success, @"must be failure");
-                           XCTAssertEqual(error.code, BBBLibraryServiceErrorWrongParameters,
+                           XCTAssertEqual(error.code, BBBAPIWrongUsage,
                                           @"wrong parameters errror");
                            XCTAssertEqualObjects(error.domain,BBBLibraryServiceErrorDomain,
                                                  @"library error");
@@ -1096,7 +1097,7 @@
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-retain-cycles"
                            XCTAssertFalse(success, @"failure must be returned");
-                           XCTAssertEqual(error.code, BBBLibraryServiceErrorMissingParameters,
+                           XCTAssertEqual(error.code, BBBAPIWrongUsage,
                                           @"missing parameters error");
                            XCTAssertEqualObjects(error.domain, BBBLibraryServiceErrorDomain,
                                                  @"library error domain");

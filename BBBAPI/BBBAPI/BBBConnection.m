@@ -9,6 +9,7 @@
 #import "BBBConnection.h"
 #import "BBBRequestFactory.h"
 #import "BBBRequest.h"
+#import "BBBAPIErrors.h"
 #import "BBBNetworkConfiguration.h"
 
 NSString * BBBNSStringFromBBBContentType(BBBContentType type){
@@ -149,7 +150,7 @@ typedef void(^BBBURLConnectionCompletionCallback)(NSURLResponse *response, NSDat
                                 }
                                 
                                 connectionError = [NSError errorWithDomain:BBBConnectionErrorDomain
-                                                                      code:BBBConnectionErrorCannotConnect
+                                                                      code:BBBAPIErrorCouldNotConnect
                                                                   userInfo:userInfo];
                                 
                                 completion(nil, connectionError);

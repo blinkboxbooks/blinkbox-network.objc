@@ -82,7 +82,7 @@
                                                       error:&error];
     
     XCTAssertNil(response, @"No response should be returned");
-    XCTAssertEqual(error.code, BBBConnectionErrorServerError, @"server internal error");
+    XCTAssertEqual(error.code, BBBAPIServerError, @"server internal error");
     XCTAssertEqualObjects(error.domain, BBBConnectionErrorDomain, @"domain must be equal");
     
 }
@@ -96,7 +96,7 @@
                                                       error:&error];
     
     XCTAssertNil(response, @"No response should be returned");
-    XCTAssertEqual(error.code, BBBConnectionErrorNotFound, @"not found error");
+    XCTAssertEqual(error.code, BBBAPIErrorNotFound, @"not found error");
     XCTAssertEqualObjects(error.domain, BBBConnectionErrorDomain, @"domain must be equal");
     
 }
