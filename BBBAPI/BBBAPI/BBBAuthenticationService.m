@@ -57,7 +57,7 @@
         || user.acceptsTermsAndConditions == NO || client.name == nil || client.brand == nil
         || client.operatingSystem == nil || client.model == nil) {
         completion(nil,  [NSError errorWithDomain:kBBBAuthServiceName
-                                             code:BBBAPIErrorInvalidParameters
+                                             code:BBBAPIWrongUsage
                                          userInfo:nil]);
         return;
     }
@@ -104,7 +104,7 @@
     hasNeededClientData = (client.name && client.brand && client.operatingSystem && client.model);
     if (!user || !hasNeededClientData) {
         completion(nil,  [NSError errorWithDomain:kBBBAuthServiceName
-                                             code:BBBAPIErrorInvalidParameters
+                                             code:BBBAPIWrongUsage
                                          userInfo:nil]);
         return;
     }
@@ -139,7 +139,7 @@
 
     if (user.email == nil || user.password == nil) {
         NSError *error =  [NSError errorWithDomain:kBBBAuthServiceName
-                                              code:BBBAPIErrorInvalidParameters
+                                              code:BBBAPIWrongUsage
                                           userInfo:nil];
         completion(nil,error);
         return;
@@ -178,7 +178,7 @@
 
     if (data.refreshToken == nil) {
         NSError *error =  [NSError errorWithDomain:kBBBAuthServiceName
-                                              code:BBBAPIErrorInvalidParameters
+                                              code:BBBAPIWrongUsage
                                           userInfo:nil];
         completion(nil,error);
         return;
@@ -216,7 +216,7 @@
     if (user.email == nil) {
         if (completion) {
             completion(NO,  [NSError errorWithDomain:kBBBAuthServiceName
-                                                code:BBBAPIErrorInvalidParameters
+                                                code:BBBAPIWrongUsage
                                             userInfo:nil]);
         }
         return;
@@ -245,7 +245,7 @@
 
     if (user.refreshToken == nil) {
         NSError *error =  [NSError errorWithDomain:kBBBAuthServiceName
-                                              code:BBBAPIErrorInvalidParameters
+                                              code:BBBAPIWrongUsage
                                           userInfo:nil];
         completion(NO,error);
         return;
@@ -275,7 +275,7 @@
     NSParameterAssert(completion);
     if (user == nil) {
         completion(nil,  [NSError errorWithDomain:kBBBAuthServiceName
-                                             code:BBBAPIErrorInvalidParameters
+                                             code:BBBAPIWrongUsage
                                          userInfo:nil]);
         return;
     }
@@ -302,7 +302,7 @@
     NSParameterAssert(completion);
     if (client.uri == nil || user == nil) {
         completion(NO, [NSError errorWithDomain:kBBBAuthServiceName
-                                           code:BBBAPIErrorInvalidParameters
+                                           code:BBBAPIWrongUsage
                                        userInfo:nil]);
         return;
     }

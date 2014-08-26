@@ -12,19 +12,18 @@
 #import "BBBResponseMapping.h"
 #import "BBBNetworkConfiguration.h"
 
-typedef NS_ENUM(NSInteger, BBBURLConnectionErrorCode){
-    /**
-     *  This error is passed up and it means a generic could not connect error
-     */
-    BBBURLConnectionErrorCodeCannotConnect = 666,
-    /**
-     *  Error generated when data cannot be serialised to JSON when sending
-     *  a request
-     */
+NS_ENUM(NSInteger, BBBHTTPStatus){
+    BBBHTTPSuccess = 200,
+    BBBHTTPUnauthorized = 401,
+    BBBHTTPForbidden = 403,
+    BBBHTTPNotFound = 404,
+    BBBHTTPConflict = 409,
+    BBBHTTPServerError = 500,
 };
 
+extern NSString *const BBBConnectionErrorDomain;
 
-extern NSString *const kBBBURLConnectionErrorDomain;
+extern NSString *const BBBHTTPVersion11;
 
 @class BBBResponse;
 @class BBBRequestFactory;

@@ -47,7 +47,7 @@ BBBAuthenticationService *service;
     BBBClientDetails *client = nil;
     BBB_PREPARE_SEMAPHORE();
     [service registerUser:user client:client completion:^(BBBAuthData *data, NSError *error) {
-        BBBAssertAuthResponseErrorCode(data, error, BBBAPIErrorInvalidParameters);
+        BBBAssertAuthResponseErrorCode(data, error, BBBAPIWrongUsage);
         BBB_SIGNAL_SEMAPHORE();
     }];
     BBB_WAIT_FOR_SEMAPHORE();
@@ -67,7 +67,7 @@ BBBAuthenticationService *service;
     BBBClientDetails *client = [self validRegistrationClient];
     BBB_PREPARE_SEMAPHORE();
     [service registerUser:user client:client completion:^(BBBAuthData *data, NSError *error) {
-        BBBAssertAuthResponseErrorCode(data, error, BBBAPIErrorInvalidParameters);
+        BBBAssertAuthResponseErrorCode(data, error, BBBAPIWrongUsage);
         BBB_SIGNAL_SEMAPHORE();
     }];
     BBB_WAIT_FOR_SEMAPHORE();
@@ -93,7 +93,7 @@ BBBAuthenticationService *service;
     BBBClientDetails *client = nil;
     BBB_PREPARE_SEMAPHORE();
     [service registerClient:client forUser:user completion:^(BBBClientDetails *data, NSError *error) {
-        BBBAssertAuthResponseErrorCode(data, error, BBBAPIErrorInvalidParameters);
+        BBBAssertAuthResponseErrorCode(data, error, BBBAPIWrongUsage);
         BBB_SIGNAL_SEMAPHORE();
     }];
     BBB_WAIT_FOR_SEMAPHORE();
@@ -106,7 +106,7 @@ BBBAuthenticationService *service;
     BBBClientDetails *client = [self validRegistrationClient];
     BBB_PREPARE_SEMAPHORE();
     [service registerClient:client forUser:user completion:^(BBBClientDetails *data, NSError *error) {
-        BBBAssertAuthResponseErrorCode(data, error, BBBAPIErrorInvalidParameters);
+        BBBAssertAuthResponseErrorCode(data, error, BBBAPIWrongUsage);
         BBB_SIGNAL_SEMAPHORE();
     }];
     BBB_WAIT_FOR_SEMAPHORE();
@@ -139,7 +139,7 @@ BBBAuthenticationService *service;
     [service loginUser:nil
                 client:nil
             completion:^(BBBAuthData *data, NSError *error) {
-                BBBAssertAuthResponseErrorCode(data, error, BBBAPIErrorInvalidParameters);
+                BBBAssertAuthResponseErrorCode(data, error, BBBAPIWrongUsage);
                 BBB_SIGNAL_SEMAPHORE();
             }];
 
@@ -164,7 +164,7 @@ BBBAuthenticationService *service;
     BBB_DISABLE_ASSERTIONS();
     BBB_PREPARE_SEMAPHORE();
     [service refreshAuthData:validAuthData completion:^(BBBAuthData *refreshedData, NSError *error) {
-        BBBAssertAuthResponseErrorCode(refreshedData, error, BBBAPIErrorInvalidParameters);
+        BBBAssertAuthResponseErrorCode(refreshedData, error, BBBAPIWrongUsage);
         BBB_SIGNAL_SEMAPHORE();
     }];
 
@@ -187,7 +187,7 @@ BBBAuthenticationService *service;
     BBB_PREPARE_SEMAPHORE();
 
     [service getAllClientsForUser:nil completion:^(NSArray *clients, NSError *error) {
-        BBBAssertAuthResponseErrorCode(clients, error, BBBAPIErrorInvalidParameters);
+        BBBAssertAuthResponseErrorCode(clients, error, BBBAPIWrongUsage);
         BBB_SIGNAL_SEMAPHORE();
     }];
 
@@ -204,7 +204,7 @@ BBBAuthenticationService *service;
     [service deleteClient:client forUser:user completion:^(BOOL succes, NSError *error) {
         XCTAssertFalse(succes);
         XCTAssertEqualObjects(error.domain, kBBBAuthServiceName);
-        XCTAssertEqual(error.code, BBBAPIErrorInvalidParameters);
+        XCTAssertEqual(error.code, BBBAPIWrongUsage);
         BBB_SIGNAL_SEMAPHORE();
     }];
 
@@ -221,7 +221,7 @@ BBBAuthenticationService *service;
     [service deleteClient:client forUser:user completion:^(BOOL succes, NSError *error) {
         XCTAssertFalse(succes);
         XCTAssertEqualObjects(error.domain, kBBBAuthServiceName);
-        XCTAssertEqual(error.code, BBBAPIErrorInvalidParameters);
+        XCTAssertEqual(error.code, BBBAPIWrongUsage);
         BBB_SIGNAL_SEMAPHORE();
     }];
 
@@ -261,7 +261,7 @@ BBBAuthenticationService *service;
     [service resetPasswordForUser:nil completion:^(BOOL success, NSError *error) {
         XCTAssertFalse(success);
         XCTAssertEqualObjects(error.domain, kBBBAuthServiceName);
-        XCTAssertEqual(error.code, BBBAPIErrorInvalidParameters);
+        XCTAssertEqual(error.code, BBBAPIWrongUsage);
 
         BBB_SIGNAL_SEMAPHORE();
     }];
@@ -287,7 +287,7 @@ BBBAuthenticationService *service;
     [service revokeRefreshTokenForUser:nil completion:^(BOOL succes, NSError *error) {
         XCTAssertFalse(succes);
         XCTAssertEqualObjects(error.domain, kBBBAuthServiceName);
-        XCTAssertEqual(error.code, BBBAPIErrorInvalidParameters);
+        XCTAssertEqual(error.code, BBBAPIWrongUsage);
         BBB_SIGNAL_SEMAPHORE();
     }];
 
