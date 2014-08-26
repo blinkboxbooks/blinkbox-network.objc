@@ -364,7 +364,6 @@
 				GCC_PREFIX_HEADER = "BBBApp/BBBApp-Prefix.pch";
 				INFOPLIST_FILE = "BBBApp/BBBApp-Info.plist";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -379,7 +378,6 @@
 				GCC_PREFIX_HEADER = "BBBApp/BBBApp-Prefix.pch";
 				INFOPLIST_FILE = "BBBApp/BBBApp-Info.plist";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -444,6 +442,7 @@
 				5AD957F419A2434900E5A855 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5AD957F519A2434900E5A855 /* Build configuration list for PBXNativeTarget "BBBAppTests" */ = {
 			isa = XCConfigurationList;
@@ -452,6 +451,7 @@
 				5AD957F719A2434900E5A855 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

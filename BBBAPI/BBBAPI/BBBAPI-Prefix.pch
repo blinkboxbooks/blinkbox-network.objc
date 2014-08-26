@@ -6,4 +6,8 @@
 
 #ifdef __OBJC__
     #import <Foundation/Foundation.h>
+    #if COCOAPODS_POD_AVAILABLE_CocoaLumberjack
+        #import <CocoaLumberjack/CocoaLumberjack.h>
+    #endif
+    #import "BBBLogger.h"
 #endif

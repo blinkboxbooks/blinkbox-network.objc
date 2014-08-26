@@ -62,6 +62,23 @@
 		40E4057919A63A850075D875 /* libResponse_single_item_sampled.json in Resources */ = {isa = PBXBuildFile; fileRef = 40E4056219A63A850075D875 /* libResponse_single_item_sampled.json */; };
 		40E4057A19A63A850075D875 /* libResponse_single_item_sampled.json in Resources */ = {isa = PBXBuildFile; fileRef = 40E4056219A63A850075D875 /* libResponse_single_item_sampled.json */; };
 		40E4057C19A63AB40075D875 /* BBBMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 40E4057B19A63AB40075D875 /* BBBMacros.h */; };
+		5A1F5A2819A7308900938C3D /* BBBAuthData.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5AD9582C19A247B100E5A855 /* BBBAuthData.h */; };
+		5A1F5A2919A7308C00938C3D /* BBBClientDetails.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5AD9583F19A247B100E5A855 /* BBBClientDetails.h */; };
+		5A1F5A2A19A7309000938C3D /* BBBUserDetails.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5AD9586C19A247B100E5A855 /* BBBUserDetails.h */; };
+		5A1F5A2B19A730A800938C3D /* BBBAPI.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5AD9582719A247B100E5A855 /* BBBAPI.h */; };
+		5A1F5A2C19A730B400938C3D /* BBBNetworkConfiguration.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5AD9585819A247B100E5A855 /* BBBNetworkConfiguration.h */; };
+		5A1F5A2D19A730C700938C3D /* BBBAuthenticationService.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5AD9583019A247B100E5A855 /* BBBAuthenticationService.h */; };
+		5A1F5A2E19A730D000938C3D /* BBBSearchService.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5AD9586819A247B100E5A855 /* BBBSearchService.h */; };
+		5A520FE819ACA1A90055D295 /* BBBAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A520FE719ACA1A90055D295 /* BBBAPI.m */; };
+		5A520FE919ACA1A90055D295 /* BBBAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A520FE719ACA1A90055D295 /* BBBAPI.m */; };
+		5A520FEA19ACA1A90055D295 /* BBBAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A520FE719ACA1A90055D295 /* BBBAPI.m */; };
+		5A520FEC19ACB9F30055D295 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A520FEB19ACB9F30055D295 /* UIKit.framework */; };
+		5A520FF219ACBC6A0055D295 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A520FF119ACBC6A0055D295 /* CoreGraphics.framework */; };
+		5A520FF319ACBC6F0055D295 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A520FEF19ACBC580055D295 /* CoreGraphics.framework */; };
+		5A520FF619ACBF140055D295 /* BBBLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A520FF419ACBF140055D295 /* BBBLogger.h */; };
+		5A520FF719ACBF140055D295 /* BBBLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A520FF519ACBF140055D295 /* BBBLogger.m */; };
+		5A520FF819ACBF140055D295 /* BBBLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A520FF519ACBF140055D295 /* BBBLogger.m */; };
+		5A520FF919ACBF140055D295 /* BBBLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A520FF519ACBF140055D295 /* BBBLogger.m */; };
 		5A91E9FA19A4FA410079247F /* BBBClientsResponseMapperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A91E9F619A4FA410079247F /* BBBClientsResponseMapperTests.m */; };
 		5A91E9FB19A4FA410079247F /* BBBClientsResponseMapperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A91E9F619A4FA410079247F /* BBBClientsResponseMapperTests.m */; };
 		5A91E9FC19A4FA410079247F /* BBBTokensResponseMapperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A91E9F719A4FA410079247F /* BBBTokensResponseMapperTests.m */; };
@@ -146,7 +163,6 @@
 		5AD958E919A24AEB00E5A855 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AD9577519A23CE400E5A855 /* Foundation.framework */; };
 		5AD958FE19A24C9F00E5A855 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AD9575A19A23C5800E5A855 /* XCTest.framework */; };
 		5AD958FF19A24C9F00E5A855 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AD9577519A23CE400E5A855 /* Foundation.framework */; };
-		5AD9590019A24C9F00E5A855 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AD9578519A23CE400E5A855 /* UIKit.framework */; };
 		5AD9591719A24DA900E5A855 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5AD9591519A24DA900E5A855 /* InfoPlist.strings */; };
 		5AD9591819A24DA900E5A855 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5AD9591519A24DA900E5A855 /* InfoPlist.strings */; };
 		5AD9592819A2501C00E5A855 /* BBBAuthenticationServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9591D19A2501C00E5A855 /* BBBAuthenticationServiceTests.m */; };
@@ -198,6 +214,7 @@
 		5AD959BD19A34AC000E5A855 /* BBBClientDetails.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5AD9583F19A247B100E5A855 /* BBBClientDetails.h */; };
 		5AD959BE19A34AC400E5A855 /* BBBUserDetails.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5AD9586C19A247B100E5A855 /* BBBUserDetails.h */; };
 		5AD959BF19A34AD200E5A855 /* BBBAuthData.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5AD9582C19A247B100E5A855 /* BBBAuthData.h */; };
+		5AE925A619A680970094CA96 /* BBBAPI-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5AE925A519A680970094CA96 /* BBBAPI-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -218,6 +235,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		5A1F5A2119A7301700938C3D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				5A1F5A2B19A730A800938C3D /* BBBAPI.h in CopyFiles */,
+				5A1F5A2A19A7309000938C3D /* BBBUserDetails.h in CopyFiles */,
+				5A1F5A2C19A730B400938C3D /* BBBNetworkConfiguration.h in CopyFiles */,
+				5A1F5A2819A7308900938C3D /* BBBAuthData.h in CopyFiles */,
+				5A1F5A2919A7308C00938C3D /* BBBClientDetails.h in CopyFiles */,
+				5A1F5A2D19A730C700938C3D /* BBBAuthenticationService.h in CopyFiles */,
+				5A1F5A2E19A730D000938C3D /* BBBSearchService.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5AD9577219A23CE400E5A855 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -268,6 +301,12 @@
 		40E4056119A63A850075D875 /* libResponse_single_item_purchased.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = libResponse_single_item_purchased.json; sourceTree = "<group>"; };
 		40E4056219A63A850075D875 /* libResponse_single_item_sampled.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = libResponse_single_item_sampled.json; sourceTree = "<group>"; };
 		40E4057B19A63AB40075D875 /* BBBMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBMacros.h; sourceTree = "<group>"; };
+		5A520FE719ACA1A90055D295 /* BBBAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBBAPI.m; sourceTree = "<group>"; };
+		5A520FEB19ACB9F30055D295 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		5A520FEF19ACBC580055D295 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		5A520FF119ACBC6A0055D295 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		5A520FF419ACBF140055D295 /* BBBLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBLogger.h; sourceTree = "<group>"; };
+		5A520FF519ACBF140055D295 /* BBBLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBBLogger.m; sourceTree = "<group>"; };
 		5A91E9F619A4FA410079247F /* BBBClientsResponseMapperTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBBClientsResponseMapperTests.m; path = "BBBAPI Tests/BBBClientsResponseMapperTests.m"; sourceTree = SOURCE_ROOT; };
 		5A91E9F719A4FA410079247F /* BBBTokensResponseMapperTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBBTokensResponseMapperTests.m; path = "BBBAPI Tests/BBBTokensResponseMapperTests.m"; sourceTree = SOURCE_ROOT; };
 		5A91E9F819A4FA410079247F /* BBBAuthServiceResponseMappersTestData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBBAuthServiceResponseMappersTestData.h; path = "BBBAPI Tests/BBBAuthServiceResponseMappersTestData.h"; sourceTree = SOURCE_ROOT; };
@@ -365,6 +404,7 @@
 		5AD9592219A2501C00E5A855 /* BBBMockAssertionHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBBMockAssertionHandler.m; path = "BBBAPI Tests/BBBMockAssertionHandler.m"; sourceTree = SOURCE_ROOT; };
 		5AD9592319A2501C00E5A855 /* BBBTestMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBBTestMacros.h; path = "BBBAPI Tests/BBBTestMacros.h"; sourceTree = SOURCE_ROOT; };
 		5AD9594619A2629D00E5A855 /* libBBBAPI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBBBAPI.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		5AE925A519A680970094CA96 /* BBBAPI-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "BBBAPI-Info.plist"; path = "BBBAPI/BBBAPI-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -389,6 +429,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AD9593219A2508F00E5A855 /* BBBAPI.framework in Frameworks */,
+				5A520FF219ACBC6A0055D295 /* CoreGraphics.framework in Frameworks */,
 				5AD958E819A24AEB00E5A855 /* XCTest.framework in Frameworks */,
 				5AD958E919A24AEB00E5A855 /* Foundation.framework in Frameworks */,
 			);
@@ -399,8 +440,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AD9593319A2509400E5A855 /* libBBBAPI.a in Frameworks */,
+				5A520FF319ACBC6F0055D295 /* CoreGraphics.framework in Frameworks */,
+				5A520FEC19ACB9F30055D295 /* UIKit.framework in Frameworks */,
 				5AD958FE19A24C9F00E5A855 /* XCTest.framework in Frameworks */,
-				5AD9590019A24C9F00E5A855 /* UIKit.framework in Frameworks */,
 				5AD958FF19A24C9F00E5A855 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -444,9 +486,19 @@
 			path = "Library Service Responses";
 			sourceTree = "<group>";
 		};
+		5A520FE019ACA0B80055D295 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				5A520FF419ACBF140055D295 /* BBBLogger.h */,
+				5A520FF519ACBF140055D295 /* BBBLogger.m */,
+			);
+			name = Utility;
+			sourceTree = "<group>";
+		};
 		5AD9573819A23C5700E5A855 = {
 			isa = PBXGroup;
 			children = (
+				5AE925A419A6805C0094CA96 /* Supporting Files */,
 				5AD9574B19A23C5700E5A855 /* BBBAPI */,
 				5AD958EB19A24AEB00E5A855 /* BBBAPI Tests */,
 				5AD9574419A23C5700E5A855 /* Frameworks */,
@@ -469,6 +521,9 @@
 		5AD9574419A23C5700E5A855 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5A520FF119ACBC6A0055D295 /* CoreGraphics.framework */,
+				5A520FEF19ACBC580055D295 /* CoreGraphics.framework */,
+				5A520FEB19ACB9F30055D295 /* UIKit.framework */,
 				5AD9574519A23C5700E5A855 /* Cocoa.framework */,
 				5AD9575A19A23C5800E5A855 /* XCTest.framework */,
 				5AD9577519A23CE400E5A855 /* Foundation.framework */,
@@ -503,7 +558,9 @@
 				5AD9593719A2516700E5A855 /* Library */,
 				5AD9593619A2515E00E5A855 /* Connection Subclasses */,
 				5AD9593519A2515900E5A855 /* Networking */,
+				5A520FE019ACA0B80055D295 /* Utility */,
 				5AD9582719A247B100E5A855 /* BBBAPI.h */,
+				5A520FE719ACA1A90055D295 /* BBBAPI.m */,
 				5AD9574C19A23C5700E5A855 /* Supporting Files */,
 			);
 			path = BBBAPI;
@@ -720,6 +777,14 @@
 			name = Search;
 			sourceTree = "<group>";
 		};
+		5AE925A419A6805C0094CA96 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5AE925A519A680970094CA96 /* BBBAPI-Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -735,6 +800,7 @@
 				40E4050819A638270075D875 /* BBBLibraryResponse.h in Headers */,
 				40E4051019A638270075D875 /* BBBStatusResponseMapper.h in Headers */,
 				5AD958D919A2484900E5A855 /* BBBAuthenticationService.h in Headers */,
+				5A520FF619ACBF140055D295 /* BBBLogger.h in Headers */,
 				40E4057C19A63AB40075D875 /* BBBMacros.h in Headers */,
 				5AD958DD19A2488500E5A855 /* BBBNetworkConfiguration.h in Headers */,
 				40E4050C19A638270075D875 /* BBBServerDateFormatter.h in Headers */,
@@ -822,6 +888,7 @@
 			buildPhases = (
 				5AD9594219A2629D00E5A855 /* Sources */,
 				5AD9594319A2629D00E5A855 /* Frameworks */,
+				5A1F5A2119A7301700938C3D /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -875,6 +942,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AE925A619A680970094CA96 /* BBBAPI-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -935,6 +1003,7 @@
 				5AD958CB19A247B200E5A855 /* BBBSearchConnection.m in Sources */,
 				5AD958AA19A247B200E5A855 /* BBBLibraryItem.m in Sources */,
 				5AD958AD19A247B200E5A855 /* BBBLibraryItemLink.m in Sources */,
+				5A520FF719ACBF140055D295 /* BBBLogger.m in Sources */,
 				5AD9589219A247B200E5A855 /* BBBClientDetails.m in Sources */,
 				5AD958C819A247B200E5A855 /* BBBResponseMapping.m in Sources */,
 				40E4055219A638C50075D875 /* BBBLibraryResponseMapper.m in Sources */,
@@ -961,6 +1030,7 @@
 				5AD9588619A247B100E5A855 /* BBBAuthServiceErrorParser.m in Sources */,
 				5AD9587C19A247B100E5A855 /* BBBAuthenticationService.m in Sources */,
 				5AD9589B19A247B200E5A855 /* BBBConnection.m in Sources */,
+				5A520FE819ACA1A90055D295 /* BBBAPI.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -978,6 +1048,7 @@
 				5AD958CC19A247B200E5A855 /* BBBSearchConnection.m in Sources */,
 				5AD958AB19A247B200E5A855 /* BBBLibraryItem.m in Sources */,
 				5AD958AE19A247B200E5A855 /* BBBLibraryItemLink.m in Sources */,
+				5A520FF819ACBF140055D295 /* BBBLogger.m in Sources */,
 				5AD9589319A247B200E5A855 /* BBBClientDetails.m in Sources */,
 				5AD958C919A247B200E5A855 /* BBBResponseMapping.m in Sources */,
 				40E4055319A638C50075D875 /* BBBLibraryResponseMapper.m in Sources */,
@@ -1004,6 +1075,7 @@
 				5AD9588719A247B100E5A855 /* BBBAuthServiceErrorParser.m in Sources */,
 				5AD9587D19A247B100E5A855 /* BBBAuthenticationService.m in Sources */,
 				5AD9589C19A247B200E5A855 /* BBBConnection.m in Sources */,
+				5A520FE919ACA1A90055D295 /* BBBAPI.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1063,6 +1135,7 @@
 				5AD9599619A2631200E5A855 /* BBBDefaultAuthenticator.m in Sources */,
 				5AD9599819A2631200E5A855 /* BBBAuthServiceErrorParser.m in Sources */,
 				5AD959A519A2631200E5A855 /* BBBResponseMapping.m in Sources */,
+				5A520FF919ACBF140055D295 /* BBBLogger.m in Sources */,
 				5AD9599319A2631200E5A855 /* BBBClientDetails.m in Sources */,
 				5AD9598619A2631200E5A855 /* BBBSearchService.m in Sources */,
 				40E4055419A638C50075D875 /* BBBLibraryResponseMapper.m in Sources */,
@@ -1089,6 +1162,7 @@
 				5AD9599519A2631200E5A855 /* BBBClientsResponseMapper.m in Sources */,
 				5AD9599D19A2631200E5A855 /* BBBLibraryConnection.m in Sources */,
 				5AD9598719A2631200E5A855 /* BBBPurchasingService.m in Sources */,
+				5A520FEA19ACA1A90055D295 /* BBBAPI.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1151,8 +1225,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -1184,6 +1259,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = macosx;
@@ -1199,6 +1275,7 @@
 				FRAMEWORK_VERSION = A;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BBBAPI/BBBAPI-Prefix.pch";
+				INFOPLIST_FILE = "BBBAPI/BBBAPI-Info.plist";
 				PRODUCT_NAME = BBBAPI;
 				WRAPPER_EXTENSION = framework;
 			};
@@ -1213,6 +1290,7 @@
 				FRAMEWORK_VERSION = A;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BBBAPI/BBBAPI-Prefix.pch";
+				INFOPLIST_FILE = "BBBAPI/BBBAPI-Info.plist";
 				PRODUCT_NAME = BBBAPI;
 				WRAPPER_EXTENSION = framework;
 			};
@@ -1229,7 +1307,6 @@
 					"$(inherited)",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = BBBAPI;
 				PUBLIC_HEADERS_FOLDER_PATH = "include/$(PRODUCT_NAME)";
 				SDKROOT = iphoneos;
@@ -1244,7 +1321,6 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BBBAPI/BBBAPI-Prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = BBBAPI;
 				PUBLIC_HEADERS_FOLDER_PATH = "include/$(PRODUCT_NAME)";
 				SDKROOT = iphoneos;
@@ -1269,7 +1345,6 @@
 				);
 				INFOPLIST_FILE = "BBBAPI Tests/BBBAPITests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "BBBAPI.framework Tests";
 				SDKROOT = macosx;
 				TEST_HOST = "$(BUNDLE_LOADER)";
@@ -1313,7 +1388,6 @@
 				);
 				INFOPLIST_FILE = "BBBAPI Tests/BBBAPITests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "libBBBAPI.a Tests";
 				SDKROOT = iphoneos;
 				TEST_HOST = "";
@@ -1350,7 +1424,6 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = BBBAPI;
 			};
 			name = Debug;

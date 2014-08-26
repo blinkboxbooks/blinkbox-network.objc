@@ -29,6 +29,8 @@
         self.authResponseMapper = [BBBNetworkConfiguration responseMapperForServiceName:kBBBAuthServiceName];
         self.tokensResponseMapper = [BBBNetworkConfiguration responseMapperForServiceName:kBBBAuthServiceTokensName];
         self.clientsResponseMapper = [BBBNetworkConfiguration responseMapperForServiceName:kBBBAuthServiceClientsName];
+
+        BBBLog(@"AuthenticationService Initialised");
     }
     return self;
 }
@@ -37,6 +39,8 @@
 - (void) registerUser:(BBBUserDetails *)user
                client:(BBBClientDetails *)client
            completion:(void (^)(BBBAuthData *, NSError *))completion{
+
+    BBBLog(@"registerUser:client:completion:");
 
     NSParameterAssert(user);
     NSParameterAssert(user.firstName);
@@ -88,6 +92,7 @@
 - (void) registerClient:(BBBClientDetails *)client
                 forUser:(BBBUserDetails *)user
              completion:(void (^)(BBBClientDetails *, NSError *))completion{
+    BBBLog(@"registerClient:client:completion:");
 
     NSParameterAssert(user);
 
@@ -133,6 +138,8 @@
             client:(BBBClientDetails *)client
         completion:(void (^)(BBBAuthData *, NSError *))completion{
 
+    BBBLog(@"loginUser:client:completion:");
+
     NSParameterAssert(user.email);
     NSParameterAssert(user.password);
     NSParameterAssert(completion);
@@ -173,6 +180,8 @@
 - (void) refreshAuthData:(BBBAuthData *)data
               completion:(void (^)(BBBAuthData *, NSError *))completion{
 
+    BBBLog(@"refreshAuthData:completion:");
+
     NSParameterAssert(completion);
     NSParameterAssert(data.refreshToken);
 
@@ -210,6 +219,8 @@
 
 - (void) resetPasswordForUser:(BBBUserDetails *)user
                    completion:(void (^)(BOOL, NSError *))completion{
+    BBBLog(@"resetPasswordForUser:completion:");
+
     NSParameterAssert(user.email);
     NSParameterAssert(completion);
 
@@ -240,6 +251,8 @@
 
 - (void) revokeRefreshTokenForUser:(BBBUserDetails *)user
                         completion:(void (^)(BOOL, NSError *))completion{
+    BBBLog(@"revokeRefreshTokenForUser:completion:");
+
     NSParameterAssert(user.refreshToken);
     NSParameterAssert(completion);
 
@@ -270,6 +283,7 @@
 
 - (void) getAllClientsForUser:(BBBUserDetails *)user
                    completion:(void (^)(NSArray *, NSError *))completion{
+    BBBLog(@"getAllClientsForUser:completion:");
 
     NSParameterAssert(user);
     NSParameterAssert(completion);
@@ -296,6 +310,7 @@
 - (void) deleteClient:(BBBClientDetails *)client
               forUser:(BBBUserDetails *)user
            completion:(void (^)(BOOL, NSError *))completion{
+    BBBLog(@"deleteClient:user:completion:");
 
     NSParameterAssert(client.uri);
     NSParameterAssert(user);

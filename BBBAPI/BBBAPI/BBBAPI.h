@@ -1,6 +1,6 @@
 //
-//  BBBServices.h
-//  BBBNetworking
+//  BBBAPI.h
+//  BBBAPI
 //
 //  Created by Tomek Kuźma on 29/07/2014.
 //  Copyright (c) 2014 Blinkbox Books. All rights reserved.
@@ -11,5 +11,7 @@
 #import <BBBAPI/BBBClientDetails.h>
 #import <BBBAPI/BBBAuthData.h>
 
+@interface BBBAPI : NSObject
 
+@end
 
