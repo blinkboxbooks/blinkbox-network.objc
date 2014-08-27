@@ -9,5 +9,5 @@
     #if COCOAPODS_POD_AVAILABLE_CocoaLumberjack
         #import <CocoaLumberjack/CocoaLumberjack.h>
     #endif
-    #import "BBBLogger.h"
+    #import "BBALogger.h"
 #endif

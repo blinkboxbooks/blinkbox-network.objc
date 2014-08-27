@@ -7,36 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		40E4050819A638270075D875 /* BBBLibraryResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 40E4050219A638270075D875 /* BBBLibraryResponse.h */; };
-		40E4050919A638270075D875 /* BBBLibraryResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E4050319A638270075D875 /* BBBLibraryResponse.m */; };
-		40E4050A19A638270075D875 /* BBBLibraryResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E4050319A638270075D875 /* BBBLibraryResponse.m */; };
-		40E4050B19A638270075D875 /* BBBLibraryResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E4050319A638270075D875 /* BBBLibraryResponse.m */; };
-		40E4050C19A638270075D875 /* BBBServerDateFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 40E4050419A638270075D875 /* BBBServerDateFormatter.h */; };
-		40E4050D19A638270075D875 /* BBBServerDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E4050519A638270075D875 /* BBBServerDateFormatter.m */; };
-		40E4050E19A638270075D875 /* BBBServerDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E4050519A638270075D875 /* BBBServerDateFormatter.m */; };
-		40E4050F19A638270075D875 /* BBBServerDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E4050519A638270075D875 /* BBBServerDateFormatter.m */; };
-		40E4051019A638270075D875 /* BBBStatusResponseMapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 40E4050619A638270075D875 /* BBBStatusResponseMapper.h */; };
-		40E4051119A638270075D875 /* BBBStatusResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E4050719A638270075D875 /* BBBStatusResponseMapper.m */; };
-		40E4051219A638270075D875 /* BBBStatusResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E4050719A638270075D875 /* BBBStatusResponseMapper.m */; };
-		40E4051319A638270075D875 /* BBBStatusResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E4050719A638270075D875 /* BBBStatusResponseMapper.m */; };
-		40E4054119A638B70075D875 /* BBBConnectionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E4053719A638B70075D875 /* BBBConnectionTests.m */; };
-		40E4054219A638B70075D875 /* BBBConnectionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E4053719A638B70075D875 /* BBBConnectionTests.m */; };
-		40E4054319A638B70075D875 /* BBBLibraryResponseMapperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E4053819A638B70075D875 /* BBBLibraryResponseMapperTests.m */; };
-		40E4054419A638B70075D875 /* BBBLibraryResponseMapperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E4053819A638B70075D875 /* BBBLibraryResponseMapperTests.m */; };
-		40E4054519A638B70075D875 /* BBBLibraryResponseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E4053919A638B70075D875 /* BBBLibraryResponseTests.m */; };
-		40E4054619A638B70075D875 /* BBBLibraryResponseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E4053919A638B70075D875 /* BBBLibraryResponseTests.m */; };
-		40E4054719A638B70075D875 /* BBBMockConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E4053B19A638B70075D875 /* BBBMockConnection.m */; };
-		40E4054819A638B70075D875 /* BBBMockConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E4053B19A638B70075D875 /* BBBMockConnection.m */; };
-		40E4054919A638B70075D875 /* BBBStatusResponseMapperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E4053C19A638B70075D875 /* BBBStatusResponseMapperTests.m */; };
-		40E4054A19A638B70075D875 /* BBBStatusResponseMapperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E4053C19A638B70075D875 /* BBBStatusResponseMapperTests.m */; };
-		40E4054B19A638B70075D875 /* BBBSwizzlingHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E4053E19A638B70075D875 /* BBBSwizzlingHelper.m */; };
-		40E4054C19A638B70075D875 /* BBBSwizzlingHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E4053E19A638B70075D875 /* BBBSwizzlingHelper.m */; };
-		40E4054D19A638B70075D875 /* BBBTestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E4054019A638B70075D875 /* BBBTestHelper.m */; };
-		40E4054E19A638B70075D875 /* BBBTestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E4054019A638B70075D875 /* BBBTestHelper.m */; };
-		40E4055119A638C50075D875 /* BBBLibraryResponseMapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 40E4054F19A638C50075D875 /* BBBLibraryResponseMapper.h */; };
-		40E4055219A638C50075D875 /* BBBLibraryResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E4055019A638C50075D875 /* BBBLibraryResponseMapper.m */; };
-		40E4055319A638C50075D875 /* BBBLibraryResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E4055019A638C50075D875 /* BBBLibraryResponseMapper.m */; };
-		40E4055419A638C50075D875 /* BBBLibraryResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E4055019A638C50075D875 /* BBBLibraryResponseMapper.m */; };
+		40CA6A7D19ADE2AE00BA091B /* BBATestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 40CA6A7B19ADE2A100BA091B /* BBATestHelper.m */; };
+		40CA6A7E19ADE2AF00BA091B /* BBATestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 40CA6A7B19ADE2A100BA091B /* BBATestHelper.m */; };
+		40E4050819A638270075D875 /* BBALibraryResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 40E4050219A638270075D875 /* BBALibraryResponse.h */; };
+		40E4050919A638270075D875 /* BBALibraryResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E4050319A638270075D875 /* BBALibraryResponse.m */; };
+		40E4050A19A638270075D875 /* BBALibraryResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E4050319A638270075D875 /* BBALibraryResponse.m */; };
+		40E4050B19A638270075D875 /* BBALibraryResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E4050319A638270075D875 /* BBALibraryResponse.m */; };
+		40E4050C19A638270075D875 /* BBAServerDateFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 40E4050419A638270075D875 /* BBAServerDateFormatter.h */; };
+		40E4050D19A638270075D875 /* BBAServerDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E4050519A638270075D875 /* BBAServerDateFormatter.m */; };
+		40E4050E19A638270075D875 /* BBAServerDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E4050519A638270075D875 /* BBAServerDateFormatter.m */; };
+		40E4050F19A638270075D875 /* BBAServerDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E4050519A638270075D875 /* BBAServerDateFormatter.m */; };
+		40E4051019A638270075D875 /* BBAStatusResponseMapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 40E4050619A638270075D875 /* BBAStatusResponseMapper.h */; };
+		40E4051119A638270075D875 /* BBAStatusResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E4050719A638270075D875 /* BBAStatusResponseMapper.m */; };
+		40E4051219A638270075D875 /* BBAStatusResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E4050719A638270075D875 /* BBAStatusResponseMapper.m */; };
+		40E4051319A638270075D875 /* BBAStatusResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E4050719A638270075D875 /* BBAStatusResponseMapper.m */; };
+		40E4054119A638B70075D875 /* BBAConnectionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E4053719A638B70075D875 /* BBAConnectionTests.m */; };
+		40E4054219A638B70075D875 /* BBAConnectionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E4053719A638B70075D875 /* BBAConnectionTests.m */; };
+		40E4054319A638B70075D875 /* BBALibraryResponseMapperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E4053819A638B70075D875 /* BBALibraryResponseMapperTests.m */; };
+		40E4054419A638B70075D875 /* BBALibraryResponseMapperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E4053819A638B70075D875 /* BBALibraryResponseMapperTests.m */; };
+		40E4054519A638B70075D875 /* BBALibraryResponseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E4053919A638B70075D875 /* BBALibraryResponseTests.m */; };
+		40E4054619A638B70075D875 /* BBALibraryResponseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E4053919A638B70075D875 /* BBALibraryResponseTests.m */; };
+		40E4054719A638B70075D875 /* BBAMockConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E4053B19A638B70075D875 /* BBAMockConnection.m */; };
+		40E4054819A638B70075D875 /* BBAMockConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E4053B19A638B70075D875 /* BBAMockConnection.m */; };
+		40E4054919A638B70075D875 /* BBAStatusResponseMapperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E4053C19A638B70075D875 /* BBAStatusResponseMapperTests.m */; };
+		40E4054A19A638B70075D875 /* BBAStatusResponseMapperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E4053C19A638B70075D875 /* BBAStatusResponseMapperTests.m */; };
+		40E4054B19A638B70075D875 /* BBASwizzlingHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E4053E19A638B70075D875 /* BBASwizzlingHelper.m */; };
+		40E4054C19A638B70075D875 /* BBASwizzlingHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E4053E19A638B70075D875 /* BBASwizzlingHelper.m */; };
+		40E4055119A638C50075D875 /* BBALibraryResponseMapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 40E4054F19A638C50075D875 /* BBALibraryResponseMapper.h */; };
+		40E4055219A638C50075D875 /* BBALibraryResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E4055019A638C50075D875 /* BBALibraryResponseMapper.m */; };
+		40E4055319A638C50075D875 /* BBALibraryResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E4055019A638C50075D875 /* BBALibraryResponseMapper.m */; };
+		40E4055419A638C50075D875 /* BBALibraryResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E4055019A638C50075D875 /* BBALibraryResponseMapper.m */; };
 		40E4056319A63A850075D875 /* libResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 40E4055719A63A850075D875 /* libResponse.json */; };
 		40E4056419A63A850075D875 /* libResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 40E4055719A63A850075D875 /* libResponse.json */; };
 		40E4056519A63A850075D875 /* libResponse_archived.json in Resources */ = {isa = PBXBuildFile; fileRef = 40E4055819A63A850075D875 /* libResponse_archived.json */; };
@@ -61,159 +61,159 @@
 		40E4057819A63A850075D875 /* libResponse_single_item_purchased.json in Resources */ = {isa = PBXBuildFile; fileRef = 40E4056119A63A850075D875 /* libResponse_single_item_purchased.json */; };
 		40E4057919A63A850075D875 /* libResponse_single_item_sampled.json in Resources */ = {isa = PBXBuildFile; fileRef = 40E4056219A63A850075D875 /* libResponse_single_item_sampled.json */; };
 		40E4057A19A63A850075D875 /* libResponse_single_item_sampled.json in Resources */ = {isa = PBXBuildFile; fileRef = 40E4056219A63A850075D875 /* libResponse_single_item_sampled.json */; };
-		40E4057C19A63AB40075D875 /* BBBMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 40E4057B19A63AB40075D875 /* BBBMacros.h */; };
-		5A1F5A2819A7308900938C3D /* BBBAuthData.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5AD9582C19A247B100E5A855 /* BBBAuthData.h */; };
-		5A1F5A2919A7308C00938C3D /* BBBClientDetails.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5AD9583F19A247B100E5A855 /* BBBClientDetails.h */; };
-		5A1F5A2A19A7309000938C3D /* BBBUserDetails.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5AD9586C19A247B100E5A855 /* BBBUserDetails.h */; };
+		40E4057C19A63AB40075D875 /* BBAMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 40E4057B19A63AB40075D875 /* BBAMacros.h */; };
+		5A1F5A2819A7308900938C3D /* BBAAuthData.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5AD9582C19A247B100E5A855 /* BBAAuthData.h */; };
+		5A1F5A2919A7308C00938C3D /* BBAClientDetails.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5AD9583F19A247B100E5A855 /* BBAClientDetails.h */; };
+		5A1F5A2A19A7309000938C3D /* BBAUserDetails.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5AD9586C19A247B100E5A855 /* BBAUserDetails.h */; };
 		5A1F5A2B19A730A800938C3D /* BBBAPI.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5AD9582719A247B100E5A855 /* BBBAPI.h */; };
-		5A1F5A2C19A730B400938C3D /* BBBNetworkConfiguration.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5AD9585819A247B100E5A855 /* BBBNetworkConfiguration.h */; };
-		5A1F5A2D19A730C700938C3D /* BBBAuthenticationService.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5AD9583019A247B100E5A855 /* BBBAuthenticationService.h */; };
-		5A1F5A2E19A730D000938C3D /* BBBSearchService.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5AD9586819A247B100E5A855 /* BBBSearchService.h */; };
+		5A1F5A2C19A730B400938C3D /* BBANetworkConfiguration.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5AD9585819A247B100E5A855 /* BBANetworkConfiguration.h */; };
+		5A1F5A2D19A730C700938C3D /* BBAAuthenticationService.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5AD9583019A247B100E5A855 /* BBAAuthenticationService.h */; };
+		5A1F5A2E19A730D000938C3D /* BBASearchService.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5AD9586819A247B100E5A855 /* BBASearchService.h */; };
 		5A520FE819ACA1A90055D295 /* BBBAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A520FE719ACA1A90055D295 /* BBBAPI.m */; };
 		5A520FE919ACA1A90055D295 /* BBBAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A520FE719ACA1A90055D295 /* BBBAPI.m */; };
 		5A520FEA19ACA1A90055D295 /* BBBAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A520FE719ACA1A90055D295 /* BBBAPI.m */; };
 		5A520FEC19ACB9F30055D295 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A520FEB19ACB9F30055D295 /* UIKit.framework */; };
 		5A520FF219ACBC6A0055D295 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A520FF119ACBC6A0055D295 /* CoreGraphics.framework */; };
 		5A520FF319ACBC6F0055D295 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A520FEF19ACBC580055D295 /* CoreGraphics.framework */; };
-		5A520FF619ACBF140055D295 /* BBBLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A520FF419ACBF140055D295 /* BBBLogger.h */; };
-		5A520FF719ACBF140055D295 /* BBBLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A520FF519ACBF140055D295 /* BBBLogger.m */; };
-		5A520FF819ACBF140055D295 /* BBBLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A520FF519ACBF140055D295 /* BBBLogger.m */; };
-		5A520FF919ACBF140055D295 /* BBBLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A520FF519ACBF140055D295 /* BBBLogger.m */; };
-		5A91E9FA19A4FA410079247F /* BBBClientsResponseMapperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A91E9F619A4FA410079247F /* BBBClientsResponseMapperTests.m */; };
-		5A91E9FB19A4FA410079247F /* BBBClientsResponseMapperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A91E9F619A4FA410079247F /* BBBClientsResponseMapperTests.m */; };
-		5A91E9FC19A4FA410079247F /* BBBTokensResponseMapperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A91E9F719A4FA410079247F /* BBBTokensResponseMapperTests.m */; };
-		5A91E9FD19A4FA410079247F /* BBBTokensResponseMapperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A91E9F719A4FA410079247F /* BBBTokensResponseMapperTests.m */; };
-		5A91E9FE19A4FA410079247F /* BBBAuthServiceResponseMappersTestData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A91E9F919A4FA410079247F /* BBBAuthServiceResponseMappersTestData.m */; };
-		5A91E9FF19A4FA410079247F /* BBBAuthServiceResponseMappersTestData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A91E9F919A4FA410079247F /* BBBAuthServiceResponseMappersTestData.m */; };
+		5A520FF619ACBF140055D295 /* BBALogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A520FF419ACBF140055D295 /* BBALogger.h */; };
+		5A520FF719ACBF140055D295 /* BBALogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A520FF519ACBF140055D295 /* BBALogger.m */; };
+		5A520FF819ACBF140055D295 /* BBALogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A520FF519ACBF140055D295 /* BBALogger.m */; };
+		5A520FF919ACBF140055D295 /* BBALogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A520FF519ACBF140055D295 /* BBALogger.m */; };
+		5A91E9FA19A4FA410079247F /* BBAClientsResponseMapperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A91E9F619A4FA410079247F /* BBAClientsResponseMapperTests.m */; };
+		5A91E9FB19A4FA410079247F /* BBAClientsResponseMapperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A91E9F619A4FA410079247F /* BBAClientsResponseMapperTests.m */; };
+		5A91E9FC19A4FA410079247F /* BBATokensResponseMapperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A91E9F719A4FA410079247F /* BBATokensResponseMapperTests.m */; };
+		5A91E9FD19A4FA410079247F /* BBATokensResponseMapperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A91E9F719A4FA410079247F /* BBATokensResponseMapperTests.m */; };
+		5A91E9FE19A4FA410079247F /* BBAAuthServiceResponseMappersTestData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A91E9F919A4FA410079247F /* BBAAuthServiceResponseMappersTestData.m */; };
+		5A91E9FF19A4FA410079247F /* BBAAuthServiceResponseMappersTestData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A91E9F919A4FA410079247F /* BBAAuthServiceResponseMappersTestData.m */; };
 		5AD9574619A23C5700E5A855 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AD9574519A23C5700E5A855 /* Cocoa.framework */; };
 		5AD9577619A23CE400E5A855 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AD9577519A23CE400E5A855 /* Foundation.framework */; };
-		5AD9587319A247B100E5A855 /* BBBAuthConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9582B19A247B100E5A855 /* BBBAuthConnection.m */; };
-		5AD9587419A247B100E5A855 /* BBBAuthConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9582B19A247B100E5A855 /* BBBAuthConnection.m */; };
-		5AD9587619A247B100E5A855 /* BBBAuthData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9582D19A247B100E5A855 /* BBBAuthData.m */; };
-		5AD9587719A247B100E5A855 /* BBBAuthData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9582D19A247B100E5A855 /* BBBAuthData.m */; };
-		5AD9587919A247B100E5A855 /* BBBAuthDataValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9582F19A247B100E5A855 /* BBBAuthDataValidator.m */; };
-		5AD9587A19A247B100E5A855 /* BBBAuthDataValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9582F19A247B100E5A855 /* BBBAuthDataValidator.m */; };
-		5AD9587C19A247B100E5A855 /* BBBAuthenticationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9583119A247B100E5A855 /* BBBAuthenticationService.m */; };
-		5AD9587D19A247B100E5A855 /* BBBAuthenticationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9583119A247B100E5A855 /* BBBAuthenticationService.m */; };
-		5AD9587F19A247B100E5A855 /* BBBAuthenticationServiceConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9583319A247B100E5A855 /* BBBAuthenticationServiceConstants.m */; };
-		5AD9588019A247B100E5A855 /* BBBAuthenticationServiceConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9583319A247B100E5A855 /* BBBAuthenticationServiceConstants.m */; };
-		5AD9588319A247B100E5A855 /* BBBAuthResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9583619A247B100E5A855 /* BBBAuthResponseMapper.m */; };
-		5AD9588419A247B100E5A855 /* BBBAuthResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9583619A247B100E5A855 /* BBBAuthResponseMapper.m */; };
-		5AD9588619A247B100E5A855 /* BBBAuthServiceErrorParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9583819A247B100E5A855 /* BBBAuthServiceErrorParser.m */; };
-		5AD9588719A247B100E5A855 /* BBBAuthServiceErrorParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9583819A247B100E5A855 /* BBBAuthServiceErrorParser.m */; };
-		5AD9588919A247B100E5A855 /* BBBBookmarkService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9583A19A247B100E5A855 /* BBBBookmarkService.m */; };
-		5AD9588A19A247B100E5A855 /* BBBBookmarkService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9583A19A247B100E5A855 /* BBBBookmarkService.m */; };
-		5AD9588C19A247B100E5A855 /* BBBCatalogueService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9583C19A247B100E5A855 /* BBBCatalogueService.m */; };
-		5AD9588D19A247B100E5A855 /* BBBCatalogueService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9583C19A247B100E5A855 /* BBBCatalogueService.m */; };
-		5AD9588F19A247B100E5A855 /* BBBCategoryService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9583E19A247B100E5A855 /* BBBCategoryService.m */; };
-		5AD9589019A247B100E5A855 /* BBBCategoryService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9583E19A247B100E5A855 /* BBBCategoryService.m */; };
-		5AD9589219A247B200E5A855 /* BBBClientDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9584019A247B100E5A855 /* BBBClientDetails.m */; };
-		5AD9589319A247B200E5A855 /* BBBClientDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9584019A247B100E5A855 /* BBBClientDetails.m */; };
-		5AD9589519A247B200E5A855 /* BBBClientsResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9584219A247B100E5A855 /* BBBClientsResponseMapper.m */; };
-		5AD9589619A247B200E5A855 /* BBBClientsResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9584219A247B100E5A855 /* BBBClientsResponseMapper.m */; };
-		5AD9589819A247B200E5A855 /* BBBClubcardService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9584419A247B100E5A855 /* BBBClubcardService.m */; };
-		5AD9589919A247B200E5A855 /* BBBClubcardService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9584419A247B100E5A855 /* BBBClubcardService.m */; };
-		5AD9589B19A247B200E5A855 /* BBBConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9584619A247B100E5A855 /* BBBConnection.m */; };
-		5AD9589C19A247B200E5A855 /* BBBConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9584619A247B100E5A855 /* BBBConnection.m */; };
-		5AD9589E19A247B200E5A855 /* BBBDefaultAuthenticator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9584819A247B100E5A855 /* BBBDefaultAuthenticator.m */; };
-		5AD9589F19A247B200E5A855 /* BBBDefaultAuthenticator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9584819A247B100E5A855 /* BBBDefaultAuthenticator.m */; };
-		5AD958A119A247B200E5A855 /* BBBJSONResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9584A19A247B100E5A855 /* BBBJSONResponseMapper.m */; };
-		5AD958A219A247B200E5A855 /* BBBJSONResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9584A19A247B100E5A855 /* BBBJSONResponseMapper.m */; };
-		5AD958A419A247B200E5A855 /* BBBKeyService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9584C19A247B100E5A855 /* BBBKeyService.m */; };
-		5AD958A519A247B200E5A855 /* BBBKeyService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9584C19A247B100E5A855 /* BBBKeyService.m */; };
-		5AD958A719A247B200E5A855 /* BBBLibraryConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9584E19A247B100E5A855 /* BBBLibraryConnection.m */; };
-		5AD958A819A247B200E5A855 /* BBBLibraryConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9584E19A247B100E5A855 /* BBBLibraryConnection.m */; };
-		5AD958AA19A247B200E5A855 /* BBBLibraryItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9585019A247B100E5A855 /* BBBLibraryItem.m */; };
-		5AD958AB19A247B200E5A855 /* BBBLibraryItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9585019A247B100E5A855 /* BBBLibraryItem.m */; };
-		5AD958AD19A247B200E5A855 /* BBBLibraryItemLink.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9585219A247B100E5A855 /* BBBLibraryItemLink.m */; };
-		5AD958AE19A247B200E5A855 /* BBBLibraryItemLink.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9585219A247B100E5A855 /* BBBLibraryItemLink.m */; };
-		5AD958B019A247B200E5A855 /* BBBLibraryService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9585419A247B100E5A855 /* BBBLibraryService.m */; };
-		5AD958B119A247B200E5A855 /* BBBLibraryService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9585419A247B100E5A855 /* BBBLibraryService.m */; };
-		5AD958B419A247B200E5A855 /* BBBMarketingService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9585719A247B100E5A855 /* BBBMarketingService.m */; };
-		5AD958B519A247B200E5A855 /* BBBMarketingService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9585719A247B100E5A855 /* BBBMarketingService.m */; };
-		5AD958B719A247B200E5A855 /* BBBNetworkConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9585919A247B100E5A855 /* BBBNetworkConfiguration.m */; };
-		5AD958B819A247B200E5A855 /* BBBNetworkConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9585919A247B100E5A855 /* BBBNetworkConfiguration.m */; };
-		5AD958BC19A247B200E5A855 /* BBBPurchasingService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9585D19A247B100E5A855 /* BBBPurchasingService.m */; };
-		5AD958BD19A247B200E5A855 /* BBBPurchasingService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9585D19A247B100E5A855 /* BBBPurchasingService.m */; };
-		5AD958BF19A247B200E5A855 /* BBBRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9585F19A247B100E5A855 /* BBBRequest.m */; };
-		5AD958C019A247B200E5A855 /* BBBRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9585F19A247B100E5A855 /* BBBRequest.m */; };
-		5AD958C219A247B200E5A855 /* BBBRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9586119A247B100E5A855 /* BBBRequestFactory.m */; };
-		5AD958C319A247B200E5A855 /* BBBRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9586119A247B100E5A855 /* BBBRequestFactory.m */; };
-		5AD958C519A247B200E5A855 /* BBBResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9586319A247B100E5A855 /* BBBResponse.m */; };
-		5AD958C619A247B200E5A855 /* BBBResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9586319A247B100E5A855 /* BBBResponse.m */; };
-		5AD958C819A247B200E5A855 /* BBBResponseMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9586519A247B100E5A855 /* BBBResponseMapping.m */; };
-		5AD958C919A247B200E5A855 /* BBBResponseMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9586519A247B100E5A855 /* BBBResponseMapping.m */; };
-		5AD958CB19A247B200E5A855 /* BBBSearchConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9586719A247B100E5A855 /* BBBSearchConnection.m */; };
-		5AD958CC19A247B200E5A855 /* BBBSearchConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9586719A247B100E5A855 /* BBBSearchConnection.m */; };
-		5AD958CE19A247B200E5A855 /* BBBSearchService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9586919A247B100E5A855 /* BBBSearchService.m */; };
-		5AD958CF19A247B200E5A855 /* BBBSearchService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9586919A247B100E5A855 /* BBBSearchService.m */; };
-		5AD958D119A247B200E5A855 /* BBBTokensResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9586B19A247B100E5A855 /* BBBTokensResponseMapper.m */; };
-		5AD958D219A247B200E5A855 /* BBBTokensResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9586B19A247B100E5A855 /* BBBTokensResponseMapper.m */; };
-		5AD958D419A247B200E5A855 /* BBBUserDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9586D19A247B100E5A855 /* BBBUserDetails.m */; };
-		5AD958D519A247B200E5A855 /* BBBUserDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9586D19A247B100E5A855 /* BBBUserDetails.m */; };
+		5AD9587319A247B100E5A855 /* BBAAuthConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9582B19A247B100E5A855 /* BBAAuthConnection.m */; };
+		5AD9587419A247B100E5A855 /* BBAAuthConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9582B19A247B100E5A855 /* BBAAuthConnection.m */; };
+		5AD9587619A247B100E5A855 /* BBAAuthData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9582D19A247B100E5A855 /* BBAAuthData.m */; };
+		5AD9587719A247B100E5A855 /* BBAAuthData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9582D19A247B100E5A855 /* BBAAuthData.m */; };
+		5AD9587919A247B100E5A855 /* BBAAuthDataValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9582F19A247B100E5A855 /* BBAAuthDataValidator.m */; };
+		5AD9587A19A247B100E5A855 /* BBAAuthDataValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9582F19A247B100E5A855 /* BBAAuthDataValidator.m */; };
+		5AD9587C19A247B100E5A855 /* BBAAuthenticationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9583119A247B100E5A855 /* BBAAuthenticationService.m */; };
+		5AD9587D19A247B100E5A855 /* BBAAuthenticationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9583119A247B100E5A855 /* BBAAuthenticationService.m */; };
+		5AD9587F19A247B100E5A855 /* BBAAuthenticationServiceConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9583319A247B100E5A855 /* BBAAuthenticationServiceConstants.m */; };
+		5AD9588019A247B100E5A855 /* BBAAuthenticationServiceConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9583319A247B100E5A855 /* BBAAuthenticationServiceConstants.m */; };
+		5AD9588319A247B100E5A855 /* BBAAuthResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9583619A247B100E5A855 /* BBAAuthResponseMapper.m */; };
+		5AD9588419A247B100E5A855 /* BBAAuthResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9583619A247B100E5A855 /* BBAAuthResponseMapper.m */; };
+		5AD9588619A247B100E5A855 /* BBAAuthServiceErrorParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9583819A247B100E5A855 /* BBAAuthServiceErrorParser.m */; };
+		5AD9588719A247B100E5A855 /* BBAAuthServiceErrorParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9583819A247B100E5A855 /* BBAAuthServiceErrorParser.m */; };
+		5AD9588919A247B100E5A855 /* BBABookmarkService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9583A19A247B100E5A855 /* BBABookmarkService.m */; };
+		5AD9588A19A247B100E5A855 /* BBABookmarkService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9583A19A247B100E5A855 /* BBABookmarkService.m */; };
+		5AD9588C19A247B100E5A855 /* BBACatalogueService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9583C19A247B100E5A855 /* BBACatalogueService.m */; };
+		5AD9588D19A247B100E5A855 /* BBACatalogueService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9583C19A247B100E5A855 /* BBACatalogueService.m */; };
+		5AD9588F19A247B100E5A855 /* BBACategoryService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9583E19A247B100E5A855 /* BBACategoryService.m */; };
+		5AD9589019A247B100E5A855 /* BBACategoryService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9583E19A247B100E5A855 /* BBACategoryService.m */; };
+		5AD9589219A247B200E5A855 /* BBAClientDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9584019A247B100E5A855 /* BBAClientDetails.m */; };
+		5AD9589319A247B200E5A855 /* BBAClientDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9584019A247B100E5A855 /* BBAClientDetails.m */; };
+		5AD9589519A247B200E5A855 /* BBAClientsResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9584219A247B100E5A855 /* BBAClientsResponseMapper.m */; };
+		5AD9589619A247B200E5A855 /* BBAClientsResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9584219A247B100E5A855 /* BBAClientsResponseMapper.m */; };
+		5AD9589819A247B200E5A855 /* BBAClubcardService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9584419A247B100E5A855 /* BBAClubcardService.m */; };
+		5AD9589919A247B200E5A855 /* BBAClubcardService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9584419A247B100E5A855 /* BBAClubcardService.m */; };
+		5AD9589B19A247B200E5A855 /* BBAConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9584619A247B100E5A855 /* BBAConnection.m */; };
+		5AD9589C19A247B200E5A855 /* BBAConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9584619A247B100E5A855 /* BBAConnection.m */; };
+		5AD9589E19A247B200E5A855 /* BBADefaultAuthenticator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9584819A247B100E5A855 /* BBADefaultAuthenticator.m */; };
+		5AD9589F19A247B200E5A855 /* BBADefaultAuthenticator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9584819A247B100E5A855 /* BBADefaultAuthenticator.m */; };
+		5AD958A119A247B200E5A855 /* BBAJSONResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9584A19A247B100E5A855 /* BBAJSONResponseMapper.m */; };
+		5AD958A219A247B200E5A855 /* BBAJSONResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9584A19A247B100E5A855 /* BBAJSONResponseMapper.m */; };
+		5AD958A419A247B200E5A855 /* BBAKeyService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9584C19A247B100E5A855 /* BBAKeyService.m */; };
+		5AD958A519A247B200E5A855 /* BBAKeyService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9584C19A247B100E5A855 /* BBAKeyService.m */; };
+		5AD958A719A247B200E5A855 /* BBALibraryConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9584E19A247B100E5A855 /* BBALibraryConnection.m */; };
+		5AD958A819A247B200E5A855 /* BBALibraryConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9584E19A247B100E5A855 /* BBALibraryConnection.m */; };
+		5AD958AA19A247B200E5A855 /* BBALibraryItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9585019A247B100E5A855 /* BBALibraryItem.m */; };
+		5AD958AB19A247B200E5A855 /* BBALibraryItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9585019A247B100E5A855 /* BBALibraryItem.m */; };
+		5AD958AD19A247B200E5A855 /* BBALibraryItemLink.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9585219A247B100E5A855 /* BBALibraryItemLink.m */; };
+		5AD958AE19A247B200E5A855 /* BBALibraryItemLink.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9585219A247B100E5A855 /* BBALibraryItemLink.m */; };
+		5AD958B019A247B200E5A855 /* BBALibraryService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9585419A247B100E5A855 /* BBALibraryService.m */; };
+		5AD958B119A247B200E5A855 /* BBALibraryService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9585419A247B100E5A855 /* BBALibraryService.m */; };
+		5AD958B419A247B200E5A855 /* BBAMarketingService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9585719A247B100E5A855 /* BBAMarketingService.m */; };
+		5AD958B519A247B200E5A855 /* BBAMarketingService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9585719A247B100E5A855 /* BBAMarketingService.m */; };
+		5AD958B719A247B200E5A855 /* BBANetworkConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9585919A247B100E5A855 /* BBANetworkConfiguration.m */; };
+		5AD958B819A247B200E5A855 /* BBANetworkConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9585919A247B100E5A855 /* BBANetworkConfiguration.m */; };
+		5AD958BC19A247B200E5A855 /* BBAPurchasingService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9585D19A247B100E5A855 /* BBAPurchasingService.m */; };
+		5AD958BD19A247B200E5A855 /* BBAPurchasingService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9585D19A247B100E5A855 /* BBAPurchasingService.m */; };
+		5AD958BF19A247B200E5A855 /* BBARequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9585F19A247B100E5A855 /* BBARequest.m */; };
+		5AD958C019A247B200E5A855 /* BBARequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9585F19A247B100E5A855 /* BBARequest.m */; };
+		5AD958C219A247B200E5A855 /* BBARequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9586119A247B100E5A855 /* BBARequestFactory.m */; };
+		5AD958C319A247B200E5A855 /* BBARequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9586119A247B100E5A855 /* BBARequestFactory.m */; };
+		5AD958C519A247B200E5A855 /* BBAResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9586319A247B100E5A855 /* BBAResponse.m */; };
+		5AD958C619A247B200E5A855 /* BBAResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9586319A247B100E5A855 /* BBAResponse.m */; };
+		5AD958C819A247B200E5A855 /* BBAResponseMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9586519A247B100E5A855 /* BBAResponseMapping.m */; };
+		5AD958C919A247B200E5A855 /* BBAResponseMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9586519A247B100E5A855 /* BBAResponseMapping.m */; };
+		5AD958CB19A247B200E5A855 /* BBASearchConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9586719A247B100E5A855 /* BBASearchConnection.m */; };
+		5AD958CC19A247B200E5A855 /* BBASearchConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9586719A247B100E5A855 /* BBASearchConnection.m */; };
+		5AD958CE19A247B200E5A855 /* BBASearchService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9586919A247B100E5A855 /* BBASearchService.m */; };
+		5AD958CF19A247B200E5A855 /* BBASearchService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9586919A247B100E5A855 /* BBASearchService.m */; };
+		5AD958D119A247B200E5A855 /* BBATokensResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9586B19A247B100E5A855 /* BBATokensResponseMapper.m */; };
+		5AD958D219A247B200E5A855 /* BBATokensResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9586B19A247B100E5A855 /* BBATokensResponseMapper.m */; };
+		5AD958D419A247B200E5A855 /* BBAUserDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9586D19A247B100E5A855 /* BBAUserDetails.m */; };
+		5AD958D519A247B200E5A855 /* BBAUserDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9586D19A247B100E5A855 /* BBAUserDetails.m */; };
 		5AD958D619A247FC00E5A855 /* BBBAPI.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5AD9582719A247B100E5A855 /* BBBAPI.h */; };
 		5AD958D719A2480800E5A855 /* BBBAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = 5AD9582719A247B100E5A855 /* BBBAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5AD958D819A2484400E5A855 /* BBBSearchService.h in Headers */ = {isa = PBXBuildFile; fileRef = 5AD9586819A247B100E5A855 /* BBBSearchService.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5AD958D919A2484900E5A855 /* BBBAuthenticationService.h in Headers */ = {isa = PBXBuildFile; fileRef = 5AD9583019A247B100E5A855 /* BBBAuthenticationService.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5AD958DA19A2486B00E5A855 /* BBBAuthenticationService.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5AD9583019A247B100E5A855 /* BBBAuthenticationService.h */; };
-		5AD958DB19A2487000E5A855 /* BBBSearchService.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5AD9586819A247B100E5A855 /* BBBSearchService.h */; };
-		5AD958DC19A2488200E5A855 /* BBBNetworkConfiguration.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5AD9585819A247B100E5A855 /* BBBNetworkConfiguration.h */; };
-		5AD958DD19A2488500E5A855 /* BBBNetworkConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 5AD9585819A247B100E5A855 /* BBBNetworkConfiguration.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5AD958D819A2484400E5A855 /* BBASearchService.h in Headers */ = {isa = PBXBuildFile; fileRef = 5AD9586819A247B100E5A855 /* BBASearchService.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5AD958D919A2484900E5A855 /* BBAAuthenticationService.h in Headers */ = {isa = PBXBuildFile; fileRef = 5AD9583019A247B100E5A855 /* BBAAuthenticationService.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5AD958DA19A2486B00E5A855 /* BBAAuthenticationService.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5AD9583019A247B100E5A855 /* BBAAuthenticationService.h */; };
+		5AD958DB19A2487000E5A855 /* BBASearchService.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5AD9586819A247B100E5A855 /* BBASearchService.h */; };
+		5AD958DC19A2488200E5A855 /* BBANetworkConfiguration.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5AD9585819A247B100E5A855 /* BBANetworkConfiguration.h */; };
+		5AD958DD19A2488500E5A855 /* BBANetworkConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 5AD9585819A247B100E5A855 /* BBANetworkConfiguration.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5AD958E819A24AEB00E5A855 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AD9575A19A23C5800E5A855 /* XCTest.framework */; };
 		5AD958E919A24AEB00E5A855 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AD9577519A23CE400E5A855 /* Foundation.framework */; };
 		5AD958FE19A24C9F00E5A855 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AD9575A19A23C5800E5A855 /* XCTest.framework */; };
 		5AD958FF19A24C9F00E5A855 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AD9577519A23CE400E5A855 /* Foundation.framework */; };
 		5AD9591719A24DA900E5A855 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5AD9591519A24DA900E5A855 /* InfoPlist.strings */; };
 		5AD9591819A24DA900E5A855 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5AD9591519A24DA900E5A855 /* InfoPlist.strings */; };
-		5AD9592819A2501C00E5A855 /* BBBAuthenticationServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9591D19A2501C00E5A855 /* BBBAuthenticationServiceTests.m */; };
-		5AD9592919A2501C00E5A855 /* BBBAuthenticationServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9591D19A2501C00E5A855 /* BBBAuthenticationServiceTests.m */; };
-		5AD9592A19A2501C00E5A855 /* BBBAuthServiceResponseMapperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9591F19A2501C00E5A855 /* BBBAuthServiceResponseMapperTests.m */; };
-		5AD9592B19A2501C00E5A855 /* BBBAuthServiceResponseMapperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9591F19A2501C00E5A855 /* BBBAuthServiceResponseMapperTests.m */; };
-		5AD9592C19A2501C00E5A855 /* BBBLibraryServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9592019A2501C00E5A855 /* BBBLibraryServiceTests.m */; };
-		5AD9592D19A2501C00E5A855 /* BBBLibraryServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9592019A2501C00E5A855 /* BBBLibraryServiceTests.m */; };
-		5AD9592E19A2501C00E5A855 /* BBBMockAssertionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9592219A2501C00E5A855 /* BBBMockAssertionHandler.m */; };
-		5AD9592F19A2501C00E5A855 /* BBBMockAssertionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9592219A2501C00E5A855 /* BBBMockAssertionHandler.m */; };
+		5AD9592819A2501C00E5A855 /* BBAAuthenticationServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9591D19A2501C00E5A855 /* BBAAuthenticationServiceTests.m */; };
+		5AD9592919A2501C00E5A855 /* BBAAuthenticationServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9591D19A2501C00E5A855 /* BBAAuthenticationServiceTests.m */; };
+		5AD9592A19A2501C00E5A855 /* BBAAuthServiceResponseMapperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9591F19A2501C00E5A855 /* BBAAuthServiceResponseMapperTests.m */; };
+		5AD9592B19A2501C00E5A855 /* BBAAuthServiceResponseMapperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9591F19A2501C00E5A855 /* BBAAuthServiceResponseMapperTests.m */; };
+		5AD9592C19A2501C00E5A855 /* BBALibraryServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9592019A2501C00E5A855 /* BBALibraryServiceTests.m */; };
+		5AD9592D19A2501C00E5A855 /* BBALibraryServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9592019A2501C00E5A855 /* BBALibraryServiceTests.m */; };
+		5AD9592E19A2501C00E5A855 /* BBAMockAssertionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9592219A2501C00E5A855 /* BBAMockAssertionHandler.m */; };
+		5AD9592F19A2501C00E5A855 /* BBAMockAssertionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9592219A2501C00E5A855 /* BBAMockAssertionHandler.m */; };
 		5AD9593219A2508F00E5A855 /* BBBAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AD9574219A23C5700E5A855 /* BBBAPI.framework */; };
 		5AD9593319A2509400E5A855 /* libBBBAPI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AD9577419A23CE400E5A855 /* libBBBAPI.a */; };
 		5AD9594719A2629D00E5A855 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AD9574519A23C5700E5A855 /* Cocoa.framework */; };
-		5AD9598619A2631200E5A855 /* BBBSearchService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9586919A247B100E5A855 /* BBBSearchService.m */; };
-		5AD9598719A2631200E5A855 /* BBBPurchasingService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9585D19A247B100E5A855 /* BBBPurchasingService.m */; };
-		5AD9598819A2631200E5A855 /* BBBMarketingService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9585719A247B100E5A855 /* BBBMarketingService.m */; };
-		5AD9598919A2631200E5A855 /* BBBCategoryService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9583E19A247B100E5A855 /* BBBCategoryService.m */; };
-		5AD9598A19A2631200E5A855 /* BBBClubcardService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9584419A247B100E5A855 /* BBBClubcardService.m */; };
-		5AD9598B19A2631200E5A855 /* BBBKeyService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9584C19A247B100E5A855 /* BBBKeyService.m */; };
-		5AD9598C19A2631200E5A855 /* BBBCatalogueService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9583C19A247B100E5A855 /* BBBCatalogueService.m */; };
-		5AD9598D19A2631200E5A855 /* BBBBookmarkService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9583A19A247B100E5A855 /* BBBBookmarkService.m */; };
-		5AD9598E19A2631200E5A855 /* BBBTokensResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9586B19A247B100E5A855 /* BBBTokensResponseMapper.m */; };
-		5AD9598F19A2631200E5A855 /* BBBAuthenticationServiceConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9583319A247B100E5A855 /* BBBAuthenticationServiceConstants.m */; };
-		5AD9599019A2631200E5A855 /* BBBAuthData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9582D19A247B100E5A855 /* BBBAuthData.m */; };
-		5AD9599119A2631200E5A855 /* BBBAuthDataValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9582F19A247B100E5A855 /* BBBAuthDataValidator.m */; };
-		5AD9599219A2631200E5A855 /* BBBAuthenticationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9583119A247B100E5A855 /* BBBAuthenticationService.m */; };
-		5AD9599319A2631200E5A855 /* BBBClientDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9584019A247B100E5A855 /* BBBClientDetails.m */; };
-		5AD9599419A2631200E5A855 /* BBBUserDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9586D19A247B100E5A855 /* BBBUserDetails.m */; };
-		5AD9599519A2631200E5A855 /* BBBClientsResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9584219A247B100E5A855 /* BBBClientsResponseMapper.m */; };
-		5AD9599619A2631200E5A855 /* BBBDefaultAuthenticator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9584819A247B100E5A855 /* BBBDefaultAuthenticator.m */; };
-		5AD9599719A2631200E5A855 /* BBBAuthResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9583619A247B100E5A855 /* BBBAuthResponseMapper.m */; };
-		5AD9599819A2631200E5A855 /* BBBAuthServiceErrorParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9583819A247B100E5A855 /* BBBAuthServiceErrorParser.m */; };
-		5AD9599919A2631200E5A855 /* BBBLibraryItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9585019A247B100E5A855 /* BBBLibraryItem.m */; };
-		5AD9599A19A2631200E5A855 /* BBBLibraryItemLink.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9585219A247B100E5A855 /* BBBLibraryItemLink.m */; };
-		5AD9599B19A2631200E5A855 /* BBBLibraryService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9585419A247B100E5A855 /* BBBLibraryService.m */; };
-		5AD9599C19A2631200E5A855 /* BBBAuthConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9582B19A247B100E5A855 /* BBBAuthConnection.m */; };
-		5AD9599D19A2631200E5A855 /* BBBLibraryConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9584E19A247B100E5A855 /* BBBLibraryConnection.m */; };
-		5AD9599E19A2631200E5A855 /* BBBSearchConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9586719A247B100E5A855 /* BBBSearchConnection.m */; };
-		5AD9599F19A2631200E5A855 /* BBBConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9584619A247B100E5A855 /* BBBConnection.m */; };
-		5AD959A019A2631200E5A855 /* BBBNetworkConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9585919A247B100E5A855 /* BBBNetworkConfiguration.m */; };
-		5AD959A119A2631200E5A855 /* BBBRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9585F19A247B100E5A855 /* BBBRequest.m */; };
-		5AD959A219A2631200E5A855 /* BBBRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9586119A247B100E5A855 /* BBBRequestFactory.m */; };
-		5AD959A319A2631200E5A855 /* BBBResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9586319A247B100E5A855 /* BBBResponse.m */; };
-		5AD959A419A2631200E5A855 /* BBBJSONResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9584A19A247B100E5A855 /* BBBJSONResponseMapper.m */; };
-		5AD959A519A2631200E5A855 /* BBBResponseMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9586519A247B100E5A855 /* BBBResponseMapping.m */; };
-		5AD959AB19A26B5900E5A855 /* BBBUserDetails.h in Headers */ = {isa = PBXBuildFile; fileRef = 5AD9586C19A247B100E5A855 /* BBBUserDetails.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5AD959AC19A26B5F00E5A855 /* BBBClientDetails.h in Headers */ = {isa = PBXBuildFile; fileRef = 5AD9583F19A247B100E5A855 /* BBBClientDetails.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5AD959AD19A26CC800E5A855 /* BBBAuthData.h in Headers */ = {isa = PBXBuildFile; fileRef = 5AD9582C19A247B100E5A855 /* BBBAuthData.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5AD959BD19A34AC000E5A855 /* BBBClientDetails.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5AD9583F19A247B100E5A855 /* BBBClientDetails.h */; };
-		5AD959BE19A34AC400E5A855 /* BBBUserDetails.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5AD9586C19A247B100E5A855 /* BBBUserDetails.h */; };
-		5AD959BF19A34AD200E5A855 /* BBBAuthData.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5AD9582C19A247B100E5A855 /* BBBAuthData.h */; };
+		5AD9598619A2631200E5A855 /* BBASearchService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9586919A247B100E5A855 /* BBASearchService.m */; };
+		5AD9598719A2631200E5A855 /* BBAPurchasingService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9585D19A247B100E5A855 /* BBAPurchasingService.m */; };
+		5AD9598819A2631200E5A855 /* BBAMarketingService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9585719A247B100E5A855 /* BBAMarketingService.m */; };
+		5AD9598919A2631200E5A855 /* BBACategoryService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9583E19A247B100E5A855 /* BBACategoryService.m */; };
+		5AD9598A19A2631200E5A855 /* BBAClubcardService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9584419A247B100E5A855 /* BBAClubcardService.m */; };
+		5AD9598B19A2631200E5A855 /* BBAKeyService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9584C19A247B100E5A855 /* BBAKeyService.m */; };
+		5AD9598C19A2631200E5A855 /* BBACatalogueService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9583C19A247B100E5A855 /* BBACatalogueService.m */; };
+		5AD9598D19A2631200E5A855 /* BBABookmarkService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9583A19A247B100E5A855 /* BBABookmarkService.m */; };
+		5AD9598E19A2631200E5A855 /* BBATokensResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9586B19A247B100E5A855 /* BBATokensResponseMapper.m */; };
+		5AD9598F19A2631200E5A855 /* BBAAuthenticationServiceConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9583319A247B100E5A855 /* BBAAuthenticationServiceConstants.m */; };
+		5AD9599019A2631200E5A855 /* BBAAuthData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9582D19A247B100E5A855 /* BBAAuthData.m */; };
+		5AD9599119A2631200E5A855 /* BBAAuthDataValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9582F19A247B100E5A855 /* BBAAuthDataValidator.m */; };
+		5AD9599219A2631200E5A855 /* BBAAuthenticationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9583119A247B100E5A855 /* BBAAuthenticationService.m */; };
+		5AD9599319A2631200E5A855 /* BBAClientDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9584019A247B100E5A855 /* BBAClientDetails.m */; };
+		5AD9599419A2631200E5A855 /* BBAUserDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9586D19A247B100E5A855 /* BBAUserDetails.m */; };
+		5AD9599519A2631200E5A855 /* BBAClientsResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9584219A247B100E5A855 /* BBAClientsResponseMapper.m */; };
+		5AD9599619A2631200E5A855 /* BBADefaultAuthenticator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9584819A247B100E5A855 /* BBADefaultAuthenticator.m */; };
+		5AD9599719A2631200E5A855 /* BBAAuthResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9583619A247B100E5A855 /* BBAAuthResponseMapper.m */; };
+		5AD9599819A2631200E5A855 /* BBAAuthServiceErrorParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9583819A247B100E5A855 /* BBAAuthServiceErrorParser.m */; };
+		5AD9599919A2631200E5A855 /* BBALibraryItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9585019A247B100E5A855 /* BBALibraryItem.m */; };
+		5AD9599A19A2631200E5A855 /* BBALibraryItemLink.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9585219A247B100E5A855 /* BBALibraryItemLink.m */; };
+		5AD9599B19A2631200E5A855 /* BBALibraryService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9585419A247B100E5A855 /* BBALibraryService.m */; };
+		5AD9599C19A2631200E5A855 /* BBAAuthConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9582B19A247B100E5A855 /* BBAAuthConnection.m */; };
+		5AD9599D19A2631200E5A855 /* BBALibraryConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9584E19A247B100E5A855 /* BBALibraryConnection.m */; };
+		5AD9599E19A2631200E5A855 /* BBASearchConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9586719A247B100E5A855 /* BBASearchConnection.m */; };
+		5AD9599F19A2631200E5A855 /* BBAConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9584619A247B100E5A855 /* BBAConnection.m */; };
+		5AD959A019A2631200E5A855 /* BBANetworkConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9585919A247B100E5A855 /* BBANetworkConfiguration.m */; };
+		5AD959A119A2631200E5A855 /* BBARequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9585F19A247B100E5A855 /* BBARequest.m */; };
+		5AD959A219A2631200E5A855 /* BBARequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9586119A247B100E5A855 /* BBARequestFactory.m */; };
+		5AD959A319A2631200E5A855 /* BBAResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9586319A247B100E5A855 /* BBAResponse.m */; };
+		5AD959A419A2631200E5A855 /* BBAJSONResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9584A19A247B100E5A855 /* BBAJSONResponseMapper.m */; };
+		5AD959A519A2631200E5A855 /* BBAResponseMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD9586519A247B100E5A855 /* BBAResponseMapping.m */; };
+		5AD959AB19A26B5900E5A855 /* BBAUserDetails.h in Headers */ = {isa = PBXBuildFile; fileRef = 5AD9586C19A247B100E5A855 /* BBAUserDetails.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5AD959AC19A26B5F00E5A855 /* BBAClientDetails.h in Headers */ = {isa = PBXBuildFile; fileRef = 5AD9583F19A247B100E5A855 /* BBAClientDetails.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5AD959AD19A26CC800E5A855 /* BBAAuthData.h in Headers */ = {isa = PBXBuildFile; fileRef = 5AD9582C19A247B100E5A855 /* BBAAuthData.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5AD959BD19A34AC000E5A855 /* BBAClientDetails.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5AD9583F19A247B100E5A855 /* BBAClientDetails.h */; };
+		5AD959BE19A34AC400E5A855 /* BBAUserDetails.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5AD9586C19A247B100E5A855 /* BBAUserDetails.h */; };
+		5AD959BF19A34AD200E5A855 /* BBAAuthData.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5AD9582C19A247B100E5A855 /* BBAAuthData.h */; };
 		5AE925A619A680970094CA96 /* BBBAPI-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5AE925A519A680970094CA96 /* BBBAPI-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -242,12 +242,12 @@
 			dstSubfolderSpec = 16;
 			files = (
 				5A1F5A2B19A730A800938C3D /* BBBAPI.h in CopyFiles */,
-				5A1F5A2A19A7309000938C3D /* BBBUserDetails.h in CopyFiles */,
-				5A1F5A2C19A730B400938C3D /* BBBNetworkConfiguration.h in CopyFiles */,
-				5A1F5A2819A7308900938C3D /* BBBAuthData.h in CopyFiles */,
-				5A1F5A2919A7308C00938C3D /* BBBClientDetails.h in CopyFiles */,
-				5A1F5A2D19A730C700938C3D /* BBBAuthenticationService.h in CopyFiles */,
-				5A1F5A2E19A730D000938C3D /* BBBSearchService.h in CopyFiles */,
+				5A1F5A2A19A7309000938C3D /* BBAUserDetails.h in CopyFiles */,
+				5A1F5A2C19A730B400938C3D /* BBANetworkConfiguration.h in CopyFiles */,
+				5A1F5A2819A7308900938C3D /* BBAAuthData.h in CopyFiles */,
+				5A1F5A2919A7308C00938C3D /* BBAClientDetails.h in CopyFiles */,
+				5A1F5A2D19A730C700938C3D /* BBAAuthenticationService.h in CopyFiles */,
+				5A1F5A2E19A730D000938C3D /* BBASearchService.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,37 +257,37 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				5AD959BF19A34AD200E5A855 /* BBBAuthData.h in CopyFiles */,
-				5AD959BE19A34AC400E5A855 /* BBBUserDetails.h in CopyFiles */,
-				5AD959BD19A34AC000E5A855 /* BBBClientDetails.h in CopyFiles */,
+				5AD959BF19A34AD200E5A855 /* BBAAuthData.h in CopyFiles */,
+				5AD959BE19A34AC400E5A855 /* BBAUserDetails.h in CopyFiles */,
+				5AD959BD19A34AC000E5A855 /* BBAClientDetails.h in CopyFiles */,
 				5AD958D619A247FC00E5A855 /* BBBAPI.h in CopyFiles */,
-				5AD958DC19A2488200E5A855 /* BBBNetworkConfiguration.h in CopyFiles */,
-				5AD958DB19A2487000E5A855 /* BBBSearchService.h in CopyFiles */,
-				5AD958DA19A2486B00E5A855 /* BBBAuthenticationService.h in CopyFiles */,
+				5AD958DC19A2488200E5A855 /* BBANetworkConfiguration.h in CopyFiles */,
+				5AD958DB19A2487000E5A855 /* BBASearchService.h in CopyFiles */,
+				5AD958DA19A2486B00E5A855 /* BBAAuthenticationService.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		40E4050219A638270075D875 /* BBBLibraryResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBLibraryResponse.h; sourceTree = "<group>"; };
-		40E4050319A638270075D875 /* BBBLibraryResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBBLibraryResponse.m; sourceTree = "<group>"; };
-		40E4050419A638270075D875 /* BBBServerDateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBServerDateFormatter.h; sourceTree = "<group>"; };
-		40E4050519A638270075D875 /* BBBServerDateFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBBServerDateFormatter.m; sourceTree = "<group>"; };
-		40E4050619A638270075D875 /* BBBStatusResponseMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBStatusResponseMapper.h; sourceTree = "<group>"; };
-		40E4050719A638270075D875 /* BBBStatusResponseMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBBStatusResponseMapper.m; sourceTree = "<group>"; };
-		40E4053719A638B70075D875 /* BBBConnectionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBBConnectionTests.m; path = "BBBAPI Tests/BBBConnectionTests.m"; sourceTree = SOURCE_ROOT; };
-		40E4053819A638B70075D875 /* BBBLibraryResponseMapperTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBBLibraryResponseMapperTests.m; path = "BBBAPI Tests/BBBLibraryResponseMapperTests.m"; sourceTree = SOURCE_ROOT; };
-		40E4053919A638B70075D875 /* BBBLibraryResponseTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBBLibraryResponseTests.m; path = "BBBAPI Tests/BBBLibraryResponseTests.m"; sourceTree = SOURCE_ROOT; };
-		40E4053A19A638B70075D875 /* BBBMockConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBBMockConnection.h; path = "BBBAPI Tests/BBBMockConnection.h"; sourceTree = SOURCE_ROOT; };
-		40E4053B19A638B70075D875 /* BBBMockConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBBMockConnection.m; path = "BBBAPI Tests/BBBMockConnection.m"; sourceTree = SOURCE_ROOT; };
-		40E4053C19A638B70075D875 /* BBBStatusResponseMapperTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBBStatusResponseMapperTests.m; path = "BBBAPI Tests/BBBStatusResponseMapperTests.m"; sourceTree = SOURCE_ROOT; };
-		40E4053D19A638B70075D875 /* BBBSwizzlingHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBBSwizzlingHelper.h; path = "BBBAPI Tests/BBBSwizzlingHelper.h"; sourceTree = SOURCE_ROOT; };
-		40E4053E19A638B70075D875 /* BBBSwizzlingHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBBSwizzlingHelper.m; path = "BBBAPI Tests/BBBSwizzlingHelper.m"; sourceTree = SOURCE_ROOT; };
-		40E4053F19A638B70075D875 /* BBBTestHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBBTestHelper.h; path = "BBBAPI Tests/BBBTestHelper.h"; sourceTree = SOURCE_ROOT; };
-		40E4054019A638B70075D875 /* BBBTestHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBBTestHelper.m; path = "BBBAPI Tests/BBBTestHelper.m"; sourceTree = SOURCE_ROOT; };
-		40E4054F19A638C50075D875 /* BBBLibraryResponseMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBLibraryResponseMapper.h; sourceTree = "<group>"; };
-		40E4055019A638C50075D875 /* BBBLibraryResponseMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBBLibraryResponseMapper.m; sourceTree = "<group>"; };
+		40CA6A7B19ADE2A100BA091B /* BBATestHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBATestHelper.m; path = "BBBAPI Tests/BBATestHelper.m"; sourceTree = SOURCE_ROOT; };
+		40E4050219A638270075D875 /* BBALibraryResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBALibraryResponse.h; sourceTree = "<group>"; };
+		40E4050319A638270075D875 /* BBALibraryResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBALibraryResponse.m; sourceTree = "<group>"; };
+		40E4050419A638270075D875 /* BBAServerDateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBAServerDateFormatter.h; sourceTree = "<group>"; };
+		40E4050519A638270075D875 /* BBAServerDateFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBAServerDateFormatter.m; sourceTree = "<group>"; };
+		40E4050619A638270075D875 /* BBAStatusResponseMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBAStatusResponseMapper.h; sourceTree = "<group>"; };
+		40E4050719A638270075D875 /* BBAStatusResponseMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBAStatusResponseMapper.m; sourceTree = "<group>"; };
+		40E4053719A638B70075D875 /* BBAConnectionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBAConnectionTests.m; path = "BBBAPI Tests/BBAConnectionTests.m"; sourceTree = SOURCE_ROOT; };
+		40E4053819A638B70075D875 /* BBALibraryResponseMapperTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBALibraryResponseMapperTests.m; path = "BBBAPI Tests/BBALibraryResponseMapperTests.m"; sourceTree = SOURCE_ROOT; };
+		40E4053919A638B70075D875 /* BBALibraryResponseTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBALibraryResponseTests.m; path = "BBBAPI Tests/BBALibraryResponseTests.m"; sourceTree = SOURCE_ROOT; };
+		40E4053A19A638B70075D875 /* BBAMockConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBAMockConnection.h; path = "BBBAPI Tests/BBAMockConnection.h"; sourceTree = SOURCE_ROOT; };
+		40E4053B19A638B70075D875 /* BBAMockConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBAMockConnection.m; path = "BBBAPI Tests/BBAMockConnection.m"; sourceTree = SOURCE_ROOT; };
+		40E4053C19A638B70075D875 /* BBAStatusResponseMapperTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBAStatusResponseMapperTests.m; path = "BBBAPI Tests/BBAStatusResponseMapperTests.m"; sourceTree = SOURCE_ROOT; };
+		40E4053D19A638B70075D875 /* BBASwizzlingHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBASwizzlingHelper.h; path = "BBBAPI Tests/BBASwizzlingHelper.h"; sourceTree = SOURCE_ROOT; };
+		40E4053E19A638B70075D875 /* BBASwizzlingHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBASwizzlingHelper.m; path = "BBBAPI Tests/BBASwizzlingHelper.m"; sourceTree = SOURCE_ROOT; };
+		40E4053F19A638B70075D875 /* BBATestHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBATestHelper.h; path = "BBBAPI Tests/BBATestHelper.h"; sourceTree = SOURCE_ROOT; };
+		40E4054F19A638C50075D875 /* BBALibraryResponseMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBALibraryResponseMapper.h; sourceTree = "<group>"; };
+		40E4055019A638C50075D875 /* BBALibraryResponseMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBALibraryResponseMapper.m; sourceTree = "<group>"; };
 		40E4055719A63A850075D875 /* libResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = libResponse.json; sourceTree = "<group>"; };
 		40E4055819A63A850075D875 /* libResponse_archived.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = libResponse_archived.json; sourceTree = "<group>"; };
 		40E4055919A63A850075D875 /* libResponse_deleted.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = libResponse_deleted.json; sourceTree = "<group>"; };
@@ -300,17 +300,17 @@
 		40E4056019A63A850075D875 /* libResponse_single_item_deleted.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = libResponse_single_item_deleted.json; sourceTree = "<group>"; };
 		40E4056119A63A850075D875 /* libResponse_single_item_purchased.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = libResponse_single_item_purchased.json; sourceTree = "<group>"; };
 		40E4056219A63A850075D875 /* libResponse_single_item_sampled.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = libResponse_single_item_sampled.json; sourceTree = "<group>"; };
-		40E4057B19A63AB40075D875 /* BBBMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBMacros.h; sourceTree = "<group>"; };
+		40E4057B19A63AB40075D875 /* BBAMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBAMacros.h; sourceTree = "<group>"; };
 		5A520FE719ACA1A90055D295 /* BBBAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBBAPI.m; sourceTree = "<group>"; };
 		5A520FEB19ACB9F30055D295 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		5A520FEF19ACBC580055D295 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
 		5A520FF119ACBC6A0055D295 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		5A520FF419ACBF140055D295 /* BBBLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBLogger.h; sourceTree = "<group>"; };
-		5A520FF519ACBF140055D295 /* BBBLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBBLogger.m; sourceTree = "<group>"; };
-		5A91E9F619A4FA410079247F /* BBBClientsResponseMapperTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBBClientsResponseMapperTests.m; path = "BBBAPI Tests/BBBClientsResponseMapperTests.m"; sourceTree = SOURCE_ROOT; };
-		5A91E9F719A4FA410079247F /* BBBTokensResponseMapperTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBBTokensResponseMapperTests.m; path = "BBBAPI Tests/BBBTokensResponseMapperTests.m"; sourceTree = SOURCE_ROOT; };
-		5A91E9F819A4FA410079247F /* BBBAuthServiceResponseMappersTestData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBBAuthServiceResponseMappersTestData.h; path = "BBBAPI Tests/BBBAuthServiceResponseMappersTestData.h"; sourceTree = SOURCE_ROOT; };
-		5A91E9F919A4FA410079247F /* BBBAuthServiceResponseMappersTestData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBBAuthServiceResponseMappersTestData.m; path = "BBBAPI Tests/BBBAuthServiceResponseMappersTestData.m"; sourceTree = SOURCE_ROOT; };
+		5A520FF419ACBF140055D295 /* BBALogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBALogger.h; sourceTree = "<group>"; };
+		5A520FF519ACBF140055D295 /* BBALogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBALogger.m; sourceTree = "<group>"; };
+		5A91E9F619A4FA410079247F /* BBAClientsResponseMapperTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBAClientsResponseMapperTests.m; path = "BBBAPI Tests/BBAClientsResponseMapperTests.m"; sourceTree = SOURCE_ROOT; };
+		5A91E9F719A4FA410079247F /* BBATokensResponseMapperTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBATokensResponseMapperTests.m; path = "BBBAPI Tests/BBATokensResponseMapperTests.m"; sourceTree = SOURCE_ROOT; };
+		5A91E9F819A4FA410079247F /* BBAAuthServiceResponseMappersTestData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBAAuthServiceResponseMappersTestData.h; path = "BBBAPI Tests/BBAAuthServiceResponseMappersTestData.h"; sourceTree = SOURCE_ROOT; };
+		5A91E9F919A4FA410079247F /* BBAAuthServiceResponseMappersTestData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBAAuthServiceResponseMappersTestData.m; path = "BBBAPI Tests/BBAAuthServiceResponseMappersTestData.m"; sourceTree = SOURCE_ROOT; };
 		5AD9574219A23C5700E5A855 /* BBBAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BBBAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AD9574519A23C5700E5A855 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		5AD9574819A23C5700E5A855 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -322,87 +322,87 @@
 		5AD9577519A23CE400E5A855 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5AD9578519A23CE400E5A855 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		5AD9582719A247B100E5A855 /* BBBAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBAPI.h; sourceTree = "<group>"; };
-		5AD9582919A247B100E5A855 /* BBBAPIErrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBAPIErrors.h; sourceTree = "<group>"; };
-		5AD9582A19A247B100E5A855 /* BBBAuthConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBAuthConnection.h; sourceTree = "<group>"; };
-		5AD9582B19A247B100E5A855 /* BBBAuthConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBBAuthConnection.m; sourceTree = "<group>"; };
-		5AD9582C19A247B100E5A855 /* BBBAuthData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBAuthData.h; sourceTree = "<group>"; };
-		5AD9582D19A247B100E5A855 /* BBBAuthData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBBAuthData.m; sourceTree = "<group>"; };
-		5AD9582E19A247B100E5A855 /* BBBAuthDataValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBAuthDataValidator.h; sourceTree = "<group>"; };
-		5AD9582F19A247B100E5A855 /* BBBAuthDataValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBBAuthDataValidator.m; sourceTree = "<group>"; };
-		5AD9583019A247B100E5A855 /* BBBAuthenticationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBAuthenticationService.h; sourceTree = "<group>"; };
-		5AD9583119A247B100E5A855 /* BBBAuthenticationService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBBAuthenticationService.m; sourceTree = "<group>"; };
-		5AD9583219A247B100E5A855 /* BBBAuthenticationServiceConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBAuthenticationServiceConstants.h; sourceTree = "<group>"; };
-		5AD9583319A247B100E5A855 /* BBBAuthenticationServiceConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBBAuthenticationServiceConstants.m; sourceTree = "<group>"; };
-		5AD9583419A247B100E5A855 /* BBBAuthenticator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBAuthenticator.h; sourceTree = "<group>"; };
-		5AD9583519A247B100E5A855 /* BBBAuthResponseMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBAuthResponseMapper.h; sourceTree = "<group>"; };
-		5AD9583619A247B100E5A855 /* BBBAuthResponseMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBBAuthResponseMapper.m; sourceTree = "<group>"; };
-		5AD9583719A247B100E5A855 /* BBBAuthServiceErrorParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBAuthServiceErrorParser.h; sourceTree = "<group>"; };
-		5AD9583819A247B100E5A855 /* BBBAuthServiceErrorParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBBAuthServiceErrorParser.m; sourceTree = "<group>"; };
-		5AD9583919A247B100E5A855 /* BBBBookmarkService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBBookmarkService.h; sourceTree = "<group>"; };
-		5AD9583A19A247B100E5A855 /* BBBBookmarkService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBBBookmarkService.m; sourceTree = "<group>"; };
-		5AD9583B19A247B100E5A855 /* BBBCatalogueService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBCatalogueService.h; sourceTree = "<group>"; };
-		5AD9583C19A247B100E5A855 /* BBBCatalogueService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBBCatalogueService.m; sourceTree = "<group>"; };
-		5AD9583D19A247B100E5A855 /* BBBCategoryService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBCategoryService.h; sourceTree = "<group>"; };
-		5AD9583E19A247B100E5A855 /* BBBCategoryService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBBCategoryService.m; sourceTree = "<group>"; };
-		5AD9583F19A247B100E5A855 /* BBBClientDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBClientDetails.h; sourceTree = "<group>"; };
-		5AD9584019A247B100E5A855 /* BBBClientDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBBClientDetails.m; sourceTree = "<group>"; };
-		5AD9584119A247B100E5A855 /* BBBClientsResponseMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBClientsResponseMapper.h; sourceTree = "<group>"; };
-		5AD9584219A247B100E5A855 /* BBBClientsResponseMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBBClientsResponseMapper.m; sourceTree = "<group>"; };
-		5AD9584319A247B100E5A855 /* BBBClubcardService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBClubcardService.h; sourceTree = "<group>"; };
-		5AD9584419A247B100E5A855 /* BBBClubcardService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBBClubcardService.m; sourceTree = "<group>"; };
-		5AD9584519A247B100E5A855 /* BBBConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBConnection.h; sourceTree = "<group>"; };
-		5AD9584619A247B100E5A855 /* BBBConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBBConnection.m; sourceTree = "<group>"; };
-		5AD9584719A247B100E5A855 /* BBBDefaultAuthenticator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBDefaultAuthenticator.h; sourceTree = "<group>"; };
-		5AD9584819A247B100E5A855 /* BBBDefaultAuthenticator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBBDefaultAuthenticator.m; sourceTree = "<group>"; };
-		5AD9584919A247B100E5A855 /* BBBJSONResponseMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBJSONResponseMapper.h; sourceTree = "<group>"; };
-		5AD9584A19A247B100E5A855 /* BBBJSONResponseMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBBJSONResponseMapper.m; sourceTree = "<group>"; };
-		5AD9584B19A247B100E5A855 /* BBBKeyService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBKeyService.h; sourceTree = "<group>"; };
-		5AD9584C19A247B100E5A855 /* BBBKeyService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBBKeyService.m; sourceTree = "<group>"; };
-		5AD9584D19A247B100E5A855 /* BBBLibraryConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBLibraryConnection.h; sourceTree = "<group>"; };
-		5AD9584E19A247B100E5A855 /* BBBLibraryConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBBLibraryConnection.m; sourceTree = "<group>"; };
-		5AD9584F19A247B100E5A855 /* BBBLibraryItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBLibraryItem.h; sourceTree = "<group>"; };
-		5AD9585019A247B100E5A855 /* BBBLibraryItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBBLibraryItem.m; sourceTree = "<group>"; };
-		5AD9585119A247B100E5A855 /* BBBLibraryItemLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBLibraryItemLink.h; sourceTree = "<group>"; };
-		5AD9585219A247B100E5A855 /* BBBLibraryItemLink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBBLibraryItemLink.m; sourceTree = "<group>"; };
-		5AD9585319A247B100E5A855 /* BBBLibraryService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBLibraryService.h; sourceTree = "<group>"; };
-		5AD9585419A247B100E5A855 /* BBBLibraryService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBBLibraryService.m; sourceTree = "<group>"; };
-		5AD9585519A247B100E5A855 /* BBBLibraryTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBLibraryTypes.h; sourceTree = "<group>"; };
-		5AD9585619A247B100E5A855 /* BBBMarketingService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBMarketingService.h; sourceTree = "<group>"; };
-		5AD9585719A247B100E5A855 /* BBBMarketingService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBBMarketingService.m; sourceTree = "<group>"; };
-		5AD9585819A247B100E5A855 /* BBBNetworkConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBNetworkConfiguration.h; sourceTree = "<group>"; };
-		5AD9585919A247B100E5A855 /* BBBNetworkConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBBNetworkConfiguration.m; sourceTree = "<group>"; };
-		5AD9585A19A247B100E5A855 /* BBBNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBNetworking.h; sourceTree = "<group>"; };
-		5AD9585B19A247B100E5A855 /* BBBNetworkingConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBNetworkingConstants.h; sourceTree = "<group>"; };
-		5AD9585C19A247B100E5A855 /* BBBPurchasingService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBPurchasingService.h; sourceTree = "<group>"; };
-		5AD9585D19A247B100E5A855 /* BBBPurchasingService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBBPurchasingService.m; sourceTree = "<group>"; };
-		5AD9585E19A247B100E5A855 /* BBBRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBRequest.h; sourceTree = "<group>"; };
-		5AD9585F19A247B100E5A855 /* BBBRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBBRequest.m; sourceTree = "<group>"; };
-		5AD9586019A247B100E5A855 /* BBBRequestFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBRequestFactory.h; sourceTree = "<group>"; };
-		5AD9586119A247B100E5A855 /* BBBRequestFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBBRequestFactory.m; sourceTree = "<group>"; };
-		5AD9586219A247B100E5A855 /* BBBResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBResponse.h; sourceTree = "<group>"; };
-		5AD9586319A247B100E5A855 /* BBBResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBBResponse.m; sourceTree = "<group>"; };
-		5AD9586419A247B100E5A855 /* BBBResponseMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBResponseMapping.h; sourceTree = "<group>"; };
-		5AD9586519A247B100E5A855 /* BBBResponseMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBBResponseMapping.m; sourceTree = "<group>"; };
-		5AD9586619A247B100E5A855 /* BBBSearchConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBSearchConnection.h; sourceTree = "<group>"; };
-		5AD9586719A247B100E5A855 /* BBBSearchConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBBSearchConnection.m; sourceTree = "<group>"; };
-		5AD9586819A247B100E5A855 /* BBBSearchService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBSearchService.h; sourceTree = "<group>"; };
-		5AD9586919A247B100E5A855 /* BBBSearchService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBBSearchService.m; sourceTree = "<group>"; };
-		5AD9586A19A247B100E5A855 /* BBBTokensResponseMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBTokensResponseMapper.h; sourceTree = "<group>"; };
-		5AD9586B19A247B100E5A855 /* BBBTokensResponseMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBBTokensResponseMapper.m; sourceTree = "<group>"; };
-		5AD9586C19A247B100E5A855 /* BBBUserDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBUserDetails.h; sourceTree = "<group>"; };
-		5AD9586D19A247B100E5A855 /* BBBUserDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBBUserDetails.m; sourceTree = "<group>"; };
+		5AD9582919A247B100E5A855 /* BBAAPIErrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBAAPIErrors.h; sourceTree = "<group>"; };
+		5AD9582A19A247B100E5A855 /* BBAAuthConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBAAuthConnection.h; sourceTree = "<group>"; };
+		5AD9582B19A247B100E5A855 /* BBAAuthConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBAAuthConnection.m; sourceTree = "<group>"; };
+		5AD9582C19A247B100E5A855 /* BBAAuthData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBAAuthData.h; sourceTree = "<group>"; };
+		5AD9582D19A247B100E5A855 /* BBAAuthData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBAAuthData.m; sourceTree = "<group>"; };
+		5AD9582E19A247B100E5A855 /* BBAAuthDataValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBAAuthDataValidator.h; sourceTree = "<group>"; };
+		5AD9582F19A247B100E5A855 /* BBAAuthDataValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBAAuthDataValidator.m; sourceTree = "<group>"; };
+		5AD9583019A247B100E5A855 /* BBAAuthenticationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBAAuthenticationService.h; sourceTree = "<group>"; };
+		5AD9583119A247B100E5A855 /* BBAAuthenticationService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBAAuthenticationService.m; sourceTree = "<group>"; };
+		5AD9583219A247B100E5A855 /* BBAAuthenticationServiceConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBAAuthenticationServiceConstants.h; sourceTree = "<group>"; };
+		5AD9583319A247B100E5A855 /* BBAAuthenticationServiceConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBAAuthenticationServiceConstants.m; sourceTree = "<group>"; };
+		5AD9583419A247B100E5A855 /* BBAAuthenticator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBAAuthenticator.h; sourceTree = "<group>"; };
+		5AD9583519A247B100E5A855 /* BBAAuthResponseMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBAAuthResponseMapper.h; sourceTree = "<group>"; };
+		5AD9583619A247B100E5A855 /* BBAAuthResponseMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBAAuthResponseMapper.m; sourceTree = "<group>"; };
+		5AD9583719A247B100E5A855 /* BBAAuthServiceErrorParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBAAuthServiceErrorParser.h; sourceTree = "<group>"; };
+		5AD9583819A247B100E5A855 /* BBAAuthServiceErrorParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBAAuthServiceErrorParser.m; sourceTree = "<group>"; };
+		5AD9583919A247B100E5A855 /* BBABookmarkService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBABookmarkService.h; sourceTree = "<group>"; };
+		5AD9583A19A247B100E5A855 /* BBABookmarkService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBABookmarkService.m; sourceTree = "<group>"; };
+		5AD9583B19A247B100E5A855 /* BBACatalogueService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBACatalogueService.h; sourceTree = "<group>"; };
+		5AD9583C19A247B100E5A855 /* BBACatalogueService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBACatalogueService.m; sourceTree = "<group>"; };
+		5AD9583D19A247B100E5A855 /* BBACategoryService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBACategoryService.h; sourceTree = "<group>"; };
+		5AD9583E19A247B100E5A855 /* BBACategoryService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBACategoryService.m; sourceTree = "<group>"; };
+		5AD9583F19A247B100E5A855 /* BBAClientDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBAClientDetails.h; sourceTree = "<group>"; };
+		5AD9584019A247B100E5A855 /* BBAClientDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBAClientDetails.m; sourceTree = "<group>"; };
+		5AD9584119A247B100E5A855 /* BBAClientsResponseMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBAClientsResponseMapper.h; sourceTree = "<group>"; };
+		5AD9584219A247B100E5A855 /* BBAClientsResponseMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBAClientsResponseMapper.m; sourceTree = "<group>"; };
+		5AD9584319A247B100E5A855 /* BBAClubcardService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBAClubcardService.h; sourceTree = "<group>"; };
+		5AD9584419A247B100E5A855 /* BBAClubcardService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBAClubcardService.m; sourceTree = "<group>"; };
+		5AD9584519A247B100E5A855 /* BBAConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBAConnection.h; sourceTree = "<group>"; };
+		5AD9584619A247B100E5A855 /* BBAConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBAConnection.m; sourceTree = "<group>"; };
+		5AD9584719A247B100E5A855 /* BBADefaultAuthenticator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBADefaultAuthenticator.h; sourceTree = "<group>"; };
+		5AD9584819A247B100E5A855 /* BBADefaultAuthenticator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBADefaultAuthenticator.m; sourceTree = "<group>"; };
+		5AD9584919A247B100E5A855 /* BBAJSONResponseMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBAJSONResponseMapper.h; sourceTree = "<group>"; };
+		5AD9584A19A247B100E5A855 /* BBAJSONResponseMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBAJSONResponseMapper.m; sourceTree = "<group>"; };
+		5AD9584B19A247B100E5A855 /* BBAKeyService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBAKeyService.h; sourceTree = "<group>"; };
+		5AD9584C19A247B100E5A855 /* BBAKeyService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBAKeyService.m; sourceTree = "<group>"; };
+		5AD9584D19A247B100E5A855 /* BBALibraryConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBALibraryConnection.h; sourceTree = "<group>"; };
+		5AD9584E19A247B100E5A855 /* BBALibraryConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBALibraryConnection.m; sourceTree = "<group>"; };
+		5AD9584F19A247B100E5A855 /* BBALibraryItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBALibraryItem.h; sourceTree = "<group>"; };
+		5AD9585019A247B100E5A855 /* BBALibraryItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBALibraryItem.m; sourceTree = "<group>"; };
+		5AD9585119A247B100E5A855 /* BBALibraryItemLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBALibraryItemLink.h; sourceTree = "<group>"; };
+		5AD9585219A247B100E5A855 /* BBALibraryItemLink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBALibraryItemLink.m; sourceTree = "<group>"; };
+		5AD9585319A247B100E5A855 /* BBALibraryService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBALibraryService.h; sourceTree = "<group>"; };
+		5AD9585419A247B100E5A855 /* BBALibraryService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBALibraryService.m; sourceTree = "<group>"; };
+		5AD9585519A247B100E5A855 /* BBALibraryTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBALibraryTypes.h; sourceTree = "<group>"; };
+		5AD9585619A247B100E5A855 /* BBAMarketingService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBAMarketingService.h; sourceTree = "<group>"; };
+		5AD9585719A247B100E5A855 /* BBAMarketingService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBAMarketingService.m; sourceTree = "<group>"; };
+		5AD9585819A247B100E5A855 /* BBANetworkConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBANetworkConfiguration.h; sourceTree = "<group>"; };
+		5AD9585919A247B100E5A855 /* BBANetworkConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBANetworkConfiguration.m; sourceTree = "<group>"; };
+		5AD9585A19A247B100E5A855 /* BBANetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBANetworking.h; sourceTree = "<group>"; };
+		5AD9585B19A247B100E5A855 /* BBANetworkingConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBANetworkingConstants.h; sourceTree = "<group>"; };
+		5AD9585C19A247B100E5A855 /* BBAPurchasingService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBAPurchasingService.h; sourceTree = "<group>"; };
+		5AD9585D19A247B100E5A855 /* BBAPurchasingService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBAPurchasingService.m; sourceTree = "<group>"; };
+		5AD9585E19A247B100E5A855 /* BBARequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBARequest.h; sourceTree = "<group>"; };
+		5AD9585F19A247B100E5A855 /* BBARequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBARequest.m; sourceTree = "<group>"; };
+		5AD9586019A247B100E5A855 /* BBARequestFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBARequestFactory.h; sourceTree = "<group>"; };
+		5AD9586119A247B100E5A855 /* BBARequestFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBARequestFactory.m; sourceTree = "<group>"; };
+		5AD9586219A247B100E5A855 /* BBAResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBAResponse.h; sourceTree = "<group>"; };
+		5AD9586319A247B100E5A855 /* BBAResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBAResponse.m; sourceTree = "<group>"; };
+		5AD9586419A247B100E5A855 /* BBAResponseMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBAResponseMapping.h; sourceTree = "<group>"; };
+		5AD9586519A247B100E5A855 /* BBAResponseMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBAResponseMapping.m; sourceTree = "<group>"; };
+		5AD9586619A247B100E5A855 /* BBASearchConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBASearchConnection.h; sourceTree = "<group>"; };
+		5AD9586719A247B100E5A855 /* BBASearchConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBASearchConnection.m; sourceTree = "<group>"; };
+		5AD9586819A247B100E5A855 /* BBASearchService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBASearchService.h; sourceTree = "<group>"; };
+		5AD9586919A247B100E5A855 /* BBASearchService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBASearchService.m; sourceTree = "<group>"; };
+		5AD9586A19A247B100E5A855 /* BBATokensResponseMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBATokensResponseMapper.h; sourceTree = "<group>"; };
+		5AD9586B19A247B100E5A855 /* BBATokensResponseMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBATokensResponseMapper.m; sourceTree = "<group>"; };
+		5AD9586C19A247B100E5A855 /* BBAUserDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBAUserDetails.h; sourceTree = "<group>"; };
+		5AD9586D19A247B100E5A855 /* BBAUserDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBAUserDetails.m; sourceTree = "<group>"; };
 		5AD958E719A24AEB00E5A855 /* BBBAPI.framework Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BBBAPI.framework Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AD958FD19A24C9F00E5A855 /* libBBBAPI.a Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "libBBBAPI.a Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AD9590F19A24D9300E5A855 /* BBBAPITests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "BBBAPITests-Info.plist"; path = "BBBAPI Tests/BBBAPITests-Info.plist"; sourceTree = SOURCE_ROOT; };
 		5AD9591619A24DA900E5A855 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = "BBBAPI Tests/en.lproj/InfoPlist.strings"; sourceTree = SOURCE_ROOT; };
 		5AD9591919A24DB100E5A855 /* BBBAPITests-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "BBBAPITests-Prefix.pch"; path = "BBBAPI Tests/BBBAPITests-Prefix.pch"; sourceTree = SOURCE_ROOT; };
-		5AD9591D19A2501C00E5A855 /* BBBAuthenticationServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBBAuthenticationServiceTests.m; path = "BBBAPI Tests/BBBAuthenticationServiceTests.m"; sourceTree = SOURCE_ROOT; };
-		5AD9591E19A2501C00E5A855 /* BBBAuthResponseMapperTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBBAuthResponseMapperTests.h; path = "BBBAPI Tests/BBBAuthResponseMapperTests.h"; sourceTree = SOURCE_ROOT; };
-		5AD9591F19A2501C00E5A855 /* BBBAuthServiceResponseMapperTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBBAuthServiceResponseMapperTests.m; path = "BBBAPI Tests/BBBAuthServiceResponseMapperTests.m"; sourceTree = SOURCE_ROOT; };
-		5AD9592019A2501C00E5A855 /* BBBLibraryServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBBLibraryServiceTests.m; path = "BBBAPI Tests/BBBLibraryServiceTests.m"; sourceTree = SOURCE_ROOT; };
-		5AD9592119A2501C00E5A855 /* BBBMockAssertionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBBMockAssertionHandler.h; path = "BBBAPI Tests/BBBMockAssertionHandler.h"; sourceTree = SOURCE_ROOT; };
-		5AD9592219A2501C00E5A855 /* BBBMockAssertionHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBBMockAssertionHandler.m; path = "BBBAPI Tests/BBBMockAssertionHandler.m"; sourceTree = SOURCE_ROOT; };
-		5AD9592319A2501C00E5A855 /* BBBTestMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBBTestMacros.h; path = "BBBAPI Tests/BBBTestMacros.h"; sourceTree = SOURCE_ROOT; };
+		5AD9591D19A2501C00E5A855 /* BBAAuthenticationServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBAAuthenticationServiceTests.m; path = "BBBAPI Tests/BBAAuthenticationServiceTests.m"; sourceTree = SOURCE_ROOT; };
+		5AD9591E19A2501C00E5A855 /* BBAAuthResponseMapperTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBAAuthResponseMapperTests.h; path = "BBBAPI Tests/BBAAuthResponseMapperTests.h"; sourceTree = SOURCE_ROOT; };
+		5AD9591F19A2501C00E5A855 /* BBAAuthServiceResponseMapperTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBAAuthServiceResponseMapperTests.m; path = "BBBAPI Tests/BBAAuthServiceResponseMapperTests.m"; sourceTree = SOURCE_ROOT; };
+		5AD9592019A2501C00E5A855 /* BBALibraryServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBALibraryServiceTests.m; path = "BBBAPI Tests/BBALibraryServiceTests.m"; sourceTree = SOURCE_ROOT; };
+		5AD9592119A2501C00E5A855 /* BBAMockAssertionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBAMockAssertionHandler.h; path = "BBBAPI Tests/BBAMockAssertionHandler.h"; sourceTree = SOURCE_ROOT; };
+		5AD9592219A2501C00E5A855 /* BBAMockAssertionHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBAMockAssertionHandler.m; path = "BBBAPI Tests/BBAMockAssertionHandler.m"; sourceTree = SOURCE_ROOT; };
+		5AD9592319A2501C00E5A855 /* BBATestMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBATestMacros.h; path = "BBBAPI Tests/BBATestMacros.h"; sourceTree = SOURCE_ROOT; };
 		5AD9594619A2629D00E5A855 /* libBBBAPI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBBBAPI.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AE925A519A680970094CA96 /* BBBAPI-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "BBBAPI-Info.plist"; path = "BBBAPI/BBBAPI-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -489,8 +489,8 @@
 		5A520FE019ACA0B80055D295 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				5A520FF419ACBF140055D295 /* BBBLogger.h */,
-				5A520FF519ACBF140055D295 /* BBBLogger.m */,
+				5A520FF419ACBF140055D295 /* BBALogger.h */,
+				5A520FF519ACBF140055D295 /* BBALogger.m */,
 			);
 			name = Utility;
 			sourceTree = "<group>";
@@ -578,27 +578,27 @@
 			isa = PBXGroup;
 			children = (
 				40E4055519A63A850075D875 /* SampleData */,
-				40E4053719A638B70075D875 /* BBBConnectionTests.m */,
-				40E4053819A638B70075D875 /* BBBLibraryResponseMapperTests.m */,
-				40E4053919A638B70075D875 /* BBBLibraryResponseTests.m */,
-				40E4053A19A638B70075D875 /* BBBMockConnection.h */,
-				40E4053B19A638B70075D875 /* BBBMockConnection.m */,
-				40E4053C19A638B70075D875 /* BBBStatusResponseMapperTests.m */,
-				40E4053D19A638B70075D875 /* BBBSwizzlingHelper.h */,
-				40E4053E19A638B70075D875 /* BBBSwizzlingHelper.m */,
-				40E4053F19A638B70075D875 /* BBBTestHelper.h */,
-				40E4054019A638B70075D875 /* BBBTestHelper.m */,
-				5A91E9F619A4FA410079247F /* BBBClientsResponseMapperTests.m */,
-				5A91E9F719A4FA410079247F /* BBBTokensResponseMapperTests.m */,
-				5A91E9F819A4FA410079247F /* BBBAuthServiceResponseMappersTestData.h */,
-				5A91E9F919A4FA410079247F /* BBBAuthServiceResponseMappersTestData.m */,
-				5AD9591D19A2501C00E5A855 /* BBBAuthenticationServiceTests.m */,
-				5AD9591E19A2501C00E5A855 /* BBBAuthResponseMapperTests.h */,
-				5AD9591F19A2501C00E5A855 /* BBBAuthServiceResponseMapperTests.m */,
-				5AD9592019A2501C00E5A855 /* BBBLibraryServiceTests.m */,
-				5AD9592119A2501C00E5A855 /* BBBMockAssertionHandler.h */,
-				5AD9592219A2501C00E5A855 /* BBBMockAssertionHandler.m */,
-				5AD9592319A2501C00E5A855 /* BBBTestMacros.h */,
+				40E4053719A638B70075D875 /* BBAConnectionTests.m */,
+				40E4053819A638B70075D875 /* BBALibraryResponseMapperTests.m */,
+				40E4053919A638B70075D875 /* BBALibraryResponseTests.m */,
+				40E4053A19A638B70075D875 /* BBAMockConnection.h */,
+				40E4053B19A638B70075D875 /* BBAMockConnection.m */,
+				40E4053C19A638B70075D875 /* BBAStatusResponseMapperTests.m */,
+				40E4053D19A638B70075D875 /* BBASwizzlingHelper.h */,
+				40E4053E19A638B70075D875 /* BBASwizzlingHelper.m */,
+				40E4053F19A638B70075D875 /* BBATestHelper.h */,
+				40CA6A7B19ADE2A100BA091B /* BBATestHelper.m */,
+				5A91E9F619A4FA410079247F /* BBAClientsResponseMapperTests.m */,
+				5A91E9F719A4FA410079247F /* BBATokensResponseMapperTests.m */,
+				5A91E9F819A4FA410079247F /* BBAAuthServiceResponseMappersTestData.h */,
+				5A91E9F919A4FA410079247F /* BBAAuthServiceResponseMappersTestData.m */,
+				5AD9591D19A2501C00E5A855 /* BBAAuthenticationServiceTests.m */,
+				5AD9591E19A2501C00E5A855 /* BBAAuthResponseMapperTests.h */,
+				5AD9591F19A2501C00E5A855 /* BBAAuthServiceResponseMapperTests.m */,
+				5AD9592019A2501C00E5A855 /* BBALibraryServiceTests.m */,
+				5AD9592119A2501C00E5A855 /* BBAMockAssertionHandler.h */,
+				5AD9592219A2501C00E5A855 /* BBAMockAssertionHandler.m */,
+				5AD9592319A2501C00E5A855 /* BBATestMacros.h */,
 				5AD958EC19A24AEB00E5A855 /* Supporting Files */,
 			);
 			name = "BBBAPI Tests";
@@ -618,28 +618,28 @@
 		5AD9593419A2514100E5A855 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
-				5AD9586A19A247B100E5A855 /* BBBTokensResponseMapper.h */,
-				5AD9586B19A247B100E5A855 /* BBBTokensResponseMapper.m */,
-				5AD9583219A247B100E5A855 /* BBBAuthenticationServiceConstants.h */,
-				5AD9583319A247B100E5A855 /* BBBAuthenticationServiceConstants.m */,
-				5AD9582C19A247B100E5A855 /* BBBAuthData.h */,
-				5AD9582D19A247B100E5A855 /* BBBAuthData.m */,
-				5AD9582E19A247B100E5A855 /* BBBAuthDataValidator.h */,
-				5AD9582F19A247B100E5A855 /* BBBAuthDataValidator.m */,
-				5AD9583019A247B100E5A855 /* BBBAuthenticationService.h */,
-				5AD9583119A247B100E5A855 /* BBBAuthenticationService.m */,
-				5AD9583F19A247B100E5A855 /* BBBClientDetails.h */,
-				5AD9584019A247B100E5A855 /* BBBClientDetails.m */,
-				5AD9586C19A247B100E5A855 /* BBBUserDetails.h */,
-				5AD9586D19A247B100E5A855 /* BBBUserDetails.m */,
-				5AD9584119A247B100E5A855 /* BBBClientsResponseMapper.h */,
-				5AD9584219A247B100E5A855 /* BBBClientsResponseMapper.m */,
-				5AD9584719A247B100E5A855 /* BBBDefaultAuthenticator.h */,
-				5AD9584819A247B100E5A855 /* BBBDefaultAuthenticator.m */,
-				5AD9583519A247B100E5A855 /* BBBAuthResponseMapper.h */,
-				5AD9583619A247B100E5A855 /* BBBAuthResponseMapper.m */,
-				5AD9583719A247B100E5A855 /* BBBAuthServiceErrorParser.h */,
-				5AD9583819A247B100E5A855 /* BBBAuthServiceErrorParser.m */,
+				5AD9586A19A247B100E5A855 /* BBATokensResponseMapper.h */,
+				5AD9586B19A247B100E5A855 /* BBATokensResponseMapper.m */,
+				5AD9583219A247B100E5A855 /* BBAAuthenticationServiceConstants.h */,
+				5AD9583319A247B100E5A855 /* BBAAuthenticationServiceConstants.m */,
+				5AD9582C19A247B100E5A855 /* BBAAuthData.h */,
+				5AD9582D19A247B100E5A855 /* BBAAuthData.m */,
+				5AD9582E19A247B100E5A855 /* BBAAuthDataValidator.h */,
+				5AD9582F19A247B100E5A855 /* BBAAuthDataValidator.m */,
+				5AD9583019A247B100E5A855 /* BBAAuthenticationService.h */,
+				5AD9583119A247B100E5A855 /* BBAAuthenticationService.m */,
+				5AD9583F19A247B100E5A855 /* BBAClientDetails.h */,
+				5AD9584019A247B100E5A855 /* BBAClientDetails.m */,
+				5AD9586C19A247B100E5A855 /* BBAUserDetails.h */,
+				5AD9586D19A247B100E5A855 /* BBAUserDetails.m */,
+				5AD9584119A247B100E5A855 /* BBAClientsResponseMapper.h */,
+				5AD9584219A247B100E5A855 /* BBAClientsResponseMapper.m */,
+				5AD9584719A247B100E5A855 /* BBADefaultAuthenticator.h */,
+				5AD9584819A247B100E5A855 /* BBADefaultAuthenticator.m */,
+				5AD9583519A247B100E5A855 /* BBAAuthResponseMapper.h */,
+				5AD9583619A247B100E5A855 /* BBAAuthResponseMapper.m */,
+				5AD9583719A247B100E5A855 /* BBAAuthServiceErrorParser.h */,
+				5AD9583819A247B100E5A855 /* BBAAuthServiceErrorParser.m */,
 			);
 			name = Authentication;
 			sourceTree = "<group>";
@@ -647,24 +647,24 @@
 		5AD9593519A2515900E5A855 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				5AD9582919A247B100E5A855 /* BBBAPIErrors.h */,
-				5AD9584519A247B100E5A855 /* BBBConnection.h */,
-				5AD9584619A247B100E5A855 /* BBBConnection.m */,
-				5AD9585819A247B100E5A855 /* BBBNetworkConfiguration.h */,
-				5AD9585919A247B100E5A855 /* BBBNetworkConfiguration.m */,
-				5AD9585E19A247B100E5A855 /* BBBRequest.h */,
-				5AD9585F19A247B100E5A855 /* BBBRequest.m */,
-				5AD9586019A247B100E5A855 /* BBBRequestFactory.h */,
-				5AD9586119A247B100E5A855 /* BBBRequestFactory.m */,
-				5AD9586219A247B100E5A855 /* BBBResponse.h */,
-				5AD9586319A247B100E5A855 /* BBBResponse.m */,
-				5AD9583419A247B100E5A855 /* BBBAuthenticator.h */,
-				5AD9584919A247B100E5A855 /* BBBJSONResponseMapper.h */,
-				5AD9584A19A247B100E5A855 /* BBBJSONResponseMapper.m */,
-				5AD9585A19A247B100E5A855 /* BBBNetworking.h */,
-				5AD9585B19A247B100E5A855 /* BBBNetworkingConstants.h */,
-				5AD9586419A247B100E5A855 /* BBBResponseMapping.h */,
-				5AD9586519A247B100E5A855 /* BBBResponseMapping.m */,
+				5AD9582919A247B100E5A855 /* BBAAPIErrors.h */,
+				5AD9584519A247B100E5A855 /* BBAConnection.h */,
+				5AD9584619A247B100E5A855 /* BBAConnection.m */,
+				5AD9585819A247B100E5A855 /* BBANetworkConfiguration.h */,
+				5AD9585919A247B100E5A855 /* BBANetworkConfiguration.m */,
+				5AD9585E19A247B100E5A855 /* BBARequest.h */,
+				5AD9585F19A247B100E5A855 /* BBARequest.m */,
+				5AD9586019A247B100E5A855 /* BBARequestFactory.h */,
+				5AD9586119A247B100E5A855 /* BBARequestFactory.m */,
+				5AD9586219A247B100E5A855 /* BBAResponse.h */,
+				5AD9586319A247B100E5A855 /* BBAResponse.m */,
+				5AD9583419A247B100E5A855 /* BBAAuthenticator.h */,
+				5AD9584919A247B100E5A855 /* BBAJSONResponseMapper.h */,
+				5AD9584A19A247B100E5A855 /* BBAJSONResponseMapper.m */,
+				5AD9585A19A247B100E5A855 /* BBANetworking.h */,
+				5AD9585B19A247B100E5A855 /* BBANetworkingConstants.h */,
+				5AD9586419A247B100E5A855 /* BBAResponseMapping.h */,
+				5AD9586519A247B100E5A855 /* BBAResponseMapping.m */,
 			);
 			name = Networking;
 			sourceTree = "<group>";
@@ -672,12 +672,12 @@
 		5AD9593619A2515E00E5A855 /* Connection Subclasses */ = {
 			isa = PBXGroup;
 			children = (
-				5AD9582A19A247B100E5A855 /* BBBAuthConnection.h */,
-				5AD9582B19A247B100E5A855 /* BBBAuthConnection.m */,
-				5AD9584D19A247B100E5A855 /* BBBLibraryConnection.h */,
-				5AD9584E19A247B100E5A855 /* BBBLibraryConnection.m */,
-				5AD9586619A247B100E5A855 /* BBBSearchConnection.h */,
-				5AD9586719A247B100E5A855 /* BBBSearchConnection.m */,
+				5AD9582A19A247B100E5A855 /* BBAAuthConnection.h */,
+				5AD9582B19A247B100E5A855 /* BBAAuthConnection.m */,
+				5AD9584D19A247B100E5A855 /* BBALibraryConnection.h */,
+				5AD9584E19A247B100E5A855 /* BBALibraryConnection.m */,
+				5AD9586619A247B100E5A855 /* BBASearchConnection.h */,
+				5AD9586719A247B100E5A855 /* BBASearchConnection.m */,
 			);
 			name = "Connection Subclasses";
 			sourceTree = "<group>";
@@ -685,22 +685,22 @@
 		5AD9593719A2516700E5A855 /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				40E4057B19A63AB40075D875 /* BBBMacros.h */,
-				40E4054F19A638C50075D875 /* BBBLibraryResponseMapper.h */,
-				40E4055019A638C50075D875 /* BBBLibraryResponseMapper.m */,
-				40E4050219A638270075D875 /* BBBLibraryResponse.h */,
-				40E4050319A638270075D875 /* BBBLibraryResponse.m */,
-				40E4050419A638270075D875 /* BBBServerDateFormatter.h */,
-				40E4050519A638270075D875 /* BBBServerDateFormatter.m */,
-				40E4050619A638270075D875 /* BBBStatusResponseMapper.h */,
-				40E4050719A638270075D875 /* BBBStatusResponseMapper.m */,
-				5AD9584F19A247B100E5A855 /* BBBLibraryItem.h */,
-				5AD9585019A247B100E5A855 /* BBBLibraryItem.m */,
-				5AD9585119A247B100E5A855 /* BBBLibraryItemLink.h */,
-				5AD9585219A247B100E5A855 /* BBBLibraryItemLink.m */,
-				5AD9585319A247B100E5A855 /* BBBLibraryService.h */,
-				5AD9585419A247B100E5A855 /* BBBLibraryService.m */,
-				5AD9585519A247B100E5A855 /* BBBLibraryTypes.h */,
+				40E4057B19A63AB40075D875 /* BBAMacros.h */,
+				40E4054F19A638C50075D875 /* BBALibraryResponseMapper.h */,
+				40E4055019A638C50075D875 /* BBALibraryResponseMapper.m */,
+				40E4050219A638270075D875 /* BBALibraryResponse.h */,
+				40E4050319A638270075D875 /* BBALibraryResponse.m */,
+				40E4050419A638270075D875 /* BBAServerDateFormatter.h */,
+				40E4050519A638270075D875 /* BBAServerDateFormatter.m */,
+				40E4050619A638270075D875 /* BBAStatusResponseMapper.h */,
+				40E4050719A638270075D875 /* BBAStatusResponseMapper.m */,
+				5AD9584F19A247B100E5A855 /* BBALibraryItem.h */,
+				5AD9585019A247B100E5A855 /* BBALibraryItem.m */,
+				5AD9585119A247B100E5A855 /* BBALibraryItemLink.h */,
+				5AD9585219A247B100E5A855 /* BBALibraryItemLink.m */,
+				5AD9585319A247B100E5A855 /* BBALibraryService.h */,
+				5AD9585419A247B100E5A855 /* BBALibraryService.m */,
+				5AD9585519A247B100E5A855 /* BBALibraryTypes.h */,
 			);
 			name = Library;
 			sourceTree = "<group>";
@@ -708,8 +708,8 @@
 		5AD9593819A2563500E5A855 /* Bookmarks */ = {
 			isa = PBXGroup;
 			children = (
-				5AD9583919A247B100E5A855 /* BBBBookmarkService.h */,
-				5AD9583A19A247B100E5A855 /* BBBBookmarkService.m */,
+				5AD9583919A247B100E5A855 /* BBABookmarkService.h */,
+				5AD9583A19A247B100E5A855 /* BBABookmarkService.m */,
 			);
 			name = Bookmarks;
 			sourceTree = "<group>";
@@ -717,8 +717,8 @@
 		5AD9593919A2563B00E5A855 /* Catalogue */ = {
 			isa = PBXGroup;
 			children = (
-				5AD9583B19A247B100E5A855 /* BBBCatalogueService.h */,
-				5AD9583C19A247B100E5A855 /* BBBCatalogueService.m */,
+				5AD9583B19A247B100E5A855 /* BBACatalogueService.h */,
+				5AD9583C19A247B100E5A855 /* BBACatalogueService.m */,
 			);
 			name = Catalogue;
 			sourceTree = "<group>";
@@ -726,8 +726,8 @@
 		5AD9593A19A2564100E5A855 /* Keys */ = {
 			isa = PBXGroup;
 			children = (
-				5AD9584B19A247B100E5A855 /* BBBKeyService.h */,
-				5AD9584C19A247B100E5A855 /* BBBKeyService.m */,
+				5AD9584B19A247B100E5A855 /* BBAKeyService.h */,
+				5AD9584C19A247B100E5A855 /* BBAKeyService.m */,
 			);
 			name = Keys;
 			sourceTree = "<group>";
@@ -735,8 +735,8 @@
 		5AD9593B19A2564600E5A855 /* Clubcard */ = {
 			isa = PBXGroup;
 			children = (
-				5AD9584319A247B100E5A855 /* BBBClubcardService.h */,
-				5AD9584419A247B100E5A855 /* BBBClubcardService.m */,
+				5AD9584319A247B100E5A855 /* BBAClubcardService.h */,
+				5AD9584419A247B100E5A855 /* BBAClubcardService.m */,
 			);
 			name = Clubcard;
 			sourceTree = "<group>";
@@ -744,8 +744,8 @@
 		5AD9593C19A2565B00E5A855 /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				5AD9583D19A247B100E5A855 /* BBBCategoryService.h */,
-				5AD9583E19A247B100E5A855 /* BBBCategoryService.m */,
+				5AD9583D19A247B100E5A855 /* BBACategoryService.h */,
+				5AD9583E19A247B100E5A855 /* BBACategoryService.m */,
 			);
 			name = Category;
 			sourceTree = "<group>";
@@ -753,8 +753,8 @@
 		5AD9593D19A2566300E5A855 /* Marketing */ = {
 			isa = PBXGroup;
 			children = (
-				5AD9585619A247B100E5A855 /* BBBMarketingService.h */,
-				5AD9585719A247B100E5A855 /* BBBMarketingService.m */,
+				5AD9585619A247B100E5A855 /* BBAMarketingService.h */,
+				5AD9585719A247B100E5A855 /* BBAMarketingService.m */,
 			);
 			name = Marketing;
 			sourceTree = "<group>";
@@ -762,8 +762,8 @@
 		5AD9593E19A2566700E5A855 /* Purchasing */ = {
 			isa = PBXGroup;
 			children = (
-				5AD9585C19A247B100E5A855 /* BBBPurchasingService.h */,
-				5AD9585D19A247B100E5A855 /* BBBPurchasingService.m */,
+				5AD9585C19A247B100E5A855 /* BBAPurchasingService.h */,
+				5AD9585D19A247B100E5A855 /* BBAPurchasingService.m */,
 			);
 			name = Purchasing;
 			sourceTree = "<group>";
@@ -771,8 +771,8 @@
 		5AD9593F19A2567200E5A855 /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				5AD9586819A247B100E5A855 /* BBBSearchService.h */,
-				5AD9586919A247B100E5A855 /* BBBSearchService.m */,
+				5AD9586819A247B100E5A855 /* BBASearchService.h */,
+				5AD9586919A247B100E5A855 /* BBASearchService.m */,
 			);
 			name = Search;
 			sourceTree = "<group>";
@@ -792,19 +792,19 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40E4055119A638C50075D875 /* BBBLibraryResponseMapper.h in Headers */,
-				5AD959AC19A26B5F00E5A855 /* BBBClientDetails.h in Headers */,
-				5AD959AB19A26B5900E5A855 /* BBBUserDetails.h in Headers */,
-				5AD959AD19A26CC800E5A855 /* BBBAuthData.h in Headers */,
+				40E4055119A638C50075D875 /* BBALibraryResponseMapper.h in Headers */,
+				5AD959AC19A26B5F00E5A855 /* BBAClientDetails.h in Headers */,
+				5AD959AB19A26B5900E5A855 /* BBAUserDetails.h in Headers */,
+				5AD959AD19A26CC800E5A855 /* BBAAuthData.h in Headers */,
 				5AD958D719A2480800E5A855 /* BBBAPI.h in Headers */,
-				40E4050819A638270075D875 /* BBBLibraryResponse.h in Headers */,
-				40E4051019A638270075D875 /* BBBStatusResponseMapper.h in Headers */,
-				5AD958D919A2484900E5A855 /* BBBAuthenticationService.h in Headers */,
-				5A520FF619ACBF140055D295 /* BBBLogger.h in Headers */,
-				40E4057C19A63AB40075D875 /* BBBMacros.h in Headers */,
-				5AD958DD19A2488500E5A855 /* BBBNetworkConfiguration.h in Headers */,
-				40E4050C19A638270075D875 /* BBBServerDateFormatter.h in Headers */,
-				5AD958D819A2484400E5A855 /* BBBSearchService.h in Headers */,
+				40E4050819A638270075D875 /* BBALibraryResponse.h in Headers */,
+				40E4051019A638270075D875 /* BBAStatusResponseMapper.h in Headers */,
+				5AD958D919A2484900E5A855 /* BBAAuthenticationService.h in Headers */,
+				5A520FF619ACBF140055D295 /* BBALogger.h in Headers */,
+				40E4057C19A63AB40075D875 /* BBAMacros.h in Headers */,
+				5AD958DD19A2488500E5A855 /* BBANetworkConfiguration.h in Headers */,
+				40E4050C19A638270075D875 /* BBAServerDateFormatter.h in Headers */,
+				5AD958D819A2484400E5A855 /* BBASearchService.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -993,43 +993,43 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5AD958B419A247B200E5A855 /* BBBMarketingService.m in Sources */,
-				5AD958A119A247B200E5A855 /* BBBJSONResponseMapper.m in Sources */,
-				5AD958D119A247B200E5A855 /* BBBTokensResponseMapper.m in Sources */,
-				5AD9587319A247B100E5A855 /* BBBAuthConnection.m in Sources */,
-				5AD9587919A247B100E5A855 /* BBBAuthDataValidator.m in Sources */,
-				5AD9588F19A247B100E5A855 /* BBBCategoryService.m in Sources */,
-				5AD9588919A247B100E5A855 /* BBBBookmarkService.m in Sources */,
-				5AD958CB19A247B200E5A855 /* BBBSearchConnection.m in Sources */,
-				5AD958AA19A247B200E5A855 /* BBBLibraryItem.m in Sources */,
-				5AD958AD19A247B200E5A855 /* BBBLibraryItemLink.m in Sources */,
-				5A520FF719ACBF140055D295 /* BBBLogger.m in Sources */,
-				5AD9589219A247B200E5A855 /* BBBClientDetails.m in Sources */,
-				5AD958C819A247B200E5A855 /* BBBResponseMapping.m in Sources */,
-				40E4055219A638C50075D875 /* BBBLibraryResponseMapper.m in Sources */,
-				5AD958D419A247B200E5A855 /* BBBUserDetails.m in Sources */,
-				5AD9588319A247B100E5A855 /* BBBAuthResponseMapper.m in Sources */,
-				5AD958BC19A247B200E5A855 /* BBBPurchasingService.m in Sources */,
-				5AD9588C19A247B100E5A855 /* BBBCatalogueService.m in Sources */,
-				5AD958BF19A247B200E5A855 /* BBBRequest.m in Sources */,
-				5AD958C519A247B200E5A855 /* BBBResponse.m in Sources */,
-				5AD9589519A247B200E5A855 /* BBBClientsResponseMapper.m in Sources */,
-				40E4050919A638270075D875 /* BBBLibraryResponse.m in Sources */,
-				5AD9589819A247B200E5A855 /* BBBClubcardService.m in Sources */,
-				5AD958B019A247B200E5A855 /* BBBLibraryService.m in Sources */,
-				5AD9587F19A247B100E5A855 /* BBBAuthenticationServiceConstants.m in Sources */,
-				5AD9589E19A247B200E5A855 /* BBBDefaultAuthenticator.m in Sources */,
-				5AD958A719A247B200E5A855 /* BBBLibraryConnection.m in Sources */,
-				40E4051119A638270075D875 /* BBBStatusResponseMapper.m in Sources */,
-				5AD9587619A247B100E5A855 /* BBBAuthData.m in Sources */,
-				5AD958CE19A247B200E5A855 /* BBBSearchService.m in Sources */,
-				5AD958A419A247B200E5A855 /* BBBKeyService.m in Sources */,
-				5AD958B719A247B200E5A855 /* BBBNetworkConfiguration.m in Sources */,
-				5AD958C219A247B200E5A855 /* BBBRequestFactory.m in Sources */,
-				40E4050D19A638270075D875 /* BBBServerDateFormatter.m in Sources */,
-				5AD9588619A247B100E5A855 /* BBBAuthServiceErrorParser.m in Sources */,
-				5AD9587C19A247B100E5A855 /* BBBAuthenticationService.m in Sources */,
-				5AD9589B19A247B200E5A855 /* BBBConnection.m in Sources */,
+				5AD958B419A247B200E5A855 /* BBAMarketingService.m in Sources */,
+				5AD958A119A247B200E5A855 /* BBAJSONResponseMapper.m in Sources */,
+				5AD958D119A247B200E5A855 /* BBATokensResponseMapper.m in Sources */,
+				5AD9587319A247B100E5A855 /* BBAAuthConnection.m in Sources */,
+				5AD9587919A247B100E5A855 /* BBAAuthDataValidator.m in Sources */,
+				5AD9588F19A247B100E5A855 /* BBACategoryService.m in Sources */,
+				5AD9588919A247B100E5A855 /* BBABookmarkService.m in Sources */,
+				5AD958CB19A247B200E5A855 /* BBASearchConnection.m in Sources */,
+				5AD958AA19A247B200E5A855 /* BBALibraryItem.m in Sources */,
+				5AD958AD19A247B200E5A855 /* BBALibraryItemLink.m in Sources */,
+				5A520FF719ACBF140055D295 /* BBALogger.m in Sources */,
+				5AD9589219A247B200E5A855 /* BBAClientDetails.m in Sources */,
+				5AD958C819A247B200E5A855 /* BBAResponseMapping.m in Sources */,
+				40E4055219A638C50075D875 /* BBALibraryResponseMapper.m in Sources */,
+				5AD958D419A247B200E5A855 /* BBAUserDetails.m in Sources */,
+				5AD9588319A247B100E5A855 /* BBAAuthResponseMapper.m in Sources */,
+				5AD958BC19A247B200E5A855 /* BBAPurchasingService.m in Sources */,
+				5AD9588C19A247B100E5A855 /* BBACatalogueService.m in Sources */,
+				5AD958BF19A247B200E5A855 /* BBARequest.m in Sources */,
+				5AD958C519A247B200E5A855 /* BBAResponse.m in Sources */,
+				5AD9589519A247B200E5A855 /* BBAClientsResponseMapper.m in Sources */,
+				40E4050919A638270075D875 /* BBALibraryResponse.m in Sources */,
+				5AD9589819A247B200E5A855 /* BBAClubcardService.m in Sources */,
+				5AD958B019A247B200E5A855 /* BBALibraryService.m in Sources */,
+				5AD9587F19A247B100E5A855 /* BBAAuthenticationServiceConstants.m in Sources */,
+				5AD9589E19A247B200E5A855 /* BBADefaultAuthenticator.m in Sources */,
+				5AD958A719A247B200E5A855 /* BBALibraryConnection.m in Sources */,
+				40E4051119A638270075D875 /* BBAStatusResponseMapper.m in Sources */,
+				5AD9587619A247B100E5A855 /* BBAAuthData.m in Sources */,
+				5AD958CE19A247B200E5A855 /* BBASearchService.m in Sources */,
+				5AD958A419A247B200E5A855 /* BBAKeyService.m in Sources */,
+				5AD958B719A247B200E5A855 /* BBANetworkConfiguration.m in Sources */,
+				5AD958C219A247B200E5A855 /* BBARequestFactory.m in Sources */,
+				40E4050D19A638270075D875 /* BBAServerDateFormatter.m in Sources */,
+				5AD9588619A247B100E5A855 /* BBAAuthServiceErrorParser.m in Sources */,
+				5AD9587C19A247B100E5A855 /* BBAAuthenticationService.m in Sources */,
+				5AD9589B19A247B200E5A855 /* BBAConnection.m in Sources */,
 				5A520FE819ACA1A90055D295 /* BBBAPI.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1038,43 +1038,43 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5AD958B519A247B200E5A855 /* BBBMarketingService.m in Sources */,
-				5AD958A219A247B200E5A855 /* BBBJSONResponseMapper.m in Sources */,
-				5AD958D219A247B200E5A855 /* BBBTokensResponseMapper.m in Sources */,
-				5AD9587419A247B100E5A855 /* BBBAuthConnection.m in Sources */,
-				5AD9587A19A247B100E5A855 /* BBBAuthDataValidator.m in Sources */,
-				5AD9589019A247B100E5A855 /* BBBCategoryService.m in Sources */,
-				5AD9588A19A247B100E5A855 /* BBBBookmarkService.m in Sources */,
-				5AD958CC19A247B200E5A855 /* BBBSearchConnection.m in Sources */,
-				5AD958AB19A247B200E5A855 /* BBBLibraryItem.m in Sources */,
-				5AD958AE19A247B200E5A855 /* BBBLibraryItemLink.m in Sources */,
-				5A520FF819ACBF140055D295 /* BBBLogger.m in Sources */,
-				5AD9589319A247B200E5A855 /* BBBClientDetails.m in Sources */,
-				5AD958C919A247B200E5A855 /* BBBResponseMapping.m in Sources */,
-				40E4055319A638C50075D875 /* BBBLibraryResponseMapper.m in Sources */,
-				5AD958D519A247B200E5A855 /* BBBUserDetails.m in Sources */,
-				5AD9588419A247B100E5A855 /* BBBAuthResponseMapper.m in Sources */,
-				5AD958BD19A247B200E5A855 /* BBBPurchasingService.m in Sources */,
-				5AD9588D19A247B100E5A855 /* BBBCatalogueService.m in Sources */,
-				5AD958C019A247B200E5A855 /* BBBRequest.m in Sources */,
-				5AD958C619A247B200E5A855 /* BBBResponse.m in Sources */,
-				5AD9589619A247B200E5A855 /* BBBClientsResponseMapper.m in Sources */,
-				40E4050A19A638270075D875 /* BBBLibraryResponse.m in Sources */,
-				5AD9589919A247B200E5A855 /* BBBClubcardService.m in Sources */,
-				5AD958B119A247B200E5A855 /* BBBLibraryService.m in Sources */,
-				5AD9588019A247B100E5A855 /* BBBAuthenticationServiceConstants.m in Sources */,
-				5AD9589F19A247B200E5A855 /* BBBDefaultAuthenticator.m in Sources */,
-				5AD958A819A247B200E5A855 /* BBBLibraryConnection.m in Sources */,
-				40E4051219A638270075D875 /* BBBStatusResponseMapper.m in Sources */,
-				5AD9587719A247B100E5A855 /* BBBAuthData.m in Sources */,
-				5AD958CF19A247B200E5A855 /* BBBSearchService.m in Sources */,
-				5AD958A519A247B200E5A855 /* BBBKeyService.m in Sources */,
-				5AD958B819A247B200E5A855 /* BBBNetworkConfiguration.m in Sources */,
-				5AD958C319A247B200E5A855 /* BBBRequestFactory.m in Sources */,
-				40E4050E19A638270075D875 /* BBBServerDateFormatter.m in Sources */,
-				5AD9588719A247B100E5A855 /* BBBAuthServiceErrorParser.m in Sources */,
-				5AD9587D19A247B100E5A855 /* BBBAuthenticationService.m in Sources */,
-				5AD9589C19A247B200E5A855 /* BBBConnection.m in Sources */,
+				5AD958B519A247B200E5A855 /* BBAMarketingService.m in Sources */,
+				5AD958A219A247B200E5A855 /* BBAJSONResponseMapper.m in Sources */,
+				5AD958D219A247B200E5A855 /* BBATokensResponseMapper.m in Sources */,
+				5AD9587419A247B100E5A855 /* BBAAuthConnection.m in Sources */,
+				5AD9587A19A247B100E5A855 /* BBAAuthDataValidator.m in Sources */,
+				5AD9589019A247B100E5A855 /* BBACategoryService.m in Sources */,
+				5AD9588A19A247B100E5A855 /* BBABookmarkService.m in Sources */,
+				5AD958CC19A247B200E5A855 /* BBASearchConnection.m in Sources */,
+				5AD958AB19A247B200E5A855 /* BBALibraryItem.m in Sources */,
+				5AD958AE19A247B200E5A855 /* BBALibraryItemLink.m in Sources */,
+				5A520FF819ACBF140055D295 /* BBALogger.m in Sources */,
+				5AD9589319A247B200E5A855 /* BBAClientDetails.m in Sources */,
+				5AD958C919A247B200E5A855 /* BBAResponseMapping.m in Sources */,
+				40E4055319A638C50075D875 /* BBALibraryResponseMapper.m in Sources */,
+				5AD958D519A247B200E5A855 /* BBAUserDetails.m in Sources */,
+				5AD9588419A247B100E5A855 /* BBAAuthResponseMapper.m in Sources */,
+				5AD958BD19A247B200E5A855 /* BBAPurchasingService.m in Sources */,
+				5AD9588D19A247B100E5A855 /* BBACatalogueService.m in Sources */,
+				5AD958C019A247B200E5A855 /* BBARequest.m in Sources */,
+				5AD958C619A247B200E5A855 /* BBAResponse.m in Sources */,
+				5AD9589619A247B200E5A855 /* BBAClientsResponseMapper.m in Sources */,
+				40E4050A19A638270075D875 /* BBALibraryResponse.m in Sources */,
+				5AD9589919A247B200E5A855 /* BBAClubcardService.m in Sources */,
+				5AD958B119A247B200E5A855 /* BBALibraryService.m in Sources */,
+				5AD9588019A247B100E5A855 /* BBAAuthenticationServiceConstants.m in Sources */,
+				5AD9589F19A247B200E5A855 /* BBADefaultAuthenticator.m in Sources */,
+				5AD958A819A247B200E5A855 /* BBALibraryConnection.m in Sources */,
+				40E4051219A638270075D875 /* BBAStatusResponseMapper.m in Sources */,
+				5AD9587719A247B100E5A855 /* BBAAuthData.m in Sources */,
+				5AD958CF19A247B200E5A855 /* BBASearchService.m in Sources */,
+				5AD958A519A247B200E5A855 /* BBAKeyService.m in Sources */,
+				5AD958B819A247B200E5A855 /* BBANetworkConfiguration.m in Sources */,
+				5AD958C319A247B200E5A855 /* BBARequestFactory.m in Sources */,
+				40E4050E19A638270075D875 /* BBAServerDateFormatter.m in Sources */,
+				5AD9588719A247B100E5A855 /* BBAAuthServiceErrorParser.m in Sources */,
+				5AD9587D19A247B100E5A855 /* BBAAuthenticationService.m in Sources */,
+				5AD9589C19A247B200E5A855 /* BBAConnection.m in Sources */,
 				5A520FE919ACA1A90055D295 /* BBBAPI.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1083,20 +1083,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40E4054119A638B70075D875 /* BBBConnectionTests.m in Sources */,
-				40E4054319A638B70075D875 /* BBBLibraryResponseMapperTests.m in Sources */,
-				5A91E9FC19A4FA410079247F /* BBBTokensResponseMapperTests.m in Sources */,
-				40E4054719A638B70075D875 /* BBBMockConnection.m in Sources */,
-				40E4054D19A638B70075D875 /* BBBTestHelper.m in Sources */,
-				5AD9592819A2501C00E5A855 /* BBBAuthenticationServiceTests.m in Sources */,
-				5AD9592E19A2501C00E5A855 /* BBBMockAssertionHandler.m in Sources */,
-				40E4054519A638B70075D875 /* BBBLibraryResponseTests.m in Sources */,
-				40E4054B19A638B70075D875 /* BBBSwizzlingHelper.m in Sources */,
-				5A91E9FE19A4FA410079247F /* BBBAuthServiceResponseMappersTestData.m in Sources */,
-				5A91E9FA19A4FA410079247F /* BBBClientsResponseMapperTests.m in Sources */,
-				5AD9592C19A2501C00E5A855 /* BBBLibraryServiceTests.m in Sources */,
-				40E4054919A638B70075D875 /* BBBStatusResponseMapperTests.m in Sources */,
-				5AD9592A19A2501C00E5A855 /* BBBAuthServiceResponseMapperTests.m in Sources */,
+				40E4054119A638B70075D875 /* BBAConnectionTests.m in Sources */,
+				40E4054319A638B70075D875 /* BBALibraryResponseMapperTests.m in Sources */,
+				5A91E9FC19A4FA410079247F /* BBATokensResponseMapperTests.m in Sources */,
+				40E4054719A638B70075D875 /* BBAMockConnection.m in Sources */,
+				5AD9592819A2501C00E5A855 /* BBAAuthenticationServiceTests.m in Sources */,
+				5AD9592E19A2501C00E5A855 /* BBAMockAssertionHandler.m in Sources */,
+				40E4054519A638B70075D875 /* BBALibraryResponseTests.m in Sources */,
+				40CA6A7E19ADE2AF00BA091B /* BBATestHelper.m in Sources */,
+				40E4054B19A638B70075D875 /* BBASwizzlingHelper.m in Sources */,
+				5A91E9FE19A4FA410079247F /* BBAAuthServiceResponseMappersTestData.m in Sources */,
+				5A91E9FA19A4FA410079247F /* BBAClientsResponseMapperTests.m in Sources */,
+				5AD9592C19A2501C00E5A855 /* BBALibraryServiceTests.m in Sources */,
+				40E4054919A638B70075D875 /* BBAStatusResponseMapperTests.m in Sources */,
+				5AD9592A19A2501C00E5A855 /* BBAAuthServiceResponseMapperTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1104,20 +1104,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40E4054219A638B70075D875 /* BBBConnectionTests.m in Sources */,
-				40E4054419A638B70075D875 /* BBBLibraryResponseMapperTests.m in Sources */,
-				5A91E9FD19A4FA410079247F /* BBBTokensResponseMapperTests.m in Sources */,
-				40E4054819A638B70075D875 /* BBBMockConnection.m in Sources */,
-				40E4054E19A638B70075D875 /* BBBTestHelper.m in Sources */,
-				5AD9592919A2501C00E5A855 /* BBBAuthenticationServiceTests.m in Sources */,
-				5AD9592F19A2501C00E5A855 /* BBBMockAssertionHandler.m in Sources */,
-				40E4054619A638B70075D875 /* BBBLibraryResponseTests.m in Sources */,
-				40E4054C19A638B70075D875 /* BBBSwizzlingHelper.m in Sources */,
-				5A91E9FF19A4FA410079247F /* BBBAuthServiceResponseMappersTestData.m in Sources */,
-				5A91E9FB19A4FA410079247F /* BBBClientsResponseMapperTests.m in Sources */,
-				5AD9592D19A2501C00E5A855 /* BBBLibraryServiceTests.m in Sources */,
-				40E4054A19A638B70075D875 /* BBBStatusResponseMapperTests.m in Sources */,
-				5AD9592B19A2501C00E5A855 /* BBBAuthServiceResponseMapperTests.m in Sources */,
+				40E4054219A638B70075D875 /* BBAConnectionTests.m in Sources */,
+				40E4054419A638B70075D875 /* BBALibraryResponseMapperTests.m in Sources */,
+				5A91E9FD19A4FA410079247F /* BBATokensResponseMapperTests.m in Sources */,
+				40E4054819A638B70075D875 /* BBAMockConnection.m in Sources */,
+				5AD9592919A2501C00E5A855 /* BBAAuthenticationServiceTests.m in Sources */,
+				5AD9592F19A2501C00E5A855 /* BBAMockAssertionHandler.m in Sources */,
+				40E4054619A638B70075D875 /* BBALibraryResponseTests.m in Sources */,
+				40CA6A7D19ADE2AE00BA091B /* BBATestHelper.m in Sources */,
+				40E4054C19A638B70075D875 /* BBASwizzlingHelper.m in Sources */,
+				5A91E9FF19A4FA410079247F /* BBAAuthServiceResponseMappersTestData.m in Sources */,
+				5A91E9FB19A4FA410079247F /* BBAClientsResponseMapperTests.m in Sources */,
+				5AD9592D19A2501C00E5A855 /* BBALibraryServiceTests.m in Sources */,
+				40E4054A19A638B70075D875 /* BBAStatusResponseMapperTests.m in Sources */,
+				5AD9592B19A2501C00E5A855 /* BBAAuthServiceResponseMapperTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1125,43 +1125,43 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5AD9598E19A2631200E5A855 /* BBBTokensResponseMapper.m in Sources */,
-				5AD9599719A2631200E5A855 /* BBBAuthResponseMapper.m in Sources */,
-				5AD9598919A2631200E5A855 /* BBBCategoryService.m in Sources */,
-				5AD9599219A2631200E5A855 /* BBBAuthenticationService.m in Sources */,
-				5AD9599019A2631200E5A855 /* BBBAuthData.m in Sources */,
-				5AD959A219A2631200E5A855 /* BBBRequestFactory.m in Sources */,
-				5AD959A419A2631200E5A855 /* BBBJSONResponseMapper.m in Sources */,
-				5AD9599619A2631200E5A855 /* BBBDefaultAuthenticator.m in Sources */,
-				5AD9599819A2631200E5A855 /* BBBAuthServiceErrorParser.m in Sources */,
-				5AD959A519A2631200E5A855 /* BBBResponseMapping.m in Sources */,
-				5A520FF919ACBF140055D295 /* BBBLogger.m in Sources */,
-				5AD9599319A2631200E5A855 /* BBBClientDetails.m in Sources */,
-				5AD9598619A2631200E5A855 /* BBBSearchService.m in Sources */,
-				40E4055419A638C50075D875 /* BBBLibraryResponseMapper.m in Sources */,
-				5AD9599419A2631200E5A855 /* BBBUserDetails.m in Sources */,
-				5AD9598D19A2631200E5A855 /* BBBBookmarkService.m in Sources */,
-				5AD9599F19A2631200E5A855 /* BBBConnection.m in Sources */,
-				5AD9599919A2631200E5A855 /* BBBLibraryItem.m in Sources */,
-				5AD959A319A2631200E5A855 /* BBBResponse.m in Sources */,
-				5AD959A119A2631200E5A855 /* BBBRequest.m in Sources */,
-				5AD9598F19A2631200E5A855 /* BBBAuthenticationServiceConstants.m in Sources */,
-				40E4050B19A638270075D875 /* BBBLibraryResponse.m in Sources */,
-				5AD9599A19A2631200E5A855 /* BBBLibraryItemLink.m in Sources */,
-				5AD9599C19A2631200E5A855 /* BBBAuthConnection.m in Sources */,
-				5AD9598A19A2631200E5A855 /* BBBClubcardService.m in Sources */,
-				5AD9598819A2631200E5A855 /* BBBMarketingService.m in Sources */,
-				5AD9598C19A2631200E5A855 /* BBBCatalogueService.m in Sources */,
-				40E4051319A638270075D875 /* BBBStatusResponseMapper.m in Sources */,
-				5AD9598B19A2631200E5A855 /* BBBKeyService.m in Sources */,
-				5AD959A019A2631200E5A855 /* BBBNetworkConfiguration.m in Sources */,
-				5AD9599119A2631200E5A855 /* BBBAuthDataValidator.m in Sources */,
-				5AD9599B19A2631200E5A855 /* BBBLibraryService.m in Sources */,
-				5AD9599E19A2631200E5A855 /* BBBSearchConnection.m in Sources */,
-				40E4050F19A638270075D875 /* BBBServerDateFormatter.m in Sources */,
-				5AD9599519A2631200E5A855 /* BBBClientsResponseMapper.m in Sources */,
-				5AD9599D19A2631200E5A855 /* BBBLibraryConnection.m in Sources */,
-				5AD9598719A2631200E5A855 /* BBBPurchasingService.m in Sources */,
+				5AD9598E19A2631200E5A855 /* BBATokensResponseMapper.m in Sources */,
+				5AD9599719A2631200E5A855 /* BBAAuthResponseMapper.m in Sources */,
+				5AD9598919A2631200E5A855 /* BBACategoryService.m in Sources */,
+				5AD9599219A2631200E5A855 /* BBAAuthenticationService.m in Sources */,
+				5AD9599019A2631200E5A855 /* BBAAuthData.m in Sources */,
+				5AD959A219A2631200E5A855 /* BBARequestFactory.m in Sources */,
+				5AD959A419A2631200E5A855 /* BBAJSONResponseMapper.m in Sources */,
+				5AD9599619A2631200E5A855 /* BBADefaultAuthenticator.m in Sources */,
+				5AD9599819A2631200E5A855 /* BBAAuthServiceErrorParser.m in Sources */,
+				5AD959A519A2631200E5A855 /* BBAResponseMapping.m in Sources */,
+				5A520FF919ACBF140055D295 /* BBALogger.m in Sources */,
+				5AD9599319A2631200E5A855 /* BBAClientDetails.m in Sources */,
+				5AD9598619A2631200E5A855 /* BBASearchService.m in Sources */,
+				40E4055419A638C50075D875 /* BBALibraryResponseMapper.m in Sources */,
+				5AD9599419A2631200E5A855 /* BBAUserDetails.m in Sources */,
+				5AD9598D19A2631200E5A855 /* BBABookmarkService.m in Sources */,
+				5AD9599F19A2631200E5A855 /* BBAConnection.m in Sources */,
+				5AD9599919A2631200E5A855 /* BBALibraryItem.m in Sources */,
+				5AD959A319A2631200E5A855 /* BBAResponse.m in Sources */,
+				5AD959A119A2631200E5A855 /* BBARequest.m in Sources */,
+				5AD9598F19A2631200E5A855 /* BBAAuthenticationServiceConstants.m in Sources */,
+				40E4050B19A638270075D875 /* BBALibraryResponse.m in Sources */,
+				5AD9599A19A2631200E5A855 /* BBALibraryItemLink.m in Sources */,
+				5AD9599C19A2631200E5A855 /* BBAAuthConnection.m in Sources */,
+				5AD9598A19A2631200E5A855 /* BBAClubcardService.m in Sources */,
+				5AD9598819A2631200E5A855 /* BBAMarketingService.m in Sources */,
+				5AD9598C19A2631200E5A855 /* BBACatalogueService.m in Sources */,
+				40E4051319A638270075D875 /* BBAStatusResponseMapper.m in Sources */,
+				5AD9598B19A2631200E5A855 /* BBAKeyService.m in Sources */,
+				5AD959A019A2631200E5A855 /* BBANetworkConfiguration.m in Sources */,
+				5AD9599119A2631200E5A855 /* BBAAuthDataValidator.m in Sources */,
+				5AD9599B19A2631200E5A855 /* BBALibraryService.m in Sources */,
+				5AD9599E19A2631200E5A855 /* BBASearchConnection.m in Sources */,
+				40E4050F19A638270075D875 /* BBAServerDateFormatter.m in Sources */,
+				5AD9599519A2631200E5A855 /* BBAClientsResponseMapper.m in Sources */,
+				5AD9599D19A2631200E5A855 /* BBALibraryConnection.m in Sources */,
+				5AD9598719A2631200E5A855 /* BBAPurchasingService.m in Sources */,
 				5A520FEA19ACA1A90055D295 /* BBBAPI.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
