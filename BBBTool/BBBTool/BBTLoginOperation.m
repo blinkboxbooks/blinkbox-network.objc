@@ -45,7 +45,7 @@
 
     [self doLoginWithUser:user
                  password:pass
-               completion:^(BBBAuthData *data, NSError *error) {
+               completion:^(BBAAuthData *data, NSError *error) {
 
                    BBPrint(@"Login result %@", data ? @"Success" : @"Fail");
                    if (data) {
@@ -59,17 +59,17 @@
 
 - (void) doLoginWithUser:(NSString *)userName
                 password:(NSString *)password
-              completion:(void (^)(BBBAuthData *data, NSError *error))completion{
+              completion:(void (^)(BBAAuthData *data, NSError *error))completion{
 
     dispatch_semaphore_t bbb_test_semaphore = dispatch_semaphore_create(0);
 
-    BBBAuthenticationService *service = [BBBAuthenticationService new];
-    BBBUserDetails *userDetails = [BBBUserDetails new];
+    BBAAuthenticationService *service = [BBAAuthenticationService new];
+    BBAUserDetails *userDetails = [BBAUserDetails new];
     userDetails.email = userName;
     userDetails.password = password;
-    __block BBBAuthData *resultAuthData;
+    __block BBAAuthData *resultAuthData;
     __block NSError *resultError;
-    [service loginUser:userDetails client:nil completion:^(BBBAuthData *data, NSError *error) {
+    [service loginUser:userDetails client:nil completion:^(BBAAuthData *data, NSError *error) {
         resultAuthData = data;
         resultError = error;
         dispatch_semaphore_signal(bbb_test_semaphore);
