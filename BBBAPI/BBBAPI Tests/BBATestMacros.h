@@ -128,3 +128,6 @@ while (callbackReceivedArg == NO && [loopUntil timeIntervalSinceNow] > 0) { \
  *  This macro enables
  */
 #define BBA_ENABLE_ASSERTIONS() {if(handler != nil){[[NSThread currentThread] threadDictionary][NSAssertionHandlerKey] = handler;}}
+
+
+#define BBBAssertErrorHasCodeAndDomain(error, code, domain) XCTAssertTrue((error.code == code) && [error.domain isEqualToString:domain])

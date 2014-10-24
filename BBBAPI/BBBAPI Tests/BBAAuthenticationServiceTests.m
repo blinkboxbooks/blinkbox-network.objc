@@ -542,7 +542,7 @@ BBAAuthenticationService *service;
 #pragma mark - Helper methods
 - (void) prepareDefaultAuthenticatorWithValidUser:(BBAUserDetails **)user
                                         andClient:(BBAClientDetails **)client{
-    NSObject <BBAAuthenticator> *authenticator = [BBANetworkConfiguration sharedAuthenticator];
+    NSObject <BBAAuthenticator> *authenticator = [[BBANetworkConfiguration defaultConfiguration] sharedAuthenticator];
 
     BBAUserDetails *validuser = nil;
     BBAClientDetails *validclient = nil;
@@ -558,7 +558,7 @@ BBAAuthenticationService *service;
 }
 
 - (void) resetDefaultAuthenticatorUserAndClient{
-    NSObject <BBAAuthenticator> *authenticator = [BBANetworkConfiguration sharedAuthenticator];
+    NSObject <BBAAuthenticator> *authenticator = [[BBANetworkConfiguration defaultConfiguration] sharedAuthenticator];
     [authenticator setValue:nil forKey:@"currentUser"];
     [authenticator setValue:nil forKey:@"currentClient"];
 }
