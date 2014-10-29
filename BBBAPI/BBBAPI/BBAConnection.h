@@ -72,6 +72,8 @@ extern NSString *const BBAHTTPVersion11;
 
 - (void) removeParameterWithKey:(NSString *)key;
 
+- (void) setParameterValue:(NSString *)value withKey:(NSString *)key;
+
 
 /**
  *  Add a header field to this request. Existing headers with duplicate keys are overwritten.

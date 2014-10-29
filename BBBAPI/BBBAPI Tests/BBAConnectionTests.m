@@ -12,6 +12,10 @@
 #import "BBASwizzlingHelper.h"
 #import "BBARequest.h"
 
+@interface BBAConnection (Tests)
+@property (nonatomic, strong) NSURLSession *session;
+@end
+
 
 extern NSString * BBANSStringFromBBAContentType(BBAContentType type);
 
@@ -20,6 +24,9 @@ extern NSString * BBANSStringFromBBAContentType(BBAContentType type);
     BBAMockAuthenticator *authenticator;
     BBAMockNetworkConfiguration *configuration;
     BBAMockRequestFactory *factory;
+    BBAMockURLSessionDataTask *task;
+    BBAMockURLSession *session;
+    BBAMockResponseMapper *responseMapper;
     IMP oldImplementation;
     id (^block)(id);
 }
@@ -27,6 +34,8 @@ extern NSString * BBANSStringFromBBAContentType(BBAContentType type);
 @end
 
 @implementation BBAConnectionTests
+
+#pragma mark - Setup/Teardown
 
 - (void) setUp{
     [super setUp];
@@ -37,6 +46,10 @@ extern NSString * BBANSStringFromBBAContentType(BBAContentType type);
     connection.authenticator = authenticator;
     factory = [BBAMockRequestFactory new];
     connection.requestFactory = factory;
+    session = [BBAMockURLSession new];
+    task = [BBAMockURLSessionDataTask new];
+    responseMapper = [BBAMockResponseMapper new];
+    connection.responseMapper = responseMapper;
     
     __weak typeof(configuration) wconfiguration = configuration;
     block = ^id(id o){
@@ -63,12 +76,19 @@ extern NSString * BBANSStringFromBBAContentType(BBAContentType type);
     connection = nil;
     authenticator = nil;
     factory = nil;
+    session = nil;
+    task = nil;
+    responseMapper = nil;
     [super tearDown];
 }
+
+#pragma mark - Helpers
 
 - (NSURL *) validBaseURL{
     return [NSURL URLWithString:@"http://www.blinkbox.com"];
 }
+
+#pragma mark - Tests
 
 - (void) testContentTypeStringMappingFunctionWorkForProperTypes{
     XCTAssertEqualObjects(BBANSStringFromBBAContentType(BBAContentTypeJSON),
@@ -82,6 +102,7 @@ extern NSString * BBANSStringFromBBAContentType(BBAContentType type);
 - (void) testContentTypeStringMappingFunctionThrowsForUnknownType{
     XCTAssertThrows(BBANSStringFromBBAContentType(-12), @"should throw on wrong encoding type");
 }
+
 
 - (void) testInitWithBaseURLReturnsNotNil{
     NSURL *url = [self validBaseURL];
@@ -102,14 +123,40 @@ extern NSString * BBANSStringFromBBAContentType(BBAContentType type);
     BBA_ENABLE_ASSERTIONS();
 }
 
-- (void) testPerformThrowsWithoutCompletion{
-    XCTAssertThrows([connection perform:(BBAHTTPMethodGET) completion:nil]);
-}
-
 - (void) testInitWithDomainAsksNetworkConfiguratorForBaseURL{
     id c = [[BBAConnection alloc] initWithDomain:BBAAPIDomainREST relativeURL:@"books"];
     c = nil;
     XCTAssertEqual(configuration.passedDomain, BBAAPIDomainREST);
+}
+
+
+- (void) testAddArrayParameterThrowsWhenKeyIsNil{
+    XCTAssertThrows([connection addParameterWithKey:nil arrayValue:@[]]);
+}
+
+- (void) testAddArrayParameterThrowsWhenArrayIsNil{
+    XCTAssertThrows([connection addParameterWithKey:@"key" arrayValue:nil]);
+}
+
+- (void) testAddParameterThrowsWithNilKey{
+    XCTAssertThrows([connection addParameterWithKey:nil value:@"value"]);
+}
+
+- (void) testAddParameterThrowsWithNilValue{
+    XCTAssertThrows([connection addParameterWithKey:@"key" value:nil]);
+}
+
+- (void) testAddParameterThrowsOnNotStringKey{
+    XCTAssertThrows([connection addParameterWithKey:(NSString *)@0 value:@"value"]);
+}
+
+- (void) testAddParameterThrowsOnNotStringValue{
+    XCTAssertThrows([connection addParameterWithKey:@"key" value:(NSString *)@0]);
+}
+
+
+- (void) testPerformThrowsWithoutCompletion{
+    XCTAssertThrows([connection perform:(BBAHTTPMethodGET) completion:nil]);
 }
 
 - (void) testPerformCreatesRequestFromRequestFactoryAndPassesAllNeededParamatersAndMethod{
@@ -145,6 +192,28 @@ extern NSString * BBANSStringFromBBAContentType(BBAContentType type);
              }];
     XCTAssertTrue(authenticator.wasAskedToAuthenticate);
     
+    
+}
+
+- (void) testPerformCreatesDataTaskAndPassesRequestFromRequestFactory{
+    connection.session = session;
+    session.taskToReturn = task;
+    connection.responseMapper = responseMapper;
+    NSURLRequest *urlRequest = [NSURLRequest new];
+    BBARequest *request = [BBARequest requestWithURLRequest:urlRequest];
+    factory.requestToReturn = request;
+    [connection perform:(BBAHTTPMethodGET) completion:^(id response, NSError *error) {
+        
+    }];
+    
+    XCTAssertEqualObjects(session.passedRequest, urlRequest);
+    
+    
+}
+
+- (void) testPerformThrowsIfResponseMapperIsNil{
+    connection.responseMapper = nil;
+    XCTAssertThrows([connection perform:(BBAHTTPMethodGET) completion:^(id response, NSError *error) {}]);
     
 }
 

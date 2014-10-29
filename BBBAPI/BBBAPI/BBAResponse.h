@@ -14,6 +14,6 @@
 
 @property (nonatomic, assign) NSInteger statusCode;
 
-@property (nonatomic, strong) NSData *serverDare;
+@property (nonatomic, strong) NSData *serverDate;
 
 @end

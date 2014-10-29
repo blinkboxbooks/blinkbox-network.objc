@@ -59,3 +59,27 @@
     return self.requestToReturn;
 }
 @end
+
+@implementation BBAMockURLSessionDataTask : NSURLSessionDataTask
+- (void)resume{
+    
+}
+@end
+
+@implementation BBAMockURLSession : NSURLSession
+- (NSURLSessionDataTask *)dataTaskWithRequest:(NSURLRequest *)request
+                            completionHandler:(void (^)(NSData *, NSURLResponse *, NSError *))completionHandler{
+    self.passedRequest = request;
+    completionHandler(self.dataToReturn, self.responseToReturn, self.errorToReturn);
+    return self.taskToReturn;
+}
+@end
+
+@implementation BBAMockResponseMapper
+
+- (id) responseFromData:(NSData *)data response:(NSURLResponse *)response error:(NSError **)error{
+    *error = self.errorToReturn;
+    return self.objectToReturn;
+}
+
+@end
