@@ -13,63 +13,70 @@ NSString *const BBARequestFactoryDomain = @"com.BBA.requestFactoryErrorDomain";
 
 @implementation BBARequestFactory
 
+#pragma mark - Public Methods
+
 - (BBARequest *) requestWith:(NSURL *)url
                   parameters:(NSDictionary *)parameters
                      headers:(NSDictionary *)headers
                       method:(BBAHTTPMethod)method
                  contentType:(BBAContentType)contentType
                        error:(NSError **)error{
-    
+
+    NSParameterAssert(url);
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    
+
     //Construct body or url params
     if(method == BBAHTTPMethodGET) {
 
         if([parameters count] >0) {
-            NSString *queryString = [NSString stringWithFormat:@"?%@",[self constructURLEncodedBodyString:parameters]];
-            NSURL *paramaterURL = [url URLByAppendingPathComponent:[NSURL URLWithString:queryString]];
+            NSString *queryString = [NSString stringWithFormat:@"?%@",
+                                     [self constructURLEncodedBodyString:parameters]];
+            NSURL *paramaterURL = [NSURL URLWithString:queryString relativeToURL:url];
             [request setURL:paramaterURL];
 
         }
-        else{
+        else {
             [request setURL:url];
         }
-        
-        [request setHTTPMethod:@"GET"];
-    }
-    else if(method == BBAHTTPMethodDELETE) {
-        if([parameters count] >0) {
-            NSString *queryString = [NSString stringWithFormat:@"?%@",[self constructURLEncodedBodyString:parameters]];
-            NSURL *paramaterURL = [url URLByAppendingPathComponent:[NSURL URLWithString:queryString]];
-            [request setURL:paramaterURL];
-
-        }
-        else{
-            [request setURL:url];
-        }
-
-        [request setHTTPMethod:@"DELETE"];
     }
     else {
         NSError *bodyError;
         NSData *body = [self bodyFromParameters:parameters
                                     contentType:contentType
                                           error:&bodyError];
+        if (!body) {
+
+            if (error) {
+                NSDictionary *userInfo;
+                if (bodyError) {
+                    userInfo = @{NSUnderlyingErrorKey : bodyError};
+                }
+
+                *error =  [NSError errorWithDomain:BBARequestFactoryDomain
+                                              code:BBARequestFactoryErrorCouldNotCreateRequest
+                                          userInfo:userInfo];
+
+                return nil;
+            }
+        }
         [request setHTTPBody:body];
         [request setURL:url];
-        [request setHTTPMethod:@"POST"];
 
     }
-
+    NSString *HTTPMethod = [self httpMethodStringForHTTPMethod:method];
+    NSAssert(HTTPMethod, @"Bad HTTPMethod");
+    [request setHTTPMethod:HTTPMethod];
     [request setAllHTTPHeaderFields:headers];
     
     return [BBARequest requestWithURLRequest:request];
 }
 
+#pragma mark - Private Methods
+
 - (NSData *) bodyFromParameters:(NSDictionary *)parameters
                     contentType:(BBAContentType)contentType
                           error:(NSError * __autoreleasing *)error {
-    
+
     if(contentType == BBAContentTypeURLEncodedForm) {
         return [[self constructURLEncodedBodyString:parameters] dataUsingEncoding:NSUTF8StringEncoding];
     }
@@ -94,6 +101,7 @@ NSString *const BBARequestFactoryDomain = @"com.BBA.requestFactoryErrorDomain";
                                      userInfo:nil];
             return nil;
         }
+
         return data;
     }
     
@@ -158,4 +166,20 @@ static NSString * const kCharactersToLeaveUnescaped = @"[].";
 #undef BBRIDGE
 #endif
 
+
+- (NSString *) httpMethodStringForHTTPMethod:(BBAHTTPMethod)method{
+    switch (method) {
+        case BBAHTTPMethodGET:
+            return @"GET";
+        case BBAHTTPMethodPOST:
+            return @"POST";
+        case BBAHTTPMethodPUT:
+            return @"PUT";
+        case BBAHTTPMethodDELETE:
+            return @"DELETE";
+        default:
+            NSAssert(false, @"Unrecognised http method");
+            return nil;
+    }
+}
 @end
