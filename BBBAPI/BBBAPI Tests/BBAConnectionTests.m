@@ -8,6 +8,7 @@
 
 #import "BBAConnection.h"
 #import "BBATestMacros.h"
+#import "BBAAPIErrors.h"
 #import "BBAConnectionTestsMocks.h"
 #import "BBASwizzlingHelper.h"
 #import "BBARequest.h"
@@ -215,6 +216,63 @@ extern NSString * BBANSStringFromBBAContentType(BBAContentType type);
     connection.responseMapper = nil;
     XCTAssertThrows([connection perform:(BBAHTTPMethodGET) completion:^(id response, NSError *error) {}]);
     
+}
+
+- (void) testConnectionReturnsCouldNotConnectErrorAndNilResonseWhenTaskCompletesWithoutResponse{
+    connection.session = session;
+    session.taskToReturn = task;
+    connection.responseMapper = responseMapper;
+    NSURLRequest *urlRequest = [NSURLRequest new];
+    BBARequest *request = [BBARequest requestWithURLRequest:urlRequest];
+    factory.requestToReturn = request;
+    
+    session.responseToReturn = nil;
+    
+    NSInteger code = BBAAPIErrorCouldNotConnect;
+    NSString *domain = BBAConnectionErrorDomain;
+    
+    XCTestExpectation *expectation = [self expectationWithDescription:@"Connection completion"];
+    [connection perform:(BBAHTTPMethodGET) completion:^(id response, NSError *error) {
+        XCTAssertNil(response);
+        BBBAssertErrorHasCodeAndDomain(error, code, domain);
+        [expectation fulfill];
+    }];
+    
+    [self waitForExpectationsWithTimeout:0.1 handler:^(NSError *error) {
+        if (error) {
+            NSLog(@"Test timeout Error: %@", error);
+        }
+    }];
+}
+
+- (void) testConnectionRetuensDataAndErrorFromResponseMapper{
+    connection.session = session;
+    session.taskToReturn = task;
+    connection.responseMapper = responseMapper;
+    NSURLRequest *urlRequest = [NSURLRequest new];
+    BBARequest *request = [BBARequest requestWithURLRequest:urlRequest];
+    factory.requestToReturn = request;
+    
+    session.responseToReturn = [NSURLResponse new];
+    
+    NSInteger code = 123;
+    NSString *domain = @"domain";
+    
+    responseMapper.objectToReturn = @"12345";
+    responseMapper.errorToReturn = [NSError errorWithDomain:domain code:code userInfo:nil];
+    
+    XCTestExpectation *expectation = [self expectationWithDescription:@"Connection completion"];
+    [connection perform:(BBAHTTPMethodGET) completion:^(id response, NSError *error) {
+        XCTAssertEqualObjects(response, @"12345");
+        BBBAssertErrorHasCodeAndDomain(error,code, domain);
+        [expectation fulfill];
+    }];
+    
+    [self waitForExpectationsWithTimeout:0.1 handler:^(NSError *error) {
+        if (error) {
+            NSLog(@"Test timeout Error: %@", error);
+        }
+    }];
 }
 
 @end
