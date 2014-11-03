@@ -37,8 +37,8 @@
                        error:(NSError *__autoreleasing *)error
                   completion:(void (^)(void))completion{
 
-    [self.authService loginUser:user?user:self.currentUser
-                         client:user?nil:self.currentClient
+    [self.authService loginUser:user ? user : self.currentUser
+                         client:user ? nil : self.currentClient
                      completion:^(BBAAuthData *data, NSError *error) {
 
                          NSMutableDictionary *headers = [[[request URLRequest] allHTTPHeaderFields]mutableCopy];

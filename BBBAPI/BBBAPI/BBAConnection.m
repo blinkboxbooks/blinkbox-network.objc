@@ -55,6 +55,7 @@ NSString *const BBAHTTPVersion11 = @"HTTP/1.1";
     
     self = [super init];
     if (self) {
+        _requiresAuthentication = NO;
         _contentType = BBAContentTypeUnknown;
         _baseURL = URL;
         _parameters = [NSMutableDictionary new];
@@ -112,11 +113,17 @@ NSString *const BBAHTTPVersion11 = @"HTTP/1.1";
 }
 
 - (void) setParameterValue:(NSString *)value withKey:(NSString *)key{
+    NSParameterAssert(key);
+    NSParameterAssert([key isKindOfClass:[NSString class]]);
+    if (!key || [key isKindOfClass:[NSString class]]) {
+        return;
+    }
+    
     if (value) {
-        [self addParameterWithKey:key value:value];
+        self.parameters[key] = value;
     }
     else{
-        [self removeParameterWithKey:key];
+        [self.parameters removeObjectForKey:key];
     }
 }
 

@@ -161,6 +161,7 @@ extern NSString * BBANSStringFromBBAContentType(BBAContentType type);
 }
 
 - (void) testPerformCreatesRequestFromRequestFactoryAndPassesAllNeededParamatersAndMethod{
+    factory.requestToReturn = [BBARequest new];
     [connection addParameterWithKey:@"key" value:@"value1"];
     [connection addHeaderFieldWithKey:@"key" value:@"value2"];
     [connection perform:(BBAHTTPMethodGET)
@@ -174,6 +175,7 @@ extern NSString * BBANSStringFromBBAContentType(BBAContentType type);
 }
 
 - (void) testPerformCallCompletionWithNilDataAndErrorIfRequestFactoryReturnsNil{
+    BBA_DISABLE_ASSERTIONS();
     factory.errorToReturn = [NSError errorWithDomain:@"domain" code:123 userInfo:nil];
     NSString *domain = @"domain";
     NSInteger code = 123;
@@ -182,6 +184,7 @@ extern NSString * BBANSStringFromBBAContentType(BBAContentType type);
                  XCTAssertNil(response);
                  BBBAssertErrorHasCodeAndDomain(error, code, domain);
              }];
+    BBA_ENABLE_ASSERTIONS();
 }
 
 - (void) testPerformAsksAuthenticatorToAuthenticateRequestIfRequiresAuthentication{

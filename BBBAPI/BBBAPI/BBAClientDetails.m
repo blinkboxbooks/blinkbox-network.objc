@@ -10,4 +10,17 @@
 
 @implementation BBAClientDetails
 
+- (NSString *) description{
+    return [NSString stringWithFormat:@"%@, \rname: %@, \rbrand: %@, \rmodel: %@, \rOS: %@, \rid: %@, \ruri: %@, \rsecret: %@, \rlast used date: %@",
+            [super description],
+            self.name,
+            self.brand,
+            self.model,
+            self.operatingSystem,
+            self.identifier,
+            self.uri,
+            self.secret,
+            self.lastUsedDate];
+}
+
 @end
