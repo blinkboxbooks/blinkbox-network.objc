@@ -176,12 +176,11 @@ BBAAuthenticationService *service;
     XCTAssertThrows([service refreshAuthData:nil completion:^(BBAAuthData *refeshedData, NSError *error) {
     }]);
 }
-#if 0
+
 - (void) testRefreshAuthDataThrowsWithNilAuthCompletion{
     BBAAuthData *data = [self validUserAuthDataForRefreshing];
     XCTAssertThrows([service refreshAuthData:data completion:nil]);
 }
-#endif
 
 - (void) testGetAllClientsForNilUser{
     BBA_DISABLE_ASSERTIONS();
@@ -307,7 +306,7 @@ BBAAuthenticationService *service;
 }
 
 #pragma mark - Tests that call Live API's
-#if 0
+
 - (void) testRegisterUserAndClient{
     BBAUserDetails *user = [self validRegistrationUser];
     BBAClientDetails *client = [self validRegistrationClient];
@@ -537,7 +536,6 @@ BBAAuthenticationService *service;
     BBA_WAIT_FOR_SEMAPHORE();
     
 }
-#endif
 
 #pragma mark - Helper methods
 - (void) prepareDefaultAuthenticatorWithValidUser:(BBAUserDetails **)user
