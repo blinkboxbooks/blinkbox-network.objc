@@ -312,7 +312,7 @@
     [libraryService getItem:item
                        user:user
                  completion:^(BBALibraryItem *libraryItem, NSError *error) {}];
-    XCTAssertEqualObjects(passedRelativeURLString, @"my/library/32060+34756",
+    XCTAssertEqualObjects(passedRelativeURLString, @"service/my/library/32060+34756",
                           @"item id should be appended to the base URL");
 }
 
@@ -542,7 +542,7 @@
                                 item:item
                                 user:user
                           completion:^(BOOL success, NSError *error) {}];
-    XCTAssertEqualObjects(passedRelativeURLString, @"my/library/1234+56789",
+    XCTAssertEqualObjects(passedRelativeURLString, @"service/my/library/1234+56789",
                           @"item id should be appended to the base URL");
 }
 
@@ -691,7 +691,7 @@
                            onItem:item
                              user:user
                        completion:^(BOOL s, NSError *e) {}];
-    XCTAssertEqualObjects(passedRelativeURLString, @"my/library/archived",
+    XCTAssertEqualObjects(passedRelativeURLString, @"service/my/library/archived",
                           @"`archived` method must be called");
 }
 
@@ -703,7 +703,7 @@
                            onItem:item
                              user:user
                        completion:^(BOOL s, NSError *e) {}];
-    XCTAssertEqualObjects(passedRelativeURLString, @"my/library/current",
+    XCTAssertEqualObjects(passedRelativeURLString, @"service/my/library/current",
                           @"`current` method must be called");
     
 }
@@ -717,7 +717,7 @@
                            onItem:item
                              user:user
                        completion:^(BOOL s, NSError *e) {}];
-    XCTAssertEqualObjects(passedRelativeURLString, @"my/library/1234+56789",
+    XCTAssertEqualObjects(passedRelativeURLString, @"service/my/library/1234+56789",
                           @"`current` method must be called");
 }
 
@@ -1114,7 +1114,7 @@
     [libraryService addSampleItem:item
                              user:nil
                        completion:^(BOOL success, NSError *error) {}];
-    XCTAssertEqualObjects(passedRelativeURLString, @"my/library/samples", @"samples method must be called");
+    XCTAssertEqualObjects(passedRelativeURLString, @"service/my/library/samples", @"samples method must be called");
     
 }
 
@@ -1233,7 +1233,7 @@
 - (void) testGetArchivedCallsProperAPIMethod{
     [libraryService getArchivedItemsForUser:[BBAUserDetails new]
                                  completion:^(NSArray *items, NSError *error) {}];
-    XCTAssertEqualObjects(passedRelativeURLString, @"my/library/archived",
+    XCTAssertEqualObjects(passedRelativeURLString, @"service/my/library/archived",
                           @"archived API method should be passed");
 }
 
@@ -1294,7 +1294,7 @@
 - (void) testGetDeletedCallsProperAPIMethod{
     [libraryService getDeletedItemsForUser:[BBAUserDetails new]
                                 completion:^(NSArray *items, NSError *error) {}];
-    XCTAssertEqualObjects(passedRelativeURLString, @"my/library/deleted",
+    XCTAssertEqualObjects(passedRelativeURLString, @"service/my/library/deleted",
                           @"archived API method should be passed");
 }
 

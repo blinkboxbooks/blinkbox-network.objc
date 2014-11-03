@@ -71,15 +71,13 @@
 }
 
 - (void) printContentsOfLibrary:(NSArray *)items date:(NSDate *)syncDate{
-    NSMutableString *string = [[NSMutableString alloc] init];
     for (NSInteger i = 0; i < items.count; i ++) {
         BBALibraryItem *item =  items[i];
-        [string appendFormat:@"item %ld\r %@\r", i , [item description]];
+        BBPrint(@"item %ld\r %@", i , [item description]);
     }
     
-    [string appendFormat:@"---- total %ld items, synced on %@ ----", items.count, [syncDate description]];
+    BBPrint(@"---- total %ld items, synced on %@ ----", items.count, [syncDate description]);
 
-    BBPrint(@"%@", string);
     
 }
 

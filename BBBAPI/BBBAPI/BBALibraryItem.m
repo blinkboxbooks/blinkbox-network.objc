@@ -45,47 +45,48 @@
     [formatter setDateStyle:(NSDateFormatterFullStyle)];
     [formatter setTimeStyle:(NSDateFormatterFullStyle)];
     NSMutableString *string = [[NSMutableString alloc] init];
-    [string appendFormat:@"----------------------------------------\r"];
-    [string appendFormat:@"%@ isbn: %@, id: %@\r", [super description], self.isbn, self.identifier];
+    NSString *newLine = @"\n";
+    [string appendFormat:@"----------------------------------------%@", newLine];
+    [string appendFormat:@"%@ isbn: %@, id: %@%@", [super description], self.isbn, self.identifier, newLine];
     [string appendFormat:@"purchase status: %@", BBANSStringFromPurchaseStatus(self.purchaseStatus)];
     
     if(self.purchaseStatus == BBAPurchaseStatusPurchased){
-        [string appendFormat:@" purchased at: %@\r", [formatter stringFromDate:self.purchasedDate]];
+        [string appendFormat:@" purchased at: %@%@", [formatter stringFromDate:self.purchasedDate], newLine];
     }
     else if(self.purchaseStatus == BBAPurchaseStatusSampled){
-        [string appendFormat:@" sampled at: %@\r", [formatter stringFromDate:self.sampledDate]];
+        [string appendFormat:@" sampled at: %@%@", [formatter stringFromDate:self.sampledDate], newLine];
     }
     else{
-        [string appendString:@"\r"];
+        [string appendFormat:@"%@", newLine];
     }
     
     [string appendFormat:@"visibility status: %@", BBANSStringFromVisibiliyStatus(self.visibilityStatus)];
     
     if(self.visibilityStatus == BBAVisiblityStatusArchived){
-        [string appendFormat:@" archived date: %@\r",[formatter stringFromDate:self.archivedDate]];
+        [string appendFormat:@" archived date: %@%@",[formatter stringFromDate:self.archivedDate], newLine];
     }
     else if(self.visibilityStatus == BBAVisiblityStatusDeleted){
-        [string appendFormat:@" deleted date: %@\r",[formatter stringFromDate:self.deletedDate]];
+        [string appendFormat:@" deleted date: %@%@",[formatter stringFromDate:self.deletedDate], newLine];
     }
     else{
-        [string appendString:@"\r"];
+        [string appendString:newLine];
     }
     
-    [string appendFormat:@"reading status : %@\r", BBANSStringFromReadingStatus(self.readingStatus)];
+    [string appendFormat:@"reading status : %@%@", BBANSStringFromReadingStatus(self.readingStatus), newLine];
     
     if(self.numberOfAuthorisedDevices > 0 && self.maxNumberOfAuthorisedDevices > 0){
-        [string appendFormat:@"authorized devices : (%ld out of %ld)\r",
-         self.numberOfAuthorisedDevices, self.maxNumberOfAuthorisedDevices];
+        [string appendFormat:@"authorized devices : (%ld out of %ld)%@",
+         self.numberOfAuthorisedDevices, self.maxNumberOfAuthorisedDevices, newLine];
     }
     
     if (self.links.count > 0) {
         for (NSInteger i = 0; i < self.links.count; i++) {
             BBALibraryItemLink *link = self.links[i];
-            [string appendFormat:@"link: %ld\r%@\r", i, [link description]];
+            [string appendFormat:@"link: %ld%@%@%@", i, newLine, [link description], newLine];
         }
     }
     
-    [string appendFormat:@"----------------------------------------\r"];
+    [string appendFormat:@"----------------------------------------%@", newLine];
     
     return string;
 }

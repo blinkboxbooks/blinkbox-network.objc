@@ -16,10 +16,14 @@
  */
 
 - (NSString *) description{
-    return [NSString stringWithFormat:@"%@ \rtitle: %@\rrelation: %@\raddress: %@",
+    NSString *newLine = @"\n";
+    return [NSString stringWithFormat:@"%@ %@title: %@%@relation: %@%@address: %@",
             [super description],
+            newLine,
             self.title,
+            newLine,
             self.relationship,
+            newLine,
             self.address];
 }
 @end
