@@ -113,9 +113,10 @@ NSString *const BBAHTTPVersion11 = @"HTTP/1.1";
 }
 
 - (void) setParameterValue:(NSString *)value withKey:(NSString *)key{
+    BOOL keyHasCorrectClass = [key isKindOfClass:[NSString class]];
     NSParameterAssert(key);
-    NSParameterAssert([key isKindOfClass:[NSString class]]);
-    if (!key || [key isKindOfClass:[NSString class]]) {
+    NSParameterAssert(keyHasCorrectClass);
+    if (!key || !keyHasCorrectClass) {
         return;
     }
     

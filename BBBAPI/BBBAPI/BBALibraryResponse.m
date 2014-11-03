@@ -16,6 +16,7 @@ BBAReadingStatus BBAReadingStatusFromString(NSString *status);
 BBAPurchaseStatus BBAPurchaseStatusFromString(NSString *status);
 BBAVisiblityStatus BBAVisibiliyStatusFromString(NSString *status);
 
+
 @interface BBALibraryResponse ()
 @property (nonatomic, strong) NSDate *syncDate;
 @property (nonatomic, copy) NSArray *changes;
@@ -33,7 +34,7 @@ static NSString *const kLastSyncDateTime = @"lastSyncDateTime";
 
 @implementation BBALibraryResponse
 
-#pragma mark - Public 
+#pragma mark - Public
 
 - (BOOL) parseJSON:(NSDictionary *)dictionary error:(NSError **)error{
     NSDictionary *userInfo;
@@ -151,7 +152,7 @@ static NSString *const kLastSyncDateTime = @"lastSyncDateTime";
         item.archivedDate = [self.dateFormatter dateFromString:archivedDateString];
     }
     
-    if (item.visibilityStatus != BBAVisiblityStatusDeleted) {
+    if (item.visibilityStatus != BBAVisiblityStatusDeleted && !item.sampledDate) {
         NSNumber *maxNumberOfAuthorisedDevices = dictionary[@"maxNumberOfAuthorisedDevices"];
         NSNumber *numberOfAuthorisedDevices = dictionary[@"numberOfAuthorisedDevices"];
         NSAssert(maxNumberOfAuthorisedDevices, @"maxNumberOfAuthorisedDevices mustn't be nil");
@@ -243,10 +244,8 @@ static NSString *const kLastSyncDateTime = @"lastSyncDateTime";
                                  @"purchaseStatus",
                                  @"visibilityStatus",
                                  @"readingStatus",
-                                 @"maxNumberOfAuthorisedDevices",
-                                 @"numberOfAuthorisedDevices"
                                  ]);
-
+    
     for (NSString *key in obligatoryKeys) {
         if (!item[key]) {
             NSAssert(NO, @"library item %@ should have value for key : %@", item, key);
@@ -368,8 +367,8 @@ BBAVisiblityStatus BBAVisibiliyStatusFromString(NSString *status){
     return BBAVisiblityStatusUnknown;
 }
 
-NSString * BBANSStringFromBBAReadingStatus(BBAReadingStatus status){
-
+NSString * BBANSStringFromReadingStatus(BBAReadingStatus status){
+    
     switch (status) {
         case BBAReadingStatusReading:{
             return @"READING";
@@ -385,9 +384,60 @@ NSString * BBANSStringFromBBAReadingStatus(BBAReadingStatus status){
             break;
         }
         default:{
-            NSCAssert(NO, @"unknown reading status value");
-            return nil;
+            NSCAssert(NO, @"unknown reading status value: %ld", status);
+            return @"";
             break;
         }
+    }
+}
+
+NSString * BBANSStringFromPurchaseStatus(BBAPurchaseStatus status){
+    
+    switch (status) {
+        case BBAPurchaseStatusNothing:{
+            return @"Nothing";
+            break;
+        }
+        case BBAPurchaseStatusSampled :{
+            return @"SAMPLED";
+            break;
+        }
+        case BBAPurchaseStatusPurchased:{
+            return @"PURCHASED";
+            break;
+        }
+        default:{
+            NSCAssert(NO, @"unknown purchase status value :%ld", status);
+            return @"";
+            break;
+        }
+    }
+}
+
+NSString * BBANSStringFromVisibiliyStatus(BBAVisiblityStatus status){
+    
+    switch (status) {
+        case BBAVisiblityStatusUnknown:{
+            return @"Unknown";
+            break;
+        }
+        case BBAVisiblityStatusCurrent:{
+            return @"CURRENT";
+            break;
+        }
+        case BBAVisiblityStatusArchived:{
+            return @"ARCHIVED";
+            break;
+        }
+        case BBAVisiblityStatusDeleted:{
+            return @"DELETED";
+            break;
+        }
+        default:{
+            NSCAssert(NO, @"unknown visibility status value :%ld", status);
+            return @"";
+            break;
+        }
+            
     }
 }

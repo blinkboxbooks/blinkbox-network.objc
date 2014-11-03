@@ -27,7 +27,7 @@ NSString *const BBARequestFactoryDomain = @"com.BBA.requestFactoryErrorDomain";
 
         if([parameters count] >0) {
             NSString *queryString = [NSString stringWithFormat:@"?%@",[self constructURLEncodedBodyString:parameters]];
-            NSURL *paramaterURL = [url URLByAppendingPathComponent:[NSURL URLWithString:queryString]];
+            NSURL *paramaterURL = [url URLByAppendingPathComponent:queryString];
             [request setURL:paramaterURL];
 
         }
@@ -40,7 +40,7 @@ NSString *const BBARequestFactoryDomain = @"com.BBA.requestFactoryErrorDomain";
     else if(method == BBAHTTPMethodDELETE) {
         if([parameters count] >0) {
             NSString *queryString = [NSString stringWithFormat:@"?%@",[self constructURLEncodedBodyString:parameters]];
-            NSURL *paramaterURL = [url URLByAppendingPathComponent:[NSURL URLWithString:queryString]];
+            NSURL *paramaterURL = [url URLByAppendingPathComponent:queryString];
             [request setURL:paramaterURL];
 
         }

@@ -49,6 +49,12 @@
                                      userInfo:nil];
             break;
         }
+        case BBAHTTPServiceUnavailable:{
+            *error = [NSError errorWithDomain:BBAConnectionErrorDomain
+                                         code:BBAAPIServerError
+                                     userInfo:nil];
+            break;
+        }
         default:{
             NSAssert(NO, @"unexpected HTTP status");
             break;

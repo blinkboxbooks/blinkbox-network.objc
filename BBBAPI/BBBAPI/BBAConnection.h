@@ -19,6 +19,7 @@ NS_ENUM(NSInteger, BBAHTTPStatus){
     BBAHTTPNotFound = 404,
     BBAHTTPConflict = 409,
     BBAHTTPServerError = 500,
+    BBAHTTPServiceUnavailable = 503,
 };
 
 extern NSString *const BBAConnectionErrorDomain;

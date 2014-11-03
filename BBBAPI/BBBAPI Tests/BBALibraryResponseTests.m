@@ -16,7 +16,6 @@
 extern BBAReadingStatus BBAReadingStatusFromString(NSString *status);
 extern BBAPurchaseStatus BBAPurchaseStatusFromString(NSString *status);
 extern BBAVisiblityStatus BBAVisibiliyStatusFromString(NSString *status);
-extern NSString * BBANSStringFromBBAReadingStatus(BBAReadingStatus status);
 
 @interface BBALibraryResponseTests : XCTestCase{
     BBALibraryResponse *response;
@@ -70,9 +69,9 @@ extern NSString * BBANSStringFromBBAReadingStatus(BBAReadingStatus status);
 
 - (void) testReadingStatusToNSStringMappingFunction{
 
-    XCTAssertEqualObjects(BBANSStringFromBBAReadingStatus(BBAReadingStatusRead), @"FINISHED");
-    XCTAssertEqualObjects(BBANSStringFromBBAReadingStatus(BBAReadingStatusUnread), @"UNREAD");
-    XCTAssertEqualObjects(BBANSStringFromBBAReadingStatus(BBAReadingStatusReading), @"READING");
+    XCTAssertEqualObjects(BBANSStringFromReadingStatus(BBAReadingStatusRead), @"FINISHED");
+    XCTAssertEqualObjects(BBANSStringFromReadingStatus(BBAReadingStatusUnread), @"UNREAD");
+    XCTAssertEqualObjects(BBANSStringFromReadingStatus(BBAReadingStatusReading), @"READING");
 
 }
 

@@ -77,24 +77,28 @@
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "unrecognisedcommand blah:boo"
+            argument = "library user:tomek@blinkbox.com pass:sillysebastian12"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
+            argument = "unrecognisedcommand blah:boo"
+            isEnabled = "NO">
+         </CommandLineArgument>
+         <CommandLineArgument
             argument = "refreshtoken token:test"
-            isEnabled = "YES">
+            isEnabled = "NO">
          </CommandLineArgument>
          <CommandLineArgument
             argument = "help"
             isEnabled = "NO">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "login user:owen pass:test"
+            argument = "login user:tomek@blinkbox.com pass:sillysebastian12"
             isEnabled = "NO">
          </CommandLineArgument>
          <CommandLineArgument
             argument = "login user:owen"
-            isEnabled = "YES">
+            isEnabled = "NO">
          </CommandLineArgument>
       </CommandLineArguments>
       <AdditionalOptions>
