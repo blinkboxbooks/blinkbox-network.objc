@@ -60,4 +60,14 @@
     XCTAssertThrows([configuration baseURLForDomain:12345123]);
 }
 
+- (void) testCustomisingBaseURLRemembersNewValue{
+    NSURL *url = [NSURL URLWithString:@"http://someaddress.co.uk"];
+    [configuration setBaseURL:url forDomain:(BBAAPIDomainREST)];
+    XCTAssertEqualObjects(url, [configuration baseURLForDomain:BBAAPIDomainREST]);
+}
+
+- (void) testCustmisingBaseURLThrowsForNilParameter{
+    XCTAssertThrows([configuration setBaseURL:nil forDomain:(BBAAPIDomainREST)]);
+}
+
 @end

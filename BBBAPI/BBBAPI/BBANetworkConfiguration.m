@@ -17,6 +17,8 @@
 
 @property (nonatomic, strong) id<BBAAuthenticator> authenticator;
 
+@property (nonatomic, strong) NSMutableDictionary *endpoints;
+
 @end
 
 @implementation BBANetworkConfiguration
@@ -31,14 +33,12 @@
     return instance;
 }
 
-
-
-- (id)init{
+- (id) init{
     self = [super init];
     return self;
 }
 
-- (id<BBAAuthenticator>)authenticator{
+- (id<BBAAuthenticator>) authenticator{
     if (!_authenticator) {
         _authenticator = [BBADefaultAuthenticator new];
     }
@@ -53,7 +53,7 @@
     [self setAuthenticator:authenticator];
 }
 
--(id<BBAResponseMapping>) responseMapperForServiceName:(NSString *)name{
+- (id<BBAResponseMapping>) responseMapperForServiceName:(NSString *)name{
     if ([name isEqualToString:kBBAAuthServiceName]) {
         return [BBAAuthResponseMapper new];
     }
@@ -66,21 +66,32 @@
     return nil;
 }
 
-- (NSURL *)baseURLForDomain:(BBAAPIDomain)domain{
-    NSURL *baseURL = nil;
-    switch (domain) {
-        case BBAAPIDomainAuthentication:
-            baseURL = [NSURL URLWithString:@"https://auth.blinkboxbooks.com"];
-            break;
-        case BBAAPIDomainREST:
-            baseURL = [NSURL URLWithString:@"https://api.blinkboxbooks.com"];
-            break;
-            
-        default:
-            break;
+- (NSMutableDictionary *) endpoints{
+    
+    if (_endpoints) {
+        return _endpoints;
     }
+    
+    _endpoints = [NSMutableDictionary new];
+    _endpoints[@(BBAAPIDomainREST)] = [NSURL URLWithString:@"https://api.blinkboxbooks.com"];
+    _endpoints[@(BBAAPIDomainAuthentication)] = [NSURL URLWithString:@"https://auth.blinkboxbooks.com"];
+    
+    return _endpoints;
+}
+
+- (NSURL *) baseURLForDomain:(BBAAPIDomain)domain{
+    
+    NSURL *baseURL = self.endpoints[@(domain)];
+    
     NSAssert(baseURL, @"No baseURL for domain %ld", domain);
+    
     return baseURL;
+}
+
+- (void) setBaseURL:(NSURL *)baseURL forDomain:(BBAAPIDomain)domain{
+    NSParameterAssert(baseURL);
+    
+    self.endpoints[@(domain)] = baseURL;
 }
 
 @end
