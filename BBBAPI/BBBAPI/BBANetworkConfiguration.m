@@ -13,40 +13,47 @@
 #import "BBAAuthenticationServiceConstants.h"
 #import "BBADefaultAuthenticator.h"
 
+@interface BBANetworkConfiguration ()
+
+@property (nonatomic, strong) id<BBAAuthenticator> authenticator;
+
+@end
+
 @implementation BBANetworkConfiguration
 
-+ (instancetype)defaultConfiguration{
++ (instancetype) defaultConfiguration{
     
-    static BBANetworkConfiguration *sharedInstance = nil;
-    
+    static id instance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        sharedInstance = [[self alloc] init];
+        instance = [[[self class] alloc] init];
     });
-    return sharedInstance;
+    return instance;
 }
 
 
 
 - (id)init{
     self = [super init];
-    self.authenticator = [BBADefaultAuthenticator new];
     return self;
+}
+
+- (id<BBAAuthenticator>)authenticator{
+    if (!_authenticator) {
+        _authenticator = [BBADefaultAuthenticator new];
+    }
+    return _authenticator;
 }
 
 - (id<BBAAuthenticator>) sharedAuthenticator{
     return [self authenticator];
 }
 
-+ (void) setSharedAuthenticator:(id<BBAAuthenticator>) authenticator{
-    [[self defaultConfiguration ]setAuthenticator:authenticator];
+- (void) setSharedAuthenticator:(id<BBAAuthenticator>) authenticator{
+    [self setAuthenticator:authenticator];
 }
 
-- (void) assignDefaultMapper{
-    //    [self setReponseMapper:[BBAAuthResponseMapper new] forServiceName:kAuthServiceName];
-}
-
-+ (id<BBAResponseMapping>)responseMapperForServiceName:(NSString *)name{
+-(id<BBAResponseMapping>) responseMapperForServiceName:(NSString *)name{
     if ([name isEqualToString:kBBAAuthServiceName]) {
         return [BBAAuthResponseMapper new];
     }

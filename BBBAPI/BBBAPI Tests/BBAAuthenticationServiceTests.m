@@ -10,37 +10,84 @@
 #import "BBAUserDetails.h"
 #import "BBAClientDetails.h"
 #import "BBAAuthData.h"
+#import "BBASwizzlingHelper.h"
 #import "BBAAuthenticationServiceConstants.h"
 #import "BBAAPIErrors.h"
 #import "BBANetworkConfiguration.h"
 #import "BBAAuthenticator.h"
+#import "BBADefaultAuthenticator.h"
 
 #define BBAAssertAuthResponseErrorCode(authData,error,errorCode)\
 XCTAssertNil(authData);\
 XCTAssertEqualObjects(error.domain, kBBAAuthServiceName);\
 XCTAssertEqual(error.code, errorCode);
 
-@interface BBAAuthenticationServiceTests : XCTestCase
+@interface BBAMockAuthNetworkConfiguration : BBANetworkConfiguration
+
+@end
+
+@implementation BBAMockAuthNetworkConfiguration
+
+@end
+
+@interface BBAMockTestAuthenticator : BBADefaultAuthenticator
+@end
+
+@implementation BBAMockTestAuthenticator
+
+@end
+
+
+@interface BBAAuthenticationServiceTests : XCTestCase{
+    BBAAuthenticationService *service;
+    BBAMockAuthNetworkConfiguration *configuration;
+    BBAMockTestAuthenticator *authenticator;
+    
+    IMP oldImplementation;
+    id (^block)(id);
+}
 
 @end
 
 @implementation BBAAuthenticationServiceTests
 
-BBAAuthenticationService *service;
+#pragma mark - Setup/TearDown
 
 - (void) setUp{
     [super setUp];
+    configuration = [BBAMockAuthNetworkConfiguration new];
+    authenticator = [BBAMockTestAuthenticator new];
+    [configuration setValue:authenticator forKeyPath:@"authenticator"];
+    __weak typeof(configuration) wconfiguration = configuration;
+    block = ^id(id o){
+        return wconfiguration;
+    };
+    
+    Class c = [BBANetworkConfiguration class];
+    c = object_getClass((id)c);
+    SEL selector = @selector(defaultConfiguration);
+    Method originalMethod = class_getClassMethod(c, selector);
+    IMP newImplementation = imp_implementationWithBlock(block);
+    oldImplementation = method_setImplementation(originalMethod, newImplementation);
     service = [BBAAuthenticationService new];
 
 
 }
+
 - (void) tearDown{
-    [self resetDefaultAuthenticatorUserAndClient];
+    Class c = [BBANetworkConfiguration class];
+    c = object_getClass((id)c);
+    SEL selector = @selector(defaultConfiguration);
+    Method originalMethod = class_getInstanceMethod(c,selector);
+    class_replaceMethod(c, selector, oldImplementation, method_getTypeEncoding(originalMethod));
     service = nil;
+    authenticator = nil;
+    block = nil;
     [super tearDown];
 }
 
 #pragma mark - Tests that do not call Live API's
+
 - (void) testRegisterUserAndClientWithNilClient{
     BBA_DISABLE_ASSERTIONS();
     BBAUserDetails *user = [self validRegistrationUser];
@@ -307,7 +354,7 @@ BBAAuthenticationService *service;
 
 #pragma mark - Tests that call Live API's
 
-#if 0
+#if 1
 
 - (void) testRegisterUserAndClient{
     BBAUserDetails *user = [self validRegistrationUser];
@@ -542,9 +589,9 @@ BBAAuthenticationService *service;
 #endif
 
 #pragma mark - Helper methods
+
 - (void) prepareDefaultAuthenticatorWithValidUser:(BBAUserDetails **)user
                                         andClient:(BBAClientDetails **)client{
-    NSObject <BBAAuthenticator> *authenticator = [[BBANetworkConfiguration defaultConfiguration] sharedAuthenticator];
 
     BBAUserDetails *validuser = nil;
     BBAClientDetails *validclient = nil;
@@ -560,7 +607,6 @@ BBAAuthenticationService *service;
 }
 
 - (void) resetDefaultAuthenticatorUserAndClient{
-    NSObject <BBAAuthenticator> *authenticator = [[BBANetworkConfiguration defaultConfiguration] sharedAuthenticator];
     [authenticator setValue:nil forKey:@"currentUser"];
     [authenticator setValue:nil forKey:@"currentClient"];
 }

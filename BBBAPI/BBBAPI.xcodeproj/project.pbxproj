@@ -19,6 +19,8 @@
 		401B63C81A07D4FA0047B6D6 /* BBALibraryService.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5AD9585319A247B100E5A855 /* BBALibraryService.h */; };
 		401B63C91A07D5050047B6D6 /* BBALibraryItemLink.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5AD9585119A247B100E5A855 /* BBALibraryItemLink.h */; };
 		401B63CA1A07D5160047B6D6 /* BBALibraryTypes.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5AD9585519A247B100E5A855 /* BBALibraryTypes.h */; };
+		4054B1371A0901B200316031 /* BBANetworkConfigurationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4054B1361A0901B200316031 /* BBANetworkConfigurationTests.m */; };
+		4054B1381A0901B200316031 /* BBANetworkConfigurationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4054B1361A0901B200316031 /* BBANetworkConfigurationTests.m */; };
 		40CA6A7D19ADE2AE00BA091B /* BBATestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 40CA6A7B19ADE2A100BA091B /* BBATestHelper.m */; };
 		40CA6A7E19ADE2AF00BA091B /* BBATestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 40CA6A7B19ADE2A100BA091B /* BBATestHelper.m */; };
 		40E4050819A638270075D875 /* BBALibraryResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 40E4050219A638270075D875 /* BBALibraryResponse.h */; };
@@ -291,6 +293,7 @@
 /* Begin PBXFileReference section */
 		4012988019FA9E7200121617 /* BBAConnectionTestsMocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBAConnectionTestsMocks.h; path = "BBBAPI Tests/BBAConnectionTestsMocks.h"; sourceTree = SOURCE_ROOT; };
 		4012988119FA9E7200121617 /* BBAConnectionTestsMocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBAConnectionTestsMocks.m; path = "BBBAPI Tests/BBAConnectionTestsMocks.m"; sourceTree = SOURCE_ROOT; };
+		4054B1361A0901B200316031 /* BBANetworkConfigurationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBANetworkConfigurationTests.m; path = "BBBAPI Tests/BBANetworkConfigurationTests.m"; sourceTree = SOURCE_ROOT; };
 		40CA6A7B19ADE2A100BA091B /* BBATestHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBATestHelper.m; path = "BBBAPI Tests/BBATestHelper.m"; sourceTree = SOURCE_ROOT; };
 		40E4050219A638270075D875 /* BBALibraryResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBALibraryResponse.h; sourceTree = "<group>"; };
 		40E4050319A638270075D875 /* BBALibraryResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBALibraryResponse.m; sourceTree = "<group>"; };
@@ -598,6 +601,7 @@
 		5AD958EB19A24AEB00E5A855 /* BBBAPI Tests */ = {
 			isa = PBXGroup;
 			children = (
+				4054B1361A0901B200316031 /* BBANetworkConfigurationTests.m */,
 				40E4055519A63A850075D875 /* SampleData */,
 				40E4053719A638B70075D875 /* BBAConnectionTests.m */,
 				4012988019FA9E7200121617 /* BBAConnectionTestsMocks.h */,
@@ -1112,6 +1116,7 @@
 				40E4054119A638B70075D875 /* BBAConnectionTests.m in Sources */,
 				40E4054319A638B70075D875 /* BBALibraryResponseMapperTests.m in Sources */,
 				5A91E9FC19A4FA410079247F /* BBATokensResponseMapperTests.m in Sources */,
+				4054B1371A0901B200316031 /* BBANetworkConfigurationTests.m in Sources */,
 				4012988219FA9E7200121617 /* BBAConnectionTestsMocks.m in Sources */,
 				40E4054719A638B70075D875 /* BBAMockConnection.m in Sources */,
 				5AD9592819A2501C00E5A855 /* BBAAuthenticationServiceTests.m in Sources */,
@@ -1134,6 +1139,7 @@
 				40E4054219A638B70075D875 /* BBAConnectionTests.m in Sources */,
 				40E4054419A638B70075D875 /* BBALibraryResponseMapperTests.m in Sources */,
 				5A91E9FD19A4FA410079247F /* BBATokensResponseMapperTests.m in Sources */,
+				4054B1381A0901B200316031 /* BBANetworkConfigurationTests.m in Sources */,
 				4012988319FA9E7200121617 /* BBAConnectionTestsMocks.m in Sources */,
 				40E4054819A638B70075D875 /* BBAMockConnection.m in Sources */,
 				5AD9592919A2501C00E5A855 /* BBAAuthenticationServiceTests.m in Sources */,

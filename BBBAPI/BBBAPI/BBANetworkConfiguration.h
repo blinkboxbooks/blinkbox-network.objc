@@ -9,20 +9,30 @@
 #import <Foundation/Foundation.h>
 #import "BBAResponseMapping.h"
 #import "BBAAuthenticator.h"
+
 typedef NS_ENUM(NSInteger, BBAAPIDomain) {
     BBAAPIDomainAuthentication = 0,
     BBAAPIDomainREST = 1
 };
 
+/**
+ *  A `BBANetworkConfiguraiton` object provides default values as well as allows 
+ *  to customise basic variables of the network stack, suck as endpoints addresses, 
+ *  response mappers, objects responsible for authenticating requests and so on.
+ */
 @interface BBANetworkConfiguration : NSObject
-@property (nonatomic, strong) id<BBAAuthenticator> authenticator;
-+ (BBANetworkConfiguration *) defaultConfiguration;
-- (id<BBAAuthenticator>) sharedAuthenticator;
-+ (void) setSharedAuthenticator:(id<BBAAuthenticator>) authenticator;
-- (void) setBaseURL:(NSURL *)baseURL forDomain:(BBAAPIDomain)domain;
-- (NSURL *)baseURLForDomain:(BBAAPIDomain)domain;
 
-+ (void) setReponseMapper:(id<BBAResponseMapping>)mapper forServiceName:(NSString *)serviceName;
-+ (id<BBAResponseMapping>)responseMapperForServiceName:(NSString *)name;
+
++ (BBANetworkConfiguration *) defaultConfiguration;
+
+- (id<BBAAuthenticator>) sharedAuthenticator;
+
+-  (void) setSharedAuthenticator:(id<BBAAuthenticator>) authenticator;
+
+- (NSURL *) baseURLForDomain:(BBAAPIDomain)domain;
+
+- (void) setBaseURL:(NSURL *)baseURL forDomain:(BBAAPIDomain)domain;
+
+- (id<BBAResponseMapping>) responseMapperForServiceName:(NSString *)name;
 
 @end
