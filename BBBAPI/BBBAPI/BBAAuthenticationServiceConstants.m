@@ -77,7 +77,7 @@ NSString *const kBBAAuthServiceURLPasswordReset = @"password/reset";
             break;
     }
 
-    NSAssert([grantType length]>0, @"Grant type not found for type %i", type);
+    NSAssert([grantType length]>0, @"Grant type not found for type %ld", type);
     return grantType;
 }
 @end

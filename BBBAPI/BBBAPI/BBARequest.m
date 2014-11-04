@@ -20,16 +20,21 @@
 
 @implementation BBARequest
 
-+ (BBARequest *)requestWithURLRequest:(NSURLRequest *)request {
++ (BBARequest *) requestWithURLRequest:(NSURLRequest *)request {
     BBARequest *bbaRequest = [BBARequest new];
     bbaRequest.URLRequest = request;
-
+    
     return bbaRequest;
 }
 
 - (id) copyWithZone:(NSZone *)zone{
-#warning IMPLEMENT ME
-    return nil;
+    BBARequest *request = [BBARequest new];
+    request.URLRequest = [self.URLRequest copyWithZone:zone];
+    request.retryDelay = self.retryDelay;
+    request.lastRequestDate = [self.lastRequestDate copyWithZone:zone];
+    request.attemptsCount = self.attemptsCount;
+    request.maxAttemptsCount = self.maxAttemptsCount;
+    return request;
 }
 
 - (NSString *) description{

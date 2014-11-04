@@ -53,7 +53,10 @@
 }
 
 - (void) setSharedAuthenticator:(id<BBAAuthenticator>) authenticator{
-    [self setAuthenticator:authenticator];
+    NSParameterAssert(authenticator);
+    if (authenticator) {
+        [self setAuthenticator:authenticator];
+    }
 }
 
 - (id<BBAResponseMapping>) newResponseMapperForServiceName:(NSString *)name{

@@ -38,7 +38,7 @@ typedef NS_OPTIONS(NSInteger, BBABookmarkType) {
                    user:(BBAUserDetails *)user
              completion:(void (^)(BOOL success, NSError *error))completion;
 
-- (void) addBookMark:(BBABookmarkItem *)item
+- (void) addBookMark:(BBABookmarkItem *)bookmark
              forItem:(BBALibraryItem *)item
                 user:(BBAUserDetails *)user
           completion:(void (^)(BBABookmarkItem *bookmarkItem, NSError *error))completion;

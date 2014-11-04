@@ -42,10 +42,14 @@
     XCTAssertEqualObjects([[configuration sharedAuthenticator] class], [BBADefaultAuthenticator class]);
 }
 
-- (void) testSettingSharedAuthenticator{
+- (void) testSettingSharedAuthenticatorRetains{
     id<BBAAuthenticator> authenticator = (id<BBAAuthenticator>) [NSObject new];
     [configuration setSharedAuthenticator:authenticator];
     XCTAssertEqualObjects([configuration sharedAuthenticator], authenticator);
+}
+
+- (void) testSetttingSharedAuthenticatorWhenTryingToSetNil{
+    XCTAssertThrows([configuration setSharedAuthenticator:nil]);
 }
 
 - (void) testBaseURLForAuthenticationDomainReturnsProperValue{
