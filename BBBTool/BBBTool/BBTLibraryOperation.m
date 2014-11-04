@@ -11,6 +11,7 @@
 #import <BBBAPI/BBBAPI.h>
 
 @implementation BBTLibraryOperation
+
 + (instancetype) libraryContentsOperation{
     
     NSMutableString *help = [NSMutableString string];
@@ -65,7 +66,7 @@
                       }];
     
     
-    dispatch_time_t timeoutTime = dispatch_time(DISPATCH_TIME_NOW, 10000.0 * NSEC_PER_SEC);
+    dispatch_time_t timeoutTime = dispatch_time(DISPATCH_TIME_NOW, 10.0 * NSEC_PER_SEC);
     dispatch_semaphore_wait(bbb_test_semaphore, timeoutTime);
     
 }

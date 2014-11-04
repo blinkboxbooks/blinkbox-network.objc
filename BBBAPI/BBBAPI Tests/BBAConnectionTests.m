@@ -155,6 +155,41 @@ extern NSString * BBANSStringFromBBAContentType(BBAContentType type);
     XCTAssertThrows([connection addParameterWithKey:@"key" value:(NSString *)@0]);
 }
 
+- (void) testSetParameterThrowsWithNilKey{
+    XCTAssertThrows([connection setParameterValue:@"value" withKey:nil]);
+}
+
+- (void) testSetParameterWithValueAddsItToRequestParameters{
+    [connection setParameterValue:@"value" withKey:@"key"];
+    factory.requestToReturn = [BBARequest new];
+    [connection perform:(BBAHTTPMethodGET)
+             completion:^(id response, NSError *error) {
+                 
+             }];
+    XCTAssertEqualObjects(factory.passedParameters, @{@"key" : @"value"});
+}
+
+- (void) testSetParameterWithoutValueRemovesItFromRequestParameters{
+    [connection setParameterValue:@"value" withKey:@"key"];
+    [connection setParameterValue:nil withKey:@"key"];
+    factory.requestToReturn = [BBARequest new];
+    [connection perform:(BBAHTTPMethodGET)
+             completion:^(id response, NSError *error) {
+                 
+             }];
+    XCTAssertEqualObjects(factory.passedParameters, @{});
+}
+
+- (void) testSetParameterWithoutValueDoesntAddItToRequestParameters{
+    [connection setParameterValue:nil withKey:@"key"];
+    factory.requestToReturn = [BBARequest new];
+    [connection perform:(BBAHTTPMethodGET)
+             completion:^(id response, NSError *error) {
+                 
+             }];
+    XCTAssertEqualObjects(factory.passedParameters, @{});
+}
+
 
 - (void) testPerformThrowsWithoutCompletion{
     XCTAssertThrows([connection perform:(BBAHTTPMethodGET) completion:nil]);
@@ -248,7 +283,7 @@ extern NSString * BBANSStringFromBBAContentType(BBAContentType type);
     }];
 }
 
-- (void) testConnectionRetuensDataAndErrorFromResponseMapper{
+- (void) testConnectionReturnsDataAndErrorFromResponseMapper{
     connection.session = session;
     session.taskToReturn = task;
     connection.responseMapper = responseMapper;
