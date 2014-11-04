@@ -8,6 +8,8 @@
 
 #import "BBANetworkConfiguration.h"
 #import "BBADefaultAuthenticator.h"
+#import "BBALibraryService.h"
+#import "BBAAuthenticationServiceConstants.h"
 
 @interface BBANetworkConfigurationTests : XCTestCase{
     BBANetworkConfiguration *configuration;
@@ -68,6 +70,28 @@
 
 - (void) testCustmisingBaseURLThrowsForNilParameter{
     XCTAssertThrows([configuration setBaseURL:nil forDomain:(BBAAPIDomainREST)]);
+}
+
+- (void) testDefaultResponseMapperForServices{
+    NSArray *expectedMapping = (@[
+                                  @{kBBAAuthServiceName : @"BBAAuthResponseMapper"},
+                                  @{kBBAAuthServiceTokensName : @"BBATokensResponseMapper"},
+                                  @{kBBAAuthServiceClientsName : @"BBAClientsResponseMapper"},
+                                  @{BBALibraryServiceName : @"BBALibraryResponseMapper"},
+                                  @{BBAStatusResponseServiceName : @"BBAStatusResponseMapper"},
+                                  ]);
+    
+    for (NSDictionary *serviceDict in expectedMapping) {
+        NSString *serviceName = [serviceDict.allKeys firstObject];
+        id mapper = [configuration newResponseMapperForServiceName:serviceName];
+        NSString *mapperClassName = NSStringFromClass([mapper class]);
+        XCTAssertEqualObjects(serviceDict[serviceName], mapperClassName);
+    }
+    
+}
+
+- (void) testThrowsOnGettingReponseMapperFromUnknownService{
+    XCTAssertThrows([configuration newResponseMapperForServiceName:@"service"]);
 }
 
 @end

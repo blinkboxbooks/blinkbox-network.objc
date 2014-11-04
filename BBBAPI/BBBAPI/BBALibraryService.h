@@ -11,6 +11,9 @@
 
 extern NSString *const BBALibraryServiceErrorDomain;
 
+extern NSString *const BBALibraryServiceName;
+extern NSString *const BBAStatusResponseServiceName;
+
 @class BBALibraryItem;
 @class BBAUserDetails;
 

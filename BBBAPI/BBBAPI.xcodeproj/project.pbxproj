@@ -597,7 +597,6 @@
 			isa = PBXGroup;
 			children = (
 				4054B1361A0901B200316031 /* BBANetworkConfigurationTests.m */,
-				40E4055519A63A850075D875 /* SampleData */,
 				40E4053719A638B70075D875 /* BBAConnectionTests.m */,
 				4012988019FA9E7200121617 /* BBAConnectionTestsMocks.h */,
 				4012988119FA9E7200121617 /* BBAConnectionTestsMocks.m */,
@@ -621,6 +620,7 @@
 				5AD9592119A2501C00E5A855 /* BBAMockAssertionHandler.h */,
 				5AD9592219A2501C00E5A855 /* BBAMockAssertionHandler.m */,
 				5AD9592319A2501C00E5A855 /* BBATestMacros.h */,
+				40E4055519A63A850075D875 /* SampleData */,
 				5AD958EC19A24AEB00E5A855 /* Supporting Files */,
 			);
 			name = "BBBAPI Tests";

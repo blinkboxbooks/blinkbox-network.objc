@@ -12,6 +12,9 @@
 #import "BBAClientsResponseMapper.h"
 #import "BBAAuthenticationServiceConstants.h"
 #import "BBADefaultAuthenticator.h"
+#import "BBALibraryResponseMapper.h"
+#import "BBAStatusResponseMapper.h"
+#import "BBALibraryService.h"
 
 @interface BBANetworkConfiguration ()
 
@@ -53,16 +56,23 @@
     [self setAuthenticator:authenticator];
 }
 
-- (id<BBAResponseMapping>) responseMapperForServiceName:(NSString *)name{
+- (id<BBAResponseMapping>) newResponseMapperForServiceName:(NSString *)name{
     if ([name isEqualToString:kBBAAuthServiceName]) {
         return [BBAAuthResponseMapper new];
     }
-    if ([name isEqualToString:kBBAAuthServiceTokensName]) {
+    else if ([name isEqualToString:kBBAAuthServiceTokensName]) {
         return [BBATokensResponseMapper new];
     }
-    if ([name isEqualToString:kBBAAuthServiceClientsName]) {
+    else if ([name isEqualToString:kBBAAuthServiceClientsName]) {
         return [BBAClientsResponseMapper new];
     }
+    else if ([name isEqualToString:BBALibraryServiceName]) {
+        return [BBALibraryResponseMapper new];
+    }
+    else if ([name isEqualToString:BBAStatusResponseServiceName]) {
+        return [BBAStatusResponseMapper new];
+    }
+    NSAssert(NO, @"unexpected service name : %@", name);
     return nil;
 }
 

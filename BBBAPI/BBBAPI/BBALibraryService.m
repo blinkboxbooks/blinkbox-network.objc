@@ -10,18 +10,21 @@
 #import "BBAConnection.h"
 #import "BBALibraryItem.h"
 #import "BBAServerDateFormatter.h"
+#import "BBANetworkConfiguration.h"
 #import "BBALibraryResponse.h"
 #import "BBAMacros.h"
 #import "BBALibraryResponse.h"
-#import "BBAStatusResponseMapper.h"
-#import "BBALibraryResponseMapper.h"
 #import "BBAAPIErrors.h"
 
+
+NSString *const BBALibraryServiceName = @"com.BBA.libraryService";
+NSString *const BBAStatusResponseServiceName = @"com.BBA.stastusResponseMapper";
 NSString *const BBALibraryServiceErrorDomain = @"BBA.error.libraryServiceDomain";
 
 @interface BBALibraryService ()
 @property (nonatomic, strong) NSDateFormatter *dateFormatter;
 @property (nonatomic, copy, readonly) NSString *libraryEndpoint;
+@property (nonatomic, strong) BBANetworkConfiguration *configuration;
 
 @end
 
@@ -55,7 +58,7 @@ NSString *const BBALibraryServiceErrorDomain = @"BBA.error.libraryServiceDomain"
     BBAConnection *connection = [[BBAConnection alloc] initWithDomain:(BBAAPIDomainREST)
                                                           relativeURL:[self libraryEndpoint]];
     
-    connection.responseMapper = [BBALibraryResponseMapper new];
+    connection.responseMapper = [self.configuration newResponseMapperForServiceName:BBALibraryServiceName];
     
     if (date) {
         
@@ -98,7 +101,7 @@ NSString *const BBALibraryServiceErrorDomain = @"BBA.error.libraryServiceDomain"
     BBAConnection *connection = [[BBAConnection alloc] initWithDomain:(BBAAPIDomainREST)
                                                           relativeURL:relativeURL];
     
-    connection.responseMapper = [BBALibraryResponseMapper new];
+    connection.responseMapper = [self.configuration newResponseMapperForServiceName:BBALibraryServiceName];
     
     [connection perform:(BBAHTTPMethodGET)
                 forUser:user
@@ -130,7 +133,7 @@ NSString *const BBALibraryServiceErrorDomain = @"BBA.error.libraryServiceDomain"
     
     connection.contentType = BBAContentTypeJSON;
     
-    connection.responseMapper = [BBAStatusResponseMapper new];
+    connection.responseMapper = [self.configuration newResponseMapperForServiceName:BBAStatusResponseServiceName];
     
     NSString *newStatus = BBANSStringFromReadingStatus(status);
     
@@ -183,7 +186,7 @@ NSString *const BBALibraryServiceErrorDomain = @"BBA.error.libraryServiceDomain"
     
     connection.contentType = BBAContentTypeJSON;
     
-    connection.responseMapper = [BBAStatusResponseMapper new];
+    connection.responseMapper = [self.configuration newResponseMapperForServiceName:BBAStatusResponseServiceName];
     
     if (action == BBAItemActionArchive || action == BBAItemActionUnarchive) {
         [connection addParameterWithKey:@"libraryItemId" value:item.identifier];
@@ -244,7 +247,7 @@ NSString *const BBALibraryServiceErrorDomain = @"BBA.error.libraryServiceDomain"
     
     connection.contentType = BBAContentTypeJSON;
     
-    connection.responseMapper = [BBAStatusResponseMapper new];
+    connection.responseMapper = [self.configuration newResponseMapperForServiceName:BBAStatusResponseServiceName];
     
     [connection addParameterWithKey:@"isbn" value:item.isbn];
     
@@ -264,7 +267,7 @@ NSString *const BBALibraryServiceErrorDomain = @"BBA.error.libraryServiceDomain"
     BBAConnection *connection = [[BBAConnection alloc] initWithDomain:(BBAAPIDomainREST)
                                                           relativeURL:relativeURL];
     
-    connection.responseMapper = [BBALibraryResponseMapper new];
+    connection.responseMapper = [self.configuration newResponseMapperForServiceName:BBALibraryServiceName];
     [connection perform:(BBAHTTPMethodGET)
                 forUser:user
              completion:^(BBALibraryResponse *response, NSError *error) {
@@ -279,7 +282,7 @@ NSString *const BBALibraryServiceErrorDomain = @"BBA.error.libraryServiceDomain"
     BBAConnection *connection = [[BBAConnection alloc] initWithDomain:(BBAAPIDomainREST)
                                                           relativeURL:relativeURL];
     
-    connection.responseMapper = [BBALibraryResponseMapper new];
+    connection.responseMapper = [self.configuration newResponseMapperForServiceName:BBALibraryServiceName];
     
     [connection perform:(BBAHTTPMethodGET)
                 forUser:user
@@ -295,6 +298,14 @@ NSString *const BBALibraryServiceErrorDomain = @"BBA.error.libraryServiceDomain"
         _dateFormatter = [BBAServerDateFormatter new];
     }
     return _dateFormatter;
+}
+
+- (BBANetworkConfiguration *) configuration{
+    if (!_configuration) {
+        _configuration = [BBANetworkConfiguration defaultConfiguration];
+    }
+    
+    return _configuration;
 }
 
 #pragma mark - Private

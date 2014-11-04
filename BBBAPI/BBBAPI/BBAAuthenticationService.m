@@ -28,9 +28,9 @@
     if (self = [super init]) {
         BBANetworkConfiguration *configuration;
         configuration = [BBANetworkConfiguration defaultConfiguration];
-        self.authResponseMapper = [configuration responseMapperForServiceName:kBBAAuthServiceName];
-        self.tokensResponseMapper = [configuration responseMapperForServiceName:kBBAAuthServiceTokensName];
-        self.clientsResponseMapper = [configuration responseMapperForServiceName:kBBAAuthServiceClientsName];
+        self.authResponseMapper = [configuration newResponseMapperForServiceName:kBBAAuthServiceName];
+        self.tokensResponseMapper = [configuration newResponseMapperForServiceName:kBBAAuthServiceTokensName];
+        self.clientsResponseMapper = [configuration newResponseMapperForServiceName:kBBAAuthServiceClientsName];
 
         BBALog(@"AuthenticationService Initialised");
     }

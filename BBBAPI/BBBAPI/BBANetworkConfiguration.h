@@ -33,6 +33,6 @@ typedef NS_ENUM(NSInteger, BBAAPIDomain) {
 
 - (void) setBaseURL:(NSURL *)baseURL forDomain:(BBAAPIDomain)domain;
 
-- (id<BBAResponseMapping>) responseMapperForServiceName:(NSString *)name;
+- (id<BBAResponseMapping>) newResponseMapperForServiceName:(NSString *)name;
 
 @end
