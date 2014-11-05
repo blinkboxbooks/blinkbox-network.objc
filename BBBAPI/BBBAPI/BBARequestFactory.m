@@ -44,21 +44,16 @@ NSString *const BBARequestFactoryDomain = @"com.BBA.requestFactoryErrorDomain";
         NSData *body = [self bodyFromParameters:parameters
                                     contentType:contentType
                                           error:&bodyError];
+
         if (!body) {
+            [self handleError:error
+                     withCode:BBARequestFactoryErrorCouldNotCreateRequest
+              underlyingError:bodyError];
 
-            if (error) {
-                NSDictionary *userInfo;
-                if (bodyError) {
-                    userInfo = @{NSUnderlyingErrorKey : bodyError};
-                }
+            return nil;
 
-                *error =  [NSError errorWithDomain:BBARequestFactoryDomain
-                                              code:BBARequestFactoryErrorCouldNotCreateRequest
-                                          userInfo:userInfo];
-
-                return nil;
-            }
         }
+        
         [request setHTTPBody:body];
         [request setURL:url];
 
@@ -69,6 +64,22 @@ NSString *const BBARequestFactoryDomain = @"com.BBA.requestFactoryErrorDomain";
     [request setAllHTTPHeaderFields:headers];
     
     return [BBARequest requestWithURLRequest:request];
+}
+
+- (void) handleError:(NSError **)error
+            withCode:(BBARequestFactoryError)code
+     underlyingError:(NSError *)underlyingError{
+
+    if (error) {
+        NSDictionary *userInfo;
+        if (underlyingError) {
+            userInfo = @{NSUnderlyingErrorKey : underlyingError};
+        }
+
+        *error =  [NSError errorWithDomain:BBARequestFactoryDomain
+                                      code:code
+                                  userInfo:userInfo];
+    }
 }
 
 #pragma mark - Private Methods
