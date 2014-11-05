@@ -215,9 +215,16 @@
                                    method:BBAHTTPMethodPOST
                               contentType:BBAContentTypeJSON
                                     error:nil];
-    NSData *expectedData = [@"{\"key1\":\"value1\",\"key2\":\"value2\"}"
-                            dataUsingEncoding:NSUTF8StringEncoding];
-    XCTAssertEqualObjects(expectedData, request.URLRequest.HTTPBody);
+    NSDictionary *expectedDicionary;
+    expectedDicionary = @{@"key1":@"value1",@"key2":@"value2"};
+
+    NSDictionary *resultDictionary;
+    resultDictionary = [NSJSONSerialization JSONObjectWithData:request.URLRequest.HTTPBody
+                                                       options:NSJSONReadingAllowFragments
+                                                         error:nil];
+
+
+    XCTAssertTrue([resultDictionary isEqualToDictionary:expectedDicionary]);
 
 }
 
@@ -230,9 +237,16 @@
                               contentType:BBAContentTypeJSON
                                     error:nil];
 
-    NSData *expectedData = [@"{\"key1\":\"value1\",\"key2\":\"value2\"}"
-                            dataUsingEncoding:NSUTF8StringEncoding];
-    XCTAssertEqualObjects(expectedData, request.URLRequest.HTTPBody);
+    NSDictionary *expectedDicionary;
+    expectedDicionary = @{@"key1":@"value1",@"key2":@"value2"};
+
+    NSDictionary *resultDictionary;
+    resultDictionary = [NSJSONSerialization JSONObjectWithData:request.URLRequest.HTTPBody
+                                                       options:NSJSONReadingAllowFragments
+                                                         error:nil];
+
+
+    XCTAssertTrue([resultDictionary isEqualToDictionary:expectedDicionary]);
 }
 
 - (void) testRequestFactoryAddsParamatersToBodyForPUTRequests{
@@ -244,9 +258,16 @@
                               contentType:BBAContentTypeJSON
                                     error:nil];
 
-    NSData *expectedData = [@"{\"key1\":\"value1\",\"key2\":\"value2\"}"
-                            dataUsingEncoding:NSUTF8StringEncoding];
-    XCTAssertEqualObjects(expectedData, request.URLRequest.HTTPBody);
+    NSDictionary *expectedDicionary;
+    expectedDicionary = @{@"key1":@"value1",@"key2":@"value2"};
+
+    NSDictionary *resultDictionary;
+    resultDictionary = [NSJSONSerialization JSONObjectWithData:request.URLRequest.HTTPBody
+                                                       options:NSJSONReadingAllowFragments
+                                                         error:nil];
+
+
+    XCTAssertTrue([resultDictionary isEqualToDictionary:expectedDicionary]);
 }
 
 - (void) testRequestFactoryAddsHeadersToRequests{
