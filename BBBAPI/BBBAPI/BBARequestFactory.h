@@ -26,14 +26,14 @@ typedef NS_ENUM(NSInteger, BBARequestFactoryError) {
 /**
  *  Construct a `BBARequest` given a set of input parameters
  *
- *  @param url         `NSURL` to request
+ *  @param url         `NSURL` to request (required, must not be nil)
  *  @param parameters  `NSDictionary` of request parameters. Values should be `NSString` or\
     `NSArray` objects. `NSArray` objects are constructed as follows for GET requests:\
-    key=value1&key=value2 etc
- *  @param headers     `NSDictionary` of header values
- *  @param method      `BBAHTTPMethod` e.g. `BBAHTTPMethodGET`. See `BBAHTTPMethod` for list.
- *  @param contentType `BBAContentType` e.g. `BBAContentTypeJSON`. see `BBAContentType`.
- *  @param error       `NSError` that will be set if there was an error constructing the `BBARequest`
+    key=value1&key=value2 etc (optional, may be nil)
+ *  @param headers     `NSDictionary` of header values. Header values must be `NSString` (optional)
+ *  @param method      `BBAHTTPMethod` e.g. `BBAHTTPMethodGET`. See `BBAHTTPMethod` for list. (required)
+ *  @param contentType `BBAContentType` e.g. `BBAContentTypeJSON`. see `BBAContentType`. (required)
+ *  @param error       `NSError` that will be set if there was an error constructing the `BBARequest` (optional, may be nil)
  *
  *  @return `BBARequest` containing specified parameters, or `nil` if an error occurred.
  */
