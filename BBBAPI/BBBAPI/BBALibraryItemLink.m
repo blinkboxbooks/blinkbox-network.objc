@@ -9,5 +9,21 @@
 #import "BBALibraryItemLink.h"
 
 @implementation BBALibraryItemLink
+/*
+ @property (nonatomic, copy) NSString *relationship;
+ @property (nonatomic, copy) NSString *address;
+ @property (nonatomic, copy) NSString *title;
+ */
 
+- (NSString *) description{
+    NSString *newLine = @"\n";
+    return [NSString stringWithFormat:@"%@ %@title: %@%@relation: %@%@address: %@",
+            [super description],
+            newLine,
+            self.title,
+            newLine,
+            self.relationship,
+            newLine,
+            self.address];
+}
 @end

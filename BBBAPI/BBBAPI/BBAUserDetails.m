@@ -9,4 +9,10 @@
 #import "BBAUserDetails.h"
 
 @implementation BBAUserDetails
+- (NSString *) description{
+    return [NSString stringWithFormat:@"%@, \rfirst name:%@, \rlast name: %@, \remail:%@, \rpassword: %@, \ridentifier: %@, \raccepts T&C: %d, \rallowsMarketing: %d, \rrefresh token: %@", [super description],
+            self.firstName, self.lastName, self.email, self.password, self.identifier,
+            self.acceptsTermsAndConditions, self.allowMarketing, self.refreshToken];
+
+}
 @end

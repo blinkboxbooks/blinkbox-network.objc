@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		401B63BF1A07D1460047B6D6 /* BBTLibraryOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 401B63BE1A07D1460047B6D6 /* BBTLibraryOperation.m */; };
 		5AD957AE19A2422A00E5A855 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AD957AD19A2422A00E5A855 /* Foundation.framework */; };
 		5AD957B119A2422A00E5A855 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD957B019A2422A00E5A855 /* main.m */; };
 		5AD957B519A2422A00E5A855 /* BBBTool.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5AD957B419A2422A00E5A855 /* BBBTool.1 */; };
@@ -32,6 +33,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		401B63BD1A07D1460047B6D6 /* BBTLibraryOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBTLibraryOperation.h; sourceTree = "<group>"; };
+		401B63BE1A07D1460047B6D6 /* BBTLibraryOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBTLibraryOperation.m; sourceTree = "<group>"; };
 		5AD957AA19A2422A00E5A855 /* BBBTool */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BBBTool; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AD957AD19A2422A00E5A855 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5AD957B019A2422A00E5A855 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -105,6 +108,8 @@
 				5AD959B519A26EE200E5A855 /* BBTArgument.m */,
 				5AD959B719A2725600E5A855 /* BBTLoginOperation.h */,
 				5AD959B819A2725600E5A855 /* BBTLoginOperation.m */,
+				401B63BD1A07D1460047B6D6 /* BBTLibraryOperation.h */,
+				401B63BE1A07D1460047B6D6 /* BBTLibraryOperation.m */,
 			);
 			path = BBBTool;
 			sourceTree = "<group>";
@@ -169,6 +174,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				401B63BF1A07D1460047B6D6 /* BBTLibraryOperation.m in Sources */,
 				5AD959B019A26E2000E5A855 /* BBTTool.m in Sources */,
 				5AD959BC19A33E7100E5A855 /* BBTLog.m in Sources */,
 				5AD959B619A26EE200E5A855 /* BBTArgument.m in Sources */,

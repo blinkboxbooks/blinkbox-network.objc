@@ -9,7 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "BBALibraryTypes.h"
 
-extern NSString * BBANSStringFromBBAReadingStatus(BBAReadingStatus status);
+extern NSString * BBANSStringFromReadingStatus(BBAReadingStatus status);
+extern NSString * BBANSStringFromPurchaseStatus(BBAPurchaseStatus status);
+extern NSString * BBANSStringFromVisibiliyStatus(BBAVisiblityStatus status);
 
 /**
  *  Object that represents data sent from the server via library service.

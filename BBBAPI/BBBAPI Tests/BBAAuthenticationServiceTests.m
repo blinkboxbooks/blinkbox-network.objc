@@ -306,8 +306,9 @@ BBAAuthenticationService *service;
 }
 
 #pragma mark - Tests that call Live API's
+
 #if 0
-//This creates an account on prod.
+
 - (void) testRegisterUserAndClient{
     BBAUserDetails *user = [self validRegistrationUser];
     BBAClientDetails *client = [self validRegistrationClient];
@@ -319,7 +320,6 @@ BBAAuthenticationService *service;
     }];
     BBA_WAIT_FOR_SEMAPHORE();
 }
-#endif
 
 - (void) testRegisterClientAndDeleteClient{
     BBAUserDetails *user = [self validUserDetails];
@@ -538,6 +538,8 @@ BBAAuthenticationService *service;
     BBA_WAIT_FOR_SEMAPHORE();
     
 }
+
+#endif
 
 #pragma mark - Helper methods
 - (void) prepareDefaultAuthenticatorWithValidUser:(BBAUserDetails **)user

@@ -19,14 +19,27 @@
 @end
 
 @implementation BBARequest
+
 + (BBARequest *)requestWithURLRequest:(NSURLRequest *)request {
     BBARequest *bbaRequest = [BBARequest new];
     bbaRequest.URLRequest = request;
 
     return bbaRequest;
 }
+
 - (id) copyWithZone:(NSZone *)zone{
 #warning IMPLEMENT ME
     return nil;
 }
+
+- (NSString *) description{
+    return [NSString stringWithFormat:@"%@ request %@, delay:%f, last request :%@, attempts %ld out of %ld",
+            [super description],
+            self.URLRequest,
+            self.retryDelay,
+            self.lastRequestDate,
+            self.attemptsCount,
+            self.maxAttemptsCount];
+}
+
 @end

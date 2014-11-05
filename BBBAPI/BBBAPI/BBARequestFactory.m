@@ -21,39 +21,39 @@ NSString *const BBARequestFactoryDomain = @"com.BBA.requestFactoryErrorDomain";
                       method:(BBAHTTPMethod)method
                  contentType:(BBAContentType)contentType
                        error:(NSError **)error{
-
+    
     NSParameterAssert(url);
-
+    
     BOOL headersValid = [self headersValid:headers];
     NSAssert(headersValid, @"Headers not valid");
     BOOL parametersValid = [self parametersValid:parameters];
     NSAssert(parametersValid, @"Parameters not valid");
-
+    
     if (!headersValid) {
         [self handleError:error
                  withCode:BBARequestFactoryErrorHeadersInvalid
           underlyingError:nil];
         return nil;
     }
-
+    
     if (!parametersValid) {
         [self handleError:error
                  withCode:BBARequestFactoryErrorParametersInvalid
           underlyingError:nil];
         return nil;
     }
-
+    
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-
+    
     //Construct body or url params
     if(method == BBAHTTPMethodGET) {
-
+        
         if([parameters count] >0) {
             NSString *queryString = [NSString stringWithFormat:@"?%@",
                                      [self constructURLEncodedBodyString:parameters]];
             NSURL *paramaterURL = [NSURL URLWithString:queryString relativeToURL:url];
             [request setURL:paramaterURL];
-
+            
         }
         else {
             [request setURL:url];
@@ -64,19 +64,19 @@ NSString *const BBARequestFactoryDomain = @"com.BBA.requestFactoryErrorDomain";
         NSData *body = [self bodyFromParameters:parameters
                                     contentType:contentType
                                           error:&bodyError];
-
+        
         if (!body) {
             [self handleError:error
                      withCode:BBARequestFactoryErrorCouldNotCreateRequest
               underlyingError:bodyError];
-
+            
             return nil;
-
+            
         }
-
+        
         [request setHTTPBody:body];
         [request setURL:url];
-
+        
     }
     NSString *HTTPMethod = [self httpMethodStringForHTTPMethod:method];
     NSAssert(HTTPMethod, @"Bad HTTPMethod");
@@ -93,36 +93,36 @@ NSString *const BBARequestFactoryDomain = @"com.BBA.requestFactoryErrorDomain";
 - (BOOL) parametersValid:(NSDictionary *)headers{
     BOOL stringsValid = [self dictionary:headers containsOnlyInstancesOfClass:[NSString class]];
     BOOL arraysValid = [self dictionary:headers containsOnlyInstancesOfClass:[NSArray class]];
-
+    
     BOOL allValid = stringsValid || arraysValid;
-
+    
     return allValid;
 }
 
 - (BOOL) dictionary:(NSDictionary *)dictionary containsOnlyInstancesOfClass:(Class)class{
     __block BOOL valid = YES;
-
+    
     [dictionary enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
-
+        
         if (![obj isKindOfClass:class]) {
             valid = NO;
             *stop = YES;
         }
     }];
-
+    
     return valid;
 }
 
 - (void) handleError:(NSError **)error
             withCode:(BBARequestFactoryError)code
      underlyingError:(NSError *)underlyingError{
-
+    
     if (error) {
         NSDictionary *userInfo;
         if (underlyingError) {
             userInfo = @{NSUnderlyingErrorKey : underlyingError};
         }
-
+        
         *error =  [NSError errorWithDomain:BBARequestFactoryDomain
                                       code:code
                                   userInfo:userInfo];
@@ -134,7 +134,7 @@ NSString *const BBARequestFactoryDomain = @"com.BBA.requestFactoryErrorDomain";
 - (NSData *) bodyFromParameters:(NSDictionary *)parameters
                     contentType:(BBAContentType)contentType
                           error:(NSError * __autoreleasing *)error {
-
+    
     if(contentType == BBAContentTypeURLEncodedForm) {
         return [[self constructURLEncodedBodyString:parameters] dataUsingEncoding:NSUTF8StringEncoding];
     }
@@ -159,7 +159,7 @@ NSString *const BBARequestFactoryDomain = @"com.BBA.requestFactoryErrorDomain";
                                      userInfo:nil];
             return nil;
         }
-
+        
         return data;
     }
     
@@ -209,7 +209,7 @@ static NSString * const kCharactersToLeaveUnescaped = @"[].";
 #define BBRIDGE __bridge CFStringRef
 
 
-- (NSString*)URLEncodedString:(NSString *)string{
+- (NSString*) URLEncodedString:(NSString *)string{
     
     CFStringEncoding encoding = CFStringConvertNSStringEncodingToEncoding(NSUTF8StringEncoding);
     

@@ -69,7 +69,9 @@ NSString *const BBALibraryServiceErrorDomain = @"BBA.error.libraryServiceDomain"
         [connection addParameterWithKey:@"book" arrayValue:value];
     }
     
+    
     [connection perform:(BBAHTTPMethodGET)
+                forUser:user
              completion:^(BBALibraryResponse *response, NSError *error) {
                  completion(response.changes, response.syncDate, error);
              }];
@@ -130,7 +132,7 @@ NSString *const BBALibraryServiceErrorDomain = @"BBA.error.libraryServiceDomain"
     
     connection.responseMapper = [BBAStatusResponseMapper new];
     
-    NSString *newStatus = BBANSStringFromBBAReadingStatus(status);
+    NSString *newStatus = BBANSStringFromReadingStatus(status);
     
     [connection addParameterWithKey:@"readingStatus" value:newStatus];
     
@@ -307,7 +309,7 @@ NSString *const BBALibraryServiceErrorDomain = @"BBA.error.libraryServiceDomain"
 }
 
 - (NSString *) libraryEndpoint{
-    return @"my/library";
+    return @"service/my/library";
 }
 
 - (BBAHTTPMethod) methodForAction:(BBAItemAction)action{

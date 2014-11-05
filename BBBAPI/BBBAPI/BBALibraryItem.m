@@ -7,15 +7,20 @@
 //
 
 #import "BBALibraryItem.h"
+#import "BBALibraryResponse.h"
+#import "BBALibraryItemLink.h"
 
 @implementation BBALibraryItem
 
 - (id) init{
     self = [super init];
     if (self) {
-        self.readingStatus = BBAReadingStatusUnknown;
-        self.purchaseStatus =  BBAPurchaseStatusNothing;
-        self.visibilityStatus = BBAVisiblityStatusUnknown;
+        _readingStatus = BBAReadingStatusUnknown;
+        _purchaseStatus =  BBAPurchaseStatusNothing;
+        _visibilityStatus = BBAVisiblityStatusUnknown;
+        _maxNumberOfAuthorisedDevices = -1;
+        _numberOfAuthorisedDevices = -1;
+        
     }
     return self;
 }
@@ -33,6 +38,57 @@
 
 - (NSUInteger) hash{
     return [self.isbn integerValue];
+}
+
+- (NSString *) description{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateStyle:(NSDateFormatterFullStyle)];
+    [formatter setTimeStyle:(NSDateFormatterFullStyle)];
+    NSMutableString *string = [[NSMutableString alloc] init];
+    NSString *newLine = @"\n";
+    [string appendFormat:@"----------------------------------------%@", newLine];
+    [string appendFormat:@"%@ isbn: %@, id: %@%@", [super description], self.isbn, self.identifier, newLine];
+    [string appendFormat:@"purchase status: %@", BBANSStringFromPurchaseStatus(self.purchaseStatus)];
+    
+    if(self.purchaseStatus == BBAPurchaseStatusPurchased){
+        [string appendFormat:@" purchased at: %@%@", [formatter stringFromDate:self.purchasedDate], newLine];
+    }
+    else if(self.purchaseStatus == BBAPurchaseStatusSampled){
+        [string appendFormat:@" sampled at: %@%@", [formatter stringFromDate:self.sampledDate], newLine];
+    }
+    else{
+        [string appendFormat:@"%@", newLine];
+    }
+    
+    [string appendFormat:@"visibility status: %@", BBANSStringFromVisibiliyStatus(self.visibilityStatus)];
+    
+    if(self.visibilityStatus == BBAVisiblityStatusArchived){
+        [string appendFormat:@" archived date: %@%@",[formatter stringFromDate:self.archivedDate], newLine];
+    }
+    else if(self.visibilityStatus == BBAVisiblityStatusDeleted){
+        [string appendFormat:@" deleted date: %@%@",[formatter stringFromDate:self.deletedDate], newLine];
+    }
+    else{
+        [string appendString:newLine];
+    }
+    
+    [string appendFormat:@"reading status : %@%@", BBANSStringFromReadingStatus(self.readingStatus), newLine];
+    
+    if(self.numberOfAuthorisedDevices > 0 && self.maxNumberOfAuthorisedDevices > 0){
+        [string appendFormat:@"authorized devices : (%ld out of %ld)%@",
+         self.numberOfAuthorisedDevices, self.maxNumberOfAuthorisedDevices, newLine];
+    }
+    
+    if (self.links.count > 0) {
+        for (NSInteger i = 0; i < self.links.count; i++) {
+            BBALibraryItemLink *link = self.links[i];
+            [string appendFormat:@"link: %ld%@%@%@", i, newLine, [link description], newLine];
+        }
+    }
+    
+    [string appendFormat:@"----------------------------------------%@", newLine];
+    
+    return string;
 }
 
 @end

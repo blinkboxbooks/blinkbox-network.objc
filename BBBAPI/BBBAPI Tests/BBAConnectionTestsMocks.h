@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "BBARequestFactory.h"
+#import "BBAResponseMapping.h"
 #import "BBANetworkConfiguration.h"
 #import "BBAAuthenticator.h"
 
@@ -38,5 +39,25 @@
 @property (nonatomic, assign) BBAContentType passedContentType;
 
 @property (nonatomic, strong) BBARequest *requestToReturn;
+@property (nonatomic, strong) NSError *errorToReturn;
+@end
+
+@interface BBAMockURLSessionDataTask : NSURLSessionDataTask
+
+@end
+
+@interface BBAMockURLSession : NSURLSession
+@property (nonatomic, strong) NSURLRequest *passedRequest;
+
+@property (nonatomic, strong) BBAMockURLSessionDataTask *taskToReturn;
+
+@property (nonatomic, strong) NSError *errorToReturn;
+@property (nonatomic, strong) NSURLResponse *responseToReturn;
+@property (nonatomic, strong) NSData *dataToReturn;
+
+@end
+
+@interface BBAMockResponseMapper : NSObject <BBAResponseMapping>
+@property (nonatomic, strong) id objectToReturn;
 @property (nonatomic, strong) NSError *errorToReturn;
 @end

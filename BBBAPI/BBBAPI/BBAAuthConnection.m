@@ -81,14 +81,6 @@
 
 }
 
-- (void)setParameterValue:(NSString *)parameter withKey:(NSString *)key{
-    if (parameter) {
-        [super addParameterWithKey:key value:parameter];
-    }
-    else {
-        [super removeParameterWithKey:key];
-    }
-}
 
 
 @end

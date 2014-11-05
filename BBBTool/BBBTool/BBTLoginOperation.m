@@ -12,15 +12,15 @@
 
 @implementation BBTLoginOperation
 + (instancetype) loginOperation{
-
+    
     NSArray *loginOperationArguments =
     @[
       [[BBTArgument alloc]initWithName:@"user"
-                                               help:@"username to use for login (email address)"],
+                                  help:@"username to use for login (email address)"],
       [[BBTArgument alloc]initWithName:@"pass"
-                                               help:@"password to use for login"]
+                                  help:@"password to use for login"]
       ];
-
+    
     NSMutableString *loginHelp = [NSMutableString string];
     [loginHelp appendString:@"Log in a user using email and password.\n"];
     [loginHelp appendString:@"Usage   - login user:'username' pass:'password'\n"];
@@ -29,24 +29,24 @@
                                                                           help:loginHelp
                                                                      arguments:loginOperationArguments
                                                                         action:nil];
-
+    
     return loginOperation;
 }
 
 - (void) performOperationWithArguments:(NSArray *)arguments{
-
+    
     NSArray *trimmedArguments = [super trimmedArguments:arguments];
     NSString *user = trimmedArguments[0];
     NSString *pass = trimmedArguments[1];
-
+    
     BBPrint(@"Login with user '%@', password '%@'", user, [@"" stringByPaddingToLength:pass.length
-                                                                          withString:@"*"
-                                                                     startingAtIndex:0]);
-
+                                                                            withString:@"*"
+                                                                       startingAtIndex:0]);
+    
     [self doLoginWithUser:user
                  password:pass
                completion:^(BBAAuthData *data, NSError *error) {
-
+                   
                    BBPrint(@"Login result %@", data ? @"Success" : @"Fail");
                    if (data) {
                        BBPrint(@"Access token:\n%@\n\nRefresh token:\n%@\n\n", data.accessToken, data.refreshToken);
@@ -60,9 +60,9 @@
 - (void) doLoginWithUser:(NSString *)userName
                 password:(NSString *)password
               completion:(void (^)(BBAAuthData *data, NSError *error))completion{
-
+    
     dispatch_semaphore_t bbb_test_semaphore = dispatch_semaphore_create(0);
-
+    
     BBAAuthenticationService *service = [BBAAuthenticationService new];
     BBAUserDetails *userDetails = [BBAUserDetails new];
     userDetails.email = userName;
@@ -74,11 +74,11 @@
         resultError = error;
         dispatch_semaphore_signal(bbb_test_semaphore);
     }];
-
-
+    
+    
     dispatch_time_t timeoutTime = dispatch_time(DISPATCH_TIME_NOW, 10.0 * NSEC_PER_SEC);
     dispatch_semaphore_wait(bbb_test_semaphore, timeoutTime);
-
+    
     completion(resultAuthData, resultError);
 }
 @end

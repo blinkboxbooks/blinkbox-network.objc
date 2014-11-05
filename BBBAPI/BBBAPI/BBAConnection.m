@@ -55,6 +55,7 @@ NSString *const BBAHTTPVersion11 = @"HTTP/1.1";
     
     self = [super init];
     if (self) {
+        _requiresAuthentication = NO;
         _contentType = BBAContentTypeUnknown;
         _baseURL = URL;
         _parameters = [NSMutableDictionary new];
@@ -99,25 +100,37 @@ NSString *const BBAHTTPVersion11 = @"HTTP/1.1";
 
 - (void) addParameterWithKey:(NSString*)key value:(NSString*)value{
     NSAssert([self.parameters objectForKey:key] == nil, @"Overwriting parameter %@. Is that intended?", key);
+    NSAssert([key isKindOfClass:[NSString class]], @"key must by a NSString");
+    NSAssert([value isKindOfClass:[NSString class]], @"value must by a NSString");
     [self.parameters setObject:value forKey:key];
 }
 
 - (void) addParameterWithKey:(NSString *)key arrayValue:(NSArray *)value{
     NSAssert([self.parameters objectForKey:key] == nil, @"Overwriting parameter %@. Is that intended?", key);
+    NSAssert([key isKindOfClass:[NSString class]], @"key must by a NSArray");
+    NSAssert([value isKindOfClass:[NSArray class]], @"value must by a NSArray");
     [self.parameters setObject:value forKey:key];
 }
 
-- (void) removeParameterWithKey:(NSString *)key{
-    [self.parameters removeObjectForKey:key];
+- (void) setParameterValue:(NSString *)value withKey:(NSString *)key{
+    BOOL keyHasCorrectClass = [key isKindOfClass:[NSString class]];
+    NSParameterAssert(key);
+    NSParameterAssert(keyHasCorrectClass);
+    if (!key || !keyHasCorrectClass) {
+        return;
+    }
+    
+    if (value) {
+        self.parameters[key] = value;
+    }
+    else{
+        [self.parameters removeObjectForKey:key];
+    }
 }
 
 - (void) addHeaderFieldWithKey:(NSString*)key value:(NSString*)value{
     NSAssert([self.headers objectForKey:key] == nil, @"Overwriting header %@. Is that intended?", key);
     [self.headers setObject:value forKey:key];
-}
-
-- (void) removeHeaderFieldWithKey:(NSString*)key{
-    [self.headers removeObjectForKey:key];
 }
 
 - (void) setContentType:(BBAContentType)contentType{
@@ -142,6 +155,15 @@ NSString *const BBAHTTPVersion11 = @"HTTP/1.1";
         return;
     }
     
+    NSAssert(self.responseMapper, @"we need response mapper");
+    if (!self.responseMapper) {
+        NSError *error = [NSError errorWithDomain:BBAConnectionErrorDomain
+                                             code:BBAAPIWrongUsage
+                                         userInfo:nil];
+        completion(nil, error);
+        return;
+    }
+    
     NSURLSession *s = self.session;
     NSError *error;
     BBARequest *request = [self.requestFactory requestWith:self.baseURL
@@ -150,6 +172,7 @@ NSString *const BBAHTTPVersion11 = @"HTTP/1.1";
                                                     method:method
                                                contentType:self.contentType
                                                      error:&error];
+    NSAssert(request, @"request factory must return a request");
     if (!request) {
         completion(nil, error);
         return;

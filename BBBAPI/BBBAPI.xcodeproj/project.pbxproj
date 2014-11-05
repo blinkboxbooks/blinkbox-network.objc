@@ -9,6 +9,16 @@
 /* Begin PBXBuildFile section */
 		4012988219FA9E7200121617 /* BBAConnectionTestsMocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 4012988119FA9E7200121617 /* BBAConnectionTestsMocks.m */; };
 		4012988319FA9E7200121617 /* BBAConnectionTestsMocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 4012988119FA9E7200121617 /* BBAConnectionTestsMocks.m */; };
+		401B63C01A07D4170047B6D6 /* BBALibraryService.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5AD9585319A247B100E5A855 /* BBALibraryService.h */; };
+		401B63C11A07D4330047B6D6 /* BBALibraryService.h in Headers */ = {isa = PBXBuildFile; fileRef = 5AD9585319A247B100E5A855 /* BBALibraryService.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		401B63C21A07D4640047B6D6 /* BBALibraryItem.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5AD9584F19A247B100E5A855 /* BBALibraryItem.h */; };
+		401B63C31A07D4750047B6D6 /* BBALibraryItemLink.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5AD9585119A247B100E5A855 /* BBALibraryItemLink.h */; };
+		401B63C41A07D4820047B6D6 /* BBALibraryItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 5AD9584F19A247B100E5A855 /* BBALibraryItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		401B63C51A07D4890047B6D6 /* BBALibraryItemLink.h in Headers */ = {isa = PBXBuildFile; fileRef = 5AD9585119A247B100E5A855 /* BBALibraryItemLink.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		401B63C71A07D4EC0047B6D6 /* BBALibraryItem.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5AD9584F19A247B100E5A855 /* BBALibraryItem.h */; };
+		401B63C81A07D4FA0047B6D6 /* BBALibraryService.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5AD9585319A247B100E5A855 /* BBALibraryService.h */; };
+		401B63C91A07D5050047B6D6 /* BBALibraryItemLink.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5AD9585119A247B100E5A855 /* BBALibraryItemLink.h */; };
+		401B63CA1A07D5160047B6D6 /* BBALibraryTypes.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5AD9585519A247B100E5A855 /* BBALibraryTypes.h */; };
 		40CA6A7D19ADE2AE00BA091B /* BBATestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 40CA6A7B19ADE2A100BA091B /* BBATestHelper.m */; };
 		40CA6A7E19ADE2AF00BA091B /* BBATestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 40CA6A7B19ADE2A100BA091B /* BBATestHelper.m */; };
 		40E4050819A638270075D875 /* BBALibraryResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 40E4050219A638270075D875 /* BBALibraryResponse.h */; };
@@ -245,6 +255,10 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				401B63CA1A07D5160047B6D6 /* BBALibraryTypes.h in CopyFiles */,
+				401B63C91A07D5050047B6D6 /* BBALibraryItemLink.h in CopyFiles */,
+				401B63C81A07D4FA0047B6D6 /* BBALibraryService.h in CopyFiles */,
+				401B63C71A07D4EC0047B6D6 /* BBALibraryItem.h in CopyFiles */,
 				5A1F5A2B19A730A800938C3D /* BBBAPI.h in CopyFiles */,
 				5A1F5A2A19A7309000938C3D /* BBAUserDetails.h in CopyFiles */,
 				5A1F5A2C19A730B400938C3D /* BBANetworkConfiguration.h in CopyFiles */,
@@ -261,6 +275,9 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				401B63C31A07D4750047B6D6 /* BBALibraryItemLink.h in CopyFiles */,
+				401B63C21A07D4640047B6D6 /* BBALibraryItem.h in CopyFiles */,
+				401B63C01A07D4170047B6D6 /* BBALibraryService.h in CopyFiles */,
 				5AD959BF19A34AD200E5A855 /* BBAAuthData.h in CopyFiles */,
 				5AD959BE19A34AC400E5A855 /* BBAUserDetails.h in CopyFiles */,
 				5AD959BD19A34AC000E5A855 /* BBAClientDetails.h in CopyFiles */,
@@ -802,6 +819,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				401B63C11A07D4330047B6D6 /* BBALibraryService.h in Headers */,
 				40E4055119A638C50075D875 /* BBALibraryResponseMapper.h in Headers */,
 				5AD959AC19A26B5F00E5A855 /* BBAClientDetails.h in Headers */,
 				5AD959AB19A26B5900E5A855 /* BBAUserDetails.h in Headers */,
@@ -809,6 +827,8 @@
 				5AD958D719A2480800E5A855 /* BBBAPI.h in Headers */,
 				40E4050819A638270075D875 /* BBALibraryResponse.h in Headers */,
 				40E4051019A638270075D875 /* BBAStatusResponseMapper.h in Headers */,
+				401B63C51A07D4890047B6D6 /* BBALibraryItemLink.h in Headers */,
+				401B63C41A07D4820047B6D6 /* BBALibraryItem.h in Headers */,
 				5AD958D919A2484900E5A855 /* BBAAuthenticationService.h in Headers */,
 				5A520FF619ACBF140055D295 /* BBALogger.h in Headers */,
 				40E4057C19A63AB40075D875 /* BBAMacros.h in Headers */,
