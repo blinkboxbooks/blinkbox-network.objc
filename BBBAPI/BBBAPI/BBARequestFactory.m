@@ -23,6 +23,26 @@ NSString *const BBARequestFactoryDomain = @"com.BBA.requestFactoryErrorDomain";
                        error:(NSError **)error{
 
     NSParameterAssert(url);
+
+    BOOL headersValid = [self headersValid:headers];
+    NSAssert(headersValid, @"Headers not valid");
+    BOOL parametersValid = [self parametersValid:parameters];
+    NSAssert(parametersValid, @"Parameters not valid");
+
+    if (!headersValid) {
+        [self handleError:error
+                 withCode:BBARequestFactoryErrorHeadersInvalid
+          underlyingError:nil];
+        return nil;
+    }
+
+    if (!parametersValid) {
+        [self handleError:error
+                 withCode:BBARequestFactoryErrorParametersInvalid
+          underlyingError:nil];
+        return nil;
+    }
+
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
 
     //Construct body or url params
@@ -53,7 +73,7 @@ NSString *const BBARequestFactoryDomain = @"com.BBA.requestFactoryErrorDomain";
             return nil;
 
         }
-        
+
         [request setHTTPBody:body];
         [request setURL:url];
 
@@ -64,6 +84,33 @@ NSString *const BBARequestFactoryDomain = @"com.BBA.requestFactoryErrorDomain";
     [request setAllHTTPHeaderFields:headers];
     
     return [BBARequest requestWithURLRequest:request];
+}
+
+- (BOOL) headersValid:(NSDictionary *)headers{
+    return [self dictionary:headers containsOnlyInstancesOfClass:[NSString class]];
+}
+
+- (BOOL) parametersValid:(NSDictionary *)headers{
+    BOOL stringsValid = [self dictionary:headers containsOnlyInstancesOfClass:[NSString class]];
+    BOOL arraysValid = [self dictionary:headers containsOnlyInstancesOfClass:[NSArray class]];
+
+    BOOL allValid = stringsValid || arraysValid;
+
+    return allValid;
+}
+
+- (BOOL) dictionary:(NSDictionary *)dictionary containsOnlyInstancesOfClass:(Class)class{
+    __block BOOL valid = YES;
+
+    [dictionary enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+
+        if (![obj isKindOfClass:class]) {
+            valid = NO;
+            *stop = YES;
+        }
+    }];
+
+    return valid;
 }
 
 - (void) handleError:(NSError **)error

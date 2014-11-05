@@ -14,6 +14,9 @@ extern NSString *const BBARequestFactoryDomain;
 typedef NS_ENUM(NSInteger, BBARequestFactoryError) {
     BBAURLConnectionErrorCodeCouldSerialiseDataToJSON = 580,
     BBARequestFactoryErrorCouldNotCreateRequest = 581,
+    BBARequestFactoryErrorHeadersInvalid = 582,
+    BBARequestFactoryErrorParametersInvalid = 583,
+
 };
 
 @class BBARequest;

@@ -60,6 +60,77 @@
     XCTAssertEqual(error.code, BBARequestFactoryErrorCouldNotCreateRequest);
 }
 
+- (void) testRequestFactoryThrowsForInvalidHeaderObjectClass{
+    NSDictionary *headers;
+    headers = @{@"one" : @"one" , @"two" : @2};
+
+    XCTAssertThrows([requestFactory requestWith:validURL
+                                     parameters:@{}
+                                        headers:headers
+                                         method:BBAHTTPMethodPOST
+                                    contentType:BBAContentTypeJSON
+                                          error:nil]);
+
+}
+
+- (void) testRequestFactoryThrowsForInvalidParamatersObjectClass{
+    NSDictionary *headers;
+    headers = @{@"one" : @"one" , @"two" : @2};
+
+    XCTAssertThrows([requestFactory requestWith:validURL
+                                     parameters:@{}
+                                        headers:headers
+                                         method:BBAHTTPMethodPOST
+                                    contentType:BBAContentTypeJSON
+                                          error:nil]);
+    
+}
+
+- (void) testRequestFactoryReturnsErrorForInvalidHeaderValues{
+    BBA_DISABLE_ASSERTIONS();
+
+    NSDictionary *headers;
+    NSError *error;
+    BBARequest *request;
+
+    headers = @{@"number" : @(0)};
+    request = [requestFactory requestWith:validURL
+                               parameters:nil
+                                  headers:headers
+                                   method:BBAHTTPMethodPOST
+                              contentType:BBAContentTypeJSON
+                                    error:&error];
+
+
+    XCTAssertNil(request);
+    XCTAssertEqualObjects(error.domain, BBARequestFactoryDomain);
+    XCTAssertEqual(error.code, BBARequestFactoryErrorHeadersInvalid);
+    BBA_ENABLE_ASSERTIONS();
+}
+
+- (void) testRequestFactoryReturnsErrorForInvalidParameterValues{
+    BBA_DISABLE_ASSERTIONS();
+
+    NSDictionary *parameters;
+    NSError *error;
+    BBARequest *request;
+
+    parameters = @{@"number" : @(0),
+                   @"string" : @"string"};
+    request = [requestFactory requestWith:validURL
+                               parameters:parameters
+                                  headers:nil
+                                   method:BBAHTTPMethodPOST
+                              contentType:BBAContentTypeJSON
+                                    error:&error];
+
+
+    XCTAssertNil(request);
+    XCTAssertEqualObjects(error.domain, BBARequestFactoryDomain);
+    XCTAssertEqual(error.code, BBARequestFactoryErrorParametersInvalid);
+    BBA_ENABLE_ASSERTIONS();
+}
+
 - (void) testRequestFactorySetsURLRequestWithCorrectURL{
     BBARequest *request;
     request = [requestFactory requestWith:validURL
