@@ -13,63 +13,128 @@ NSString *const BBARequestFactoryDomain = @"com.BBA.requestFactoryErrorDomain";
 
 @implementation BBARequestFactory
 
+#pragma mark - Public Methods
+
 - (BBARequest *) requestWith:(NSURL *)url
                   parameters:(NSDictionary *)parameters
                      headers:(NSDictionary *)headers
                       method:(BBAHTTPMethod)method
                  contentType:(BBAContentType)contentType
                        error:(NSError **)error{
-    
+
+    NSParameterAssert(url);
+
+    BOOL headersValid = [self headersValid:headers];
+    NSAssert(headersValid, @"Headers not valid");
+    BOOL parametersValid = [self parametersValid:parameters];
+    NSAssert(parametersValid, @"Parameters not valid");
+
+    if (!headersValid) {
+        [self handleError:error
+                 withCode:BBARequestFactoryErrorHeadersInvalid
+          underlyingError:nil];
+        return nil;
+    }
+
+    if (!parametersValid) {
+        [self handleError:error
+                 withCode:BBARequestFactoryErrorParametersInvalid
+          underlyingError:nil];
+        return nil;
+    }
+
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    
+
     //Construct body or url params
     if(method == BBAHTTPMethodGET) {
 
         if([parameters count] >0) {
-            NSString *queryString = [NSString stringWithFormat:@"?%@",[self constructURLEncodedBodyString:parameters]];
-            NSURL *paramaterURL = [url URLByAppendingPathComponent:[NSURL URLWithString:queryString]];
+            NSString *queryString = [NSString stringWithFormat:@"?%@",
+                                     [self constructURLEncodedBodyString:parameters]];
+            NSURL *paramaterURL = [NSURL URLWithString:queryString relativeToURL:url];
             [request setURL:paramaterURL];
 
         }
-        else{
+        else {
             [request setURL:url];
         }
-        
-        [request setHTTPMethod:@"GET"];
-    }
-    else if(method == BBAHTTPMethodDELETE) {
-        if([parameters count] >0) {
-            NSString *queryString = [NSString stringWithFormat:@"?%@",[self constructURLEncodedBodyString:parameters]];
-            NSURL *paramaterURL = [url URLByAppendingPathComponent:[NSURL URLWithString:queryString]];
-            [request setURL:paramaterURL];
-
-        }
-        else{
-            [request setURL:url];
-        }
-
-        [request setHTTPMethod:@"DELETE"];
     }
     else {
         NSError *bodyError;
         NSData *body = [self bodyFromParameters:parameters
                                     contentType:contentType
                                           error:&bodyError];
+
+        if (!body) {
+            [self handleError:error
+                     withCode:BBARequestFactoryErrorCouldNotCreateRequest
+              underlyingError:bodyError];
+
+            return nil;
+
+        }
+
         [request setHTTPBody:body];
         [request setURL:url];
-        [request setHTTPMethod:@"POST"];
 
     }
-
+    NSString *HTTPMethod = [self httpMethodStringForHTTPMethod:method];
+    NSAssert(HTTPMethod, @"Bad HTTPMethod");
+    [request setHTTPMethod:HTTPMethod];
     [request setAllHTTPHeaderFields:headers];
     
     return [BBARequest requestWithURLRequest:request];
 }
 
+- (BOOL) headersValid:(NSDictionary *)headers{
+    return [self dictionary:headers containsOnlyInstancesOfClass:[NSString class]];
+}
+
+- (BOOL) parametersValid:(NSDictionary *)headers{
+    BOOL stringsValid = [self dictionary:headers containsOnlyInstancesOfClass:[NSString class]];
+    BOOL arraysValid = [self dictionary:headers containsOnlyInstancesOfClass:[NSArray class]];
+
+    BOOL allValid = stringsValid || arraysValid;
+
+    return allValid;
+}
+
+- (BOOL) dictionary:(NSDictionary *)dictionary containsOnlyInstancesOfClass:(Class)class{
+    __block BOOL valid = YES;
+
+    [dictionary enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+
+        if (![obj isKindOfClass:class]) {
+            valid = NO;
+            *stop = YES;
+        }
+    }];
+
+    return valid;
+}
+
+- (void) handleError:(NSError **)error
+            withCode:(BBARequestFactoryError)code
+     underlyingError:(NSError *)underlyingError{
+
+    if (error) {
+        NSDictionary *userInfo;
+        if (underlyingError) {
+            userInfo = @{NSUnderlyingErrorKey : underlyingError};
+        }
+
+        *error =  [NSError errorWithDomain:BBARequestFactoryDomain
+                                      code:code
+                                  userInfo:userInfo];
+    }
+}
+
+#pragma mark - Private Methods
+
 - (NSData *) bodyFromParameters:(NSDictionary *)parameters
                     contentType:(BBAContentType)contentType
                           error:(NSError * __autoreleasing *)error {
-    
+
     if(contentType == BBAContentTypeURLEncodedForm) {
         return [[self constructURLEncodedBodyString:parameters] dataUsingEncoding:NSUTF8StringEncoding];
     }
@@ -94,6 +159,7 @@ NSString *const BBARequestFactoryDomain = @"com.BBA.requestFactoryErrorDomain";
                                      userInfo:nil];
             return nil;
         }
+
         return data;
     }
     
@@ -158,4 +224,20 @@ static NSString * const kCharactersToLeaveUnescaped = @"[].";
 #undef BBRIDGE
 #endif
 
+
+- (NSString *) httpMethodStringForHTTPMethod:(BBAHTTPMethod)method{
+    switch (method) {
+        case BBAHTTPMethodGET:
+            return @"GET";
+        case BBAHTTPMethodPOST:
+            return @"POST";
+        case BBAHTTPMethodPUT:
+            return @"PUT";
+        case BBAHTTPMethodDELETE:
+            return @"DELETE";
+        default:
+            NSAssert(false, @"Unrecognised http method");
+            return nil;
+    }
+}
 @end

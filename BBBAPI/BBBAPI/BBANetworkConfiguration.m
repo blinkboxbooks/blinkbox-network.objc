@@ -15,16 +15,18 @@
 
 @implementation BBANetworkConfiguration
 
-+ (instancetype)shared{
-
++ (instancetype)defaultConfiguration{
+    
     static BBANetworkConfiguration *sharedInstance = nil;
-
-        static dispatch_once_t onceToken;
-        dispatch_once(&onceToken, ^{
-            sharedInstance = [[self alloc] init];
-        });
-        return sharedInstance;
+    
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedInstance = [[self alloc] init];
+    });
+    return sharedInstance;
 }
+
+
 
 - (id)init{
     self = [super init];
@@ -32,16 +34,16 @@
     return self;
 }
 
-+ (id<BBAAuthenticator>) sharedAuthenticator{
-    return [[self shared]authenticator];
+- (id<BBAAuthenticator>) sharedAuthenticator{
+    return [self authenticator];
 }
 
 + (void) setSharedAuthenticator:(id<BBAAuthenticator>) authenticator{
-    [[self shared]setAuthenticator:authenticator];
+    [[self defaultConfiguration ]setAuthenticator:authenticator];
 }
 
 - (void) assignDefaultMapper{
-//    [self setReponseMapper:[BBAAuthResponseMapper new] forServiceName:kAuthServiceName];
+    //    [self setReponseMapper:[BBAAuthResponseMapper new] forServiceName:kAuthServiceName];
 }
 
 + (id<BBAResponseMapping>)responseMapperForServiceName:(NSString *)name{
@@ -57,17 +59,20 @@
     return nil;
 }
 
-+ (NSURL *)baseURLForDomain:(BBAAPIDomain)domain{
+- (NSURL *)baseURLForDomain:(BBAAPIDomain)domain{
     NSURL *baseURL = nil;
     switch (domain) {
         case BBAAPIDomainAuthentication:
             baseURL = [NSURL URLWithString:@"https://auth.blinkboxbooks.com"];
             break;
-
+        case BBAAPIDomainREST:
+            baseURL = [NSURL URLWithString:@"https://api.blinkboxbooks.com"];
+            break;
+            
         default:
             break;
     }
-    NSAssert(baseURL, @"No baseURL for domain %i", domain);
+    NSAssert(baseURL, @"No baseURL for domain %ld", domain);
     return baseURL;
 }
 

@@ -16,10 +16,11 @@ typedef NS_ENUM(NSInteger, BBAAPIDomain) {
 
 @interface BBANetworkConfiguration : NSObject
 @property (nonatomic, strong) id<BBAAuthenticator> authenticator;
-+ (id<BBAAuthenticator>) sharedAuthenticator;
++ (BBANetworkConfiguration *) defaultConfiguration;
+- (id<BBAAuthenticator>) sharedAuthenticator;
 + (void) setSharedAuthenticator:(id<BBAAuthenticator>) authenticator;
-+ (void) setBaseURL:(NSURL *)baseURL forDomain:(BBAAPIDomain)domain;
-+ (NSURL *)baseURLForDomain:(BBAAPIDomain)domain;
+- (void) setBaseURL:(NSURL *)baseURL forDomain:(BBAAPIDomain)domain;
+- (NSURL *)baseURLForDomain:(BBAAPIDomain)domain;
 
 + (void) setReponseMapper:(id<BBAResponseMapping>)mapper forServiceName:(NSString *)serviceName;
 + (id<BBAResponseMapping>)responseMapperForServiceName:(NSString *)name;

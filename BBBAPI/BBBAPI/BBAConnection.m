@@ -35,18 +35,24 @@ NSString * BBANSStringFromBBAContentType(BBAContentType type){
 NSString *const BBAConnectionErrorDomain = @"BBAURLConnectionErrorDomain";
 NSString *const BBAHTTPVersion11 = @"HTTP/1.1";
 
-typedef void(^BBAURLConnectionCompletionCallback)(NSURLResponse *response, NSData *data, NSError *connectionError);
 
 @interface BBAConnection ()
 
 @property (nonatomic, strong) NSMutableDictionary *parameters;
 @property (nonatomic, strong) NSMutableDictionary *headers;
 @property (nonatomic, strong) NSURL *baseURL;
+@property (nonatomic, strong) NSURLSession *session;
 @end
 
 @implementation BBAConnection
 
 - (id) initWithBaseURL:(NSURL *)URL{
+    NSParameterAssert(URL);
+    
+    if (!URL) {
+        return nil;
+    }
+    
     self = [super init];
     if (self) {
         _contentType = BBAContentTypeUnknown;
@@ -54,14 +60,35 @@ typedef void(^BBAURLConnectionCompletionCallback)(NSURLResponse *response, NSDat
         _parameters = [NSMutableDictionary new];
         _headers = [NSMutableDictionary new];
         _requiresAuthentication = YES;
-        _authenticator = [BBANetworkConfiguration sharedAuthenticator];
+
     }
     return self;
 }
 
+- (NSURLSession *)session{
+    if (!_session) {
+        _session = [NSURLSession sharedSession];
+    }
+    return _session;
+}
+
+- (id<BBAAuthenticator>)authenticator{
+    if (!_authenticator) {
+        _authenticator = [[BBANetworkConfiguration defaultConfiguration] sharedAuthenticator];
+    }
+    return _authenticator;
+}
+
+- (BBARequestFactory *) requestFactory{
+    if (!_requestFactory) {
+        _requestFactory = [BBARequestFactory new];
+    }
+    return _requestFactory;
+}
+
 - (id) initWithDomain:(BBAAPIDomain)domain relativeURL:(NSString *)relativeURLString{
     
-    NSURL *baseURL = [BBANetworkConfiguration baseURLForDomain:domain];
+    NSURL *baseURL = [[BBANetworkConfiguration defaultConfiguration] baseURLForDomain:domain];
     
     NSURL *url = [NSURL URLWithString:relativeURLString relativeToURL:baseURL];
     
@@ -102,7 +129,7 @@ typedef void(^BBAURLConnectionCompletionCallback)(NSURLResponse *response, NSDat
     
 }
 
-- (void)perform:(BBAHTTPMethod)method completion:(void (^)(id, NSError *))completion{
+- (void) perform:(BBAHTTPMethod)method completion:(void (^)(id, NSError *))completion{
     [self perform:method forUser:nil completion:completion];
 }
 
@@ -110,7 +137,12 @@ typedef void(^BBAURLConnectionCompletionCallback)(NSURLResponse *response, NSDat
          forUser:(BBAUserDetails *)user
       completion:(void (^)(id response, NSError *error))completion{
     
-    NSURLSession *s = [NSURLSession sharedSession];
+    NSParameterAssert(completion);
+    if (!completion) {
+        return;
+    }
+    
+    NSURLSession *s = self.session;
     NSError *error;
     BBARequest *request = [self.requestFactory requestWith:self.baseURL
                                                 parameters:self.parameters
@@ -123,10 +155,10 @@ typedef void(^BBAURLConnectionCompletionCallback)(NSURLResponse *response, NSDat
         return;
     }
     
-    NSError *authenticatorError = nil;
     
+    void(^taskBlock)(void);
     
-    void(^taskBlock)(void) = ^(void) {
+    taskBlock = ^(void) {
         
         NSURLSessionDataTask *dataTask;
         dataTask = [s dataTaskWithRequest:request.URLRequest
@@ -163,7 +195,15 @@ typedef void(^BBAURLConnectionCompletionCallback)(NSURLResponse *response, NSDat
         [dataTask resume];
     };
     
+    [self _perfomTask:taskBlock forRequest:request withUser:user];
+}
+
+- (void) _perfomTask:(void(^)(void))taskBlock
+          forRequest:(BBARequest *)request
+            withUser:(BBAUserDetails *)user{
+    
     if (self.requiresAuthentication) {
+        NSError *authenticatorError = nil;
         if (user) {
             [self.authenticator authenticateRequest:request
                                             forUser:user
