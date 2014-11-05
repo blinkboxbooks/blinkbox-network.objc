@@ -49,27 +49,9 @@ NSString *const BBARequestFactoryDomain = @"com.BBA.requestFactoryErrorDomain";
     if(method == BBAHTTPMethodGET) {
         
         if([parameters count] >0) {
-            <<<<<<< HEAD
-            NSString *queryString = [NSString stringWithFormat:@"?%@",[self constructURLEncodedBodyString:parameters]];
-            NSURL *paramaterURL = [url URLByAppendingPathComponent:queryString];
-            [request setURL:paramaterURL];
-            
-        }
-        else{
-            [request setURL:url];
-        }
-        
-        [request setHTTPMethod:@"GET"];
-    }
-    else if(method == BBAHTTPMethodDELETE) {
-        if([parameters count] >0) {
-            NSString *queryString = [NSString stringWithFormat:@"?%@",[self constructURLEncodedBodyString:parameters]];
-            NSURL *paramaterURL = [url URLByAppendingPathComponent:queryString];
-            =======
             NSString *queryString = [NSString stringWithFormat:@"?%@",
                                      [self constructURLEncodedBodyString:parameters]];
             NSURL *paramaterURL = [NSURL URLWithString:queryString relativeToURL:url];
-            >>>>>>> cd0ffb2c0d0aea91638d88befbc4d2f9464cf88b
             [request setURL:paramaterURL];
             
         }
