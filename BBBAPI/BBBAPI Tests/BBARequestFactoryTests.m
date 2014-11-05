@@ -20,13 +20,13 @@
 
 @implementation BBARequestFactoryTests
 
-- (void)setUp {
+- (void) setUp{
     [super setUp];
     requestFactory = [BBARequestFactory new];
     validURL = [NSURL URLWithString:@"https://blinkbox.com/test"];
 }
 
-- (void)tearDown {
+- (void) tearDown{
     requestFactory = nil;
     validURL= nil;
     [super tearDown];
