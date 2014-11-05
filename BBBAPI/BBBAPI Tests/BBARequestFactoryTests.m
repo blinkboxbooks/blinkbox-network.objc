@@ -45,6 +45,21 @@
                                           error:nil]);
 }
 
+- (void) testRequestFactoryReturnsErrorForUnexpectedContentType{
+    NSError *error;
+
+    BBARequest *request;
+    request = [requestFactory requestWith:validURL
+                               parameters:nil
+                                  headers:nil
+                                   method:BBAHTTPMethodPOST
+                              contentType:BBAContentTypeUnknown
+                                    error:&error];
+    XCTAssertNil(request);
+    XCTAssertEqualObjects(error.domain, BBARequestFactoryDomain);
+    XCTAssertEqual(error.code, BBARequestFactoryErrorCouldNotCreateRequest);
+}
+
 - (void) testRequestFactorySetsURLRequestWithCorrectURL{
     BBARequest *request;
     request = [requestFactory requestWith:validURL
