@@ -129,8 +129,9 @@
                                    method:BBAHTTPMethodPOST
                               contentType:BBAContentTypeJSON
                                     error:nil];
-
-    XCTAssertGreaterThan([request.URLRequest.HTTPBody length], 0);
+    NSData *expectedData = [@"{\"key1\":\"value1\",\"key2\":\"value2\"}"
+                            dataUsingEncoding:NSUTF8StringEncoding];
+    XCTAssertEqualObjects(expectedData, request.URLRequest.HTTPBody);
 
 }
 
@@ -143,8 +144,9 @@
                               contentType:BBAContentTypeJSON
                                     error:nil];
 
-    XCTAssertGreaterThan([request.URLRequest.HTTPBody length], 0);
-    
+    NSData *expectedData = [@"{\"key1\":\"value1\",\"key2\":\"value2\"}"
+                            dataUsingEncoding:NSUTF8StringEncoding];
+    XCTAssertEqualObjects(expectedData, request.URLRequest.HTTPBody);
 }
 
 - (void) testRequestFactoryAddsParamatersToBodyForPUTRequests{
@@ -156,8 +158,9 @@
                               contentType:BBAContentTypeJSON
                                     error:nil];
 
-    XCTAssertGreaterThan([request.URLRequest.HTTPBody length], 0);
-    
+    NSData *expectedData = [@"{\"key1\":\"value1\",\"key2\":\"value2\"}"
+                            dataUsingEncoding:NSUTF8StringEncoding];
+    XCTAssertEqualObjects(expectedData, request.URLRequest.HTTPBody);
 }
 
 - (void) testRequestFactoryAddsHeadersToRequests{
