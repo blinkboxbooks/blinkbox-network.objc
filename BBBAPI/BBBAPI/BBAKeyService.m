@@ -9,5 +9,9 @@
 #import "BBAKeyService.h"
 
 @implementation BBAKeyService
-
+- (void) getKeyForURL:(NSURL *)keyURL
+              forUser:(BBAUserDetails *)user
+           completion:(void (^)(NSString *key, NSError *error))completion{
+    
+}
 @end

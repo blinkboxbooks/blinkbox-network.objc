@@ -12,68 +12,99 @@
 #import "BBAClientsResponseMapper.h"
 #import "BBAAuthenticationServiceConstants.h"
 #import "BBADefaultAuthenticator.h"
+#import "BBALibraryResponseMapper.h"
+#import "BBAStatusResponseMapper.h"
+#import "BBALibraryService.h"
+
+@interface BBANetworkConfiguration ()
+
+@property (nonatomic, strong) id<BBAAuthenticator> authenticator;
+
+@property (nonatomic, strong) NSMutableDictionary *endpoints;
+
+@end
 
 @implementation BBANetworkConfiguration
 
-+ (instancetype)defaultConfiguration{
++ (instancetype) defaultConfiguration{
     
-    static BBANetworkConfiguration *sharedInstance = nil;
-    
+    static id instance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        sharedInstance = [[self alloc] init];
+        instance = [[[self class] alloc] init];
     });
-    return sharedInstance;
+    return instance;
 }
 
-
-
-- (id)init{
+- (id) init{
     self = [super init];
-    self.authenticator = [BBADefaultAuthenticator new];
     return self;
+}
+
+- (id<BBAAuthenticator>) authenticator{
+    if (!_authenticator) {
+        _authenticator = [BBADefaultAuthenticator new];
+    }
+    return _authenticator;
 }
 
 - (id<BBAAuthenticator>) sharedAuthenticator{
     return [self authenticator];
 }
 
-+ (void) setSharedAuthenticator:(id<BBAAuthenticator>) authenticator{
-    [[self defaultConfiguration ]setAuthenticator:authenticator];
+- (void) setSharedAuthenticator:(id<BBAAuthenticator>) authenticator{
+    NSParameterAssert(authenticator);
+    if (authenticator) {
+        [self setAuthenticator:authenticator];
+    }
 }
 
-- (void) assignDefaultMapper{
-    //    [self setReponseMapper:[BBAAuthResponseMapper new] forServiceName:kAuthServiceName];
-}
-
-+ (id<BBAResponseMapping>)responseMapperForServiceName:(NSString *)name{
+- (id<BBAResponseMapping>) newResponseMapperForServiceName:(NSString *)name{
     if ([name isEqualToString:kBBAAuthServiceName]) {
         return [BBAAuthResponseMapper new];
     }
-    if ([name isEqualToString:kBBAAuthServiceTokensName]) {
+    else if ([name isEqualToString:kBBAAuthServiceTokensName]) {
         return [BBATokensResponseMapper new];
     }
-    if ([name isEqualToString:kBBAAuthServiceClientsName]) {
+    else if ([name isEqualToString:kBBAAuthServiceClientsName]) {
         return [BBAClientsResponseMapper new];
     }
+    else if ([name isEqualToString:BBALibraryServiceName]) {
+        return [BBALibraryResponseMapper new];
+    }
+    else if ([name isEqualToString:BBAStatusResponseServiceName]) {
+        return [BBAStatusResponseMapper new];
+    }
+    NSAssert(NO, @"unexpected service name : %@", name);
     return nil;
 }
 
-- (NSURL *)baseURLForDomain:(BBAAPIDomain)domain{
-    NSURL *baseURL = nil;
-    switch (domain) {
-        case BBAAPIDomainAuthentication:
-            baseURL = [NSURL URLWithString:@"https://auth.blinkboxbooks.com"];
-            break;
-        case BBAAPIDomainREST:
-            baseURL = [NSURL URLWithString:@"https://api.blinkboxbooks.com"];
-            break;
-            
-        default:
-            break;
+- (NSMutableDictionary *) endpoints{
+    
+    if (_endpoints) {
+        return _endpoints;
     }
+    
+    _endpoints = [NSMutableDictionary new];
+    _endpoints[@(BBAAPIDomainREST)] = [NSURL URLWithString:@"https://api.blinkboxbooks.com"];
+    _endpoints[@(BBAAPIDomainAuthentication)] = [NSURL URLWithString:@"https://auth.blinkboxbooks.com"];
+    
+    return _endpoints;
+}
+
+- (NSURL *) baseURLForDomain:(BBAAPIDomain)domain{
+    
+    NSURL *baseURL = self.endpoints[@(domain)];
+    
     NSAssert(baseURL, @"No baseURL for domain %ld", domain);
+    
     return baseURL;
+}
+
+- (void) setBaseURL:(NSURL *)baseURL forDomain:(BBAAPIDomain)domain{
+    NSParameterAssert(baseURL);
+    
+    self.endpoints[@(domain)] = baseURL;
 }
 
 @end

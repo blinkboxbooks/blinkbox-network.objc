@@ -26,9 +26,11 @@
 #pragma mark - Init
 - (instancetype) init{
     if (self = [super init]) {
-        self.authResponseMapper = [BBANetworkConfiguration responseMapperForServiceName:kBBAAuthServiceName];
-        self.tokensResponseMapper = [BBANetworkConfiguration responseMapperForServiceName:kBBAAuthServiceTokensName];
-        self.clientsResponseMapper = [BBANetworkConfiguration responseMapperForServiceName:kBBAAuthServiceClientsName];
+        BBANetworkConfiguration *configuration;
+        configuration = [BBANetworkConfiguration defaultConfiguration];
+        _authResponseMapper = [configuration newResponseMapperForServiceName:kBBAAuthServiceName];
+        _tokensResponseMapper = [configuration newResponseMapperForServiceName:kBBAAuthServiceTokensName];
+        _clientsResponseMapper = [configuration newResponseMapperForServiceName:kBBAAuthServiceClientsName];
 
         BBALog(@"AuthenticationService Initialised");
     }

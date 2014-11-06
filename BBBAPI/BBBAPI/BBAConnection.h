@@ -26,7 +26,6 @@ extern NSString *const BBAConnectionErrorDomain;
 
 extern NSString *const BBAHTTPVersion11;
 
-@class BBAResponse;
 @class BBARequestFactory;
 
 /**
