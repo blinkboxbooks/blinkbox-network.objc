@@ -1,0 +1,8 @@
+source 'git@git.mobcastdev.com:iOS/Specs.git'
+source 'git@github.com:Cocoapods/Specs.git'
+
+platform :ios, '7.0'
+
+pod 'CocoaLumberjack'
+
+
