@@ -14,6 +14,7 @@
 #import "BBAClientDetails.h"
 #import "BBAAuthData.h"
 #import "BBARequestFactory.h"
+#import "BBALogger.h"
 
 @interface BBAAuthenticationService ()
 @property (nonatomic, strong) id<BBAResponseMapping> authResponseMapper;
