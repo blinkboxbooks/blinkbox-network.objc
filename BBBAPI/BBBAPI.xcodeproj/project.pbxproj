@@ -1,0 +1,809 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		404ED4E91A126E40005277B6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 404ED4E81A126E40005277B6 /* main.m */; };
+		404ED4EC1A126E40005277B6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 404ED4EB1A126E40005277B6 /* AppDelegate.m */; };
+		404ED4EF1A126E40005277B6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 404ED4EE1A126E40005277B6 /* ViewController.m */; };
+		404ED4F21A126E40005277B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 404ED4F01A126E40005277B6 /* Main.storyboard */; };
+		404ED4F41A126E40005277B6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 404ED4F31A126E40005277B6 /* Images.xcassets */; };
+		404ED4F71A126E40005277B6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 404ED4F51A126E40005277B6 /* LaunchScreen.xib */; };
+		404ED5591A126EE1005277B6 /* BBAAuthConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 404ED50F1A126EE1005277B6 /* BBAAuthConnection.m */; };
+		404ED55A1A126EE1005277B6 /* BBAAuthData.m in Sources */ = {isa = PBXBuildFile; fileRef = 404ED5111A126EE1005277B6 /* BBAAuthData.m */; };
+		404ED55B1A126EE1005277B6 /* BBAAuthDataValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 404ED5131A126EE1005277B6 /* BBAAuthDataValidator.m */; };
+		404ED55C1A126EE1005277B6 /* BBAAuthenticationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 404ED5151A126EE1005277B6 /* BBAAuthenticationService.m */; };
+		404ED55D1A126EE1005277B6 /* BBAAuthenticationServiceConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 404ED5171A126EE1005277B6 /* BBAAuthenticationServiceConstants.m */; };
+		404ED55E1A126EE1005277B6 /* BBAAuthResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 404ED51A1A126EE1005277B6 /* BBAAuthResponseMapper.m */; };
+		404ED55F1A126EE1005277B6 /* BBAAuthServiceErrorParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 404ED51C1A126EE1005277B6 /* BBAAuthServiceErrorParser.m */; };
+		404ED5601A126EE1005277B6 /* BBABookmarkService.m in Sources */ = {isa = PBXBuildFile; fileRef = 404ED51E1A126EE1005277B6 /* BBABookmarkService.m */; };
+		404ED5611A126EE1005277B6 /* BBACatalogueService.m in Sources */ = {isa = PBXBuildFile; fileRef = 404ED5201A126EE1005277B6 /* BBACatalogueService.m */; };
+		404ED5621A126EE1005277B6 /* BBACategoryService.m in Sources */ = {isa = PBXBuildFile; fileRef = 404ED5221A126EE1005277B6 /* BBACategoryService.m */; };
+		404ED5631A126EE1005277B6 /* BBAClientDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 404ED5241A126EE1005277B6 /* BBAClientDetails.m */; };
+		404ED5641A126EE1005277B6 /* BBAClientsResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 404ED5261A126EE1005277B6 /* BBAClientsResponseMapper.m */; };
+		404ED5651A126EE1005277B6 /* BBAClubcardService.m in Sources */ = {isa = PBXBuildFile; fileRef = 404ED5281A126EE1005277B6 /* BBAClubcardService.m */; };
+		404ED5661A126EE1005277B6 /* BBAConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 404ED52A1A126EE1005277B6 /* BBAConnection.m */; };
+		404ED5671A126EE1005277B6 /* BBADefaultAuthenticator.m in Sources */ = {isa = PBXBuildFile; fileRef = 404ED52C1A126EE1005277B6 /* BBADefaultAuthenticator.m */; };
+		404ED5681A126EE1005277B6 /* BBAJSONResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 404ED52E1A126EE1005277B6 /* BBAJSONResponseMapper.m */; };
+		404ED5691A126EE1005277B6 /* BBAKeyService.m in Sources */ = {isa = PBXBuildFile; fileRef = 404ED5301A126EE1005277B6 /* BBAKeyService.m */; };
+		404ED56A1A126EE1005277B6 /* BBALibraryItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 404ED5321A126EE1005277B6 /* BBALibraryItem.m */; };
+		404ED56B1A126EE1005277B6 /* BBALibraryItemLink.m in Sources */ = {isa = PBXBuildFile; fileRef = 404ED5341A126EE1005277B6 /* BBALibraryItemLink.m */; };
+		404ED56C1A126EE1005277B6 /* BBALibraryResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 404ED5361A126EE1005277B6 /* BBALibraryResponse.m */; };
+		404ED56D1A126EE1005277B6 /* BBALibraryResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 404ED5381A126EE1005277B6 /* BBALibraryResponseMapper.m */; };
+		404ED56E1A126EE1005277B6 /* BBALibraryService.m in Sources */ = {isa = PBXBuildFile; fileRef = 404ED53A1A126EE1005277B6 /* BBALibraryService.m */; };
+		404ED56F1A126EE1005277B6 /* BBALogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 404ED53D1A126EE1005277B6 /* BBALogger.m */; };
+		404ED5701A126EE1005277B6 /* BBAMarketingService.m in Sources */ = {isa = PBXBuildFile; fileRef = 404ED5401A126EE1005277B6 /* BBAMarketingService.m */; };
+		404ED5711A126EE1005277B6 /* BBANetworkConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 404ED5421A126EE1005277B6 /* BBANetworkConfiguration.m */; };
+		404ED5721A126EE1005277B6 /* BBAPurchasingService.m in Sources */ = {isa = PBXBuildFile; fileRef = 404ED5461A126EE1005277B6 /* BBAPurchasingService.m */; };
+		404ED5731A126EE1005277B6 /* BBARequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 404ED5481A126EE1005277B6 /* BBARequest.m */; };
+		404ED5741A126EE1005277B6 /* BBARequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 404ED54A1A126EE1005277B6 /* BBARequestFactory.m */; };
+		404ED5751A126EE1005277B6 /* BBAResponseMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 404ED54C1A126EE1005277B6 /* BBAResponseMapping.m */; };
+		404ED5761A126EE1005277B6 /* BBASearchConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 404ED54E1A126EE1005277B6 /* BBASearchConnection.m */; };
+		404ED5771A126EE1005277B6 /* BBASearchService.m in Sources */ = {isa = PBXBuildFile; fileRef = 404ED5501A126EE1005277B6 /* BBASearchService.m */; };
+		404ED5781A126EE1005277B6 /* BBAServerDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 404ED5521A126EE1005277B6 /* BBAServerDateFormatter.m */; };
+		404ED5791A126EE1005277B6 /* BBAStatusResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 404ED5541A126EE1005277B6 /* BBAStatusResponseMapper.m */; };
+		404ED57A1A126EE1005277B6 /* BBATokensResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 404ED5561A126EE1005277B6 /* BBATokensResponseMapper.m */; };
+		404ED57B1A126EE1005277B6 /* BBAUserDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 404ED5581A126EE1005277B6 /* BBAUserDetails.m */; };
+		404ED5A31A126FC5005277B6 /* BBAAuthenticationServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 404ED57C1A126FC5005277B6 /* BBAAuthenticationServiceTests.m */; };
+		404ED5A41A126FC5005277B6 /* BBAAuthServiceResponseMappersTestData.m in Sources */ = {isa = PBXBuildFile; fileRef = 404ED57F1A126FC5005277B6 /* BBAAuthServiceResponseMappersTestData.m */; };
+		404ED5A51A126FC5005277B6 /* BBAAuthServiceResponseMapperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 404ED5801A126FC5005277B6 /* BBAAuthServiceResponseMapperTests.m */; };
+		404ED5A61A126FC5005277B6 /* BBAClientsResponseMapperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 404ED5811A126FC5005277B6 /* BBAClientsResponseMapperTests.m */; };
+		404ED5A71A126FC5005277B6 /* BBAConnectionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 404ED5821A126FC5005277B6 /* BBAConnectionTests.m */; };
+		404ED5A81A126FC5005277B6 /* BBAConnectionTestsMocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 404ED5841A126FC5005277B6 /* BBAConnectionTestsMocks.m */; };
+		404ED5A91A126FC5005277B6 /* BBALibraryResponseMapperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 404ED5851A126FC5005277B6 /* BBALibraryResponseMapperTests.m */; };
+		404ED5AA1A126FC5005277B6 /* BBALibraryResponseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 404ED5861A126FC5005277B6 /* BBALibraryResponseTests.m */; };
+		404ED5AB1A126FC5005277B6 /* BBALibraryServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 404ED5871A126FC5005277B6 /* BBALibraryServiceTests.m */; };
+		404ED5AC1A126FC5005277B6 /* BBAMockAssertionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 404ED5891A126FC5005277B6 /* BBAMockAssertionHandler.m */; };
+		404ED5AD1A126FC5005277B6 /* BBAMockConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 404ED58B1A126FC5005277B6 /* BBAMockConnection.m */; };
+		404ED5AE1A126FC5005277B6 /* BBANetworkConfigurationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 404ED58C1A126FC5005277B6 /* BBANetworkConfigurationTests.m */; };
+		404ED5AF1A126FC5005277B6 /* BBARequestFactoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 404ED58D1A126FC5005277B6 /* BBARequestFactoryTests.m */; };
+		404ED5B01A126FC5005277B6 /* BBAStatusResponseMapperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 404ED58E1A126FC5005277B6 /* BBAStatusResponseMapperTests.m */; };
+		404ED5B11A126FC5005277B6 /* BBASwizzlingHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 404ED5901A126FC5005277B6 /* BBASwizzlingHelper.m */; };
+		404ED5B21A126FC5005277B6 /* BBATestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 404ED5921A126FC5005277B6 /* BBATestHelper.m */; };
+		404ED5B31A126FC5005277B6 /* BBATokensResponseMapperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 404ED5941A126FC5005277B6 /* BBATokensResponseMapperTests.m */; };
+		404ED5B41A126FC5005277B6 /* libResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 404ED5971A126FC5005277B6 /* libResponse.json */; };
+		404ED5B51A126FC5005277B6 /* libResponse_archived.json in Resources */ = {isa = PBXBuildFile; fileRef = 404ED5981A126FC5005277B6 /* libResponse_archived.json */; };
+		404ED5B61A126FC5005277B6 /* libResponse_deleted.json in Resources */ = {isa = PBXBuildFile; fileRef = 404ED5991A126FC5005277B6 /* libResponse_deleted.json */; };
+		404ED5B71A126FC5005277B6 /* libResponse_empty_archived.json in Resources */ = {isa = PBXBuildFile; fileRef = 404ED59A1A126FC5005277B6 /* libResponse_empty_archived.json */; };
+		404ED5B81A126FC5005277B6 /* libResponse_get_single_item.json in Resources */ = {isa = PBXBuildFile; fileRef = 404ED59B1A126FC5005277B6 /* libResponse_get_single_item.json */; };
+		404ED5B91A126FC5005277B6 /* libResponse_invalid_data_format.json in Resources */ = {isa = PBXBuildFile; fileRef = 404ED59C1A126FC5005277B6 /* libResponse_invalid_data_format.json */; };
+		404ED5BA1A126FC5005277B6 /* libResponse_invalid_type.json in Resources */ = {isa = PBXBuildFile; fileRef = 404ED59D1A126FC5005277B6 /* libResponse_invalid_type.json */; };
+		404ED5BB1A126FC5005277B6 /* libResponse_no_items.json in Resources */ = {isa = PBXBuildFile; fileRef = 404ED59E1A126FC5005277B6 /* libResponse_no_items.json */; };
+		404ED5BC1A126FC5005277B6 /* libResponse_single_item_archived.json in Resources */ = {isa = PBXBuildFile; fileRef = 404ED59F1A126FC5005277B6 /* libResponse_single_item_archived.json */; };
+		404ED5BD1A126FC5005277B6 /* libResponse_single_item_deleted.json in Resources */ = {isa = PBXBuildFile; fileRef = 404ED5A01A126FC5005277B6 /* libResponse_single_item_deleted.json */; };
+		404ED5BE1A126FC5005277B6 /* libResponse_single_item_purchased.json in Resources */ = {isa = PBXBuildFile; fileRef = 404ED5A11A126FC5005277B6 /* libResponse_single_item_purchased.json */; };
+		404ED5BF1A126FC5005277B6 /* libResponse_single_item_sampled.json in Resources */ = {isa = PBXBuildFile; fileRef = 404ED5A21A126FC5005277B6 /* libResponse_single_item_sampled.json */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		404ED4FD1A126E40005277B6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 404ED4DB1A126E40005277B6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 404ED4E21A126E40005277B6;
+			remoteInfo = BBBAPI;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		404ED4E31A126E40005277B6 /* BBBAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BBBAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		404ED4E71A126E40005277B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		404ED4E81A126E40005277B6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		404ED4EA1A126E40005277B6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		404ED4EB1A126E40005277B6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		404ED4ED1A126E40005277B6 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		404ED4EE1A126E40005277B6 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		404ED4F11A126E40005277B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		404ED4F31A126E40005277B6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		404ED4F61A126E40005277B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		404ED4FC1A126E40005277B6 /* BBBAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BBBAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		404ED5011A126E40005277B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		404ED50D1A126EE1005277B6 /* BBAAPIErrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBAAPIErrors.h; path = Classes/BBAAPIErrors.h; sourceTree = "<group>"; };
+		404ED50E1A126EE1005277B6 /* BBAAuthConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBAAuthConnection.h; path = Classes/BBAAuthConnection.h; sourceTree = "<group>"; };
+		404ED50F1A126EE1005277B6 /* BBAAuthConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBAAuthConnection.m; path = Classes/BBAAuthConnection.m; sourceTree = "<group>"; };
+		404ED5101A126EE1005277B6 /* BBAAuthData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBAAuthData.h; path = Classes/BBAAuthData.h; sourceTree = "<group>"; };
+		404ED5111A126EE1005277B6 /* BBAAuthData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBAAuthData.m; path = Classes/BBAAuthData.m; sourceTree = "<group>"; };
+		404ED5121A126EE1005277B6 /* BBAAuthDataValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBAAuthDataValidator.h; path = Classes/BBAAuthDataValidator.h; sourceTree = "<group>"; };
+		404ED5131A126EE1005277B6 /* BBAAuthDataValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBAAuthDataValidator.m; path = Classes/BBAAuthDataValidator.m; sourceTree = "<group>"; };
+		404ED5141A126EE1005277B6 /* BBAAuthenticationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBAAuthenticationService.h; path = Classes/BBAAuthenticationService.h; sourceTree = "<group>"; };
+		404ED5151A126EE1005277B6 /* BBAAuthenticationService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBAAuthenticationService.m; path = Classes/BBAAuthenticationService.m; sourceTree = "<group>"; };
+		404ED5161A126EE1005277B6 /* BBAAuthenticationServiceConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBAAuthenticationServiceConstants.h; path = Classes/BBAAuthenticationServiceConstants.h; sourceTree = "<group>"; };
+		404ED5171A126EE1005277B6 /* BBAAuthenticationServiceConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBAAuthenticationServiceConstants.m; path = Classes/BBAAuthenticationServiceConstants.m; sourceTree = "<group>"; };
+		404ED5181A126EE1005277B6 /* BBAAuthenticator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBAAuthenticator.h; path = Classes/BBAAuthenticator.h; sourceTree = "<group>"; };
+		404ED5191A126EE1005277B6 /* BBAAuthResponseMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBAAuthResponseMapper.h; path = Classes/BBAAuthResponseMapper.h; sourceTree = "<group>"; };
+		404ED51A1A126EE1005277B6 /* BBAAuthResponseMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBAAuthResponseMapper.m; path = Classes/BBAAuthResponseMapper.m; sourceTree = "<group>"; };
+		404ED51B1A126EE1005277B6 /* BBAAuthServiceErrorParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBAAuthServiceErrorParser.h; path = Classes/BBAAuthServiceErrorParser.h; sourceTree = "<group>"; };
+		404ED51C1A126EE1005277B6 /* BBAAuthServiceErrorParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBAAuthServiceErrorParser.m; path = Classes/BBAAuthServiceErrorParser.m; sourceTree = "<group>"; };
+		404ED51D1A126EE1005277B6 /* BBABookmarkService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBABookmarkService.h; path = Classes/BBABookmarkService.h; sourceTree = "<group>"; };
+		404ED51E1A126EE1005277B6 /* BBABookmarkService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBABookmarkService.m; path = Classes/BBABookmarkService.m; sourceTree = "<group>"; };
+		404ED51F1A126EE1005277B6 /* BBACatalogueService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBACatalogueService.h; path = Classes/BBACatalogueService.h; sourceTree = "<group>"; };
+		404ED5201A126EE1005277B6 /* BBACatalogueService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBACatalogueService.m; path = Classes/BBACatalogueService.m; sourceTree = "<group>"; };
+		404ED5211A126EE1005277B6 /* BBACategoryService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBACategoryService.h; path = Classes/BBACategoryService.h; sourceTree = "<group>"; };
+		404ED5221A126EE1005277B6 /* BBACategoryService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBACategoryService.m; path = Classes/BBACategoryService.m; sourceTree = "<group>"; };
+		404ED5231A126EE1005277B6 /* BBAClientDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBAClientDetails.h; path = Classes/BBAClientDetails.h; sourceTree = "<group>"; };
+		404ED5241A126EE1005277B6 /* BBAClientDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBAClientDetails.m; path = Classes/BBAClientDetails.m; sourceTree = "<group>"; };
+		404ED5251A126EE1005277B6 /* BBAClientsResponseMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBAClientsResponseMapper.h; path = Classes/BBAClientsResponseMapper.h; sourceTree = "<group>"; };
+		404ED5261A126EE1005277B6 /* BBAClientsResponseMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBAClientsResponseMapper.m; path = Classes/BBAClientsResponseMapper.m; sourceTree = "<group>"; };
+		404ED5271A126EE1005277B6 /* BBAClubcardService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBAClubcardService.h; path = Classes/BBAClubcardService.h; sourceTree = "<group>"; };
+		404ED5281A126EE1005277B6 /* BBAClubcardService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBAClubcardService.m; path = Classes/BBAClubcardService.m; sourceTree = "<group>"; };
+		404ED5291A126EE1005277B6 /* BBAConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBAConnection.h; path = Classes/BBAConnection.h; sourceTree = "<group>"; };
+		404ED52A1A126EE1005277B6 /* BBAConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBAConnection.m; path = Classes/BBAConnection.m; sourceTree = "<group>"; };
+		404ED52B1A126EE1005277B6 /* BBADefaultAuthenticator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBADefaultAuthenticator.h; path = Classes/BBADefaultAuthenticator.h; sourceTree = "<group>"; };
+		404ED52C1A126EE1005277B6 /* BBADefaultAuthenticator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBADefaultAuthenticator.m; path = Classes/BBADefaultAuthenticator.m; sourceTree = "<group>"; };
+		404ED52D1A126EE1005277B6 /* BBAJSONResponseMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBAJSONResponseMapper.h; path = Classes/BBAJSONResponseMapper.h; sourceTree = "<group>"; };
+		404ED52E1A126EE1005277B6 /* BBAJSONResponseMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBAJSONResponseMapper.m; path = Classes/BBAJSONResponseMapper.m; sourceTree = "<group>"; };
+		404ED52F1A126EE1005277B6 /* BBAKeyService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBAKeyService.h; path = Classes/BBAKeyService.h; sourceTree = "<group>"; };
+		404ED5301A126EE1005277B6 /* BBAKeyService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBAKeyService.m; path = Classes/BBAKeyService.m; sourceTree = "<group>"; };
+		404ED5311A126EE1005277B6 /* BBALibraryItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBALibraryItem.h; path = Classes/BBALibraryItem.h; sourceTree = "<group>"; };
+		404ED5321A126EE1005277B6 /* BBALibraryItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBALibraryItem.m; path = Classes/BBALibraryItem.m; sourceTree = "<group>"; };
+		404ED5331A126EE1005277B6 /* BBALibraryItemLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBALibraryItemLink.h; path = Classes/BBALibraryItemLink.h; sourceTree = "<group>"; };
+		404ED5341A126EE1005277B6 /* BBALibraryItemLink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBALibraryItemLink.m; path = Classes/BBALibraryItemLink.m; sourceTree = "<group>"; };
+		404ED5351A126EE1005277B6 /* BBALibraryResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBALibraryResponse.h; path = Classes/BBALibraryResponse.h; sourceTree = "<group>"; };
+		404ED5361A126EE1005277B6 /* BBALibraryResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBALibraryResponse.m; path = Classes/BBALibraryResponse.m; sourceTree = "<group>"; };
+		404ED5371A126EE1005277B6 /* BBALibraryResponseMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBALibraryResponseMapper.h; path = Classes/BBALibraryResponseMapper.h; sourceTree = "<group>"; };
+		404ED5381A126EE1005277B6 /* BBALibraryResponseMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBALibraryResponseMapper.m; path = Classes/BBALibraryResponseMapper.m; sourceTree = "<group>"; };
+		404ED5391A126EE1005277B6 /* BBALibraryService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBALibraryService.h; path = Classes/BBALibraryService.h; sourceTree = "<group>"; };
+		404ED53A1A126EE1005277B6 /* BBALibraryService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBALibraryService.m; path = Classes/BBALibraryService.m; sourceTree = "<group>"; };
+		404ED53B1A126EE1005277B6 /* BBALibraryTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBALibraryTypes.h; path = Classes/BBALibraryTypes.h; sourceTree = "<group>"; };
+		404ED53C1A126EE1005277B6 /* BBALogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBALogger.h; path = Classes/BBALogger.h; sourceTree = "<group>"; };
+		404ED53D1A126EE1005277B6 /* BBALogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBALogger.m; path = Classes/BBALogger.m; sourceTree = "<group>"; };
+		404ED53E1A126EE1005277B6 /* BBAMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBAMacros.h; path = Classes/BBAMacros.h; sourceTree = "<group>"; };
+		404ED53F1A126EE1005277B6 /* BBAMarketingService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBAMarketingService.h; path = Classes/BBAMarketingService.h; sourceTree = "<group>"; };
+		404ED5401A126EE1005277B6 /* BBAMarketingService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBAMarketingService.m; path = Classes/BBAMarketingService.m; sourceTree = "<group>"; };
+		404ED5411A126EE1005277B6 /* BBANetworkConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBANetworkConfiguration.h; path = Classes/BBANetworkConfiguration.h; sourceTree = "<group>"; };
+		404ED5421A126EE1005277B6 /* BBANetworkConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBANetworkConfiguration.m; path = Classes/BBANetworkConfiguration.m; sourceTree = "<group>"; };
+		404ED5431A126EE1005277B6 /* BBANetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBANetworking.h; path = Classes/BBANetworking.h; sourceTree = "<group>"; };
+		404ED5441A126EE1005277B6 /* BBANetworkingConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBANetworkingConstants.h; path = Classes/BBANetworkingConstants.h; sourceTree = "<group>"; };
+		404ED5451A126EE1005277B6 /* BBAPurchasingService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBAPurchasingService.h; path = Classes/BBAPurchasingService.h; sourceTree = "<group>"; };
+		404ED5461A126EE1005277B6 /* BBAPurchasingService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBAPurchasingService.m; path = Classes/BBAPurchasingService.m; sourceTree = "<group>"; };
+		404ED5471A126EE1005277B6 /* BBARequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBARequest.h; path = Classes/BBARequest.h; sourceTree = "<group>"; };
+		404ED5481A126EE1005277B6 /* BBARequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBARequest.m; path = Classes/BBARequest.m; sourceTree = "<group>"; };
+		404ED5491A126EE1005277B6 /* BBARequestFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBARequestFactory.h; path = Classes/BBARequestFactory.h; sourceTree = "<group>"; };
+		404ED54A1A126EE1005277B6 /* BBARequestFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBARequestFactory.m; path = Classes/BBARequestFactory.m; sourceTree = "<group>"; };
+		404ED54B1A126EE1005277B6 /* BBAResponseMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBAResponseMapping.h; path = Classes/BBAResponseMapping.h; sourceTree = "<group>"; };
+		404ED54C1A126EE1005277B6 /* BBAResponseMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBAResponseMapping.m; path = Classes/BBAResponseMapping.m; sourceTree = "<group>"; };
+		404ED54D1A126EE1005277B6 /* BBASearchConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBASearchConnection.h; path = Classes/BBASearchConnection.h; sourceTree = "<group>"; };
+		404ED54E1A126EE1005277B6 /* BBASearchConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBASearchConnection.m; path = Classes/BBASearchConnection.m; sourceTree = "<group>"; };
+		404ED54F1A126EE1005277B6 /* BBASearchService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBASearchService.h; path = Classes/BBASearchService.h; sourceTree = "<group>"; };
+		404ED5501A126EE1005277B6 /* BBASearchService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBASearchService.m; path = Classes/BBASearchService.m; sourceTree = "<group>"; };
+		404ED5511A126EE1005277B6 /* BBAServerDateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBAServerDateFormatter.h; path = Classes/BBAServerDateFormatter.h; sourceTree = "<group>"; };
+		404ED5521A126EE1005277B6 /* BBAServerDateFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBAServerDateFormatter.m; path = Classes/BBAServerDateFormatter.m; sourceTree = "<group>"; };
+		404ED5531A126EE1005277B6 /* BBAStatusResponseMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBAStatusResponseMapper.h; path = Classes/BBAStatusResponseMapper.h; sourceTree = "<group>"; };
+		404ED5541A126EE1005277B6 /* BBAStatusResponseMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBAStatusResponseMapper.m; path = Classes/BBAStatusResponseMapper.m; sourceTree = "<group>"; };
+		404ED5551A126EE1005277B6 /* BBATokensResponseMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBATokensResponseMapper.h; path = Classes/BBATokensResponseMapper.h; sourceTree = "<group>"; };
+		404ED5561A126EE1005277B6 /* BBATokensResponseMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBATokensResponseMapper.m; path = Classes/BBATokensResponseMapper.m; sourceTree = "<group>"; };
+		404ED5571A126EE1005277B6 /* BBAUserDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBAUserDetails.h; path = Classes/BBAUserDetails.h; sourceTree = "<group>"; };
+		404ED5581A126EE1005277B6 /* BBAUserDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBAUserDetails.m; path = Classes/BBAUserDetails.m; sourceTree = "<group>"; };
+		404ED57C1A126FC5005277B6 /* BBAAuthenticationServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBAAuthenticationServiceTests.m; sourceTree = "<group>"; };
+		404ED57D1A126FC5005277B6 /* BBAAuthResponseMapperTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBAAuthResponseMapperTests.h; sourceTree = "<group>"; };
+		404ED57E1A126FC5005277B6 /* BBAAuthServiceResponseMappersTestData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBAAuthServiceResponseMappersTestData.h; sourceTree = "<group>"; };
+		404ED57F1A126FC5005277B6 /* BBAAuthServiceResponseMappersTestData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBAAuthServiceResponseMappersTestData.m; sourceTree = "<group>"; };
+		404ED5801A126FC5005277B6 /* BBAAuthServiceResponseMapperTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBAAuthServiceResponseMapperTests.m; sourceTree = "<group>"; };
+		404ED5811A126FC5005277B6 /* BBAClientsResponseMapperTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBAClientsResponseMapperTests.m; sourceTree = "<group>"; };
+		404ED5821A126FC5005277B6 /* BBAConnectionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBAConnectionTests.m; sourceTree = "<group>"; };
+		404ED5831A126FC5005277B6 /* BBAConnectionTestsMocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBAConnectionTestsMocks.h; sourceTree = "<group>"; };
+		404ED5841A126FC5005277B6 /* BBAConnectionTestsMocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBAConnectionTestsMocks.m; sourceTree = "<group>"; };
+		404ED5851A126FC5005277B6 /* BBALibraryResponseMapperTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBALibraryResponseMapperTests.m; sourceTree = "<group>"; };
+		404ED5861A126FC5005277B6 /* BBALibraryResponseTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBALibraryResponseTests.m; sourceTree = "<group>"; };
+		404ED5871A126FC5005277B6 /* BBALibraryServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBALibraryServiceTests.m; sourceTree = "<group>"; };
+		404ED5881A126FC5005277B6 /* BBAMockAssertionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBAMockAssertionHandler.h; sourceTree = "<group>"; };
+		404ED5891A126FC5005277B6 /* BBAMockAssertionHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBAMockAssertionHandler.m; sourceTree = "<group>"; };
+		404ED58A1A126FC5005277B6 /* BBAMockConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBAMockConnection.h; sourceTree = "<group>"; };
+		404ED58B1A126FC5005277B6 /* BBAMockConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBAMockConnection.m; sourceTree = "<group>"; };
+		404ED58C1A126FC5005277B6 /* BBANetworkConfigurationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBANetworkConfigurationTests.m; sourceTree = "<group>"; };
+		404ED58D1A126FC5005277B6 /* BBARequestFactoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBARequestFactoryTests.m; sourceTree = "<group>"; };
+		404ED58E1A126FC5005277B6 /* BBAStatusResponseMapperTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBAStatusResponseMapperTests.m; sourceTree = "<group>"; };
+		404ED58F1A126FC5005277B6 /* BBASwizzlingHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBASwizzlingHelper.h; sourceTree = "<group>"; };
+		404ED5901A126FC5005277B6 /* BBASwizzlingHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBASwizzlingHelper.m; sourceTree = "<group>"; };
+		404ED5911A126FC5005277B6 /* BBATestHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBATestHelper.h; sourceTree = "<group>"; };
+		404ED5921A126FC5005277B6 /* BBATestHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBATestHelper.m; sourceTree = "<group>"; };
+		404ED5931A126FC5005277B6 /* BBATestMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBATestMacros.h; sourceTree = "<group>"; };
+		404ED5941A126FC5005277B6 /* BBATokensResponseMapperTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBATokensResponseMapperTests.m; sourceTree = "<group>"; };
+		404ED5971A126FC5005277B6 /* libResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = libResponse.json; sourceTree = "<group>"; };
+		404ED5981A126FC5005277B6 /* libResponse_archived.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = libResponse_archived.json; sourceTree = "<group>"; };
+		404ED5991A126FC5005277B6 /* libResponse_deleted.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = libResponse_deleted.json; sourceTree = "<group>"; };
+		404ED59A1A126FC5005277B6 /* libResponse_empty_archived.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = libResponse_empty_archived.json; sourceTree = "<group>"; };
+		404ED59B1A126FC5005277B6 /* libResponse_get_single_item.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = libResponse_get_single_item.json; sourceTree = "<group>"; };
+		404ED59C1A126FC5005277B6 /* libResponse_invalid_data_format.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = libResponse_invalid_data_format.json; sourceTree = "<group>"; };
+		404ED59D1A126FC5005277B6 /* libResponse_invalid_type.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = libResponse_invalid_type.json; sourceTree = "<group>"; };
+		404ED59E1A126FC5005277B6 /* libResponse_no_items.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = libResponse_no_items.json; sourceTree = "<group>"; };
+		404ED59F1A126FC5005277B6 /* libResponse_single_item_archived.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = libResponse_single_item_archived.json; sourceTree = "<group>"; };
+		404ED5A01A126FC5005277B6 /* libResponse_single_item_deleted.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = libResponse_single_item_deleted.json; sourceTree = "<group>"; };
+		404ED5A11A126FC5005277B6 /* libResponse_single_item_purchased.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = libResponse_single_item_purchased.json; sourceTree = "<group>"; };
+		404ED5A21A126FC5005277B6 /* libResponse_single_item_sampled.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = libResponse_single_item_sampled.json; sourceTree = "<group>"; };
+		404ED5C01A126FF9005277B6 /* BBBAPITests.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBAPITests.pch; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		404ED4E01A126E40005277B6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		404ED4F91A126E40005277B6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		404ED4DA1A126E40005277B6 = {
+			isa = PBXGroup;
+			children = (
+				404ED4E51A126E40005277B6 /* BBBAPI */,
+				404ED4FF1A126E40005277B6 /* BBBAPITests */,
+				404ED4E41A126E40005277B6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		404ED4E41A126E40005277B6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				404ED4E31A126E40005277B6 /* BBBAPI.app */,
+				404ED4FC1A126E40005277B6 /* BBBAPITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		404ED4E51A126E40005277B6 /* BBBAPI */ = {
+			isa = PBXGroup;
+			children = (
+				404ED50C1A126ED4005277B6 /* Classes */,
+				404ED4EA1A126E40005277B6 /* AppDelegate.h */,
+				404ED4EB1A126E40005277B6 /* AppDelegate.m */,
+				404ED4ED1A126E40005277B6 /* ViewController.h */,
+				404ED4EE1A126E40005277B6 /* ViewController.m */,
+				404ED4F01A126E40005277B6 /* Main.storyboard */,
+				404ED4F31A126E40005277B6 /* Images.xcassets */,
+				404ED4F51A126E40005277B6 /* LaunchScreen.xib */,
+				404ED4E61A126E40005277B6 /* Supporting Files */,
+			);
+			path = BBBAPI;
+			sourceTree = "<group>";
+		};
+		404ED4E61A126E40005277B6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				404ED4E71A126E40005277B6 /* Info.plist */,
+				404ED4E81A126E40005277B6 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		404ED4FF1A126E40005277B6 /* BBBAPITests */ = {
+			isa = PBXGroup;
+			children = (
+				404ED57C1A126FC5005277B6 /* BBAAuthenticationServiceTests.m */,
+				404ED57D1A126FC5005277B6 /* BBAAuthResponseMapperTests.h */,
+				404ED57E1A126FC5005277B6 /* BBAAuthServiceResponseMappersTestData.h */,
+				404ED57F1A126FC5005277B6 /* BBAAuthServiceResponseMappersTestData.m */,
+				404ED5801A126FC5005277B6 /* BBAAuthServiceResponseMapperTests.m */,
+				404ED5811A126FC5005277B6 /* BBAClientsResponseMapperTests.m */,
+				404ED5821A126FC5005277B6 /* BBAConnectionTests.m */,
+				404ED5831A126FC5005277B6 /* BBAConnectionTestsMocks.h */,
+				404ED5841A126FC5005277B6 /* BBAConnectionTestsMocks.m */,
+				404ED5851A126FC5005277B6 /* BBALibraryResponseMapperTests.m */,
+				404ED5861A126FC5005277B6 /* BBALibraryResponseTests.m */,
+				404ED5871A126FC5005277B6 /* BBALibraryServiceTests.m */,
+				404ED5881A126FC5005277B6 /* BBAMockAssertionHandler.h */,
+				404ED5891A126FC5005277B6 /* BBAMockAssertionHandler.m */,
+				404ED58A1A126FC5005277B6 /* BBAMockConnection.h */,
+				404ED58B1A126FC5005277B6 /* BBAMockConnection.m */,
+				404ED58C1A126FC5005277B6 /* BBANetworkConfigurationTests.m */,
+				404ED58D1A126FC5005277B6 /* BBARequestFactoryTests.m */,
+				404ED58E1A126FC5005277B6 /* BBAStatusResponseMapperTests.m */,
+				404ED58F1A126FC5005277B6 /* BBASwizzlingHelper.h */,
+				404ED5901A126FC5005277B6 /* BBASwizzlingHelper.m */,
+				404ED5911A126FC5005277B6 /* BBATestHelper.h */,
+				404ED5921A126FC5005277B6 /* BBATestHelper.m */,
+				404ED5931A126FC5005277B6 /* BBATestMacros.h */,
+				404ED5941A126FC5005277B6 /* BBATokensResponseMapperTests.m */,
+				404ED5951A126FC5005277B6 /* SampleData */,
+				404ED5001A126E40005277B6 /* Supporting Files */,
+			);
+			path = BBBAPITests;
+			sourceTree = "<group>";
+		};
+		404ED5001A126E40005277B6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				404ED5011A126E40005277B6 /* Info.plist */,
+				404ED5C01A126FF9005277B6 /* BBBAPITests.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		404ED50C1A126ED4005277B6 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				404ED50D1A126EE1005277B6 /* BBAAPIErrors.h */,
+				404ED50E1A126EE1005277B6 /* BBAAuthConnection.h */,
+				404ED50F1A126EE1005277B6 /* BBAAuthConnection.m */,
+				404ED5101A126EE1005277B6 /* BBAAuthData.h */,
+				404ED5111A126EE1005277B6 /* BBAAuthData.m */,
+				404ED5121A126EE1005277B6 /* BBAAuthDataValidator.h */,
+				404ED5131A126EE1005277B6 /* BBAAuthDataValidator.m */,
+				404ED5141A126EE1005277B6 /* BBAAuthenticationService.h */,
+				404ED5151A126EE1005277B6 /* BBAAuthenticationService.m */,
+				404ED5161A126EE1005277B6 /* BBAAuthenticationServiceConstants.h */,
+				404ED5171A126EE1005277B6 /* BBAAuthenticationServiceConstants.m */,
+				404ED5181A126EE1005277B6 /* BBAAuthenticator.h */,
+				404ED5191A126EE1005277B6 /* BBAAuthResponseMapper.h */,
+				404ED51A1A126EE1005277B6 /* BBAAuthResponseMapper.m */,
+				404ED51B1A126EE1005277B6 /* BBAAuthServiceErrorParser.h */,
+				404ED51C1A126EE1005277B6 /* BBAAuthServiceErrorParser.m */,
+				404ED51D1A126EE1005277B6 /* BBABookmarkService.h */,
+				404ED51E1A126EE1005277B6 /* BBABookmarkService.m */,
+				404ED51F1A126EE1005277B6 /* BBACatalogueService.h */,
+				404ED5201A126EE1005277B6 /* BBACatalogueService.m */,
+				404ED5211A126EE1005277B6 /* BBACategoryService.h */,
+				404ED5221A126EE1005277B6 /* BBACategoryService.m */,
+				404ED5231A126EE1005277B6 /* BBAClientDetails.h */,
+				404ED5241A126EE1005277B6 /* BBAClientDetails.m */,
+				404ED5251A126EE1005277B6 /* BBAClientsResponseMapper.h */,
+				404ED5261A126EE1005277B6 /* BBAClientsResponseMapper.m */,
+				404ED5271A126EE1005277B6 /* BBAClubcardService.h */,
+				404ED5281A126EE1005277B6 /* BBAClubcardService.m */,
+				404ED5291A126EE1005277B6 /* BBAConnection.h */,
+				404ED52A1A126EE1005277B6 /* BBAConnection.m */,
+				404ED52B1A126EE1005277B6 /* BBADefaultAuthenticator.h */,
+				404ED52C1A126EE1005277B6 /* BBADefaultAuthenticator.m */,
+				404ED52D1A126EE1005277B6 /* BBAJSONResponseMapper.h */,
+				404ED52E1A126EE1005277B6 /* BBAJSONResponseMapper.m */,
+				404ED52F1A126EE1005277B6 /* BBAKeyService.h */,
+				404ED5301A126EE1005277B6 /* BBAKeyService.m */,
+				404ED5311A126EE1005277B6 /* BBALibraryItem.h */,
+				404ED5321A126EE1005277B6 /* BBALibraryItem.m */,
+				404ED5331A126EE1005277B6 /* BBALibraryItemLink.h */,
+				404ED5341A126EE1005277B6 /* BBALibraryItemLink.m */,
+				404ED5351A126EE1005277B6 /* BBALibraryResponse.h */,
+				404ED5361A126EE1005277B6 /* BBALibraryResponse.m */,
+				404ED5371A126EE1005277B6 /* BBALibraryResponseMapper.h */,
+				404ED5381A126EE1005277B6 /* BBALibraryResponseMapper.m */,
+				404ED5391A126EE1005277B6 /* BBALibraryService.h */,
+				404ED53A1A126EE1005277B6 /* BBALibraryService.m */,
+				404ED53B1A126EE1005277B6 /* BBALibraryTypes.h */,
+				404ED53C1A126EE1005277B6 /* BBALogger.h */,
+				404ED53D1A126EE1005277B6 /* BBALogger.m */,
+				404ED53E1A126EE1005277B6 /* BBAMacros.h */,
+				404ED53F1A126EE1005277B6 /* BBAMarketingService.h */,
+				404ED5401A126EE1005277B6 /* BBAMarketingService.m */,
+				404ED5411A126EE1005277B6 /* BBANetworkConfiguration.h */,
+				404ED5421A126EE1005277B6 /* BBANetworkConfiguration.m */,
+				404ED5431A126EE1005277B6 /* BBANetworking.h */,
+				404ED5441A126EE1005277B6 /* BBANetworkingConstants.h */,
+				404ED5451A126EE1005277B6 /* BBAPurchasingService.h */,
+				404ED5461A126EE1005277B6 /* BBAPurchasingService.m */,
+				404ED5471A126EE1005277B6 /* BBARequest.h */,
+				404ED5481A126EE1005277B6 /* BBARequest.m */,
+				404ED5491A126EE1005277B6 /* BBARequestFactory.h */,
+				404ED54A1A126EE1005277B6 /* BBARequestFactory.m */,
+				404ED54B1A126EE1005277B6 /* BBAResponseMapping.h */,
+				404ED54C1A126EE1005277B6 /* BBAResponseMapping.m */,
+				404ED54D1A126EE1005277B6 /* BBASearchConnection.h */,
+				404ED54E1A126EE1005277B6 /* BBASearchConnection.m */,
+				404ED54F1A126EE1005277B6 /* BBASearchService.h */,
+				404ED5501A126EE1005277B6 /* BBASearchService.m */,
+				404ED5511A126EE1005277B6 /* BBAServerDateFormatter.h */,
+				404ED5521A126EE1005277B6 /* BBAServerDateFormatter.m */,
+				404ED5531A126EE1005277B6 /* BBAStatusResponseMapper.h */,
+				404ED5541A126EE1005277B6 /* BBAStatusResponseMapper.m */,
+				404ED5551A126EE1005277B6 /* BBATokensResponseMapper.h */,
+				404ED5561A126EE1005277B6 /* BBATokensResponseMapper.m */,
+				404ED5571A126EE1005277B6 /* BBAUserDetails.h */,
+				404ED5581A126EE1005277B6 /* BBAUserDetails.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		404ED5951A126FC5005277B6 /* SampleData */ = {
+			isa = PBXGroup;
+			children = (
+				404ED5961A126FC5005277B6 /* Library Service Responses */,
+			);
+			path = SampleData;
+			sourceTree = "<group>";
+		};
+		404ED5961A126FC5005277B6 /* Library Service Responses */ = {
+			isa = PBXGroup;
+			children = (
+				404ED5971A126FC5005277B6 /* libResponse.json */,
+				404ED5981A126FC5005277B6 /* libResponse_archived.json */,
+				404ED5991A126FC5005277B6 /* libResponse_deleted.json */,
+				404ED59A1A126FC5005277B6 /* libResponse_empty_archived.json */,
+				404ED59B1A126FC5005277B6 /* libResponse_get_single_item.json */,
+				404ED59C1A126FC5005277B6 /* libResponse_invalid_data_format.json */,
+				404ED59D1A126FC5005277B6 /* libResponse_invalid_type.json */,
+				404ED59E1A126FC5005277B6 /* libResponse_no_items.json */,
+				404ED59F1A126FC5005277B6 /* libResponse_single_item_archived.json */,
+				404ED5A01A126FC5005277B6 /* libResponse_single_item_deleted.json */,
+				404ED5A11A126FC5005277B6 /* libResponse_single_item_purchased.json */,
+				404ED5A21A126FC5005277B6 /* libResponse_single_item_sampled.json */,
+			);
+			path = "Library Service Responses";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		404ED4E21A126E40005277B6 /* BBBAPI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 404ED5061A126E40005277B6 /* Build configuration list for PBXNativeTarget "BBBAPI" */;
+			buildPhases = (
+				404ED4DF1A126E40005277B6 /* Sources */,
+				404ED4E01A126E40005277B6 /* Frameworks */,
+				404ED4E11A126E40005277B6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BBBAPI;
+			productName = BBBAPI;
+			productReference = 404ED4E31A126E40005277B6 /* BBBAPI.app */;
+			productType = "com.apple.product-type.application";
+		};
+		404ED4FB1A126E40005277B6 /* BBBAPITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 404ED5091A126E40005277B6 /* Build configuration list for PBXNativeTarget "BBBAPITests" */;
+			buildPhases = (
+				404ED4F81A126E40005277B6 /* Sources */,
+				404ED4F91A126E40005277B6 /* Frameworks */,
+				404ED4FA1A126E40005277B6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				404ED4FE1A126E40005277B6 /* PBXTargetDependency */,
+			);
+			name = BBBAPITests;
+			productName = BBBAPITests;
+			productReference = 404ED4FC1A126E40005277B6 /* BBBAPITests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		404ED4DB1A126E40005277B6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Blinkbox Entertainment Ltd";
+				TargetAttributes = {
+					404ED4E21A126E40005277B6 = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					404ED4FB1A126E40005277B6 = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = 404ED4E21A126E40005277B6;
+					};
+				};
+			};
+			buildConfigurationList = 404ED4DE1A126E40005277B6 /* Build configuration list for PBXProject "BBBAPI" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 404ED4DA1A126E40005277B6;
+			productRefGroup = 404ED4E41A126E40005277B6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				404ED4E21A126E40005277B6 /* BBBAPI */,
+				404ED4FB1A126E40005277B6 /* BBBAPITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		404ED4E11A126E40005277B6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				404ED4F21A126E40005277B6 /* Main.storyboard in Resources */,
+				404ED4F71A126E40005277B6 /* LaunchScreen.xib in Resources */,
+				404ED4F41A126E40005277B6 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		404ED4FA1A126E40005277B6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				404ED5BE1A126FC5005277B6 /* libResponse_single_item_purchased.json in Resources */,
+				404ED5B81A126FC5005277B6 /* libResponse_get_single_item.json in Resources */,
+				404ED5BF1A126FC5005277B6 /* libResponse_single_item_sampled.json in Resources */,
+				404ED5BC1A126FC5005277B6 /* libResponse_single_item_archived.json in Resources */,
+				404ED5B91A126FC5005277B6 /* libResponse_invalid_data_format.json in Resources */,
+				404ED5B71A126FC5005277B6 /* libResponse_empty_archived.json in Resources */,
+				404ED5B61A126FC5005277B6 /* libResponse_deleted.json in Resources */,
+				404ED5BB1A126FC5005277B6 /* libResponse_no_items.json in Resources */,
+				404ED5B51A126FC5005277B6 /* libResponse_archived.json in Resources */,
+				404ED5BA1A126FC5005277B6 /* libResponse_invalid_type.json in Resources */,
+				404ED5B41A126FC5005277B6 /* libResponse.json in Resources */,
+				404ED5BD1A126FC5005277B6 /* libResponse_single_item_deleted.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		404ED4DF1A126E40005277B6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				404ED56B1A126EE1005277B6 /* BBALibraryItemLink.m in Sources */,
+				404ED4EF1A126E40005277B6 /* ViewController.m in Sources */,
+				404ED55D1A126EE1005277B6 /* BBAAuthenticationServiceConstants.m in Sources */,
+				404ED5661A126EE1005277B6 /* BBAConnection.m in Sources */,
+				404ED55C1A126EE1005277B6 /* BBAAuthenticationService.m in Sources */,
+				404ED5601A126EE1005277B6 /* BBABookmarkService.m in Sources */,
+				404ED56E1A126EE1005277B6 /* BBALibraryService.m in Sources */,
+				404ED56A1A126EE1005277B6 /* BBALibraryItem.m in Sources */,
+				404ED5591A126EE1005277B6 /* BBAAuthConnection.m in Sources */,
+				404ED5791A126EE1005277B6 /* BBAStatusResponseMapper.m in Sources */,
+				404ED5651A126EE1005277B6 /* BBAClubcardService.m in Sources */,
+				404ED5641A126EE1005277B6 /* BBAClientsResponseMapper.m in Sources */,
+				404ED4EC1A126E40005277B6 /* AppDelegate.m in Sources */,
+				404ED56D1A126EE1005277B6 /* BBALibraryResponseMapper.m in Sources */,
+				404ED55E1A126EE1005277B6 /* BBAAuthResponseMapper.m in Sources */,
+				404ED56C1A126EE1005277B6 /* BBALibraryResponse.m in Sources */,
+				404ED5751A126EE1005277B6 /* BBAResponseMapping.m in Sources */,
+				404ED56F1A126EE1005277B6 /* BBALogger.m in Sources */,
+				404ED5631A126EE1005277B6 /* BBAClientDetails.m in Sources */,
+				404ED57A1A126EE1005277B6 /* BBATokensResponseMapper.m in Sources */,
+				404ED5781A126EE1005277B6 /* BBAServerDateFormatter.m in Sources */,
+				404ED5611A126EE1005277B6 /* BBACatalogueService.m in Sources */,
+				404ED55A1A126EE1005277B6 /* BBAAuthData.m in Sources */,
+				404ED5691A126EE1005277B6 /* BBAKeyService.m in Sources */,
+				404ED5681A126EE1005277B6 /* BBAJSONResponseMapper.m in Sources */,
+				404ED5741A126EE1005277B6 /* BBARequestFactory.m in Sources */,
+				404ED55F1A126EE1005277B6 /* BBAAuthServiceErrorParser.m in Sources */,
+				404ED5721A126EE1005277B6 /* BBAPurchasingService.m in Sources */,
+				404ED5731A126EE1005277B6 /* BBARequest.m in Sources */,
+				404ED55B1A126EE1005277B6 /* BBAAuthDataValidator.m in Sources */,
+				404ED5711A126EE1005277B6 /* BBANetworkConfiguration.m in Sources */,
+				404ED4E91A126E40005277B6 /* main.m in Sources */,
+				404ED5771A126EE1005277B6 /* BBASearchService.m in Sources */,
+				404ED57B1A126EE1005277B6 /* BBAUserDetails.m in Sources */,
+				404ED5701A126EE1005277B6 /* BBAMarketingService.m in Sources */,
+				404ED5621A126EE1005277B6 /* BBACategoryService.m in Sources */,
+				404ED5761A126EE1005277B6 /* BBASearchConnection.m in Sources */,
+				404ED5671A126EE1005277B6 /* BBADefaultAuthenticator.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		404ED4F81A126E40005277B6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				404ED5AA1A126FC5005277B6 /* BBALibraryResponseTests.m in Sources */,
+				404ED5A71A126FC5005277B6 /* BBAConnectionTests.m in Sources */,
+				404ED5A61A126FC5005277B6 /* BBAClientsResponseMapperTests.m in Sources */,
+				404ED5AE1A126FC5005277B6 /* BBANetworkConfigurationTests.m in Sources */,
+				404ED5AC1A126FC5005277B6 /* BBAMockAssertionHandler.m in Sources */,
+				404ED5B01A126FC5005277B6 /* BBAStatusResponseMapperTests.m in Sources */,
+				404ED5A31A126FC5005277B6 /* BBAAuthenticationServiceTests.m in Sources */,
+				404ED5AB1A126FC5005277B6 /* BBALibraryServiceTests.m in Sources */,
+				404ED5A91A126FC5005277B6 /* BBALibraryResponseMapperTests.m in Sources */,
+				404ED5AD1A126FC5005277B6 /* BBAMockConnection.m in Sources */,
+				404ED5A81A126FC5005277B6 /* BBAConnectionTestsMocks.m in Sources */,
+				404ED5B31A126FC5005277B6 /* BBATokensResponseMapperTests.m in Sources */,
+				404ED5A41A126FC5005277B6 /* BBAAuthServiceResponseMappersTestData.m in Sources */,
+				404ED5B11A126FC5005277B6 /* BBASwizzlingHelper.m in Sources */,
+				404ED5AF1A126FC5005277B6 /* BBARequestFactoryTests.m in Sources */,
+				404ED5A51A126FC5005277B6 /* BBAAuthServiceResponseMapperTests.m in Sources */,
+				404ED5B21A126FC5005277B6 /* BBATestHelper.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		404ED4FE1A126E40005277B6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 404ED4E21A126E40005277B6 /* BBBAPI */;
+			targetProxy = 404ED4FD1A126E40005277B6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		404ED4F01A126E40005277B6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				404ED4F11A126E40005277B6 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		404ED4F51A126E40005277B6 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				404ED4F61A126E40005277B6 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		404ED5041A126E40005277B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		404ED5051A126E40005277B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		404ED5071A126E40005277B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = BBBAPI/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		404ED5081A126E40005277B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = BBBAPI/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		404ED50A1A126E40005277B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = BBBAPITests/BBBAPITests.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = BBBAPITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BBBAPI.app/BBBAPI";
+			};
+			name = Debug;
+		};
+		404ED50B1A126E40005277B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = BBBAPITests/BBBAPITests.pch;
+				INFOPLIST_FILE = BBBAPITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BBBAPI.app/BBBAPI";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		404ED4DE1A126E40005277B6 /* Build configuration list for PBXProject "BBBAPI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				404ED5041A126E40005277B6 /* Debug */,
+				404ED5051A126E40005277B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		404ED5061A126E40005277B6 /* Build configuration list for PBXNativeTarget "BBBAPI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				404ED5071A126E40005277B6 /* Debug */,
+				404ED5081A126E40005277B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		404ED5091A126E40005277B6 /* Build configuration list for PBXNativeTarget "BBBAPITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				404ED50A1A126E40005277B6 /* Debug */,
+				404ED50B1A126E40005277B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 404ED4DB1A126E40005277B6 /* Project object */;
+}
