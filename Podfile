@@ -7,6 +7,6 @@ workspace 'BBBAPI'
 
 xcodeproj 'BBBAPI/BBBAPI.xcodeproj'
 
-pod 'CocoaLumberjack'
+pod 'CocoaLumberjack', '~>1.9.2'
 
 
