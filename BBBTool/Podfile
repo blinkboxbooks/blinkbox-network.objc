@@ -1,8 +1,0 @@
-source 'git@git.mobcastdev.com:iOS/Specs.git'
-source 'https://github.com/CocoaPods/Specs.git'
-
-platform :osx, '10.10'
-
-pod 'BBBAPI', :path => '../'
-
-
