@@ -2,7 +2,7 @@
 //  ViewController.h
 //  BBBAPI
 //
-//  Created by Tomek Kuźma on 11/11/2014.
+//  Created by Tomek Kuźma on 12/11/2014.
 //  Copyright (c) 2014 Blinkbox Entertainment Ltd. All rights reserved.
 //
 
