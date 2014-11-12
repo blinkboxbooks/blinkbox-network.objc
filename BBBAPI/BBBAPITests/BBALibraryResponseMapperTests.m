@@ -177,7 +177,7 @@
 - (NSHTTPURLResponse *)responseWithHTTPStatus:(NSInteger)status{
     NSHTTPURLResponse *URLResponse = [[NSHTTPURLResponse alloc] initWithURL:nil
                                                                  statusCode:status
-                                                                HTTPVersion:BBAHTTPVersion11
+                                                                HTTPVersion:@"HTTP/1.1"
                                                                headerFields:nil];
     return URLResponse;
 }
