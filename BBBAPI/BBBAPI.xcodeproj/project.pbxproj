@@ -78,6 +78,7 @@
 		401A1DF61A13D78B004FBA41 /* BBAStatusResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 401A1DD11A13D78B004FBA41 /* BBAStatusResponseMapper.m */; };
 		401A1DF71A13D78B004FBA41 /* BBATokensResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 401A1DD31A13D78B004FBA41 /* BBATokensResponseMapper.m */; };
 		401A1DF81A13D78B004FBA41 /* BBAUserDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 401A1DD51A13D78B004FBA41 /* BBAUserDetails.m */; };
+		40FB3ABC1A14C7A8005936B5 /* BBBAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FB3ABB1A14C7A8005936B5 /* BBBAPI.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -218,6 +219,8 @@
 		401A1DD31A13D78B004FBA41 /* BBATokensResponseMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBATokensResponseMapper.m; path = Classes/BBATokensResponseMapper.m; sourceTree = "<group>"; };
 		401A1DD41A13D78B004FBA41 /* BBAUserDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBAUserDetails.h; path = Classes/BBAUserDetails.h; sourceTree = "<group>"; };
 		401A1DD51A13D78B004FBA41 /* BBAUserDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBAUserDetails.m; path = Classes/BBAUserDetails.m; sourceTree = "<group>"; };
+		40FB3ABA1A14C7A8005936B5 /* BBBAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBBAPI.h; path = Classes/BBBAPI.h; sourceTree = "<group>"; };
+		40FB3ABB1A14C7A8005936B5 /* BBBAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBBAPI.m; path = Classes/BBBAPI.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -431,6 +434,8 @@
 				401A1DD31A13D78B004FBA41 /* BBATokensResponseMapper.m */,
 				401A1DD41A13D78B004FBA41 /* BBAUserDetails.h */,
 				401A1DD51A13D78B004FBA41 /* BBAUserDetails.m */,
+				40FB3ABA1A14C7A8005936B5 /* BBBAPI.h */,
+				40FB3ABB1A14C7A8005936B5 /* BBBAPI.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -583,6 +588,7 @@
 				401A1DF81A13D78B004FBA41 /* BBAUserDetails.m in Sources */,
 				401A1DED1A13D78B004FBA41 /* BBAMarketingService.m in Sources */,
 				401A1DDF1A13D78B004FBA41 /* BBACategoryService.m in Sources */,
+				40FB3ABC1A14C7A8005936B5 /* BBBAPI.m in Sources */,
 				401A1DF31A13D78B004FBA41 /* BBASearchConnection.m in Sources */,
 				401A1DE41A13D78B004FBA41 /* BBADefaultAuthenticator.m in Sources */,
 			);
@@ -796,6 +802,7 @@
 				401A1D401A13D6CB004FBA41 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		401A1D411A13D6CB004FBA41 /* Build configuration list for PBXNativeTarget "BBBAPITests" */ = {
 			isa = XCConfigurationList;
@@ -804,6 +811,7 @@
 				401A1D431A13D6CB004FBA41 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

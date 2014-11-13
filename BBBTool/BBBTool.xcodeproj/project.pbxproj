@@ -1,772 +1,515 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>archiveVersion</key>
-	<string>1</string>
-	<key>classes</key>
-	<dict/>
-	<key>objectVersion</key>
-	<string>46</string>
-	<key>objects</key>
-	<dict>
-		<key>408D1A021A128819005EBDD7</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>408D1A0D1A128819005EBDD7</string>
-				<string>408D1A0C1A128819005EBDD7</string>
-				<string>606B938468019ED49B78106E</string>
-				<string>E43DA2AA2871AA63CD1DADEC</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>408D1A031A128819005EBDD7</key>
-		<dict>
-			<key>attributes</key>
-			<dict>
-				<key>LastUpgradeCheck</key>
-				<string>0610</string>
-				<key>ORGANIZATIONNAME</key>
-				<string>Blinkbox Entertainment Ltd</string>
-				<key>TargetAttributes</key>
-				<dict>
-					<key>408D1A0A1A128819005EBDD7</key>
-					<dict>
-						<key>CreatedOnToolsVersion</key>
-						<string>6.1</string>
-					</dict>
-				</dict>
-			</dict>
-			<key>buildConfigurationList</key>
-			<string>408D1A061A128819005EBDD7</string>
-			<key>compatibilityVersion</key>
-			<string>Xcode 3.2</string>
-			<key>developmentRegion</key>
-			<string>English</string>
-			<key>hasScannedForEncodings</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXProject</string>
-			<key>knownRegions</key>
-			<array>
-				<string>en</string>
-			</array>
-			<key>mainGroup</key>
-			<string>408D1A021A128819005EBDD7</string>
-			<key>productRefGroup</key>
-			<string>408D1A0C1A128819005EBDD7</string>
-			<key>projectDirPath</key>
-			<string></string>
-			<key>projectReferences</key>
-			<array/>
-			<key>projectRoot</key>
-			<string></string>
-			<key>targets</key>
-			<array>
-				<string>408D1A0A1A128819005EBDD7</string>
-			</array>
-		</dict>
-		<key>408D1A061A128819005EBDD7</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>408D1A101A128819005EBDD7</string>
-				<string>408D1A111A128819005EBDD7</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>408D1A071A128819005EBDD7</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>408D1A0F1A128819005EBDD7</string>
-				<string>408D1A281A128846005EBDD7</string>
-				<string>408D1A251A128846005EBDD7</string>
-				<string>408D1A241A128846005EBDD7</string>
-				<string>408D1A261A128846005EBDD7</string>
-				<string>408D1A271A128846005EBDD7</string>
-				<string>408D1A231A128846005EBDD7</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>408D1A081A128819005EBDD7</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>5F9726FA98974446E16E7064</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>408D1A091A128819005EBDD7</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>dstPath</key>
-			<string>/usr/share/man/man1/</string>
-			<key>dstSubfolderSpec</key>
-			<string>0</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXCopyFilesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>1</string>
-		</dict>
-		<key>408D1A0A1A128819005EBDD7</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>408D1A121A128819005EBDD7</string>
-			<key>buildPhases</key>
-			<array>
-				<string>E017D9E049BCFC403B3FBCAF</string>
-				<string>408D1A071A128819005EBDD7</string>
-				<string>408D1A081A128819005EBDD7</string>
-				<string>408D1A091A128819005EBDD7</string>
-				<string>84781B2B797AB754EB5599A7</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>BBBTool</string>
-			<key>productName</key>
-			<string>BBBTool</string>
-			<key>productReference</key>
-			<string>408D1A0B1A128819005EBDD7</string>
-			<key>productType</key>
-			<string>com.apple.product-type.tool</string>
-		</dict>
-		<key>408D1A0B1A128819005EBDD7</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>compiled.mach-o.executable</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>BBBTool</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>408D1A0C1A128819005EBDD7</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>408D1A0B1A128819005EBDD7</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Products</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>408D1A0D1A128819005EBDD7</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>408D1A151A128846005EBDD7</string>
-				<string>408D1A161A128846005EBDD7</string>
-				<string>408D1A171A128846005EBDD7</string>
-				<string>408D1A181A128846005EBDD7</string>
-				<string>408D1A191A128846005EBDD7</string>
-				<string>408D1A1A1A128846005EBDD7</string>
-				<string>408D1A1B1A128846005EBDD7</string>
-				<string>408D1A1C1A128846005EBDD7</string>
-				<string>408D1A1D1A128846005EBDD7</string>
-				<string>408D1A1E1A128846005EBDD7</string>
-				<string>408D1A1F1A128846005EBDD7</string>
-				<string>408D1A201A128846005EBDD7</string>
-				<string>408D1A211A128846005EBDD7</string>
-				<string>408D1A221A128846005EBDD7</string>
-				<string>408D1A0E1A128819005EBDD7</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>BBBTool</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>408D1A0E1A128819005EBDD7</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>main.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>408D1A0F1A128819005EBDD7</key>
-		<dict>
-			<key>fileRef</key>
-			<string>408D1A0E1A128819005EBDD7</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>408D1A101A128819005EBDD7</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_UNREACHABLE_CODE</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_DYNAMIC_NO_PIC</key>
-				<string>NO</string>
-				<key>GCC_OPTIMIZATION_LEVEL</key>
-				<string>0</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
-				<string>NO</string>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES_ERROR</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES_AGGRESSIVE</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>MACOSX_DEPLOYMENT_TARGET</key>
-				<string>10.10</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>YES</string>
-				<key>ONLY_ACTIVE_ARCH</key>
-				<string>YES</string>
-				<key>SDKROOT</key>
-				<string>macosx</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>408D1A111A128819005EBDD7</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_UNREACHABLE_CODE</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>YES</string>
-				<key>DEBUG_INFORMATION_FORMAT</key>
-				<string>dwarf-with-dsym</string>
-				<key>ENABLE_NS_ASSERTIONS</key>
-				<string>NO</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES_ERROR</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES_AGGRESSIVE</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>MACOSX_DEPLOYMENT_TARGET</key>
-				<string>10.10</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>NO</string>
-				<key>SDKROOT</key>
-				<string>macosx</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>408D1A121A128819005EBDD7</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>408D1A131A128819005EBDD7</string>
-				<string>408D1A141A128819005EBDD7</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>408D1A131A128819005EBDD7</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>87B78B4A75CACBB940A730B8</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>408D1A141A128819005EBDD7</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>AB35D44D3746815673741028</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>408D1A151A128846005EBDD7</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>BBBTool-Prefix.pch</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>408D1A161A128846005EBDD7</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.man</string>
-			<key>path</key>
-			<string>BBBTool.1</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>408D1A171A128846005EBDD7</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>BBTArgument.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>408D1A181A128846005EBDD7</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>BBTArgument.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>408D1A191A128846005EBDD7</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>BBTLibraryOperation.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>408D1A1A1A128846005EBDD7</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>BBTLibraryOperation.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>408D1A1B1A128846005EBDD7</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>BBTLog.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>408D1A1C1A128846005EBDD7</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>BBTLog.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>408D1A1D1A128846005EBDD7</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>BBTLoginOperation.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>408D1A1E1A128846005EBDD7</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>BBTLoginOperation.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>408D1A1F1A128846005EBDD7</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>BBTOperation.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>408D1A201A128846005EBDD7</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>BBTOperation.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>408D1A211A128846005EBDD7</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>BBTTool.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>408D1A221A128846005EBDD7</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>BBTTool.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>408D1A231A128846005EBDD7</key>
-		<dict>
-			<key>fileRef</key>
-			<string>408D1A181A128846005EBDD7</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>408D1A241A128846005EBDD7</key>
-		<dict>
-			<key>fileRef</key>
-			<string>408D1A1A1A128846005EBDD7</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>408D1A251A128846005EBDD7</key>
-		<dict>
-			<key>fileRef</key>
-			<string>408D1A1C1A128846005EBDD7</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>408D1A261A128846005EBDD7</key>
-		<dict>
-			<key>fileRef</key>
-			<string>408D1A1E1A128846005EBDD7</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>408D1A271A128846005EBDD7</key>
-		<dict>
-			<key>fileRef</key>
-			<string>408D1A201A128846005EBDD7</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>408D1A281A128846005EBDD7</key>
-		<dict>
-			<key>fileRef</key>
-			<string>408D1A221A128846005EBDD7</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>5F9726FA98974446E16E7064</key>
-		<dict>
-			<key>fileRef</key>
-			<string>66F271D7FBF1B0ACA495F06D</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>606B938468019ED49B78106E</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>87B78B4A75CACBB940A730B8</string>
-				<string>AB35D44D3746815673741028</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>66F271D7FBF1B0ACA495F06D</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>libPods.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>84781B2B797AB754EB5599A7</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Copy Pods Resources</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>87B78B4A75CACBB940A730B8</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods.debug.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods/Pods.debug.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AB35D44D3746815673741028</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods.release.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods/Pods.release.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>E017D9E049BCFC403B3FBCAF</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Check Pods Manifest.lock</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
-if [[ $? != 0 ]] ; then
-    cat &lt;&lt; EOM
-error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
-EOM
-    exit 1
-fi
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>E43DA2AA2871AA63CD1DADEC</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>66F271D7FBF1B0ACA495F06D</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Frameworks</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-	</dict>
-	<key>rootObject</key>
-	<string>408D1A031A128819005EBDD7</string>
-</dict>
-</plist>
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		40FB3A301A14C6AE005936B5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FB3A2F1A14C6AE005936B5 /* main.m */; };
+		40FB3A441A14C6DD005936B5 /* BBTArgument.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FB3A391A14C6DD005936B5 /* BBTArgument.m */; };
+		40FB3A451A14C6DD005936B5 /* BBTLibraryOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FB3A3B1A14C6DD005936B5 /* BBTLibraryOperation.m */; };
+		40FB3A461A14C6DD005936B5 /* BBTLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FB3A3D1A14C6DD005936B5 /* BBTLog.m */; };
+		40FB3A471A14C6DD005936B5 /* BBTLoginOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FB3A3F1A14C6DD005936B5 /* BBTLoginOperation.m */; };
+		40FB3A481A14C6DD005936B5 /* BBTOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FB3A411A14C6DD005936B5 /* BBTOperation.m */; };
+		40FB3A491A14C6DD005936B5 /* BBTTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FB3A431A14C6DD005936B5 /* BBTTool.m */; };
+		40FB3A971A14C70A005936B5 /* BBAAuthConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FB3A4D1A14C70A005936B5 /* BBAAuthConnection.m */; };
+		40FB3A981A14C70A005936B5 /* BBAAuthData.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FB3A4F1A14C70A005936B5 /* BBAAuthData.m */; };
+		40FB3A991A14C70A005936B5 /* BBAAuthDataValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FB3A511A14C70A005936B5 /* BBAAuthDataValidator.m */; };
+		40FB3A9A1A14C70A005936B5 /* BBAAuthenticationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FB3A531A14C70A005936B5 /* BBAAuthenticationService.m */; };
+		40FB3A9B1A14C70A005936B5 /* BBAAuthenticationServiceConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FB3A551A14C70A005936B5 /* BBAAuthenticationServiceConstants.m */; };
+		40FB3A9C1A14C70A005936B5 /* BBAAuthResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FB3A581A14C70A005936B5 /* BBAAuthResponseMapper.m */; };
+		40FB3A9D1A14C70A005936B5 /* BBAAuthServiceErrorParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FB3A5A1A14C70A005936B5 /* BBAAuthServiceErrorParser.m */; };
+		40FB3A9E1A14C70A005936B5 /* BBABookmarkService.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FB3A5C1A14C70A005936B5 /* BBABookmarkService.m */; };
+		40FB3A9F1A14C70A005936B5 /* BBACatalogueService.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FB3A5E1A14C70A005936B5 /* BBACatalogueService.m */; };
+		40FB3AA01A14C70A005936B5 /* BBACategoryService.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FB3A601A14C70A005936B5 /* BBACategoryService.m */; };
+		40FB3AA11A14C70A005936B5 /* BBAClientDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FB3A621A14C70A005936B5 /* BBAClientDetails.m */; };
+		40FB3AA21A14C70A005936B5 /* BBAClientsResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FB3A641A14C70A005936B5 /* BBAClientsResponseMapper.m */; };
+		40FB3AA31A14C70A005936B5 /* BBAClubcardService.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FB3A661A14C70A005936B5 /* BBAClubcardService.m */; };
+		40FB3AA41A14C70A005936B5 /* BBAConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FB3A681A14C70A005936B5 /* BBAConnection.m */; };
+		40FB3AA51A14C70A005936B5 /* BBADefaultAuthenticator.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FB3A6A1A14C70A005936B5 /* BBADefaultAuthenticator.m */; };
+		40FB3AA61A14C70A005936B5 /* BBAJSONResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FB3A6C1A14C70A005936B5 /* BBAJSONResponseMapper.m */; };
+		40FB3AA71A14C70A005936B5 /* BBAKeyService.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FB3A6E1A14C70A005936B5 /* BBAKeyService.m */; };
+		40FB3AA81A14C70A005936B5 /* BBALibraryItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FB3A701A14C70A005936B5 /* BBALibraryItem.m */; };
+		40FB3AA91A14C70A005936B5 /* BBALibraryItemLink.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FB3A721A14C70A005936B5 /* BBALibraryItemLink.m */; };
+		40FB3AAA1A14C70A005936B5 /* BBALibraryResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FB3A741A14C70A005936B5 /* BBALibraryResponse.m */; };
+		40FB3AAB1A14C70A005936B5 /* BBALibraryResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FB3A761A14C70A005936B5 /* BBALibraryResponseMapper.m */; };
+		40FB3AAC1A14C70A005936B5 /* BBALibraryService.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FB3A781A14C70A005936B5 /* BBALibraryService.m */; };
+		40FB3AAD1A14C70A005936B5 /* BBALogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FB3A7B1A14C70A005936B5 /* BBALogger.m */; };
+		40FB3AAE1A14C70A005936B5 /* BBAMarketingService.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FB3A7E1A14C70A005936B5 /* BBAMarketingService.m */; };
+		40FB3AAF1A14C70A005936B5 /* BBANetworkConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FB3A801A14C70A005936B5 /* BBANetworkConfiguration.m */; };
+		40FB3AB01A14C70A005936B5 /* BBAPurchasingService.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FB3A841A14C70A005936B5 /* BBAPurchasingService.m */; };
+		40FB3AB11A14C70A005936B5 /* BBARequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FB3A861A14C70A005936B5 /* BBARequest.m */; };
+		40FB3AB21A14C70A005936B5 /* BBARequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FB3A881A14C70A005936B5 /* BBARequestFactory.m */; };
+		40FB3AB31A14C70A005936B5 /* BBAResponseMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FB3A8A1A14C70A005936B5 /* BBAResponseMapping.m */; };
+		40FB3AB41A14C70A005936B5 /* BBASearchConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FB3A8C1A14C70A005936B5 /* BBASearchConnection.m */; };
+		40FB3AB51A14C70A005936B5 /* BBASearchService.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FB3A8E1A14C70A005936B5 /* BBASearchService.m */; };
+		40FB3AB61A14C70A005936B5 /* BBAServerDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FB3A901A14C70A005936B5 /* BBAServerDateFormatter.m */; };
+		40FB3AB71A14C70A005936B5 /* BBAStatusResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FB3A921A14C70A005936B5 /* BBAStatusResponseMapper.m */; };
+		40FB3AB81A14C70A005936B5 /* BBATokensResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FB3A941A14C70A005936B5 /* BBATokensResponseMapper.m */; };
+		40FB3AB91A14C70A005936B5 /* BBAUserDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FB3A961A14C70A005936B5 /* BBAUserDetails.m */; };
+		40FB3ABF1A14C7E8005936B5 /* BBBAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FB3ABE1A14C7E8005936B5 /* BBBAPI.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		40FB3A2A1A14C6AE005936B5 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		40FB3A2C1A14C6AE005936B5 /* BBBTool */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BBBTool; sourceTree = BUILT_PRODUCTS_DIR; };
+		40FB3A2F1A14C6AE005936B5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		40FB3A361A14C6DD005936B5 /* BBBTool-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BBBTool-Prefix.pch"; sourceTree = "<group>"; };
+		40FB3A371A14C6DD005936B5 /* BBBTool.1 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.man; path = BBBTool.1; sourceTree = "<group>"; };
+		40FB3A381A14C6DD005936B5 /* BBTArgument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBTArgument.h; sourceTree = "<group>"; };
+		40FB3A391A14C6DD005936B5 /* BBTArgument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBTArgument.m; sourceTree = "<group>"; };
+		40FB3A3A1A14C6DD005936B5 /* BBTLibraryOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBTLibraryOperation.h; sourceTree = "<group>"; };
+		40FB3A3B1A14C6DD005936B5 /* BBTLibraryOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBTLibraryOperation.m; sourceTree = "<group>"; };
+		40FB3A3C1A14C6DD005936B5 /* BBTLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBTLog.h; sourceTree = "<group>"; };
+		40FB3A3D1A14C6DD005936B5 /* BBTLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBTLog.m; sourceTree = "<group>"; };
+		40FB3A3E1A14C6DD005936B5 /* BBTLoginOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBTLoginOperation.h; sourceTree = "<group>"; };
+		40FB3A3F1A14C6DD005936B5 /* BBTLoginOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBTLoginOperation.m; sourceTree = "<group>"; };
+		40FB3A401A14C6DD005936B5 /* BBTOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBTOperation.h; sourceTree = "<group>"; };
+		40FB3A411A14C6DD005936B5 /* BBTOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBTOperation.m; sourceTree = "<group>"; };
+		40FB3A421A14C6DD005936B5 /* BBTTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBTTool.h; sourceTree = "<group>"; };
+		40FB3A431A14C6DD005936B5 /* BBTTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBTTool.m; sourceTree = "<group>"; };
+		40FB3A4B1A14C70A005936B5 /* BBAAPIErrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBAAPIErrors.h; path = ../BBBAPI/BBBAPI/Classes/BBAAPIErrors.h; sourceTree = "<group>"; };
+		40FB3A4C1A14C70A005936B5 /* BBAAuthConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBAAuthConnection.h; path = ../BBBAPI/BBBAPI/Classes/BBAAuthConnection.h; sourceTree = "<group>"; };
+		40FB3A4D1A14C70A005936B5 /* BBAAuthConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBAAuthConnection.m; path = ../BBBAPI/BBBAPI/Classes/BBAAuthConnection.m; sourceTree = "<group>"; };
+		40FB3A4E1A14C70A005936B5 /* BBAAuthData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBAAuthData.h; path = ../BBBAPI/BBBAPI/Classes/BBAAuthData.h; sourceTree = "<group>"; };
+		40FB3A4F1A14C70A005936B5 /* BBAAuthData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBAAuthData.m; path = ../BBBAPI/BBBAPI/Classes/BBAAuthData.m; sourceTree = "<group>"; };
+		40FB3A501A14C70A005936B5 /* BBAAuthDataValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBAAuthDataValidator.h; path = ../BBBAPI/BBBAPI/Classes/BBAAuthDataValidator.h; sourceTree = "<group>"; };
+		40FB3A511A14C70A005936B5 /* BBAAuthDataValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBAAuthDataValidator.m; path = ../BBBAPI/BBBAPI/Classes/BBAAuthDataValidator.m; sourceTree = "<group>"; };
+		40FB3A521A14C70A005936B5 /* BBAAuthenticationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBAAuthenticationService.h; path = ../BBBAPI/BBBAPI/Classes/BBAAuthenticationService.h; sourceTree = "<group>"; };
+		40FB3A531A14C70A005936B5 /* BBAAuthenticationService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBAAuthenticationService.m; path = ../BBBAPI/BBBAPI/Classes/BBAAuthenticationService.m; sourceTree = "<group>"; };
+		40FB3A541A14C70A005936B5 /* BBAAuthenticationServiceConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBAAuthenticationServiceConstants.h; path = ../BBBAPI/BBBAPI/Classes/BBAAuthenticationServiceConstants.h; sourceTree = "<group>"; };
+		40FB3A551A14C70A005936B5 /* BBAAuthenticationServiceConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBAAuthenticationServiceConstants.m; path = ../BBBAPI/BBBAPI/Classes/BBAAuthenticationServiceConstants.m; sourceTree = "<group>"; };
+		40FB3A561A14C70A005936B5 /* BBAAuthenticator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBAAuthenticator.h; path = ../BBBAPI/BBBAPI/Classes/BBAAuthenticator.h; sourceTree = "<group>"; };
+		40FB3A571A14C70A005936B5 /* BBAAuthResponseMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBAAuthResponseMapper.h; path = ../BBBAPI/BBBAPI/Classes/BBAAuthResponseMapper.h; sourceTree = "<group>"; };
+		40FB3A581A14C70A005936B5 /* BBAAuthResponseMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBAAuthResponseMapper.m; path = ../BBBAPI/BBBAPI/Classes/BBAAuthResponseMapper.m; sourceTree = "<group>"; };
+		40FB3A591A14C70A005936B5 /* BBAAuthServiceErrorParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBAAuthServiceErrorParser.h; path = ../BBBAPI/BBBAPI/Classes/BBAAuthServiceErrorParser.h; sourceTree = "<group>"; };
+		40FB3A5A1A14C70A005936B5 /* BBAAuthServiceErrorParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBAAuthServiceErrorParser.m; path = ../BBBAPI/BBBAPI/Classes/BBAAuthServiceErrorParser.m; sourceTree = "<group>"; };
+		40FB3A5B1A14C70A005936B5 /* BBABookmarkService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBABookmarkService.h; path = ../BBBAPI/BBBAPI/Classes/BBABookmarkService.h; sourceTree = "<group>"; };
+		40FB3A5C1A14C70A005936B5 /* BBABookmarkService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBABookmarkService.m; path = ../BBBAPI/BBBAPI/Classes/BBABookmarkService.m; sourceTree = "<group>"; };
+		40FB3A5D1A14C70A005936B5 /* BBACatalogueService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBACatalogueService.h; path = ../BBBAPI/BBBAPI/Classes/BBACatalogueService.h; sourceTree = "<group>"; };
+		40FB3A5E1A14C70A005936B5 /* BBACatalogueService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBACatalogueService.m; path = ../BBBAPI/BBBAPI/Classes/BBACatalogueService.m; sourceTree = "<group>"; };
+		40FB3A5F1A14C70A005936B5 /* BBACategoryService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBACategoryService.h; path = ../BBBAPI/BBBAPI/Classes/BBACategoryService.h; sourceTree = "<group>"; };
+		40FB3A601A14C70A005936B5 /* BBACategoryService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBACategoryService.m; path = ../BBBAPI/BBBAPI/Classes/BBACategoryService.m; sourceTree = "<group>"; };
+		40FB3A611A14C70A005936B5 /* BBAClientDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBAClientDetails.h; path = ../BBBAPI/BBBAPI/Classes/BBAClientDetails.h; sourceTree = "<group>"; };
+		40FB3A621A14C70A005936B5 /* BBAClientDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBAClientDetails.m; path = ../BBBAPI/BBBAPI/Classes/BBAClientDetails.m; sourceTree = "<group>"; };
+		40FB3A631A14C70A005936B5 /* BBAClientsResponseMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBAClientsResponseMapper.h; path = ../BBBAPI/BBBAPI/Classes/BBAClientsResponseMapper.h; sourceTree = "<group>"; };
+		40FB3A641A14C70A005936B5 /* BBAClientsResponseMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBAClientsResponseMapper.m; path = ../BBBAPI/BBBAPI/Classes/BBAClientsResponseMapper.m; sourceTree = "<group>"; };
+		40FB3A651A14C70A005936B5 /* BBAClubcardService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBAClubcardService.h; path = ../BBBAPI/BBBAPI/Classes/BBAClubcardService.h; sourceTree = "<group>"; };
+		40FB3A661A14C70A005936B5 /* BBAClubcardService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBAClubcardService.m; path = ../BBBAPI/BBBAPI/Classes/BBAClubcardService.m; sourceTree = "<group>"; };
+		40FB3A671A14C70A005936B5 /* BBAConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBAConnection.h; path = ../BBBAPI/BBBAPI/Classes/BBAConnection.h; sourceTree = "<group>"; };
+		40FB3A681A14C70A005936B5 /* BBAConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBAConnection.m; path = ../BBBAPI/BBBAPI/Classes/BBAConnection.m; sourceTree = "<group>"; };
+		40FB3A691A14C70A005936B5 /* BBADefaultAuthenticator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBADefaultAuthenticator.h; path = ../BBBAPI/BBBAPI/Classes/BBADefaultAuthenticator.h; sourceTree = "<group>"; };
+		40FB3A6A1A14C70A005936B5 /* BBADefaultAuthenticator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBADefaultAuthenticator.m; path = ../BBBAPI/BBBAPI/Classes/BBADefaultAuthenticator.m; sourceTree = "<group>"; };
+		40FB3A6B1A14C70A005936B5 /* BBAJSONResponseMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBAJSONResponseMapper.h; path = ../BBBAPI/BBBAPI/Classes/BBAJSONResponseMapper.h; sourceTree = "<group>"; };
+		40FB3A6C1A14C70A005936B5 /* BBAJSONResponseMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBAJSONResponseMapper.m; path = ../BBBAPI/BBBAPI/Classes/BBAJSONResponseMapper.m; sourceTree = "<group>"; };
+		40FB3A6D1A14C70A005936B5 /* BBAKeyService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBAKeyService.h; path = ../BBBAPI/BBBAPI/Classes/BBAKeyService.h; sourceTree = "<group>"; };
+		40FB3A6E1A14C70A005936B5 /* BBAKeyService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBAKeyService.m; path = ../BBBAPI/BBBAPI/Classes/BBAKeyService.m; sourceTree = "<group>"; };
+		40FB3A6F1A14C70A005936B5 /* BBALibraryItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBALibraryItem.h; path = ../BBBAPI/BBBAPI/Classes/BBALibraryItem.h; sourceTree = "<group>"; };
+		40FB3A701A14C70A005936B5 /* BBALibraryItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBALibraryItem.m; path = ../BBBAPI/BBBAPI/Classes/BBALibraryItem.m; sourceTree = "<group>"; };
+		40FB3A711A14C70A005936B5 /* BBALibraryItemLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBALibraryItemLink.h; path = ../BBBAPI/BBBAPI/Classes/BBALibraryItemLink.h; sourceTree = "<group>"; };
+		40FB3A721A14C70A005936B5 /* BBALibraryItemLink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBALibraryItemLink.m; path = ../BBBAPI/BBBAPI/Classes/BBALibraryItemLink.m; sourceTree = "<group>"; };
+		40FB3A731A14C70A005936B5 /* BBALibraryResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBALibraryResponse.h; path = ../BBBAPI/BBBAPI/Classes/BBALibraryResponse.h; sourceTree = "<group>"; };
+		40FB3A741A14C70A005936B5 /* BBALibraryResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBALibraryResponse.m; path = ../BBBAPI/BBBAPI/Classes/BBALibraryResponse.m; sourceTree = "<group>"; };
+		40FB3A751A14C70A005936B5 /* BBALibraryResponseMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBALibraryResponseMapper.h; path = ../BBBAPI/BBBAPI/Classes/BBALibraryResponseMapper.h; sourceTree = "<group>"; };
+		40FB3A761A14C70A005936B5 /* BBALibraryResponseMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBALibraryResponseMapper.m; path = ../BBBAPI/BBBAPI/Classes/BBALibraryResponseMapper.m; sourceTree = "<group>"; };
+		40FB3A771A14C70A005936B5 /* BBALibraryService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBALibraryService.h; path = ../BBBAPI/BBBAPI/Classes/BBALibraryService.h; sourceTree = "<group>"; };
+		40FB3A781A14C70A005936B5 /* BBALibraryService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBALibraryService.m; path = ../BBBAPI/BBBAPI/Classes/BBALibraryService.m; sourceTree = "<group>"; };
+		40FB3A791A14C70A005936B5 /* BBALibraryTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBALibraryTypes.h; path = ../BBBAPI/BBBAPI/Classes/BBALibraryTypes.h; sourceTree = "<group>"; };
+		40FB3A7A1A14C70A005936B5 /* BBALogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBALogger.h; path = ../BBBAPI/BBBAPI/Classes/BBALogger.h; sourceTree = "<group>"; };
+		40FB3A7B1A14C70A005936B5 /* BBALogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBALogger.m; path = ../BBBAPI/BBBAPI/Classes/BBALogger.m; sourceTree = "<group>"; };
+		40FB3A7C1A14C70A005936B5 /* BBAMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBAMacros.h; path = ../BBBAPI/BBBAPI/Classes/BBAMacros.h; sourceTree = "<group>"; };
+		40FB3A7D1A14C70A005936B5 /* BBAMarketingService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBAMarketingService.h; path = ../BBBAPI/BBBAPI/Classes/BBAMarketingService.h; sourceTree = "<group>"; };
+		40FB3A7E1A14C70A005936B5 /* BBAMarketingService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBAMarketingService.m; path = ../BBBAPI/BBBAPI/Classes/BBAMarketingService.m; sourceTree = "<group>"; };
+		40FB3A7F1A14C70A005936B5 /* BBANetworkConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBANetworkConfiguration.h; path = ../BBBAPI/BBBAPI/Classes/BBANetworkConfiguration.h; sourceTree = "<group>"; };
+		40FB3A801A14C70A005936B5 /* BBANetworkConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBANetworkConfiguration.m; path = ../BBBAPI/BBBAPI/Classes/BBANetworkConfiguration.m; sourceTree = "<group>"; };
+		40FB3A811A14C70A005936B5 /* BBANetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBANetworking.h; path = ../BBBAPI/BBBAPI/Classes/BBANetworking.h; sourceTree = "<group>"; };
+		40FB3A821A14C70A005936B5 /* BBANetworkingConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBANetworkingConstants.h; path = ../BBBAPI/BBBAPI/Classes/BBANetworkingConstants.h; sourceTree = "<group>"; };
+		40FB3A831A14C70A005936B5 /* BBAPurchasingService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBAPurchasingService.h; path = ../BBBAPI/BBBAPI/Classes/BBAPurchasingService.h; sourceTree = "<group>"; };
+		40FB3A841A14C70A005936B5 /* BBAPurchasingService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBAPurchasingService.m; path = ../BBBAPI/BBBAPI/Classes/BBAPurchasingService.m; sourceTree = "<group>"; };
+		40FB3A851A14C70A005936B5 /* BBARequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBARequest.h; path = ../BBBAPI/BBBAPI/Classes/BBARequest.h; sourceTree = "<group>"; };
+		40FB3A861A14C70A005936B5 /* BBARequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBARequest.m; path = ../BBBAPI/BBBAPI/Classes/BBARequest.m; sourceTree = "<group>"; };
+		40FB3A871A14C70A005936B5 /* BBARequestFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBARequestFactory.h; path = ../BBBAPI/BBBAPI/Classes/BBARequestFactory.h; sourceTree = "<group>"; };
+		40FB3A881A14C70A005936B5 /* BBARequestFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBARequestFactory.m; path = ../BBBAPI/BBBAPI/Classes/BBARequestFactory.m; sourceTree = "<group>"; };
+		40FB3A891A14C70A005936B5 /* BBAResponseMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBAResponseMapping.h; path = ../BBBAPI/BBBAPI/Classes/BBAResponseMapping.h; sourceTree = "<group>"; };
+		40FB3A8A1A14C70A005936B5 /* BBAResponseMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBAResponseMapping.m; path = ../BBBAPI/BBBAPI/Classes/BBAResponseMapping.m; sourceTree = "<group>"; };
+		40FB3A8B1A14C70A005936B5 /* BBASearchConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBASearchConnection.h; path = ../BBBAPI/BBBAPI/Classes/BBASearchConnection.h; sourceTree = "<group>"; };
+		40FB3A8C1A14C70A005936B5 /* BBASearchConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBASearchConnection.m; path = ../BBBAPI/BBBAPI/Classes/BBASearchConnection.m; sourceTree = "<group>"; };
+		40FB3A8D1A14C70A005936B5 /* BBASearchService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBASearchService.h; path = ../BBBAPI/BBBAPI/Classes/BBASearchService.h; sourceTree = "<group>"; };
+		40FB3A8E1A14C70A005936B5 /* BBASearchService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBASearchService.m; path = ../BBBAPI/BBBAPI/Classes/BBASearchService.m; sourceTree = "<group>"; };
+		40FB3A8F1A14C70A005936B5 /* BBAServerDateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBAServerDateFormatter.h; path = ../BBBAPI/BBBAPI/Classes/BBAServerDateFormatter.h; sourceTree = "<group>"; };
+		40FB3A901A14C70A005936B5 /* BBAServerDateFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBAServerDateFormatter.m; path = ../BBBAPI/BBBAPI/Classes/BBAServerDateFormatter.m; sourceTree = "<group>"; };
+		40FB3A911A14C70A005936B5 /* BBAStatusResponseMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBAStatusResponseMapper.h; path = ../BBBAPI/BBBAPI/Classes/BBAStatusResponseMapper.h; sourceTree = "<group>"; };
+		40FB3A921A14C70A005936B5 /* BBAStatusResponseMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBAStatusResponseMapper.m; path = ../BBBAPI/BBBAPI/Classes/BBAStatusResponseMapper.m; sourceTree = "<group>"; };
+		40FB3A931A14C70A005936B5 /* BBATokensResponseMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBATokensResponseMapper.h; path = ../BBBAPI/BBBAPI/Classes/BBATokensResponseMapper.h; sourceTree = "<group>"; };
+		40FB3A941A14C70A005936B5 /* BBATokensResponseMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBATokensResponseMapper.m; path = ../BBBAPI/BBBAPI/Classes/BBATokensResponseMapper.m; sourceTree = "<group>"; };
+		40FB3A951A14C70A005936B5 /* BBAUserDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBAUserDetails.h; path = ../BBBAPI/BBBAPI/Classes/BBAUserDetails.h; sourceTree = "<group>"; };
+		40FB3A961A14C70A005936B5 /* BBAUserDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBAUserDetails.m; path = ../BBBAPI/BBBAPI/Classes/BBAUserDetails.m; sourceTree = "<group>"; };
+		40FB3ABD1A14C7E8005936B5 /* BBBAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBBAPI.h; path = ../BBBAPI/BBBAPI/Classes/BBBAPI.h; sourceTree = "<group>"; };
+		40FB3ABE1A14C7E8005936B5 /* BBBAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBBAPI.m; path = ../BBBAPI/BBBAPI/Classes/BBBAPI.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		40FB3A291A14C6AE005936B5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		40FB3A231A14C6AE005936B5 = {
+			isa = PBXGroup;
+			children = (
+				40FB3A4A1A14C6F8005936B5 /* BBBAPI */,
+				40FB3A2E1A14C6AE005936B5 /* BBBTool */,
+				40FB3A2D1A14C6AE005936B5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		40FB3A2D1A14C6AE005936B5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				40FB3A2C1A14C6AE005936B5 /* BBBTool */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		40FB3A2E1A14C6AE005936B5 /* BBBTool */ = {
+			isa = PBXGroup;
+			children = (
+				40FB3A361A14C6DD005936B5 /* BBBTool-Prefix.pch */,
+				40FB3A371A14C6DD005936B5 /* BBBTool.1 */,
+				40FB3A381A14C6DD005936B5 /* BBTArgument.h */,
+				40FB3A391A14C6DD005936B5 /* BBTArgument.m */,
+				40FB3A3A1A14C6DD005936B5 /* BBTLibraryOperation.h */,
+				40FB3A3B1A14C6DD005936B5 /* BBTLibraryOperation.m */,
+				40FB3A3C1A14C6DD005936B5 /* BBTLog.h */,
+				40FB3A3D1A14C6DD005936B5 /* BBTLog.m */,
+				40FB3A3E1A14C6DD005936B5 /* BBTLoginOperation.h */,
+				40FB3A3F1A14C6DD005936B5 /* BBTLoginOperation.m */,
+				40FB3A401A14C6DD005936B5 /* BBTOperation.h */,
+				40FB3A411A14C6DD005936B5 /* BBTOperation.m */,
+				40FB3A421A14C6DD005936B5 /* BBTTool.h */,
+				40FB3A431A14C6DD005936B5 /* BBTTool.m */,
+				40FB3A2F1A14C6AE005936B5 /* main.m */,
+			);
+			path = BBBTool;
+			sourceTree = "<group>";
+		};
+		40FB3A4A1A14C6F8005936B5 /* BBBAPI */ = {
+			isa = PBXGroup;
+			children = (
+				40FB3ABD1A14C7E8005936B5 /* BBBAPI.h */,
+				40FB3ABE1A14C7E8005936B5 /* BBBAPI.m */,
+				40FB3A4B1A14C70A005936B5 /* BBAAPIErrors.h */,
+				40FB3A4C1A14C70A005936B5 /* BBAAuthConnection.h */,
+				40FB3A4D1A14C70A005936B5 /* BBAAuthConnection.m */,
+				40FB3A4E1A14C70A005936B5 /* BBAAuthData.h */,
+				40FB3A4F1A14C70A005936B5 /* BBAAuthData.m */,
+				40FB3A501A14C70A005936B5 /* BBAAuthDataValidator.h */,
+				40FB3A511A14C70A005936B5 /* BBAAuthDataValidator.m */,
+				40FB3A521A14C70A005936B5 /* BBAAuthenticationService.h */,
+				40FB3A531A14C70A005936B5 /* BBAAuthenticationService.m */,
+				40FB3A541A14C70A005936B5 /* BBAAuthenticationServiceConstants.h */,
+				40FB3A551A14C70A005936B5 /* BBAAuthenticationServiceConstants.m */,
+				40FB3A561A14C70A005936B5 /* BBAAuthenticator.h */,
+				40FB3A571A14C70A005936B5 /* BBAAuthResponseMapper.h */,
+				40FB3A581A14C70A005936B5 /* BBAAuthResponseMapper.m */,
+				40FB3A591A14C70A005936B5 /* BBAAuthServiceErrorParser.h */,
+				40FB3A5A1A14C70A005936B5 /* BBAAuthServiceErrorParser.m */,
+				40FB3A5B1A14C70A005936B5 /* BBABookmarkService.h */,
+				40FB3A5C1A14C70A005936B5 /* BBABookmarkService.m */,
+				40FB3A5D1A14C70A005936B5 /* BBACatalogueService.h */,
+				40FB3A5E1A14C70A005936B5 /* BBACatalogueService.m */,
+				40FB3A5F1A14C70A005936B5 /* BBACategoryService.h */,
+				40FB3A601A14C70A005936B5 /* BBACategoryService.m */,
+				40FB3A611A14C70A005936B5 /* BBAClientDetails.h */,
+				40FB3A621A14C70A005936B5 /* BBAClientDetails.m */,
+				40FB3A631A14C70A005936B5 /* BBAClientsResponseMapper.h */,
+				40FB3A641A14C70A005936B5 /* BBAClientsResponseMapper.m */,
+				40FB3A651A14C70A005936B5 /* BBAClubcardService.h */,
+				40FB3A661A14C70A005936B5 /* BBAClubcardService.m */,
+				40FB3A671A14C70A005936B5 /* BBAConnection.h */,
+				40FB3A681A14C70A005936B5 /* BBAConnection.m */,
+				40FB3A691A14C70A005936B5 /* BBADefaultAuthenticator.h */,
+				40FB3A6A1A14C70A005936B5 /* BBADefaultAuthenticator.m */,
+				40FB3A6B1A14C70A005936B5 /* BBAJSONResponseMapper.h */,
+				40FB3A6C1A14C70A005936B5 /* BBAJSONResponseMapper.m */,
+				40FB3A6D1A14C70A005936B5 /* BBAKeyService.h */,
+				40FB3A6E1A14C70A005936B5 /* BBAKeyService.m */,
+				40FB3A6F1A14C70A005936B5 /* BBALibraryItem.h */,
+				40FB3A701A14C70A005936B5 /* BBALibraryItem.m */,
+				40FB3A711A14C70A005936B5 /* BBALibraryItemLink.h */,
+				40FB3A721A14C70A005936B5 /* BBALibraryItemLink.m */,
+				40FB3A731A14C70A005936B5 /* BBALibraryResponse.h */,
+				40FB3A741A14C70A005936B5 /* BBALibraryResponse.m */,
+				40FB3A751A14C70A005936B5 /* BBALibraryResponseMapper.h */,
+				40FB3A761A14C70A005936B5 /* BBALibraryResponseMapper.m */,
+				40FB3A771A14C70A005936B5 /* BBALibraryService.h */,
+				40FB3A781A14C70A005936B5 /* BBALibraryService.m */,
+				40FB3A791A14C70A005936B5 /* BBALibraryTypes.h */,
+				40FB3A7A1A14C70A005936B5 /* BBALogger.h */,
+				40FB3A7B1A14C70A005936B5 /* BBALogger.m */,
+				40FB3A7C1A14C70A005936B5 /* BBAMacros.h */,
+				40FB3A7D1A14C70A005936B5 /* BBAMarketingService.h */,
+				40FB3A7E1A14C70A005936B5 /* BBAMarketingService.m */,
+				40FB3A7F1A14C70A005936B5 /* BBANetworkConfiguration.h */,
+				40FB3A801A14C70A005936B5 /* BBANetworkConfiguration.m */,
+				40FB3A811A14C70A005936B5 /* BBANetworking.h */,
+				40FB3A821A14C70A005936B5 /* BBANetworkingConstants.h */,
+				40FB3A831A14C70A005936B5 /* BBAPurchasingService.h */,
+				40FB3A841A14C70A005936B5 /* BBAPurchasingService.m */,
+				40FB3A851A14C70A005936B5 /* BBARequest.h */,
+				40FB3A861A14C70A005936B5 /* BBARequest.m */,
+				40FB3A871A14C70A005936B5 /* BBARequestFactory.h */,
+				40FB3A881A14C70A005936B5 /* BBARequestFactory.m */,
+				40FB3A891A14C70A005936B5 /* BBAResponseMapping.h */,
+				40FB3A8A1A14C70A005936B5 /* BBAResponseMapping.m */,
+				40FB3A8B1A14C70A005936B5 /* BBASearchConnection.h */,
+				40FB3A8C1A14C70A005936B5 /* BBASearchConnection.m */,
+				40FB3A8D1A14C70A005936B5 /* BBASearchService.h */,
+				40FB3A8E1A14C70A005936B5 /* BBASearchService.m */,
+				40FB3A8F1A14C70A005936B5 /* BBAServerDateFormatter.h */,
+				40FB3A901A14C70A005936B5 /* BBAServerDateFormatter.m */,
+				40FB3A911A14C70A005936B5 /* BBAStatusResponseMapper.h */,
+				40FB3A921A14C70A005936B5 /* BBAStatusResponseMapper.m */,
+				40FB3A931A14C70A005936B5 /* BBATokensResponseMapper.h */,
+				40FB3A941A14C70A005936B5 /* BBATokensResponseMapper.m */,
+				40FB3A951A14C70A005936B5 /* BBAUserDetails.h */,
+				40FB3A961A14C70A005936B5 /* BBAUserDetails.m */,
+			);
+			name = BBBAPI;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		40FB3A2B1A14C6AE005936B5 /* BBBTool */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 40FB3A331A14C6AE005936B5 /* Build configuration list for PBXNativeTarget "BBBTool" */;
+			buildPhases = (
+				40FB3A281A14C6AE005936B5 /* Sources */,
+				40FB3A291A14C6AE005936B5 /* Frameworks */,
+				40FB3A2A1A14C6AE005936B5 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BBBTool;
+			productName = BBBTool;
+			productReference = 40FB3A2C1A14C6AE005936B5 /* BBBTool */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		40FB3A241A14C6AE005936B5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Blinkbox Entertainment Ltd";
+				TargetAttributes = {
+					40FB3A2B1A14C6AE005936B5 = {
+						CreatedOnToolsVersion = 6.1;
+					};
+				};
+			};
+			buildConfigurationList = 40FB3A271A14C6AE005936B5 /* Build configuration list for PBXProject "BBBTool" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 40FB3A231A14C6AE005936B5;
+			productRefGroup = 40FB3A2D1A14C6AE005936B5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				40FB3A2B1A14C6AE005936B5 /* BBBTool */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		40FB3A281A14C6AE005936B5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40FB3A991A14C70A005936B5 /* BBAAuthDataValidator.m in Sources */,
+				40FB3AB71A14C70A005936B5 /* BBAStatusResponseMapper.m in Sources */,
+				40FB3A9C1A14C70A005936B5 /* BBAAuthResponseMapper.m in Sources */,
+				40FB3A301A14C6AE005936B5 /* main.m in Sources */,
+				40FB3AAA1A14C70A005936B5 /* BBALibraryResponse.m in Sources */,
+				40FB3AA41A14C70A005936B5 /* BBAConnection.m in Sources */,
+				40FB3AB11A14C70A005936B5 /* BBARequest.m in Sources */,
+				40FB3A9A1A14C70A005936B5 /* BBAAuthenticationService.m in Sources */,
+				40FB3AAE1A14C70A005936B5 /* BBAMarketingService.m in Sources */,
+				40FB3AA61A14C70A005936B5 /* BBAJSONResponseMapper.m in Sources */,
+				40FB3AB21A14C70A005936B5 /* BBARequestFactory.m in Sources */,
+				40FB3A9E1A14C70A005936B5 /* BBABookmarkService.m in Sources */,
+				40FB3AA31A14C70A005936B5 /* BBAClubcardService.m in Sources */,
+				40FB3AB01A14C70A005936B5 /* BBAPurchasingService.m in Sources */,
+				40FB3A491A14C6DD005936B5 /* BBTTool.m in Sources */,
+				40FB3AA71A14C70A005936B5 /* BBAKeyService.m in Sources */,
+				40FB3A461A14C6DD005936B5 /* BBTLog.m in Sources */,
+				40FB3A451A14C6DD005936B5 /* BBTLibraryOperation.m in Sources */,
+				40FB3AAD1A14C70A005936B5 /* BBALogger.m in Sources */,
+				40FB3A471A14C6DD005936B5 /* BBTLoginOperation.m in Sources */,
+				40FB3AA11A14C70A005936B5 /* BBAClientDetails.m in Sources */,
+				40FB3A981A14C70A005936B5 /* BBAAuthData.m in Sources */,
+				40FB3AB51A14C70A005936B5 /* BBASearchService.m in Sources */,
+				40FB3ABF1A14C7E8005936B5 /* BBBAPI.m in Sources */,
+				40FB3AB81A14C70A005936B5 /* BBATokensResponseMapper.m in Sources */,
+				40FB3AB61A14C70A005936B5 /* BBAServerDateFormatter.m in Sources */,
+				40FB3AA51A14C70A005936B5 /* BBADefaultAuthenticator.m in Sources */,
+				40FB3A9D1A14C70A005936B5 /* BBAAuthServiceErrorParser.m in Sources */,
+				40FB3A9F1A14C70A005936B5 /* BBACatalogueService.m in Sources */,
+				40FB3AAB1A14C70A005936B5 /* BBALibraryResponseMapper.m in Sources */,
+				40FB3AA91A14C70A005936B5 /* BBALibraryItemLink.m in Sources */,
+				40FB3A971A14C70A005936B5 /* BBAAuthConnection.m in Sources */,
+				40FB3AA81A14C70A005936B5 /* BBALibraryItem.m in Sources */,
+				40FB3AB41A14C70A005936B5 /* BBASearchConnection.m in Sources */,
+				40FB3AAC1A14C70A005936B5 /* BBALibraryService.m in Sources */,
+				40FB3A9B1A14C70A005936B5 /* BBAAuthenticationServiceConstants.m in Sources */,
+				40FB3AB91A14C70A005936B5 /* BBAUserDetails.m in Sources */,
+				40FB3AAF1A14C70A005936B5 /* BBANetworkConfiguration.m in Sources */,
+				40FB3A481A14C6DD005936B5 /* BBTOperation.m in Sources */,
+				40FB3AA01A14C70A005936B5 /* BBACategoryService.m in Sources */,
+				40FB3A441A14C6DD005936B5 /* BBTArgument.m in Sources */,
+				40FB3AA21A14C70A005936B5 /* BBAClientsResponseMapper.m in Sources */,
+				40FB3AB31A14C70A005936B5 /* BBAResponseMapping.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		40FB3A311A14C6AE005936B5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		40FB3A321A14C6AE005936B5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		40FB3A341A14C6AE005936B5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		40FB3A351A14C6AE005936B5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		40FB3A271A14C6AE005936B5 /* Build configuration list for PBXProject "BBBTool" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				40FB3A311A14C6AE005936B5 /* Debug */,
+				40FB3A321A14C6AE005936B5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		40FB3A331A14C6AE005936B5 /* Build configuration list for PBXNativeTarget "BBBTool" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				40FB3A341A14C6AE005936B5 /* Debug */,
+				40FB3A351A14C6AE005936B5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 40FB3A241A14C6AE005936B5 /* Project object */;
+}

@@ -135,5 +135,4 @@ LICENSE~
 
 */Podfile~
 Pods/
-*.xcworkspace/
 #.gitignore#
