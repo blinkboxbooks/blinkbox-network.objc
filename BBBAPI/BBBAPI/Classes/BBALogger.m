@@ -7,6 +7,13 @@
 //
 
 #import "BBALogger.h"
+#import <DDASLLogger.h>
+#import <DDTTYLogger.h>
+
+static const int BBAAPILogLevel = LOG_LEVEL_OFF;
+static const int ddLogLevel = BBAAPILogLevel;
+
+
 
 @implementation BBALogger
 /**
@@ -27,10 +34,10 @@
  */
 
 + (void) load{
-#if COCOAPODS_POD_AVAILABLE_CocoaLumberjack
+//#if COCOAPODS_POD_AVAILABLE_CocoaLumberjack
     [DDLog addLogger:[DDASLLogger sharedInstance]];
     [DDLog addLogger:[DDTTYLogger sharedInstance]];
-#endif
+//#endif
 }
 
 + (void) log:(NSString *)format, ...{
@@ -42,11 +49,9 @@
 
 + (void) log:(NSString *)format withParameters:(va_list)args{
     NSString *message = [[NSString alloc]initWithFormat:format arguments:args];
-#if COCOAPODS_POD_AVAILABLE_CocoaLumberjack
+
     DDLogInfo(@"%@", message);
-#else
-    NSLog(@"%@", message);
-#endif
+
 }
 
 @end

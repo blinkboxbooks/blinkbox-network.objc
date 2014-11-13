@@ -7,11 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#ifdef COCOAPODS_POD_AVAILABLE_CocoaLumberjack
-#undef LOG_LEVEL_DEF
-#define LOG_LEVEL_DEF BBAAPILogLevel
-static const int BBAAPILogLevel = LOG_LEVEL_VERBOSE;
-#endif
 
 #define BBALog(frmt, ...) \
 [BBALogger log:(frmt), ##__VA_ARGS__]
