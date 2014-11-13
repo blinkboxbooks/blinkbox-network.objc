@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>08163EEF-8859-4E99-AF13-632C2E2A71F0</string>
+	<key>IDESourceControlProjectName</key>
+	<string>BBBAPI</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>120B7B5E8C58FDF09AF2AF7B79705F72020A423C</key>
+		<string>git.mobcastdev.com:tomek/BBBAPI.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>BBBAPI/BBBAPI.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>120B7B5E8C58FDF09AF2AF7B79705F72020A423C</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>git.mobcastdev.com:tomek/BBBAPI.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>120B7B5E8C58FDF09AF2AF7B79705F72020A423C</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>120B7B5E8C58FDF09AF2AF7B79705F72020A423C</string>
+			<key>IDESourceControlWCCName</key>
+			<string>BBBAPI</string>
+		</dict>
+	</array>
+</dict>
+</plist>

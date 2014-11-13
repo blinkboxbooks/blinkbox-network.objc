@@ -8,7 +8,7 @@
 
 #import "BBTLoginOperation.h"
 #import "BBTArgument.h"
-#import <BBBAPI/BBBAPI.h>
+#import "BBBAPI.h"
 
 @implementation BBTLoginOperation
 + (instancetype) loginOperation{

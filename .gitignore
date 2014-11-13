@@ -119,10 +119,20 @@ xcuserdata
 #
 # We're using source-control, so this is a "feature" that we do not want!
 
-*.moved-aside
 
+*.xccheckout
+*.moved-aside
+*~
 
 ####
 # UNKNOWN: recommended by others, but I can't discover what these files are
 #
 # ...none. Everything is now explained.
+LICENSE~
+
+
+## Cocoapods
+
+*/Podfile~
+Pods/
+#.gitignore#

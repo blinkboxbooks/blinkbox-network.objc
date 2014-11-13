@@ -8,7 +8,7 @@
 
 #import "BBTLibraryOperation.h"
 #import "BBTArgument.h"
-#import <BBBAPI/BBBAPI.h>
+#import "BBBAPI.h"
 
 @implementation BBTLibraryOperation
 
