@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "BBBAPI"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "iOS / OSX Objective-C library for communicating with the Blinkbox Books API"
 
   s.description  = <<-DESC
@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = "7.0"
   s.osx.deployment_target = "10.10"
 
-  s.source       = { :git => "https://git.mobcastdev.com/iOS/BBBAPI.git", :tag => "0.0.1" }
+  s.source       = { :git => "git@git.mobcastdev.com:iOS/BBBAPI.git", :tag => s.version.to_s }
   s.source_files  = "BBBAPI/BBBAPI/Classes/*.{h,m}"
 
   s.framework  = "Foundation"
