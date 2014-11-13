@@ -2,9 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:BBBAPI/BBBAPI.xcodeproj">
+      location = "group:BBBTool/BBBTool.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:BBBTool/BBBTool.xcodeproj">
+      location = "group:BBBAPI/BBBAPI.xcodeproj">
    </FileRef>
 </Workspace>
