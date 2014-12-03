@@ -18,7 +18,7 @@ typedef NS_ENUM(NSInteger, BBAAPIDomain) {
     /**
      *  API domain for all services apart from authentication
      */
-    BBAAPIDomainREST = 1
+    BBAAPIDomainREST = 1,
 };
 
 /**
