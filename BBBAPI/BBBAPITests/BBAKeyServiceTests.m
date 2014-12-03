@@ -98,6 +98,7 @@
                }];
 
     OCMVerify([classMock addParameterWithKey:[OCMArg isEqual:@"key"] value:[OCMArg isEqual:publicKey]]);
+    [classMock stopMocking];
 }
 
 - (void) testKeyServiceReturnsKeyWhenServerReturnsSuccess{
