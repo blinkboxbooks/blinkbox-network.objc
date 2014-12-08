@@ -25,8 +25,8 @@
 @property (nonatomic, strong) BBARequest *passedRequest;
 @property (nonatomic, strong) BBAUserDetails *passedUser;
 
+@property (nonatomic, strong) BBARequest *requestToReturn;
 @property (nonatomic, strong) NSError *errorToReturn;
-@property (nonatomic, assign) BOOL valueToReturn;
 @property (nonatomic, assign) BOOL wasAskedToAuthenticate;
 @end
 
