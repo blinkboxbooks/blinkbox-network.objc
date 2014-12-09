@@ -91,14 +91,30 @@ NSString *const BBARequestFactoryDomain = @"com.BBA.requestFactoryErrorDomain";
 }
 
 - (BOOL) parametersValid:(NSDictionary *)headers{
-    BOOL stringsValid = [self dictionary:headers containsOnlyInstancesOfClass:[NSString class]];
-    BOOL arraysValid = [self dictionary:headers containsOnlyInstancesOfClass:[NSArray class]];
-    
-    BOOL allValid = stringsValid || arraysValid;
-    
-    return allValid;
-}
 
+    BOOL valid = [self dictionary:headers containsOnlyInstancesOfClasses:@[ [NSString class],
+                                                                             [NSArray class] ]];
+    return valid;
+}
+- (BOOL) dictionary:(NSDictionary *)dictionary containsOnlyInstancesOfClasses:(NSArray *)classes{
+    __block BOOL valid = YES;
+
+    [dictionary enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+        for (Class validClass in classes) {
+            NSInteger invalidCount = 0;
+            if (![obj isKindOfClass:validClass]) {
+                invalidCount++;
+            }
+            if (invalidCount == classes.count) {
+                valid = NO;
+                *stop = YES;
+            }
+        }
+
+    }];
+
+    return valid;
+}
 - (BOOL) dictionary:(NSDictionary *)dictionary containsOnlyInstancesOfClass:(Class)class{
     __block BOOL valid = YES;
     
