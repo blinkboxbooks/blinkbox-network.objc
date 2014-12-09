@@ -7,6 +7,13 @@ workspace 'BBBAPI'
 
 xcodeproj 'BBBAPI/BBBAPI.xcodeproj'
 
-pod 'CocoaLumberjack', '~>1.9.2'
+target :BBBAPI do
+	pod 'CocoaLumberjack', '~>1.9.2'
+	pod 'FastEasyMapping', '~>0.5.1'
+end
 
+target :BBBAPITests, :exclusive => true do
+		pod 'OHHTTPStubs', '3.1.7'
+		pod 'OCMock', '~> 3.1.1'
+end
 
