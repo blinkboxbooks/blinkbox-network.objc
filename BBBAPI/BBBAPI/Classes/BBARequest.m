@@ -10,7 +10,6 @@
 
 @interface BBARequest ()
 
-@property (nonatomic, copy) NSURLRequest *URLRequest;
 @property (nonatomic, assign) NSTimeInterval retryDelay;
 @property (nonatomic, strong) NSDate *lastRequestDate;
 @property (nonatomic, assign) NSUInteger attemptsCount;
