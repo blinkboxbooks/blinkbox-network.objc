@@ -13,7 +13,25 @@
 @end
 
 @implementation BBAMockConnection
++ (id) alloc{
+    id connection = [super alloc];
+    [self addMockedConnection:connection];
+    return connection;
+}
 
++ (NSMutableArray *)mockedConnections{
+    static NSMutableArray *connections;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        connections = [NSMutableArray new];
+    });
+
+    return connections;
+}
+
++ (void) addMockedConnection:(BBAMockConnection *)connection{
+    [[self mockedConnections]addObject:connection];
+}
 
 - (void) perform:(BBAHTTPMethod)method completion:(void (^)(id data, NSError *))completion{
     [self perform:method forUser:nil completion:completion];

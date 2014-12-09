@@ -10,6 +10,9 @@
 @class BBAUserDetails;
 
 @interface BBAMockConnection : BBAConnection
+
+
++ (NSMutableArray *)mockedConnections;
 /**
  *  Defaults is `YES`
  */
