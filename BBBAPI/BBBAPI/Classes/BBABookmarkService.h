@@ -10,10 +10,11 @@
 
 typedef NS_OPTIONS(NSInteger, BBABookmarkType) {
     BBABookmarkTypeAll = 0,
-    BBABookmarkTypeLastReadingPostion = 0 << 1,
-    BBABookmarkTypeBookmark = 0 << 2,
-    BBABookmarkTypeCrossReference = 0 << 3,
-    BBABookmarkTypeHighlight = 0 << 4,
+    BBABookmarkTypeLastReadingPostion = 1 << 1,
+    BBABookmarkTypeBookmark = 1 << 2,
+    BBABookmarkTypeCrossReference = 1 << 3,
+    BBABookmarkTypeHighlight = 1 << 4,
+    BBABookmarkTypeNote = 1 << 5,
 };
 
 @class BBALibraryItem;
@@ -22,12 +23,13 @@ typedef NS_OPTIONS(NSInteger, BBABookmarkType) {
 
 @interface BBABookmarkService : NSObject
 
+@property (nonatomic, strong) Class connectionClass;
+
 - (void) getBookmarkChangesForItem:(BBALibraryItem *)item
                          afterDate:(NSDate *)date
                          typesMask:(BBABookmarkType)types
                               user:(BBAUserDetails *)user
-                        completion:(void (^)(NSArray *bookmarkChanges, NSData *syncDate, NSError *error))completion;
-
+                        completion:(void (^)(NSArray *bookmarkChanges, NSDate *syncDate, NSError *error))completion;
 
 - (void) deleteBookmarksForItem:(BBALibraryItem *)item
                       typesMask:(BBABookmarkType)types

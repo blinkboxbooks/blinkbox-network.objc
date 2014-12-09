@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		087C37E6CA09AC67D0BD1BCB /* libPods-BBBAPITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A5993ECFA1526A0AE7C3B7E /* libPods-BBBAPITests.a */; };
+		2B6DC3F9FD6C586D1D6BE1E7 /* libPods-BBBAPI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 26841EE83C9FA47FA48E8A11 /* libPods-BBBAPI.a */; };
 		401A1D211A13D6CB004FBA41 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 401A1D201A13D6CB004FBA41 /* main.m */; };
 		401A1D241A13D6CB004FBA41 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 401A1D231A13D6CB004FBA41 /* AppDelegate.m */; };
 		401A1D271A13D6CB004FBA41 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 401A1D261A13D6CB004FBA41 /* ViewController.m */; };
@@ -79,6 +81,14 @@
 		401A1DF71A13D78B004FBA41 /* BBATokensResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 401A1DD31A13D78B004FBA41 /* BBATokensResponseMapper.m */; };
 		401A1DF81A13D78B004FBA41 /* BBAUserDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 401A1DD51A13D78B004FBA41 /* BBAUserDetails.m */; };
 		40FB3ABC1A14C7A8005936B5 /* BBBAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FB3ABB1A14C7A8005936B5 /* BBBAPI.m */; };
+		5A3ECB641A2F67CF00E49DCE /* BBABookmarkServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A3ECB631A2F67CF00E49DCE /* BBABookmarkServiceTests.m */; };
+		5AB0FD061A3204C200701FFF /* BBABookmarkItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AB0FD051A3204C200701FFF /* BBABookmarkItem.m */; };
+		5ACE48121A37221400546137 /* BBABookmarkItemTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ACE48111A37221400546137 /* BBABookmarkItemTests.m */; };
+		5ACE48161A3727F500546137 /* bookmark_item.json in Resources */ = {isa = PBXBuildFile; fileRef = 5ACE48151A3727F500546137 /* bookmark_item.json */; };
+		5ACE481A1A373B4F00546137 /* BBADateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ACE48181A37377C00546137 /* BBADateHelper.m */; };
+		5ACE481D1A37411400546137 /* BBALinkItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ACE481C1A37411400546137 /* BBALinkItem.m */; };
+		5AF88C5C1A35EA9200CA9B98 /* BBABookmarkResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AF88C5B1A35EA9200CA9B98 /* BBABookmarkResponseMapper.m */; };
+		5AF88C5F1A35FA9A00CA9B98 /* get_my_bookmarks_success.json in Resources */ = {isa = PBXBuildFile; fileRef = 5AF88C5E1A35FA9A00CA9B98 /* get_my_bookmarks_success.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +102,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01E4A5A6F74999A6F372EA55 /* Pods-BBBAPITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BBBAPITests.release.xcconfig"; path = "../Pods/Target Support Files/Pods-BBBAPITests/Pods-BBBAPITests.release.xcconfig"; sourceTree = "<group>"; };
+		118CD5BBC1E178DF65C1391A /* Pods-BBBAPI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BBBAPI.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-BBBAPI/Pods-BBBAPI.debug.xcconfig"; sourceTree = "<group>"; };
+		26841EE83C9FA47FA48E8A11 /* libPods-BBBAPI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BBBAPI.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A5993ECFA1526A0AE7C3B7E /* libPods-BBBAPITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BBBAPITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		401A1D1B1A13D6CB004FBA41 /* BBBAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BBBAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		401A1D1F1A13D6CB004FBA41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		401A1D201A13D6CB004FBA41 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -221,6 +235,20 @@
 		401A1DD51A13D78B004FBA41 /* BBAUserDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBAUserDetails.m; path = Classes/BBAUserDetails.m; sourceTree = "<group>"; };
 		40FB3ABA1A14C7A8005936B5 /* BBBAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBBAPI.h; path = Classes/BBBAPI.h; sourceTree = "<group>"; };
 		40FB3ABB1A14C7A8005936B5 /* BBBAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBBAPI.m; path = Classes/BBBAPI.m; sourceTree = "<group>"; };
+		424A7BC2C05D8FA3FA551D1B /* Pods-BBBAPITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BBBAPITests.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-BBBAPITests/Pods-BBBAPITests.debug.xcconfig"; sourceTree = "<group>"; };
+		5A3ECB631A2F67CF00E49DCE /* BBABookmarkServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBABookmarkServiceTests.m; sourceTree = "<group>"; };
+		5AB0FD041A3204C200701FFF /* BBABookmarkItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBABookmarkItem.h; path = Classes/BBABookmarkItem.h; sourceTree = "<group>"; };
+		5AB0FD051A3204C200701FFF /* BBABookmarkItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBABookmarkItem.m; path = Classes/BBABookmarkItem.m; sourceTree = "<group>"; };
+		5ACE48111A37221400546137 /* BBABookmarkItemTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBABookmarkItemTests.m; sourceTree = "<group>"; };
+		5ACE48151A3727F500546137 /* bookmark_item.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = bookmark_item.json; path = "Bookmark Service Responses/bookmark_item.json"; sourceTree = "<group>"; };
+		5ACE48171A37377C00546137 /* BBADateHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBADateHelper.h; path = BBBAPITests/BBADateHelper.h; sourceTree = SOURCE_ROOT; };
+		5ACE48181A37377C00546137 /* BBADateHelper.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; name = BBADateHelper.m; path = BBBAPITests/BBADateHelper.m; sourceTree = SOURCE_ROOT; };
+		5ACE481B1A37411400546137 /* BBALinkItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBALinkItem.h; path = Classes/BBALinkItem.h; sourceTree = "<group>"; };
+		5ACE481C1A37411400546137 /* BBALinkItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBALinkItem.m; path = Classes/BBALinkItem.m; sourceTree = "<group>"; };
+		5AF88C5A1A35EA9200CA9B98 /* BBABookmarkResponseMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBABookmarkResponseMapper.h; path = Classes/BBABookmarkResponseMapper.h; sourceTree = "<group>"; };
+		5AF88C5B1A35EA9200CA9B98 /* BBABookmarkResponseMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBABookmarkResponseMapper.m; path = Classes/BBABookmarkResponseMapper.m; sourceTree = "<group>"; };
+		5AF88C5E1A35FA9A00CA9B98 /* get_my_bookmarks_success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = get_my_bookmarks_success.json; path = "Bookmark Service Responses/get_my_bookmarks_success.json"; sourceTree = "<group>"; };
+		BD86D82D093B37E72C8605AE /* Pods-BBBAPI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BBBAPI.release.xcconfig"; path = "../Pods/Target Support Files/Pods-BBBAPI/Pods-BBBAPI.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,6 +256,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B6DC3F9FD6C586D1D6BE1E7 /* libPods-BBBAPI.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,6 +264,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				087C37E6CA09AC67D0BD1BCB /* libPods-BBBAPITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,6 +277,8 @@
 				401A1D1D1A13D6CB004FBA41 /* BBBAPI */,
 				401A1D371A13D6CB004FBA41 /* BBBAPITests */,
 				401A1D1C1A13D6CB004FBA41 /* Products */,
+				D3194E7B13CAAD5509AE5282 /* Pods */,
+				F9EFFB569373F0459962CF4E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -287,6 +319,8 @@
 		401A1D371A13D6CB004FBA41 /* BBBAPITests */ = {
 			isa = PBXGroup;
 			children = (
+				5ACE48111A37221400546137 /* BBABookmarkItemTests.m */,
+				5A3ECB631A2F67CF00E49DCE /* BBABookmarkServiceTests.m */,
 				401A1D441A13D77B004FBA41 /* BBAAuthenticationServiceTests.m */,
 				401A1D451A13D77B004FBA41 /* BBAAuthResponseMapperTests.h */,
 				401A1D461A13D77B004FBA41 /* BBAAuthServiceResponseMappersTestData.h */,
@@ -331,6 +365,7 @@
 		401A1D5E1A13D77B004FBA41 /* SampleData */ = {
 			isa = PBXGroup;
 			children = (
+				5AF88C5D1A35FA3500CA9B98 /* Bookmark Service Responses */,
 				401A1D5F1A13D77B004FBA41 /* Library Service Responses */,
 			);
 			path = SampleData;
@@ -358,6 +393,8 @@
 		401A1D891A13D782004FBA41 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				5ACE48171A37377C00546137 /* BBADateHelper.h */,
+				5ACE48181A37377C00546137 /* BBADateHelper.m */,
 				401A1D8A1A13D78B004FBA41 /* BBAAPIErrors.h */,
 				401A1D8B1A13D78B004FBA41 /* BBAAuthConnection.h */,
 				401A1D8C1A13D78B004FBA41 /* BBAAuthConnection.m */,
@@ -436,8 +473,43 @@
 				401A1DD51A13D78B004FBA41 /* BBAUserDetails.m */,
 				40FB3ABA1A14C7A8005936B5 /* BBBAPI.h */,
 				40FB3ABB1A14C7A8005936B5 /* BBBAPI.m */,
+				5AB0FD041A3204C200701FFF /* BBABookmarkItem.h */,
+				5AB0FD051A3204C200701FFF /* BBABookmarkItem.m */,
+				5AF88C5A1A35EA9200CA9B98 /* BBABookmarkResponseMapper.h */,
+				5AF88C5B1A35EA9200CA9B98 /* BBABookmarkResponseMapper.m */,
+				5ACE481B1A37411400546137 /* BBALinkItem.h */,
+				5ACE481C1A37411400546137 /* BBALinkItem.m */,
 			);
 			name = Classes;
+			sourceTree = "<group>";
+		};
+		5AF88C5D1A35FA3500CA9B98 /* Bookmark Service Responses */ = {
+			isa = PBXGroup;
+			children = (
+				5ACE48151A3727F500546137 /* bookmark_item.json */,
+				5AF88C5E1A35FA9A00CA9B98 /* get_my_bookmarks_success.json */,
+			);
+			name = "Bookmark Service Responses";
+			sourceTree = "<group>";
+		};
+		D3194E7B13CAAD5509AE5282 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				118CD5BBC1E178DF65C1391A /* Pods-BBBAPI.debug.xcconfig */,
+				BD86D82D093B37E72C8605AE /* Pods-BBBAPI.release.xcconfig */,
+				424A7BC2C05D8FA3FA551D1B /* Pods-BBBAPITests.debug.xcconfig */,
+				01E4A5A6F74999A6F372EA55 /* Pods-BBBAPITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F9EFFB569373F0459962CF4E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				26841EE83C9FA47FA48E8A11 /* libPods-BBBAPI.a */,
+				2A5993ECFA1526A0AE7C3B7E /* libPods-BBBAPITests.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -447,9 +519,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 401A1D3E1A13D6CB004FBA41 /* Build configuration list for PBXNativeTarget "BBBAPI" */;
 			buildPhases = (
+				708166B3D1631B214C164BA5 /* Check Pods Manifest.lock */,
 				401A1D171A13D6CB004FBA41 /* Sources */,
 				401A1D181A13D6CB004FBA41 /* Frameworks */,
 				401A1D191A13D6CB004FBA41 /* Resources */,
+				0A407E63B41A119FF88FAFC6 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -464,9 +538,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 401A1D411A13D6CB004FBA41 /* Build configuration list for PBXNativeTarget "BBBAPITests" */;
 			buildPhases = (
+				585633F43498812B6F634143 /* Check Pods Manifest.lock */,
 				401A1D301A13D6CB004FBA41 /* Sources */,
 				401A1D311A13D6CB004FBA41 /* Frameworks */,
 				401A1D321A13D6CB004FBA41 /* Resources */,
+				B8A4639F5FA3E4D51F971906 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -532,6 +608,7 @@
 			files = (
 				401A1D871A13D77B004FBA41 /* libResponse_single_item_purchased.json in Resources */,
 				401A1D811A13D77B004FBA41 /* libResponse_get_single_item.json in Resources */,
+				5ACE48161A3727F500546137 /* bookmark_item.json in Resources */,
 				401A1D881A13D77B004FBA41 /* libResponse_single_item_sampled.json in Resources */,
 				401A1D851A13D77B004FBA41 /* libResponse_single_item_archived.json in Resources */,
 				401A1D821A13D77B004FBA41 /* libResponse_invalid_data_format.json in Resources */,
@@ -540,12 +617,76 @@
 				401A1D841A13D77B004FBA41 /* libResponse_no_items.json in Resources */,
 				401A1D7E1A13D77B004FBA41 /* libResponse_archived.json in Resources */,
 				401A1D831A13D77B004FBA41 /* libResponse_invalid_type.json in Resources */,
+				5AF88C5F1A35FA9A00CA9B98 /* get_my_bookmarks_success.json in Resources */,
 				401A1D7D1A13D77B004FBA41 /* libResponse.json in Resources */,
 				401A1D861A13D77B004FBA41 /* libResponse_single_item_deleted.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0A407E63B41A119FF88FAFC6 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-BBBAPI/Pods-BBBAPI-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		585633F43498812B6F634143 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		708166B3D1631B214C164BA5 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B8A4639F5FA3E4D51F971906 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-BBBAPITests/Pods-BBBAPITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		401A1D171A13D6CB004FBA41 /* Sources */ = {
@@ -564,6 +705,7 @@
 				401A1DF61A13D78B004FBA41 /* BBAStatusResponseMapper.m in Sources */,
 				401A1DE21A13D78B004FBA41 /* BBAClubcardService.m in Sources */,
 				401A1DE11A13D78B004FBA41 /* BBAClientsResponseMapper.m in Sources */,
+				5AF88C5C1A35EA9200CA9B98 /* BBABookmarkResponseMapper.m in Sources */,
 				401A1D241A13D6CB004FBA41 /* AppDelegate.m in Sources */,
 				401A1DEA1A13D78B004FBA41 /* BBALibraryResponseMapper.m in Sources */,
 				401A1DDB1A13D78B004FBA41 /* BBAAuthResponseMapper.m in Sources */,
@@ -574,6 +716,7 @@
 				401A1DF71A13D78B004FBA41 /* BBATokensResponseMapper.m in Sources */,
 				401A1DF51A13D78B004FBA41 /* BBAServerDateFormatter.m in Sources */,
 				401A1DDE1A13D78B004FBA41 /* BBACatalogueService.m in Sources */,
+				5AB0FD061A3204C200701FFF /* BBABookmarkItem.m in Sources */,
 				401A1DD71A13D78B004FBA41 /* BBAAuthData.m in Sources */,
 				401A1DE61A13D78B004FBA41 /* BBAKeyService.m in Sources */,
 				401A1DE51A13D78B004FBA41 /* BBAJSONResponseMapper.m in Sources */,
@@ -591,6 +734,8 @@
 				40FB3ABC1A14C7A8005936B5 /* BBBAPI.m in Sources */,
 				401A1DF31A13D78B004FBA41 /* BBASearchConnection.m in Sources */,
 				401A1DE41A13D78B004FBA41 /* BBADefaultAuthenticator.m in Sources */,
+				5ACE481A1A373B4F00546137 /* BBADateHelper.m in Sources */,
+				5ACE481D1A37411400546137 /* BBALinkItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -600,6 +745,7 @@
 			files = (
 				401A1D3B1A13D6CB004FBA41 /* BBBAPITests.m in Sources */,
 				401A1D711A13D77B004FBA41 /* BBAConnectionTestsMocks.m in Sources */,
+				5ACE48121A37221400546137 /* BBABookmarkItemTests.m in Sources */,
 				401A1D701A13D77B004FBA41 /* BBAConnectionTests.m in Sources */,
 				401A1D7C1A13D77B004FBA41 /* BBATokensResponseMapperTests.m in Sources */,
 				401A1D731A13D77B004FBA41 /* BBALibraryResponseTests.m in Sources */,
@@ -612,6 +758,7 @@
 				401A1D791A13D77B004FBA41 /* BBAStatusResponseMapperTests.m in Sources */,
 				401A1D771A13D77B004FBA41 /* BBANetworkConfigurationTests.m in Sources */,
 				401A1D6D1A13D77B004FBA41 /* BBAAuthServiceResponseMappersTestData.m in Sources */,
+				5A3ECB641A2F67CF00E49DCE /* BBABookmarkServiceTests.m in Sources */,
 				401A1D781A13D77B004FBA41 /* BBARequestFactoryTests.m in Sources */,
 				401A1D761A13D77B004FBA41 /* BBAMockConnection.m in Sources */,
 				401A1D751A13D77B004FBA41 /* BBAMockAssertionHandler.m in Sources */,
@@ -729,6 +876,7 @@
 		};
 		401A1D3F1A13D6CB004FBA41 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 118CD5BBC1E178DF65C1391A /* Pods-BBBAPI.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = BBBAPI/Info.plist;
@@ -739,6 +887,7 @@
 		};
 		401A1D401A13D6CB004FBA41 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BD86D82D093B37E72C8605AE /* Pods-BBBAPI.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = BBBAPI/Info.plist;
@@ -749,6 +898,7 @@
 		};
 		401A1D421A13D6CB004FBA41 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 424A7BC2C05D8FA3FA551D1B /* Pods-BBBAPITests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -769,6 +919,7 @@
 		};
 		401A1D431A13D6CB004FBA41 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01E4A5A6F74999A6F372EA55 /* Pods-BBBAPITests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (

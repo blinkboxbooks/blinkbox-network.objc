@@ -1,0 +1,21 @@
+{
+"type": "urn:blinkboxbooks:schema:bookmark",
+"guid": "urn:blinkboxbooks:id:bookmark:145548",
+"id": "145548",
+"bookmarkType": "HIGHLIGHT",
+"book": "9781615930005",
+"position": "epubcfi(/6/18!/4/44/7:24)",
+"readingPercentage": 79,
+"deleted": false,
+"colour": "test24t",
+"createdByClient": "51764",
+"createdDate": "2014-10-21T14:03:17Z",
+"links": [
+	{
+		"rel": "urn:blinkboxbooks:schema:book",
+		"href": "https://api.blinkboxbooks.com/service/catalogue/books/9781615930005",
+		"targetGuid": "urn:blinkboxbooks:id:book:9781615930005",
+		"title": "Book"
+	}
+]
+}
