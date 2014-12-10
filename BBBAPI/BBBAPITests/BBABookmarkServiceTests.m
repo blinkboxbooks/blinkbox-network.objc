@@ -264,12 +264,7 @@
                             completion:^(NSArray *bookmarkChanges, NSDate *syncDate, NSError *error) {
                                 XCTAssertEqual(bookmarkChanges.count, 1);
                                 XCTAssertNil(error);
-#pragma warning FIx date check
-//                                NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-//                                [formatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"GMT"]];
-//                                [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss Z"];
-//                                NSString *dateAsString = [formatter stringFromDate:syncDate];
-//                                XCTAssertEqualObjects(dateAsString, @"2014-12-08 14:24:19 +0000");
+                                XCTAssertNotNil(syncDate);
                                 BBA_FLAG_ASYNC_TEST_COMPLETE();
                             }];
 
