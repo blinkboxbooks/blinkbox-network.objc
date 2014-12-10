@@ -28,6 +28,6 @@
 @property (nonatomic, strong) NSMutableDictionary *passedHeaders;
 @property (nonatomic, strong) BBAUserDetails *passedUserDetails;
 @property (nonatomic, assign) BBAHTTPMethod passedHTTPMethod;
-
+@property (nonatomic, copy) NSURL *URL;
 
 @end

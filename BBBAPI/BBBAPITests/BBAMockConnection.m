@@ -33,6 +33,12 @@
     [[self mockedConnections]addObject:connection];
 }
 
+- (instancetype) initWithBaseURL:(NSURL *)URL{
+    id connection = [super initWithBaseURL:URL];
+    self.URL = URL;
+    return connection;
+}
+
 - (void) perform:(BBAHTTPMethod)method completion:(void (^)(id data, NSError *))completion{
     [self perform:method forUser:nil completion:completion];
 }
