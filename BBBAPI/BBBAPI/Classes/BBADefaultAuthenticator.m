@@ -22,35 +22,38 @@
     return self;
 }
 
-- (BOOL) authenticateRequest:(BBARequest *)request
-                       error:(NSError *__autoreleasing *)error
-                  completion:(void (^)(void))completion{
+- (void) authenticateRequest:(BBARequest *)request
+                  completion:(void (^)(BBARequest *request, NSError *error))completion{
 
-    return [self authenticateRequest:request
+    [self authenticateRequest:request
                              forUser:self.currentUser
-                               error:error
                           completion:completion];
 }
 
-- (BOOL) authenticateRequest:(BBARequest *)request
+- (void) authenticateRequest:(BBARequest *)request
                      forUser:(BBAUserDetails *)user
-                       error:(NSError *__autoreleasing *)error
-                  completion:(void (^)(void))completion{
+                  completion:(void (^)(BBARequest *request, NSError *error))completion{
 
     [self.authService loginUser:user ? user : self.currentUser
                          client:user ? nil : self.currentClient
                      completion:^(BBAAuthData *data, NSError *error) {
-
+                         
+                         if (!data) {
+                             completion(nil, error);
+                             return ;
+                         }
                          NSMutableDictionary *headers = [[[request URLRequest] allHTTPHeaderFields]mutableCopy];
                          NSString *token = data.accessToken;
                          NSString *bearerToken = [NSString stringWithFormat:@"Bearer %@", token];
                          [headers setObject:bearerToken forKey:@"Authorization"];
                          [[request URLRequest]setValue:headers forKey:@"allHTTPHeaderFields"];
-                         completion();
+                         completion(request, nil);
 
     }];
 
-    return YES;
 }
+
+
+
 
 @end

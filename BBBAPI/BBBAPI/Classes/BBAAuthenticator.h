@@ -12,13 +12,11 @@
 
 @protocol BBAAuthenticator <NSObject>
 
-- (BOOL) authenticateRequest:(BBARequest *)request
-                       error:(NSError **)error
-                  completion:(void (^)(void))completion;
+- (void) authenticateRequest:(BBARequest *)request
+                  completion:(void (^)(BBARequest *request, NSError *error))completion;
 
-- (BOOL) authenticateRequest:(BBARequest *)request
+- (void) authenticateRequest:(BBARequest *)request
                      forUser:(BBAUserDetails *)user
-                       error:(NSError **)error
-                  completion:(void (^)(void))completion;
+                  completion:(void (^)(BBARequest *request, NSError *error))completion;
 
 @end

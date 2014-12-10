@@ -241,6 +241,7 @@ extern NSString * BBANSStringFromBBAContentType(BBAContentType type);
     NSURLRequest *urlRequest = [NSURLRequest new];
     BBARequest *request = [BBARequest requestWithURLRequest:urlRequest];
     factory.requestToReturn = request;
+    authenticator.requestToReturn = request;
     [connection perform:(BBAHTTPMethodGET) completion:^(id response, NSError *error) {
         
     }];
@@ -263,7 +264,7 @@ extern NSString * BBANSStringFromBBAContentType(BBAContentType type);
     NSURLRequest *urlRequest = [NSURLRequest new];
     BBARequest *request = [BBARequest requestWithURLRequest:urlRequest];
     factory.requestToReturn = request;
-    
+    authenticator.requestToReturn = request;
     session.responseToReturn = nil;
     
     NSInteger code = BBAAPIErrorCouldNotConnect;
@@ -290,7 +291,7 @@ extern NSString * BBANSStringFromBBAContentType(BBAContentType type);
     NSURLRequest *urlRequest = [NSURLRequest new];
     BBARequest *request = [BBARequest requestWithURLRequest:urlRequest];
     factory.requestToReturn = request;
-    
+    authenticator.requestToReturn = request;
     session.responseToReturn = [NSURLResponse new];
     
     NSInteger code = 123;

@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface BBARequest : NSObject <NSCopying>
-@property (nonatomic, copy, readonly) NSURLRequest *URLRequest;
+@property (nonatomic, copy) NSURLRequest *URLRequest;
 @property (nonatomic, assign, readonly) NSTimeInterval retryDelay;
 @property (nonatomic, strong, readonly) NSDate *lastRequestDate;
 @property (nonatomic, assign, readonly) NSUInteger attemptsCount;
