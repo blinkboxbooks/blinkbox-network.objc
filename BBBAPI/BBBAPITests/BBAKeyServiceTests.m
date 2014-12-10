@@ -130,7 +130,7 @@
 
 
     __block BOOL serviceReturned = NO;
-    BBA_PREPARE_SEMAPHORE();
+    BBA_PREPARE_ASYNC_TEST();
     [service getKeyForURL:URL
                 publicKey:base64EncodedPublicKey
                   forUser:userDetails
@@ -138,9 +138,9 @@
                    XCTAssertEqualObjects(key, expectedKey);
                    XCTAssertNil(error);
                    serviceReturned = YES;
-                   BBA_SIGNAL_SEMAPHORE();
+                   BBA_FLAG_ASYNC_TEST_COMPLETE();
                }];
-    BBA_WAIT_FOR_SEMAPHORE();
+    BBA_WAIT_FOR_ASYNC_TEST();
     XCTAssertTrue(serviceReturned);
 }
 
@@ -162,7 +162,7 @@
     }];
 
     __block BOOL serviceReturned = NO;
-    BBA_PREPARE_SEMAPHORE();
+    BBA_PREPARE_ASYNC_TEST();
     [service getKeyForURL:URL
                 publicKey:base64EncodedPublicKey
                   forUser:userDetails
@@ -172,9 +172,9 @@
                    XCTAssertEqualObjects(error.domain, BBAKeyServiceResponseMapperErrorDomain);
                    XCTAssertEqual(error.code, BBAKeyServiceResponseMapperErrorNotAuthorised);
                    serviceReturned = YES;
-                   BBA_SIGNAL_SEMAPHORE();
+                   BBA_FLAG_ASYNC_TEST_COMPLETE();
                }];
-    BBA_WAIT_FOR_SEMAPHORE();
+    BBA_WAIT_FOR_ASYNC_TEST();
     XCTAssertTrue(serviceReturned);
 }
 
@@ -196,7 +196,7 @@
     }];
 
     __block BOOL serviceReturned = NO;
-    BBA_PREPARE_SEMAPHORE();
+    BBA_PREPARE_ASYNC_TEST();
     [service getKeyForURL:URL
                 publicKey:base64EncodedPublicKey
                   forUser:userDetails
@@ -206,10 +206,10 @@
                    XCTAssertEqualObjects(error.domain, BBAKeyServiceResponseMapperErrorDomain);
                    XCTAssertEqual(error.code, BBAKeyServiceResponseMapperErrorNotAllowed);
                    serviceReturned = YES;
-                   BBA_SIGNAL_SEMAPHORE();
+                   BBA_FLAG_ASYNC_TEST_COMPLETE();
                }];
 
-    BBA_WAIT_FOR_SEMAPHORE();
+    BBA_WAIT_FOR_ASYNC_TEST();
     XCTAssertTrue(serviceReturned);
 }
 
@@ -232,7 +232,7 @@
     }];
 
     __block BOOL serviceReturned = NO;
-    BBA_PREPARE_SEMAPHORE();
+    BBA_PREPARE_ASYNC_TEST();
     [service getKeyForURL:URL
                 publicKey:base64EncodedPublicKey
                   forUser:userDetails
@@ -242,9 +242,9 @@
                    XCTAssertEqualObjects(error.domain, BBAKeyServiceResponseMapperErrorDomain);
                    XCTAssertEqual(error.code, BBAKeyServiceResponseMapperErrorKeyLimitExceeded);
                    serviceReturned = YES;
-                   BBA_SIGNAL_SEMAPHORE();
+                   BBA_FLAG_ASYNC_TEST_COMPLETE();
                }];
-    BBA_WAIT_FOR_SEMAPHORE();
+    BBA_WAIT_FOR_ASYNC_TEST();
     XCTAssertTrue(serviceReturned);
 }
 
@@ -267,7 +267,7 @@
     }];
 
     __block BOOL serviceReturned = NO;
-    BBA_PREPARE_SEMAPHORE();
+    BBA_PREPARE_ASYNC_TEST();
     [service getKeyForURL:URL
                 publicKey:base64EncodedPublicKey
                   forUser:userDetails
@@ -277,9 +277,9 @@
                    XCTAssertEqualObjects(error.domain, BBAKeyServiceResponseMapperErrorDomain);
                    XCTAssertEqual(error.code, BBAKeyServiceResponseMapperErrorNotFound);
                    serviceReturned = YES;
-                   BBA_SIGNAL_SEMAPHORE();
+                   BBA_FLAG_ASYNC_TEST_COMPLETE();
                }];
-    BBA_WAIT_FOR_SEMAPHORE();
+    BBA_WAIT_FOR_ASYNC_TEST();
     XCTAssertTrue(serviceReturned);
 }
 

@@ -35,7 +35,11 @@
     self.wasAskedToAuthenticate = YES;
     self.passedRequest = request;
     self.passedUser = user;
-    completion(self.requestToReturn, self.errorToReturn);
+    BBARequest *requestToReturn = self.requestToReturn;
+    if (!requestToReturn) {
+        requestToReturn = request;
+    }
+    completion(requestToReturn, self.errorToReturn);
 }
 
 
