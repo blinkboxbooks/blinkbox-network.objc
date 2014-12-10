@@ -100,8 +100,9 @@ NSString *const BBARequestFactoryDomain = @"com.BBA.requestFactoryErrorDomain";
     __block BOOL valid = YES;
 
     [dictionary enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+        NSInteger invalidCount = 0;
+
         for (Class validClass in classes) {
-            NSInteger invalidCount = 0;
             if (![obj isKindOfClass:validClass]) {
                 invalidCount++;
             }
