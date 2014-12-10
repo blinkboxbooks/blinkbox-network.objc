@@ -7,35 +7,9 @@
 //
 
 #import "BBAKeyServiceResponseMapper.h"
+#import "BBAConnection.h"
 
 NSString *const BBAKeyServiceResponseMapperErrorDomain = @"api.keyServiceResponseMappingErrorDomain";
-
-/**
- *  Mapping of possible status code responses from the key service
- */
-typedef NS_ENUM(NSUInteger, BBAKeyServiceResponseCode){
-    /**
-     *  201 - Success
-     */
-    BBAKeyServiceResponseCodeSuccess = 201,
-    /**
-     *  User is not authorised
-     */
-    BBAKeyServiceResponseCodeNotAuthorised = 401,
-    /**
-     *  User is not allowed to access the key
-     */
-    BBAKeyServiceResponseCodeNotAllowed = 403,
-    /**
-     *  User has fetched too many keys
-     */
-    BBAKeyServiceResponseCodeKeyLimitExceeded = 409,
-    /**
-     *  Key was not found
-     */
-    BBAKeyServiceResponseCodeNotFound = 404,
-};
-
 
 
 @implementation BBAKeyServiceResponseMapper
@@ -44,25 +18,26 @@ typedef NS_ENUM(NSUInteger, BBAKeyServiceResponseCode){
                   error:(NSError **)error{
 
     switch (response.statusCode) {
-        case BBAKeyServiceResponseCodeSuccess:
+        case BBAHTTPCreated: //Intentional fall through, 200 and 201 are both success cases
+        case BBAHTTPSuccess:
             if (data) {
                 return data;
             }
             break;
 
-        case BBAKeyServiceResponseCodeNotAuthorised:
+        case BBAHTTPUnauthorized:
             [self setError:error withType:BBAKeyServiceResponseMapperErrorNotAuthorised];
             return nil;
 
-        case BBAKeyServiceResponseCodeNotAllowed:
+        case BBAHTTPForbidden:
             [self setError:error withType:BBAKeyServiceResponseMapperErrorNotAllowed];
             return nil;
 
-        case BBAKeyServiceResponseCodeKeyLimitExceeded:
+        case BBAHTTPConflict:
             [self setError:error withType:BBAKeyServiceResponseMapperErrorKeyLimitExceeded];
             return nil;
 
-        case BBAKeyServiceResponseCodeNotFound:
+        case BBAHTTPNotFound:
             [self setError:error withType:BBAKeyServiceResponseMapperErrorNotFound];
             return nil;
     }
