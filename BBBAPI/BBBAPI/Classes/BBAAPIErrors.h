@@ -40,6 +40,10 @@ NS_ENUM(NSInteger, BBAAPIError) {
     /**
      *  Used when the server returns a 400 (Bad Request)
      */
-    BBAAPIBadRequest = 707,
+    BBAAPIErrorBadRequest = 707,
+    /**
+     *  Used when the server returns a 409 (Conflict)
+     */
+    BBAAPIErrorConflict = 708,
 };
 
