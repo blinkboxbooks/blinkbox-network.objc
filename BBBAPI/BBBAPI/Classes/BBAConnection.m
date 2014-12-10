@@ -61,7 +61,7 @@ NSString *const BBAHTTPVersion11 = @"HTTP/1.1";
         _parameters = [NSMutableDictionary new];
         _headers = [NSMutableDictionary new];
         _requiresAuthentication = YES;
-
+        
     }
     return self;
 }
@@ -164,7 +164,6 @@ NSString *const BBAHTTPVersion11 = @"HTTP/1.1";
         return;
     }
     
-    NSURLSession *s = self.session;
     NSError *error;
     BBARequest *request = [self.requestFactory requestWith:self.baseURL
                                                 parameters:self.parameters
@@ -172,76 +171,74 @@ NSString *const BBAHTTPVersion11 = @"HTTP/1.1";
                                                     method:method
                                                contentType:self.contentType
                                                      error:&error];
+    
     NSAssert(request, @"request factory must return a request");
     if (!request) {
         completion(nil, error);
         return;
     }
     
-    
-    void(^taskBlock)(void);
-    
-    taskBlock = ^(void) {
-        
-        NSURLSessionDataTask *dataTask;
-        dataTask = [s dataTaskWithRequest:request.URLRequest
-                        completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-                            
-                            if (response) {
-                                NSError *mapperError;
-                                id returnData = [self.responseMapper responseFromData:data
-                                                                             response:response
-                                                                                error:&mapperError];
-                                
-                                completion(returnData, mapperError);
-                            }
-                            else{
-                                
-                                NSError *connectionError;
-                                NSDictionary *userInfo;
-                                
-                                if (error != nil) {
-                                    userInfo = @{NSUnderlyingErrorKey : error};
-                                }
-                                
-                                connectionError = [NSError errorWithDomain:BBAConnectionErrorDomain
-                                                                      code:BBAAPIErrorCouldNotConnect
-                                                                  userInfo:userInfo];
-                                
-                                completion(nil, connectionError);
-                                
-                            }
-                            
-                            
-                        }];
-        
-        [dataTask resume];
-    };
-    
-    [self _perfomTask:taskBlock forRequest:request withUser:user];
-}
-
-- (void) _perfomTask:(void(^)(void))taskBlock
-          forRequest:(BBARequest *)request
-            withUser:(BBAUserDetails *)user{
-    
     if (self.requiresAuthentication) {
-        NSError *authenticatorError = nil;
-        if (user) {
+
             [self.authenticator authenticateRequest:request
                                             forUser:user
-                                              error:&authenticatorError
-                                         completion:taskBlock];
-        }
-        else {
-            [self.authenticator authenticateRequest:request
-                                              error:&authenticatorError
-                                         completion:taskBlock];
-        }
-        
+                                         completion:^(BBARequest *request, NSError *error) {
+                                             
+                                             if (!request) {
+                                                 completion(nil, error);
+                                                 return ;
+                                             }
+                                             
+                                             
+                                             [self performRequest:request
+                                                        completion:completion];
+                                             
+                                         }];
     }
     else{
-        taskBlock();
+        [self performRequest:request
+                  completion:completion];
     }
+    
+    
 }
+
+
+- (void) performRequest:(BBARequest *)request
+             completion:(void (^)(id response, NSError *error))completion{
+    
+    NSURLSession *s = self.session;
+    
+    NSURLSessionDataTask *dataTask;
+    dataTask = [s dataTaskWithRequest:request.URLRequest
+                    completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+                        
+                        if (response) {
+                            NSError *mapperError;
+                            id returnData = [self.responseMapper responseFromData:data
+                                                                         response:response
+                                                                            error:&mapperError];
+                            
+                            completion(returnData, mapperError);
+                            return ;
+                        }
+                        
+                        NSError *connectionError;
+                        NSDictionary *userInfo;
+                        
+                        if (error != nil) {
+                            userInfo = @{NSUnderlyingErrorKey : error};
+                        }
+                        
+                        connectionError = [NSError errorWithDomain:BBAConnectionErrorDomain
+                                                              code:BBAAPIErrorCouldNotConnect
+                                                          userInfo:userInfo];
+                        
+                        completion(nil, connectionError);
+                        
+                    }];
+    
+    [dataTask resume];
+}
+
 @end

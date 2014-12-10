@@ -19,24 +19,26 @@
 @end
 
 @implementation BBAMockAuthenticator
-- (BOOL) authenticateRequest:(BBARequest *)request
-                       error:(NSError **)error
-                  completion:(void (^)(void))completion{
-    return [self authenticateRequest:request forUser:nil error:error completion:completion];
+
+- (void) authenticateRequest:(BBARequest *)request
+                  completion:(void (^)(BBARequest *, NSError *))completion{
     
+    [self authenticateRequest:request
+                      forUser:nil
+                   completion:completion];
 }
 
-- (BOOL) authenticateRequest:(BBARequest *)request
+- (void) authenticateRequest:(BBARequest *)request
                      forUser:(BBAUserDetails *)user
-                       error:(NSError **)error
-                  completion:(void (^)(void))completion{
+                  completion:(void (^)(BBARequest *, NSError *))completion{
+
     self.wasAskedToAuthenticate = YES;
     self.passedRequest = request;
     self.passedUser = user;
-    *error = self.errorToReturn;
-    completion();
-    return self.valueToReturn;
+    completion(self.requestToReturn, self.errorToReturn);
 }
+
+
 @end
 
 
