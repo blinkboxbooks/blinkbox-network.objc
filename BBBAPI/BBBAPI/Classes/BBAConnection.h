@@ -14,6 +14,8 @@
 
 NS_ENUM(NSInteger, BBAHTTPStatus){
     BBAHTTPSuccess = 200,
+    BBAHTTPCreated= 201,
+    BBAHTTPNoContent = 204,
     BBAHTTPBadRequest= 400,
     BBAHTTPUnauthorized = 401,
     BBAHTTPForbidden = 403,
