@@ -17,6 +17,8 @@ typedef NS_OPTIONS(NSInteger, BBABookmarkType) {
     BBABookmarkTypeNote = 1 << 5,
 };
 
+extern NSString *const kBBABookmarkServiceErrorDomain;
+
 @class BBALibraryItem;
 @class BBABookmarkItem;
 @class BBAUserDetails;
@@ -47,6 +49,6 @@ typedef NS_OPTIONS(NSInteger, BBABookmarkType) {
 
 - (void) updateBookMark:(BBABookmarkItem *)item
                    user:(BBAUserDetails *)user
-             completion:(void (^)(BBABookmarkItem *bookmarkItem, NSError *error))completion;
+             completion:(void (^)(BOOL success, NSError *error))completion;
 
 @end
