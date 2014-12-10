@@ -218,8 +218,9 @@ NSString *const BBAHTTPVersion11 = @"HTTP/1.1";
                             id returnData = [self.responseMapper responseFromData:data
                                                                          response:response
                                                                             error:&mapperError];
-                            
-                            completion(returnData, mapperError);
+                            dispatch_async(dispatch_get_main_queue(), ^{
+                                completion(returnData, mapperError);
+                            });
                             return ;
                         }
                         
@@ -233,9 +234,10 @@ NSString *const BBAHTTPVersion11 = @"HTTP/1.1";
                         connectionError = [NSError errorWithDomain:BBAConnectionErrorDomain
                                                               code:BBAAPIErrorCouldNotConnect
                                                           userInfo:userInfo];
-                        
-                        completion(nil, connectionError);
-                        
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            completion(nil, connectionError);
+                        });
+
                     }];
     
     [dataTask resume];
