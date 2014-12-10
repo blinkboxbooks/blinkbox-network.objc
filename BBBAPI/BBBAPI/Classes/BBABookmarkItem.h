@@ -31,5 +31,7 @@
 
 + (NSArray *) bookmarkItemsWithJSONArray:(NSArray *)dictionary;
 + (BBABookmarkItem *) bookmarkItemWithJSON:(NSDictionary *)dictionary;
++ (BBABookmarkItem *) bookmarkItemWithData:(NSData *)data;
 
+- (NSDictionary *) dictionaryRepresentation;
 @end

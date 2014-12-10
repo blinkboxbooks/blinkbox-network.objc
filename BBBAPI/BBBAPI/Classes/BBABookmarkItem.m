@@ -75,6 +75,18 @@
     return bookmarks;
 }
 
++ (BBABookmarkItem *) bookmarkItemWithData:(NSData *)data{
+    NSDictionary *JSONBookmark = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+    if (!JSONBookmark) {
+        return nil;
+    }
+
+    BBABookmarkItem *item;
+    item = [BBABookmarkItem bookmarkItemWithJSON:JSONBookmark];
+
+    return item;
+}
+
 + (BBABookmarkItem *) bookmarkItemWithJSON:(NSDictionary *)dictionary{
     NSParameterAssert(dictionary);
     if (!dictionary) {
@@ -88,6 +100,41 @@
                                                              usingMapping:mapping];
 
     return item;
+}
+
+- (NSDictionary *) dictionaryRepresentation{
+    NSMutableDictionary *dictionary = [NSMutableDictionary new];
+    NSAssert(self.book != nil, @"book(isbn) is required");
+    NSAssert(self.bookmarkType != nil, @"bookmarkType is required");
+    NSAssert(self.position != nil, @"position is required");
+    NSAssert(self.readingPercentage != nil, @"readingPercentage is required");
+
+    if (!self.book || !self.bookmarkType || !self.position || !self.readingPercentage) {
+        return nil;
+    }
+
+    dictionary[@"book"] = self.book;
+    dictionary[@"bookmarkType"] = self.bookmarkType;
+    dictionary[@"position"] = self.position;
+    dictionary[@"readingPercentage"] = [self.readingPercentage stringValue];
+
+    if (self.name) {
+        dictionary[@"name"] = self.name;
+    }
+    if (self.annotation) {
+        dictionary[@"annotation"] = self.annotation;
+    }
+    if (self.style) {
+        dictionary[@"style"] = self.style;
+    }
+    if (self.colour) {
+        dictionary[@"colour"] = self.colour;
+    }
+    if (self.preview) {
+        dictionary[@"preview"] = self.preview;
+    }
+
+    return dictionary;
 }
 
 - (NSString *) description{
