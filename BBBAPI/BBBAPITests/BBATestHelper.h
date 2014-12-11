@@ -34,4 +34,12 @@
 + (NSURL *) absoluteURLForTestBundleFileNamed:(NSString *)fileName
                                  forTestClass:(Class)testClass;
 
+/**
+ *  Converts the provided `NSDate` into global time (UTC)
+ *
+ *  @param date `NSDate` in local time
+ *
+ *  @return `NSDate` in UTC
+ */
++ (NSDate *) globalTimeDateForDate:(NSDate *)date;
 @end

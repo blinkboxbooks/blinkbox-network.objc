@@ -27,4 +27,17 @@
     return date;
 }
 
++ (NSString *) stringFromDate:(NSDate *)date{
+    if (!date) {
+        return nil;
+    }
+    const char *formatString = [[self dateFormat] cStringUsingEncoding:NSUTF8StringEncoding];
+    char buf[20];
+    time_t clock = [date timeIntervalSince1970];
+    struct tm time;
+    gmtime_r(&clock, &time);
+    strftime_l(buf, sizeof(buf), formatString, &time, NULL);
+    return [NSString stringWithUTF8String:buf];
+}
+
 @end

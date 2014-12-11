@@ -21,4 +21,14 @@
  *  @return `NSDate`
  */
 + (NSDate *) dateFromString:(NSString *)string;
+
+/**
+ *  Returns an `NSString` given an `NSDate`
+ *
+ *  @param date `NSDate` to convert to `NSString` in server date format
+ *
+ *  @return `NSString` in server date format
+ */
++ (NSString *) stringFromDate:(NSDate *)date;
+
 @end

@@ -14,6 +14,7 @@
 #import "BBABookmarkResponseMapper.h"
 #import "BBAAPIErrors.h"
 #import "BBABookmarkItem.h"
+#import "BBADateHelper.h"
 
 NSString *const kBBABookmarkServiceLastSyncDateTime = @"lastSyncDateTime";
 NSString *const kBBABookmarkServiceBookmarkType = @"bookmarkType";
@@ -50,7 +51,11 @@ NSString *const kBBABookmarkServiceErrorDomain = @"BBA.error.bookmarkServiceDoma
 
 
     if (date) {
-        [connection addParameterWithKey:kBBABookmarkServiceLastSyncDateTime value:@"date_string"];
+        NSString *dateString;
+        dateString = [BBADateHelper stringFromDate:date];
+        if (dateString) {
+            [connection addParameterWithKey:kBBABookmarkServiceLastSyncDateTime value:dateString];
+        }
     }
 
     NSArray *bookmarkTypes = [self bookmarkTypeStringArrayFromType:types];

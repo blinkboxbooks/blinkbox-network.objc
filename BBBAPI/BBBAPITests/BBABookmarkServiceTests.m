@@ -21,10 +21,10 @@
 
 #import "BBAConnectionTestsMocks.h"
 #import "BBAMockConnection.h"
+#import "BBATestHelper.h"
 
 #import <OHHTTPStubs/OHHTTPStubs.h>
 #import <OCMock/OCMock.h>
-
 @interface BBABookmarkService (Testing)
 @property (nonatomic, strong) Class connectionClass;
 @end
@@ -64,9 +64,10 @@
 - (void) testGetBookmarksSetsDateParameterWhenPassedDateIsNonNil{
 
     [service setConnectionClass:[BBAMockConnection class]];
-
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:0];
+    NSString *expectedDate = @"1970-01-01T00:00:00Z";
     [service getBookmarkChangesForItem:[BBALibraryItem new]
-                             afterDate:[NSDate new]
+                             afterDate:date
                              typesMask:BBABookmarkTypeAll
                                   user:[BBAUserDetails new]
                             completion:^(NSArray *bookmarkChanges, NSDate *syncDate, NSError *error) {
@@ -80,7 +81,8 @@
 
     id passedDateParmater;
     passedDateParmater = [mockedConnection passedParameters][@"lastSyncDateTime"];
-    XCTAssertNotNil(passedDateParmater);
+
+    XCTAssertEqualObjects(passedDateParmater, expectedDate);
 }
 
 - (void) testGetBookmarksDoesNotSetDateParameterWhenPassedDateIsNil{
@@ -99,8 +101,9 @@
     BBAMockConnection *mockedConnection;
     mockedConnection = [[BBAMockConnection mockedConnections]firstObject];
 
-    id passedDateParmater;
+    NSDate *passedDateParmater;
     passedDateParmater = [mockedConnection passedParameters][@"lastSyncDateTime"];
+
     XCTAssertNil(passedDateParmater);
 }
 
