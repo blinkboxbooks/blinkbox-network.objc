@@ -11,6 +11,7 @@
 #import "BBABookmarkItem.h"
 #import "BBALinkItem.h"
 #import "BBATestHelper.h"
+#import "BBAServerDateFormatter.h"
 
 @interface BBABookmarkItemTests : XCTestCase
 
@@ -31,9 +32,11 @@
     XCTAssertEqualObjects(item.colour, @"test24t");
     XCTAssertEqualObjects(item.createdByClient, @"51764");
 
+    NSDate *expectedDate = [[BBAServerDateFormatter new] dateFromString:@"2014-05-06T18:28:28Z"];
     NSInteger timeInterval = [item.createdDate timeIntervalSince1970];
-    NSInteger expectedTimeInterval = 1413900197;
-    XCTAssertEqual(timeInterval, expectedTimeInterval);
+    NSInteger expectedTimeInterval = [expectedDate timeIntervalSince1970];
+
+    XCTAssertTrue(ABS(timeInterval - expectedTimeInterval) < 1);
 
     XCTAssertEqualObjects(item.deleted, @0);
     XCTAssertEqualObjects(item.guid, @"urn:blinkboxbooks:id:bookmark:145548");

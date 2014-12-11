@@ -13,7 +13,7 @@
 #import "BBABookmarkResponseMapper.h"
 #import "BBAAPIErrors.h"
 #import "BBABookmarkItem.h"
-#import "BBADateHelper.h"
+#import "BBAServerDateFormatter.h"
 
 NSString *const kBBABookmarkServiceLastSyncDateTime = @"lastSyncDateTime";
 NSString *const kBBABookmarkServiceBookmarkType = @"bookmarkType";
@@ -24,7 +24,7 @@ NSString *const kBBABookmarkServiceErrorDomain = @"BBA.error.bookmarkServiceDoma
  *  The class to use for communication with the server. This defaults to BBAConnection.
  */
 @property (nonatomic, strong) Class connectionClass;
-
+@property (nonatomic, strong) BBAServerDateFormatter *dateFormatter;
 @end
 
 @implementation BBABookmarkService
@@ -51,7 +51,7 @@ NSString *const kBBABookmarkServiceErrorDomain = @"BBA.error.bookmarkServiceDoma
 
     if (date) {
         NSString *dateString;
-        dateString = [BBADateHelper stringFromDate:date];
+        dateString = [self.dateFormatter stringFromDate:date];
         if (dateString) {
             [connection addParameterWithKey:kBBABookmarkServiceLastSyncDateTime value:dateString];
         }
@@ -290,5 +290,15 @@ NSString *const kBBABookmarkServiceErrorDomain = @"BBA.error.bookmarkServiceDoma
     }
 
     return _connectionClass;
+}
+
+#pragma mark - Getters
+
+- (BBAServerDateFormatter *) dateFormatter{
+    if (_dateFormatter == nil) {
+        _dateFormatter = [BBAServerDateFormatter new];
+    }
+
+    return _dateFormatter;
 }
 @end

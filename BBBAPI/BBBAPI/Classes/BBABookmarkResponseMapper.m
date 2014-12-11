@@ -10,9 +10,20 @@
 #import "BBABookmarkItem.h"
 #import "BBAConnection.h"
 #import "BBAAPIErrors.h"
-#import "BBADateHelper.h"
+#import "BBAServerDateFormatter.h"
 
 @implementation BBABookmarkResponse
+
++ (BBAServerDateFormatter *)dateFormatter{
+
+    static BBAServerDateFormatter *formatter;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        formatter = [BBAServerDateFormatter new];
+    });
+    return formatter;
+
+}
 - (instancetype) initWithJSON:(NSDictionary *)JSON{
     self = [self init];
     if (self) {
@@ -24,8 +35,12 @@
 
         _bookmarks = [BBABookmarkItem bookmarkItemsWithJSONArray:JSONBookmarks];
 
-        NSDate *date = [BBADateHelper dateFromString:JSON[@"lastSyncDateTime"]];
-        _lastSyncDate = date;
+        NSString *lastSyncDateTime;
+        lastSyncDateTime = JSON[@"lastSyncDateTime"];
+        if (lastSyncDateTime) {
+            NSDate *date = [[BBABookmarkResponse dateFormatter] dateFromString:JSON[@"lastSyncDateTime"]];
+            _lastSyncDate = date;
+        }
 
 
     }

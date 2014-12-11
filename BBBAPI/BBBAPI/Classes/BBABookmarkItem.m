@@ -8,10 +8,19 @@
 
 #import "BBABookmarkItem.h"
 #import <FastEasyMapping/FastEasyMapping.h>
-#import "BBADateHelper.h"
+#import "BBAServerDateFormatter.h"
 #import "BBALinkItem.h"
 
 @implementation BBABookmarkItem
+
++ (BBAServerDateFormatter *)serverDateFormatter{
+    static BBAServerDateFormatter *formatter;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        formatter = [BBAServerDateFormatter new];
+    });
+    return formatter;
+}
 
 + (FEMObjectMapping *) bookmarkMapping{
     return [FEMObjectMapping mappingForClass:[BBABookmarkItem class]
@@ -51,13 +60,18 @@
                                    [mapping addAttribute:[FEMAttribute mappingOfProperty:@"createdDate"
                                                                                toKeyPath:@"createdDate"
                                                                               map:^id(id value) {
-                                                                                  return [BBADateHelper dateFromString:value];
+                                                                                  return [[BBABookmarkItem serverDateFormatter]dateFromString:value];
                                                                               }]];
 
                                    [mapping addAttribute:[FEMAttribute mappingOfProperty:@"updatedDate"
                                                                                toKeyPath:@"updatedDate"
                                                                                      map:^id(id value) {
-                                                                                         return [BBADateHelper dateFromString:value];
+                                                                                         if (value) {
+                                                                                             return [[BBABookmarkItem serverDateFormatter]dateFromString:value];
+                                                                                         }
+                                                                                         else {
+                                                                                             return nil;
+                                                                                         }
                                                                                      }]];
 
                                    [mapping addToManyRelationshipMapping:[BBALinkItem linkItemMapping]
