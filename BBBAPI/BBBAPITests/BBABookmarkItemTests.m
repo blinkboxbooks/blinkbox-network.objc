@@ -10,6 +10,7 @@
 #import <XCTest/XCTest.h>
 #import "BBABookmarkItem.h"
 #import "BBALinkItem.h"
+#import "BBATestHelper.h"
 
 @interface BBABookmarkItemTests : XCTestCase
 
@@ -30,11 +31,11 @@
     XCTAssertEqualObjects(item.colour, @"test24t");
     XCTAssertEqualObjects(item.createdByClient, @"51764");
 
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"GMT"]];
-    [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss Z"];
-    NSString *dateAsString = [formatter stringFromDate:item.createdDate];
-    XCTAssertEqualObjects(dateAsString, @"2014-10-21 15:03:17 +0100");
+
+    NSDate *globalDate = [BBATestHelper globalTimeDateForDate:item.createdDate];
+    NSInteger timeInterval = [globalDate timeIntervalSince1970];
+    NSInteger expectedTimeInterval = 1413896597;
+    XCTAssertEqual(timeInterval, expectedTimeInterval);
 
     XCTAssertEqualObjects(item.deleted, @0);
     XCTAssertEqualObjects(item.guid, @"urn:blinkboxbooks:id:bookmark:145548");
