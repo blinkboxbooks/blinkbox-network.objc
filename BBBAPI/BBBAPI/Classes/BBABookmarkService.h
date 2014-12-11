@@ -35,7 +35,10 @@ extern NSString *const kBBABookmarkServiceErrorDomain;
  *  @param date       An optional `NSDate` which, if specified, will limit the returned bookmarks to those created AFTER this date.
  *  @param types      `BBABookmarkType` bitmask specifying which bookmarks to fetch (Required)
  *  @param user       `BBAUserDetails` specifying which user to fetch bookmarks for (Required)
- *  @param completion Block invoked on completion of the fetch (Required)
+ *  @param completion Block invoked on completion of the fetch (Required).
+ *                    Completion will return an `NSArray` of `BBABookmarkItem` and an `NSDate`
+ *                    describing the time of this bookmark sync, or an `NSError` describing the reason
+ *                    for failure
  */
 - (void) getBookmarkChangesForItem:(BBALibraryItem *)item
                          afterDate:(NSDate *)date
@@ -49,7 +52,9 @@ extern NSString *const kBBABookmarkServiceErrorDomain;
  *  @param item       The `BBALibraryItem` for which to delete bookmarks (Required)
  *  @param types      `BBABookmarkType` bitmask specifying which bookmarks to fetch (Required)
  *  @param user       `BBAUserDetails` specifying which user to fetch bookmarks for (Required)
- *  @param completion Block invoked on completion of the fetch (Required)
+ *  @param completion Block invoked on completion of the fetch (Required).
+ *                    Completion will return a `BOOL` success, if success is `NO` an `NSError` is
+ *                    returned detailing the reason for failure
  */
 - (void) deleteBookmarksForItem:(BBALibraryItem *)item
                       typesMask:(BBABookmarkType)types
@@ -61,7 +66,9 @@ extern NSString *const kBBABookmarkServiceErrorDomain;
  *
  *  @param item       The `BBABookmarkItem` which to delete (Required)
  *  @param user       `BBAUserDetails` specifying which user to delete bookmarks for (Required)
- *  @param completion Block invoked on completion of the fetch (Required)
+ *  @param completion Block invoked on completion of the fetch (Required).
+ *                    Completion will return a `BOOL` success, if success is `NO` an `NSError` is
+ *                    returned detailing the reason for failure
  */
 - (void) deleteBookmark:(BBABookmarkItem *)item
                    user:(BBAUserDetails *)user
@@ -73,7 +80,9 @@ extern NSString *const kBBABookmarkServiceErrorDomain;
  *  @param bookmark   `BBABookmarkItem` to create on the server. (Required)
  *  @param item       `BBALibraryItem` representing the book that these bookmarks are part of (Required)
  *  @param user       `BBAUserDetails` specifying which user to create the bookmark for (Required)
- *  @param completion Block invoked on completion of the fetch (Required)
+ *  @param completion Block invoked on completion of the fetch (Required).
+ *                    Completion will return a `BBABookmarkItem` if successful, or an `NSError` is
+ *                    returned detailing the reason for failure
  */
 - (void) addBookMark:(BBABookmarkItem *)bookmark
              forItem:(BBALibraryItem *)item
@@ -83,9 +92,11 @@ extern NSString *const kBBABookmarkServiceErrorDomain;
 /**
  *  Update a bookmark on the server, for example, changing the colour of a higlight.
  *
- *  @param item   `BBABookmarkItem` to update on the server. (Required)
+ *  @param item       `BBABookmarkItem` to update on the server. (Required)
  *  @param user       `BBAUserDetails` specifying which user to update the bookmark for (Required)
- *  @param completion Block invoked on completion of the fetch (Required)
+ *  @param completion Block invoked on completion of the fetch (Required).
+ *                    Completion will return a `BOOL` success, if success is `NO` an `NSError` is
+ *                    returned detailing the reason for failure
  */
 - (void) updateBookMark:(BBABookmarkItem *)item
                    user:(BBAUserDetails *)user
