@@ -37,5 +37,13 @@ NS_ENUM(NSInteger, BBAAPIError) {
      *  Used when we cannot decode or read data returned from the server
      */
     BBAAPIUnreadableData = 706,
+    /**
+     *  Used when the server returns a 400 (Bad Request)
+     */
+    BBAAPIErrorBadRequest = 707,
+    /**
+     *  Used when the server returns a 409 (Conflict)
+     */
+    BBAAPIErrorConflict = 708,
 };
 

@@ -31,4 +31,9 @@
     return data;
 }
 
++ (NSDate *) globalTimeDateForDate:(NSDate *)date{
+    NSTimeZone *tz = [NSTimeZone localTimeZone];
+    NSInteger seconds = -[tz secondsFromGMTForDate: date];
+    return [NSDate dateWithTimeInterval: seconds sinceDate: date];
+}
 @end
