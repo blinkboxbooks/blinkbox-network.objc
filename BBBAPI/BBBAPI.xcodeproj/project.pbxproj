@@ -92,6 +92,10 @@
 		5ACE481F1A376E4300546137 /* delete_bookmarks_success.json in Resources */ = {isa = PBXBuildFile; fileRef = 5ACE481E1A376E4300546137 /* delete_bookmarks_success.json */; };
 		5AF88C5C1A35EA9200CA9B98 /* BBABookmarkResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AF88C5B1A35EA9200CA9B98 /* BBABookmarkResponseMapper.m */; };
 		5AF88C5F1A35FA9A00CA9B98 /* get_my_bookmarks_success.json in Resources */ = {isa = PBXBuildFile; fileRef = 5AF88C5E1A35FA9A00CA9B98 /* get_my_bookmarks_success.json */; };
+		5A56A81F1A28E3E10031F2D9 /* BBAKeyServiceMock_SuccessResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A56A81E1A28E3E10031F2D9 /* BBAKeyServiceMock_SuccessResponse.json */; };
+		5A5BDC341A27955A002F859E /* BBAKeyServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5BDC331A27955A002F859E /* BBAKeyServiceTests.m */; };
+		5AC2D9E91A2CA52C00F43A7E /* BBAKeyServiceResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AC2D9E81A2CA52C00F43A7E /* BBAKeyServiceResponseMapper.m */; };
+		F00D7F2002EC8F9E770BC88B /* libPods-BBBAPITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A083F052112984064AC1835D /* libPods-BBBAPITests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -255,6 +259,10 @@
 		5AF88C5B1A35EA9200CA9B98 /* BBABookmarkResponseMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBABookmarkResponseMapper.m; path = Classes/BBABookmarkResponseMapper.m; sourceTree = "<group>"; };
 		5AF88C5E1A35FA9A00CA9B98 /* get_my_bookmarks_success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = get_my_bookmarks_success.json; path = "Bookmark Service Responses/get_my_bookmarks_success.json"; sourceTree = "<group>"; };
 		BD86D82D093B37E72C8605AE /* Pods-BBBAPI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BBBAPI.release.xcconfig"; path = "../Pods/Target Support Files/Pods-BBBAPI/Pods-BBBAPI.release.xcconfig"; sourceTree = "<group>"; };
+		5A56A81E1A28E3E10031F2D9 /* BBAKeyServiceMock_SuccessResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = BBAKeyServiceMock_SuccessResponse.json; path = "Key Service Responses/BBAKeyServiceMock_SuccessResponse.json"; sourceTree = "<group>"; };
+		5A5BDC331A27955A002F859E /* BBAKeyServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBAKeyServiceTests.m; sourceTree = "<group>"; };
+		5AC2D9E71A2CA52C00F43A7E /* BBAKeyServiceResponseMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBAKeyServiceResponseMapper.h; path = Classes/BBAKeyServiceResponseMapper.h; sourceTree = "<group>"; };
+		5AC2D9E81A2CA52C00F43A7E /* BBAKeyServiceResponseMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBAKeyServiceResponseMapper.m; path = Classes/BBAKeyServiceResponseMapper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -327,6 +335,7 @@
 			children = (
 				5ACE48111A37221400546137 /* BBABookmarkItemTests.m */,
 				5A3ECB631A2F67CF00E49DCE /* BBABookmarkServiceTests.m */,
+				5A5BDC331A27955A002F859E /* BBAKeyServiceTests.m */,
 				401A1D441A13D77B004FBA41 /* BBAAuthenticationServiceTests.m */,
 				401A1D451A13D77B004FBA41 /* BBAAuthResponseMapperTests.h */,
 				401A1D461A13D77B004FBA41 /* BBAAuthServiceResponseMappersTestData.h */,
@@ -372,6 +381,7 @@
 			isa = PBXGroup;
 			children = (
 				5AF88C5D1A35FA3500CA9B98 /* Bookmark Service Responses */,
+				5A56A81D1A28E3550031F2D9 /* Key Service Responses */,
 				401A1D5F1A13D77B004FBA41 /* Library Service Responses */,
 			);
 			path = SampleData;
@@ -485,6 +495,8 @@
 				5AF88C5B1A35EA9200CA9B98 /* BBABookmarkResponseMapper.m */,
 				5ACE481B1A37411400546137 /* BBALinkItem.h */,
 				5ACE481C1A37411400546137 /* BBALinkItem.m */,
+				5AC2D9E71A2CA52C00F43A7E /* BBAKeyServiceResponseMapper.h */,
+				5AC2D9E81A2CA52C00F43A7E /* BBAKeyServiceResponseMapper.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -499,6 +511,14 @@
 				5AF88C5E1A35FA9A00CA9B98 /* get_my_bookmarks_success.json */,
 			);
 			name = "Bookmark Service Responses";
+			sourceTree = "<group>";
+		};
+		5A56A81D1A28E3550031F2D9 /* Key Service Responses */ = {
+			isa = PBXGroup;
+			children = (
+				5A56A81E1A28E3E10031F2D9 /* BBAKeyServiceMock_SuccessResponse.json */,
+			);
+			name = "Key Service Responses";
 			sourceTree = "<group>";
 		};
 		D3194E7B13CAAD5509AE5282 /* Pods */ = {
@@ -629,6 +649,7 @@
 				401A1D7E1A13D77B004FBA41 /* libResponse_archived.json in Resources */,
 				401A1D831A13D77B004FBA41 /* libResponse_invalid_type.json in Resources */,
 				5AF88C5F1A35FA9A00CA9B98 /* get_my_bookmarks_success.json in Resources */,
+				5A56A81F1A28E3E10031F2D9 /* BBAKeyServiceMock_SuccessResponse.json in Resources */,
 				401A1D7D1A13D77B004FBA41 /* libResponse.json in Resources */,
 				401A1D861A13D77B004FBA41 /* libResponse_single_item_deleted.json in Resources */,
 				5A88FF9F1A38A13B00DE2887 /* update_bookmark_success.json in Resources */,
@@ -734,6 +755,7 @@
 				401A1DE51A13D78B004FBA41 /* BBAJSONResponseMapper.m in Sources */,
 				401A1DF11A13D78B004FBA41 /* BBARequestFactory.m in Sources */,
 				401A1DDC1A13D78B004FBA41 /* BBAAuthServiceErrorParser.m in Sources */,
+				5AC2D9E91A2CA52C00F43A7E /* BBAKeyServiceResponseMapper.m in Sources */,
 				401A1DEF1A13D78B004FBA41 /* BBAPurchasingService.m in Sources */,
 				401A1DF01A13D78B004FBA41 /* BBARequest.m in Sources */,
 				401A1DD81A13D78B004FBA41 /* BBAAuthDataValidator.m in Sources */,
@@ -766,6 +788,7 @@
 				401A1D741A13D77B004FBA41 /* BBALibraryServiceTests.m in Sources */,
 				401A1D7B1A13D77B004FBA41 /* BBATestHelper.m in Sources */,
 				401A1D6E1A13D77B004FBA41 /* BBAAuthServiceResponseMapperTests.m in Sources */,
+				5A5BDC341A27955A002F859E /* BBAKeyServiceTests.m in Sources */,
 				401A1D6F1A13D77B004FBA41 /* BBAClientsResponseMapperTests.m in Sources */,
 				401A1D791A13D77B004FBA41 /* BBAStatusResponseMapperTests.m in Sources */,
 				401A1D771A13D77B004FBA41 /* BBANetworkConfigurationTests.m in Sources */,
@@ -891,6 +914,7 @@
 			baseConfigurationReference = 118CD5BBC1E178DF65C1391A /* Pods-BBBAPI.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
 				INFOPLIST_FILE = BBBAPI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -917,6 +941,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
 				GCC_PREFIX_HEADER = BBBAPITests/BBBAPITests.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -938,6 +963,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
 				GCC_PREFIX_HEADER = BBBAPITests/BBBAPITests.pch;
 				INFOPLIST_FILE = BBBAPITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

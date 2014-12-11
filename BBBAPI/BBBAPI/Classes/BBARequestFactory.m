@@ -180,7 +180,7 @@ NSString *const BBARequestFactoryDomain = @"com.BBA.requestFactoryErrorDomain";
         return data;
     }
     
-    
+    NSAssert(YES, @"Unrecognized contentType");
     return nil;
 }
 

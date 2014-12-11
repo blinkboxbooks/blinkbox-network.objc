@@ -4,7 +4,6 @@ source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '7.0'
 
 workspace 'BBBAPI'
-
 xcodeproj 'BBBAPI/BBBAPI.xcodeproj'
 
 target :BBBAPI do
@@ -13,7 +12,7 @@ target :BBBAPI do
 end
 
 target :BBBAPITests, :exclusive => true do
-		pod 'OHHTTPStubs', '3.1.7'
-		pod 'OCMock', '~> 3.1.1'
+	pod 'OHHTTPStubs', '3.1.7'
+	pod 'OCMock', '~> 3.1.1'
 end
 
