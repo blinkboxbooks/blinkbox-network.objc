@@ -53,16 +53,6 @@
 
 #pragma mark - Get Multiple Bookmarks Tests
 
-- (void) testGetBookmarkChangesThrowsForNilUser{
-    XCTAssertThrows([service getBookmarkChangesForItem:[BBALibraryItem new]
-                                             afterDate:[NSDate new]
-                                             typesMask:BBABookmarkTypeAll
-                                                  user:nil
-                                            completion:^(NSArray *bookmarkChanges, NSDate *syncDate, NSError *error) {
-
-                                            }]);
-}
-
 - (void) testGetBookmarkChangesThrowsForNilCompletion{
     XCTAssertThrows([service getBookmarkChangesForItem:[BBALibraryItem new]
                                              afterDate:[NSDate new]
@@ -428,14 +418,6 @@
 }
 
 #pragma mark - Delete Single Bookmark Tests
-
-- (void) testDeleteBookmarkThrowsWithNilUser{
-    XCTAssertThrows([service deleteBookmark:[BBABookmarkItem new]
-                                       user:nil
-                                 completion:^(BOOL success, NSError *error) {
-
-                                 }]);
-}
 
 - (void) testDeleteBookmarkThrowsWithNilBookmarkItem{
     XCTAssertThrows([service deleteBookmark:nil

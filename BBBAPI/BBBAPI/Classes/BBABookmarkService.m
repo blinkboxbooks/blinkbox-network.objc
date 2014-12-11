@@ -34,18 +34,11 @@ NSString *const kBBABookmarkServiceErrorDomain = @"BBA.error.bookmarkServiceDoma
                               user:(BBAUserDetails *)user
                         completion:(void (^)(NSArray *bookmarkChanges, NSDate *syncDate, NSError *error))completion{
 
-    NSParameterAssert(user);
     NSParameterAssert(completion);
     if (!completion) {
         return;
     }
 
-    if (!user) {
-        completion(nil, nil, [NSError errorWithDomain:kBBABookmarkServiceErrorDomain
-                                            code:BBAAPIWrongUsage
-                                        userInfo:nil]);
-        return;
-    }
     id connection = nil;
     NSString *myBookmarksEndPoint = @"my/bookmarks";
     connection = [[self.connectionClass alloc] initWithDomain:(BBAAPIDomainREST)
@@ -54,6 +47,7 @@ NSString *const kBBABookmarkServiceErrorDomain = @"BBA.error.bookmarkServiceDoma
     [connection setRequestFactory:[BBARequestFactory new]];
     [connection setResponseMapper:[BBABookmarkResponseMapper new]];
     [connection setRequiresAuthentication:YES];
+
 
     if (date) {
         [connection addParameterWithKey:kBBABookmarkServiceLastSyncDateTime value:@"date_string"];
@@ -70,6 +64,7 @@ NSString *const kBBABookmarkServiceErrorDomain = @"BBA.error.bookmarkServiceDoma
     }
     
     [connection perform:(BBAHTTPMethodGET)
+                forUser:user
              completion:^(BBABookmarkResponse *response, NSError *error) {
                  completion(response.bookmarks, response.lastSyncDate, error);
              }];
@@ -81,7 +76,6 @@ NSString *const kBBABookmarkServiceErrorDomain = @"BBA.error.bookmarkServiceDoma
                            user:(BBAUserDetails *)user
                      completion:(void (^)(BOOL success, NSError *error))completion{
 
-    NSParameterAssert(user);
     NSParameterAssert(item.isbn);
     NSParameterAssert(completion);
 
@@ -89,7 +83,7 @@ NSString *const kBBABookmarkServiceErrorDomain = @"BBA.error.bookmarkServiceDoma
         return;
     }
 
-    if (!user || !item.isbn) {
+    if (!item.isbn) {
         completion(NO,  [NSError errorWithDomain:kBBABookmarkServiceErrorDomain
                                             code:BBAAPIWrongUsage
                                         userInfo:nil]);
@@ -118,6 +112,7 @@ NSString *const kBBABookmarkServiceErrorDomain = @"BBA.error.bookmarkServiceDoma
     }
 
     [connection perform:(BBAHTTPMethodDELETE)
+                forUser:user
              completion:^(id response, NSError *error) {
                  completion([response boolValue], error);
              }];
@@ -128,14 +123,13 @@ NSString *const kBBABookmarkServiceErrorDomain = @"BBA.error.bookmarkServiceDoma
              completion:(void (^)(BOOL success, NSError *error))completion{
 
     NSParameterAssert(item);
-    NSParameterAssert(user);
     NSParameterAssert(completion);
 
     if (!completion) {
         return;
     }
 
-    if (!item.identifier || !user) {
+    if (!item.identifier) {
         completion(NO, [NSError errorWithDomain:kBBABookmarkServiceErrorDomain
                                             code:BBAAPIWrongUsage
                                         userInfo:nil]);
@@ -153,6 +147,7 @@ NSString *const kBBABookmarkServiceErrorDomain = @"BBA.error.bookmarkServiceDoma
     [connection setRequiresAuthentication:YES];
 
     [connection perform:(BBAHTTPMethodDELETE)
+                forUser:user
              completion:^(id response, NSError *error) {
                  completion([response boolValue], error);
              }];
@@ -166,14 +161,13 @@ NSString *const kBBABookmarkServiceErrorDomain = @"BBA.error.bookmarkServiceDoma
 
     NSParameterAssert(bookmark);
     NSParameterAssert(item);
-    NSParameterAssert(user);
     NSParameterAssert(completion);
 
     if (!completion) {
         return;
     }
 
-    if (!bookmark || !user || !item) {
+    if (!bookmark || !item) {
         completion(nil, [NSError errorWithDomain:kBBABookmarkServiceErrorDomain
                                            code:BBAAPIWrongUsage
                                        userInfo:nil]);
@@ -200,6 +194,7 @@ NSString *const kBBABookmarkServiceErrorDomain = @"BBA.error.bookmarkServiceDoma
 
 
     [connection perform:(BBAHTTPMethodPOST)
+                forUser:user
              completion:^(BBABookmarkResponse *response, NSError *error) {
                  completion([[response bookmarks]firstObject], error);
              }];
@@ -211,14 +206,13 @@ NSString *const kBBABookmarkServiceErrorDomain = @"BBA.error.bookmarkServiceDoma
              completion:(void (^)(BOOL success, NSError *error))completion{
 
     NSParameterAssert(item.identifier);
-    NSParameterAssert(user);
     NSParameterAssert(completion);
 
     if (!completion) {
         return;
     }
 
-    if (!item.identifier || !user) {
+    if (!item.identifier) {
         completion(nil, [NSError errorWithDomain:kBBABookmarkServiceErrorDomain
                                             code:BBAAPIWrongUsage
                                         userInfo:nil]);
@@ -245,6 +239,7 @@ NSString *const kBBABookmarkServiceErrorDomain = @"BBA.error.bookmarkServiceDoma
 
 
     [connection perform:(BBAHTTPMethodPUT)
+                forUser:user
              completion:^(id response, NSError *error) {
                  completion([response boolValue], error);
              }];
