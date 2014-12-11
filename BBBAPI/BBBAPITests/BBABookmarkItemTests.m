@@ -31,10 +31,8 @@
     XCTAssertEqualObjects(item.colour, @"test24t");
     XCTAssertEqualObjects(item.createdByClient, @"51764");
 
-
-    NSDate *globalDate = [BBATestHelper globalTimeDateForDate:item.createdDate];
-    NSInteger timeInterval = [globalDate timeIntervalSince1970];
-    NSInteger expectedTimeInterval = 1413896597;
+    NSInteger timeInterval = [item.createdDate timeIntervalSince1970];
+    NSInteger expectedTimeInterval = 1413900197;
     XCTAssertEqual(timeInterval, expectedTimeInterval);
 
     XCTAssertEqualObjects(item.deleted, @0);
