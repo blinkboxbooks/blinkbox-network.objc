@@ -8,7 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ *  Provides conversion of `NSString` to `NSDate` for the date format used by the server.
+ */
 @interface BBADateHelper : NSObject
-+ (NSString *) dateFormat;
-+ (NSDate *)dateFromString:(NSString *)string;
+
+/**
+ *  Return an `NSDate` given an `NSString` containing a date in the server format
+ *
+ *  @param string `NSString` containing a date in the format ((%Y-%m-%dT%H:%M:%SZ"))
+ *
+ *  @return `NSDate`
+ */
++ (NSDate *) dateFromString:(NSString *)string;
 @end
