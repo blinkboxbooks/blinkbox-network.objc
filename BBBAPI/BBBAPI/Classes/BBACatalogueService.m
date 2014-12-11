@@ -10,6 +10,8 @@
 #import "BBALibraryItem.h"
 #import "BBAConnection.h"
 #import "BBAAPIErrors.h"
+#import "BBARequestFactory.h"
+#import "BBACatalogueResponseMapper.h"
 
 NSString *const BBACatalogureErrorDomain = @"com.BBB.CatalogueErrorDomain";
 
@@ -29,6 +31,17 @@ NSString *const BBACatalogureErrorDomain = @"com.BBB.CatalogueErrorDomain";
         completion(nil, [self wrongUsageError]);
         return;
     }
+    
+    BBAConnection *connection = [[BBAConnection alloc] initWithDomain:(BBAAPIDomainREST)
+                                                          relativeURL:[self catalogueEndpoint]];
+    connection.requiresAuthentication = NO;
+    [connection setRequestFactory:[BBARequestFactory new]];
+    [connection setResponseMapper:[BBACatalogueResponseMapper new]];
+
+    [connection perform:(BBAHTTPMethodGET)
+             completion:^(id response, NSError *error) {
+                 
+             }];
 }
 
 - (void) getRelatedBooksForLibraryItem:(BBALibraryItem *)item
@@ -94,6 +107,10 @@ NSString *const BBACatalogureErrorDomain = @"com.BBB.CatalogueErrorDomain";
     }
     
     return YES;
+}
+
+- (NSString *) catalogueEndpoint{
+    return @"books/";
 }
 
 @end

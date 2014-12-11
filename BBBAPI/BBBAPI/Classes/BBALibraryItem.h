@@ -31,6 +31,8 @@
 @property (nonatomic, assign) NSInteger maxNumberOfAuthorisedDevices;
 @property (nonatomic, assign) NSInteger numberOfAuthorisedDevices;
 
+@property (nonatomic, copy) NSString *synopsis;
+
 /**
  *  Array of `BBALibraryItemLink` objects
  */
