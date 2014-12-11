@@ -29,11 +29,6 @@ extern NSString *const kBBABookmarkServiceErrorDomain;
 @interface BBABookmarkService : NSObject
 
 /**
- *  The class to use for communication with the server. This defaults to BBAConnection.
- */
-@property (nonatomic, strong) Class connectionClass;
-
-/**
  *  Fetch a list of bookmarks from the server.
  *
  *  @param item       The `BBALibraryItem` for which to fetch bookmarks. (Required)

@@ -25,8 +25,11 @@
 #import <OHHTTPStubs/OHHTTPStubs.h>
 #import <OCMock/OCMock.h>
 
-@interface BBABookmarkServiceTests : XCTestCase{
+@interface BBABookmarkService (Testing)
+@property (nonatomic, strong) Class connectionClass;
+@end
 
+@interface BBABookmarkServiceTests : XCTestCase{
     BBABookmarkService *service;
 }
 

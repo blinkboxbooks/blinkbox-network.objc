@@ -19,6 +19,14 @@ NSString *const kBBABookmarkServiceLastSyncDateTime = @"lastSyncDateTime";
 NSString *const kBBABookmarkServiceBookmarkType = @"bookmarkType";
 NSString *const kBBABookmarkServiceErrorDomain = @"BBA.error.bookmarkServiceDomain";
 
+@interface BBABookmarkService ()
+/**
+ *  The class to use for communication with the server. This defaults to BBAConnection.
+ */
+@property (nonatomic, strong) Class connectionClass;
+
+@end
+
 @implementation BBABookmarkService
 - (void) getBookmarkChangesForItem:(BBALibraryItem *)item
                          afterDate:(NSDate *)date
