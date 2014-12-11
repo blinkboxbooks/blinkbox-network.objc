@@ -12,6 +12,14 @@
 - (id) responseFromData:(NSData *)data
                response:(NSURLResponse *)response
                   error:(NSError **)error{
+    id object = [super responseFromData:data response:response error:error];
+    
+    if (!object) {
+        return nil;
+    }
+    
+    
+    
     return nil;
 }
 @end

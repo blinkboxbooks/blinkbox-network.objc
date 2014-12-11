@@ -1,0 +1,472 @@
+{
+    "type": "urn:blinkboxbooks:schema:list",
+    "numberOfResults": 10,
+    "offset": 0,
+    "count": 10,
+    "items": [
+              {
+              "type": "urn:blinkboxbooks:schema:book",
+              "guid": "urn:blinkboxbooks:id:book:9781472909367",
+              "id": "9781472909367",
+              "title": "Right or Wrong",
+              "publicationDate": "2014-10-09",
+              "sampleEligible": true,
+              "images": [
+                         {
+                         "rel": "urn:blinkboxbooks:image:cover",
+                         "src": "http://media.blinkboxbooks.com/9781/472/909/367/3b5b011f4483962d609531a43928ce79.png"
+                         }
+                         ],
+              "links": [
+                        {
+                        "rel": "urn:blinkboxbooks:schema:contributor",
+                        "href": "/service/catalogue/contributors/034b39e065c964e391ca6f8a1ae01b8a9c0d6d20",
+                        "title": "Tim Bell",
+                        "targetGuid": "urn:blinkboxbooks:id:contributor:034b39e065c964e391ca6f8a1ae01b8a9c0d6d20"
+                        },
+                        {
+                        "rel": "urn:blinkboxbooks:schema:contributor",
+                        "href": "/service/catalogue/contributors/0439f6b1a51f0228214e5fccfe3114355c3ba179",
+                        "title": "David Hopper",
+                        "targetGuid": "urn:blinkboxbooks:id:contributor:0439f6b1a51f0228214e5fccfe3114355c3ba179"
+                        },
+                        {
+                        "rel": "urn:blinkboxbooks:schema:contributor",
+                        "href": "/service/catalogue/contributors/8bc3390add51069f2e2c4aa241cc7ca5d6b880cb",
+                        "title": "Charles Vallance",
+                        "targetGuid": "urn:blinkboxbooks:id:contributor:8bc3390add51069f2e2c4aa241cc7ca5d6b880cb"
+                        },
+                        {
+                        "rel": "urn:blinkboxbooks:schema:synopsis",
+                        "href": "/service/catalogue/books/9781472909367/synopsis",
+                        "title": "Synopsis",
+                        "targetGuid": "urn:blinkboxbooks:id:synopsis:9781472909367"
+                        },
+                        {
+                        "rel": "urn:blinkboxbooks:schema:publisher",
+                        "href": "/service/catalogue/publishers/746",
+                        "title": "Bloomsbury Publishing",
+                        "targetGuid": "urn:blinkboxbooks:id:publisher:746"
+                        },
+                        {
+                        "rel": "urn:blinkboxbooks:schema:bookpricelist",
+                        "href": "/service/catalogue/prices?book=9781472909367",
+                        "title": "Price"
+                        },
+                        {
+                        "rel": "urn:blinkboxbooks:schema:samplemedia",
+                        "href": "http://media.blinkboxbooks.com/9781/472/909/367/94f992360cd217d165ccf815419e434a.sample.epub",
+                        "title": "Sample"
+                        }
+                        ]
+              },
+              {
+              "type": "urn:blinkboxbooks:schema:book",
+              "guid": "urn:blinkboxbooks:id:book:9781444718263",
+              "id": "9781444718263",
+              "title": "The Wolf of Wall Street",
+              "publicationDate": "2011-09-01",
+              "sampleEligible": true,
+              "images": [
+                         {
+                         "rel": "urn:blinkboxbooks:image:cover",
+                         "src": "http://media.blinkboxbooks.com/9781/444/718/263/46d5bb398d4046c3fee059d5bd4800dc.png"
+                         }
+                         ],
+              "links": [
+                        {
+                        "rel": "urn:blinkboxbooks:schema:contributor",
+                        "href": "/service/catalogue/contributors/5a6aa8f5f8e44f1a25ef762f926ef5431ecd3ebe",
+                        "title": "Jordan Belfort",
+                        "targetGuid": "urn:blinkboxbooks:id:contributor:5a6aa8f5f8e44f1a25ef762f926ef5431ecd3ebe"
+                        },
+                        {
+                        "rel": "urn:blinkboxbooks:schema:synopsis",
+                        "href": "/service/catalogue/books/9781444718263/synopsis",
+                        "title": "Synopsis",
+                        "targetGuid": "urn:blinkboxbooks:id:synopsis:9781444718263"
+                        },
+                        {
+                        "rel": "urn:blinkboxbooks:schema:publisher",
+                        "href": "/service/catalogue/publishers/328",
+                        "title": "Hodder & Stoughton",
+                        "targetGuid": "urn:blinkboxbooks:id:publisher:328"
+                        },
+                        {
+                        "rel": "urn:blinkboxbooks:schema:bookpricelist",
+                        "href": "/service/catalogue/prices?book=9781444718263",
+                        "title": "Price"
+                        },
+                        {
+                        "rel": "urn:blinkboxbooks:schema:samplemedia",
+                        "href": "https://media.blinkboxbooks.com/9781/444/718/263/3d6105d7d4351b8517283a40782f4010.sample.epub",
+                        "title": "Sample"
+                        }
+                        ]
+              },
+              {
+              "type": "urn:blinkboxbooks:schema:book",
+              "guid": "urn:blinkboxbooks:id:book:9781439142646",
+              "id": "9781439142646",
+              "title": "Me, the Mob, and the Music",
+              "publicationDate": "2010-02-16",
+              "sampleEligible": true,
+              "images": [
+                         {
+                         "rel": "urn:blinkboxbooks:image:cover",
+                         "src": "http://media.blinkboxbooks.com/9781/439/142/646/fe0ee9f865a28125cd65dfee5fa8ba63.png"
+                         }
+                         ],
+              "links": [
+                        {
+                        "rel": "urn:blinkboxbooks:schema:contributor",
+                        "href": "/service/catalogue/contributors/551c8566bbb83c308bf125b27dd4fe123e6b4d0d",
+                        "title": "Tommy James",
+                        "targetGuid": "urn:blinkboxbooks:id:contributor:551c8566bbb83c308bf125b27dd4fe123e6b4d0d"
+                        },
+                        {
+                        "rel": "urn:blinkboxbooks:schema:contributor",
+                        "href": "/service/catalogue/contributors/4e4f4c4695e37677d009a5b2b7bf450ba13a914d",
+                        "title": "Martin Fitzpatrick",
+                        "targetGuid": "urn:blinkboxbooks:id:contributor:4e4f4c4695e37677d009a5b2b7bf450ba13a914d"
+                        },
+                        {
+                        "rel": "urn:blinkboxbooks:schema:synopsis",
+                        "href": "/service/catalogue/books/9781439142646/synopsis",
+                        "title": "Synopsis",
+                        "targetGuid": "urn:blinkboxbooks:id:synopsis:9781439142646"
+                        },
+                        {
+                        "rel": "urn:blinkboxbooks:schema:publisher",
+                        "href": "/service/catalogue/publishers/355",
+                        "title": "Scribner",
+                        "targetGuid": "urn:blinkboxbooks:id:publisher:355"
+                        },
+                        {
+                        "rel": "urn:blinkboxbooks:schema:bookpricelist",
+                        "href": "/service/catalogue/prices?book=9781439142646",
+                        "title": "Price"
+                        },
+                        {
+                        "rel": "urn:blinkboxbooks:schema:samplemedia",
+                        "href": "http://media.blinkboxbooks.com/9781/439/142/646/29afb3a2f7e83ad19bdc5e2ff16386b0.sample.epub",
+                        "title": "Sample"
+                        }
+                        ]
+              },
+              {
+              "type": "urn:blinkboxbooks:schema:book",
+              "guid": "urn:blinkboxbooks:id:book:9780307773234",
+              "id": "9780307773234",
+              "title": "At Any Cost",
+              "publicationDate": "2011-01-12",
+              "sampleEligible": true,
+              "images": [
+                         {
+                         "rel": "urn:blinkboxbooks:image:cover",
+                         "src": "http://media.blinkboxbooks.com/9780/307/773/234/5fcf3b2a45150a2ddf8a30aa6f2f3d9c.png"
+                         }
+                         ],
+              "links": [
+                        {
+                        "rel": "urn:blinkboxbooks:schema:contributor",
+                        "href": "/service/catalogue/contributors/714e6425a0b26feb0cfde6cabc77daefe2bc6499",
+                        "title": "Thomas F. O'Boyle",
+                        "targetGuid": "urn:blinkboxbooks:id:contributor:714e6425a0b26feb0cfde6cabc77daefe2bc6499"
+                        },
+                        {
+                        "rel": "urn:blinkboxbooks:schema:synopsis",
+                        "href": "/service/catalogue/books/9780307773234/synopsis",
+                        "title": "Synopsis",
+                        "targetGuid": "urn:blinkboxbooks:id:synopsis:9780307773234"
+                        },
+                        {
+                        "rel": "urn:blinkboxbooks:schema:publisher",
+                        "href": "/service/catalogue/publishers/769",
+                        "title": "Knopf Doubleday Publishing Group",
+                        "targetGuid": "urn:blinkboxbooks:id:publisher:769"
+                        },
+                        {
+                        "rel": "urn:blinkboxbooks:schema:bookpricelist",
+                        "href": "/service/catalogue/prices?book=9780307773234",
+                        "title": "Price"
+                        },
+                        {
+                        "rel": "urn:blinkboxbooks:schema:samplemedia",
+                        "href": "http://media.blinkboxbooks.com/9780/307/773/234/cfcbb8c36e63621d593b3f0ca2346a51.sample.epub",
+                        "title": "Sample"
+                        }
+                        ]
+              },
+              {
+              "type": "urn:blinkboxbooks:schema:book",
+              "guid": "urn:blinkboxbooks:id:book:9781101163207",
+              "id": "9781101163207",
+              "title": "Money Talks, Bullsh*t Walks",
+              "publicationDate": "2009-12-31",
+              "sampleEligible": true,
+              "images": [
+                         {
+                         "rel": "urn:blinkboxbooks:image:cover",
+                         "src": "http://media.blinkboxbooks.com/9781/101/163/207/f6425e7c1ceccce376dab0ada1c1f8d5.png"
+                         }
+                         ],
+              "links": [
+                        {
+                        "rel": "urn:blinkboxbooks:schema:contributor",
+                        "href": "/service/catalogue/contributors/b0f77e549803c044c2cd43d4a19c12a8acfb93d5",
+                        "title": "Ben E. Johnson",
+                        "targetGuid": "urn:blinkboxbooks:id:contributor:b0f77e549803c044c2cd43d4a19c12a8acfb93d5"
+                        },
+                        {
+                        "rel": "urn:blinkboxbooks:schema:synopsis",
+                        "href": "/service/catalogue/books/9781101163207/synopsis",
+                        "title": "Synopsis",
+                        "targetGuid": "urn:blinkboxbooks:id:synopsis:9781101163207"
+                        },
+                        {
+                        "rel": "urn:blinkboxbooks:schema:publisher",
+                        "href": "/service/catalogue/publishers/3096",
+                        "title": "Penguin Group US",
+                        "targetGuid": "urn:blinkboxbooks:id:publisher:3096"
+                        },
+                        {
+                        "rel": "urn:blinkboxbooks:schema:bookpricelist",
+                        "href": "/service/catalogue/prices?book=9781101163207",
+                        "title": "Price"
+                        },
+                        {
+                        "rel": "urn:blinkboxbooks:schema:samplemedia",
+                        "href": "http://media.blinkboxbooks.com/9781/101/163/207/edf9190022cad7a55ba968c11ee23d0b.sample.epub",
+                        "title": "Sample"
+                        }
+                        ]
+              },
+              {
+              "type": "urn:blinkboxbooks:schema:book",
+              "guid": "urn:blinkboxbooks:id:book:9780470501375",
+              "id": "9780470501375",
+              "title": "Mr Playboy",
+              "publicationDate": "2009-03-23",
+              "sampleEligible": true,
+              "images": [
+                         {
+                         "rel": "urn:blinkboxbooks:image:cover",
+                         "src": "http://media.blinkboxbooks.com/9780/470/501/375/b6d9e21ef3097e0b45b5ded736439ed0.png"
+                         }
+                         ],
+              "links": [
+                        {
+                        "rel": "urn:blinkboxbooks:schema:contributor",
+                        "href": "/service/catalogue/contributors/973a091fe45c6aa90e91ad0eb350c0aee26792ba",
+                        "title": "Steven Watts",
+                        "targetGuid": "urn:blinkboxbooks:id:contributor:973a091fe45c6aa90e91ad0eb350c0aee26792ba"
+                        },
+                        {
+                        "rel": "urn:blinkboxbooks:schema:synopsis",
+                        "href": "/service/catalogue/books/9780470501375/synopsis",
+                        "title": "Synopsis",
+                        "targetGuid": "urn:blinkboxbooks:id:synopsis:9780470501375"
+                        },
+                        {
+                        "rel": "urn:blinkboxbooks:schema:publisher",
+                        "href": "/service/catalogue/publishers/3397",
+                        "title": "Turner Publishing Company",
+                        "targetGuid": "urn:blinkboxbooks:id:publisher:3397"
+                        },
+                        {
+                        "rel": "urn:blinkboxbooks:schema:bookpricelist",
+                        "href": "/service/catalogue/prices?book=9780470501375",
+                        "title": "Price"
+                        },
+                        {
+                        "rel": "urn:blinkboxbooks:schema:samplemedia",
+                        "href": "http://media.blinkboxbooks.com/9780/470/501/375/6ba1d971e6f3728e40547958097b2a8e.sample.epub",
+                        "title": "Sample"
+                        }
+                        ]
+              },
+              {
+              "type": "urn:blinkboxbooks:schema:book",
+              "guid": "urn:blinkboxbooks:id:book:9780061882142",
+              "id": "9780061882142",
+              "title": "The Watson Dynasty",
+              "publicationDate": "2009-10-13",
+              "sampleEligible": true,
+              "images": [
+                         {
+                         "rel": "urn:blinkboxbooks:image:cover",
+                         "src": "http://media.blinkboxbooks.com/9780/061/882/142/419214e40e0aa56f253414371cff1ce3.png"
+                         }
+                         ],
+              "links": [
+                        {
+                        "rel": "urn:blinkboxbooks:schema:contributor",
+                        "href": "/service/catalogue/contributors/9b64946bc47d3453443f3e2333d118343f262e6f",
+                        "title": "Richard S. Tedlow",
+                        "targetGuid": "urn:blinkboxbooks:id:contributor:9b64946bc47d3453443f3e2333d118343f262e6f"
+                        },
+                        {
+                        "rel": "urn:blinkboxbooks:schema:synopsis",
+                        "href": "/service/catalogue/books/9780061882142/synopsis",
+                        "title": "Synopsis",
+                        "targetGuid": "urn:blinkboxbooks:id:synopsis:9780061882142"
+                        },
+                        {
+                        "rel": "urn:blinkboxbooks:schema:publisher",
+                        "href": "/service/catalogue/publishers/158",
+                        "title": "HarperCollins",
+                        "targetGuid": "urn:blinkboxbooks:id:publisher:158"
+                        },
+                        {
+                        "rel": "urn:blinkboxbooks:schema:bookpricelist",
+                        "href": "/service/catalogue/prices?book=9780061882142",
+                        "title": "Price"
+                        },
+                        {
+                        "rel": "urn:blinkboxbooks:schema:samplemedia",
+                        "href": "http://media.blinkboxbooks.com/9780/061/882/142/61430b123908b46163af98d4538ed98d.sample.epub",
+                        "title": "Sample"
+                        }
+                        ]
+              },
+              {
+              "type": "urn:blinkboxbooks:schema:book",
+              "guid": "urn:blinkboxbooks:id:book:9781586489939",
+              "id": "9781586489939",
+              "title": "A Global Life",
+              "publicationDate": "2010-10-12",
+              "sampleEligible": true,
+              "images": [
+                         {
+                         "rel": "urn:blinkboxbooks:image:cover",
+                         "src": "http://media.blinkboxbooks.com/9781/586/489/939/491740134d3041dfd35b89e8d3fc81b1.png"
+                         }
+                         ],
+              "links": [
+                        {
+                        "rel": "urn:blinkboxbooks:schema:contributor",
+                        "href": "/service/catalogue/contributors/99fc00929f2a59fdbc7fc87b41330136c03a4275",
+                        "title": "James D. Wolfensohn",
+                        "targetGuid": "urn:blinkboxbooks:id:contributor:99fc00929f2a59fdbc7fc87b41330136c03a4275"
+                        },
+                        {
+                        "rel": "urn:blinkboxbooks:schema:synopsis",
+                        "href": "/service/catalogue/books/9781586489939/synopsis",
+                        "title": "Synopsis",
+                        "targetGuid": "urn:blinkboxbooks:id:synopsis:9781586489939"
+                        },
+                        {
+                        "rel": "urn:blinkboxbooks:schema:publisher",
+                        "href": "/service/catalogue/publishers/1529",
+                        "title": "PublicAffairs",
+                        "targetGuid": "urn:blinkboxbooks:id:publisher:1529"
+                        },
+                        {
+                        "rel": "urn:blinkboxbooks:schema:bookpricelist",
+                        "href": "/service/catalogue/prices?book=9781586489939",
+                        "title": "Price"
+                        },
+                        {
+                        "rel": "urn:blinkboxbooks:schema:samplemedia",
+                        "href": "http://media.blinkboxbooks.com/9781/586/489/939/eabe0283d32cc53acd6017ff6efe891a.sample.epub",
+                        "title": "Sample"
+                        }
+                        ]
+              },
+              {
+              "type": "urn:blinkboxbooks:schema:book",
+              "guid": "urn:blinkboxbooks:id:book:9780199911202",
+              "id": "9780199911202",
+              "title": "Henry Ford",
+              "publicationDate": "2013-04-12",
+              "sampleEligible": true,
+              "images": [
+                         {
+                         "rel": "urn:blinkboxbooks:image:cover",
+                         "src": "http://media.blinkboxbooks.com/9780/199/911/202/7fdea5162ad362139a5bb3ab5064c8ec.png"
+                         }
+                         ],
+              "links": [
+                        {
+                        "rel": "urn:blinkboxbooks:schema:contributor",
+                        "href": "/service/catalogue/contributors/e24f005ecdf34e12e95f326a5fb2d589e7764b09",
+                        "title": "Vincent Curcio",
+                        "targetGuid": "urn:blinkboxbooks:id:contributor:e24f005ecdf34e12e95f326a5fb2d589e7764b09"
+                        },
+                        {
+                        "rel": "urn:blinkboxbooks:schema:synopsis",
+                        "href": "/service/catalogue/books/9780199911202/synopsis",
+                        "title": "Synopsis",
+                        "targetGuid": "urn:blinkboxbooks:id:synopsis:9780199911202"
+                        },
+                        {
+                        "rel": "urn:blinkboxbooks:schema:publisher",
+                        "href": "/service/catalogue/publishers/3063",
+                        "title": "Oxford University Press, USA",
+                        "targetGuid": "urn:blinkboxbooks:id:publisher:3063"
+                        },
+                        {
+                        "rel": "urn:blinkboxbooks:schema:bookpricelist",
+                        "href": "/service/catalogue/prices?book=9780199911202",
+                        "title": "Price"
+                        },
+                        {
+                        "rel": "urn:blinkboxbooks:schema:samplemedia",
+                        "href": "http://media.blinkboxbooks.com/9780/199/911/202/ba7fa5a9a3f98870a398275410546969.sample.epub",
+                        "title": "Sample"
+                        }
+                        ]
+              },
+              {
+              "type": "urn:blinkboxbooks:schema:book",
+              "guid": "urn:blinkboxbooks:id:book:9780199839407",
+              "id": "9780199839407",
+              "title": "Management Innovators: The People and Ideas that Have Shaped Modern Business",
+              "publicationDate": "1998-02-27",
+              "sampleEligible": true,
+              "images": [
+                         {
+                         "rel": "urn:blinkboxbooks:image:cover",
+                         "src": "http://media.blinkboxbooks.com/9780/199/839/407/14d16f5fc9997412312e7ba3f71a3885.png"
+                         }
+                         ],
+              "links": [
+                        {
+                        "rel": "urn:blinkboxbooks:schema:contributor",
+                        "href": "/service/catalogue/contributors/f44420dd6528477d96b52263504b59bbc49bb59c",
+                        "title": "Ronald G. Greenwood",
+                        "targetGuid": "urn:blinkboxbooks:id:contributor:f44420dd6528477d96b52263504b59bbc49bb59c"
+                        },
+                        {
+                        "rel": "urn:blinkboxbooks:schema:contributor",
+                        "href": "/service/catalogue/contributors/f093761ead727df4be59065ddadcf525f6b5fedd",
+                        "title": "Daniel A. Wren",
+                        "targetGuid": "urn:blinkboxbooks:id:contributor:f093761ead727df4be59065ddadcf525f6b5fedd"
+                        },
+                        {
+                        "rel": "urn:blinkboxbooks:schema:synopsis",
+                        "href": "/service/catalogue/books/9780199839407/synopsis",
+                        "title": "Synopsis",
+                        "targetGuid": "urn:blinkboxbooks:id:synopsis:9780199839407"
+                        },
+                        {
+                        "rel": "urn:blinkboxbooks:schema:publisher",
+                        "href": "/service/catalogue/publishers/3063",
+                        "title": "Oxford University Press, USA",
+                        "targetGuid": "urn:blinkboxbooks:id:publisher:3063"
+                        },
+                        {
+                        "rel": "urn:blinkboxbooks:schema:bookpricelist",
+                        "href": "/service/catalogue/prices?book=9780199839407",
+                        "title": "Price"
+                        },
+                        {
+                        "rel": "urn:blinkboxbooks:schema:samplemedia",
+                        "href": "http://media.blinkboxbooks.com/9780/199/839/407/afe135190be265a070c5664be60bcaf4.sample.epub",
+                        "title": "Sample"
+                        }
+                        ]
+              }
+              ]
+}

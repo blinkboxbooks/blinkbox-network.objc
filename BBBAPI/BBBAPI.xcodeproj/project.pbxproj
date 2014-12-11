@@ -82,6 +82,9 @@
 		40DB4FA51A39D79500AF8770 /* BBACatalogueServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 40DB4FA41A39D79500AF8770 /* BBACatalogueServiceTests.m */; };
 		40DB4FA81A39ECA400AF8770 /* sample_synopsis.json in Resources */ = {isa = PBXBuildFile; fileRef = 40DB4FA71A39ECA400AF8770 /* sample_synopsis.json */; };
 		40DB50211A39F0FD00AF8770 /* BBACatalogueResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 40DB50201A39F0FD00AF8770 /* BBACatalogueResponseMapper.m */; };
+		40DB50231A39F2B000AF8770 /* BBACatalogueResponseMapperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 40DB50221A39F2B000AF8770 /* BBACatalogueResponseMapperTests.m */; };
+		40DB50251A39F71E00AF8770 /* sample_related.json in Resources */ = {isa = PBXBuildFile; fileRef = 40DB50241A39F71E00AF8770 /* sample_related.json */; };
+		40DB50271A39F77400AF8770 /* sample_book.json in Resources */ = {isa = PBXBuildFile; fileRef = 40DB50261A39F77400AF8770 /* sample_book.json */; };
 		40FB3ABC1A14C7A8005936B5 /* BBBAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FB3ABB1A14C7A8005936B5 /* BBBAPI.m */; };
 		5A56A81F1A28E3E10031F2D9 /* BBAKeyServiceMock_SuccessResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A56A81E1A28E3E10031F2D9 /* BBAKeyServiceMock_SuccessResponse.json */; };
 		5A5BDC341A27955A002F859E /* BBAKeyServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5BDC331A27955A002F859E /* BBAKeyServiceTests.m */; };
@@ -232,6 +235,9 @@
 		40DB4FA71A39ECA400AF8770 /* sample_synopsis.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = sample_synopsis.json; path = "Catalogue Service Responses/sample_synopsis.json"; sourceTree = "<group>"; };
 		40DB501F1A39F0FD00AF8770 /* BBACatalogueResponseMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBACatalogueResponseMapper.h; path = Classes/BBACatalogueResponseMapper.h; sourceTree = "<group>"; };
 		40DB50201A39F0FD00AF8770 /* BBACatalogueResponseMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBACatalogueResponseMapper.m; path = Classes/BBACatalogueResponseMapper.m; sourceTree = "<group>"; };
+		40DB50221A39F2B000AF8770 /* BBACatalogueResponseMapperTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBACatalogueResponseMapperTests.m; sourceTree = "<group>"; };
+		40DB50241A39F71E00AF8770 /* sample_related.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = sample_related.json; path = "Catalogue Service Responses/sample_related.json"; sourceTree = "<group>"; };
+		40DB50261A39F77400AF8770 /* sample_book.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = sample_book.json; path = "Catalogue Service Responses/sample_book.json"; sourceTree = "<group>"; };
 		40FB3ABA1A14C7A8005936B5 /* BBBAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBBAPI.h; path = Classes/BBBAPI.h; sourceTree = "<group>"; };
 		40FB3ABB1A14C7A8005936B5 /* BBBAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBBAPI.m; path = Classes/BBBAPI.m; sourceTree = "<group>"; };
 		5281BEB3F447C92613865F08 /* Pods-BBBAPI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BBBAPI.release.xcconfig"; path = "../Pods/Target Support Files/Pods-BBBAPI/Pods-BBBAPI.release.xcconfig"; sourceTree = "<group>"; };
@@ -313,6 +319,7 @@
 		401A1D371A13D6CB004FBA41 /* BBBAPITests */ = {
 			isa = PBXGroup;
 			children = (
+				40DB50221A39F2B000AF8770 /* BBACatalogueResponseMapperTests.m */,
 				40DB4FA41A39D79500AF8770 /* BBACatalogueServiceTests.m */,
 				5A5BDC331A27955A002F859E /* BBAKeyServiceTests.m */,
 				401A1D441A13D77B004FBA41 /* BBAAuthenticationServiceTests.m */,
@@ -478,6 +485,8 @@
 			isa = PBXGroup;
 			children = (
 				40DB4FA71A39ECA400AF8770 /* sample_synopsis.json */,
+				40DB50241A39F71E00AF8770 /* sample_related.json */,
+				40DB50261A39F77400AF8770 /* sample_book.json */,
 			);
 			name = "Catalogue Service Responses";
 			sourceTree = "<group>";
@@ -608,11 +617,13 @@
 				40DB4FA81A39ECA400AF8770 /* sample_synopsis.json in Resources */,
 				401A1D811A13D77B004FBA41 /* libResponse_get_single_item.json in Resources */,
 				401A1D881A13D77B004FBA41 /* libResponse_single_item_sampled.json in Resources */,
+				40DB50271A39F77400AF8770 /* sample_book.json in Resources */,
 				401A1D851A13D77B004FBA41 /* libResponse_single_item_archived.json in Resources */,
 				401A1D821A13D77B004FBA41 /* libResponse_invalid_data_format.json in Resources */,
 				401A1D801A13D77B004FBA41 /* libResponse_empty_archived.json in Resources */,
 				401A1D7F1A13D77B004FBA41 /* libResponse_deleted.json in Resources */,
 				401A1D841A13D77B004FBA41 /* libResponse_no_items.json in Resources */,
+				40DB50251A39F71E00AF8770 /* sample_related.json in Resources */,
 				401A1D7E1A13D77B004FBA41 /* libResponse_archived.json in Resources */,
 				401A1D831A13D77B004FBA41 /* libResponse_invalid_type.json in Resources */,
 				5A56A81F1A28E3E10031F2D9 /* BBAKeyServiceMock_SuccessResponse.json in Resources */,
@@ -745,6 +756,7 @@
 				401A1D7C1A13D77B004FBA41 /* BBATokensResponseMapperTests.m in Sources */,
 				40DB4FA51A39D79500AF8770 /* BBACatalogueServiceTests.m in Sources */,
 				401A1D731A13D77B004FBA41 /* BBALibraryResponseTests.m in Sources */,
+				40DB50231A39F2B000AF8770 /* BBACatalogueResponseMapperTests.m in Sources */,
 				401A1D721A13D77B004FBA41 /* BBALibraryResponseMapperTests.m in Sources */,
 				401A1D7A1A13D77B004FBA41 /* BBASwizzlingHelper.m in Sources */,
 				401A1D741A13D77B004FBA41 /* BBALibraryServiceTests.m in Sources */,
