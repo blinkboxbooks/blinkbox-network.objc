@@ -220,7 +220,7 @@
     void (^completion)(NSInvocation *) = ^(NSInvocation *i){
         
         void (^completion)(id data, NSError *);
-        [i getArgument:&completion atIndex:4];
+        [i getArgument:&completion atIndex:3];
         completion(data, error);
     };
     

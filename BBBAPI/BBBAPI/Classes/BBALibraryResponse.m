@@ -11,10 +11,7 @@
 #import "BBALibraryItem.h"
 #import "BBALibraryItemLink.h"
 #import "BBAServerDateFormatter.h"
-
-BBAReadingStatus BBAReadingStatusFromString(NSString *status);
-BBAPurchaseStatus BBAPurchaseStatusFromString(NSString *status);
-BBAVisiblityStatus BBAVisibiliyStatusFromString(NSString *status);
+#import "BBABooksResponseMapper.h"
 
 
 @interface BBALibraryResponse ()
@@ -61,6 +58,8 @@ static NSString *const kLastSyncDateTime = @"lastSyncDateTime";
     NSMutableArray *libraryItems = [NSMutableArray new];
     NSDate *syncDate;
     
+    BBABooksResponseMapper *responseMapper = [BBABooksResponseMapper new];
+    
     if ([dictionary[kType] isEqualToString:kLibraryChangesType]) {
         NSString *lastSyncDateString = dictionary[kLastSyncDateTime];
         NSAssert(lastSyncDateString, @"lastSyncDateString shouldn't be nil");
@@ -72,14 +71,14 @@ static NSString *const kLastSyncDateTime = @"lastSyncDateTime";
         
         
         for (NSDictionary *d in changesArray) {
-            BBALibraryItem *item = [self itemFromDictionary:d];
+            BBALibraryItem *item = [responseMapper itemFromDictionary:d];
             if (item) {
                 [libraryItems addObject:item];
             }
         }
     }
     else if ([dictionary[kType] isEqualToString:kLibraryItemType]){
-        BBALibraryItem *item = [self itemFromDictionary:dictionary];
+        BBALibraryItem *item = [responseMapper itemFromDictionary:dictionary];
         if (item) {
             [libraryItems addObject:item];
         }
@@ -87,7 +86,7 @@ static NSString *const kLastSyncDateTime = @"lastSyncDateTime";
     else if ([dictionary[kType] isEqualToString:kLibraryListType]){
         NSArray *items = dictionary[kItems];
         for (NSDictionary *d in items) {
-            BBALibraryItem *item = [self itemFromDictionary:d];
+            BBALibraryItem *item = [responseMapper itemFromDictionary:d];
             if (item) {
                 [libraryItems addObject:item];
             }
@@ -116,77 +115,6 @@ static NSString *const kLastSyncDateTime = @"lastSyncDateTime";
 }
 
 #pragma mark - Private
-
-- (BBALibraryItem *) itemFromDictionary:(NSDictionary *)dictionary{
-    BBALibraryItem *item = [BBALibraryItem new];
-    NSString *isbn = dictionary[@"isbn"];
-    NSAssert(isbn, @"isbn must be not nil");
-    
-    item.isbn = isbn;
-    
-    NSString *identifier = dictionary[@"id"];
-    NSAssert(identifier, @"id mustn't be nil");
-    item.identifier = identifier;
-    
-    item.visibilityStatus = BBAVisibiliyStatusFromString(dictionary[@"visibilityStatus"]);
-    item.readingStatus = BBAReadingStatusFromString(dictionary[@"readingStatus"]);
-    item.purchaseStatus = BBAPurchaseStatusFromString(dictionary[@"purchaseStatus"]);
-    
-    NSString *purchasedDateString = dictionary[@"purchasedDate"];
-    if (purchasedDateString) {
-        item.purchasedDate = [self.dateFormatter dateFromString:purchasedDateString];
-    }
-    
-    NSString *deletedDateString = dictionary[@"deletedDate"];
-    if (deletedDateString) {
-        item.deletedDate = [self.dateFormatter dateFromString:deletedDateString];
-    }
-    
-    NSString *sampledDateString = dictionary[@"sampledDate"];
-    if (sampledDateString) {
-        item.sampledDate = [self.dateFormatter dateFromString:sampledDateString];
-    }
-    
-    NSString *archivedDateString = dictionary[@"archivedDate"];
-    if (archivedDateString) {
-        item.archivedDate = [self.dateFormatter dateFromString:archivedDateString];
-    }
-    
-    if (item.visibilityStatus != BBAVisiblityStatusDeleted && !item.sampledDate) {
-        NSNumber *maxNumberOfAuthorisedDevices = dictionary[@"maxNumberOfAuthorisedDevices"];
-        NSNumber *numberOfAuthorisedDevices = dictionary[@"numberOfAuthorisedDevices"];
-        NSAssert(maxNumberOfAuthorisedDevices, @"maxNumberOfAuthorisedDevices mustn't be nil");
-        NSAssert(numberOfAuthorisedDevices, @"numberOfAuthorisedDevices mustn't be nil");
-        
-        Class cls = [NSNumber class];
-        NSAssert([maxNumberOfAuthorisedDevices isKindOfClass:cls], @"max Number must be number");
-        NSAssert([numberOfAuthorisedDevices isKindOfClass:cls], @"number must be number");
-        
-        item.maxNumberOfAuthorisedDevices = [maxNumberOfAuthorisedDevices integerValue];
-        item.numberOfAuthorisedDevices = [numberOfAuthorisedDevices integerValue];
-    }
-    
-    NSMutableArray *linksArray = [NSMutableArray new];
-    NSArray *links = dictionary[@"links"];
-    for (NSDictionary *d in links) {
-        BBALibraryItemLink *link = [self linkFromDictionary:d];
-        if (link) {
-            [linksArray addObject:link];
-        }
-    }
-    
-    item.links = [NSArray arrayWithArray:linksArray];
-    
-    return item;
-}
-
-- (BBALibraryItemLink *) linkFromDictionary:(NSDictionary *)dictionary{
-    BBALibraryItemLink *link = [BBALibraryItemLink new];
-    link.address = dictionary[@"href"];
-    link.relationship = dictionary[@"rel"];
-    link.title = dictionary[@"title"];
-    return link;
-}
 
 - (BOOL) isDataValid:(id)data{
     BOOL correctClass = [data isKindOfClass:[NSDictionary class]];
