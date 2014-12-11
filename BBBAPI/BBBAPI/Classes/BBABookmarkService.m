@@ -52,7 +52,7 @@ NSString *const kBBABookmarkServiceErrorDomain = @"BBA.error.bookmarkServiceDoma
 
     NSArray *bookmarkTypes = [self bookmarkTypeStringArrayFromType:types];
 
-    if (bookmarkTypes.count>0) {
+    if (bookmarkTypes.count > 0) {
         [connection addParameterWithKey:kBBABookmarkServiceBookmarkType arrayValue:bookmarkTypes];
     }
 
@@ -99,7 +99,7 @@ NSString *const kBBABookmarkServiceErrorDomain = @"BBA.error.bookmarkServiceDoma
 
     NSArray *bookmarkTypes = [self bookmarkTypeStringArrayFromType:types];
 
-    if (bookmarkTypes.count>0) {
+    if (bookmarkTypes.count > 0) {
         [connection addParameterWithKey:kBBABookmarkServiceBookmarkType arrayValue:bookmarkTypes];
     }
 
