@@ -36,7 +36,16 @@ NSString *const kBBABookmarkServiceErrorDomain = @"BBA.error.bookmarkServiceDoma
 
     NSParameterAssert(user);
     NSParameterAssert(completion);
+    if (!completion) {
+        return;
+    }
 
+    if (!user) {
+        completion(nil, nil, [NSError errorWithDomain:kBBABookmarkServiceErrorDomain
+                                            code:BBAAPIWrongUsage
+                                        userInfo:nil]);
+        return;
+    }
     id connection = nil;
     NSString *myBookmarksEndPoint = @"my/bookmarks";
     connection = [[self.connectionClass alloc] initWithDomain:(BBAAPIDomainREST)
@@ -84,6 +93,7 @@ NSString *const kBBABookmarkServiceErrorDomain = @"BBA.error.bookmarkServiceDoma
         completion(NO,  [NSError errorWithDomain:kBBABookmarkServiceErrorDomain
                                             code:BBAAPIWrongUsage
                                         userInfo:nil]);
+        return;
     }
 
     id connection = nil;
@@ -129,6 +139,7 @@ NSString *const kBBABookmarkServiceErrorDomain = @"BBA.error.bookmarkServiceDoma
         completion(NO, [NSError errorWithDomain:kBBABookmarkServiceErrorDomain
                                             code:BBAAPIWrongUsage
                                         userInfo:nil]);
+        return;
     }
 
     id connection = nil;
@@ -166,6 +177,7 @@ NSString *const kBBABookmarkServiceErrorDomain = @"BBA.error.bookmarkServiceDoma
         completion(nil, [NSError errorWithDomain:kBBABookmarkServiceErrorDomain
                                            code:BBAAPIWrongUsage
                                        userInfo:nil]);
+        return;
     }
 
     id connection = nil;
@@ -210,6 +222,7 @@ NSString *const kBBABookmarkServiceErrorDomain = @"BBA.error.bookmarkServiceDoma
         completion(nil, [NSError errorWithDomain:kBBABookmarkServiceErrorDomain
                                             code:BBAAPIWrongUsage
                                         userInfo:nil]);
+        return;
     }
 
     id connection = nil;
