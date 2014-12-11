@@ -13,20 +13,18 @@
 #import "BBADateHelper.h"
 
 @implementation BBABookmarkResponse
-- (instancetype) initWithData:(NSData *)data{
+- (instancetype) initWithJSON:(NSDictionary *)JSON{
     self = [self init];
     if (self) {
-        NSDictionary *bookmarksJSON;
-        bookmarksJSON = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
 
-        NSArray *JSONBookmarks = bookmarksJSON[@"bookmarks"];
-        if (!JSONBookmarks && bookmarksJSON) {
-            JSONBookmarks = @[bookmarksJSON];
+        NSArray *JSONBookmarks = JSON[@"bookmarks"];
+        if (!JSONBookmarks && JSON) {
+            JSONBookmarks = @[JSON];
         }
 
         _bookmarks = [BBABookmarkItem bookmarkItemsWithJSONArray:JSONBookmarks];
 
-        NSDate *date = [BBADateHelper dateFromString:bookmarksJSON[@"lastSyncDateTime"]];
+        NSDate *date = [BBADateHelper dateFromString:JSON[@"lastSyncDateTime"]];
         _lastSyncDate = date;
 
 
@@ -108,7 +106,8 @@
     NSHTTPURLResponse *httpResonse = (NSHTTPURLResponse *)response;
 
     if (httpResonse.statusCode == BBAHTTPSuccess) {
-        BBABookmarkResponse *bookmarkResponse = [[BBABookmarkResponse alloc] initWithData:data];
+        id JSON = [super responseFromData:data response:response error:nil];
+        BBABookmarkResponse *bookmarkResponse = [[BBABookmarkResponse alloc] initWithJSON:JSON];
         return bookmarkResponse;
     }
     else{
@@ -158,7 +157,8 @@
                                                   error:(NSError *__autoreleasing *)error{
     NSHTTPURLResponse *httpResonse = (NSHTTPURLResponse *)response;
     if (httpResonse.statusCode == BBAHTTPCreated /* 201 */) {
-        BBABookmarkResponse *bookmarkResponse = [[BBABookmarkResponse alloc] initWithData:data];
+        id JSON = [super responseFromData:data response:response error:nil];
+        BBABookmarkResponse *bookmarkResponse = [[BBABookmarkResponse alloc] initWithJSON:JSON];
         return bookmarkResponse;
     }
     else{

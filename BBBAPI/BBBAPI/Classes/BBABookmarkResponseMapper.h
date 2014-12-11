@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "BBAResponseMapping.h"
+#import "BBAJSONResponseMapper.h"
 
 typedef NS_ENUM(NSUInteger, BBABookmarkResponseMapperType) {
     BBABookmarkResponseMapperTypeGetMultipleBookmarks = 0,
@@ -26,13 +27,13 @@ typedef NS_ENUM(NSUInteger, BBABookmarkResponseMapperType) {
 @property (nonatomic, copy) NSArray *bookmarks;
 
 /**
- *  Create a `BBABookmarkResponse` from `NSData` containing JSON Values
+ *  Create a `BBABookmarkResponse` from `NSDictionary` containing JSON Values
  *
- *  @param data `NSData` containing JSON Bookmark values
+ *  @param JSON `NSDictionary` containing JSON Bookmark values
  *
  *  @return `BBABookmarkResponse`
  */
-- (instancetype) initWithData:(NSData *)data;
+- (instancetype) initWithJSON:(NSDictionary *)JSON;
 
 @end
 
@@ -40,7 +41,7 @@ typedef NS_ENUM(NSUInteger, BBABookmarkResponseMapperType) {
  *  `BBABookmarkResponseMapper` is responsible for mapping responses from the bookmark service into
  *  a format usable by the API library.
  */
-@interface BBABookmarkResponseMapper : NSObject <BBAResponseMapping>
+@interface BBABookmarkResponseMapper : BBAJSONResponseMapper
 
 /**
  *  Returns a mapper with a given type

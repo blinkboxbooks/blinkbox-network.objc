@@ -9,7 +9,6 @@
 #import "BBABookmarkService.h"
 #import "BBAConnection.h"
 #import "BBARequestFactory.h"
-#import "BBAJSONResponseMapper.h"
 #import "BBALibraryItem.h"
 #import "BBABookmarkResponseMapper.h"
 #import "BBAAPIErrors.h"
