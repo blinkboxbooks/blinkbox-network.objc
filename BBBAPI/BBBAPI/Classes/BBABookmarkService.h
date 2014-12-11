@@ -31,8 +31,11 @@ extern NSString *const kBBABookmarkServiceErrorDomain;
 /**
  *  Fetch a list of bookmarks from the server.
  *
- *  @param item       The `BBALibraryItem` for which to fetch bookmarks. (Required)
- *  @param date       An optional `NSDate` which, if specified, will limit the returned bookmarks to those created AFTER this date.
+ *  @param item       The `BBALibraryItem` for which to fetch bookmarks. (Optional).
+ *                    If item is specified, bookmarks for this book will be returned. 
+ *                    If not, all bookmarks for all books are returned.
+ *  @param date       An optional `NSDate` which, if specified, will limit the returned bookmarks to 
+ *                    those created AFTER this date.
  *  @param types      `BBABookmarkType` bitmask specifying which bookmarks to fetch (Required)
  *  @param user       `BBAUserDetails` specifying which user to fetch bookmarks for (Required)
  *  @param completion Block invoked on completion of the fetch (Required).
