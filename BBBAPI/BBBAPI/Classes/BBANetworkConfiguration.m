@@ -14,7 +14,9 @@
 #import "BBADefaultAuthenticator.h"
 #import "BBALibraryResponseMapper.h"
 #import "BBAStatusResponseMapper.h"
+#import "BBAKeyServiceResponseMapper.h"
 #import "BBALibraryService.h"
+#import "BBAKeyService.h"
 
 @interface BBANetworkConfiguration ()
 
@@ -75,6 +77,9 @@
     else if ([name isEqualToString:BBAStatusResponseServiceName]) {
         return [BBAStatusResponseMapper new];
     }
+    else if ([name isEqualToString:BBAKeyServiceName]) {
+        return [BBAKeyServiceResponseMapper new];
+    }
     NSAssert(NO, @"unexpected service name : %@", name);
     return nil;
 }
@@ -88,7 +93,6 @@
     _endpoints = [NSMutableDictionary new];
     _endpoints[@(BBAAPIDomainREST)] = [NSURL URLWithString:@"https://api.blinkboxbooks.com"];
     _endpoints[@(BBAAPIDomainAuthentication)] = [NSURL URLWithString:@"https://auth.blinkboxbooks.com"];
-    
     return _endpoints;
 }
 
