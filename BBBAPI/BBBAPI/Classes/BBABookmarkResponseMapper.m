@@ -187,7 +187,9 @@
     if (!error) {
         return;
     }
-    //200 - Not found
+    //200 - Not found.
+    //Delete Multiple Bookmarks returns a 200 as a fail code when it cannot find the specified\
+    bookmarks to delete
     if (statusCode == BBAHTTPSuccess /* 200 */) {
         *error = [NSError errorWithDomain:BBAConnectionErrorDomain
                                      code:BBAAPIErrorNotFound
