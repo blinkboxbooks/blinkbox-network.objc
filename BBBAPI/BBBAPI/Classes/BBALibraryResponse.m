@@ -9,9 +9,9 @@
 #import "BBALibraryResponse.h"
 #import "BBAResponseMapping.h"
 #import "BBALibraryItem.h"
-#import "BBALibraryItemLink.h"
+#import "BBAItemLink.h"
 #import "BBAServerDateFormatter.h"
-#import "BBABooksResponseMapper.h"
+#import "BBABooksMapper.h"
 
 
 @interface BBALibraryResponse ()
@@ -58,7 +58,7 @@ static NSString *const kLastSyncDateTime = @"lastSyncDateTime";
     NSMutableArray *libraryItems = [NSMutableArray new];
     NSDate *syncDate;
     
-    BBABooksResponseMapper *responseMapper = [BBABooksResponseMapper new];
+    BBABooksMapper *responseMapper = [BBABooksMapper new];
     
     if ([dictionary[kType] isEqualToString:kLibraryChangesType]) {
         NSString *lastSyncDateString = dictionary[kLastSyncDateTime];

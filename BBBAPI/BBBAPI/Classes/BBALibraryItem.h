@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "BBALibraryTypes.h"
 
-@class BBALibraryItemLink;
+@class BBAItemLink;
 
 /**
  *  Object that represents Library Changes Object in the iOS Domain

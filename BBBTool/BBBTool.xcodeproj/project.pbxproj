@@ -32,7 +32,7 @@
 		40FB3AA61A14C70A005936B5 /* BBAJSONResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FB3A6C1A14C70A005936B5 /* BBAJSONResponseMapper.m */; };
 		40FB3AA71A14C70A005936B5 /* BBAKeyService.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FB3A6E1A14C70A005936B5 /* BBAKeyService.m */; };
 		40FB3AA81A14C70A005936B5 /* BBALibraryItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FB3A701A14C70A005936B5 /* BBALibraryItem.m */; };
-		40FB3AA91A14C70A005936B5 /* BBALibraryItemLink.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FB3A721A14C70A005936B5 /* BBALibraryItemLink.m */; };
+		40FB3AA91A14C70A005936B5 /* BBAItemLink.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FB3A721A14C70A005936B5 /* BBAItemLink.m */; };
 		40FB3AAA1A14C70A005936B5 /* BBALibraryResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FB3A741A14C70A005936B5 /* BBALibraryResponse.m */; };
 		40FB3AAB1A14C70A005936B5 /* BBALibraryResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FB3A761A14C70A005936B5 /* BBALibraryResponseMapper.m */; };
 		40FB3AAC1A14C70A005936B5 /* BBALibraryService.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FB3A781A14C70A005936B5 /* BBALibraryService.m */; };
@@ -119,8 +119,8 @@
 		40FB3A6E1A14C70A005936B5 /* BBAKeyService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBAKeyService.m; path = ../BBBAPI/BBBAPI/Classes/BBAKeyService.m; sourceTree = "<group>"; };
 		40FB3A6F1A14C70A005936B5 /* BBALibraryItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBALibraryItem.h; path = ../BBBAPI/BBBAPI/Classes/BBALibraryItem.h; sourceTree = "<group>"; };
 		40FB3A701A14C70A005936B5 /* BBALibraryItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBALibraryItem.m; path = ../BBBAPI/BBBAPI/Classes/BBALibraryItem.m; sourceTree = "<group>"; };
-		40FB3A711A14C70A005936B5 /* BBALibraryItemLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBALibraryItemLink.h; path = ../BBBAPI/BBBAPI/Classes/BBALibraryItemLink.h; sourceTree = "<group>"; };
-		40FB3A721A14C70A005936B5 /* BBALibraryItemLink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBALibraryItemLink.m; path = ../BBBAPI/BBBAPI/Classes/BBALibraryItemLink.m; sourceTree = "<group>"; };
+		40FB3A711A14C70A005936B5 /* BBAItemLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBAItemLink.h; path = ../BBBAPI/BBBAPI/Classes/BBAItemLink.h; sourceTree = "<group>"; };
+		40FB3A721A14C70A005936B5 /* BBAItemLink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBAItemLink.m; path = ../BBBAPI/BBBAPI/Classes/BBAItemLink.m; sourceTree = "<group>"; };
 		40FB3A731A14C70A005936B5 /* BBALibraryResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBALibraryResponse.h; path = ../BBBAPI/BBBAPI/Classes/BBALibraryResponse.h; sourceTree = "<group>"; };
 		40FB3A741A14C70A005936B5 /* BBALibraryResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBALibraryResponse.m; path = ../BBBAPI/BBBAPI/Classes/BBALibraryResponse.m; sourceTree = "<group>"; };
 		40FB3A751A14C70A005936B5 /* BBALibraryResponseMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBALibraryResponseMapper.h; path = ../BBBAPI/BBBAPI/Classes/BBALibraryResponseMapper.h; sourceTree = "<group>"; };
@@ -254,8 +254,8 @@
 				40FB3A6E1A14C70A005936B5 /* BBAKeyService.m */,
 				40FB3A6F1A14C70A005936B5 /* BBALibraryItem.h */,
 				40FB3A701A14C70A005936B5 /* BBALibraryItem.m */,
-				40FB3A711A14C70A005936B5 /* BBALibraryItemLink.h */,
-				40FB3A721A14C70A005936B5 /* BBALibraryItemLink.m */,
+				40FB3A711A14C70A005936B5 /* BBAItemLink.h */,
+				40FB3A721A14C70A005936B5 /* BBAItemLink.m */,
 				40FB3A731A14C70A005936B5 /* BBALibraryResponse.h */,
 				40FB3A741A14C70A005936B5 /* BBALibraryResponse.m */,
 				40FB3A751A14C70A005936B5 /* BBALibraryResponseMapper.h */,
@@ -382,7 +382,7 @@
 				40FB3A9D1A14C70A005936B5 /* BBAAuthServiceErrorParser.m in Sources */,
 				40FB3A9F1A14C70A005936B5 /* BBACatalogueService.m in Sources */,
 				40FB3AAB1A14C70A005936B5 /* BBALibraryResponseMapper.m in Sources */,
-				40FB3AA91A14C70A005936B5 /* BBALibraryItemLink.m in Sources */,
+				40FB3AA91A14C70A005936B5 /* BBAItemLink.m in Sources */,
 				40FB3A971A14C70A005936B5 /* BBAAuthConnection.m in Sources */,
 				40FB3AA81A14C70A005936B5 /* BBALibraryItem.m in Sources */,
 				40FB3AB41A14C70A005936B5 /* BBASearchConnection.m in Sources */,
@@ -508,6 +508,7 @@
 				40FB3A351A14C6AE005936B5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

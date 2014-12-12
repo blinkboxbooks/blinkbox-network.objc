@@ -7,14 +7,15 @@
 //
 
 #import "BBACatalogueResponseMapper.h"
-#import "BBALibraryItem.h"
-#import "BBABooksResponseMapper.h"
+#import "BBABookItem.h"
+#import "BBALinkItem.h"
+#import "BBABooksMapper.h"
 
 static NSString *const kListType = @"urn:blinkboxbooks:schema:list";
 static NSString *const kSynopsisType = @"urn:blinkboxbooks:schema:synopsis";
 
 @interface BBACatalogueResponseMapper ()
-@property (strong, nonatomic) BBABooksResponseMapper *bookMapper;
+@property (strong, nonatomic) BBABooksMapper *bookMapper;
 @end
 
 @implementation BBACatalogueResponseMapper
@@ -56,7 +57,7 @@ static NSString *const kSynopsisType = @"urn:blinkboxbooks:schema:synopsis";
     
     NSMutableArray *items = [NSMutableArray new];
     for (id object in array) {
-        BBALibraryItem *item = [self.bookMapper itemFromDictionary:object];
+        BBABookItem *item = [self.bookMapper itemFromDictionary:object];
         if (!item) {
             continue;
         }
@@ -66,7 +67,7 @@ static NSString *const kSynopsisType = @"urn:blinkboxbooks:schema:synopsis";
     return array;;
 }
 
-- (BBALibraryItem *) synopsisResponseFromDictionary:(NSDictionary *)dictionary
+- (BBABookItem *) synopsisResponseFromDictionary:(NSDictionary *)dictionary
                                               error:(NSError **)error{
     if (![dictionary isKindOfClass:[NSDictionary class]]) {
         [self wrongDataError:error];
@@ -80,8 +81,8 @@ static NSString *const kSynopsisType = @"urn:blinkboxbooks:schema:synopsis";
         return nil;
     }
     
-    BBALibraryItem *item = [BBALibraryItem new];
-    item.isbn = isbn;
+    BBABookItem *item = [BBABookItem new];
+    item.identifier = isbn;
     item.synopsis = text;
     return item;
 }

@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Blinkbox Books. All rights reserved.
 //
 
-#import "BBALibraryItemLink.h"
+#import "BBAItemLink.h"
 
-@implementation BBALibraryItemLink
+@implementation BBAItemLink
 /*
  @property (nonatomic, copy) NSString *relationship;
  @property (nonatomic, copy) NSString *address;

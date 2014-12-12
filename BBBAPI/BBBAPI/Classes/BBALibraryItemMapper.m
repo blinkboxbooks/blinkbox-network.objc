@@ -1,40 +1,29 @@
 //
-//  BBABooksResponseMapper.m
+//  BBALibraryItemMapper.m
 //  BBBAPI
 //
-//  Created by Tomek Kuźma on 11/12/2014.
+//  Created by Tomek Kuźma on 12/12/2014.
 //  Copyright (c) 2014 Blinkbox Entertainment Ltd. All rights reserved.
 //
 
-#import "BBABooksResponseMapper.h"
-#import "BBALibraryTypes.h"
+#import "BBALibraryItemMapper.h"
 #import "BBALibraryItem.h"
-#import "BBALibraryItemLink.h"
-#import "BBAServerDateFormatter.h"
-
-static NSString *const kBookSchema = @"urn:blinkboxbooks:schema:book";
-static NSString *const kLibraryItemSchema = @"urn:blinkboxbooks:schema:libraryitem";
+#import "BBAItemLinkMapper.h"
 
 BBAReadingStatus BBAReadingStatusFromString(NSString *status);
 BBAPurchaseStatus BBAPurchaseStatusFromString(NSString *status);
 BBAVisiblityStatus BBAVisibiliyStatusFromString(NSString *status);
 
-@interface BBABooksResponseMapper ()
+static NSString *const kLibraryItemSchema = @"urn:blinkboxbooks:schema:libraryitem";
+
+@interface BBALibraryItemMapper ()
+
 @property (nonatomic, strong) NSDateFormatter *dateFormatter;
+
 @end
 
-@implementation BBABooksResponseMapper
 
-#pragma mark - Getters
-
-- (NSDateFormatter *) dateFormatter{
-    if (!_dateFormatter) {
-        _dateFormatter = [BBAServerDateFormatter new];
-    }
-    return _dateFormatter;
-}
-
-#pragma mark - Public
+@implementation BBALibraryItemMapper
 
 - (BBALibraryItem *) itemFromDictionary:(NSDictionary *)dictionary{
     
@@ -44,7 +33,7 @@ BBAVisiblityStatus BBAVisibiliyStatusFromString(NSString *status);
     
     NSString *type = dictionary[@"type"];
     
-    if (![type isEqualToString:kBookSchema] && ![type isEqualToString:kLibraryItemSchema]) {
+    if (!![type isEqualToString:kLibraryItemSchema]) {
         return nil;
     }
     
@@ -95,12 +84,12 @@ BBAVisiblityStatus BBAVisibiliyStatusFromString(NSString *status);
         item.maxNumberOfAuthorisedDevices = [maxNumberOfAuthorisedDevices integerValue];
         item.numberOfAuthorisedDevices = [numberOfAuthorisedDevices integerValue];
     }
-    
+    BBAItemLinkMapper *linkMapper = [BBAItemLinkMapper new];
     
     NSMutableArray *linksArray = [NSMutableArray new];
     NSArray *links = dictionary[@"links"];
     for (NSDictionary *d in links) {
-        BBALibraryItemLink *link = [self linkFromDictionary:d];
+        BBAItemLink *link = [linkMapper linkFromDictionary:d];
         if (link) {
             [linksArray addObject:link];
         }
@@ -109,16 +98,6 @@ BBAVisiblityStatus BBAVisibiliyStatusFromString(NSString *status);
     item.links = [NSArray arrayWithArray:linksArray];
     
     return item;
-}
-
-#pragma mark - Private
-
-- (BBALibraryItemLink *) linkFromDictionary:(NSDictionary *)dictionary{
-    BBALibraryItemLink *link = [BBALibraryItemLink new];
-    link.address = dictionary[@"href"];
-    link.relationship = dictionary[@"rel"];
-    link.title = dictionary[@"title"];
-    return link;
 }
 
 @end

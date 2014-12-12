@@ -8,7 +8,7 @@
 
 #import "BBALibraryItem.h"
 #import "BBALibraryResponse.h"
-#import "BBALibraryItemLink.h"
+#import "BBAItemLink.h"
 
 @implementation BBALibraryItem
 
@@ -81,7 +81,7 @@
     
     if (self.links.count > 0) {
         for (NSInteger i = 0; i < self.links.count; i++) {
-            BBALibraryItemLink *link = self.links[i];
+            BBAItemLink *link = self.links[i];
             [string appendFormat:@"link: %ld%@%@%@", i, newLine, [link description], newLine];
         }
     }

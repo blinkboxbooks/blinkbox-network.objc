@@ -11,7 +11,7 @@
 #import "BBATestHelper.h"
 #import "BBALibraryItem.h"
 #import "BBAResponseMapping.h"
-#import "BBALibraryItemLink.h"
+#import "BBAItemLink.h"
 
 extern BBAReadingStatus BBAReadingStatusFromString(NSString *status);
 extern BBAPurchaseStatus BBAPurchaseStatusFromString(NSString *status);
@@ -198,7 +198,7 @@ extern BBAVisiblityStatus BBAVisibiliyStatusFromString(NSString *status);
     [response parseJSON:[self validDataSingleItem]
                   error:nil];
     BBALibraryItem *item = [response.changes firstObject];
-    BBALibraryItemLink *link = [item.links firstObject];
+    BBAItemLink *link = [item.links firstObject];
 
     XCTAssertEqualObjects(link.relationship, @"urn:blinkboxbooks:schema:book",
                           @"link relationship must be equal");
