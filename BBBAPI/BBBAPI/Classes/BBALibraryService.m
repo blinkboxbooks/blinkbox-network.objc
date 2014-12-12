@@ -320,7 +320,7 @@ NSString *const BBALibraryServiceErrorDomain = @"BBA.error.libraryServiceDomain"
 }
 
 - (NSString *) libraryEndpoint{
-    return @"service/my/library";
+    return @"my/library";
 }
 
 - (BBAHTTPMethod) methodForAction:(BBAItemAction)action{

@@ -59,7 +59,7 @@
 
 - (void) testBaseURLforRESTDomainReturnsProperValue{
     XCTAssertEqualObjects([configuration baseURLForDomain:(BBAAPIDomainREST)],
-                          [NSURL URLWithString:@"https://api.blinkboxbooks.com"]);
+                          [NSURL URLWithString:@"https://api.blinkboxbooks.com/service"]);
 }
 
 - (void) testBaseURLForDomainThrowsOnUnexpectedDomain{
