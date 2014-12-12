@@ -8,9 +8,11 @@
 
 #import "BBABooksMapper.h"
 #import "BBABookItem.h"
+#import "BBAImageItem.h"
 #import "BBAItemLink.h"
 #import "BBAItemLinkMapper.h"
 #import "BBAServerDateFormatter.h"
+#import <NSArray+Functional.h>
 
 static NSString *const kBookSchema = @"urn:blinkboxbooks:schema:book";
 
@@ -33,21 +35,53 @@ static NSString *const kBookSchema = @"urn:blinkboxbooks:schema:book";
 #pragma mark - Public
 
 - (BBABookItem *)itemFromDictionary:(NSDictionary *)dictionary{
-    if (![dictionary isKindOfClass:[NSDictionary class]]) {
+    BOOL classIsOk = [dictionary isKindOfClass:[NSDictionary class]];
+    NSParameterAssert(classIsOk);
+    if (!classIsOk) {
         return nil;
     }
     
     NSString *type = dictionary[@"type"];
-    
+    NSParameterAssert([type isEqualToString:kBookSchema]);
     if (![type isEqualToString:kBookSchema]) {
         return nil;
     }
     
     BBABookItem *item = [BBABookItem new];
+    item.title = dictionary[@"title"];
+    item.guid = dictionary[@"guid"];
+    item.identifier = dictionary[@"id"];
+    [self mapImages:dictionary[@"images"] toItem:item];
+    
+    NSArray *links = dictionary[@"links"];
+    BBAItemLinkMapper *mapper = [BBAItemLinkMapper new];
+    item.links = [links mapUsingBlock:^id(id obj) {
+        return [mapper linkFromDictionary:obj];
+    }];
     
     return item;
 }
 
 #pragma mark - Private
+
+- (void) mapImages:(NSArray *)array toItem:(BBABookItem *)item{
+    BOOL parameterOk = [array isKindOfClass:[NSArray class]] || array != nil;
+    NSParameterAssert(parameterOk);
+    if (!parameterOk) {
+        return;
+    }
+    
+    NSMutableArray *images = [NSMutableArray new];
+    for (NSDictionary *imageDict in array) {
+        
+        BBAImageItem *image = [BBAImageItem new];
+        image.url = [NSURL URLWithString:imageDict[@"src"]];
+        image.relative = imageDict[@"rel"];
+        [images addObject:image];
+    }
+    
+    item.images = images;
+    
+}
 
 @end

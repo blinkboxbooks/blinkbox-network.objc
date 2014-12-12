@@ -1,0 +1,44 @@
+{
+    "type": "urn:blinkboxbooks:schema:book",
+    "guid": "urn:blinkboxbooks:id:book:9780988415119",
+    "id": "9780988415119",
+    "title": "Nixland",
+    "publicationDate": "2012-09-25",
+    "sampleEligible": true,
+    "images": [
+               {
+               "rel": "urn:blinkboxbooks:image:cover",
+               "src": "http://media.blinkboxbooks.com/9780/988/415/119/714601535c5fe85bb1fc0870cfb26586.png"
+               }
+               ],
+    "links": [
+              {
+              "rel": "urn:blinkboxbooks:schema:contributor",
+              "href": "/service/catalogue/contributors/c04bed97708775a22550e1f91658fad8f8cd1ce6",
+              "title": "Tom Nix",
+              "targetGuid": "urn:blinkboxbooks:id:contributor:c04bed97708775a22550e1f91658fad8f8cd1ce6"
+              },
+              {
+              "rel": "urn:blinkboxbooks:schema:synopsis",
+              "href": "/service/catalogue/books/9780988415119/synopsis",
+              "title": "Synopsis",
+              "targetGuid": "urn:blinkboxbooks:id:synopsis:9780988415119"
+              },
+              {
+              "rel": "urn:blinkboxbooks:schema:publisher",
+              "href": "/service/catalogue/publishers/309",
+              "title": "BusinessGhost",
+              "targetGuid": "urn:blinkboxbooks:id:publisher:309"
+              },
+              {
+              "rel": "urn:blinkboxbooks:schema:bookpricelist",
+              "href": "/service/catalogue/prices?book=9780988415119",
+              "title": "Price"
+              },
+              {
+              "rel": "urn:blinkboxbooks:schema:samplemedia",
+              "href": "http://media.blinkboxbooks.com/9780/988/415/119/542841707116ef606664335f12095ec0.sample.epub",
+              "title": "Sample"
+              }
+              ]
+}

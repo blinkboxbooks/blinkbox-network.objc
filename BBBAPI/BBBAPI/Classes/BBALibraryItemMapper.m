@@ -9,6 +9,7 @@
 #import "BBALibraryItemMapper.h"
 #import "BBALibraryItem.h"
 #import "BBAItemLinkMapper.h"
+#import "BBAServerDateFormatter.h"
 
 BBAReadingStatus BBAReadingStatusFromString(NSString *status);
 BBAPurchaseStatus BBAPurchaseStatusFromString(NSString *status);
@@ -25,6 +26,8 @@ static NSString *const kLibraryItemSchema = @"urn:blinkboxbooks:schema:libraryit
 
 @implementation BBALibraryItemMapper
 
+#pragma mark - Public
+
 - (BBALibraryItem *) itemFromDictionary:(NSDictionary *)dictionary{
     
     if (![dictionary isKindOfClass:[NSDictionary class]]) {
@@ -33,7 +36,7 @@ static NSString *const kLibraryItemSchema = @"urn:blinkboxbooks:schema:libraryit
     
     NSString *type = dictionary[@"type"];
     
-    if (!![type isEqualToString:kLibraryItemSchema]) {
+    if (![type isEqualToString:kLibraryItemSchema]) {
         return nil;
     }
     
@@ -98,6 +101,15 @@ static NSString *const kLibraryItemSchema = @"urn:blinkboxbooks:schema:libraryit
     item.links = [NSArray arrayWithArray:linksArray];
     
     return item;
+}
+
+#pragma mark - Getters
+
+- (NSDateFormatter *) dateFormatter{
+    if (!_dateFormatter) {
+        _dateFormatter = [ BBAServerDateFormatter new];
+    }
+    return _dateFormatter;
 }
 
 @end

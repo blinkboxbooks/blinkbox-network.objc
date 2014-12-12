@@ -10,8 +10,8 @@
 #import "BBAResponseMapping.h"
 #import "BBALibraryItem.h"
 #import "BBAItemLink.h"
+#import "BBALibraryItemMapper.h"
 #import "BBAServerDateFormatter.h"
-#import "BBABooksMapper.h"
 
 
 @interface BBALibraryResponse ()
@@ -58,7 +58,7 @@ static NSString *const kLastSyncDateTime = @"lastSyncDateTime";
     NSMutableArray *libraryItems = [NSMutableArray new];
     NSDate *syncDate;
     
-    BBABooksMapper *responseMapper = [BBABooksMapper new];
+    BBALibraryItemMapper *mapper = [BBALibraryItemMapper new];
     
     if ([dictionary[kType] isEqualToString:kLibraryChangesType]) {
         NSString *lastSyncDateString = dictionary[kLastSyncDateTime];
@@ -71,14 +71,14 @@ static NSString *const kLastSyncDateTime = @"lastSyncDateTime";
         
         
         for (NSDictionary *d in changesArray) {
-            BBALibraryItem *item = [responseMapper itemFromDictionary:d];
+            BBALibraryItem *item = [mapper itemFromDictionary:d];
             if (item) {
                 [libraryItems addObject:item];
             }
         }
     }
     else if ([dictionary[kType] isEqualToString:kLibraryItemType]){
-        BBALibraryItem *item = [responseMapper itemFromDictionary:dictionary];
+        BBALibraryItem *item = [mapper itemFromDictionary:dictionary];
         if (item) {
             [libraryItems addObject:item];
         }
@@ -86,7 +86,7 @@ static NSString *const kLastSyncDateTime = @"lastSyncDateTime";
     else if ([dictionary[kType] isEqualToString:kLibraryListType]){
         NSArray *items = dictionary[kItems];
         for (NSDictionary *d in items) {
-            BBALibraryItem *item = [responseMapper itemFromDictionary:d];
+            BBALibraryItem *item = [mapper itemFromDictionary:d];
             if (item) {
                 [libraryItems addObject:item];
             }

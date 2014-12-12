@@ -26,12 +26,13 @@ static NSString *const kSynopsisType = @"urn:blinkboxbooks:schema:synopsis";
                response:(NSURLResponse *)response
                   error:(NSError **)error{
     id object = [super responseFromData:data response:response error:error];
-    
+    NSAssert(object, @"cant parse JSON");
     if (!object) {
         return nil;
     }
     
     if (![object isKindOfClass:[NSDictionary class]]) {
+        NSAssert(NO, @"wrong data type");
         [self wrongDataError:error];
         return nil;
     }
@@ -46,7 +47,10 @@ static NSString *const kSynopsisType = @"urn:blinkboxbooks:schema:synopsis";
     else if ([type isEqualToString:kSynopsisType]){
         return [self synopsisResponseFromDictionary:dictionary[@"items"] error:error];
     }
-    
+    else{
+        [self wrongDataError:error];
+    }
+    NSAssert(NO, @"wrong data type");
     return nil;
 }
 

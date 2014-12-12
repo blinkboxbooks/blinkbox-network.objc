@@ -13,9 +13,13 @@
 
 - (BBAItemLink *) linkFromDictionary:(NSDictionary *)dictionary{
     BBAItemLink *link = [BBAItemLink new];
-    link.address = dictionary[@"href"];
-    link.relationship = dictionary[@"rel"];
-    link.title = dictionary[@"title"];
+    BOOL isDict = [dictionary isKindOfClass:[NSDictionary class]];
+    NSParameterAssert(isDict);
+    if (isDict) {
+        link.address = dictionary[@"href"];
+        link.relationship = dictionary[@"rel"];
+        link.title = dictionary[@"title"];
+    }
     return link;
 }
 
