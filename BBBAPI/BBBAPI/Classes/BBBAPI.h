@@ -6,14 +6,12 @@
 //  Copyright (c) 2014 Blinkbox Entertainment Ltd. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import "BBAAuthenticationService.h"
-#import "BBALibraryService.h"
-#import "BBALibraryItem.h"
-#import "BBAUserDetails.h"
-#import "BBAClientDetails.h"
-#import "BBAAuthData.h"
+#import <BBBAPI/BBABookmarkService.h>
+#import <BBBAPI/BBABookmarkItem.h>
 
-@interface BBBAPI : NSObject
+#import <BBBAPI/BBALibraryService.h>
+#import <BBBAPI/BBALibraryItem.h>
 
-@end
+#import <BBBAPI/BBAAPIErrors.h>
+
+#import <BBBAPI/BBAAuthenticationService.h>
