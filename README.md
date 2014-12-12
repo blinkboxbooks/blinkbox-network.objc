@@ -38,7 +38,7 @@ a. you have to have [Blinkbox Books pod repo](https://git.mobcastdev.com/iOS/Spe
 ---
 
 1. Pull latest changes from `master` branch
-2. Remember to add all dependecies of `BBBAPI` target to `BBBAPI.podspec` (all pods in podspec for BBBAPI)
+2. Remember to add all dependencies of `BBBAPI` target to `BBBAPI.podspec` (all pods in podspec for BBBAPI)
 4. Modify `BBBAPI.podspec` to set new version of the pod
 5. Commit, add new git-tag with version the same as in the `BBBAPI.podspec`
 6. Push to upstream-master
