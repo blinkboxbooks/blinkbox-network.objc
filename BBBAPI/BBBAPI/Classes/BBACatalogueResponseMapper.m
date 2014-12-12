@@ -20,6 +20,15 @@ static NSString *const kSynopsisType = @"urn:blinkboxbooks:schema:synopsis";
 
 @implementation BBACatalogueResponseMapper
 
+#pragma mark - Getters
+
+- (BBABooksMapper *) bookMapper{
+    if (!_bookMapper) {
+        _bookMapper = [BBABooksMapper new];
+    }
+    return _bookMapper;
+}
+
 #pragma mark - BBAResponseMapping
 
 - (id) responseFromData:(NSData *)data
@@ -45,7 +54,7 @@ static NSString *const kSynopsisType = @"urn:blinkboxbooks:schema:synopsis";
         return [self listResponseFromList:dictionary[@"items"] error:error];
     }
     else if ([type isEqualToString:kSynopsisType]){
-        return [self synopsisResponseFromDictionary:dictionary[@"items"] error:error];
+        return [self synopsisResponseFromDictionary:dictionary error:error];
     }
     else{
         [self wrongDataError:error];
@@ -68,7 +77,7 @@ static NSString *const kSynopsisType = @"urn:blinkboxbooks:schema:synopsis";
         
         [items addObject:item];
     }
-    return array;;
+    return items;;
 }
 
 - (BBABookItem *) synopsisResponseFromDictionary:(NSDictionary *)dictionary

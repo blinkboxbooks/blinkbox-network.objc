@@ -15,7 +15,6 @@
 		401A1D2A1A13D6CB004FBA41 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 401A1D281A13D6CB004FBA41 /* Main.storyboard */; };
 		401A1D2C1A13D6CB004FBA41 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 401A1D2B1A13D6CB004FBA41 /* Images.xcassets */; };
 		401A1D2F1A13D6CB004FBA41 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 401A1D2D1A13D6CB004FBA41 /* LaunchScreen.xib */; };
-		401A1D3B1A13D6CB004FBA41 /* BBBAPITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 401A1D3A1A13D6CB004FBA41 /* BBBAPITests.m */; };
 		401A1D6C1A13D77B004FBA41 /* BBAAuthenticationServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 401A1D441A13D77B004FBA41 /* BBAAuthenticationServiceTests.m */; };
 		401A1D6D1A13D77B004FBA41 /* BBAAuthServiceResponseMappersTestData.m in Sources */ = {isa = PBXBuildFile; fileRef = 401A1D471A13D77B004FBA41 /* BBAAuthServiceResponseMappersTestData.m */; };
 		401A1D6E1A13D77B004FBA41 /* BBAAuthServiceResponseMapperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 401A1D481A13D77B004FBA41 /* BBAAuthServiceResponseMapperTests.m */; };
@@ -136,7 +135,6 @@
 		401A1D2E1A13D6CB004FBA41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		401A1D341A13D6CB004FBA41 /* BBBAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BBBAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		401A1D391A13D6CB004FBA41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		401A1D3A1A13D6CB004FBA41 /* BBBAPITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBBAPITests.m; sourceTree = "<group>"; };
 		401A1D441A13D77B004FBA41 /* BBAAuthenticationServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBAAuthenticationServiceTests.m; sourceTree = "<group>"; };
 		401A1D451A13D77B004FBA41 /* BBAAuthResponseMapperTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBAAuthResponseMapperTests.h; sourceTree = "<group>"; };
 		401A1D461A13D77B004FBA41 /* BBAAuthServiceResponseMappersTestData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBAAuthServiceResponseMappersTestData.h; sourceTree = "<group>"; };
@@ -394,7 +392,6 @@
 				401A1D5C1A13D77B004FBA41 /* BBATokensResponseMapperTests.m */,
 				401A1D5D1A13D77B004FBA41 /* BBBAPITests.pch */,
 				401A1D5E1A13D77B004FBA41 /* SampleData */,
-				401A1D3A1A13D6CB004FBA41 /* BBBAPITests.m */,
 				401A1D381A13D6CB004FBA41 /* Supporting Files */,
 			);
 			path = BBBAPITests;
@@ -839,7 +836,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				401A1D3B1A13D6CB004FBA41 /* BBBAPITests.m in Sources */,
 				401A1D711A13D77B004FBA41 /* BBAConnectionTestsMocks.m in Sources */,
 				5ACE48121A37221400546137 /* BBABookmarkItemTests.m in Sources */,
 				401A1D701A13D77B004FBA41 /* BBAConnectionTests.m in Sources */,

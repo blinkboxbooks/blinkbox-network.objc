@@ -83,14 +83,22 @@
 }
 
 - (void) testResponseReturnsArrayOfBooksForRelatedResponse{
-    NSArray *response = [mapper responseFromData:[self sampleSynposisData]
+    NSArray *response = [mapper responseFromData:[self sampleRelatedData]
                                         response:nil
                                            error:nil];;
     XCTAssert([response isKindOfClass:[NSArray class]]);
+    Class cls = [BBABookItem class];
+    BBAAssertArrayHasElementsOfClass(response, cls);
+    
 }
 
 - (void) testResponseReturnsArrayOfBooksForBooksResponse{
-    
+    NSArray *response = [mapper responseFromData:[self sampleBookData]
+                                        response:nil
+                                           error:nil];;
+    XCTAssert([response isKindOfClass:[NSArray class]]);
+    Class cls = [BBABookItem class];
+    BBAAssertArrayHasElementsOfClass(response, cls);
 }
 
 #pragma mark - Helpers

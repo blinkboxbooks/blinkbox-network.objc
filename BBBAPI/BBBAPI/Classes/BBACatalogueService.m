@@ -7,7 +7,7 @@
 //
 
 #import "BBACatalogueService.h"
-#import "BBALibraryItem.h"
+#import "BBABookItem.h"
 #import "BBAConnection.h"
 #import "BBAAPIErrors.h"
 #import "BBARequestFactory.h"
@@ -19,15 +19,15 @@ NSString *const BBACatalogureErrorDomain = @"com.BBB.CatalogueErrorDomain";
 
 #pragma mark - Public
 
-- (void) getSynopsisForLibraryItem:(BBALibraryItem *)item
-                        completion:(void (^)(BBALibraryItem *itemWithSynposis, NSError *error))completion{
+- (void) getSynopsisForBookItem:(BBABookItem *)item
+                     completion:(void (^)(BBABookItem *itemWithSynposis, NSError *error))completion{
     NSParameterAssert(completion);
     if (!completion) {
         return;
     }
     
-    NSParameterAssert(item.isbn);
-    if (!item.isbn) {
+    NSParameterAssert(item.identifier);
+    if (!item.identifier) {
         completion(nil, [self wrongUsageError]);
         return;
     }
@@ -40,28 +40,37 @@ NSString *const BBACatalogureErrorDomain = @"com.BBB.CatalogueErrorDomain";
 
     [connection perform:(BBAHTTPMethodGET)
              completion:^(id response, NSError *error) {
-                 
+                 completion(response, error);
              }];
 }
 
-- (void) getRelatedBooksForLibraryItem:(BBALibraryItem *)item
-                            completion:(void (^)(NSArray *libraryItems, NSError *error))completion{
+- (void) getRelatedBooksForBookItem:(BBABookItem *)item
+                         completion:(void (^)(NSArray *libraryItems, NSError *error))completion{
     NSParameterAssert(completion);
     if (!completion) {
         return;
     }
     
-    NSParameterAssert(item.isbn);
-    if (!item.isbn) {
+    NSParameterAssert(item.identifier);
+    if (!item.identifier) {
         completion(nil, [self wrongUsageError]);
         return;
     }
     
+    BBAConnection *connection = [[BBAConnection alloc] initWithDomain:(BBAAPIDomainREST)
+                                                          relativeURL:[self catalogueEndpoint]];
+    connection.requiresAuthentication = NO;
+    [connection setRequestFactory:[BBARequestFactory new]];
+    [connection setResponseMapper:[BBACatalogueResponseMapper new]];
     
+    [connection perform:(BBAHTTPMethodGET)
+             completion:^(id response, NSError *error) {
+                 completion(response, error);
+             }];
 }
 
-- (void) getDetailsForLibraryItems:(NSArray *)items
-                        completion:(void (^)(NSArray *detailItems, NSError *))completion{
+- (void) getDetailsForBookItems:(NSArray *)items
+                     completion:(void (^)(NSArray *detailItems, NSError *))completion{
     NSParameterAssert(completion);
     if (!completion) {
         return;
@@ -73,6 +82,17 @@ NSString *const BBACatalogureErrorDomain = @"com.BBB.CatalogueErrorDomain";
         completion(nil, [self  wrongUsageError]);
         return;
     }
+    
+    BBAConnection *connection = [[BBAConnection alloc] initWithDomain:(BBAAPIDomainREST)
+                                                          relativeURL:[self catalogueEndpoint]];
+    connection.requiresAuthentication = NO;
+    [connection setRequestFactory:[BBARequestFactory new]];
+    [connection setResponseMapper:[BBACatalogueResponseMapper new]];
+    
+    [connection perform:(BBAHTTPMethodGET)
+             completion:^(id response, NSError *error) {
+                 completion(response, error);
+             }];
 }
 
 #pragma mark - Private
@@ -96,12 +116,12 @@ NSString *const BBACatalogureErrorDomain = @"com.BBB.CatalogueErrorDomain";
         return NO;
     }
     
-    for (BBALibraryItem *item in items) {
-        if (![item isKindOfClass:[BBALibraryItem class]]) {
+    for (BBABookItem *item in items) {
+        if (![item isKindOfClass:[BBABookItem class]]) {
             return NO;
         }
         
-        if (!item.isbn) {
+        if (!item.identifier) {
             return NO;
         }
     }

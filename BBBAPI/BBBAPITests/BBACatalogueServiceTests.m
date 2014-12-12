@@ -7,7 +7,7 @@
 //
 
 #import "BBACatalogueService.h"
-#import "BBALibraryItem.h"
+#import "BBABookItem.h"
 #import "BBATestHelper.h"
 #import "BBAConnection.h"
 #import <OCMock.h>
@@ -73,33 +73,33 @@
 
 
 - (void) testSynoposisThrowsOnNoLibraryItem{
-    XCTAssertThrows([service getSynopsisForLibraryItem:nil completion:^(BBALibraryItem *itemWithSynposis, NSError *error) {}]);
+    XCTAssertThrows([service getSynopsisForBookItem:nil completion:^(BBABookItem *itemWithSynposis, NSError *error) {}]);
 }
 
 - (void) testSynposisThrowsOnLibraryItemWithoutISBN{
-    XCTAssertThrows([service getSynopsisForLibraryItem:[BBALibraryItem new]
-                                            completion:^(BBALibraryItem *itemWithSynposis, NSError *e) {}]);
+    XCTAssertThrows([service getSynopsisForBookItem:[BBABookItem new]
+                                         completion:^(BBABookItem *itemWithSynposis, NSError *e) {}]);
 }
 
 - (void) testSynopsisThrowsOnNoCompletion{
-    BBALibraryItem *item = [BBALibraryItem new];
-    item.isbn = @"abc";
-    XCTAssertThrows([service getSynopsisForLibraryItem:item
-                                            completion:nil]);
+    BBABookItem *item = [BBABookItem new];
+    item.identifier = @"abc";
+    XCTAssertThrows([service getSynopsisForBookItem:item
+                                         completion:nil]);
 }
 
 - (void) testSynopsisDontThrowOnGoodParameters{
-    BBALibraryItem *item = [BBALibraryItem new];
-    item.isbn = @"isbn";
-    XCTAssertNoThrow([service getSynopsisForLibraryItem:item
-                                             completion:^(BBALibraryItem *itemWithSynposis, NSError *error) {}]);
+    BBABookItem *item = [BBABookItem new];
+    item.identifier = @"isbn";
+    XCTAssertNoThrow([service getSynopsisForBookItem:item
+                                             completion:^(BBABookItem *itemWithSynposis, NSError *error) {}]);
 }
 
 - (void) testSynopsisInitsConnectionWithProperDomainAndEndpoint{
-    BBALibraryItem *item = [BBALibraryItem new];
-    item.isbn = @"isbn";
-    [service getSynopsisForLibraryItem:item
-                            completion:^(BBALibraryItem *itemWithSynposis, NSError *error) {}];
+    BBABookItem *item = [BBABookItem new];
+    item.identifier = @"isbn";
+    [service getSynopsisForBookItem:item
+                         completion:^(BBABookItem *itemWithSynposis, NSError *error) {}];
     
     XCTAssertEqualObjects(passedRelativeURLString, @"books/");
     XCTAssertEqual(passedDomain, BBAAPIDomainREST);
@@ -107,11 +107,11 @@
 }
 
 - (void) testSynopsisMakesUnauthenticatedConnection{
-    BBALibraryItem *item = [BBALibraryItem new];
-    item.isbn = @"isbn";
+    BBABookItem *item = [BBABookItem new];
+    item.identifier = @"isbn";
     OCMExpect([mockConnection setRequiresAuthentication:NO]);
-    [service getSynopsisForLibraryItem:item
-                            completion:^(BBALibraryItem *itemWithSynposis, NSError *error) {}];
+    [service getSynopsisForBookItem:item
+                         completion:^(BBABookItem *itemWithSynposis, NSError *error) {}];
     
 }
 
@@ -119,14 +119,14 @@
     
     [self expectPerformGETWithDataToReturn:[self sampleSynposisData] error:nil];
     __block BOOL wasCalled = NO;
-    BBALibraryItem *item = [BBALibraryItem new];
-    item.isbn = @"isbn";
-    [service getSynopsisForLibraryItem:item
-                            completion:^(BBALibraryItem *itemWithSynposis, NSError *error) {
-                                wasCalled = YES;
-                                XCTAssertEqual(itemWithSynposis.synopsis, [self expectedSynopsis]);
-                                XCTAssertNil(error);
-                            }];
+    BBABookItem *item = [BBABookItem new];
+    item.identifier = @"isbn";
+    [service getSynopsisForBookItem:item
+                         completion:^(BBABookItem *itemWithSynposis, NSError *error) {
+                             wasCalled = YES;
+                             XCTAssertEqual(itemWithSynposis.synopsis, [self expectedSynopsis]);
+                             XCTAssertNil(error);
+                         }];
     
     XCTAssertTrue(wasCalled);
     OCMVerifyAll(mockConnection);
@@ -134,19 +134,19 @@
 
 - (void) testSynposisReturnsNilLibraryItemAndErrorPassedFromConnection{
     NSError *errorToReturn = [NSError errorWithDomain:@"domain"
-                                         code:123
-                                     userInfo:nil];
+                                                 code:123
+                                             userInfo:nil];
     [self expectPerformGETWithDataToReturn:nil error:errorToReturn];
     __block BOOL wasCalled = NO;
-    BBALibraryItem *item = [BBALibraryItem new];
-    item.isbn = @"isbn";
-    [service getSynopsisForLibraryItem:item
-                            completion:^(BBALibraryItem *itemWithSynposis, NSError *error) {
-                                wasCalled = YES;
-                                XCTAssertEqual(error.code, 123);
-                                XCTAssertEqualObjects(error.domain, @"domain");
-                                XCTAssertNil(itemWithSynposis);
-                            }];
+    BBABookItem *item = [BBABookItem new];
+    item.identifier = @"isbn";
+    [service getSynopsisForBookItem:item
+                         completion:^(BBABookItem *itemWithSynposis, NSError *error) {
+                             wasCalled = YES;
+                             XCTAssertEqual(error.code, 123);
+                             XCTAssertEqualObjects(error.domain, @"domain");
+                             XCTAssertNil(itemWithSynposis);
+                         }];
     
     XCTAssertTrue(wasCalled);
 }
@@ -155,49 +155,49 @@
 
 
 - (void) testRelatedThrowsOnNilItem{
-    XCTAssertThrows([service getRelatedBooksForLibraryItem:nil
-                                                completion:^(NSArray *i, NSError *e) {}]);
+    XCTAssertThrows([service getRelatedBooksForBookItem:nil
+                                             completion:^(NSArray *i, NSError *e) {}]);
 }
 
 - (void) testRelatedThrowsOnItemWithoutISBN{
-    XCTAssertThrows([service getRelatedBooksForLibraryItem:[BBALibraryItem new]
-                                                completion:^(NSArray *i, NSError *e) {}]);
+    XCTAssertThrows([service getRelatedBooksForBookItem:[BBABookItem new]
+                                             completion:^(NSArray *i, NSError *e) {}]);
 }
 
 - (void) testRelatedThrowsOnNoCompletion{
-    BBALibraryItem *item = [BBALibraryItem new];
-    item.isbn = @"isbn";
-    XCTAssertThrows([service getRelatedBooksForLibraryItem:item
-                                                completion:nil]);
+    BBABookItem *item = [BBABookItem new];
+    item.identifier = @"isbn";
+    XCTAssertThrows([service getRelatedBooksForBookItem:item
+                                             completion:nil]);
 }
 
 
 - (void) testDetailsThrowOnNilArray{
-    XCTAssertThrows([service getDetailsForLibraryItems:nil
-                                            completion:^(NSArray *detailItems, NSError *e) {}]);
+    XCTAssertThrows([service getRelatedBooksForBookItem:nil
+                                             completion:^(NSArray *detailItems, NSError *e) {}]);
 }
 
 - (void) testDetailsThrowOnArrayWithWrongObjectsIn{
-    XCTAssertThrows([service getDetailsForLibraryItems:@[@"string"]
-                                            completion:^(NSArray *detailItems, NSError *e) {}]);
+    XCTAssertThrows([service getDetailsForBookItems:@[@"string"]
+                                         completion:^(NSArray *detailItems, NSError *e) {}]);
 }
 
 - (void) testDetailsThrowsOnArrayWithLibraryItemsWithoutISBNS{
-    XCTAssertThrows([service getDetailsForLibraryItems:@[[BBALibraryItem new]]
-                                            completion:^(NSArray *detailItems, NSError *e) {}]);
+    XCTAssertThrows([service getDetailsForBookItems:@[[BBABookItem new]]
+                                         completion:^(NSArray *detailItems, NSError *e) {}]);
 }
 
 - (void) testDetailsDoesntThrowsOnArrayWithLibraryItemsWithoutISBNS{
-    BBALibraryItem *item = [BBALibraryItem new];
-    item.isbn = @"isbn";
-    XCTAssertNoThrow([service getDetailsForLibraryItems:@[item]
+    BBABookItem *item = [BBABookItem new];
+    item.identifier = @"isbn";
+    XCTAssertNoThrow([service getDetailsForBookItems:@[item]
                                              completion:^(NSArray *detailItems, NSError *e) {}]);
 }
 
 - (void) testDetailsThrowsWithoutCompletion{
-    BBALibraryItem *item = [BBALibraryItem new];
-    item.isbn = @"isbn";
-    XCTAssertThrows([service getDetailsForLibraryItems:@[item]
+    BBABookItem *item = [BBABookItem new];
+    item.identifier = @"isbn";
+    XCTAssertThrows([service getDetailsForBookItems:@[item]
                                             completion:nil]);
 }
 

@@ -10,16 +10,16 @@
 
 extern NSString *const BBACatalogureErrorDomain;
 
-@class BBALibraryItem;
+@class BBABookItem;
 
 @interface BBACatalogueService : NSObject
 
-- (void) getSynopsisForLibraryItem:(BBALibraryItem *)item
-                        completion:(void (^)(BBALibraryItem *itemWithSynposis, NSError *error))completion;
+- (void) getSynopsisForBookItem:(BBABookItem *)item
+                     completion:(void (^)(BBABookItem *itemWithSynposis, NSError *error))completion;
 
-- (void) getRelatedBooksForLibraryItem:(BBALibraryItem *)item
-                            completion:(void (^)(NSArray *libraryItems, NSError *error))completion;
+- (void) getRelatedBooksForBookItem:(BBABookItem *)item
+                         completion:(void (^)(NSArray *libraryItems, NSError *error))completion;
 
-- (void) getDetailsForLibraryItems:(NSArray *)item
-                        completion:(void (^)(NSArray *detailItems, NSError *))completion;
+- (void) getDetailsForBookItems:(NSArray *)item
+                     completion:(void (^)(NSArray *detailItems, NSError *))completion;
 @end
