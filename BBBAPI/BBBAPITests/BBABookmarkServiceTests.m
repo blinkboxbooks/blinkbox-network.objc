@@ -451,7 +451,7 @@
 
     XCTAssertEqual([BBAMockConnection mockedConnections].count, 1);
     BBAMockConnection *mockedConnection = [BBAMockConnection mockedConnections][0];
-    NSString *expectedPath = [NSString stringWithFormat:@"/my/bookmarks/%@", item.identifier];
+    NSString *expectedPath = [NSString stringWithFormat:@"/service/my/bookmarks/%@", item.identifier];
     XCTAssertEqualObjects([mockedConnection.URL path], expectedPath);
 }
 
