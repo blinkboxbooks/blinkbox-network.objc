@@ -32,6 +32,15 @@
     [super setUp];
     service = [BBACatalogueService new];
     
+
+}
+
+- (void)tearDown {
+    service = nil;
+    [super tearDown];
+}
+
+- (void) enableConnectionMock{
     mockConnection = OCMClassMock([BBAConnection class]);
     
     __weak id weakMockConnection = mockConnection;
@@ -54,15 +63,12 @@
                                             method_getTypeEncoding(originalMethod));
 }
 
-- (void)tearDown {
-    
+- (void) disableConnectionMock{
     Class class = [BBAConnection class];
     SEL selector = @selector(initWithDomain:relativeURL:);
     Method originalMethod = class_getInstanceMethod(class,selector);
     class_replaceMethod(class, selector, oldImplementation, method_getTypeEncoding(originalMethod));
     initBlock = nil;
-    service = nil;
-    [super tearDown];
 }
 
 #pragma mark - Tests
@@ -96,6 +102,7 @@
 }
 
 - (void) testSynopsisInitsConnectionWithProperDomainAndEndpoint{
+    [self enableConnectionMock];
     BBABookItem *item = [BBABookItem new];
     item.identifier = @"isbn";
     [service getSynopsisForBookItem:item
@@ -103,7 +110,7 @@
     
     XCTAssertEqualObjects(passedRelativeURLString, @"books/");
     XCTAssertEqual(passedDomain, BBAAPIDomainREST);
-    
+    [self disableConnectionMock];
 }
 
 - (void) testSynopsisMakesUnauthenticatedConnection{
@@ -200,6 +207,7 @@
     XCTAssertThrows([service getDetailsForBookItems:@[item]
                                             completion:nil]);
 }
+
 
 #pragma mark - Helpers
 
