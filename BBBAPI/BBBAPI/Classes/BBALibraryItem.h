@@ -36,4 +36,11 @@
  */
 @property (nonatomic, copy) NSArray *links;
 
+/**
+ *  Method below enumarate `link` array to find link related to given item
+ */
+@property (nonatomic, copy, readonly) NSString *fullMediaURL;
+@property (nonatomic, copy, readonly) NSString *mediaKeyURL;
+@property (nonatomic, copy, readonly) NSString *sampleMediaURL;
+
 @end
