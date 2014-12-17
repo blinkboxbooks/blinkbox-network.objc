@@ -198,20 +198,22 @@ NSString *const BBAHTTPVersion11 = @"HTTP/1.1";
         return;
     }
     
-    [self.authenticator authenticateRequest:request
-                                    forUser:user
-                                 completion:^(BBARequest *request, NSError *error) {
-                                     
-                                     if (!request) {
-                                         completion(nil, error);
-                                         return ;
-                                     }
-                                     
-                                     
-                                     [self performRequest:request
-                                               completion:completion];
-                                     
-                                 }];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.authenticator authenticateRequest:request
+                                        forUser:user
+                                     completion:^(BBARequest *request, NSError *error) {
+                                         
+                                         if (!request) {
+                                             completion(nil, error);
+                                             return ;
+                                         }
+                                         
+                                         
+                                         [self performRequest:request
+                                                   completion:completion];
+                                         
+                                     }];
+    });
     
 }
 
