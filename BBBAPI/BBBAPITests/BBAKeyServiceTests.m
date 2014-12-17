@@ -25,7 +25,9 @@
 
 @implementation BBAKeyServiceTests
 
-- (void)setUp {
+#pragma mark - Setup/Teardown
+
+- (void) setUp{
     [super setUp];
     configuration = [BBANetworkConfiguration new];
     service = [BBAKeyService new];
@@ -34,12 +36,14 @@
     [service setValue:configuration forKey:@"configuration"];
 }
 
-- (void)tearDown {
+- (void) tearDown{
     configuration = nil;
     service = nil;
     [OHHTTPStubs removeAllStubs];
     [super tearDown];
 }
+
+#pragma mark - Tests
 
 - (void) testKeyServiceThrowsWithNilUserDetails{
     XCTAssertThrows([service getKeyForURL:[NSURL new]
@@ -75,14 +79,6 @@
                                completion:nil]);
 }
 
-- (id) prepareBBAConnectionMocking{
-    id classMock = OCMClassMock([BBAConnection class]);
-    OCMStub([classMock alloc]).andReturn(classMock);
-    OCMStub([classMock initWithBaseURL:OCMOCK_ANY]).andReturn(classMock);
-
-    return classMock;
-}
-
 - (void) testKeyServiceSetsKeyParamaterOnRequest{
 
 
@@ -98,6 +94,23 @@
                }];
 
     OCMVerify([classMock addParameterWithKey:[OCMArg isEqual:@"key"] value:[OCMArg isEqual:publicKey]]);
+    [classMock stopMocking];
+}
+
+- (void) testKeyServiceSetsUnencodedFormContentType{
+    
+    id classMock = [self prepareBBAConnectionMocking];
+    
+    NSURL *keyURL = [NSURL URLWithString:@""];
+    NSString *publicKey = @"test";
+    [service getKeyForURL:keyURL
+                publicKey:publicKey
+                  forUser:[BBAUserDetails new]
+               completion:^(NSData *key, NSError *error) {
+                   
+               }];
+    
+    OCMVerify([classMock setContentType:BBAContentTypeURLUnencodedForm]);
     [classMock stopMocking];
 }
 
@@ -281,6 +294,16 @@
                }];
     BBA_WAIT_FOR_ASYNC_TEST();
     XCTAssertTrue(serviceReturned);
+}
+
+#pragma mark - Helpers
+
+- (id) prepareBBAConnectionMocking{
+    id classMock = OCMClassMock([BBAConnection class]);
+    OCMStub([classMock alloc]).andReturn(classMock);
+    OCMStub([classMock initWithBaseURL:OCMOCK_ANY]).andReturn(classMock);
+    
+    return classMock;
 }
 
 @end

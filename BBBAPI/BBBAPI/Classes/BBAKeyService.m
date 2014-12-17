@@ -28,13 +28,12 @@ NSString *const BBAKeyServiceName = @"com.BBA.keyService";
 
     NSParameterAssert(keyURL);
     NSParameterAssert(publicKey);
-    NSParameterAssert(user);
     NSParameterAssert(completion);
     if (!completion) {
         return;
     }
 
-    if (!keyURL || !user || !publicKey) {
+    if (!keyURL || !publicKey) {
         NSError *error;
         error = [NSError errorWithDomain:BBAKeyServiceDomain
                                     code:BBAAPIWrongUsage
@@ -51,7 +50,7 @@ NSString *const BBAKeyServiceName = @"com.BBA.keyService";
 
     [connection addParameterWithKey:@"key" value:publicKey];
 
-    [connection setContentType:BBAContentTypeURLEncodedForm];
+    [connection setContentType:BBAContentTypeURLUnencodedForm];
     
     [connection perform:(BBAHTTPMethodPOST)
                 forUser:user
