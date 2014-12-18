@@ -42,15 +42,30 @@
                              completion(nil, error);
                              return ;
                          }
-                         NSMutableDictionary *headers = [[[request URLRequest] allHTTPHeaderFields]mutableCopy];
-                         NSString *token = data.accessToken;
-                         NSString *bearerToken = [NSString stringWithFormat:@"Bearer %@", token];
-                         [headers setObject:bearerToken forKey:@"Authorization"];
-                         [[request URLRequest]setValue:headers forKey:@"allHTTPHeaderFields"];
-                         completion(request, nil);
+                         BBARequest *authenticatedRequest = [self authenticateRequest:request withData:data];
+                         completion(authenticatedRequest, nil);
 
     }];
 
+}
+
+- (BBARequest *) authenticateRequest:(BBARequest *)request withData:(BBAAuthData *)data{
+    
+    
+    NSMutableURLRequest *URLRequest = [[request URLRequest] mutableCopy];
+    
+    NSMutableDictionary *headers = [[URLRequest allHTTPHeaderFields] mutableCopy];
+    
+    NSString *bearerToken = [NSString stringWithFormat:@"Bearer %@", data.accessToken];
+    
+    headers[@"Authorization"] = bearerToken;
+    
+    URLRequest.allHTTPHeaderFields = headers;
+    
+    request.URLRequest = URLRequest;
+    
+    
+    return request;
 }
 
 

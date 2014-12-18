@@ -17,6 +17,7 @@
 @interface BBALibraryItem : NSObject
 
 @property (nonatomic, copy) NSString *isbn;
+@property (nonatomic, copy) NSString *guid;
 @property (nonatomic, copy) NSString *identifier;
 
 @property (nonatomic, assign) BBAPurchaseStatus purchaseStatus;
@@ -35,5 +36,12 @@
  *  Array of `BBALibraryItemLink` objects
  */
 @property (nonatomic, copy) NSArray *links;
+
+/**
+ *  Method below enumarate `link` array to find link related to given item
+ */
+@property (nonatomic, copy, readonly) NSString *fullMediaURL;
+@property (nonatomic, copy, readonly) NSString *mediaKeyURL;
+@property (nonatomic, copy, readonly) NSString *sampleMediaURL;
 
 @end

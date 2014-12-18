@@ -118,6 +118,13 @@ extern BBAVisiblityStatus BBAVisibiliyStatusFromString(NSString *status);
     XCTAssertEqualObjects(item.identifier,@"32060+34756", @"id should be parsed");
 }
 
+- (void) testGuidOfTheItem{
+    [response parseJSON:[self validDataSingleItem]
+                  error:nil];
+    BBALibraryItem *item = [response.changes firstObject];
+    XCTAssertEqualObjects(item.guid,@"urn:blinkboxbooks:id:libraryitem:32060+34756", @"guid should be parsed");
+}
+
 - (void) testMappingOfStatuses{
     [response parseJSON:[self validDataSingleItem]
                   error:nil];

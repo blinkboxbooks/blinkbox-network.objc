@@ -91,7 +91,7 @@
     }
     
     _endpoints = [NSMutableDictionary new];
-    _endpoints[@(BBAAPIDomainREST)] = [NSURL URLWithString:@"https://api.blinkboxbooks.com/service"];
+    _endpoints[@(BBAAPIDomainREST)] = [NSURL URLWithString:@"https://api.blinkboxbooks.com/service/"];
     _endpoints[@(BBAAPIDomainAuthentication)] = [NSURL URLWithString:@"https://auth.blinkboxbooks.com"];
     return _endpoints;
 }

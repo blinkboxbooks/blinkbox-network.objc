@@ -128,6 +128,10 @@ static NSString *const kLastSyncDateTime = @"lastSyncDateTime";
     NSAssert(identifier, @"id mustn't be nil");
     item.identifier = identifier;
     
+    NSString *guid = dictionary[@"guid"];
+    NSAssert(guid, @"guid cant be nil");
+    item.guid = guid;
+    
     item.visibilityStatus = BBAVisibiliyStatusFromString(dictionary[@"visibilityStatus"]);
     item.readingStatus = BBAReadingStatusFromString(dictionary[@"readingStatus"]);
     item.purchaseStatus = BBAPurchaseStatusFromString(dictionary[@"purchaseStatus"]);

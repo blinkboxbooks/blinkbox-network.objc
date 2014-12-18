@@ -24,6 +24,15 @@ NSString * BBANSStringFromBBAContentType(BBAContentType type){
             return @"application/vnd.blinkboxbooks.data.v1+json";
             break;
         }
+        case BBAContentTypeURLUnencodedForm:
+        {
+            /*
+             This options is used with the key service, where content type header myst be `urlencoded`
+             but the body must not be
+             */
+            return @"application/x-www-form-urlencoded";
+            break;
+        }
             
         default:
             NSCAssert(NO, @"unexpected content type");
@@ -183,28 +192,28 @@ NSString *const BBAHTTPVersion11 = @"HTTP/1.1";
         return;
     }
     
-    if (self.requiresAuthentication) {
-
-            [self.authenticator authenticateRequest:request
-                                            forUser:user
-                                         completion:^(BBARequest *request, NSError *error) {
-                                             
-                                             if (!request) {
-                                                 completion(nil, error);
-                                                 return ;
-                                             }
-                                             
-                                             
-                                             [self performRequest:request
-                                                        completion:completion];
-                                             
-                                         }];
-    }
-    else{
+    if (!self.requiresAuthentication) {
         [self performRequest:request
                   completion:completion];
+        return;
     }
     
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.authenticator authenticateRequest:request
+                                        forUser:user
+                                     completion:^(BBARequest *request, NSError *error) {
+                                         
+                                         if (!request) {
+                                             completion(nil, error);
+                                             return ;
+                                         }
+                                         
+                                         
+                                         [self performRequest:request
+                                                   completion:completion];
+                                         
+                                     }];
+    });
     
 }
 
@@ -242,7 +251,7 @@ NSString *const BBAHTTPVersion11 = @"HTTP/1.1";
                         dispatch_async(dispatch_get_main_queue(), ^{
                             completion(nil, connectionError);
                         });
-
+                        
                     }];
     
     [dataTask resume];
