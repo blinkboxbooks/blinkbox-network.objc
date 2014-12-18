@@ -223,6 +223,11 @@ NSString *const BBAHTTPVersion11 = @"HTTP/1.1";
     
     NSURLSession *s = self.session;
     
+    NSLog(@"\rconnection to %@, \rparameters %@, \rbody %@",
+          request.URLRequest.URL,
+          request.URLRequest.allHTTPHeaderFields,
+          [[NSString alloc] initWithData:request.URLRequest.HTTPBody encoding:NSUTF8StringEncoding]);
+    
     NSURLSessionDataTask *dataTask;
     dataTask = [s dataTaskWithRequest:request.URLRequest
                     completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {

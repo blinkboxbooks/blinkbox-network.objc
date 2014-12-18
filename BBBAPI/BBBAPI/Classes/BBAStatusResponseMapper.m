@@ -56,7 +56,7 @@
             break;
         }
         default:{
-            NSAssert(NO, @"unexpected HTTP status");
+            NSAssert(NO, @"unexpected HTTP status: %@", @(response.statusCode));
             break;
         }
     }

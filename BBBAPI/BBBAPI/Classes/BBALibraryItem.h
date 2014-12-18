@@ -17,6 +17,7 @@
 @interface BBALibraryItem : NSObject
 
 @property (nonatomic, copy) NSString *isbn;
+@property (nonatomic, copy) NSString *guid;
 @property (nonatomic, copy) NSString *identifier;
 
 @property (nonatomic, assign) BBAPurchaseStatus purchaseStatus;
