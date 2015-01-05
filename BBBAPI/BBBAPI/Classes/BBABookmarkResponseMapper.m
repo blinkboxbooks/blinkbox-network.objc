@@ -24,13 +24,21 @@
     return formatter;
 
 }
+
 - (instancetype) initWithJSON:(NSDictionary *)JSON{
     self = [self init];
     if (self) {
 
-        NSArray *JSONBookmarks = JSON[@"bookmarks"];
-        if (!JSONBookmarks && JSON) {
+        NSArray *JSONBookmarks;
+        NSString *responseType = JSON[@"type"];
+        if ([responseType isEqualToString:@"urn:blinkboxbooks:schema:list"]) {
+            JSONBookmarks = JSON[@"bookmarks"];
+        }
+        else if ([responseType isEqualToString:@"urn:blinkboxbooks:schema:bookmark"]){
             JSONBookmarks = @[JSON];
+        }
+        else{
+            JSONBookmarks = @[];
         }
 
         _bookmarks = [BBABookmarkItem bookmarkItemsWithJSONArray:JSONBookmarks];
@@ -83,7 +91,7 @@
 
 - (id) responseForType:(BBABookmarkResponseMapperType)type
                   data:(NSData *)data
-               response:(NSURLResponse *)response
+              response:(NSURLResponse *)response
                  error:(NSError *__autoreleasing *)error{
     switch (type) {
         case BBABookmarkResponseMapperTypeGetMultipleBookmarks:
@@ -107,8 +115,8 @@
                                                   error:error];
         case BBABookmarkResponseMapperTypeUpdateBookmark:
             return @([self bookmarkUPDATERResponseWithData:data
-                                               response:response
-                                                  error:error]);
+                                                  response:response
+                                                     error:error]);
         default:
             break;
     }
@@ -116,8 +124,8 @@
 }
 
 - (BBABookmarkResponse *) multipleBookmarksGETResponseWithData:(NSData *)data
-                                response:(NSURLResponse *)response
-                                   error:(NSError *__autoreleasing *)error{
+                                                      response:(NSURLResponse *)response
+                                                         error:(NSError *__autoreleasing *)error{
     NSHTTPURLResponse *httpResonse = (NSHTTPURLResponse *)response;
 
     if (httpResonse.statusCode == BBAHTTPSuccess) {
@@ -184,8 +192,8 @@
 }
 
 - (BOOL) bookmarkUPDATERResponseWithData:(NSData *)data
-                                             response:(NSURLResponse *)response
-                                                error:(NSError *__autoreleasing *)error{
+                                response:(NSURLResponse *)response
+                                   error:(NSError *__autoreleasing *)error{
     NSHTTPURLResponse *httpResonse = (NSHTTPURLResponse *)response;
     if (httpResonse.statusCode == BBAHTTPSuccess /* 200 */) {
         return YES;
