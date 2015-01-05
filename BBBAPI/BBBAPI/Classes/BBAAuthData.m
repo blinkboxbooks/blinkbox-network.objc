@@ -96,43 +96,43 @@
 
 - (NSString *) description{
     return [NSString stringWithFormat:
-            @"%@\r"
-            @"accessToken : %@\r"
-            @"tokenType : %@\r"
-            @"accessTokenExpirationDate : %@\r"
-            @"refreshToken : %@\r"
-            @"userId : %@\r"
-            @"userURI : %@\r"
-            @"userUserName : %@\r"
-            @"userFirstName : %@\r"
-            @"userLastName : %@\r"
-            @"clientId : %@\r"
-            @"clientSecret : %@\r"
-            @"clientURI : %@\r"
-            @"clientName : %@\r"
-            @"clientBrand : %@\r"
-            @"clientModel : %@\r"
-            @"clientOS : %@\r"
-            @"lastUsedDate : %@\r"
-            @"successful : %@\r",
-            self.accessToken,
-            self.tokenType,
-            self.accessTokenExpirationDate,
-            self.refreshToken,
-            self.userId,
-            self.userURI,
-            self.userUserName,
-            self.userFirstName,
-            self.userLastName,
-            self.clientId,
-            self.clientSecret,
-            self.clientURI,
-            self.clientName,
-            self.clientBrand,
-            self.clientModel,
-            self.clientOS,
-            self.lastUsedDate,
-            self.successful];
+            @"\r"
+            @"1. accessToken : %@\r"
+            @"2. tokenType : %@\r"
+            @"3. accessTokenExpirationDate : %@\r"
+            @"4. refreshToken : %@\r"
+            @"5. userId : %@\r"
+            @"6. userURI : %@\r"
+            @"7. userUserName : %@\r"
+            @"8. userFirstName : %@\r"
+            @"9. userLastName : %@\r"
+            @"10. clientId : %@\r"
+            @"11. clientSecret : %@\r"
+            @"12. clientURI : %@\r"
+            @"13. clientName : %@\r"
+            @"14. clientBrand : %@\r"
+            @"15. clientModel : %@\r"
+            @"16. clientOS : %@\r"
+            @"17. lastUsedDate : %@\r"
+            @"18. successful : %@\r",
+            /*1*/ self.accessToken,
+            /*2*/self.tokenType,
+            /*3*/self.accessTokenExpirationDate,
+            /*4*/self.refreshToken,
+            /*5*/self.userId,
+            /*6*/self.userURI,
+            /*7*/self.userUserName,
+            /*8*/self.userFirstName,
+            /*9*/self.userLastName,
+            /*10*/self.clientId,
+            /*11*/self.clientSecret,
+            /*12*/self.clientURI,
+            /*13*/self.clientName,
+            /*14*/self.clientBrand,
+            /*15*/self.clientModel,
+            /*16*/self.clientOS,
+            /*17*/self.lastUsedDate,
+            /*18*/@(self.successful)];
 }
 
 @end

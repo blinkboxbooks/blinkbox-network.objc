@@ -100,7 +100,21 @@
     
     NSURL *baseURL = self.endpoints[@(domain)];
     
-    NSAssert(baseURL, @"No baseURL for domain %ld", domain);
+    if (!self.delegate) {
+        NSAssert(baseURL, @"No baseURL for domain %ld", domain);
+        return baseURL;
+    }
+    
+    NSURL *overridenURL;
+    
+    
+    overridenURL = [self.delegate configuration:self
+                                overrideBaseURL:baseURL
+                                      forDomain:domain];
+    
+    if (overridenURL) {
+        return overridenURL;
+    }
     
     return baseURL;
 }

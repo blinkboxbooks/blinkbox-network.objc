@@ -21,6 +21,8 @@ typedef NS_ENUM(NSInteger, BBAAPIDomain) {
     BBAAPIDomainREST = 1,
 };
 
+@protocol BBANetworkConfigurationDelegate;
+
 /**
  *  A `BBANetworkConfiguraiton` object provides default values as well as allows 
  *  to customise basic variables of the network stack, suck as endpoints addresses, 
@@ -89,5 +91,30 @@ typedef NS_ENUM(NSInteger, BBAAPIDomain) {
  *  @return new instance of apprioprate mapper
  */
 - (id<BBAResponseMapping>) newResponseMapperForServiceName:(NSString *)name;
+
+/**
+ *  Object that can customise behavior of the network configuration
+ */
+@property (nonatomic, weak) id<BBANetworkConfigurationDelegate> delegate;
+
+@end
+
+
+@protocol BBANetworkConfigurationDelegate <NSObject>
+@required
+/**
+ *  If assigned, `delegate` is asked to override `baseURL` for a given `domain`.
+ *  If `delegate` returns `nil` from this method, `configuraiton` will use 
+ *  `defaultBaseURL`
+ *
+ *  @param configuration  network configuration who's asking to override it's base url
+ *  @param defaultBaseURL value that will be returns if this method returns `nil`
+ *  @param domain         domain of the URL: auth, general api etc
+ *
+ *  @return overriden base url for network requests or `nil`
+ */
+- (NSURL *) configuration:(BBANetworkConfiguration *)configuration
+          overrideBaseURL:(NSURL *)defaultBaseURL
+                forDomain:(BBAAPIDomain)domain;
 
 @end
