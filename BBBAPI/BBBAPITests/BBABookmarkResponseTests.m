@@ -11,6 +11,10 @@
 #import "BBABookmarkResponseMapper.h"
 #import "BBABookmarkItem.h"
 
+@interface BBABookmarkResponseTests : XCTestCase
+
+@end
+
 @implementation BBABookmarkResponseTests
 
 - (void) testInitWithJSONParsesBookmarkListResponseAsBookmarkList{
