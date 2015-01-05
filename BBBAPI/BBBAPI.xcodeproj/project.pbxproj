@@ -80,6 +80,7 @@
 		401A1DF71A13D78B004FBA41 /* BBATokensResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 401A1DD31A13D78B004FBA41 /* BBATokensResponseMapper.m */; };
 		401A1DF81A13D78B004FBA41 /* BBAUserDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 401A1DD51A13D78B004FBA41 /* BBAUserDetails.m */; };
 		406A216A1A4095B300408A8E /* BBALibraryItemTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 406A21691A4095B300408A8E /* BBALibraryItemTests.m */; };
+		5A0E58EE1A5ADF4E00B10EAE /* BBABookmarkResponseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A0E58ED1A5ADF4E00B10EAE /* BBABookmarkResponseTests.m */; };
 		5A3ECB641A2F67CF00E49DCE /* BBABookmarkServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A3ECB631A2F67CF00E49DCE /* BBABookmarkServiceTests.m */; };
 		5A56A81F1A28E3E10031F2D9 /* BBAKeyServiceMock_SuccessResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A56A81E1A28E3E10031F2D9 /* BBAKeyServiceMock_SuccessResponse.json */; };
 		5A5BDC341A27955A002F859E /* BBAKeyServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5BDC331A27955A002F859E /* BBAKeyServiceTests.m */; };
@@ -239,6 +240,7 @@
 		406A21691A4095B300408A8E /* BBALibraryItemTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBALibraryItemTests.m; sourceTree = "<group>"; };
 		40FB3ABA1A14C7A8005936B5 /* BBBAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBBAPI.h; path = Classes/BBBAPI.h; sourceTree = "<group>"; };
 		424A7BC2C05D8FA3FA551D1B /* Pods-BBBAPITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BBBAPITests.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-BBBAPITests/Pods-BBBAPITests.debug.xcconfig"; sourceTree = "<group>"; };
+		5A0E58ED1A5ADF4E00B10EAE /* BBABookmarkResponseTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBABookmarkResponseTests.m; sourceTree = "<group>"; };
 		5A3ECB631A2F67CF00E49DCE /* BBABookmarkServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBABookmarkServiceTests.m; sourceTree = "<group>"; };
 		5A56A81E1A28E3E10031F2D9 /* BBAKeyServiceMock_SuccessResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = BBAKeyServiceMock_SuccessResponse.json; path = "Key Service Responses/BBAKeyServiceMock_SuccessResponse.json"; sourceTree = "<group>"; };
 		5A5BDC331A27955A002F859E /* BBAKeyServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBAKeyServiceTests.m; sourceTree = "<group>"; };
@@ -327,6 +329,7 @@
 		401A1D371A13D6CB004FBA41 /* BBBAPITests */ = {
 			isa = PBXGroup;
 			children = (
+				5A0E58ED1A5ADF4E00B10EAE /* BBABookmarkResponseTests.m */,
 				406A21691A4095B300408A8E /* BBALibraryItemTests.m */,
 				5ACE48111A37221400546137 /* BBABookmarkItemTests.m */,
 				5A3ECB631A2F67CF00E49DCE /* BBABookmarkServiceTests.m */,
@@ -770,6 +773,7 @@
 				5ACE48121A37221400546137 /* BBABookmarkItemTests.m in Sources */,
 				401A1D701A13D77B004FBA41 /* BBAConnectionTests.m in Sources */,
 				401A1D7C1A13D77B004FBA41 /* BBATokensResponseMapperTests.m in Sources */,
+				5A0E58EE1A5ADF4E00B10EAE /* BBABookmarkResponseTests.m in Sources */,
 				401A1D731A13D77B004FBA41 /* BBALibraryResponseTests.m in Sources */,
 				406A216A1A4095B300408A8E /* BBALibraryItemTests.m in Sources */,
 				401A1D721A13D77B004FBA41 /* BBALibraryResponseMapperTests.m in Sources */,
