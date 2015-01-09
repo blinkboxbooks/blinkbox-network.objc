@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "BBBAPI"
-  s.version      = "0.0.4"
+  s.version      = "0.0.10"
   s.summary      = "iOS / OSX Objective-C library for communicating with the Blinkbox Books API"
 
   s.description  = <<-DESC
@@ -28,5 +28,6 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.dependency "CocoaLumberjack" , '~> 1.9.2'
+  s.dependency "FastEasyMapping", '~>0.5.1'
 
 end

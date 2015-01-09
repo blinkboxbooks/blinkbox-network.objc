@@ -225,12 +225,15 @@ extern NSString * BBANSStringFromBBAContentType(BBAContentType type);
 - (void) testPerformAsksAuthenticatorToAuthenticateRequestIfRequiresAuthentication{
     connection.requiresAuthentication = YES;
     factory.requestToReturn = [BBARequest new];
+    connection.session = session;
+    BBA_PREPARE_ASYNC_TEST();
     [connection perform:(BBAHTTPMethodGET)
              completion:^(id response, NSError *error) {
-                 
+                 XCTAssertTrue(authenticator.wasAskedToAuthenticate);
+                 BBA_FLAG_ASYNC_TEST_COMPLETE();
              }];
-    XCTAssertTrue(authenticator.wasAskedToAuthenticate);
     
+    BBA_WAIT_FOR_ASYNC_TEST();
     
 }
 
@@ -242,13 +245,15 @@ extern NSString * BBANSStringFromBBAContentType(BBAContentType type);
     BBARequest *request = [BBARequest requestWithURLRequest:urlRequest];
     factory.requestToReturn = request;
     authenticator.requestToReturn = request;
-    [connection perform:(BBAHTTPMethodGET) completion:^(id response, NSError *error) {
-        
+    
+    BBA_PREPARE_ASYNC_TEST();
+    [connection perform:(BBAHTTPMethodGET)
+             completion:^(id response, NSError *error) {
+        XCTAssertEqualObjects(session.passedRequest, urlRequest);
+        BBA_FLAG_ASYNC_TEST_COMPLETE();
     }];
     
-    XCTAssertEqualObjects(session.passedRequest, urlRequest);
-    
-    
+    BBA_WAIT_FOR_ASYNC_TEST();
 }
 
 - (void) testPerformThrowsIfResponseMapperIsNil{

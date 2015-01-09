@@ -11,8 +11,30 @@
 #import "BBALibraryService.h"
 #import "BBAAuthenticationServiceConstants.h"
 
+@interface BBAMockNetworkDelegate : NSObject <BBANetworkConfigurationDelegate>
+@property (nonatomic, strong) NSURL *URLToReturn;
+@property (nonatomic, strong) NSURL *passedInURL;
+@property (nonatomic, assign) BBAAPIDomain passedInDomain;
+@property (nonatomic, strong) BBANetworkConfiguration *passedInConfigurtion;
+@property (nonatomic, assign) BOOL wasCalledOverride;
+@end
+
+@implementation BBAMockNetworkDelegate
+
+- (NSURL *) configuration:(BBANetworkConfiguration *)configuration
+          overrideBaseURL:(NSURL *)defaultBaseURL
+                forDomain:(BBAAPIDomain)domain{
+    self.passedInConfigurtion = configuration;
+    self.passedInURL = defaultBaseURL;
+    self.passedInDomain = domain;
+    self.wasCalledOverride = YES;
+    return self.URLToReturn;
+}
+@end
+
 @interface BBANetworkConfigurationTests : XCTestCase{
     BBANetworkConfiguration *configuration;
+    BBAMockNetworkDelegate *delegate;
 }
 
 @end
@@ -24,11 +46,13 @@
 - (void) setUp{
     [super setUp];
     configuration = [BBANetworkConfiguration new];
+    delegate = [BBAMockNetworkDelegate new];
 
 }
 
 - (void) tearDown{
     configuration = nil;
+    delegate = nil;
     [super tearDown];
 }
 
@@ -59,7 +83,7 @@
 
 - (void) testBaseURLforRESTDomainReturnsProperValue{
     XCTAssertEqualObjects([configuration baseURLForDomain:(BBAAPIDomainREST)],
-                          [NSURL URLWithString:@"https://api.blinkboxbooks.com"]);
+                          [NSURL URLWithString:@"https://api.blinkboxbooks.com/service/"]);
 }
 
 - (void) testBaseURLForDomainThrowsOnUnexpectedDomain{
@@ -96,6 +120,32 @@
 
 - (void) testThrowsOnGettingReponseMapperFromUnknownService{
     XCTAssertThrows([configuration newResponseMapperForServiceName:@"service"]);
+}
+
+- (void) testAsksDelegateForBaseURLifAssigned{
+    configuration.delegate = delegate;
+    [configuration baseURLForDomain:(BBAAPIDomainREST)];
+    XCTAssertTrue(delegate.wasCalledOverride);
+}
+
+- (void) testReturnsUrlFromDelegateIfDelegateReturnsNonNil{
+    configuration.delegate = delegate;
+    delegate.URLToReturn = [NSURL URLWithString:@"http://www.blinkbox.com"];
+    XCTAssertEqualObjects([configuration baseURLForDomain:(BBAAPIDomainREST)],
+                          [NSURL URLWithString:@"http://www.blinkbox.com"]);
+}
+
+- (void) testReturnsDefaultOfDelegateReturnsNil{
+    configuration.delegate = delegate;
+    delegate.URLToReturn = nil;
+    XCTAssertEqualObjects([configuration baseURLForDomain:(BBAAPIDomainAuthentication)],
+                          [NSURL URLWithString:@"https://auth.blinkboxbooks.com"]);
+}
+
+- (void) testPassesTheDomainToDelegate{
+    configuration.delegate = delegate;
+    [configuration baseURLForDomain:(BBAAPIDomainAuthentication)];
+    XCTAssertEqual(delegate.passedInDomain, BBAAPIDomainAuthentication);
 }
 
 @end

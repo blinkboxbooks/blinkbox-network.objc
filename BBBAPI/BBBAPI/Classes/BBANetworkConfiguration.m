@@ -91,7 +91,7 @@
     }
     
     _endpoints = [NSMutableDictionary new];
-    _endpoints[@(BBAAPIDomainREST)] = [NSURL URLWithString:@"https://api.blinkboxbooks.com"];
+    _endpoints[@(BBAAPIDomainREST)] = [NSURL URLWithString:@"https://api.blinkboxbooks.com/service/"];
     _endpoints[@(BBAAPIDomainAuthentication)] = [NSURL URLWithString:@"https://auth.blinkboxbooks.com"];
     return _endpoints;
 }
@@ -100,7 +100,21 @@
     
     NSURL *baseURL = self.endpoints[@(domain)];
     
-    NSAssert(baseURL, @"No baseURL for domain %ld", domain);
+    if (!self.delegate) {
+        NSAssert(baseURL, @"No baseURL for domain %ld", domain);
+        return baseURL;
+    }
+    
+    NSURL *overridenURL;
+    
+    
+    overridenURL = [self.delegate configuration:self
+                                overrideBaseURL:baseURL
+                                      forDomain:domain];
+    
+    if (overridenURL) {
+        return overridenURL;
+    }
     
     return baseURL;
 }

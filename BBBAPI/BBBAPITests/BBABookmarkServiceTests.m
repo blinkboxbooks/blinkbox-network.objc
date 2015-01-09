@@ -62,7 +62,7 @@
 }
 
 - (void) testGetBookmarksSetsDateParameterWhenPassedDateIsNonNil{
-
+    
     [service setConnectionClass:[BBAMockConnection class]];
     NSDate *date = [NSDate dateWithTimeIntervalSince1970:0];
     NSString *expectedDate = @"1970-01-01T00:00:00Z";
@@ -71,58 +71,58 @@
                              typesMask:BBABookmarkTypeAll
                                   user:[BBAUserDetails new]
                             completion:^(NSArray *bookmarkChanges, NSDate *syncDate, NSError *error) {
-
+                                
                             }];
-
+    
     XCTAssertEqual([BBAMockConnection mockedConnections].count, 1);
-
+    
     BBAMockConnection *mockedConnection;
     mockedConnection = [[BBAMockConnection mockedConnections]firstObject];
-
+    
     id passedDateParmater;
     passedDateParmater = [mockedConnection passedParameters][@"lastSyncDateTime"];
-
+    
     XCTAssertEqualObjects(passedDateParmater, expectedDate);
 }
 
 - (void) testGetBookmarksDoesNotSetDateParameterWhenPassedDateIsNil{
     [service setConnectionClass:[BBAMockConnection class]];
-
+    
     [service getBookmarkChangesForItem:[BBALibraryItem new]
                              afterDate:nil
                              typesMask:BBABookmarkTypeAll
                                   user:[BBAUserDetails new]
                             completion:^(NSArray *bookmarkChanges, NSDate *syncDate, NSError *error) {
-
+                                
                             }];
-
+    
     XCTAssertEqual([BBAMockConnection mockedConnections].count, 1);
-
+    
     BBAMockConnection *mockedConnection;
     mockedConnection = [[BBAMockConnection mockedConnections]firstObject];
-
+    
     NSDate *passedDateParmater;
     passedDateParmater = [mockedConnection passedParameters][@"lastSyncDateTime"];
-
+    
     XCTAssertNil(passedDateParmater);
 }
 
 - (void) testGetBookmarksSetsCorrectBookmarkTypeParametersForBookmarkTypeBitmaskBookmarkTypeAll{
     [service setConnectionClass:[BBAMockConnection class]];
-
+    
     [service getBookmarkChangesForItem:[BBALibraryItem new]
                              afterDate:nil
                              typesMask:BBABookmarkTypeAll
                                   user:[BBAUserDetails new]
                             completion:^(NSArray *bookmarkChanges, NSDate *syncDate, NSError *error) {
-
+                                
                             }];
-
+    
     XCTAssertEqual([BBAMockConnection mockedConnections].count, 1);
-
+    
     BBAMockConnection *mockedConnection;
     mockedConnection = [[BBAMockConnection mockedConnections]firstObject];
-
+    
     id passedBookmarkTypeParamater;
     passedBookmarkTypeParamater = [mockedConnection passedArrayParameters][@"bookmarkType"];
     XCTAssertTrue([passedBookmarkTypeParamater containsObject:@"BOOKMARK"]);
@@ -134,20 +134,20 @@
 
 - (void) testGetBookmarksSetsCorrectBookmarkTypeParametersForBookmarkTypeBitmaskBookmarkTypeBookmark{
     [service setConnectionClass:[BBAMockConnection class]];
-
+    
     [service getBookmarkChangesForItem:[BBALibraryItem new]
                              afterDate:nil
                              typesMask:BBABookmarkTypeBookmark
                                   user:[BBAUserDetails new]
                             completion:^(NSArray *bookmarkChanges, NSDate *syncDate, NSError *error) {
-
+                                
                             }];
-
+    
     XCTAssertEqual([BBAMockConnection mockedConnections].count, 1);
-
+    
     BBAMockConnection *mockedConnection;
     mockedConnection = [[BBAMockConnection mockedConnections]firstObject];
-
+    
     NSArray *passedBookmarkTypeParamater;
     passedBookmarkTypeParamater = [mockedConnection passedArrayParameters][@"bookmarkType"];
     XCTAssertTrue([passedBookmarkTypeParamater containsObject:@"BOOKMARK"]);
@@ -156,20 +156,20 @@
 
 - (void) testGetBookmarksSetsCorrectBookmarkTypeParametersForBookmarkTypeBitmaskBookmarkTypeHighlight{
     [service setConnectionClass:[BBAMockConnection class]];
-
+    
     [service getBookmarkChangesForItem:[BBALibraryItem new]
                              afterDate:nil
                              typesMask:BBABookmarkTypeHighlight
                                   user:[BBAUserDetails new]
                             completion:^(NSArray *bookmarkChanges, NSDate *syncDate, NSError *error) {
-
+                                
                             }];
-
+    
     XCTAssertEqual([BBAMockConnection mockedConnections].count, 1);
-
+    
     BBAMockConnection *mockedConnection;
     mockedConnection = [[BBAMockConnection mockedConnections]firstObject];
-
+    
     NSArray *passedBookmarkTypeParamater;
     passedBookmarkTypeParamater = [mockedConnection passedArrayParameters][@"bookmarkType"];
     XCTAssertTrue([passedBookmarkTypeParamater containsObject:@"HIGHLIGHT"]);
@@ -178,20 +178,20 @@
 
 - (void) testGetBookmarksSetsCorrectBookmarkTypeParametersForBookmarkTypeBitmaskBookmarkTypeHighlightAndBookmark{
     [service setConnectionClass:[BBAMockConnection class]];
-
+    
     [service getBookmarkChangesForItem:[BBALibraryItem new]
                              afterDate:nil
                              typesMask:BBABookmarkTypeHighlight | BBABookmarkTypeBookmark
                                   user:[BBAUserDetails new]
                             completion:^(NSArray *bookmarkChanges, NSDate *syncDate, NSError *error) {
-
+                                
                             }];
-
+    
     XCTAssertEqual([BBAMockConnection mockedConnections].count, 1);
-
+    
     BBAMockConnection *mockedConnection;
     mockedConnection = [[BBAMockConnection mockedConnections]firstObject];
-
+    
     NSArray *passedBookmarkTypeParamater;
     passedBookmarkTypeParamater = [mockedConnection passedArrayParameters][@"bookmarkType"];
     XCTAssertTrue([passedBookmarkTypeParamater containsObject:@"HIGHLIGHT"]);
@@ -201,42 +201,42 @@
 
 - (void) testGetBookmarksDoesNotSetBookParameterForNilLibraryItem{
     [service setConnectionClass:[BBAMockConnection class]];
-
+    
     [service getBookmarkChangesForItem:nil
                              afterDate:nil
                              typesMask:BBABookmarkTypeHighlight | BBABookmarkTypeBookmark
                                   user:[BBAUserDetails new]
                             completion:^(NSArray *bookmarkChanges, NSDate *syncDate, NSError *error) {
-
+                                
                             }];
-
+    
     BBAMockConnection *mockedConnection;
     mockedConnection = [[BBAMockConnection mockedConnections]firstObject];
-
+    
     NSArray *passedBookParamater;
     passedBookParamater = [mockedConnection passedArrayParameters][@"book"];
     XCTAssertNil(passedBookParamater);
-
+    
 }
 
 - (void) testGetBookmarksSetsCorrectBookParameterForSpecifiedLibraryItem{
     [service setConnectionClass:[BBAMockConnection class]];
-
+    
     BBALibraryItem *libraryItem;
     libraryItem = [BBALibraryItem new];
     libraryItem.isbn = @"isbn";
-
+    
     [service getBookmarkChangesForItem:libraryItem
                              afterDate:nil
                              typesMask:BBABookmarkTypeHighlight | BBABookmarkTypeBookmark
                                   user:[BBAUserDetails new]
                             completion:^(NSArray *bookmarkChanges, NSDate *syncDate, NSError *error) {
-
+                                
                             }];
-
+    
     BBAMockConnection *mockedConnection;
     mockedConnection = [[BBAMockConnection mockedConnections]firstObject];
-
+    
     NSArray *passedBookParamater;
     passedBookParamater = [mockedConnection passedParameters][@"book"];
     XCTAssertEqualObjects(@"isbn", passedBookParamater);
@@ -246,13 +246,13 @@
     [self stubBookmarkRequestsEndpoint:@"/my/bookmarks"
                         withStatusCode:200
                       responseFromFile:@"get_my_bookmarks_success.json"];
-
-
+    
+    
     BBA_PREPARE_ASYNC_TEST();
     BBALibraryItem *libraryItem;
     libraryItem = [BBALibraryItem new];
     libraryItem.isbn = @"isbn";
-
+    
     [service getBookmarkChangesForItem:libraryItem
                              afterDate:nil
                              typesMask:BBABookmarkTypeHighlight | BBABookmarkTypeBookmark
@@ -263,7 +263,7 @@
                                 XCTAssertNotNil(syncDate);
                                 BBA_FLAG_ASYNC_TEST_COMPLETE();
                             }];
-
+    
     BBA_WAIT_FOR_ASYNC_TEST();
 }
 
@@ -272,7 +272,7 @@
                         withStatusCode:500
                       responseFromFile:nil];
     BBA_PREPARE_ASYNC_TEST();
-
+    
     BBALibraryItem *item = [BBALibraryItem new];
     BBAUserDetails *user = [BBAUserDetails new];
     [service getBookmarkChangesForItem:item
@@ -285,9 +285,9 @@
                                 XCTAssertNil(syncDate);
                                 XCTAssertEqual(error.code, BBAAPIServerError);
                             }];
-
+    
     BBA_WAIT_FOR_ASYNC_TEST();
-
+    
 }
 
 - (void) testGetBookmarksReturnsErrorGivenBadRequest{
@@ -295,7 +295,7 @@
                         withStatusCode:400
                       responseFromFile:nil];
     BBA_PREPARE_ASYNC_TEST();
-
+    
     BBALibraryItem *item = [BBALibraryItem new];
     BBAUserDetails *user = [BBAUserDetails new];
     [service getBookmarkChangesForItem:item
@@ -308,7 +308,7 @@
                                 XCTAssertNil(syncDate);
                                 XCTAssertEqual(error.code, BBAAPIErrorBadRequest);
                             }];
-
+    
     BBA_WAIT_FOR_ASYNC_TEST();
 }
 
@@ -319,7 +319,7 @@
                                           typesMask:BBABookmarkTypeAll
                                                user:nil
                                          completion:^(BOOL success, NSError *error) {
-
+                                             
                                          }]);
 }
 
@@ -328,7 +328,7 @@
                                           typesMask:BBABookmarkTypeAll
                                                user:[BBAUserDetails new]
                                          completion:^(BOOL success, NSError *error) {
-
+                                             
                                          }]);
 }
 
@@ -341,21 +341,21 @@
 
 - (void) testDeleteBookmarksSetsCorrectBookmarkTypeParametersForBookmarkTypeBitmaskBookmarkTypeHighlight{
     [service setConnectionClass:[BBAMockConnection class]];
-
+    
     BBALibraryItem *item = [BBALibraryItem new];
     item.isbn = @"isbn";
     [service deleteBookmarksForItem:item
                           typesMask:BBABookmarkTypeBookmark
                                user:[BBAUserDetails new]
                          completion:^(BOOL success, NSError *error) {
-
+                             
                          }];
-
+    
     XCTAssertEqual([BBAMockConnection mockedConnections].count, 1);
-
+    
     BBAMockConnection *mockedConnection;
     mockedConnection = [[BBAMockConnection mockedConnections]firstObject];
-
+    
     NSArray *passedBookmarkTypeParamater;
     passedBookmarkTypeParamater = [mockedConnection passedArrayParameters][@"bookmarkType"];
     XCTAssertTrue([passedBookmarkTypeParamater containsObject:@"BOOKMARK"]);
@@ -364,24 +364,24 @@
 
 - (void) testDeleteBookmarksSetsCorrectBookParamater{
     [service setConnectionClass:[BBAMockConnection class]];
-
+    
     BBALibraryItem *item = [BBALibraryItem new];
     item.isbn = @"isbn";
     [service deleteBookmarksForItem:item
                           typesMask:BBABookmarkTypeBookmark
                                user:[BBAUserDetails new]
                          completion:^(BOOL success, NSError *error) {
-
+                             
                          }];
-
+    
     XCTAssertEqual([BBAMockConnection mockedConnections].count, 1);
-
+    
     BBAMockConnection *mockedConnection;
     mockedConnection = [[BBAMockConnection mockedConnections]firstObject];
-
+    
     NSArray *passedBookParamater;
     passedBookParamater = [mockedConnection passedParameters][@"book"];
-
+    
     XCTAssertEqualObjects(passedBookParamater, @"isbn");
 }
 
@@ -426,32 +426,32 @@
     XCTAssertThrows([service deleteBookmark:nil
                                        user:[BBAUserDetails new]
                                  completion:^(BOOL success, NSError *error) {
-
+                                     
                                  }]);
-
+    
 }
 
 - (void) testDeleteBookmarkThrowsWithNilCompletion{
     XCTAssertThrows([service deleteBookmark:[BBABookmarkItem new]
                                        user:[BBAUserDetails new]
                                  completion:nil]);
-
+    
 }
 
 - (void) testDeleteBookmarkCreatesConnectionWithItemIdentifierInURL{
     BBABookmarkItem *item = [BBABookmarkItem new];
     item.identifier = @"1";
     [service setConnectionClass:[BBAMockConnection class]];
-
+    
     [service deleteBookmark:item
                        user:[BBAUserDetails new]
                  completion:^(BOOL success, NSError *error) {
-
+                     
                  }];
-
+    
     XCTAssertEqual([BBAMockConnection mockedConnections].count, 1);
     BBAMockConnection *mockedConnection = [BBAMockConnection mockedConnections][0];
-    NSString *expectedPath = [NSString stringWithFormat:@"/my/bookmarks/%@", item.identifier];
+    NSString *expectedPath = [NSString stringWithFormat:@"/service/my/bookmarks/%@", item.identifier];
     XCTAssertEqualObjects([mockedConnection.URL path], expectedPath);
 }
 
@@ -490,7 +490,7 @@
                                  forItem:[BBALibraryItem new]
                                     user:[BBAUserDetails new]
                               completion:^(BBABookmarkItem *bookmarkItem, NSError *error) {
-
+                                  
                               }]);
 }
 
@@ -499,7 +499,7 @@
                                  forItem:nil
                                     user:[BBAUserDetails new]
                               completion:^(BBABookmarkItem *bookmarkItem, NSError *error) {
-
+                                  
                               }]);
 }
 
@@ -508,7 +508,7 @@
                                  forItem:[BBALibraryItem new]
                                     user:nil
                               completion:^(BBABookmarkItem *bookmarkItem, NSError *error) {
-
+                                  
                               }]);
 }
 
@@ -525,20 +525,20 @@
     bookmarkItem.bookmarkType = @"HIGHLIGHT";
     bookmarkItem.position = @"a cfi";
     bookmarkItem.readingPercentage = @99;
-
+    
     BBALibraryItem *libraryItem = [BBALibraryItem new];
     libraryItem.isbn = @"isbn";
-
+    
     [service setConnectionClass:[BBAMockConnection class]];
-
+    
     [service addBookMark:bookmarkItem
                  forItem:libraryItem
                     user:[BBAUserDetails new]
               completion:^(BBABookmarkItem *bookmarkItem, NSError *error) {
-
+                  
               }];
-
-
+    
+    
     XCTAssertEqual([BBAMockConnection mockedConnections].count, 1);
     BBAMockConnection *mockedConnection = [BBAMockConnection mockedConnections][0];
     XCTAssertEqualObjects(mockedConnection.passedParameters[@"book"], bookmarkItem.book);
@@ -551,25 +551,28 @@
     [self stubBookmarkRequestsEndpoint:@"/my/bookmarks"
                         withStatusCode:201
                       responseFromFile:@"create_bookmark_success.json"];
-
-
+    
+    
     BBA_PREPARE_ASYNC_TEST();
-
+    
     BBABookmarkItem *bookmarkItem = [BBABookmarkItem new];
     bookmarkItem.book = @"isbn";
     bookmarkItem.bookmarkType = @"HIGHLIGHT";
     bookmarkItem.position = @"a cfi";
     bookmarkItem.readingPercentage = @99;
-
+    
     BBALibraryItem *libraryItem;
     libraryItem = [BBALibraryItem new];
     libraryItem.isbn = @"isbn";
-
+    
     [service addBookMark:bookmarkItem
                  forItem:libraryItem
                     user:[BBAUserDetails new]
               completion:^(BBABookmarkItem *bookmarkItem, NSError *error) {
-
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-retain-cycles"
+                  
+                  
                   XCTAssertEqualObjects(bookmarkItem.type, @"urn:blinkboxbooks:schema:bookmark");
                   XCTAssertEqualObjects(bookmarkItem.guid, @"urn:blinkboxbooks:id:bookmark:238630");
                   XCTAssertEqualObjects(bookmarkItem.identifier, @"238630");
@@ -579,6 +582,7 @@
                   XCTAssertEqualObjects(bookmarkItem.readingPercentage, @79);
                   XCTAssertEqualObjects(bookmarkItem.deleted, @0);
                   XCTAssertNil(error);
+#pragma clang diagnostic pop
                   BBA_FLAG_ASYNC_TEST_COMPLETE();
               }];
     
@@ -615,7 +619,7 @@
     XCTAssertThrows([service updateBookMark:nil
                                        user:[BBAUserDetails new]
                                  completion:^(BOOL success, NSError *error) {
-
+                                     
                                  }]);
 }
 
@@ -623,7 +627,7 @@
     XCTAssertThrows([service updateBookMark:[BBABookmarkItem new]
                                        user:nil
                                  completion:^(BOOL success, NSError *error) {
-
+                                     
                                  }]);
 }
 
@@ -640,19 +644,19 @@
     bookmarkItem.position = @"a cfi";
     bookmarkItem.readingPercentage = @99;
     bookmarkItem.identifier = @"1";
-
+    
     BBALibraryItem *libraryItem = [BBALibraryItem new];
     libraryItem.isbn = @"isbn";
-
+    
     [service setConnectionClass:[BBAMockConnection class]];
-
+    
     [service updateBookMark:bookmarkItem
-                    user:[BBAUserDetails new]
-              completion:^(BOOL success, NSError *error) {
-
-              }];
-
-
+                       user:[BBAUserDetails new]
+                 completion:^(BOOL success, NSError *error) {
+                     
+                 }];
+    
+    
     XCTAssertEqual([BBAMockConnection mockedConnections].count, 1);
     BBAMockConnection *mockedConnection = [BBAMockConnection mockedConnections][0];
     XCTAssertEqualObjects(mockedConnection.passedParameters[@"book"], bookmarkItem.book);
@@ -665,21 +669,21 @@
     [self stubBookmarkRequestsEndpoint:@"/my/bookmarks/1"
                         withStatusCode:200
                       responseFromFile:@"update_bookmark_success.json"];
-
-
+    
+    
     BBA_PREPARE_ASYNC_TEST();
-
+    
     BBABookmarkItem *bookmarkItem = [BBABookmarkItem new];
     bookmarkItem.book = @"isbn";
     bookmarkItem.bookmarkType = @"HIGHLIGHT";
     bookmarkItem.position = @"a cfi";
     bookmarkItem.readingPercentage = @99;
     bookmarkItem.identifier = @"1";
-
+    
     BBALibraryItem *libraryItem;
     libraryItem = [BBALibraryItem new];
     libraryItem.isbn = @"isbn";
-
+    
     [service updateBookMark:bookmarkItem
                        user:[BBAUserDetails new]
                  completion:^(BOOL success, NSError *error) {
@@ -687,7 +691,7 @@
                      XCTAssertNil(error);
                      BBA_FLAG_ASYNC_TEST_COMPLETE();
                  }];
-
+    
     
     BBA_WAIT_FOR_ASYNC_TEST();
 }
@@ -721,7 +725,7 @@
 - (void) assertUpdateBookmarkFailsWithErrorCode:(NSInteger)errorCode
                                  withStatusCode:(int)statusCode
                                responseFromFile:(NSString *)responseFile{
-
+    
     BBABookmarkItem *bookmarkItem = [BBABookmarkItem new];
     bookmarkItem.book = @"isbn";
     bookmarkItem.identifier = @"1";
@@ -731,7 +735,7 @@
     [self stubBookmarkRequestsEndpoint:@"/my/bookmarks/1"
                         withStatusCode:statusCode
                       responseFromFile:responseFile];
-
+    
     BBA_PREPARE_ASYNC_TEST();
     [service updateBookMark:bookmarkItem
                        user:[BBAUserDetails new]
@@ -740,8 +744,8 @@
                      XCTAssertEqual(error.code, errorCode);
                      BBA_FLAG_ASYNC_TEST_COMPLETE();
                  }];
-
-
+    
+    
     BBA_WAIT_FOR_ASYNC_TEST();
     
 }
@@ -751,7 +755,7 @@
                                responseFromFile:(NSString *)responseFile{
     BBALibraryItem *libraryItem = [BBALibraryItem new];
     libraryItem.isbn = @"isbn";
-
+    
     BBABookmarkItem *bookmarkItem = [BBABookmarkItem new];
     bookmarkItem.book = @"isbn";
     bookmarkItem.bookmarkType = @"HIGHLIGHT";
@@ -760,18 +764,22 @@
     [self stubBookmarkRequestsEndpoint:@"/my/bookmarks"
                         withStatusCode:statusCode
                       responseFromFile:responseFile];
-
+    
     BBA_PREPARE_ASYNC_TEST();
     [service addBookMark:bookmarkItem
                  forItem:libraryItem
                     user:[BBAUserDetails new]
               completion:^(BBABookmarkItem *bookmarkItem, NSError *error) {
                   BBA_FLAG_ASYNC_TEST_COMPLETE();
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-retain-cycles"
+                  
                   XCTAssertNil(bookmarkItem);
                   XCTAssertEqual(error.code, errorCode);
+#pragma clang diagnostic pop
               }];
     BBA_WAIT_FOR_ASYNC_TEST();
-
+    
 }
 
 
@@ -779,14 +787,14 @@
                          withErrorCode:(NSInteger)errorCode
                         withStatusCode:(int)statusCode
                       responseFromFile:(NSString *)responseFile{
-
+    
     BBALibraryItem *item = [BBALibraryItem new];
     item.isbn = @"isbn";
-
+    
     [self stubBookmarkRequestsEndpoint:@"/my/bookmarks"
                         withStatusCode:statusCode
                       responseFromFile:responseFile];
-
+    
     BBA_PREPARE_ASYNC_TEST();
     [service deleteBookmarksForItem:item
                           typesMask:BBABookmarkTypeAll
@@ -803,14 +811,14 @@
                         withErrorCode:(NSInteger)errorCode
                        withStatusCode:(int)statusCode
                      responseFromFile:(NSString *)responseFile{
-
+    
     BBABookmarkItem *item = [BBABookmarkItem new];
     item.identifier = @"1";
-
+    
     [self stubBookmarkRequestsEndpoint:@"/my/bookmarks"
                         withStatusCode:statusCode
                       responseFromFile:responseFile];
-
+    
     BBA_PREPARE_ASYNC_TEST();
     [service deleteBookmark:item
                        user:[BBAUserDetails new]

@@ -50,7 +50,7 @@ NSString *const BBARequestFactoryDomain = @"com.BBA.requestFactoryErrorDomain";
         
         if([parameters count] >0) {
             NSString *queryString = [NSString stringWithFormat:@"?%@",
-                                     [self constructURLEncodedBodyString:parameters]];
+                                     [self constructURLBodyString:parameters encode:YES]];
             NSURL *paramaterURL = [NSURL URLWithString:queryString relativeToURL:url];
             [request setURL:paramaterURL];
             
@@ -153,7 +153,7 @@ NSString *const BBARequestFactoryDomain = @"com.BBA.requestFactoryErrorDomain";
                           error:(NSError * __autoreleasing *)error {
     
     if(contentType == BBAContentTypeURLEncodedForm) {
-        return [[self constructURLEncodedBodyString:parameters] dataUsingEncoding:NSUTF8StringEncoding];
+        return [[self constructURLBodyString:parameters encode:YES] dataUsingEncoding:NSUTF8StringEncoding];
     }
     
     
@@ -180,12 +180,16 @@ NSString *const BBARequestFactoryDomain = @"com.BBA.requestFactoryErrorDomain";
         return data;
     }
     
+    if (contentType == BBAContentTypeURLUnencodedForm) {
+        return [[self constructURLBodyString:parameters encode:NO] dataUsingEncoding:NSUTF8StringEncoding];
+    }
+    
     NSAssert(YES, @"Unrecognized contentType");
     return nil;
 }
 
-- (NSString*) constructURLEncodedBodyString:(NSDictionary*)parameters{
-    if([parameters count]==0) {
+- (NSString*) constructURLBodyString:(NSDictionary*)parameters encode:(BOOL)encode{
+    if([parameters count] == 0) {
         return @"";
     }
     
@@ -193,7 +197,8 @@ NSString *const BBARequestFactoryDomain = @"com.BBA.requestFactoryErrorDomain";
     NSString *format = @"%@=%@";
     
     void (^constructBlock)(NSString *, NSString *) = ^void(NSString *key, NSString *value) {
-        NSString *bodyArgument = [NSString stringWithFormat:format, key, [self URLEncodedString:value]];
+        NSString *valueString = encode ? [self URLEncodedString:value] : value;
+        NSString *bodyArgument = [NSString stringWithFormat:format, key, valueString];
         [bodyStringsArray addObject:bodyArgument];
     };
     

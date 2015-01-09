@@ -91,4 +91,33 @@
     return string;
 }
 
+- (NSString *) linkWithRelationshop:(NSString *)relation{
+    NSParameterAssert(relation);
+    if (!relation) {
+        return nil;
+    }
+    
+    NSString *fullRelation = [NSString stringWithFormat:@"urn:blinkboxbooks:schema:%@",relation];
+    
+    for (BBAItemLink *link in self.links) {
+        if([link.relationship isEqualToString:fullRelation]){
+            return link.address;
+        }
+    }
+    
+    return nil;
+}
+
+- (NSString *) fullMediaURL{
+    return [self linkWithRelationshop:@"fullmedia"];
+}
+
+- (NSString *) mediaKeyURL{
+    return [self linkWithRelationshop:@"mediakey"];
+}
+
+- (NSString *) sampleMediaURL{
+    return [self linkWithRelationshop:@"samplemedia"];
+}
+
 @end

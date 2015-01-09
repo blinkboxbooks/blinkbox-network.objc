@@ -22,6 +22,10 @@ typedef NS_ENUM(NSUInteger, BBAContentType) {
     BBAContentTypeUnknown = -1,
     BBAContentTypeURLEncodedForm = 0,
     BBAContentTypeJSON = 1,
+    /**
+     *  Used in the key service which expects unecoded value but 'encoded' header
+     */
+    BBAContentTypeURLUnencodedForm = 2,
 };
 
 #endif

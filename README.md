@@ -27,3 +27,29 @@ pod install
 ```
 
 in the `BBBAPI` or `BBBTool` directory
+
+
+##Updating Cocoapods version of BBBAPI (v1)
+
+Prerequisites:
+
+a. you have to have [Blinkbox Books pod repo](https://git.mobcastdev.com/iOS/Specs) added as a spec repo in you cocoapods installation [private cocoapods](http://guides.cocoapods.org/making/private-cocoapods.html)
+
+---
+
+1. Pull latest changes from `master` branch
+2. Remember to add all dependencies of `BBBAPI` target to `BBBAPI.podspec` (all pods in podspec for BBBAPI)
+4. Modify `BBBAPI.podspec` to set new version of the pod
+5. Commit, add new git-tag with version the same as in the `BBBAPI.podspec`
+6. Push to upstream-master
+7. Execute this command from the `BBBAPI` root directory:
+```
+pod repo push BBB BBBAPI.podspec --allow-warnings
+```
+
+6. If it doesn't push (branch name is wrong, we need to fix this, see error below), go to `~/.cocoapods/BBB` and do `git push` yourself.
+
+```
+error: src refspec master does not match any.
+error: failed to push some refs to 'git@git.mobcastdev.com:iOS/Specs.git'
+```

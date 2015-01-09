@@ -39,7 +39,7 @@ extern BBAVisiblityStatus BBAVisibiliyStatusFromString(NSString *status);
 
 #pragma mark - Functions tests
 
-
+    
 - (void) testReadingStatusMappingFunction{
 
     BBA_DISABLE_ASSERTIONS();
@@ -116,6 +116,13 @@ extern BBAVisiblityStatus BBAVisibiliyStatusFromString(NSString *status);
                   error:nil];
     BBALibraryItem *item = [response.changes firstObject];
     XCTAssertEqualObjects(item.identifier,@"32060+34756", @"id should be parsed");
+}
+
+- (void) testGuidOfTheItem{
+    [response parseJSON:[self validDataSingleItem]
+                  error:nil];
+    BBALibraryItem *item = [response.changes firstObject];
+    XCTAssertEqualObjects(item.guid,@"urn:blinkboxbooks:id:libraryitem:32060+34756", @"guid should be parsed");
 }
 
 - (void) testMappingOfStatuses{

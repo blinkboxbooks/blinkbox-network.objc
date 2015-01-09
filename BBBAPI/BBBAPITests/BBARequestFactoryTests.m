@@ -296,6 +296,30 @@
                           [expectedURL absoluteString]);
 }
 
+- (void) testRequestFactoryDoesntEncodeSpecialCharactersWhenUncodedContentTypeIsPassed{
+    BBARequest *request;
+    request = [requestFactory requestWith:validURL
+                               parameters:@{@"key" : @"valu/ueś"}
+                                  headers:@{}
+                                   method:BBAHTTPMethodPOST
+                              contentType:BBAContentTypeURLUnencodedForm
+                                    error:nil];
+    NSData *expectedValue = [@"key=valu/ueś" dataUsingEncoding:NSUTF8StringEncoding];
+    XCTAssertEqualObjects(expectedValue, request.URLRequest.HTTPBody);
+}
+
+- (void) testRequestFactoryDoesEncodeSpecialCharactersWhenUncodedContentTypeIsPassed{
+    BBARequest *request;
+    request = [requestFactory requestWith:validURL
+                               parameters:@{@"key" : @"valu/ueś"}
+                                  headers:@{}
+                                   method:BBAHTTPMethodPOST
+                              contentType:BBAContentTypeURLEncodedForm
+                                    error:nil];
+    NSData *expectedValue = [@"key=valu%2Fue%C5%9B" dataUsingEncoding:NSUTF8StringEncoding];
+    XCTAssertEqualObjects(expectedValue, request.URLRequest.HTTPBody);
+}
+
 - (void) testRequestFactoryAssertsWithInvalidHTTPMethod{
     XCTAssertThrows([requestFactory requestWith:validURL
                                      parameters:@{}
