@@ -32,8 +32,10 @@ NSString *const BBACatalogureErrorDomain = @"com.BBB.CatalogueErrorDomain";
         return;
     }
     
+    NSString *endpoint = [NSString stringWithFormat:@"catalogue/books/%@/synopsis", item.identifier];
+    
     BBAConnection *connection = [[BBAConnection alloc] initWithDomain:(BBAAPIDomainREST)
-                                                          relativeURL:[self catalogueEndpoint]];
+                                                          relativeURL:endpoint];
     connection.requiresAuthentication = NO;
     [connection setRequestFactory:[BBARequestFactory new]];
     [connection setResponseMapper:[BBACatalogueResponseMapper new]];

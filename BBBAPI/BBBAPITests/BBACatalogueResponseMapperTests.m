@@ -23,7 +23,7 @@
 - (void) setUp{
     [super setUp];
     mapper = [BBACatalogueResponseMapper new];
-
+    
 }
 
 - (void) tearDown{
@@ -47,6 +47,21 @@
     NSData *data = [@"asd:{]" dataUsingEncoding:NSUTF8StringEncoding];
     XCTAssertNil([mapper responseFromData:data response:nil error:nil]);
     BBA_ENABLE_ASSERTIONS();
+}
+
+- (void) testReturnsNotFoundErrorWhenResponseIsNotFound{
+    NSHTTPURLResponse *response = [[NSHTTPURLResponse alloc] initWithURL:nil
+                                                              statusCode:404
+                                                             HTTPVersion:@"2.0"
+                                                            headerFields:nil];
+    NSError *error = nil;
+    id data = [mapper responseFromData:[NSData new]
+                              response:response
+                                 error:&error];
+    XCTAssertNil(data);
+    BBAAssertErrorHasCodeAndDomain(error,
+                                   BBAResponseMappingErrorNotFound,
+                                   BBAResponseMappingErrorDomain);
 }
 
 - (void) testThrowsOnWrongDataType{
@@ -75,8 +90,8 @@
 
 - (void) testResponseReturnsBookItemWithSynopsisForSynopsisData{
     BBABookItem *response = [mapper responseFromData:[self sampleSynposisData]
-                                  response:nil
-                                     error:nil];
+                                            response:nil
+                                               error:nil];
     XCTAssert([response isKindOfClass:[BBABookItem class]]);
     XCTAssertEqualObjects(response.synopsis, [self expectedSynopsis]);
     XCTAssertEqualObjects(response.identifier, @"9780857670687");

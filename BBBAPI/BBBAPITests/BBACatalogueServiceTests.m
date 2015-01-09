@@ -114,11 +114,11 @@
 - (void) testSynopsisInitsConnectionWithProperDomainAndEndpoint{
     [self enableConnectionMock];
     BBABookItem *item = [BBABookItem new];
-    item.identifier = @"isbn";
+    item.identifier = @"591283912";
     [service getSynopsisForBookItem:item
                          completion:^(BBABookItem *itemWithSynposis, NSError *error) {}];
     
-    XCTAssertEqualObjects(passedRelativeURLString, @"books/");
+    XCTAssertEqualObjects(passedRelativeURLString, @"catalogue/books/591283912/synopsis");
     XCTAssertEqual(passedDomain, BBAAPIDomainREST);
     [self disableConnectionMock];
 }

@@ -78,6 +78,8 @@
 		401A1DF61A13D78B004FBA41 /* BBAStatusResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 401A1DD11A13D78B004FBA41 /* BBAStatusResponseMapper.m */; };
 		401A1DF71A13D78B004FBA41 /* BBATokensResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 401A1DD31A13D78B004FBA41 /* BBATokensResponseMapper.m */; };
 		401A1DF81A13D78B004FBA41 /* BBAUserDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 401A1DD51A13D78B004FBA41 /* BBAUserDetails.m */; };
+		404D599C1A602B53003E4181 /* BBACatalogue_IntegrationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 404D599B1A602B53003E4181 /* BBACatalogue_IntegrationTests.m */; };
+		404D599D1A603922003E4181 /* BBAMockAssertionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 401A1D511A13D77B004FBA41 /* BBAMockAssertionHandler.m */; };
 		406A216A1A4095B300408A8E /* BBALibraryItemTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 406A21691A4095B300408A8E /* BBALibraryItemTests.m */; };
 		408C31141A6014DA0083DBED /* BBALibraryResponseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 401A1D4E1A13D77B004FBA41 /* BBALibraryResponseTests.m */; };
 		40B349FD1A3AFEE700B7F3FF /* BBAItemLinkMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 40B349FC1A3AFEE700B7F3FF /* BBAItemLinkMapper.m */; };
@@ -111,6 +113,13 @@
 
 /* Begin PBXContainerItemProxy section */
 		401A1D351A13D6CB004FBA41 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 401A1D131A13D6CB004FBA41 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 401A1D1A1A13D6CB004FBA41;
+			remoteInfo = BBBAPI;
+		};
+		404D59961A602975003E4181 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 401A1D131A13D6CB004FBA41 /* Project object */;
 			proxyType = 1;
@@ -250,6 +259,9 @@
 		401A1DD31A13D78B004FBA41 /* BBATokensResponseMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBATokensResponseMapper.m; path = Classes/BBATokensResponseMapper.m; sourceTree = "<group>"; };
 		401A1DD41A13D78B004FBA41 /* BBAUserDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBAUserDetails.h; path = Classes/BBAUserDetails.h; sourceTree = "<group>"; };
 		401A1DD51A13D78B004FBA41 /* BBAUserDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBAUserDetails.m; path = Classes/BBAUserDetails.m; sourceTree = "<group>"; };
+		404D59901A602975003E4181 /* BBBAPI Integration Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BBBAPI Integration Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		404D59931A602975003E4181 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		404D599B1A602B53003E4181 /* BBACatalogue_IntegrationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBACatalogue_IntegrationTests.m; sourceTree = "<group>"; };
 		406A21691A4095B300408A8E /* BBALibraryItemTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBALibraryItemTests.m; sourceTree = "<group>"; };
 		40B349FB1A3AFEE700B7F3FF /* BBAItemLinkMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBAItemLinkMapper.h; path = Classes/BBAItemLinkMapper.h; sourceTree = "<group>"; };
 		40B349FC1A3AFEE700B7F3FF /* BBAItemLinkMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBAItemLinkMapper.m; path = Classes/BBAItemLinkMapper.m; sourceTree = "<group>"; };
@@ -310,6 +322,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		404D598D1A602975003E4181 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -318,6 +337,7 @@
 			children = (
 				401A1D1D1A13D6CB004FBA41 /* BBBAPI */,
 				401A1D371A13D6CB004FBA41 /* BBBAPITests */,
+				404D59911A602975003E4181 /* BBBAPI Integration Tests */,
 				401A1D1C1A13D6CB004FBA41 /* Products */,
 				D3194E7B13CAAD5509AE5282 /* Pods */,
 				F9EFFB569373F0459962CF4E /* Frameworks */,
@@ -329,6 +349,7 @@
 			children = (
 				401A1D1B1A13D6CB004FBA41 /* BBBAPI.app */,
 				401A1D341A13D6CB004FBA41 /* BBBAPITests.xctest */,
+				404D59901A602975003E4181 /* BBBAPI Integration Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -543,6 +564,23 @@
 			name = Classes;
 			sourceTree = "<group>";
 		};
+		404D59911A602975003E4181 /* BBBAPI Integration Tests */ = {
+			isa = PBXGroup;
+			children = (
+				404D59921A602975003E4181 /* Supporting Files */,
+				404D599B1A602B53003E4181 /* BBACatalogue_IntegrationTests.m */,
+			);
+			path = "BBBAPI Integration Tests";
+			sourceTree = "<group>";
+		};
+		404D59921A602975003E4181 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				404D59931A602975003E4181 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		40DB4FA61A39EC8200AF8770 /* Catalogue Service Responses */ = {
 			isa = PBXGroup;
 			children = (
@@ -636,6 +674,24 @@
 			productReference = 401A1D341A13D6CB004FBA41 /* BBBAPITests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		404D598F1A602975003E4181 /* BBBAPI Integration Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 404D599A1A602975003E4181 /* Build configuration list for PBXNativeTarget "BBBAPI Integration Tests" */;
+			buildPhases = (
+				404D598C1A602975003E4181 /* Sources */,
+				404D598D1A602975003E4181 /* Frameworks */,
+				404D598E1A602975003E4181 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				404D59971A602975003E4181 /* PBXTargetDependency */,
+			);
+			name = "BBBAPI Integration Tests";
+			productName = "BBBAPI Integration Tests";
+			productReference = 404D59901A602975003E4181 /* BBBAPI Integration Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -650,6 +706,10 @@
 					};
 					401A1D331A13D6CB004FBA41 = {
 						CreatedOnToolsVersion = 6.1;
+						TestTargetID = 401A1D1A1A13D6CB004FBA41;
+					};
+					404D598F1A602975003E4181 = {
+						CreatedOnToolsVersion = 6.1.1;
 						TestTargetID = 401A1D1A1A13D6CB004FBA41;
 					};
 				};
@@ -669,6 +729,7 @@
 			targets = (
 				401A1D1A1A13D6CB004FBA41 /* BBBAPI */,
 				401A1D331A13D6CB004FBA41 /* BBBAPITests */,
+				404D598F1A602975003E4181 /* BBBAPI Integration Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -710,6 +771,13 @@
 				401A1D7D1A13D77B004FBA41 /* libResponse.json in Resources */,
 				401A1D861A13D77B004FBA41 /* libResponse_single_item_deleted.json in Resources */,
 				5A88FF9F1A38A13B00DE2887 /* update_bookmark_success.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		404D598E1A602975003E4181 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -866,6 +934,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		404D598C1A602975003E4181 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				404D599C1A602B53003E4181 /* BBACatalogue_IntegrationTests.m in Sources */,
+				404D599D1A603922003E4181 /* BBAMockAssertionHandler.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -873,6 +950,11 @@
 			isa = PBXTargetDependency;
 			target = 401A1D1A1A13D6CB004FBA41 /* BBBAPI */;
 			targetProxy = 401A1D351A13D6CB004FBA41 /* PBXContainerItemProxy */;
+		};
+		404D59971A602975003E4181 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 401A1D1A1A13D6CB004FBA41 /* BBBAPI */;
+			targetProxy = 404D59961A602975003E4181 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1037,6 +1119,40 @@
 			};
 			name = Release;
 		};
+		404D59981A602975003E4181 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "BBBAPI Integration Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BBBAPI.app/BBBAPI";
+			};
+			name = Debug;
+		};
+		404D59991A602975003E4181 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "BBBAPI Integration Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BBBAPI.app/BBBAPI";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1066,6 +1182,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		404D599A1A602975003E4181 /* Build configuration list for PBXNativeTarget "BBBAPI Integration Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				404D59981A602975003E4181 /* Debug */,
+				404D59991A602975003E4181 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

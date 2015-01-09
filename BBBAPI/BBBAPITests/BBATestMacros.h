@@ -130,7 +130,7 @@ while (callbackReceivedArg == NO && [loopUntil timeIntervalSinceNow] > 0) { \
 #define BBA_ENABLE_ASSERTIONS() {if(handler != nil){[[NSThread currentThread] threadDictionary][NSAssertionHandlerKey] = handler;}}
 
 
-#define BBAAssertErrorHasCodeAndDomain(error, code, domain) XCTAssertTrue((error.code == code) && [error.domain isEqualToString:domain])
+#define BBAAssertErrorHasCodeAndDomain(error, errorCode, errorDomain) XCTAssertTrue((error.code == errorCode) && [error.domain isEqualToString:errorDomain])
 
 #define BBAAssertArrayHasElementsOfClass(array,cls)XCTAssertTrue([[array filteredArrayUsingPredicate:\
 [NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {return [evaluatedObject isKindOfClass:cls];}]]\

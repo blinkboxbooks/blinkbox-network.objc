@@ -9,6 +9,7 @@
 #import "BBACatalogueResponseMapper.h"
 #import "BBABookItem.h"
 #import "BBALinkItem.h"
+#import "BBAConnection.h"
 #import "BBABooksMapper.h"
 
 static NSString *const kListType = @"urn:blinkboxbooks:schema:list";
@@ -32,8 +33,17 @@ static NSString *const kSynopsisType = @"urn:blinkboxbooks:schema:synopsis";
 #pragma mark - BBAResponseMapping
 
 - (id) responseFromData:(NSData *)data
-               response:(NSURLResponse *)response
+               response:(NSHTTPURLResponse *)response
                   error:(NSError **)error{
+    
+    if (response.statusCode == BBAHTTPNotFound) {
+        *error = [NSError errorWithDomain:BBAResponseMappingErrorDomain
+                                     code:BBAResponseMappingErrorNotFound
+                                 userInfo:nil];
+        return nil;
+    }
+    
+    
     id object = [super responseFromData:data response:response error:error];
     NSAssert(object, @"cant parse JSON");
     if (!object) {

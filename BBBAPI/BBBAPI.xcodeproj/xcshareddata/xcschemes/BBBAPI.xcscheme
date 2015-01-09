@@ -34,6 +34,20 @@
                ReferencedContainer = "container:BBBAPI.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "404D598F1A602975003E4181"
+               BuildableName = "BBBAPI Integration Tests.xctest"
+               BlueprintName = "BBBAPI Integration Tests"
+               ReferencedContainer = "container:BBBAPI.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -49,6 +63,16 @@
                BlueprintIdentifier = "401A1D331A13D6CB004FBA41"
                BuildableName = "BBBAPITests.xctest"
                BlueprintName = "BBBAPITests"
+               ReferencedContainer = "container:BBBAPI.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "404D598F1A602975003E4181"
+               BuildableName = "BBBAPI Integration Tests.xctest"
+               BlueprintName = "BBBAPI Integration Tests"
                ReferencedContainer = "container:BBBAPI.xcodeproj">
             </BuildableReference>
          </TestableReference>
