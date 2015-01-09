@@ -262,32 +262,32 @@ extern NSString * BBANSStringFromBBAContentType(BBAContentType type);
     
 }
 
-//- (void) testConnectionReturnsCouldNotConnectErrorAndNilResonseWhenTaskCompletesWithoutResponse{
-//    connection.session = session;
-//    session.taskToReturn = task;
-//    connection.responseMapper = responseMapper;
-//    NSURLRequest *urlRequest = [NSURLRequest new];
-//    BBARequest *request = [BBARequest requestWithURLRequest:urlRequest];
-//    factory.requestToReturn = request;
-//    authenticator.requestToReturn = request;
-//    session.responseToReturn = nil;
-//    
-//    NSInteger code = BBAAPIErrorCouldNotConnect;
-//    NSString *domain = BBAConnectionErrorDomain;
-//    
-//    __weak XCTestExpectation *expectation = [self expectationWithDescription:@"Connection completion"];
-//    [connection perform:(BBAHTTPMethodGET) completion:^(id response, NSError *error) {
-//        XCTAssertNil(response);
-//        BBAAssertErrorHasCodeAndDomain(error, code, domain);
-//        [expectation fulfill];
-//    }];
-//    
-//    [self waitForExpectationsWithTimeout:0.1 handler:^(NSError *error) {
-//        if (error) {
-//            NSLog(@"Test timeout Error: %@", error);
-//        }
-//    }];
-//}
+- (void) testConnectionReturnsCouldNotConnectErrorAndNilResonseWhenTaskCompletesWithoutResponse{
+    connection.session = session;
+    session.taskToReturn = task;
+    connection.responseMapper = responseMapper;
+    NSURLRequest *urlRequest = [NSURLRequest new];
+    BBARequest *request = [BBARequest requestWithURLRequest:urlRequest];
+    factory.requestToReturn = request;
+    authenticator.requestToReturn = request;
+    session.responseToReturn = nil;
+    
+    NSInteger code = BBAAPIErrorCouldNotConnect;
+    NSString *domain = BBAConnectionErrorDomain;
+    
+    __weak XCTestExpectation *expectation = [self expectationWithDescription:@"Connection completion"];
+    [connection perform:(BBAHTTPMethodGET) completion:^(id response, NSError *error) {
+        XCTAssertNil(response);
+        BBAAssertErrorHasCodeAndDomain(error, code, domain);
+        [expectation fulfill];
+    }];
+    
+    [self waitForExpectationsWithTimeout:0.1 handler:^(NSError *error) {
+        if (error) {
+            NSLog(@"Test timeout Error: %@", error);
+        }
+    }];
+}
 
 - (void) testConnectionReturnsDataAndErrorFromResponseMapper{
     connection.session = session;
