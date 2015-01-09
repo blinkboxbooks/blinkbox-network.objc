@@ -45,7 +45,7 @@ static NSString *const kLibraryItemSchema = @"urn:blinkboxbooks:schema:libraryit
     NSAssert(isbn, @"isbn must be not nil");
     
     item.isbn = isbn;
-    
+    item.guid = dictionary[@"guid"];
     NSString *identifier = dictionary[@"id"];
     NSAssert(identifier, @"id mustn't be nil");
     item.identifier = identifier;

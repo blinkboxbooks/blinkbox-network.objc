@@ -8,6 +8,7 @@
 
 #import "BBACatalogueService.h"
 #import "BBABookItem.h"
+#import "BBACatalogueResponseMapper.h"
 #import "BBATestHelper.h"
 #import "BBAConnection.h"
 #import <OCMock.h>
@@ -28,14 +29,14 @@
 
 #pragma mark - Setup / Teardown
 
-- (void)setUp {
+- (void) setUp{
     [super setUp];
     service = [BBACatalogueService new];
     
-
+    
 }
 
-- (void)tearDown {
+- (void) tearDown{
     service = nil;
     [super tearDown];
 }
@@ -69,6 +70,7 @@
     Method originalMethod = class_getInstanceMethod(class,selector);
     class_replaceMethod(class, selector, oldImplementation, method_getTypeEncoding(originalMethod));
     initBlock = nil;
+
 }
 
 #pragma mark - Tests
@@ -79,26 +81,34 @@
 
 
 - (void) testSynoposisThrowsOnNoLibraryItem{
+    [self enableConnectionMock];
     XCTAssertThrows([service getSynopsisForBookItem:nil completion:^(BBABookItem *itemWithSynposis, NSError *error) {}]);
+    [self disableConnectionMock];
 }
 
 - (void) testSynposisThrowsOnLibraryItemWithoutISBN{
+    [self enableConnectionMock];
     XCTAssertThrows([service getSynopsisForBookItem:[BBABookItem new]
                                          completion:^(BBABookItem *itemWithSynposis, NSError *e) {}]);
+    [self disableConnectionMock];
 }
 
 - (void) testSynopsisThrowsOnNoCompletion{
+    [self enableConnectionMock];
     BBABookItem *item = [BBABookItem new];
     item.identifier = @"abc";
     XCTAssertThrows([service getSynopsisForBookItem:item
                                          completion:nil]);
+    [self disableConnectionMock];
 }
 
 - (void) testSynopsisDontThrowOnGoodParameters{
+    [self enableConnectionMock];
     BBABookItem *item = [BBABookItem new];
     item.identifier = @"isbn";
     XCTAssertNoThrow([service getSynopsisForBookItem:item
-                                             completion:^(BBABookItem *itemWithSynposis, NSError *error) {}]);
+                                          completion:^(BBABookItem *itemWithSynposis, NSError *error) {}]);
+    [self disableConnectionMock];
 }
 
 - (void) testSynopsisInitsConnectionWithProperDomainAndEndpoint{
@@ -114,36 +124,44 @@
 }
 
 - (void) testSynopsisMakesUnauthenticatedConnection{
+ [self enableConnectionMock];
     BBABookItem *item = [BBABookItem new];
     item.identifier = @"isbn";
     OCMExpect([mockConnection setRequiresAuthentication:NO]);
     [service getSynopsisForBookItem:item
                          completion:^(BBABookItem *itemWithSynposis, NSError *error) {}];
+ [self disableConnectionMock];
     
 }
 
-- (void) testSynopsisReturnsCopyOfLibraryItemWithSynopsisAssigned{
-    
-    [self expectPerformGETWithDataToReturn:[self sampleSynposisData] error:nil];
+- (void) testSynopsisReturnsCopyOfBookItemWithSynopsisAssigned{
+    [self enableConnectionMock];
+    BBACatalogueResponseMapper *mapper = [BBACatalogueResponseMapper new];
+    BBABookItem *book = [mapper responseFromData:[self sampleSynposisData]
+                                        response:nil
+                                           error:nil];
+    [self expectPerformGETWithDataToReturn:book error:nil callCompletion:YES];
     __block BOOL wasCalled = NO;
     BBABookItem *item = [BBABookItem new];
     item.identifier = @"isbn";
     [service getSynopsisForBookItem:item
                          completion:^(BBABookItem *itemWithSynposis, NSError *error) {
                              wasCalled = YES;
-                             XCTAssertEqual(itemWithSynposis.synopsis, [self expectedSynopsis]);
+                             XCTAssertEqualObjects(itemWithSynposis.synopsis, [self expectedSynopsis]);
                              XCTAssertNil(error);
                          }];
     
     XCTAssertTrue(wasCalled);
     OCMVerifyAll(mockConnection);
+    [self disableConnectionMock];
 }
 
 - (void) testSynposisReturnsNilLibraryItemAndErrorPassedFromConnection{
+    [self enableConnectionMock];
     NSError *errorToReturn = [NSError errorWithDomain:@"domain"
                                                  code:123
                                              userInfo:nil];
-    [self expectPerformGETWithDataToReturn:nil error:errorToReturn];
+    [self expectPerformGETWithDataToReturn:nil error:errorToReturn callCompletion:YES];
     __block BOOL wasCalled = NO;
     BBABookItem *item = [BBABookItem new];
     item.identifier = @"isbn";
@@ -156,56 +174,73 @@
                          }];
     
     XCTAssertTrue(wasCalled);
+    [self disableConnectionMock];
 }
 
 
 
 
 - (void) testRelatedThrowsOnNilItem{
+    [self enableConnectionMock];
     XCTAssertThrows([service getRelatedBooksForBookItem:nil
                                              completion:^(NSArray *i, NSError *e) {}]);
+    [self disableConnectionMock];
 }
 
 - (void) testRelatedThrowsOnItemWithoutISBN{
+    [self enableConnectionMock];
     XCTAssertThrows([service getRelatedBooksForBookItem:[BBABookItem new]
                                              completion:^(NSArray *i, NSError *e) {}]);
+    [self disableConnectionMock];
 }
 
 - (void) testRelatedThrowsOnNoCompletion{
+    [self enableConnectionMock];
     BBABookItem *item = [BBABookItem new];
     item.identifier = @"isbn";
     XCTAssertThrows([service getRelatedBooksForBookItem:item
                                              completion:nil]);
+    [self disableConnectionMock];
 }
 
 
 - (void) testDetailsThrowOnNilArray{
+    [self enableConnectionMock];
     XCTAssertThrows([service getRelatedBooksForBookItem:nil
                                              completion:^(NSArray *detailItems, NSError *e) {}]);
+    [self disableConnectionMock];
 }
 
 - (void) testDetailsThrowOnArrayWithWrongObjectsIn{
+    [self enableConnectionMock];
     XCTAssertThrows([service getDetailsForBookItems:@[@"string"]
                                          completion:^(NSArray *detailItems, NSError *e) {}]);
+    [self disableConnectionMock];
 }
 
 - (void) testDetailsThrowsOnArrayWithLibraryItemsWithoutISBNS{
+    [self enableConnectionMock];
     XCTAssertThrows([service getDetailsForBookItems:@[[BBABookItem new]]
                                          completion:^(NSArray *detailItems, NSError *e) {}]);
+    [self disableConnectionMock];
 }
 
 - (void) testDetailsDoesntThrowsOnArrayWithLibraryItemsWithoutISBNS{
+    [self enableConnectionMock];
     BBABookItem *item = [BBABookItem new];
     item.identifier = @"isbn";
     XCTAssertNoThrow([service getDetailsForBookItems:@[item]
-                                             completion:^(NSArray *detailItems, NSError *e) {}]);
+                                          completion:^(NSArray *detailItems, NSError *e) {}]);
+    [self disableConnectionMock];
 }
 
 - (void) testDetailsThrowsWithoutCompletion{
+    [self enableConnectionMock];
     BBABookItem *item = [BBABookItem new];
     item.identifier = @"isbn";
     XCTAssertThrows([service getDetailsForBookItems:@[item]
-                                            completion:nil]);
+                                         completion:nil]);
+    [self disableConnectionMock];
 }
 
 
@@ -224,8 +259,13 @@
     return dictionary[@"text"];
 }
 
-- (void) expectPerformGETWithDataToReturn:(id)data error:(NSError *)error{
+- (void) expectPerformGETWithDataToReturn:(id)data error:(NSError *)error callCompletion:(BOOL)call{
+    
     void (^completion)(NSInvocation *) = ^(NSInvocation *i){
+        
+        if (!call) {
+            return ;
+        }
         
         void (^completion)(id data, NSError *);
         [i getArgument:&completion atIndex:3];
