@@ -12,6 +12,7 @@
 #import "BBAAPIErrors.h"
 #import "BBARequestFactory.h"
 #import "BBACatalogueResponseMapper.h"
+#import <NSArray+Functional.h>
 
 NSString *const BBACatalogureErrorDomain = @"com.BBB.CatalogueErrorDomain";
 
@@ -39,7 +40,7 @@ NSString *const BBACatalogureErrorDomain = @"com.BBB.CatalogueErrorDomain";
     connection.requiresAuthentication = NO;
     [connection setRequestFactory:[BBARequestFactory new]];
     [connection setResponseMapper:[BBACatalogueResponseMapper new]];
-
+    
     [connection perform:(BBAHTTPMethodGET)
              completion:^(id response, NSError *error) {
                  completion(response, error);
@@ -90,16 +91,102 @@ NSString *const BBACatalogureErrorDomain = @"com.BBB.CatalogueErrorDomain";
         return;
     }
     
+    NSArray *isbnsGroups = [self isbnGroupsFromItems:items];
+    
+    
+    dispatch_group_t serviceGroup = dispatch_group_create();
+    dispatch_queue_t arrayQueue = dispatch_queue_create("com.bba.catalogue.array", DISPATCH_QUEUE_SERIAL);
+    NSMutableArray *results = [NSMutableArray new];
+    __block NSError *errorResult = nil;
+    
+    for (NSArray *group in isbnsGroups) {
+        dispatch_group_enter(serviceGroup);
+        
+        BBAConnection *connection = [self newConnection];
+        [connection addParameterWithKey:@"id" arrayValue:group];
+        
+        [connection perform:(BBAHTTPMethodGET)
+                 completion:^(NSArray *responseItems, NSError *error) {
+                     dispatch_async(arrayQueue, ^{
+                         
+                         if (!responseItems) {
+                             errorResult = error;
+                         }
+                         
+                         [results addObjectsFromArray:responseItems];
+                         dispatch_group_leave(serviceGroup);
+                     });
+                 }];
+    }
+    
+    dispatch_group_notify(serviceGroup,dispatch_get_main_queue(),^{
+        if (errorResult) {
+            completion(nil, errorResult);
+            return ;
+        }
+        
+        NSMutableArray *detailedItems = [[items mapUsingBlock:^id(id obj) {
+            return [NSNull null];
+        }] mutableCopy];
+        
+        NSDictionary *mapping = [self indexToISBNFromItems:items];
+        
+        for (BBABookItem *item in results) {
+            NSInteger index = [mapping[item.identifier] integerValue];
+            
+            [detailedItems replaceObjectAtIndex:index withObject:item];
+        }
+        
+        NSArray *onlyBooks = [detailedItems filterUsingBlock:^BOOL(id obj) {
+            return [obj isKindOfClass:[BBABookItem class]];
+        }];
+        
+        completion(onlyBooks, nil);
+    });
+}
+
+- (NSDictionary *) indexToISBNFromItems:(NSArray *)items{
+    NSMutableDictionary *mappings = [NSMutableDictionary new];
+    
+    for (NSInteger i = 0; i < items.count; i++) {
+        BBABookItem *item = items[i];
+        mappings[item.identifier]= @(i);
+    }
+
+    return mappings;
+}
+
+- (BBAConnection *) newConnection{
     BBAConnection *connection = [[BBAConnection alloc] initWithDomain:(BBAAPIDomainREST)
-                                                          relativeURL:[self catalogueEndpoint]];
+                                                          relativeURL:@"catalogue/books"];
     connection.requiresAuthentication = NO;
     [connection setRequestFactory:[BBARequestFactory new]];
     [connection setResponseMapper:[BBACatalogueResponseMapper new]];
+    return connection;
+}
+
+- (NSArray *) isbnGroupsFromItems:(NSArray *)items{
+    NSArray *isbns = [items valueForKeyPath:NSStringFromSelector(@selector(identifier))];
     
-    [connection perform:(BBAHTTPMethodGET)
-             completion:^(id response, NSError *error) {
-                 completion(response, error);
-             }];
+    const NSInteger itemMax = 118;
+    
+    NSMutableArray *arrayOfArrays = [NSMutableArray array];
+    
+    NSInteger itemsRemaining = [isbns count];
+    NSInteger j = 0;
+    
+    while(j < [isbns count]) {
+        
+        NSRange range = NSMakeRange(j, MIN(itemMax, itemsRemaining));
+        
+        NSArray *subarray = [isbns subarrayWithRange:range];
+        [arrayOfArrays addObject:subarray];
+        
+        itemsRemaining -= range.length;
+        j += range.length;
+    }
+    
+    return  arrayOfArrays;
 }
 
 #pragma mark - Private
@@ -136,8 +223,5 @@ NSString *const BBACatalogureErrorDomain = @"com.BBB.CatalogueErrorDomain";
     return YES;
 }
 
-- (NSString *) catalogueEndpoint{
-    return @"books/";
-}
 
 @end

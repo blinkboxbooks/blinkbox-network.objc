@@ -11,6 +11,7 @@
 #import "BBAResponseMapping.h"
 #import "BBABookItem.h"
 #import "BBATestMacros.h"
+#import "BBATestHelper.h"
 
 @interface BBACatalogue_IntegrationTests : XCTestCase{
     BBACatalogueService *service;
@@ -89,7 +90,7 @@
 - (void) testRelatedBookReturnsEmptyArrayForFakeISBN{
     BBABookItem *item = [BBABookItem new];
     item.identifier = @"978014134564212312312";
-    __weak XCTestExpectation *expect = [self expectationWithDescription:@"relatedForGoodISBN"];
+    __weak XCTestExpectation *expect = [self expectationWithDescription:@"relatedForFakeISBN"];
     [service getRelatedBooksForBookItem:item
                                   count:10
                              completion:^(NSArray *libraryItems, NSError *error) {
@@ -98,10 +99,66 @@
                                  BBAAssertErrorHasCodeAndDomain(error,
                                                                 BBAResponseMappingErrorNotFound,
                                                                 BBAResponseMappingErrorDomain);
-
+                                 
                              }];
     
     [self waitForExpectationsWithTimeout:5.0 handler:nil];
+}
+
+#pragma mark - Tests (Details)
+
+- (void) testDetailsOfBookReturnFilledBookForGoodISBN{
+    
+    __weak XCTestExpectation *expect = [self expectationWithDescription:@"detailsForGoodISBN"];
+    
+    BBABookItem *item = [BBABookItem new];
+    item.identifier = @"9780007574360";
+    [service getDetailsForBookItems:@[item]
+                         completion:^(NSArray *detailItems, NSError *error) {
+                             [expect fulfill];
+                             XCTAssertEqual(detailItems.count, 1);
+                             BBABookItem *result = [detailItems firstObject];
+                             XCTAssertEqualObjects(result.identifier, item.identifier);
+                             XCTAssertTrue(result.links.count > 0);
+                             XCTAssertTrue(result.images.count > 0);
+                             XCTAssertNotNil(result.publicationDate);
+                             XCTAssertNotNil(result.title);
+                             XCTAssertNotNil(result.guid);
+                             
+                         }];
+    [self waitForExpectationsWithTimeout:5.0 handler:nil];
+}
+
+- (void) testDetailsOfBigArrayOfBooksFetchesDataForAllBooksInCorrectOrder{
+    __weak XCTestExpectation *expect = [self expectationWithDescription:@"detailsForBulkISBNs"];
+    
+    [service getDetailsForBookItems:[self sampleBigItems]
+                         completion:^(NSArray *detailItems, NSError *error) {
+                             [expect fulfill];
+                             
+                             
+                         }];
+    [self waitForExpectationsWithTimeout:5.0 handler:nil];
+}
+
+- (NSArray *)sampleBigItems{
+    /*
+     search_sample_data.json containts array of 300 isbns
+     */
+    NSData *data = [BBATestHelper dataForTestBundleFileNamed:@"search_sample_data.json"
+                                                forTestClass:[self class]];
+    NSArray *array = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+    
+    NSArray *isbns = [array valueForKeyPath:@"id"];
+    
+    NSMutableArray *books = [NSMutableArray new];
+    
+    for (NSString *isbn in isbns) {
+        BBABookItem *item = [BBABookItem new];
+        item.identifier = isbn;
+        [books addObject:item];
+    }
+    return books;
 }
 
 @end

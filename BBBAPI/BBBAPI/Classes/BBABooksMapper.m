@@ -11,7 +11,6 @@
 #import "BBAImageItem.h"
 #import "BBAItemLink.h"
 #import "BBAItemLinkMapper.h"
-#import "BBAServerDateFormatter.h"
 #import <NSArray+Functional.h>
 
 static NSString *const kBookSchema = @"urn:blinkboxbooks:schema:book";
@@ -27,7 +26,8 @@ static NSString *const kBookSchema = @"urn:blinkboxbooks:schema:book";
 
 - (NSDateFormatter *) dateFormatter{
     if (!_dateFormatter) {
-        _dateFormatter = [BBAServerDateFormatter new];
+        _dateFormatter = [NSDateFormatter new];
+        [_dateFormatter setDateFormat:@"yyyy-MM-dd"];
     }
     return _dateFormatter;
 }
@@ -51,6 +51,12 @@ static NSString *const kBookSchema = @"urn:blinkboxbooks:schema:book";
     item.title = dictionary[@"title"];
     item.guid = dictionary[@"guid"];
     item.identifier = dictionary[@"id"];
+    NSString *publicationDate = dictionary[@"publicationDate"];
+    
+    if (publicationDate) {
+        item.publicationDate = [self.dateFormatter dateFromString:publicationDate];
+    }
+    
     [self mapImages:dictionary[@"images"] toItem:item];
     
     NSArray *links = dictionary[@"links"];
