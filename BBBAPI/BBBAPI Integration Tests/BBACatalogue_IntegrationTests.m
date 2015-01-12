@@ -32,7 +32,7 @@
     [super tearDown];
 }
 
-#pragma mark - Tests
+#pragma mark - Tests (Synopsis)
 
 - (void) testGettingSynopsisForExistingBookReturnsTheSameBookWithNonEmptySynopsis{
     __weak XCTestExpectation *expect = [self expectationWithDescription:@"realBookSynopis"];
@@ -48,18 +48,14 @@
                          }];
     
     [self waitForExpectationsWithTimeout:5.0
-                                 handler:^(NSError *error) {
-                                     if (error) {
-                                         NSLog(@"Test timeout Error: %@", error);
-                                     }
-                                 }];
+                                 handler:nil];
 }
 
 - (void) testGettingSynopsisForNotExistingBookReturnsError{
     __weak XCTestExpectation *expect = [self expectationWithDescription:@"fakeBookSynopis"];
     BBABookItem *item = [BBABookItem new];
     item.identifier = @"97802978592323406";
-
+    
     [service getSynopsisForBookItem:item
                          completion:^(BBABookItem *itemWithSynposis, NSError *error) {
                              [expect fulfill];
@@ -70,11 +66,42 @@
                          }];
     
     [self waitForExpectationsWithTimeout:5.0
-                                 handler:^(NSError *error) {
-                                     if (error) {
-                                         NSLog(@"Test timeout Error: %@", error);
-                                     }
-                                 }];
+                                 handler:nil];
+}
+
+#pragma mark - Tests (Related)
+
+- (void) testRelatedBooksReturnsSomeBooksForProperISBN{
+    BBABookItem *item = [BBABookItem new];
+    item.identifier = @"9780141345642";
+    __weak XCTestExpectation *expect = [self expectationWithDescription:@"relatedForGoodISBN"];
+    [service getRelatedBooksForBookItem:item
+                                  count:10
+                             completion:^(NSArray *libraryItems, NSError *error) {
+                                 [expect fulfill];
+                                 BBAAssertArrayHasElementsOfClass(libraryItems, [BBABookItem class]);
+                                 XCTAssertEqual(libraryItems.count, 10);
+                             }];
+    
+    [self waitForExpectationsWithTimeout:5.0 handler:nil];
+}
+
+- (void) testRelatedBookReturnsEmptyArrayForFakeISBN{
+    BBABookItem *item = [BBABookItem new];
+    item.identifier = @"978014134564212312312";
+    __weak XCTestExpectation *expect = [self expectationWithDescription:@"relatedForGoodISBN"];
+    [service getRelatedBooksForBookItem:item
+                                  count:10
+                             completion:^(NSArray *libraryItems, NSError *error) {
+                                 [expect fulfill];
+                                 XCTAssertNil(libraryItems);
+                                 BBAAssertErrorHasCodeAndDomain(error,
+                                                                BBAResponseMappingErrorNotFound,
+                                                                BBAResponseMappingErrorDomain);
+
+                             }];
+    
+    [self waitForExpectationsWithTimeout:5.0 handler:nil];
 }
 
 @end

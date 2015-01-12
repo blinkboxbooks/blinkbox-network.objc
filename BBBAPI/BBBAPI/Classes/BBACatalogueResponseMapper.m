@@ -43,6 +43,16 @@ static NSString *const kSynopsisType = @"urn:blinkboxbooks:schema:synopsis";
         return nil;
     }
     
+    /* 
+     /related returns 500 when asked with not-existing ISBN
+     */
+    if (response.statusCode == BBAHTTPServerError) {
+        *error = [NSError errorWithDomain:BBAResponseMappingErrorDomain
+                                     code:BBAResponseMappingErrorNotFound
+                                 userInfo:nil];
+        return nil;
+    }
+    
     
     id object = [super responseFromData:data response:response error:error];
     NSAssert(object, @"cant parse JSON");

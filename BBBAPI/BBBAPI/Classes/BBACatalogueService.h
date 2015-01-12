@@ -18,6 +18,7 @@ extern NSString *const BBACatalogureErrorDomain;
                      completion:(void (^)(BBABookItem *itemWithSynposis, NSError *error))completion;
 
 - (void) getRelatedBooksForBookItem:(BBABookItem *)item
+                              count:(NSUInteger)count
                          completion:(void (^)(NSArray *libraryItems, NSError *error))completion;
 
 - (void) getDetailsForBookItems:(NSArray *)item

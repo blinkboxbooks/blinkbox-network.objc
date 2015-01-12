@@ -132,6 +132,6 @@ while (callbackReceivedArg == NO && [loopUntil timeIntervalSinceNow] > 0) { \
 
 #define BBAAssertErrorHasCodeAndDomain(error, errorCode, errorDomain) XCTAssertTrue((error.code == errorCode) && [error.domain isEqualToString:errorDomain])
 
-#define BBAAssertArrayHasElementsOfClass(array,cls)XCTAssertTrue([[array filteredArrayUsingPredicate:\
+#define BBAAssertArrayHasElementsOfClass(array,cls) XCTAssertTrue([[array filteredArrayUsingPredicate:\
 [NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {return [evaluatedObject isKindOfClass:cls];}]]\
-isEqual:response], @"not all objects in %@ are kind of class : %@", array, NSStringFromClass(cls));
+isEqual:array], @"not all objects in %@ are kind of class : %@", array, NSStringFromClass(cls));

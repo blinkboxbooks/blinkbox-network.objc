@@ -47,6 +47,7 @@ NSString *const BBACatalogureErrorDomain = @"com.BBB.CatalogueErrorDomain";
 }
 
 - (void) getRelatedBooksForBookItem:(BBABookItem *)item
+                              count:(NSUInteger)count
                          completion:(void (^)(NSArray *libraryItems, NSError *error))completion{
     NSParameterAssert(completion);
     if (!completion) {
@@ -59,11 +60,15 @@ NSString *const BBACatalogureErrorDomain = @"com.BBB.CatalogueErrorDomain";
         return;
     }
     
+    NSString *endpoint = [NSString stringWithFormat:@"catalogue/books/%@/related", item.identifier];
+    
     BBAConnection *connection = [[BBAConnection alloc] initWithDomain:(BBAAPIDomainREST)
-                                                          relativeURL:[self catalogueEndpoint]];
+                                                          relativeURL:endpoint];
     connection.requiresAuthentication = NO;
     [connection setRequestFactory:[BBARequestFactory new]];
     [connection setResponseMapper:[BBACatalogueResponseMapper new]];
+    
+    [connection addParameterWithKey:@"count" value:[@(count) description]];
     
     [connection perform:(BBAHTTPMethodGET)
              completion:^(id response, NSError *error) {
