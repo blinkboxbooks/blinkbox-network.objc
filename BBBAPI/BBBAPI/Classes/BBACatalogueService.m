@@ -14,7 +14,7 @@
 #import "BBACatalogueResponseMapper.h"
 #import <NSArray+Functional.h>
 
-NSString *const BBACatalogureErrorDomain = @"com.BBB.CatalogueErrorDomain";
+NSString *const BBACatalogueErrorDomain = @"com.BBB.CatalogueErrorDomain";
 
 @implementation BBACatalogueService
 
@@ -192,7 +192,7 @@ NSString *const BBACatalogureErrorDomain = @"com.BBB.CatalogueErrorDomain";
 #pragma mark - Private
 
 - (NSError *) wrongUsageError{
-    NSError *error = [NSError errorWithDomain:BBACatalogureErrorDomain
+    NSError *error = [NSError errorWithDomain:BBACatalogueErrorDomain
                                          code:BBAAPIWrongUsage
                                      userInfo:nil];
     return error;
