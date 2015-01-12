@@ -15,8 +15,10 @@
 #import "BBALibraryResponseMapper.h"
 #import "BBAStatusResponseMapper.h"
 #import "BBAKeyServiceResponseMapper.h"
+#import "BBASearchResponseMapper.h"
 #import "BBALibraryService.h"
 #import "BBAKeyService.h"
+#import "BBASearchService.h"
 
 @interface BBANetworkConfiguration ()
 
@@ -79,6 +81,9 @@
     }
     else if ([name isEqualToString:BBAKeyServiceName]) {
         return [BBAKeyServiceResponseMapper new];
+    }
+    else if ([name isEqualToString:BBASearchServiceName]) {
+        return [BBASearchResponseMapper new];
     }
     NSAssert(NO, @"unexpected service name : %@", name);
     return nil;

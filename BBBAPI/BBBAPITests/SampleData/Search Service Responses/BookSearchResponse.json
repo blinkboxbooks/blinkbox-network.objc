@@ -1,0 +1,31 @@
+{
+    "type": "urn:blinkboxbooks:schema:search",
+    "id": "dickens",
+    "links": [
+        {
+            "rel": "this",
+            "href": "http://uncuva.localhost:8091/service/search/books?q=dickens&offset=0"
+        },
+        {
+            "rel": "next",
+            "href": "http://uncuva.localhost:8091/service/search/books?q=dickens&offset=50&count=50"
+        }
+    ],
+    "numberOfResults": "310",
+    "books": [
+        {
+            "id": "9780141974132",
+            "title": "Nicholas Nickleby",
+            "authors": [
+                "Charles Dickens"
+            ]
+        },
+        {
+            "id": "9780141974149",
+            "title": "Our Mutual Friend",
+            "authors": [
+                "Charles Dickens"
+            ]
+        }
+        ]
+}
