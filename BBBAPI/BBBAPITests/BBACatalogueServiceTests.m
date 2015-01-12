@@ -70,7 +70,7 @@
     Method originalMethod = class_getInstanceMethod(class,selector);
     class_replaceMethod(class, selector, oldImplementation, method_getTypeEncoding(originalMethod));
     initBlock = nil;
-
+    
 }
 
 #pragma mark - Tests
@@ -124,13 +124,13 @@
 }
 
 - (void) testSynopsisMakesUnauthenticatedConnection{
- [self enableConnectionMock];
+    [self enableConnectionMock];
     BBABookItem *item = [BBABookItem new];
     item.identifier = @"isbn";
     OCMExpect([mockConnection setRequiresAuthentication:NO]);
     [service getSynopsisForBookItem:item
                          completion:^(BBABookItem *itemWithSynposis, NSError *error) {}];
- [self disableConnectionMock];
+    [self disableConnectionMock];
     
 }
 
@@ -183,6 +183,7 @@
 - (void) testRelatedThrowsOnNilItem{
     [self enableConnectionMock];
     XCTAssertThrows([service getRelatedBooksForBookItem:nil
+                                                  count:10
                                              completion:^(NSArray *i, NSError *e) {}]);
     [self disableConnectionMock];
 }
@@ -190,6 +191,7 @@
 - (void) testRelatedThrowsOnItemWithoutISBN{
     [self enableConnectionMock];
     XCTAssertThrows([service getRelatedBooksForBookItem:[BBABookItem new]
+                                                  count:10
                                              completion:^(NSArray *i, NSError *e) {}]);
     [self disableConnectionMock];
 }
@@ -199,6 +201,7 @@
     BBABookItem *item = [BBABookItem new];
     item.identifier = @"isbn";
     XCTAssertThrows([service getRelatedBooksForBookItem:item
+                                                  count:10
                                              completion:nil]);
     [self disableConnectionMock];
 }
@@ -207,6 +210,7 @@
 - (void) testDetailsThrowOnNilArray{
     [self enableConnectionMock];
     XCTAssertThrows([service getRelatedBooksForBookItem:nil
+                                                  count:10
                                              completion:^(NSArray *detailItems, NSError *e) {}]);
     [self disableConnectionMock];
 }

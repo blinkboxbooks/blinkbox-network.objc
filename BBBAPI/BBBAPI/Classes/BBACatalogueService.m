@@ -168,7 +168,7 @@ NSString *const BBACatalogureErrorDomain = @"com.BBB.CatalogueErrorDomain";
 - (NSArray *) isbnGroupsFromItems:(NSArray *)items{
     NSArray *isbns = [items valueForKeyPath:NSStringFromSelector(@selector(identifier))];
     
-    const NSInteger itemMax = 118;
+    const NSInteger itemMax = 50;
     
     NSMutableArray *arrayOfArrays = [NSMutableArray array];
     

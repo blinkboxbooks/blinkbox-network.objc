@@ -132,10 +132,12 @@
 - (void) testDetailsOfBigArrayOfBooksFetchesDataForAllBooksInCorrectOrder{
     __weak XCTestExpectation *expect = [self expectationWithDescription:@"detailsForBulkISBNs"];
     
-    [service getDetailsForBookItems:[self sampleBigItems]
+    NSArray *sample = [self sampleBigItems];
+    [service getDetailsForBookItems:sample
                          completion:^(NSArray *detailItems, NSError *error) {
                              [expect fulfill];
-                             
+                             XCTAssertEqualObjects([sample valueForKeyPath:@"identifier"],
+                                                   [detailItems valueForKeyPath:@"identifier"]);
                              
                          }];
     [self waitForExpectationsWithTimeout:5.0 handler:nil];
