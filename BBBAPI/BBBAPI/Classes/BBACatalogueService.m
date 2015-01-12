@@ -93,7 +93,6 @@ NSString *const BBACatalogueErrorDomain = @"com.BBB.CatalogueErrorDomain";
     
     NSArray *isbnsGroups = [self isbnGroupsFromItems:items];
     
-    
     dispatch_group_t serviceGroup = dispatch_group_create();
     dispatch_queue_t arrayQueue = dispatch_queue_create("com.bba.catalogue.array", DISPATCH_QUEUE_SERIAL);
     NSMutableArray *results = [NSMutableArray new];
@@ -120,32 +119,52 @@ NSString *const BBACatalogueErrorDomain = @"com.BBB.CatalogueErrorDomain";
     }
     
     dispatch_group_notify(serviceGroup,dispatch_get_main_queue(),^{
+        
         if (errorResult) {
             completion(nil, errorResult);
             return ;
         }
         
-        NSMutableArray *detailedItems = [[items mapUsingBlock:^id(id obj) {
-            return [NSNull null];
-        }] mutableCopy];
+        NSArray *filteredResults = [self resultsFromServer:results input:items];
         
-        NSDictionary *mapping = [self indexToISBNFromItems:items];
-        
-        for (BBABookItem *item in results) {
-            NSInteger index = [mapping[item.identifier] integerValue];
-            
-            [detailedItems replaceObjectAtIndex:index withObject:item];
-        }
-        
-        NSArray *onlyBooks = [detailedItems filterUsingBlock:^BOOL(id obj) {
-            return [obj isKindOfClass:[BBABookItem class]];
-        }];
-        
-        completion(onlyBooks, nil);
+        completion(filteredResults, nil);
     });
 }
 
+#pragma mark - Private
+
+- (NSArray *) resultsFromServer:(NSArray *)serverResults input:(NSArray *)inputItems{
+    
+    
+    /*
+     This method generate mapping isbn -> index in the input array 
+     and then enumarates server results, constructs new array to make
+     sure that books are return in the same order as they came in, filtering
+     not returned results and the end
+     */
+    
+    NSMutableArray *detailedItems = [[inputItems mapUsingBlock:^id(id obj) {
+        return [NSNull null];
+    }] mutableCopy];
+    
+    NSDictionary *mapping = [self indexToISBNFromItems:inputItems];
+    
+    for (BBABookItem *item in serverResults) {
+        NSInteger index = [mapping[item.identifier] integerValue];
+        
+        [detailedItems replaceObjectAtIndex:index withObject:item];
+    }
+    
+    NSArray *onlyBooks = [detailedItems filterUsingBlock:^BOOL(id obj) {
+        return [obj isKindOfClass:[BBABookItem class]];
+    }];
+    
+    return onlyBooks;
+    
+}
+
 - (NSDictionary *) indexToISBNFromItems:(NSArray *)items{
+    
     NSMutableDictionary *mappings = [NSMutableDictionary new];
     
     for (NSInteger i = 0; i < items.count; i++) {
@@ -188,8 +207,6 @@ NSString *const BBACatalogueErrorDomain = @"com.BBB.CatalogueErrorDomain";
     
     return  arrayOfArrays;
 }
-
-#pragma mark - Private
 
 - (NSError *) wrongUsageError{
     NSError *error = [NSError errorWithDomain:BBACatalogueErrorDomain
