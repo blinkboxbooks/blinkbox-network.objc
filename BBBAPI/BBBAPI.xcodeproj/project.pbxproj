@@ -79,6 +79,7 @@
 		401A1DF81A13D78B004FBA41 /* BBAUserDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 401A1DD51A13D78B004FBA41 /* BBAUserDetails.m */; };
 		402183BB1A6552BD00DA1CBF /* BookSearchResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 402183B91A6552BD00DA1CBF /* BookSearchResponse.json */; };
 		402183BC1A6552BD00DA1CBF /* SuggestionsResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 402183BA1A6552BD00DA1CBF /* SuggestionsResponse.json */; };
+		40259A961A6586450066A3BB /* BBAAuthentication_IntegrationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 40259A951A6586450066A3BB /* BBAAuthentication_IntegrationTests.m */; };
 		40324D9D1A63FAB8005E1F49 /* BBATestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 401A1D5A1A13D77B004FBA41 /* BBATestHelper.m */; };
 		40324D9F1A63FB10005E1F49 /* search_sample_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 40324D9E1A63FB10005E1F49 /* search_sample_data.json */; };
 		404D599C1A602B53003E4181 /* BBACatalogue_IntegrationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 404D599B1A602B53003E4181 /* BBACatalogue_IntegrationTests.m */; };
@@ -269,6 +270,7 @@
 		401A1DD51A13D78B004FBA41 /* BBAUserDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBAUserDetails.m; path = Classes/BBAUserDetails.m; sourceTree = "<group>"; };
 		402183B91A6552BD00DA1CBF /* BookSearchResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = BookSearchResponse.json; path = "Search Service Responses/BookSearchResponse.json"; sourceTree = "<group>"; };
 		402183BA1A6552BD00DA1CBF /* SuggestionsResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = SuggestionsResponse.json; path = "Search Service Responses/SuggestionsResponse.json"; sourceTree = "<group>"; };
+		40259A951A6586450066A3BB /* BBAAuthentication_IntegrationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBAAuthentication_IntegrationTests.m; sourceTree = "<group>"; };
 		40324D9E1A63FB10005E1F49 /* search_sample_data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = search_sample_data.json; sourceTree = "<group>"; };
 		404D59901A602975003E4181 /* BBBAPI Integration Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BBBAPI Integration Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		404D59931A602975003E4181 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -607,6 +609,7 @@
 			isa = PBXGroup;
 			children = (
 				404D59921A602975003E4181 /* Supporting Files */,
+				40259A951A6586450066A3BB /* BBAAuthentication_IntegrationTests.m */,
 				404D599B1A602B53003E4181 /* BBACatalogue_IntegrationTests.m */,
 			);
 			path = "BBBAPI Integration Tests";
@@ -988,6 +991,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40259A961A6586450066A3BB /* BBAAuthentication_IntegrationTests.m in Sources */,
 				404D599C1A602B53003E4181 /* BBACatalogue_IntegrationTests.m in Sources */,
 				4058C4051A643A3800F6FB5A /* BBACatalogueServiceTestHelper.m in Sources */,
 				404D599D1A603922003E4181 /* BBAMockAssertionHandler.m in Sources */,

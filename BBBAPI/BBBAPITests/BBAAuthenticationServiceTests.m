@@ -94,7 +94,8 @@ XCTAssertEqual(error.code, errorCode);
     BBAClientDetails *client = nil;
     BBA_PREPARE_ASYNC_TEST();
     [service registerUser:user client:client completion:^(BBAAuthData *data, NSError *error) {
-        BBAAssertAuthResponseErrorCode(data, error, BBAAPIWrongUsage);
+        BBAAssertErrorHasCodeAndDomain(error, BBAAPIWrongUsage, kBBAAuthServiceName);
+        XCTAssertNil(data);
         BBA_FLAG_ASYNC_TEST_COMPLETE();
     }];
     BBA_WAIT_FOR_ASYNC_TEST();
@@ -114,7 +115,8 @@ XCTAssertEqual(error.code, errorCode);
     BBAClientDetails *client = [self validRegistrationClient];
     BBA_PREPARE_ASYNC_TEST();
     [service registerUser:user client:client completion:^(BBAAuthData *data, NSError *error) {
-        BBAAssertAuthResponseErrorCode(data, error, BBAAPIWrongUsage);
+        BBAAssertErrorHasCodeAndDomain(error, BBAAPIWrongUsage, kBBAAuthServiceName);
+        XCTAssertNil(data);
         BBA_FLAG_ASYNC_TEST_COMPLETE();
     }];
     BBA_WAIT_FOR_ASYNC_TEST();
@@ -140,7 +142,8 @@ XCTAssertEqual(error.code, errorCode);
     BBAClientDetails *client = nil;
     BBA_PREPARE_ASYNC_TEST();
     [service registerClient:client forUser:user completion:^(BBAClientDetails *data, NSError *error) {
-        BBAAssertAuthResponseErrorCode(data, error, BBAAPIWrongUsage);
+        BBAAssertErrorHasCodeAndDomain(error, BBAAPIWrongUsage, kBBAAuthServiceName);
+        XCTAssertNil(data);
         BBA_FLAG_ASYNC_TEST_COMPLETE();
     }];
     BBA_WAIT_FOR_ASYNC_TEST();
@@ -153,7 +156,8 @@ XCTAssertEqual(error.code, errorCode);
     BBAClientDetails *client = [self validRegistrationClient];
     BBA_PREPARE_ASYNC_TEST();
     [service registerClient:client forUser:user completion:^(BBAClientDetails *data, NSError *error) {
-        BBAAssertAuthResponseErrorCode(data, error, BBAAPIWrongUsage);
+        BBAAssertErrorHasCodeAndDomain(error, BBAAPIWrongUsage, kBBAAuthServiceName);
+        XCTAssertNil(data);
         BBA_FLAG_ASYNC_TEST_COMPLETE();
     }];
     BBA_WAIT_FOR_ASYNC_TEST();
@@ -186,7 +190,8 @@ XCTAssertEqual(error.code, errorCode);
     [service loginUser:nil
                 client:nil
             completion:^(BBAAuthData *data, NSError *error) {
-                BBAAssertAuthResponseErrorCode(data, error, BBAAPIWrongUsage);
+                BBAAssertErrorHasCodeAndDomain(error, BBAAPIWrongUsage, kBBAAuthServiceName);
+                XCTAssertNil(data);
                 BBA_FLAG_ASYNC_TEST_COMPLETE();
             }];
 
@@ -211,7 +216,8 @@ XCTAssertEqual(error.code, errorCode);
     BBA_DISABLE_ASSERTIONS();
     BBA_PREPARE_ASYNC_TEST();
     [service refreshAuthData:validAuthData completion:^(BBAAuthData *refreshedData, NSError *error) {
-        BBAAssertAuthResponseErrorCode(refreshedData, error, BBAAPIWrongUsage);
+        BBAAssertErrorHasCodeAndDomain(error, BBAAPIWrongUsage, kBBAAuthServiceName);
+        XCTAssertNil(refreshedData);
         BBA_FLAG_ASYNC_TEST_COMPLETE();
     }];
 
@@ -234,7 +240,8 @@ XCTAssertEqual(error.code, errorCode);
     BBA_PREPARE_ASYNC_TEST();
 
     [service getAllClientsForUser:nil completion:^(NSArray *clients, NSError *error) {
-        BBAAssertAuthResponseErrorCode(clients, error, BBAAPIWrongUsage);
+        BBAAssertErrorHasCodeAndDomain(error, BBAAPIWrongUsage, kBBAAuthServiceName);
+        XCTAssertNil(clients);
         BBA_FLAG_ASYNC_TEST_COMPLETE();
     }];
 
@@ -352,241 +359,6 @@ XCTAssertEqual(error.code, errorCode);
     XCTAssertThrows([service revokeRefreshTokenForUser:user completion:nil]);
 }
 
-#pragma mark - Tests that call Live API's
-
-#if 1
-
-- (void) testRegisterUserAndClient{
-    BBAUserDetails *user = [self validRegistrationUser];
-    BBAClientDetails *client = [self validRegistrationClient];
-    BBA_PREPARE_ASYNC_TEST();
-    [service registerUser:user client:client completion:^(BBAAuthData *data, NSError *error) {
-        XCTAssertNil(error);
-        XCTAssertNotNil(data);
-        BBA_FLAG_ASYNC_TEST_COMPLETE();
-    }];
-    BBA_WAIT_FOR_ASYNC_TEST();
-}
-
-- (void) testRegisterClientAndDeleteClient{
-    BBAUserDetails *user = [self validUserDetails];
-    BBAClientDetails *client = [BBAClientDetails new];
-    client.name = @"Unit Test";
-    client.brand = @"Apple";
-    client.operatingSystem = @"iOS8";
-    client.model = @"iPhone Simulator";
-
-    __block BBAClientDetails *addedClient = [BBAClientDetails new];
-
-    BBA_PREPARE_ASYNC_TEST();
-    [service registerClient:client
-                    forUser:user
-                 completion:^(BBAClientDetails *data, NSError *error) {
-                     XCTAssertNotNil(data);
-                     XCTAssertNotNil(data.uri);
-                     XCTAssertNil(error);
-                     addedClient.uri = data.uri;
-                     BBA_FLAG_ASYNC_TEST_COMPLETE();
-                 }];
-    BBA_WAIT_FOR_ASYNC_TEST();
-
-    BBA_RESET_ASYNC_TEST();
-    [service deleteClient:addedClient
-                  forUser:user
-               completion:^(BOOL succes, NSError *error) {
-                   XCTAssertTrue(succes);
-                   XCTAssertNil(error);
-                   BBA_FLAG_ASYNC_TEST_COMPLETE();
-               }];
-    BBA_WAIT_FOR_ASYNC_TEST();
-}
-
-- (void) testValidLoginWithUser{
-    BBA_PREPARE_ASYNC_TEST();
-    BBAUserDetails *user = [self validUserDetails];
-
-    [service loginUser:user
-                client:nil
-            completion:^(BBAAuthData *data, NSError *error) {
-                XCTAssertNotNil(data);
-                XCTAssertNil(error);
-                BBA_FLAG_ASYNC_TEST_COMPLETE();
-            }];
-
-    BBA_WAIT_FOR_ASYNC_TEST();
-}
-
-- (void) testLoginWithUnregisteredUser{
-    BBA_PREPARE_ASYNC_TEST();
-    BBAUserDetails *user = [self nonexistantUserDetails];
-    [service loginUser:user
-                client:nil
-            completion:^(BBAAuthData *data, NSError *error) {
-                BBAAssertAuthResponseErrorCode(data, error, BBAAuthServiceErrorCodeInvalidGrant);
-                BBA_FLAG_ASYNC_TEST_COMPLETE();
-            }];
-
-    BBA_WAIT_FOR_ASYNC_TEST();
-}
-
-- (void) testLoginWithIncorrectPassword{
-    BBA_PREPARE_ASYNC_TEST();
-    BBAUserDetails *user = [self validUserDetails];
-    user.password = @"not_the_correct_password";
-    [service loginUser:user
-                client:nil
-            completion:^(BBAAuthData *data, NSError *error) {
-                BBAAssertAuthResponseErrorCode(data, error, BBAAuthServiceErrorCodeInvalidGrant);
-                BBA_FLAG_ASYNC_TEST_COMPLETE();
-            }];
-
-    BBA_WAIT_FOR_ASYNC_TEST();
-}
-
-- (void) testValidLoginWithUserAndClient{
-    BBA_PREPARE_ASYNC_TEST();
-    BBAUserDetails *user = nil;
-    BBAClientDetails *client = nil;
-    [self prepareValidUserDetails:&user withMatchingClientDetails:&client];
-
-    [service loginUser:user
-                client:client
-            completion:^(BBAAuthData *data, NSError *error) {
-                XCTAssertNotNil(data);
-                XCTAssertNil(error);
-                BBA_FLAG_ASYNC_TEST_COMPLETE();
-            }];
-
-    BBA_WAIT_FOR_ASYNC_TEST();
-}
-
-- (void) testLoginWithUserAndInvalidClient{
-    BBA_PREPARE_ASYNC_TEST();
-    BBAUserDetails *user = [self validUserDetails];
-    BBAClientDetails *client = [self invalidClientDetails];
-
-    [service loginUser:user
-                client:client
-            completion:^(BBAAuthData *data, NSError *error) {
-                BBAAssertAuthResponseErrorCode(data, error, BBAAuthServiceErrorCodeInvalidClient);
-                BBA_FLAG_ASYNC_TEST_COMPLETE();
-            }];
-
-    BBA_WAIT_FOR_ASYNC_TEST();
-}
-
-- (void) testRefreshAuthDataWithInvalidAuthData{
-    BBAAuthData *validAuthData = [self invalidAuthDataForRefresh];
-
-    BBA_PREPARE_ASYNC_TEST();
-    [service refreshAuthData:validAuthData completion:^(BBAAuthData *refreshedData, NSError *error) {
-        BBAAssertAuthResponseErrorCode(refreshedData, error, BBAAuthServiceErrorCodeInvalidGrant);
-        BBA_FLAG_ASYNC_TEST_COMPLETE();
-    }];
-
-    BBA_WAIT_FOR_ASYNC_TEST();
-}
-
-- (void) testRefreshAuthDataWithValidRefreshToken{
-    BBAAuthData *validAuthData = [self validUserAuthDataForRefreshing];
-    XCTAssertNotNil(validAuthData, @"Cannot test refresh with invalid authData");
-
-    BBA_PREPARE_ASYNC_TEST();
-    [service refreshAuthData:validAuthData completion:^(BBAAuthData *refeshedData, NSError *error) {
-
-        XCTAssertNil(error);
-        XCTAssertNotNil(refeshedData);
-        BBA_FLAG_ASYNC_TEST_COMPLETE();
-    }];
-
-    BBA_WAIT_FOR_ASYNC_TEST();
-}
-
-- (void) testRefreshAuthDataWithValidRefreshTokenButIncorrectClientInformation{
-    BBAAuthData *validAuthData = [self validUserAuthDataForRefreshing];
-    validAuthData.clientId = @"asdasd";
-    validAuthData.clientSecret = @"asdasdsadasf";
-    XCTAssertNotNil(validAuthData, @"Cannot test refresh with invalid authData");
-
-    BBA_PREPARE_ASYNC_TEST();
-    [service refreshAuthData:validAuthData completion:^(BBAAuthData *refreshedData, NSError *error) {
-
-        BBAAssertAuthResponseErrorCode(refreshedData, error, BBAAuthServiceErrorCodeInvalidClient);
-        BBA_FLAG_ASYNC_TEST_COMPLETE();
-    }];
-
-    BBA_WAIT_FOR_ASYNC_TEST();
-}
-
-- (void) testResetPassword{
-    BBA_PREPARE_ASYNC_TEST();
-
-    BBAUserDetails *details = [BBAUserDetails new];
-    details.email = @"randomtestaccount@blinkbox.com";
-
-    [service resetPasswordForUser:details completion:^(BOOL success, NSError *error) {
-        XCTAssertTrue(success);
-        XCTAssertNil(error);
-        BBA_FLAG_ASYNC_TEST_COMPLETE();
-    }];
-
-    BBA_WAIT_FOR_ASYNC_TEST();
-}
-
-- (void) testRevokeValidRefreshToken{
-    BBAAuthData *validAuthData = [self validUserAuthDataForRefreshing];
-    XCTAssertNotNil(validAuthData, @"Cannot test revoke with invalid authData");
-    BBAUserDetails *revokeUserDetails = [BBAUserDetails new];
-    revokeUserDetails.refreshToken = validAuthData.refreshToken;
-
-    BBA_PREPARE_ASYNC_TEST();
-    [service revokeRefreshTokenForUser:revokeUserDetails
-                            completion:^(BOOL success, NSError *error) {
-
-                                XCTAssertNil(error);
-                                XCTAssertTrue(success);
-                                BBA_FLAG_ASYNC_TEST_COMPLETE();
-                            }];
-
-    BBA_WAIT_FOR_ASYNC_TEST();
-}
-
-- (void) testRevokeInvalidRefreshToken{
-    BBAUserDetails *revokeUserDetails = [BBAUserDetails new];
-    revokeUserDetails.refreshToken = @"sdfsdfsdfsdf32g";
-
-    BBA_PREPARE_ASYNC_TEST();
-    [service revokeRefreshTokenForUser:revokeUserDetails
-                            completion:^(BOOL success, NSError *error) {
-
-                                XCTAssertEqualObjects(error.domain, kBBAAuthServiceName);
-                                XCTAssertEqual(error.code, BBAAuthServiceErrorCodeInvalidGrant);
-                                XCTAssertFalse(success);
-                                BBA_FLAG_ASYNC_TEST_COMPLETE();
-                            }];
-
-    BBA_WAIT_FOR_ASYNC_TEST();
-}
-
-- (void) testGetAllClients{
-    BBA_PREPARE_ASYNC_TEST();
-
-    BBAUserDetails *user;
-    BBAClientDetails *client;
-    [self prepareDefaultAuthenticatorWithValidUser:&user
-                                         andClient:&client];
-
-    [service getAllClientsForUser:user completion:^(NSArray *clients, NSError *error) {
-        XCTAssertTrue([clients isKindOfClass:[NSArray class]]);
-        XCTAssertNil(error);
-        BBA_FLAG_ASYNC_TEST_COMPLETE();
-        
-    }];
-    BBA_WAIT_FOR_ASYNC_TEST();
-    
-}
-
-#endif
 
 #pragma mark - Helper methods
 
