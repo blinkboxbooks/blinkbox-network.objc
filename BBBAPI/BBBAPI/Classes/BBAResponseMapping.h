@@ -12,7 +12,8 @@ extern NSString *const BBAResponseMappingErrorDomain;
 
 typedef NS_ENUM(NSInteger, BBAResponseMappingError) {
     BBAResponseMappingErrorUnreadableData = 610,
-    BBAResponseMappingErrorUnexpectedDataFormat = 611
+    BBAResponseMappingErrorUnexpectedDataFormat = 611,
+    BBAResponseMappingErrorNotFound = 612
 };
 
 @protocol BBAResponseMapping <NSObject>

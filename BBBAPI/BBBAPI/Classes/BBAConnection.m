@@ -55,6 +55,8 @@ NSString *const BBAHTTPVersion11 = @"HTTP/1.1";
 
 @implementation BBAConnection
 
+#pragma mark - NSObject
+
 - (id) init{
     self = [super init];
     if (self) {
@@ -66,6 +68,7 @@ NSString *const BBAHTTPVersion11 = @"HTTP/1.1";
     }
     return self;
 }
+
 - (id) initWithBaseURL:(NSURL *)URL{
     NSParameterAssert(URL);
     
@@ -80,14 +83,27 @@ NSString *const BBAHTTPVersion11 = @"HTTP/1.1";
     return self;
 }
 
-- (NSURLSession *)session{
+- (id) initWithDomain:(BBAAPIDomain)domain relativeURL:(NSString *)relativeURLString{
+    
+    NSURL *baseURL = [[BBANetworkConfiguration defaultConfiguration] baseURLForDomain:domain];
+    
+    NSURL *url = [NSURL URLWithString:relativeURLString relativeToURL:baseURL];
+    
+    self = [self initWithBaseURL:url];
+    
+    return self;
+}
+
+#pragma mark - Getter
+
+- (NSURLSession *) session{
     if (!_session) {
         _session = [NSURLSession sharedSession];
     }
     return _session;
 }
 
-- (id<BBAAuthenticator>)authenticator{
+- (id<BBAAuthenticator>) authenticator{
     if (!_authenticator) {
         _authenticator = [[BBANetworkConfiguration defaultConfiguration] sharedAuthenticator];
     }
@@ -101,16 +117,7 @@ NSString *const BBAHTTPVersion11 = @"HTTP/1.1";
     return _requestFactory;
 }
 
-- (id) initWithDomain:(BBAAPIDomain)domain relativeURL:(NSString *)relativeURLString{
-    
-    NSURL *baseURL = [[BBANetworkConfiguration defaultConfiguration] baseURLForDomain:domain];
-    
-    NSURL *url = [NSURL URLWithString:relativeURLString relativeToURL:baseURL];
-    
-    self = [self initWithBaseURL:url];
-    
-    return self;
-}
+#pragma mark - Public
 
 - (void) addParameterWithKey:(NSString*)key value:(NSString*)value{
     NSAssert([self.parameters objectForKey:key] == nil, @"Overwriting parameter %@. Is that intended?", key);
@@ -154,10 +161,6 @@ NSString *const BBAHTTPVersion11 = @"HTTP/1.1";
                               value:BBANSStringFromBBAContentType(contentType)];
     }
     
-}
-
-- (void) perform:(BBAHTTPMethod)method completion:(void (^)(id, NSError *))completion{
-    [self perform:method forUser:nil completion:completion];
 }
 
 - (void) perform:(BBAHTTPMethod)method
@@ -217,7 +220,6 @@ NSString *const BBAHTTPVersion11 = @"HTTP/1.1";
     
 }
 
-
 - (void) performRequest:(BBARequest *)request
              completion:(void (^)(id response, NSError *error))completion{
     
@@ -255,6 +257,12 @@ NSString *const BBAHTTPVersion11 = @"HTTP/1.1";
                     }];
     
     [dataTask resume];
+}
+
+#pragma mark - Private
+
+- (void) perform:(BBAHTTPMethod)method completion:(void (^)(id, NSError *))completion{
+    [self perform:method forUser:nil completion:completion];
 }
 
 @end

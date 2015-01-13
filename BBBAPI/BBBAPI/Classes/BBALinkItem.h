@@ -11,7 +11,7 @@
 @class FEMObjectMapping;
 
 /**
- *  BBALinkItem provides a data representation of a link present in various responses form the service.
+ *  `BBALinkItem` provides a data representation of a link present in various responses form the service.
  *  Services like Bookmarks and Catalogue can use this as part of deserialisation.
  */
 @interface BBALinkItem : NSObject

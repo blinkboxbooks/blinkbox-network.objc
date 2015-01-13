@@ -136,7 +136,7 @@ XCTAssertThrows([service resultsForSearchTerm:@"term"
     [service searchSuggestionsForTerm:@"italo"
                            completion:^(NSArray *results, NSError *error) {
 
-                               BBBAssertErrorHasCodeAndDomain(error,
+                               BBAAssertErrorHasCodeAndDomain(error,
                                                               BBAAPIErrorBadRequest,
                                                               BBASearchServiceErrorDomain);
 
@@ -163,7 +163,7 @@ XCTAssertThrows([service resultsForSearchTerm:@"term"
     [service searchSuggestionsForTerm:@"italo"
                            completion:^(NSArray *results, NSError *error) {
                                XCTAssertNil(results);
-                               BBBAssertErrorHasCodeAndDomain(error,
+                               BBAAssertErrorHasCodeAndDomain(error,
                                                               BBAAPIServerError,
                                                               BBASearchServiceErrorDomain);
                                BBA_FLAG_ASYNC_TEST_COMPLETE();
@@ -261,7 +261,7 @@ XCTAssertThrows([service resultsForSearchTerm:nil
                          callback:^(NSUInteger numResults, NSArray *results, NSError *error) {
                              XCTAssertNil(results);
 
-                             BBBAssertErrorHasCodeAndDomain(error,
+                             BBAAssertErrorHasCodeAndDomain(error,
                                                             BBAAPIErrorBadRequest,
                                                             BBASearchServiceErrorDomain);
 
@@ -295,7 +295,7 @@ XCTAssertThrows([service resultsForSearchTerm:nil
                         sortOrder:BBASearchSortOrderRelevance
                          callback:^(NSUInteger numResults, NSArray *results, NSError *error) {
                              XCTAssertNil(results);
-                             BBBAssertErrorHasCodeAndDomain(error,
+                             BBAAssertErrorHasCodeAndDomain(error,
                                                             BBAAPIServerError,
                                                             BBASearchServiceErrorDomain);
                              BBA_FLAG_ASYNC_TEST_COMPLETE();

@@ -217,7 +217,7 @@ extern NSString * BBANSStringFromBBAContentType(BBAContentType type);
     [connection perform:(BBAHTTPMethodGET)
              completion:^(id response, NSError *error) {
                  XCTAssertNil(response);
-                 BBBAssertErrorHasCodeAndDomain(error, code, domain);
+                 BBAAssertErrorHasCodeAndDomain(error, code, domain);
              }];
     BBA_ENABLE_ASSERTIONS();
 }
@@ -275,10 +275,10 @@ extern NSString * BBANSStringFromBBAContentType(BBAContentType type);
     NSInteger code = BBAAPIErrorCouldNotConnect;
     NSString *domain = BBAConnectionErrorDomain;
     
-    XCTestExpectation *expectation = [self expectationWithDescription:@"Connection completion"];
+    __weak XCTestExpectation *expectation = [self expectationWithDescription:@"Connection completion"];
     [connection perform:(BBAHTTPMethodGET) completion:^(id response, NSError *error) {
         XCTAssertNil(response);
-        BBBAssertErrorHasCodeAndDomain(error, code, domain);
+        BBAAssertErrorHasCodeAndDomain(error, code, domain);
         [expectation fulfill];
     }];
     
@@ -308,7 +308,7 @@ extern NSString * BBANSStringFromBBAContentType(BBAContentType type);
     XCTestExpectation *expectation = [self expectationWithDescription:@"Connection completion"];
     [connection perform:(BBAHTTPMethodGET) completion:^(id response, NSError *error) {
         XCTAssertEqualObjects(response, @"12345");
-        BBBAssertErrorHasCodeAndDomain(error,code, domain);
+        BBAAssertErrorHasCodeAndDomain(error,code, domain);
         [expectation fulfill];
     }];
     

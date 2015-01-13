@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "BBALibraryTypes.h"
 
-@class BBALibraryItemLink;
+@class BBALinkItem;
 
 /**
  *  Object that represents Library Changes Object in the iOS Domain
@@ -32,8 +32,10 @@
 @property (nonatomic, assign) NSInteger maxNumberOfAuthorisedDevices;
 @property (nonatomic, assign) NSInteger numberOfAuthorisedDevices;
 
+@property (nonatomic, copy) NSString *synopsis;
+
 /**
- *  Array of `BBALibraryItemLink` objects
+ *  Array of `BBALinkItem` objects
  */
 @property (nonatomic, copy) NSArray *links;
 
