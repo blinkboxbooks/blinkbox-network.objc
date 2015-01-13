@@ -282,17 +282,17 @@ NSString *const kBBABookmarkServiceErrorDomain = @"BBA.error.bookmarkServiceDoma
     return types;
 }
 
-#pragma mark - Setters
+
+
+#pragma mark - Getters
 
 - (Class) connectionClass{
-    if (_connectionClass == nil) {
+    if (_connectionClass == Nil) {
         _connectionClass = [BBAConnection class];
     }
 
     return _connectionClass;
 }
-
-#pragma mark - Getters
 
 - (BBAServerDateFormatter *) dateFormatter{
     if (_dateFormatter == nil) {
