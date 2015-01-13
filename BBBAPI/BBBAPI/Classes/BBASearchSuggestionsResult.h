@@ -15,6 +15,9 @@
 @interface BBASearchSuggestionsResult : NSObject
 
 @property (nonatomic, copy) NSString *type;
+/**
+ *  Contains `BBASearchServiceSuggestion` objects
+ */
 @property (nonatomic, copy) NSArray *items;
 
 /**
