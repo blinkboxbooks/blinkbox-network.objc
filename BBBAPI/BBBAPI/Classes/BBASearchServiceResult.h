@@ -15,6 +15,9 @@
 
 @property (nonatomic, copy) NSString *type;
 @property (nonatomic, copy) NSString *identifier;
+/**
+ *  Array of `BBALibraryItemLink` objects
+ */
 @property (nonatomic, copy) NSArray *links;
 @property (nonatomic, assign) NSInteger numberOfResults;
 @property (nonatomic, copy) NSArray *books;
