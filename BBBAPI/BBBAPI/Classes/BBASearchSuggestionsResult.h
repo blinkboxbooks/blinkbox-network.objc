@@ -14,6 +14,11 @@
  */
 @interface BBASearchSuggestionsResult : NSObject
 
+/**
+ *  Servers type name for this result.
+ *  Currently this can be either:
+ *  `urn:blinkboxbooks:schema:suggestion:book` or `urn:blinkboxbooks:schema:suggestion:contributor`
+ */
 @property (nonatomic, copy) NSString *type;
 /**
  *  Contains `BBASearchServiceSuggestion` objects
