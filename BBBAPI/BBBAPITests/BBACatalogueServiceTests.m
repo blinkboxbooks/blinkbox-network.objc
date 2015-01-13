@@ -16,6 +16,18 @@
 #import "BBASwizzlingHelper.h"
 #import "BBACatalogueServiceTestHelper.h"
 
+@interface NSString (TestHelper)
+- (BOOL) bba_containsString:(NSString *)string;
+@end
+@implementation NSString (TestHelper)
+- (BOOL) bba_containsString:(NSString *)string{
+    if (!string) {
+        return NO;
+    }
+    return [self rangeOfString:string].location != NSNotFound;
+}
+@end
+
 @interface BBACatalogueServiceTests : XCTestCase{
     BBACatalogueService *service;
     id mockConnection;
@@ -40,6 +52,7 @@
 
 - (void) tearDown{
     service = nil;
+    [OHHTTPStubs removeAllStubs];
     [super tearDown];
 }
 
@@ -233,6 +246,32 @@
     OCMVerifyAll(mockConnection);
 }
 
+- (void) testRelatedPassesCountToConnection{
+    [self enableConnectionMock];
+    BBABookItem *item = [BBABookItem new];
+    item.identifier = @"isbn";
+    OCMExpect([mockConnection addParameterWithKey:[OCMArg isEqual:@"count"]
+                                            value:@"10"]);
+    [service getRelatedBooksForBookItem:item
+                                  count:10
+                             completion:^(NSArray *libraryItems, NSError *error) {}];
+    [self disableConnectionMock];
+    OCMVerifyAll(mockConnection);
+}
+
+- (void) testRelatedPassesCount1ToConnectionIfPassed0AsParameter{
+    [self enableConnectionMock];
+    BBABookItem *item = [BBABookItem new];
+    item.identifier = @"isbn";
+    OCMExpect([mockConnection addParameterWithKey:[OCMArg isEqual:@"count"]
+                                            value:@"1"]);
+    [service getRelatedBooksForBookItem:item
+                                  count:0
+                             completion:^(NSArray *libraryItems, NSError *error) {}];
+    [self disableConnectionMock];
+    OCMVerifyAll(mockConnection);
+}
+
 
 
 - (void) testDetailsThrowOnNilArray{
@@ -280,11 +319,11 @@
     NSArray *array = [BBACatalogueServiceTestHelper sampleBigFakeItems];
     
     [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
-        BOOL contains = [request.URL.absoluteString containsString:@"catalogue/books?"];
+        BOOL contains = [request.URL.absoluteString bba_containsString:@"catalogue/books?"];
         return contains;
     }
                         withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
-                            return [self responseForRequest:request];
+                            return [self vaildResponseForRequest:request];
                         }];
     
     __weak XCTestExpectation *expect = [self expectationWithDescription:@"send3RequestsFor150Books"];
@@ -295,23 +334,66 @@
                                                    [detailItems valueForKeyPath:@"identifier"]);
                          }];
     
-    [self waitForExpectationsWithTimeout:50000.0 handler:nil];
+    [self waitForExpectationsWithTimeout:5.0 handler:nil];
+}
+
+- (void) testDetailsReturnsErrorWhenAnyRequestFails{
+    NSArray *array = [BBACatalogueServiceTestHelper sampleBigFakeItems];
+    
+    [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
+        BOOL contains = [request.URL.absoluteString bba_containsString:@"catalogue/books?"];
+        return contains;
+    }
+                        withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
+                            return [self unvaildResponseForRequest:request];
+                        }];
+    
+    __weak XCTestExpectation *expect = [self expectationWithDescription:@"send3RequestsFor150Books"];
+    [service getDetailsForBookItems:array
+                         completion:^(NSArray *detailItems, NSError *error) {
+                             [expect fulfill];
+                             XCTAssertNil(detailItems);
+                             BBAAssertErrorHasCodeAndDomain(error,
+                                                            BBAResponseMappingErrorNotFound,
+                                                            BBAResponseMappingErrorDomain);
+                         }];
+    
+    [self waitForExpectationsWithTimeout:5.0 handler:nil];
 }
 
 
 #pragma mark - Helpers
 
-- (OHHTTPStubsResponse *) responseForRequest:(NSURLRequest *)request{
+- (OHHTTPStubsResponse *) vaildResponseForRequest:(NSURLRequest *)request{
     NSString *pars = [request.URL absoluteString];
     NSInteger location;
-    if ([pars containsString:@"id=1&"]) {
+    if ([pars bba_containsString:@"id=1&"]) {
         location = 1;
     }
-    else if ([pars containsString:@"id=51&"]) {
+    else if ([pars bba_containsString:@"id=51&"]) {
         location = 51;
     }
-    else if ([pars containsString:@"id=101&"]) {
+    else if ([pars bba_containsString:@"id=101&"]) {
         location = 101;
+    }
+    
+    NSRange range = NSMakeRange(location, 50);
+    NSDictionary *obj = [BBACatalogueServiceTestHelper sampleBigFakeResponseForRange:range];
+    NSData *data = [NSJSONSerialization dataWithJSONObject:obj options:0 error:nil];
+    return [OHHTTPStubsResponse responseWithData:data statusCode:200 headers:nil];
+}
+
+- (OHHTTPStubsResponse *) unvaildResponseForRequest:(NSURLRequest *)request{
+    NSString *pars = [request.URL absoluteString];
+    NSInteger location;
+    if ([pars bba_containsString:@"id=1&"]) {
+        location = 1;
+    }
+    else if ([pars bba_containsString:@"id=51&"]) {
+        location = 51;
+    }
+    else if ([pars bba_containsString:@"id=101&"]) {
+        return [OHHTTPStubsResponse responseWithData:nil statusCode:404 headers:nil];
     }
     
     NSRange range = NSMakeRange(location, 50);
