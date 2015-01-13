@@ -29,5 +29,6 @@ Pod::Spec.new do |s|
 
   s.dependency "CocoaLumberjack" , '~> 1.9.2'
   s.dependency "FastEasyMapping", '~>0.5.1'
+  s.dependency "NSArray+Functional", '~>1.0.0'
 
 end

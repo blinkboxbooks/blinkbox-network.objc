@@ -37,19 +37,15 @@ static NSString *const kSynopsisType = @"urn:blinkboxbooks:schema:synopsis";
                   error:(NSError **)error{
     
     if (response.statusCode == BBAHTTPNotFound) {
-        *error = [NSError errorWithDomain:BBAResponseMappingErrorDomain
-                                     code:BBAResponseMappingErrorNotFound
-                                 userInfo:nil];
+        [self notFoundError:error];
         return nil;
     }
     
-    /* 
+    /*
      /related returns 500 when asked with not-existing ISBN
      */
     if (response.statusCode == BBAHTTPServerError) {
-        *error = [NSError errorWithDomain:BBAResponseMappingErrorDomain
-                                     code:BBAResponseMappingErrorNotFound
-                                 userInfo:nil];
+        [self notFoundError:error];
         return nil;
     }
     
@@ -97,11 +93,11 @@ static NSString *const kSynopsisType = @"urn:blinkboxbooks:schema:synopsis";
         
         [items addObject:item];
     }
-    return items;;
+    return items;
 }
 
 - (BBABookItem *) synopsisResponseFromDictionary:(NSDictionary *)dictionary
-                                              error:(NSError **)error{
+                                           error:(NSError **)error{
     if (![dictionary isKindOfClass:[NSDictionary class]]) {
         [self wrongDataError:error];
         return nil;
@@ -124,6 +120,14 @@ static NSString *const kSynopsisType = @"urn:blinkboxbooks:schema:synopsis";
     if (error != nil) {
         *error = [NSError errorWithDomain:BBAResponseMappingErrorDomain
                                      code:BBAResponseMappingErrorUnreadableData
+                                 userInfo:nil];
+    }
+}
+
+- (void) notFoundError:(NSError **)error{
+    if (error != nil) {
+        *error = [NSError errorWithDomain:BBAResponseMappingErrorDomain
+                                     code:BBAResponseMappingErrorNotFound
                                  userInfo:nil];
     }
 }

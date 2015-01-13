@@ -14,7 +14,7 @@
 #import "BBACatalogueResponseMapper.h"
 #import <NSArray+Functional.h>
 
-NSString *const BBACatalogueErrorDomain = @"com.BBB.CatalogueErrorDomain";
+NSString *const BBACatalogueErrorDomain = @"com.BBA.CatalogueErrorDomain";
 
 @implementation BBACatalogueService
 

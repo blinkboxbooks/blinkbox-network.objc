@@ -9,8 +9,20 @@
 #import <Foundation/Foundation.h>
 @class BBABookItem;
 
+/**
+ *  `BBABooksMapper` parses the response items from the Catalogue (Book) Service into 
+ *  `BBABookItem` objects and does the basic validation of the incoming data
+ */
 @interface BBABooksMapper : NSObject
-- (BBABookItem *)itemFromDictionary:(NSDictionary *)dictionary;
+/**
+ *  Creates and fills new `BBABookItem` object with the data
+ *  from the `dictionary`
+ *
+ *  @param dictionary must not be `nil`, and `type` field must contain "urn:blinkboxbooks:schema:book"
+ *
+ *  @return new instance of the `BBABookItem` or `nil` if `dictionary` doesn't validate 
+ */
+- (BBABookItem *) itemFromDictionary:(NSDictionary *)dictionary;
 @end
 
 

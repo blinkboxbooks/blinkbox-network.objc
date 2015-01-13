@@ -39,9 +39,11 @@ static NSString *const kBookSchema = @"urn:blinkboxbooks:schema:book";
     }
     return _linksMapping;
 }
+
 #pragma mark - Public
 
-- (BBABookItem *)itemFromDictionary:(NSDictionary *)dictionary{
+- (BBABookItem *) itemFromDictionary:(NSDictionary *)dictionary{
+    
     BOOL classIsOk = [dictionary isKindOfClass:[NSDictionary class]];
     NSParameterAssert(classIsOk);
     if (!classIsOk) {
