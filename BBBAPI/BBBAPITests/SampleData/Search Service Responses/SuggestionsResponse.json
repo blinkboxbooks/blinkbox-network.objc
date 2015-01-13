@@ -1,0 +1,18 @@
+{
+    "type": "urn:blinkboxbooks:schema:list",
+    "items": [
+        {
+            "type": "urn:blinkboxbooks:schema:suggestion:book",
+            "title": "Italo Calvino's Architecture of Lightness",
+            "id": "9781136730597",
+            "authors": [
+                "Letizia Modena"
+            ]
+        },
+        {
+            "type": "urn:blinkboxbooks:schema:suggestion:contributor",
+            "title": "Italo Calvino",
+            "id": "9d7f706e68b16daafe4ea499fda450c32417421a"         
+        }
+    ]
+}

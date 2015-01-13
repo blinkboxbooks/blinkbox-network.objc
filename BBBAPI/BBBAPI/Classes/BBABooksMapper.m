@@ -9,15 +9,16 @@
 #import "BBABooksMapper.h"
 #import "BBABookItem.h"
 #import "BBAImageItem.h"
-#import "BBAItemLink.h"
-#import "BBAItemLinkMapper.h"
+#import "BBALinkItem.h"
 #import <NSArray+Functional.h>
+#import <FastEasyMapping.h>
 
 static NSString *const kBookSchema = @"urn:blinkboxbooks:schema:book";
 
 
 @interface BBABooksMapper ()
 @property (nonatomic, strong) NSDateFormatter *dateFormatter;
+@property (nonatomic, strong) FEMObjectMapping *linksMapping;
 @end
 
 @implementation BBABooksMapper
@@ -32,6 +33,12 @@ static NSString *const kBookSchema = @"urn:blinkboxbooks:schema:book";
     return _dateFormatter;
 }
 
+- (FEMObjectMapping *) linksMapping{
+    if (!_linksMapping) {
+        _linksMapping = [BBALinkItem linkItemMapping];
+    }
+    return _linksMapping;
+}
 #pragma mark - Public
 
 - (BBABookItem *)itemFromDictionary:(NSDictionary *)dictionary{
@@ -60,10 +67,9 @@ static NSString *const kBookSchema = @"urn:blinkboxbooks:schema:book";
     [self mapImages:dictionary[@"images"] toItem:item];
     
     NSArray *links = dictionary[@"links"];
-    BBAItemLinkMapper *mapper = [BBAItemLinkMapper new];
-    item.links = [links mapUsingBlock:^id(id obj) {
-        return [mapper linkFromDictionary:obj];
-    }];
+    
+    item.links = [FEMObjectDeserializer deserializeCollectionExternalRepresentation:links
+                                                                       usingMapping:self.linksMapping];
     
     return item;
 }

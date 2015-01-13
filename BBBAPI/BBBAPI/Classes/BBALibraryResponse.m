@@ -9,7 +9,7 @@
 #import "BBALibraryResponse.h"
 #import "BBAResponseMapping.h"
 #import "BBALibraryItem.h"
-#import "BBAItemLink.h"
+#import "BBALinkItem.h"
 #import "BBALibraryItemMapper.h"
 #import "BBAServerDateFormatter.h"
 

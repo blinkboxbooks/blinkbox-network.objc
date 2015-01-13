@@ -8,7 +8,7 @@
 
 #import "BBALibraryItem.h"
 #import "BBALibraryResponse.h"
-#import "BBAItemLink.h"
+#import "BBALinkItem.h"
 
 @implementation BBALibraryItem
 
@@ -81,7 +81,7 @@
     
     if (self.links.count > 0) {
         for (NSInteger i = 0; i < self.links.count; i++) {
-            BBAItemLink *link = self.links[i];
+            BBALinkItem *link = self.links[i];
             [string appendFormat:@"link: %ld%@%@%@", i, newLine, [link description], newLine];
         }
     }
@@ -99,9 +99,9 @@
     
     NSString *fullRelation = [NSString stringWithFormat:@"urn:blinkboxbooks:schema:%@",relation];
     
-    for (BBAItemLink *link in self.links) {
-        if([link.relationship isEqualToString:fullRelation]){
-            return link.address;
+    for (BBALinkItem *link in self.links) {
+        if([link.rel isEqualToString:fullRelation]){
+            return link.href;
         }
     }
     

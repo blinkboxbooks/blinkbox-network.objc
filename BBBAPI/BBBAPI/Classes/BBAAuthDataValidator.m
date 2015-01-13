@@ -9,12 +9,12 @@
 #import "BBAAuthDataValidator.h"
 #import "BBAAuthData.h"
 #import "BBAAuthenticationServiceConstants.h"
+#import "BBAMacros.h"
+
 /**
  *  Can be used to make code not stringly-typed and shorter, for example in
  *  KVO, KVC, NSSortDescriptors, NSPredicates
  */
-#warning Move to BBAMacros.h when we have one in the API project
-#define  BBAKEY(val) NSStringFromSelector(@selector(val))
 
 @implementation BBAAuthDataValidator
 - (BOOL) isValid:(BBAAuthData *)data forResponse:(NSURLResponse *)response{

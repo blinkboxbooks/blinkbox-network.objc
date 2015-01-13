@@ -7,7 +7,7 @@
 //
 
 #import "BBALibraryItem.h"
-#import "BBAItemLink.h"
+#import "BBALinkItem.h"
 
 @interface BBALibraryItemTests : XCTestCase{
     BBALibraryItem *item;
@@ -22,15 +22,15 @@
 - (void) setUp{
     [super setUp];
     item = [BBALibraryItem new];
-    BBAItemLink *link1 = [BBAItemLink new];
-    link1.relationship = @"urn:blinkboxbooks:schema:fullmedia";
-    link1.address = @"full link";
-    BBAItemLink *link2 = [BBAItemLink new];
-    link2.relationship = @"urn:blinkboxbooks:schema:mediakey";
-    link2.address = @"media key link";
-    BBAItemLink *link3 = [BBAItemLink new];
-    link3.relationship = @"urn:blinkboxbooks:schema:samplemedia";
-    link3.address = @"sample link";
+    BBALinkItem *link1 = [BBALinkItem new];
+    link1.rel = @"urn:blinkboxbooks:schema:fullmedia";
+    link1.href = @"full link";
+    BBALinkItem *link2 = [BBALinkItem new];
+    link2.rel = @"urn:blinkboxbooks:schema:mediakey";
+    link2.href = @"media key link";
+    BBALinkItem *link3 = [BBALinkItem new];
+    link3.rel = @"urn:blinkboxbooks:schema:samplemedia";
+    link3.href = @"sample link";
     item.links = @[link1, link2, link3];
 }
 

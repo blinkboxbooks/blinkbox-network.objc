@@ -8,8 +8,9 @@
 
 #import "BBALibraryItemMapper.h"
 #import "BBALibraryItem.h"
-#import "BBAItemLinkMapper.h"
+#import "BBALinkItem.h"
 #import "BBAServerDateFormatter.h"
+#import <FastEasyMapping.h>
 
 BBAReadingStatus BBAReadingStatusFromString(NSString *status);
 BBAPurchaseStatus BBAPurchaseStatusFromString(NSString *status);
@@ -20,6 +21,8 @@ static NSString *const kLibraryItemSchema = @"urn:blinkboxbooks:schema:libraryit
 @interface BBALibraryItemMapper ()
 
 @property (nonatomic, strong) NSDateFormatter *dateFormatter;
+
+@property (nonatomic, strong) FEMObjectMapping *linksMapper;
 
 @end
 
@@ -87,18 +90,11 @@ static NSString *const kLibraryItemSchema = @"urn:blinkboxbooks:schema:libraryit
         item.maxNumberOfAuthorisedDevices = [maxNumberOfAuthorisedDevices integerValue];
         item.numberOfAuthorisedDevices = [numberOfAuthorisedDevices integerValue];
     }
-    BBAItemLinkMapper *linkMapper = [BBAItemLinkMapper new];
     
-    NSMutableArray *linksArray = [NSMutableArray new];
     NSArray *links = dictionary[@"links"];
-    for (NSDictionary *d in links) {
-        BBAItemLink *link = [linkMapper linkFromDictionary:d];
-        if (link) {
-            [linksArray addObject:link];
-        }
-    }
     
-    item.links = [NSArray arrayWithArray:linksArray];
+    item.links = [FEMObjectDeserializer deserializeCollectionExternalRepresentation:links
+                                                                       usingMapping:self.linksMapper];
     
     return item;
 }
@@ -110,6 +106,13 @@ static NSString *const kLibraryItemSchema = @"urn:blinkboxbooks:schema:libraryit
         _dateFormatter = [ BBAServerDateFormatter new];
     }
     return _dateFormatter;
+}
+
+- (FEMObjectMapping *) linksMapper{
+    if (!_linksMapper) {
+        _linksMapper = [BBALinkItem linkItemMapping];
+    }
+    return _linksMapper;
 }
 
 @end
