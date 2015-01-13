@@ -49,13 +49,12 @@ typedef NS_ENUM(NSUInteger, BBASearchType) {
                      callback:(void (^)(NSUInteger numResults, NSArray *results, NSError *error))callback;
 
 /**
- *  Wraps `resultsForSearchTerm:searchType:resultCount:resultOffset:descending:sortOrder:callback:`
- *  and returns native objects instead of `NSDictionary`.
- *  @seealso BBBSearchServiceItem
+ *  Query the search service for search suggestions. 
+ *  Results are returned as an array of `BBASearchServiceSuggestion`
  *
  *  @param searchTerm can't be `nil`
  *  @param completion can't be `nil`, called on the callers queue.
- *                    `results` contain only `BBBSearchServiceItem` object or is `nil`,
+ *                    `results` contain only `BBASearchServiceSuggestion` object or is `nil`,
  *                    when `nil` request failed and `error` contains the reason of the problem
  */
 - (void) searchSuggestionsForTerm:(NSString *)searchTerm
