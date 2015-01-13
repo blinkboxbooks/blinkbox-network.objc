@@ -21,8 +21,6 @@ NSString *const BBASearchServiceName = @"com.BBA.searchService";
  *  The class to use for communication with the server. This defaults to BBAConnection.
  */
 @property (nonatomic, strong) Class connectionClass;
-@property (nonatomic, copy, readonly) NSString *suggestionsEndPoint;
-@property (nonatomic, copy, readonly) NSString *searchEndPoint;
 @property (nonatomic, strong) BBANetworkConfiguration *configuration;
 @end
 
@@ -128,10 +126,10 @@ NSString *const BBASearchServiceName = @"com.BBA.searchService";
 - (NSString *) endPointForSearchType:(BBASearchType)type{
 
     if (type == BBASearchTypeBooks) {
-        return [self searchEndPoint];
+        return @"search/books";
     }
     else if (type == BBASearchTypeSuggestions){
-        return [self suggestionsEndPoint];
+        return @"search/suggestions";
     }
 
     NSAssert(false,@"Unsupported search type");
@@ -166,14 +164,6 @@ NSString *const BBASearchServiceName = @"com.BBA.searchService";
     }
 
     return _connectionClass;
-}
-
-- (NSString *) searchEndPoint{
-    return @"search/books";
-}
-
-- (NSString *) suggestionsEndPoint{
-    return @"search/suggestions";
 }
 
 - (BBANetworkConfiguration *) configuration{
