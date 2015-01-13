@@ -8,7 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ *  Represents image link
+ */
 @interface BBAImageItem : NSObject
+
+
 @property (nonatomic, copy) NSString *relative;
+/**
+ *  URL of the given image
+ */
 @property (nonatomic, strong) NSURL *url;
+
 @end
