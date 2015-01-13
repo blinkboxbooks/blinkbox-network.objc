@@ -14,6 +14,9 @@
 @interface BBASearchServiceBook : NSObject
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *identifier;
+/**
+ *  Contains NSString values
+ */
 @property (nonatomic, copy) NSArray *authors;
 
 /**
