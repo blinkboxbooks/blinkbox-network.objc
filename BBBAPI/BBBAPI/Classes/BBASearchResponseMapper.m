@@ -10,7 +10,7 @@
 #import "BBAAPIErrors.h"
 #import "BBAConnection.h"
 #import "BBASearchService.h"
-#import "BBASearchServiceBook.h"
+#import "BBASearchItem.h"
 #import "BBASearchServiceResult.h"
 #import "BBASearchSuggestionsResult.h"
 #import <FastEasyMapping/FastEasyMapping.h>
@@ -30,47 +30,49 @@
                   error:(NSError **)error{
     NSInteger statusCode = ((NSHTTPURLResponse *)response).statusCode;
 
-    if (statusCode == BBAHTTPSuccess) {
-        NSDictionary *responseData = [super responseFromData:data
-                                                    response:response
-                                                       error:nil];
-        if (!responseData){
-            if (error){
-                *error = [NSError errorWithDomain:BBASearchServiceErrorDomain
-                                               code:BBAAPIUnreadableData
-                                           userInfo:nil];
-            }
-            return nil;
+    if (statusCode != BBAHTTPSuccess) {
+        if (error) {
+            *error = self.statusCodeErrors[@(statusCode)];
         }
-
-        NSString *type = responseData[@"type"];
-
-        if ([type isEqualToString:@"urn:blinkboxbooks:schema:list"]) {
-            FEMObjectMapping *mapping = [BBASearchSuggestionsResult searchSuggestionsResultMapping];
-            BBASearchSuggestionsResult *result;
-            result = [FEMObjectDeserializer deserializeObjectExternalRepresentation:responseData
-                                                                       usingMapping:mapping];
-
-            return result;
-
-        }
-        else if([type isEqualToString:@"urn:blinkboxbooks:schema:search"]){
-            FEMObjectMapping *mapping = [BBASearchServiceResult searchServiceResultMapping];
-            BBASearchServiceResult *result;
-            result = [FEMObjectDeserializer deserializeObjectExternalRepresentation:responseData
-                                                                       usingMapping:mapping];
-
-            return result;
-        }
-
         return nil;
     }
 
-    if (error) {
-        *error = self.statusCodeErrors[@(statusCode)];
+    NSDictionary *responseData = [super responseFromData:data
+                                                response:response
+                                                   error:nil];
+    if (!responseData){
+        if (error){
+            *error = [NSError errorWithDomain:BBASearchServiceErrorDomain
+                                         code:BBAAPIUnreadableData
+                                     userInfo:nil];
+        }
+        return nil;
     }
 
-    return nil;
+    NSString *type = responseData[@"type"];
+
+    if ([type isEqualToString:@"urn:blinkboxbooks:schema:list"]) {
+        FEMObjectMapping *mapping = [BBASearchSuggestionsResult searchSuggestionsResultMapping];
+        BBASearchSuggestionsResult *result;
+        result = [FEMObjectDeserializer deserializeObjectExternalRepresentation:responseData
+                                                                   usingMapping:mapping];
+
+        return result;
+
+    }
+    else if([type isEqualToString:@"urn:blinkboxbooks:schema:search"]){
+        FEMObjectMapping *mapping = [BBASearchServiceResult searchServiceResultMapping];
+        BBASearchServiceResult *result;
+        result = [FEMObjectDeserializer deserializeObjectExternalRepresentation:responseData
+                                                                   usingMapping:mapping];
+
+        return result;
+    }
+    else{
+        NSAssert(@"Unrecognised response type %@", type);
+        return nil;
+    }
+
 }
 
 #pragma mark - Private Methods

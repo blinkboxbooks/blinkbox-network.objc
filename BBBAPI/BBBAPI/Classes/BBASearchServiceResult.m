@@ -7,7 +7,7 @@
 //
 
 #import "BBASearchServiceResult.h"
-#import "BBASearchServiceBook.h"
+#import "BBASearchItem.h"
 #import "BBALinkItem.h"
 #import <FastEasyMapping/FastEasyMapping.h>
 
@@ -20,7 +20,7 @@
                                                                                toKeyPath:@"type"]];
                                    [mapping addAttribute:[FEMAttribute mappingOfProperty:@"identifier"
                                                                                toKeyPath:@"id"]];
-                                   [mapping addToManyRelationshipMapping:[BBASearchServiceBook objectMapping]
+                                   [mapping addToManyRelationshipMapping:[BBASearchItem objectMapping]
                                                              forProperty:@"books"
                                                                  keyPath:@"books"];
                                    [mapping addAttribute:[FEMAttribute mappingOfProperty:@"numberOfResults"

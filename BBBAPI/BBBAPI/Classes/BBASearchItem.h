@@ -1,19 +1,17 @@
 //
-//  BBASearchServiceSuggestion.h
+//  BBASearchItem.h
 //  BBBAPI
 //
-//  Created by Owen Worley on 12/01/2015.
+//  Created by Owen Worley on 09/01/2015.
 //  Copyright (c) 2015 Blinkbox Entertainment Ltd. All rights reserved.
 //
 
-#import "BBASearchServiceBook.h"
+#import <Foundation/Foundation.h>
 @class FEMObjectMapping;
 /**
- *  Represents a search service suggestion
+ *  Represents a book returned by the search service
  */
-@interface BBASearchServiceSuggestion : NSObject
-
-@property (nonatomic, copy) NSString *type;
+@interface BBASearchItem : NSObject
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *identifier;
 /**

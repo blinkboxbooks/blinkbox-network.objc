@@ -1,18 +1,18 @@
 //
-//  BBASearchServiceSuggestion.m
+//  BBASuggestionItem.m
 //  BBBAPI
 //
 //  Created by Owen Worley on 12/01/2015.
 //  Copyright (c) 2015 Blinkbox Entertainment Ltd. All rights reserved.
 //
 
-#import "BBASearchServiceSuggestion.h"
+#import "BBASuggestionItem.h"
 #import <FastEasyMapping/FastEasyMapping.h>
-@implementation BBASearchServiceSuggestion
+@implementation BBASuggestionItem
 
 + (FEMObjectMapping *) objectMapping{
     FEMObjectMapping *mapping;
-    mapping = [FEMObjectMapping mappingForClass:[BBASearchServiceSuggestion class]
+    mapping = [FEMObjectMapping mappingForClass:[BBASuggestionItem class]
                                             configuration:^(FEMObjectMapping *mapping) {
                                                 [mapping addAttribute:[FEMAttribute mappingOfProperty:@"title"
                                                                                             toKeyPath:@"title"]];

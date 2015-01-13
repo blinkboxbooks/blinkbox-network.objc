@@ -7,7 +7,7 @@
 //
 
 #import "BBASearchSuggestionsResult.h"
-#import "BBASearchServiceSuggestion.h"
+#import "BBASuggestionItem.h"
 #import <FastEasyMapping/FastEasyMapping.h>
 
 @implementation BBASearchSuggestionsResult
@@ -18,7 +18,7 @@
                                    [mapping addAttribute:[FEMAttribute mappingOfProperty:@"type"
                                                                                toKeyPath:@"type"]];
 
-                                   [mapping addToManyRelationshipMapping:[BBASearchServiceSuggestion objectMapping]
+                                   [mapping addToManyRelationshipMapping:[BBASuggestionItem objectMapping]
                                                              forProperty:@"items"
                                                                  keyPath:@"items"];
 

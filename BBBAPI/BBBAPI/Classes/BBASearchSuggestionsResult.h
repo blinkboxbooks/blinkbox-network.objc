@@ -21,7 +21,7 @@
  */
 @property (nonatomic, copy) NSString *type;
 /**
- *  Contains `BBASearchServiceSuggestion` objects
+ *  Contains `BBASuggestionItem` objects
  */
 @property (nonatomic, copy) NSArray *items;
 

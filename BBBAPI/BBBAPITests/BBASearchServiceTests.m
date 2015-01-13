@@ -12,9 +12,9 @@
 #import <OHHTTPStubs/OHHTTPStubs.h>
 #import "BBATestMacros.h"
 #import "BBAAPIErrors.h"
-#import "BBASearchServiceBook.h"
+#import "BBASearchItem.h"
 #import "BBASearchServiceResult.h"
-#import "BBASearchServiceSuggestion.h"
+#import "BBASuggestionItem.h"
 #import "BBAMockConnection.h"
 
 @interface BBASearchService(Testing)
@@ -99,7 +99,7 @@ XCTAssertThrows([service resultsForSearchTerm:@"term"
 
                                XCTAssertEqual(results.count, 2);
                                XCTAssertNil(error);
-                               BBASearchServiceSuggestion *firstSuggestion;
+                               BBASuggestionItem *firstSuggestion;
                                firstSuggestion = results[0];
                                XCTAssertEqualObjects(firstSuggestion.identifier, @"9781136730597");
                                XCTAssertEqualObjects(firstSuggestion.title, @"Italo Calvino's Architecture of Lightness");
@@ -107,7 +107,7 @@ XCTAssertThrows([service resultsForSearchTerm:@"term"
                                XCTAssertEqual(firstSuggestion.authors.count, 1);
                                XCTAssertEqualObjects(firstSuggestion.authors[0], @"Letizia Modena");
 
-                               BBASearchServiceSuggestion *secondSuggestion;
+                               BBASuggestionItem *secondSuggestion;
                                secondSuggestion = results[1];
                                XCTAssertEqualObjects(secondSuggestion.identifier, @"9d7f706e68b16daafe4ea499fda450c32417421a");
                                XCTAssertEqualObjects(secondSuggestion.title, @"Italo Calvino");
@@ -219,13 +219,13 @@ XCTAssertThrows([service resultsForSearchTerm:nil
                              XCTAssertEqual(numResults, 310);
                              XCTAssertEqual(results.count, 2);
 
-                             BBASearchServiceBook *firstBook = results[0];
+                             BBASearchItem *firstBook = results[0];
                              XCTAssertEqualObjects(firstBook.identifier, @"9780141974132");
                              XCTAssertEqualObjects(firstBook.title, @"Nicholas Nickleby");
                              XCTAssertEqual(firstBook.authors.count, 1);
                              XCTAssertEqualObjects(firstBook.authors[0], @"Charles Dickens");
 
-                             BBASearchServiceBook *secondBook = results[1];
+                             BBASearchItem *secondBook = results[1];
                              XCTAssertEqualObjects(secondBook.identifier, @"9780141974149");
                              XCTAssertEqualObjects(secondBook.title, @"Our Mutual Friend");
                              XCTAssertEqual(secondBook.authors.count, 1);

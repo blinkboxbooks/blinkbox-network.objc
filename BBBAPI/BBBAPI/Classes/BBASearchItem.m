@@ -1,5 +1,5 @@
 //
-//  BBASearchServiceBook.m
+//  BBASearchItem.m
 //  BBBAPI
 //
 //  Created by Owen Worley on 09/01/2015.
@@ -7,14 +7,14 @@
 //
 
 #import <FastEasyMapping/FastEasyMapping.h>
-#import "BBASearchServiceBook.h"
+#import "BBASearchItem.h"
 
 
-@implementation BBASearchServiceBook
+@implementation BBASearchItem
 
 + (FEMObjectMapping *) objectMapping{
     FEMObjectMapping *searchBookMapping;
-    searchBookMapping = [FEMObjectMapping mappingForClass:[BBASearchServiceBook class]
+    searchBookMapping = [FEMObjectMapping mappingForClass:[BBASearchItem class]
                                             configuration:^(FEMObjectMapping *mapping) {
                                                 [mapping addAttribute:[FEMAttribute mappingOfProperty:@"title"
                                                                                             toKeyPath:@"title"]];
