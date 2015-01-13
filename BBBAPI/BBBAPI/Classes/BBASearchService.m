@@ -124,6 +124,7 @@ NSString *const BBASearchServiceName = @"com.BBA.searchService";
 }
 
 #pragma mark - Private Methods
+
 - (NSString *) endPointForSearchType:(BBASearchType)type{
 
     if (type == BBASearchTypeBooks) {
@@ -136,24 +137,6 @@ NSString *const BBASearchServiceName = @"com.BBA.searchService";
     NSAssert(false,@"Unsupported search type");
 
     return @"";
-}
-
-#pragma mark Getters
-
-- (Class) connectionClass{
-    if (_connectionClass == Nil) {
-        _connectionClass = [BBAConnection class];
-    }
-
-    return _connectionClass;
-}
-
-- (NSString *) searchEndPoint{
-    return @"search/books";
-}
-
-- (NSString *) suggestionsEndPoint{
-    return @"search/suggestions";
 }
 
 - (NSString *) serverSortOrder:(BBASearchSortOrder)sortOrder{
@@ -175,11 +158,29 @@ NSString *const BBASearchServiceName = @"com.BBA.searchService";
     }
 }
 
+#pragma mark Getters
+
+- (Class) connectionClass{
+    if (_connectionClass == Nil) {
+        _connectionClass = [BBAConnection class];
+    }
+
+    return _connectionClass;
+}
+
+- (NSString *) searchEndPoint{
+    return @"search/books";
+}
+
+- (NSString *) suggestionsEndPoint{
+    return @"search/suggestions";
+}
+
 - (BBANetworkConfiguration *) configuration{
     if (!_configuration) {
         _configuration = [BBANetworkConfiguration defaultConfiguration];
     }
-    
+
     return _configuration;
 }
 
