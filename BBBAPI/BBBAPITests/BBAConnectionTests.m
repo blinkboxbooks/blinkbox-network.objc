@@ -51,6 +51,8 @@ extern NSString * BBANSStringFromBBAContentType(BBAContentType type);
     task = [BBAMockURLSessionDataTask new];
     responseMapper = [BBAMockResponseMapper new];
     connection.responseMapper = responseMapper;
+    connection.session = session;
+    session.taskToReturn = task;
     
     __weak typeof(configuration) wconfiguration = configuration;
     block = ^id(id o){
@@ -78,7 +80,7 @@ extern NSString * BBANSStringFromBBAContentType(BBAContentType type);
     authenticator = nil;
     factory = nil;
     session = nil;
-    task = nil;
+
     responseMapper = nil;
     [super tearDown];
 }
@@ -282,11 +284,7 @@ extern NSString * BBANSStringFromBBAContentType(BBAContentType type);
         [expectation fulfill];
     }];
     
-    [self waitForExpectationsWithTimeout:0.1 handler:^(NSError *error) {
-        if (error) {
-            NSLog(@"Test timeout Error: %@", error);
-        }
-    }];
+    [self waitForExpectationsWithTimeout:0.1 handler:nil];
 }
 
 - (void) testConnectionReturnsDataAndErrorFromResponseMapper{
@@ -312,11 +310,7 @@ extern NSString * BBANSStringFromBBAContentType(BBAContentType type);
         [expectation fulfill];
     }];
     
-    [self waitForExpectationsWithTimeout:0.1 handler:^(NSError *error) {
-        if (error) {
-            NSLog(@"Test timeout Error: %@", error);
-        }
-    }];
+    [self waitForExpectationsWithTimeout:0.1 handler:nil];
 }
 
 @end
