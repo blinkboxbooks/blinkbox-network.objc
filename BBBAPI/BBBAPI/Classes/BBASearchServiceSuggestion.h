@@ -7,7 +7,7 @@
 //
 
 #import "BBASearchServiceBook.h"
-
+@class FEMObjectMapping;
 /**
  *  Represents a search service suggestion
  */

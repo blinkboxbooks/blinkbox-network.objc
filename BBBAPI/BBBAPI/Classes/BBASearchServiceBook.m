@@ -6,7 +6,9 @@
 //  Copyright (c) 2015 Blinkbox Entertainment Ltd. All rights reserved.
 //
 
+#import <FastEasyMapping/FastEasyMapping.h>
 #import "BBASearchServiceBook.h"
+
 
 @implementation BBASearchServiceBook
 

@@ -9,6 +9,7 @@
 #import "BBASearchServiceResult.h"
 #import "BBASearchServiceBook.h"
 #import "BBALinkItem.h"
+#import <FastEasyMapping/FastEasyMapping.h>
 
 @implementation BBASearchServiceResult
 

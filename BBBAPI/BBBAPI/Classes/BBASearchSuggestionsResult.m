@@ -8,6 +8,7 @@
 
 #import "BBASearchSuggestionsResult.h"
 #import "BBASearchServiceSuggestion.h"
+#import <FastEasyMapping/FastEasyMapping.h>
 
 @implementation BBASearchSuggestionsResult
 

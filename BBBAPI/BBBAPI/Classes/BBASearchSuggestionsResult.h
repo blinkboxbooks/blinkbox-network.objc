@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <FastEasyMapping/FastEasyMapping.h>
+@class FEMObjectMapping;
 
 /**
  *  Represents data returned from the book search suggestions service (search/suggestions)

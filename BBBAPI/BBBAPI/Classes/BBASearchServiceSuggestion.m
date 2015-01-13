@@ -7,7 +7,7 @@
 //
 
 #import "BBASearchServiceSuggestion.h"
-
+#import <FastEasyMapping/FastEasyMapping.h>
 @implementation BBASearchServiceSuggestion
 
 + (FEMObjectMapping *) objectMapping{
