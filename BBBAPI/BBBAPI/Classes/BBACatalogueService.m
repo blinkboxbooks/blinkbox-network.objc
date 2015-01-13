@@ -69,7 +69,9 @@ NSString *const BBACatalogueErrorDomain = @"com.BBB.CatalogueErrorDomain";
     [connection setRequestFactory:[BBARequestFactory new]];
     [connection setResponseMapper:[BBACatalogueResponseMapper new]];
     
-    [connection addParameterWithKey:@"count" value:[@(count) description]];
+    NSUInteger countToSend = MAX(1, count);
+    
+    [connection addParameterWithKey:@"count" value:[@(countToSend) description]];
     
     [connection perform:(BBAHTTPMethodGET)
              completion:^(id response, NSError *error) {

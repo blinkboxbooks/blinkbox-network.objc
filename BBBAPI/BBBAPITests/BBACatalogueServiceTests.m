@@ -12,7 +12,9 @@
 #import "BBATestHelper.h"
 #import "BBAConnection.h"
 #import <OCMock.h>
+#import <OHHTTPStubs.h>
 #import "BBASwizzlingHelper.h"
+#import "BBACatalogueServiceTestHelper.h"
 
 @interface BBACatalogueServiceTests : XCTestCase{
     BBACatalogueService *service;
@@ -131,7 +133,7 @@
     [service getSynopsisForBookItem:item
                          completion:^(BBABookItem *itemWithSynposis, NSError *error) {}];
     [self disableConnectionMock];
-    
+    OCMVerifyAll(mockConnection);
 }
 
 - (void) testSynopsisReturnsCopyOfBookItemWithSynopsisAssigned{
@@ -206,6 +208,32 @@
     [self disableConnectionMock];
 }
 
+- (void) testRelatedInitsConnectionWithGoodEndpoint{
+    [self enableConnectionMock];
+    BBABookItem *item = [BBABookItem new];
+    item.identifier = @"591283912";
+    [service getRelatedBooksForBookItem:item
+                                  count:10
+                         completion:^(NSArray *libraryItems, NSError *error) {}];
+    
+    XCTAssertEqualObjects(passedRelativeURLString, @"catalogue/books/591283912/related");
+    XCTAssertEqual(passedDomain, BBAAPIDomainREST);
+    [self disableConnectionMock];
+}
+
+- (void) testRelatedMakesUnauthenticatedConnection{
+    [self enableConnectionMock];
+    BBABookItem *item = [BBABookItem new];
+    item.identifier = @"isbn";
+    OCMExpect([mockConnection setRequiresAuthentication:NO]);
+    [service getRelatedBooksForBookItem:item
+                                  count:10
+                             completion:^(NSArray *libraryItems, NSError *error) {}];
+    [self disableConnectionMock];
+    OCMVerifyAll(mockConnection);
+}
+
+
 
 - (void) testDetailsThrowOnNilArray{
     [self enableConnectionMock];
@@ -247,8 +275,50 @@
     [self disableConnectionMock];
 }
 
+- (void) testDetailsSendsThreeRequestsFor150BookItems{
+    
+    NSArray *array = [BBACatalogueServiceTestHelper sampleBigFakeItems];
+    
+    [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
+        BOOL contains = [request.URL.absoluteString containsString:@"catalogue/books?"];
+        return contains;
+    }
+                        withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
+                            return [self responseForRequest:request];
+                        }];
+    
+    __weak XCTestExpectation *expect = [self expectationWithDescription:@"send3RequestsFor150Books"];
+    [service getDetailsForBookItems:array
+                         completion:^(NSArray *detailItems, NSError *error) {
+                             [expect fulfill];
+                             XCTAssertEqualObjects([array valueForKeyPath:@"identifier"],
+                                                   [detailItems valueForKeyPath:@"identifier"]);
+                         }];
+    
+    [self waitForExpectationsWithTimeout:50000.0 handler:nil];
+}
+
 
 #pragma mark - Helpers
+
+- (OHHTTPStubsResponse *) responseForRequest:(NSURLRequest *)request{
+    NSString *pars = [request.URL absoluteString];
+    NSInteger location;
+    if ([pars containsString:@"id=1&"]) {
+        location = 1;
+    }
+    else if ([pars containsString:@"id=51&"]) {
+        location = 51;
+    }
+    else if ([pars containsString:@"id=101&"]) {
+        location = 101;
+    }
+    
+    NSRange range = NSMakeRange(location, 50);
+    NSDictionary *obj = [BBACatalogueServiceTestHelper sampleBigFakeResponseForRange:range];
+    NSData *data = [NSJSONSerialization dataWithJSONObject:obj options:0 error:nil];
+    return [OHHTTPStubsResponse responseWithData:data statusCode:200 headers:nil];
+}
 
 - (NSData *) sampleSynposisData{
     return [BBATestHelper dataForTestBundleFileNamed:@"sample_synopsis.json"

@@ -12,6 +12,7 @@
 #import "BBABookItem.h"
 #import "BBATestMacros.h"
 #import "BBATestHelper.h"
+#import "BBACatalogueServiceTestHelper.h"
 
 @interface BBACatalogue_IntegrationTests : XCTestCase{
     BBACatalogueService *service;
@@ -132,7 +133,7 @@
 - (void) testDetailsOfBigArrayOfBooksFetchesDataForAllBooksInCorrectOrder{
     __weak XCTestExpectation *expect = [self expectationWithDescription:@"detailsForBulkISBNs"];
     
-    NSArray *sample = [self sampleBigItems];
+    NSArray *sample = [BBACatalogueServiceTestHelper sampleBigRealItems];
     [service getDetailsForBookItems:sample
                          completion:^(NSArray *detailItems, NSError *error) {
                              [expect fulfill];
@@ -143,24 +144,5 @@
     [self waitForExpectationsWithTimeout:5.0 handler:nil];
 }
 
-- (NSArray *)sampleBigItems{
-    /*
-     search_sample_data.json containts array of 300 isbns
-     */
-    NSData *data = [BBATestHelper dataForTestBundleFileNamed:@"search_sample_data.json"
-                                                forTestClass:[self class]];
-    NSArray *array = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-    
-    NSArray *isbns = [array valueForKeyPath:@"id"];
-    
-    NSMutableArray *books = [NSMutableArray new];
-    
-    for (NSString *isbn in isbns) {
-        BBABookItem *item = [BBABookItem new];
-        item.identifier = isbn;
-        [books addObject:item];
-    }
-    return books;
-}
 
 @end

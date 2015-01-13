@@ -82,6 +82,8 @@
 		40324D9F1A63FB10005E1F49 /* search_sample_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 40324D9E1A63FB10005E1F49 /* search_sample_data.json */; };
 		404D599C1A602B53003E4181 /* BBACatalogue_IntegrationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 404D599B1A602B53003E4181 /* BBACatalogue_IntegrationTests.m */; };
 		404D599D1A603922003E4181 /* BBAMockAssertionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 401A1D511A13D77B004FBA41 /* BBAMockAssertionHandler.m */; };
+		4058C4041A643A3800F6FB5A /* BBACatalogueServiceTestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4058C4031A643A3800F6FB5A /* BBACatalogueServiceTestHelper.m */; };
+		4058C4051A643A3800F6FB5A /* BBACatalogueServiceTestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4058C4031A643A3800F6FB5A /* BBACatalogueServiceTestHelper.m */; };
 		406A216A1A4095B300408A8E /* BBALibraryItemTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 406A21691A4095B300408A8E /* BBALibraryItemTests.m */; };
 		408C31141A6014DA0083DBED /* BBALibraryResponseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 401A1D4E1A13D77B004FBA41 /* BBALibraryResponseTests.m */; };
 		40B349FD1A3AFEE700B7F3FF /* BBAItemLinkMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 40B349FC1A3AFEE700B7F3FF /* BBAItemLinkMapper.m */; };
@@ -265,6 +267,8 @@
 		404D59901A602975003E4181 /* BBBAPI Integration Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BBBAPI Integration Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		404D59931A602975003E4181 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		404D599B1A602B53003E4181 /* BBACatalogue_IntegrationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBACatalogue_IntegrationTests.m; sourceTree = "<group>"; };
+		4058C4021A643A3800F6FB5A /* BBACatalogueServiceTestHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBACatalogueServiceTestHelper.h; path = BBBAPITests/BBACatalogueServiceTestHelper.h; sourceTree = SOURCE_ROOT; };
+		4058C4031A643A3800F6FB5A /* BBACatalogueServiceTestHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBACatalogueServiceTestHelper.m; path = BBBAPITests/BBACatalogueServiceTestHelper.m; sourceTree = SOURCE_ROOT; };
 		406A21691A4095B300408A8E /* BBALibraryItemTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBALibraryItemTests.m; sourceTree = "<group>"; };
 		40B349FB1A3AFEE700B7F3FF /* BBAItemLinkMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBAItemLinkMapper.h; path = Classes/BBAItemLinkMapper.h; sourceTree = "<group>"; };
 		40B349FC1A3AFEE700B7F3FF /* BBAItemLinkMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBAItemLinkMapper.m; path = Classes/BBAItemLinkMapper.m; sourceTree = "<group>"; };
@@ -592,6 +596,8 @@
 				40DB50241A39F71E00AF8770 /* sample_related.json */,
 				40DB50261A39F77400AF8770 /* sample_book.json */,
 				40B34A061A3B0DE100B7F3FF /* book.json */,
+				4058C4021A643A3800F6FB5A /* BBACatalogueServiceTestHelper.h */,
+				4058C4031A643A3800F6FB5A /* BBACatalogueServiceTestHelper.m */,
 			);
 			name = "Catalogue Service Responses";
 			sourceTree = "<group>";
@@ -912,6 +918,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				408C31141A6014DA0083DBED /* BBALibraryResponseTests.m in Sources */,
+				4058C4041A643A3800F6FB5A /* BBACatalogueServiceTestHelper.m in Sources */,
 				401A1D711A13D77B004FBA41 /* BBAConnectionTestsMocks.m in Sources */,
 				5ACE48121A37221400546137 /* BBABookmarkItemTests.m in Sources */,
 				401A1D701A13D77B004FBA41 /* BBAConnectionTests.m in Sources */,
@@ -944,6 +951,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				404D599C1A602B53003E4181 /* BBACatalogue_IntegrationTests.m in Sources */,
+				4058C4051A643A3800F6FB5A /* BBACatalogueServiceTestHelper.m in Sources */,
 				404D599D1A603922003E4181 /* BBAMockAssertionHandler.m in Sources */,
 				40324D9D1A63FAB8005E1F49 /* BBATestHelper.m in Sources */,
 			);

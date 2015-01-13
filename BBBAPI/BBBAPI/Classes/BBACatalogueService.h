@@ -34,7 +34,8 @@ extern NSString *const BBACatalogueErrorDomain;
  *  Fetches book items related to given book
  *
  *  @param item       must not be `nil` and must have not-`nil` `identifier` (ISBN) field
- *  @param count      number of books to return
+ *  @param count      number of books to return, must be greater than `0`. If 0 is passed in, request
+ *                    is sent with `count` set to `1`.
  *  @param completion must not be `nil`, called upon completion on the main thread. `libraryItems` 
  *                    array contains `BBABookItem` objects with all properties populated.
  *                    If an error occurs, `libraryItems` is `nil` and `error` should contain problem

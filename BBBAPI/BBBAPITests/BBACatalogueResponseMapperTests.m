@@ -64,6 +64,21 @@
                                    BBAResponseMappingErrorDomain);
 }
 
+- (void) testReturnsNotFoundErrorWhenReponseIsServerError{
+    NSHTTPURLResponse *response = [[NSHTTPURLResponse alloc] initWithURL:nil
+                                                              statusCode:500
+                                                             HTTPVersion:@"2.0"
+                                                            headerFields:nil];
+    NSError *error = nil;
+    id data = [mapper responseFromData:[NSData new]
+                              response:response
+                                 error:&error];
+    XCTAssertNil(data);
+    BBAAssertErrorHasCodeAndDomain(error,
+                                   BBAResponseMappingErrorNotFound,
+                                   BBAResponseMappingErrorDomain);
+}
+
 - (void) testThrowsOnWrongDataType{
     NSData *data = [@"(\"1\", \"2\")" dataUsingEncoding:NSUTF8StringEncoding];
     XCTAssertThrows([mapper responseFromData:data response:nil error:nil]);
