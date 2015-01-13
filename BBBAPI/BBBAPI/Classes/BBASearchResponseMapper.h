@@ -8,6 +8,11 @@
 
 #import "BBAJSONResponseMapper.h"
 
+/**
+ *  Maps responses from the search service into object classes.
+ *  Responses from search/books are returned as`BBASearchServiceResult` 
+ *  Responses from search/suggestions are returned as `BBASearchSuggestionsResult`
+ */
 @interface BBASearchResponseMapper : BBAJSONResponseMapper
 
 
