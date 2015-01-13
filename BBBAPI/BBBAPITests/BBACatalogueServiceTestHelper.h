@@ -23,5 +23,12 @@
  */
 + (NSArray *) sampleBigFakeItems;
 
+/**
+ *  This method generates sample response with ISBN's in the `range`
+ *
+ *  @param range range of isbns to generate response
+ *
+ *  @return sample response with correct structure as of catalogue service
+ */
 + (NSDictionary *) sampleBigFakeResponseForRange:(NSRange)range;
 @end
