@@ -50,12 +50,7 @@
             BBASearchSuggestionsResult *result;
             result = [FEMObjectDeserializer deserializeObjectExternalRepresentation:responseData
                                                                        usingMapping:mapping];
-            //Currently we are only interested in books, not authors.
-            NSPredicate *suggestedBookPredicate;
-            suggestedBookPredicate = [NSPredicate predicateWithFormat:@"%K LIKE %@",
-                                      BBAKEY(type), @"urn:blinkboxbooks:schema:suggestion:book"];
-            NSArray *suggestedBooks = [result.items filteredArrayUsingPredicate:suggestedBookPredicate];
-            result.items = suggestedBooks;
+
             return result;
 
         }

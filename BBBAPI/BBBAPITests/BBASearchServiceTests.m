@@ -97,7 +97,7 @@ XCTAssertThrows([service resultsForSearchTerm:@"term"
     [service searchSuggestionsForTerm:@"italo"
                            completion:^(NSArray *results, NSError *error) {
 
-                               XCTAssertEqual(results.count, 1);
+                               XCTAssertEqual(results.count, 2);
                                XCTAssertNil(error);
                                BBASearchServiceSuggestion *firstSuggestion;
                                firstSuggestion = results[0];
@@ -107,6 +107,12 @@ XCTAssertThrows([service resultsForSearchTerm:@"term"
                                XCTAssertEqual(firstSuggestion.authors.count, 1);
                                XCTAssertEqualObjects(firstSuggestion.authors[0], @"Letizia Modena");
 
+                               BBASearchServiceSuggestion *secondSuggestion;
+                               secondSuggestion = results[1];
+                               XCTAssertEqualObjects(secondSuggestion.identifier, @"9d7f706e68b16daafe4ea499fda450c32417421a");
+                               XCTAssertEqualObjects(secondSuggestion.title, @"Italo Calvino");
+                               XCTAssertEqualObjects(secondSuggestion.type, @"urn:blinkboxbooks:schema:suggestion:contributor");
+                               XCTAssertNil(secondSuggestion.authors);
                                BBA_FLAG_ASYNC_TEST_COMPLETE();
                            }];
     
