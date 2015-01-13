@@ -287,7 +287,7 @@ NSString *const kBBABookmarkServiceErrorDomain = @"BBA.error.bookmarkServiceDoma
 #pragma mark - Getters
 
 - (Class) connectionClass{
-    if (_connectionClass == nil) {
+    if (_connectionClass == Nil) {
         _connectionClass = [BBAConnection class];
     }
 

@@ -30,8 +30,8 @@ NSString *const BBASearchServiceName = @"com.BBA.searchService";
 
 #pragma mark - Public Methods
 
-- (void)searchSuggestionsForTerm:(NSString *)searchTerm
-                      completion:(void (^)(NSArray *results, NSError *error))completion{
+- (void) searchSuggestionsForTerm:(NSString *)searchTerm
+                       completion:(void (^)(NSArray *results, NSError *error))completion{
 
     NSAssert(completion != nil, @"completion is required.");
 
@@ -141,7 +141,7 @@ NSString *const BBASearchServiceName = @"com.BBA.searchService";
 #pragma mark Getters
 
 - (Class) connectionClass{
-    if (_connectionClass == nil) {
+    if (_connectionClass == Nil) {
         _connectionClass = [BBAConnection class];
     }
 
