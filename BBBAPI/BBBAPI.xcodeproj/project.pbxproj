@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		087C37E6CA09AC67D0BD1BCB /* libPods-BBBAPITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A5993ECFA1526A0AE7C3B7E /* libPods-BBBAPITests.a */; };
 		2B6DC3F9FD6C586D1D6BE1E7 /* libPods-BBBAPI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 26841EE83C9FA47FA48E8A11 /* libPods-BBBAPI.a */; };
+		4009F00C1A67D65D005656A6 /* BBBAPI.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 4009F00B1A67D65D005656A6 /* BBBAPI.podspec */; };
 		401A1D211A13D6CB004FBA41 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 401A1D201A13D6CB004FBA41 /* main.m */; };
 		401A1D241A13D6CB004FBA41 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 401A1D231A13D6CB004FBA41 /* AppDelegate.m */; };
 		401A1D271A13D6CB004FBA41 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 401A1D261A13D6CB004FBA41 /* ViewController.m */; };
@@ -144,6 +145,7 @@
 		118CD5BBC1E178DF65C1391A /* Pods-BBBAPI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BBBAPI.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-BBBAPI/Pods-BBBAPI.debug.xcconfig"; sourceTree = "<group>"; };
 		26841EE83C9FA47FA48E8A11 /* libPods-BBBAPI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BBBAPI.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A5993ECFA1526A0AE7C3B7E /* libPods-BBBAPITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BBBAPITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4009F00B1A67D65D005656A6 /* BBBAPI.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = BBBAPI.podspec; path = ../BBBAPI.podspec; sourceTree = "<group>"; };
 		401A1D1B1A13D6CB004FBA41 /* BBBAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BBBAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		401A1D1F1A13D6CB004FBA41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		401A1D201A13D6CB004FBA41 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -359,6 +361,7 @@
 		401A1D121A13D6CB004FBA41 = {
 			isa = PBXGroup;
 			children = (
+				4009F00B1A67D65D005656A6 /* BBBAPI.podspec */,
 				401A1D1D1A13D6CB004FBA41 /* BBBAPI */,
 				401A1D371A13D6CB004FBA41 /* BBBAPITests */,
 				404D59911A602975003E4181 /* BBBAPI Integration Tests */,
@@ -786,6 +789,7 @@
 			files = (
 				401A1D2A1A13D6CB004FBA41 /* Main.storyboard in Resources */,
 				401A1D2F1A13D6CB004FBA41 /* LaunchScreen.xib in Resources */,
+				4009F00C1A67D65D005656A6 /* BBBAPI.podspec in Resources */,
 				401A1D2C1A13D6CB004FBA41 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
