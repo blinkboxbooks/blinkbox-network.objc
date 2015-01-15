@@ -52,4 +52,37 @@
  *  HTML or plain text with the synopsis
  */
 @property (nonatomic, copy) NSString *synopsis;
+
+/**
+ *  Returns `href` from the `link` with `ref` containing `samplemedia`.
+ *  Enumerates `links` to find, array might be empty
+ *
+ *  @return `nil` or link string
+ */
+- (NSString *) sampleLink;
+
+/**
+ *  Returns `title` from the `link` with `ref` containing `publisher`
+ *  Enumerates `links` to find, array might be empty
+ *
+ *  @return `nil` or string
+ */
+- (NSString *) publisherName;
+
+/**
+ *  Returns `title` from the `link` with `ref` containing `contributor`
+ *  Enumerates `links` to find, array might be empty
+ *
+ *  @return `nil` or string
+ */
+- (NSString *) authorName;
+
+/**
+ *  Returns `targetGuid` from the `link` with `ref` containing `contributor`
+ *  Enumerates `links` to find, array might be empty
+ *
+ *  @return `nil` or string
+ */
+- (NSString *) authorGUID;
+
 @end
