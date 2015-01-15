@@ -6,20 +6,20 @@
 //  Copyright (c) 2014 Blinkbox Entertainment Ltd. All rights reserved.
 //
 
-#import "BBABookmarkService.h"
-#import "BBABookmarkItem.h"
-#import "BBALibraryService.h"
-#import "BBALibraryItem.h"
-#import "BBAAPIErrors.h"
-#import "BBAAuthenticationService.h"
-#import "BBAConnection.h"
-#import "BBACatalogueService.h"
-#import "BBABookItem.h"
-#import "BBAKeyService.h"
-#import "BBAAuthenticationServiceConstants.h"
-#import "BBAUserDetails.h"
-#import "BBAClientDetails.h"
-#import "BBAAuthData.h"
-#import "BBALinkItem.h"
-#import "BBAImageItem.h"
+#import <BBBAPI/BBABookmarkService.h>
+#import <BBBAPI/BBABookmarkItem.h>
+#import <BBBAPI/BBALibraryService.h>
+#import <BBBAPI/BBALibraryItem.h>
+#import <BBBAPI/BBAAPIErrors.h>
+#import <BBBAPI/BBAAuthenticationService.h>
+#import <BBBAPI/BBAConnection.h>
+#import <BBBAPI/BBACatalogueService.h>
+#import <BBBAPI/BBABookItem.h>
+#import <BBBAPI/BBAKeyService.h>
+#import <BBBAPI/BBAAuthenticationServiceConstants.h>
+#import <BBBAPI/BBAUserDetails.h>
+#import <BBBAPI/BBAClientDetails.h>
+#import <BBBAPI/BBAAuthData.h>
+#import <BBBAPI/BBALinkItem.h>
+#import <BBBAPI/BBAImageItem.h>
 
