@@ -99,6 +99,11 @@
     }
 }
 
+- (void) testMappingSampleEligibility{
+    BBABookItem *item = [mapper itemFromDictionary:[self sampleBookDicitonary]];
+    XCTAssertTrue(item.sampleEligible);
+}
+
 #pragma mark - Helpers
 
 - (NSDictionary *) sampleBookDicitonary{

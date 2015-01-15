@@ -62,6 +62,8 @@ static NSString *const kBookSchema = @"urn:blinkboxbooks:schema:book";
     item.identifier = dictionary[@"id"];
     NSString *publicationDate = dictionary[@"publicationDate"];
     
+    item.sampleEligible = [dictionary[@"sampleEligible"] boolValue];
+    
     if (publicationDate) {
         item.publicationDate = [self.dateFormatter dateFromString:publicationDate];
     }
