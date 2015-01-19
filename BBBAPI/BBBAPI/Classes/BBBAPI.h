@@ -22,4 +22,6 @@
 #import <BBBAPI/BBAAuthData.h>
 #import <BBBAPI/BBALinkItem.h>
 #import <BBBAPI/BBAImageItem.h>
-
+#import <BBBAPI/BBASearchService.h>
+#import <BBBAPI/BBASuggestionItem.h>
+#import <BBBAPI/BBASearchItem.h>
