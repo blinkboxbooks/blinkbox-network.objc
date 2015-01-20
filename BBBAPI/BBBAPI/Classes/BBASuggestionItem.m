@@ -33,6 +33,7 @@
 
 - (BBASuggestionType)type{
     /* 
+     TODO:
      Horrible hack for server containing duplicate keys for 'type'
      Ticket PT-649 is tracking server side fix for duplicate 'type' field
      */
