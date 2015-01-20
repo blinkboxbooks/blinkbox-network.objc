@@ -32,12 +32,14 @@
 }
 
 - (BBASuggestionType)type{
-    /* Horrible hack for server contianing duplicate keys for 'type' */
+    /* 
+     Horrible hack for server containing duplicate keys for 'type'
+     Ticket PT-649 is tracking server side fix for duplicate 'type' field
+     */
     if ([[self serverType] isEqualToString:@"urn:blinkboxbooks:schema:suggestion:book"] ||
         [[self serverType] isEqualToString:@"bookSuggestionRepresentation"]) {
         return BBASuggestionTypeBook;
     }
-    /* Horrible hack for server contianing duplicate keys for 'type' */
     else if ([[self serverType] isEqualToString:@"urn:blinkboxbooks:schema:suggestion:contributor"] ||
              [[self serverType] isEqualToString:@"authorSuggestionRepresentation"]) {
         return BBASuggestionTypeAuthor;
