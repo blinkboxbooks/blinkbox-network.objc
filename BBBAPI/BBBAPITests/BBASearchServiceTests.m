@@ -103,7 +103,7 @@ XCTAssertThrows([service resultsForSearchTerm:@"term"
                                firstSuggestion = results[0];
                                XCTAssertEqualObjects(firstSuggestion.identifier, @"9781136730597");
                                XCTAssertEqualObjects(firstSuggestion.title, @"Italo Calvino's Architecture of Lightness");
-                               XCTAssertEqualObjects(firstSuggestion.type, @"urn:blinkboxbooks:schema:suggestion:book");
+                               XCTAssertEqual(firstSuggestion.type, BBASuggestionTypeBook);
                                XCTAssertEqual(firstSuggestion.authors.count, 1);
                                XCTAssertEqualObjects(firstSuggestion.authors[0], @"Letizia Modena");
 
@@ -111,7 +111,7 @@ XCTAssertThrows([service resultsForSearchTerm:@"term"
                                secondSuggestion = results[1];
                                XCTAssertEqualObjects(secondSuggestion.identifier, @"9d7f706e68b16daafe4ea499fda450c32417421a");
                                XCTAssertEqualObjects(secondSuggestion.title, @"Italo Calvino");
-                               XCTAssertEqualObjects(secondSuggestion.type, @"urn:blinkboxbooks:schema:suggestion:contributor");
+                               XCTAssertEqual(secondSuggestion.type, BBASuggestionTypeAuthor);
                                XCTAssertNil(secondSuggestion.authors);
                                BBA_FLAG_ASYNC_TEST_COMPLETE();
                            }];

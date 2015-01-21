@@ -6,14 +6,20 @@
 //  Copyright (c) 2015 Blinkbox Entertainment Ltd. All rights reserved.
 //
 
-#import "BBASearchItem.h"
+#import <Foundation/Foundation.h>
+
+typedef NS_ENUM(NSUInteger, BBASuggestionType) {
+    BBASuggestionTypeBook = 0,
+    BBASuggestionTypeAuthor = 1,
+};
+
 @class FEMObjectMapping;
 /**
  *  Represents a search service suggestion
  */
 @interface BBASuggestionItem : NSObject
 
-@property (nonatomic, copy) NSString *type;
+@property (nonatomic, assign) BBASuggestionType type;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *identifier;
 /**
