@@ -2,7 +2,7 @@
 //  BBALibraryItemTests.m
 //
 //
-//  Created by Tomek Kuźma on 16/12/2014.
+// Created by Tomek Kuźma (mapedd@mapedd.com), Owen Worley (owen@owenworley.co.uk) & Eric Yuan (mbaeric@gmail.com) on 16/12/2014.
 //
 //
 

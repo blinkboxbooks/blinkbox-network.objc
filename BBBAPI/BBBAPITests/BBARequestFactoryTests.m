@@ -2,7 +2,7 @@
 //  BBARequestFactoryTests.m
 //  BBBAPI
 //
-//  Created by Owen Worley on 29/10/2014.
+// Created by Tomek Kuźma (mapedd@mapedd.com), Owen Worley (owen@owenworley.co.uk) & Eric Yuan (mbaeric@gmail.com) on 29/10/2014.
 //  Copyright (c) 2014 blinkbox books. All rights reserved.
 //
 

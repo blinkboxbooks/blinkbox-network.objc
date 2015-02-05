@@ -94,6 +94,8 @@
 		40B34A051A3B056600B7F3FF /* BBABooksMapperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 40B34A041A3B056600B7F3FF /* BBABooksMapperTests.m */; };
 		40B34A071A3B0DE100B7F3FF /* book.json in Resources */ = {isa = PBXBuildFile; fileRef = 40B34A061A3B0DE100B7F3FF /* book.json */; };
 		40B34A0A1A3B122A00B7F3FF /* BBAImageItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 40B34A091A3B122A00B7F3FF /* BBAImageItem.m */; };
+		40CFA6761A83DA2C006FE8D8 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 40CFA6751A83DA2C006FE8D8 /* README.md */; };
+		40CFA6781A83E9A5006FE8D8 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 40CFA6771A83E9A5006FE8D8 /* LICENSE */; };
 		40DB4FA51A39D79500AF8770 /* BBACatalogueServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 40DB4FA41A39D79500AF8770 /* BBACatalogueServiceTests.m */; };
 		40DB4FA81A39ECA400AF8770 /* sample_synopsis.json in Resources */ = {isa = PBXBuildFile; fileRef = 40DB4FA71A39ECA400AF8770 /* sample_synopsis.json */; };
 		40DB50211A39F0FD00AF8770 /* BBACatalogueResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 40DB50201A39F0FD00AF8770 /* BBACatalogueResponseMapper.m */; };
@@ -288,6 +290,8 @@
 		40B34A061A3B0DE100B7F3FF /* book.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = book.json; path = "Catalogue Service Responses/book.json"; sourceTree = "<group>"; };
 		40B34A081A3B122A00B7F3FF /* BBAImageItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBAImageItem.h; path = Classes/BBAImageItem.h; sourceTree = "<group>"; };
 		40B34A091A3B122A00B7F3FF /* BBAImageItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBAImageItem.m; path = Classes/BBAImageItem.m; sourceTree = "<group>"; };
+		40CFA6751A83DA2C006FE8D8 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		40CFA6771A83E9A5006FE8D8 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		40DB4FA41A39D79500AF8770 /* BBACatalogueServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBACatalogueServiceTests.m; sourceTree = "<group>"; };
 		40DB4FA71A39ECA400AF8770 /* sample_synopsis.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = sample_synopsis.json; path = "Catalogue Service Responses/sample_synopsis.json"; sourceTree = "<group>"; };
 		40DB501F1A39F0FD00AF8770 /* BBACatalogueResponseMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBACatalogueResponseMapper.h; path = Classes/BBACatalogueResponseMapper.h; sourceTree = "<group>"; };
@@ -361,7 +365,9 @@
 		401A1D121A13D6CB004FBA41 = {
 			isa = PBXGroup;
 			children = (
+				40CFA6751A83DA2C006FE8D8 /* README.md */,
 				4009F00B1A67D65D005656A6 /* BBBAPI.podspec */,
+				40CFA6771A83E9A5006FE8D8 /* LICENSE */,
 				401A1D1D1A13D6CB004FBA41 /* BBBAPI */,
 				401A1D371A13D6CB004FBA41 /* BBBAPITests */,
 				404D59911A602975003E4181 /* BBBAPI Integration Tests */,
@@ -791,6 +797,7 @@
 				401A1D2F1A13D6CB004FBA41 /* LaunchScreen.xib in Resources */,
 				4009F00C1A67D65D005656A6 /* BBBAPI.podspec in Resources */,
 				401A1D2C1A13D6CB004FBA41 /* Images.xcassets in Resources */,
+				40CFA6781A83E9A5006FE8D8 /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -933,6 +940,7 @@
 				5AB0FD061A3204C200701FFF /* BBABookmarkItem.m in Sources */,
 				5A8580CA1A63EAD8006BCAC3 /* BBASearchSuggestionsResult.m in Sources */,
 				401A1DD71A13D78B004FBA41 /* BBAAuthData.m in Sources */,
+				40CFA6761A83DA2C006FE8D8 /* README.md in Sources */,
 				40DB50211A39F0FD00AF8770 /* BBACatalogueResponseMapper.m in Sources */,
 				5A3959861A602CFA00E27E83 /* BBASearchResponseMapper.m in Sources */,
 				401A1DE61A13D78B004FBA41 /* BBAKeyService.m in Sources */,

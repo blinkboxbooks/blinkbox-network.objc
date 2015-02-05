@@ -2,7 +2,7 @@
 //  BBABookmarkResponseMapper.m
 //  BBBAPI
 //
-//  Created by Owen Worley on 08/12/2014.
+// Created by Tomek Kuźma (mapedd@mapedd.com), Owen Worley (owen@owenworley.co.uk) & Eric Yuan (mbaeric@gmail.com) on 08/12/2014.
 //  Copyright (c) 2014 Blinkbox Entertainment Ltd. All rights reserved.
 //
 

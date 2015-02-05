@@ -32,7 +32,6 @@
 		40FB3AA61A14C70A005936B5 /* BBAJSONResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FB3A6C1A14C70A005936B5 /* BBAJSONResponseMapper.m */; };
 		40FB3AA71A14C70A005936B5 /* BBAKeyService.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FB3A6E1A14C70A005936B5 /* BBAKeyService.m */; };
 		40FB3AA81A14C70A005936B5 /* BBALibraryItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FB3A701A14C70A005936B5 /* BBALibraryItem.m */; };
-		40FB3AA91A14C70A005936B5 /* BBAItemLink.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FB3A721A14C70A005936B5 /* BBAItemLink.m */; };
 		40FB3AAA1A14C70A005936B5 /* BBALibraryResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FB3A741A14C70A005936B5 /* BBALibraryResponse.m */; };
 		40FB3AAB1A14C70A005936B5 /* BBALibraryResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FB3A761A14C70A005936B5 /* BBALibraryResponseMapper.m */; };
 		40FB3AAC1A14C70A005936B5 /* BBALibraryService.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FB3A781A14C70A005936B5 /* BBALibraryService.m */; };
@@ -49,7 +48,6 @@
 		40FB3AB71A14C70A005936B5 /* BBAStatusResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FB3A921A14C70A005936B5 /* BBAStatusResponseMapper.m */; };
 		40FB3AB81A14C70A005936B5 /* BBATokensResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FB3A941A14C70A005936B5 /* BBATokensResponseMapper.m */; };
 		40FB3AB91A14C70A005936B5 /* BBAUserDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FB3A961A14C70A005936B5 /* BBAUserDetails.m */; };
-		40FB3ABF1A14C7E8005936B5 /* BBBAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 40FB3ABE1A14C7E8005936B5 /* BBBAPI.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -119,8 +117,6 @@
 		40FB3A6E1A14C70A005936B5 /* BBAKeyService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBAKeyService.m; path = ../BBBAPI/BBBAPI/Classes/BBAKeyService.m; sourceTree = "<group>"; };
 		40FB3A6F1A14C70A005936B5 /* BBALibraryItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBALibraryItem.h; path = ../BBBAPI/BBBAPI/Classes/BBALibraryItem.h; sourceTree = "<group>"; };
 		40FB3A701A14C70A005936B5 /* BBALibraryItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBALibraryItem.m; path = ../BBBAPI/BBBAPI/Classes/BBALibraryItem.m; sourceTree = "<group>"; };
-		40FB3A711A14C70A005936B5 /* BBAItemLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBAItemLink.h; path = ../BBBAPI/BBBAPI/Classes/BBAItemLink.h; sourceTree = "<group>"; };
-		40FB3A721A14C70A005936B5 /* BBAItemLink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBAItemLink.m; path = ../BBBAPI/BBBAPI/Classes/BBAItemLink.m; sourceTree = "<group>"; };
 		40FB3A731A14C70A005936B5 /* BBALibraryResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBALibraryResponse.h; path = ../BBBAPI/BBBAPI/Classes/BBALibraryResponse.h; sourceTree = "<group>"; };
 		40FB3A741A14C70A005936B5 /* BBALibraryResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBALibraryResponse.m; path = ../BBBAPI/BBBAPI/Classes/BBALibraryResponse.m; sourceTree = "<group>"; };
 		40FB3A751A14C70A005936B5 /* BBALibraryResponseMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBALibraryResponseMapper.h; path = ../BBBAPI/BBBAPI/Classes/BBALibraryResponseMapper.h; sourceTree = "<group>"; };
@@ -158,7 +154,6 @@
 		40FB3A951A14C70A005936B5 /* BBAUserDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBAUserDetails.h; path = ../BBBAPI/BBBAPI/Classes/BBAUserDetails.h; sourceTree = "<group>"; };
 		40FB3A961A14C70A005936B5 /* BBAUserDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBAUserDetails.m; path = ../BBBAPI/BBBAPI/Classes/BBAUserDetails.m; sourceTree = "<group>"; };
 		40FB3ABD1A14C7E8005936B5 /* BBBAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBBAPI.h; path = ../BBBAPI/BBBAPI/Classes/BBBAPI.h; sourceTree = "<group>"; };
-		40FB3ABE1A14C7E8005936B5 /* BBBAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBBAPI.m; path = ../BBBAPI/BBBAPI/Classes/BBBAPI.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,7 +210,6 @@
 			isa = PBXGroup;
 			children = (
 				40FB3ABD1A14C7E8005936B5 /* BBBAPI.h */,
-				40FB3ABE1A14C7E8005936B5 /* BBBAPI.m */,
 				40FB3A4B1A14C70A005936B5 /* BBAAPIErrors.h */,
 				40FB3A4C1A14C70A005936B5 /* BBAAuthConnection.h */,
 				40FB3A4D1A14C70A005936B5 /* BBAAuthConnection.m */,
@@ -254,8 +248,6 @@
 				40FB3A6E1A14C70A005936B5 /* BBAKeyService.m */,
 				40FB3A6F1A14C70A005936B5 /* BBALibraryItem.h */,
 				40FB3A701A14C70A005936B5 /* BBALibraryItem.m */,
-				40FB3A711A14C70A005936B5 /* BBAItemLink.h */,
-				40FB3A721A14C70A005936B5 /* BBAItemLink.m */,
 				40FB3A731A14C70A005936B5 /* BBALibraryResponse.h */,
 				40FB3A741A14C70A005936B5 /* BBALibraryResponse.m */,
 				40FB3A751A14C70A005936B5 /* BBALibraryResponseMapper.h */,
@@ -375,14 +367,12 @@
 				40FB3AA11A14C70A005936B5 /* BBAClientDetails.m in Sources */,
 				40FB3A981A14C70A005936B5 /* BBAAuthData.m in Sources */,
 				40FB3AB51A14C70A005936B5 /* BBASearchService.m in Sources */,
-				40FB3ABF1A14C7E8005936B5 /* BBBAPI.m in Sources */,
 				40FB3AB81A14C70A005936B5 /* BBATokensResponseMapper.m in Sources */,
 				40FB3AB61A14C70A005936B5 /* BBAServerDateFormatter.m in Sources */,
 				40FB3AA51A14C70A005936B5 /* BBADefaultAuthenticator.m in Sources */,
 				40FB3A9D1A14C70A005936B5 /* BBAAuthServiceErrorParser.m in Sources */,
 				40FB3A9F1A14C70A005936B5 /* BBACatalogueService.m in Sources */,
 				40FB3AAB1A14C70A005936B5 /* BBALibraryResponseMapper.m in Sources */,
-				40FB3AA91A14C70A005936B5 /* BBAItemLink.m in Sources */,
 				40FB3A971A14C70A005936B5 /* BBAAuthConnection.m in Sources */,
 				40FB3AA81A14C70A005936B5 /* BBALibraryItem.m in Sources */,
 				40FB3AB41A14C70A005936B5 /* BBASearchConnection.m in Sources */,

@@ -2,7 +2,7 @@
 //  BBACatalogue_IntegrationTests.m
 //  BBBAPI
 //
-//  Created by Tomek Kuźma on 09/01/2015.
+// Created by Tomek Kuźma (mapedd@mapedd.com), Owen Worley (owen@owenworley.co.uk) & Eric Yuan (mbaeric@gmail.com) on 09/01/2015.
 //  Copyright (c) 2015 Blinkbox Entertainment Ltd. All rights reserved.
 //
 
