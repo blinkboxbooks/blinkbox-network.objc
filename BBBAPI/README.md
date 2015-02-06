@@ -1,6 +1,6 @@
 #BBBAPI
 
-The BBBAPI Project provides access to the blinkbox books REST API. 
+The BBBAPI Project provides access to the `blinkbox books v1` REST API. 
 
 
 ```

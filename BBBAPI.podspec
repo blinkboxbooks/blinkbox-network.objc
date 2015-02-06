@@ -15,13 +15,13 @@ Pod::Spec.new do |s|
                    DESC
 
   s.homepage     = "http://blinkboxbooks.com"
-  s.license      = "BBB"
-  s.authors      = { "iOS developers" => "ios@blinkbox.com" }
+  s.license      = "MIT"
+  s.authors      = { "Tomek Kuźma" => "mapedd@mapedd.com", "Owen Worley" =>"owen@owenworley.co.uk", "Eric Yuan" => "mbaeric@gmail.com" }
 
   s.ios.deployment_target = "7.0"
   s.osx.deployment_target = "10.10"
 
-  s.source       = { :git => "git@git.mobcastdev.com:iOS/BBBAPI.git", :tag => s.version.to_s }
+  s.source       = { :git => "git@github.com:blinkboxbooks/blinkbox-network.objc.git", :tag => s.version.to_s }
   s.source_files  = "BBBAPI/BBBAPI/Classes/*.{h,m}"
 
   s.framework  = "Foundation"
@@ -32,3 +32,5 @@ Pod::Spec.new do |s|
   s.dependency "NSArray+Functional", '~>1.0.0'
 
 end
+
+
