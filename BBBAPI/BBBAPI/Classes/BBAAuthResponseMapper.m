@@ -3,8 +3,7 @@
 //  BBAAPI
 //
 // Created by Tomek Kuźma (mapedd@mapedd.com), Owen Worley (owen@owenworley.co.uk) & Eric Yuan (mbaeric@gmail.com) on 31/07/2014.
-//  Copyright (c) 2014 Blinkbox Books. All rights reserved.
-//
+ 
 // Source for docs
 //http://jira.blinkbox.local/confluence/display/PT/Authentication+Service+Rest+API+Guide#AuthenticationServiceRestAPIGuide-TokenResponse
 

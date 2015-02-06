@@ -3,8 +3,7 @@
 //  BBBAPI
 //
 // Created by Tomek Kuźma (mapedd@mapedd.com), Owen Worley (owen@owenworley.co.uk) & Eric Yuan (mbaeric@gmail.com) on 05/01/2015.
-//  Copyright (c) 2015 Blinkbox Entertainment Ltd. All rights reserved.
-//
+  
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
