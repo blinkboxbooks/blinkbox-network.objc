@@ -100,7 +100,6 @@ NSString *const kBBTDataKeyDebug = @"debugVerbose";
                                                                          [[BBTArgument alloc]initWithName:@"token" help:@"the refresh token"]
                                                                          ]
                                                                 action:^(NSArray *cliArguments) {
-                                                                    BBPrint(@"Not implemented yet");
                                                                 }];
     
     

@@ -65,7 +65,6 @@
 		401A1DE91A13D78B004FBA41 /* BBALibraryResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 401A1DB31A13D78B004FBA41 /* BBALibraryResponse.m */; };
 		401A1DEA1A13D78B004FBA41 /* BBALibraryResponseMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 401A1DB51A13D78B004FBA41 /* BBALibraryResponseMapper.m */; };
 		401A1DEB1A13D78B004FBA41 /* BBALibraryService.m in Sources */ = {isa = PBXBuildFile; fileRef = 401A1DB71A13D78B004FBA41 /* BBALibraryService.m */; };
-		401A1DEC1A13D78B004FBA41 /* BBALogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 401A1DBA1A13D78B004FBA41 /* BBALogger.m */; };
 		401A1DED1A13D78B004FBA41 /* BBAMarketingService.m in Sources */ = {isa = PBXBuildFile; fileRef = 401A1DBD1A13D78B004FBA41 /* BBAMarketingService.m */; };
 		401A1DEE1A13D78B004FBA41 /* BBANetworkConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 401A1DBF1A13D78B004FBA41 /* BBANetworkConfiguration.m */; };
 		401A1DEF1A13D78B004FBA41 /* BBAPurchasingService.m in Sources */ = {isa = PBXBuildFile; fileRef = 401A1DC31A13D78B004FBA41 /* BBAPurchasingService.m */; };
@@ -94,7 +93,6 @@
 		40B34A051A3B056600B7F3FF /* BBABooksMapperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 40B34A041A3B056600B7F3FF /* BBABooksMapperTests.m */; };
 		40B34A071A3B0DE100B7F3FF /* book.json in Resources */ = {isa = PBXBuildFile; fileRef = 40B34A061A3B0DE100B7F3FF /* book.json */; };
 		40B34A0A1A3B122A00B7F3FF /* BBAImageItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 40B34A091A3B122A00B7F3FF /* BBAImageItem.m */; };
-		40CFA6761A83DA2C006FE8D8 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 40CFA6751A83DA2C006FE8D8 /* README.md */; };
 		40CFA6781A83E9A5006FE8D8 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 40CFA6771A83E9A5006FE8D8 /* LICENSE */; };
 		40DB4FA51A39D79500AF8770 /* BBACatalogueServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 40DB4FA41A39D79500AF8770 /* BBACatalogueServiceTests.m */; };
 		40DB4FA81A39ECA400AF8770 /* sample_synopsis.json in Resources */ = {isa = PBXBuildFile; fileRef = 40DB4FA71A39ECA400AF8770 /* sample_synopsis.json */; };
@@ -243,8 +241,6 @@
 		401A1DB61A13D78B004FBA41 /* BBALibraryService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBALibraryService.h; path = Classes/BBALibraryService.h; sourceTree = "<group>"; };
 		401A1DB71A13D78B004FBA41 /* BBALibraryService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBALibraryService.m; path = Classes/BBALibraryService.m; sourceTree = "<group>"; };
 		401A1DB81A13D78B004FBA41 /* BBALibraryTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBALibraryTypes.h; path = Classes/BBALibraryTypes.h; sourceTree = "<group>"; };
-		401A1DB91A13D78B004FBA41 /* BBALogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBALogger.h; path = Classes/BBALogger.h; sourceTree = "<group>"; };
-		401A1DBA1A13D78B004FBA41 /* BBALogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBALogger.m; path = Classes/BBALogger.m; sourceTree = "<group>"; };
 		401A1DBB1A13D78B004FBA41 /* BBAMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBAMacros.h; path = Classes/BBAMacros.h; sourceTree = "<group>"; };
 		401A1DBC1A13D78B004FBA41 /* BBAMarketingService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBAMarketingService.h; path = Classes/BBAMarketingService.h; sourceTree = "<group>"; };
 		401A1DBD1A13D78B004FBA41 /* BBAMarketingService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBAMarketingService.m; path = Classes/BBAMarketingService.m; sourceTree = "<group>"; };
@@ -498,6 +494,7 @@
 		401A1D891A13D782004FBA41 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				40FB3ABA1A14C7A8005936B5 /* BBBAPI.h */,
 				401A1D8A1A13D78B004FBA41 /* BBAAPIErrors.h */,
 				40B34A081A3B122A00B7F3FF /* BBAImageItem.h */,
 				40B34A091A3B122A00B7F3FF /* BBAImageItem.m */,
@@ -551,8 +548,6 @@
 				401A1DB61A13D78B004FBA41 /* BBALibraryService.h */,
 				401A1DB71A13D78B004FBA41 /* BBALibraryService.m */,
 				401A1DB81A13D78B004FBA41 /* BBALibraryTypes.h */,
-				401A1DB91A13D78B004FBA41 /* BBALogger.h */,
-				401A1DBA1A13D78B004FBA41 /* BBALogger.m */,
 				401A1DBB1A13D78B004FBA41 /* BBAMacros.h */,
 				401A1DBC1A13D78B004FBA41 /* BBAMarketingService.h */,
 				401A1DBD1A13D78B004FBA41 /* BBAMarketingService.m */,
@@ -580,7 +575,6 @@
 				401A1DD31A13D78B004FBA41 /* BBATokensResponseMapper.m */,
 				401A1DD41A13D78B004FBA41 /* BBAUserDetails.h */,
 				401A1DD51A13D78B004FBA41 /* BBAUserDetails.m */,
-				40FB3ABA1A14C7A8005936B5 /* BBBAPI.h */,
 				5AB0FD041A3204C200701FFF /* BBABookmarkItem.h */,
 				5AB0FD051A3204C200701FFF /* BBABookmarkItem.m */,
 				5AF88C5A1A35EA9200CA9B98 /* BBABookmarkResponseMapper.h */,
@@ -929,7 +923,6 @@
 				401A1DE91A13D78B004FBA41 /* BBALibraryResponse.m in Sources */,
 				40DB502A1A3A00FC00AF8770 /* BBABooksMapper.m in Sources */,
 				401A1DF21A13D78B004FBA41 /* BBAResponseMapping.m in Sources */,
-				401A1DEC1A13D78B004FBA41 /* BBALogger.m in Sources */,
 				401A1DE01A13D78B004FBA41 /* BBAClientDetails.m in Sources */,
 				40B34A0A1A3B122A00B7F3FF /* BBAImageItem.m in Sources */,
 				401A1DF71A13D78B004FBA41 /* BBATokensResponseMapper.m in Sources */,
@@ -940,7 +933,6 @@
 				5AB0FD061A3204C200701FFF /* BBABookmarkItem.m in Sources */,
 				5A8580CA1A63EAD8006BCAC3 /* BBASearchSuggestionsResult.m in Sources */,
 				401A1DD71A13D78B004FBA41 /* BBAAuthData.m in Sources */,
-				40CFA6761A83DA2C006FE8D8 /* README.md in Sources */,
 				40DB50211A39F0FD00AF8770 /* BBACatalogueResponseMapper.m in Sources */,
 				5A3959861A602CFA00E27E83 /* BBASearchResponseMapper.m in Sources */,
 				401A1DE61A13D78B004FBA41 /* BBAKeyService.m in Sources */,

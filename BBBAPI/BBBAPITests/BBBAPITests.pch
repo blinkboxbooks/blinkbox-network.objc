@@ -10,7 +10,6 @@
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 #ifdef __OBJC__
     #import <Foundation/Foundation.h>
-    #import "BBALogger.h"
     #import "BBATestMacros.h"
     #import <XCTest/XCTest.h>
 #endif
