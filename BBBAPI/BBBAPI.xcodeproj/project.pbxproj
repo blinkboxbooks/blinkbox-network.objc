@@ -246,7 +246,6 @@
 		401A1DBD1A13D78B004FBA41 /* BBAMarketingService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBAMarketingService.m; path = Classes/BBAMarketingService.m; sourceTree = "<group>"; };
 		401A1DBE1A13D78B004FBA41 /* BBANetworkConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBANetworkConfiguration.h; path = Classes/BBANetworkConfiguration.h; sourceTree = "<group>"; };
 		401A1DBF1A13D78B004FBA41 /* BBANetworkConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBANetworkConfiguration.m; path = Classes/BBANetworkConfiguration.m; sourceTree = "<group>"; };
-		401A1DC01A13D78B004FBA41 /* BBANetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBANetworking.h; path = Classes/BBANetworking.h; sourceTree = "<group>"; };
 		401A1DC11A13D78B004FBA41 /* BBANetworkingConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBANetworkingConstants.h; path = Classes/BBANetworkingConstants.h; sourceTree = "<group>"; };
 		401A1DC21A13D78B004FBA41 /* BBAPurchasingService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBAPurchasingService.h; path = Classes/BBAPurchasingService.h; sourceTree = "<group>"; };
 		401A1DC31A13D78B004FBA41 /* BBAPurchasingService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBAPurchasingService.m; path = Classes/BBAPurchasingService.m; sourceTree = "<group>"; };
@@ -553,7 +552,6 @@
 				401A1DBD1A13D78B004FBA41 /* BBAMarketingService.m */,
 				401A1DBE1A13D78B004FBA41 /* BBANetworkConfiguration.h */,
 				401A1DBF1A13D78B004FBA41 /* BBANetworkConfiguration.m */,
-				401A1DC01A13D78B004FBA41 /* BBANetworking.h */,
 				401A1DC11A13D78B004FBA41 /* BBANetworkingConstants.h */,
 				401A1DC21A13D78B004FBA41 /* BBAPurchasingService.h */,
 				401A1DC31A13D78B004FBA41 /* BBAPurchasingService.m */,
