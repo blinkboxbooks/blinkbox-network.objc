@@ -2,12 +2,12 @@ Pod::Spec.new do |s|
 
   s.name         = "BBBAPI"
   s.version      = "0.0.16"
-  s.summary      = "iOS / OSX Objective-C library for communicating with the Blinkbox Books API"
+  s.summary      = "iOS / OSX Objective-C library for communicating with the Blinkbox Books v1 API"
 
   s.description  = <<-DESC
   
                    This library contains collection of classes that can be 
-                   used to communicate with the endpoints of the REST API for
+                   used to communicate with the endpoints of the v1 REST API for
                    Blinkbox Books.
                    Library tries to reflect all webservices to the native domain 
                    for iOS and OSX apps.
