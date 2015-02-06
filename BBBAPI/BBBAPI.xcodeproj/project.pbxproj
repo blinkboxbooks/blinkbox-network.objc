@@ -285,7 +285,6 @@
 		40B34A061A3B0DE100B7F3FF /* book.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = book.json; path = "Catalogue Service Responses/book.json"; sourceTree = "<group>"; };
 		40B34A081A3B122A00B7F3FF /* BBAImageItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BBAImageItem.h; path = Classes/BBAImageItem.h; sourceTree = "<group>"; };
 		40B34A091A3B122A00B7F3FF /* BBAImageItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BBAImageItem.m; path = Classes/BBAImageItem.m; sourceTree = "<group>"; };
-		40CFA6751A83DA2C006FE8D8 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		40CFA6771A83E9A5006FE8D8 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		40DB4FA41A39D79500AF8770 /* BBACatalogueServiceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBACatalogueServiceTests.m; sourceTree = "<group>"; };
 		40DB4FA71A39ECA400AF8770 /* sample_synopsis.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = sample_synopsis.json; path = "Catalogue Service Responses/sample_synopsis.json"; sourceTree = "<group>"; };
@@ -360,7 +359,6 @@
 		401A1D121A13D6CB004FBA41 = {
 			isa = PBXGroup;
 			children = (
-				40CFA6751A83DA2C006FE8D8 /* README.md */,
 				4009F00B1A67D65D005656A6 /* BBBAPI.podspec */,
 				40CFA6771A83E9A5006FE8D8 /* LICENSE */,
 				401A1D1D1A13D6CB004FBA41 /* BBBAPI */,
