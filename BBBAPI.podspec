@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "BBBAPI"
-  s.version      = "0.0.16"
+  s.version      = "1.0.0"
   s.summary      = "iOS / OSX Objective-C library for communicating with the Blinkbox Books v1 API"
 
   s.description  = <<-DESC
